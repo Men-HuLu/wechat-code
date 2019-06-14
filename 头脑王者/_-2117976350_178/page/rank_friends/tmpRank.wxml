@@ -1,0 +1,97 @@
+<template name="rankItem">
+    <view name="view-picker-item" style="width: 100%;height: 206rpx;display: flex;flex-direction: column;justify-content: center;align-items: center;">
+        <view class="row center2 start" hoverClass="brightness" style="position:relative;width: 100%;height: 94%;background-color:rgba(35,85,154,{{curState==0?'0.6':'0.8'}});font-size:38rpx;border-radius: 5px;">
+            <view class="row start center2 {{item.uid>=0?'':'hide'}}}}" style="position:relative; left:0px;top:0px;width:100%;height:100%">
+                <view class="frame1" style="position:absolute;left:146rpx;top:110rpx;height:50rpx;width:360rpx; background-color:#26226c"></view>
+                <view class="row start center2 {{item.uid>=0?'':'hide'}}}}" style="position:absolute; left:0px;top:0px;width:100%;height:100%">
+                    <view style="width:5%"></view>
+                    <view class="column start center2" style="width:157rpx; height:157rpx">
+                        <template is="avatarNoName" data="{{...item}}"></template>
+                    </view>
+                    <view style="width:16rpx"></view>
+                    <view class="column start" style="height:80%;width:400rpx">
+                        <view class="row start center2" style="height:46rpx;">
+                            <view class="center center2" style="font-size:32rpx;">{{item.nickName}}</view>
+                            <view style="width:20rpx"></view>
+                            <view class="center center2 text-outlight" style="font-size:32rpx;">Lv.</view>
+                            <view class="center center2" style="font-size:32rpx;color:#51bafe">{{item.level}}</view>
+                        </view>
+                        <view class="row start center2" style="height:44rpx;">
+                            <view class="start center2" style="font-size:28rpx;color:#b7b7b7">{{item.city}}</view>
+                        </view>
+                        <view class="row start center2" style="height:48rpx;">
+                            <view class="center center2 text-outlight" style="font-size:32rpx;color:#51bafe">{{item.matchName}}</view>
+                            <view style="width:8rpx"></view>
+                            <image src="../../image/pve/x1.png" style="width:32rpx;height:32rpx;flex:none;"></image>
+                            <view class="center center2 text-outlight" style="font-size:28rpx;color:#fff;flex:none;">×{{item.star}}</view>
+                        </view>
+                    </view>
+                    <view class="{{item.rank<=3?'hide':''}}" style="font-size:48rpx;color:#51bafe;">{{item.rank}}</view>
+                    <view style="width:0;position: relative;align-self:center;">
+                        <image class="{{item.rank<=3?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/rank/{{item.rank==1?'crown_gold':item.rank==2?'crown_silver':item.rank==3?'crown_copper':''}}.png?v=0.1.12" style="position: absolute;top:-39rpx;right:-37rpx;width:121rpx;height:91rpx;" wx:if="{{item.rank<=3}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="../../template/avatarNoName.wxml"></import>
+<import src="../../template/shareBtn.wxml"></import>
+<view class="aniMainView" style="background-position:{{backgroundPosition}};">
+    <view style="width: 100%; height: 66rpx; background-color: #4E84E5; display: flex; position: absolute; top: 0px; left: 0px;"></view>
+</view>
+<image src="../../image/ui/shuiwentu.png" style="width:100%;height:100%;overflow:hidden;"></image>
+<view class="column start center2" style="position:absolute;left:0px;top:0px;width:100%;height:100%;overflow:hidden;">
+    <view class="row center center2" style="width:100%;height:125rpx">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/rank/btn1_on.png" style="width:341rpx;height:76rpx;" wx:if="{{tabPage==0}}"></image>
+        <image bindtap="onTapTabBtn" src="https://question-resource-wscdn.hortorgames.com/image/rank/btn1_off.png" style="width:341rpx;height:76rpx;" wx:if="{{tabPage==1}}"></image>
+        <image src="https://question-resource-wscdn.hortorgames.com/image/rank/btn2_on.png" style="width:341rpx;height:76rpx;" wx:if="{{tabPage==1}}"></image>
+        <image bindtap="onTapTabBtn" src="https://question-resource-wscdn.hortorgames.com/image/rank/btn2_off.png" style="width:341rpx;height:76rpx;" wx:if="{{tabPage==0}}"></image>
+    </view>
+    <view class="column start center2" style="width: 100%;height:{{scrollViewHeight0}}rpx" wx:if="{{tabPage==0}}">
+        <scroll-view name="view-listview" scrollY="true" style="width: 90%;height:100%;">
+            <view bindtap="callback_item_clicked" data-friend-id="{{item.uid}}" style="display:flex" wx:for="{{friends}}" wx:for-index="uid" wx:key="uid">
+                <template is="rankItem" data="{{item:item}}" wx:if="{{item.uid>0}}"></template>
+                <view openType="share" style="width:100%;height:206rpx; position: relative;align-self:center;" wx:if="{{item.uid<0}}">
+                    <view class="column center center2 space-a" style="width:100%rpx;height:100%;">
+                        <view class="font-white-1 center center2" style="width:100%;height:60rpx">邀请朋友一起玩</view>
+                        <view class="font-blue-1 center center2" style="width:100%;height:60rpx">将朋友从老年痴呆的状态拯救出来!</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="column start center2" style="width: 100%;height:{{scrollViewHeight1}}rpx;" wx:if="{{tabPage==1}}">
+        <scroll-view name="view-listview" scrollY="true" style="width: 90%;height:100%;">
+            <view style="display:flex" wx:for="{{worldMatch}}" wx:for-index="uid" wx:key="uid">
+                <template is="rankItem" data="{{item:item}}"></template>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="center center2" style="position:absolute;left:0px;bottom:140rpx;width:100%;height:120rpx" wx:if="{{tabPage==1}}">
+        <view class="row start center2" style="position:relative;width:675rpx; height:110rpx; background-color:rgba(31,42,89,0.605); border-radius:5rpx;">
+            <view style="width:28rpx;"></view>
+            <view class="center center2" style="font-size:32rpx;">{{self.nickName}}</view>
+            <view style="width:20rpx"></view>
+            <view class="center center2 text-outlight" style="font-size:32rpx;">Lv.</view>
+            <view class="center center2" style="font-size:32rpx;color:#51bafe">{{self.level}}</view>
+            <view style="width:26rpx;"></view>
+            <view class="row start center2">
+                <view class="center center2 text-outlight" style="font-size:32rpx;color:#51bafe">{{self.matchName}}</view>
+                <view style="width:8rpx"></view>
+                <image src="../../image/pve/x1.png" style="width:32rpx;height:32rpx;flex:none;"></image>
+                <view class="center center2 text-outlight" style="font-size:28rpx;color:#fff;flex:none;">×{{self.star}}</view>
+            </view>
+            <view class="column center center2" style="position:absolute;top:0px;right:20rpx;height:100%;width:150rpx;">
+                <view class="{{item.rank<=3?'hide':''}}" style="font-size:40rpx;color:#51bafe;">{{self.rank}}</view>
+                <view style="font-size:25rpx;color:#fff">我的排名</view>
+            </view>
+        </view>
+    </view>
+    <view class="column center2 center" style="flex:none; width:100%;height:140rpx;position:absolute;left:0px;bottom:0px;">
+        <template is="shareBtn" data="{{desc:'邀请好友，比拼智商'}}"></template>
+        <view class="font-white-1 center center2" style="height:60rpx;width:100%;font-size:30rpx" wx:if="{{shareRewardText}}">
+            {{shareRewardText}}
+        </view>
+    </view>
+</view>

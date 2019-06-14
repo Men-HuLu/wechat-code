@@ -1,0 +1,55 @@
+.room-list {
+    width: 100%;
+    background-color: white;
+}
+
+.room-list .room-list-head {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30rpx 20rpx 30rpx 14rpx;
+}
+
+.room-list .room-list-head .room-list-icon {
+    height: 40rpx;
+    width: 40rpx;
+    vertical-align: middle;
+}
+
+.room-list .room-list-head text {
+    color: #000;
+    font-size: 32rpx;
+}
+
+.room-list .room-list-head .room-list-more {
+    float: right;
+    height: 32rpx;
+    position: relative;
+    color: #adadad;
+    font-size: 22rpx;
+}
+
+.room-list .room-list-head .room-list-more::after {
+    content: "";
+    float: right;
+    width: 10rpx;
+    height: 100%;
+    vertical-align: middle;
+    margin-left: 14rpx;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAaBAMAAABMRsE0AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAYUExURUxpca2tra+vr62tra2tra6urq+vr62trYZ1W8cAAAAHdFJOUwD1Q27OOmO+spWKAAAAPUlEQVQI12NggAFWlwAIg6VcCMJgLC9UADPYymFC5jAhZtKFAmBCDqgMmBRcMUw7YQG4w+BOhTse7h0YAACI6Bk3h+JLkgAAAABJRU5ErkJggg==");
+    background-repeat: no-repeat;
+    background-size: 10rpx 16rpx;
+    background-position: 50%;
+}
+
+.room-list .room-list-body {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

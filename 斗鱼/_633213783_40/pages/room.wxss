@@ -1,0 +1,510 @@
+.room-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family: PingFangSC-Regular,sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content-box {
+    position: absolute;
+    top: 597rpx;
+    bottom: 0;
+    left: 0;
+    width: 750rpx;
+    background-color: #f5f5f5;
+    z-index: 5;
+    transition: all 0.2s;
+    overflow: hidden;
+}
+
+.main-content-box.yz {
+    top: 687rpx;
+}
+
+.main-content-box.yzcr {
+    top: 754rpx;
+}
+
+.main-content-box.cr {
+    top: 664rpx;
+}
+
+.main-content-box .main-content {
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s;
+    transition: transform 0.3s,-webkit-transform 0.3s;
+    height: 100%;
+}
+
+.main-content-box .main-content.active1 {
+    transform: translateY(0);
+}
+
+.main-content-box .main-content.active2 {
+    transform: translateY(-100%);
+}
+
+.main-content-box .main-content .chat-content-wrap,.main-content-box .main-content .anchor-content-wrap {
+    width: 750rpx;
+    height: 100%;
+}
+
+.main-content-box .main-content .chat-content-wrap {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.chat-content-wrap .chat-tab-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.chat-content-wrap .chat-room-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.anchor-info-wrap {
+    width: 100%;
+    height: 186rpx;
+    background-color: #ffffff;
+    border-bottom: 1rpx solid #DDDDDD;
+}
+
+.anchor-info-wrap .anchor-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 20rpx 4rpx;
+    width: 100%;
+    height: 116rpx;
+}
+
+.anchor-info-wrap .anchor-info .anchor-icon {
+    border-radius: 50%;
+    position: relative;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.anchor-info-wrap .anchor-info .anchor-icon .anchor-icon-img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.anchor-info-wrap .anchor-info .anchor-icon .anchor-level-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 49rpx;
+    height: 20rpx;
+}
+
+.anchor-info-wrap .anchor-info .ai-show-content {
+    flex: 1;
+    margin-left: 20rpx;
+    overflow: hidden;
+}
+
+.anchor-info-wrap .anchor-info .ai-show-content .ai-username {
+    display: flex;
+    align-items: center;
+    height: 42rpx;
+    font-size: 22rpx;
+    color: #3f3f3f;
+    line-height: 42rpx;
+}
+
+.anchor-info-wrap .anchor-info .ai-show-content .ai-username .room-label {
+    color: #ff7d23;
+    margin-left: 10rpx;
+}
+
+.anchor-info-wrap .anchor-info .ai-show-content .ai-username .room-cate {
+    max-width: 60%;
+    font-size: 30rpx;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.anchor-info-wrap .anchor-info .ai-show-content .ai-username .room-hot {
+    margin-left: 10rpx;
+    color: #adadad;
+}
+
+.anchor-info-wrap .anchor-info .ai-show-content .ai-room-info {
+    margin-top: 6rpx;
+    display: flex;
+    align-items: center;
+    height: 30rpx;
+    font-size: 22rpx;
+    color: #adadad;
+    line-height: 30rpx;
+}
+
+.anchor-info-wrap .anchor-info .ai-show-content .ai-room-info .ai-title {
+    display: inline-block;
+    width: 50rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    text-align: center;
+    font-size: 18rpx;
+    color: #5c5c5c;
+    background: #f2f2f2;
+    border-radius: 2rpx;
+    margin-right: 10rpx;
+    flex-shrink: 0;
+}
+
+.anchor-info-wrap .anchor-info .ai-show-content .ai-room-info .room-des {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.anchor-info-wrap .room-btn {
+    margin: 0 20rpx;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.anchor-info-wrap .room-btn .button {
+    display: inline-block;
+    width: 140rpx;
+    height: 48rpx;
+    font-size: 22rpx;
+    color: #999999;
+    border-radius: 26rpx;
+    line-height: 48rpx;
+    text-align: center;
+}
+
+.anchor-info-wrap .room-btn .back-btn {
+    border: 1rpx solid #dfdfdf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.anchor-info-wrap .room-btn .back-btn .back-img {
+    width: 24rpx;
+    height: 24rpx;
+    padding-right: 9rpx;
+}
+
+.anchor-info-wrap .room-btn .change-btn {
+    position: absolute;
+    right: 0;
+    width: 180rpx;
+    height: 52rpx;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FF5D23;
+}
+
+.anchor-info-wrap .room-btn .change-btn .change-img {
+    width: 28rpx;
+    height: 28rpx;
+    padding-right: 10rpx;
+}
+
+.anchor-info-wrap .room-btn .recommend-btn {
+    border: 1rpx solid #ff5d23;
+    color: #ff5d23;
+    margin-left: 10rpx;
+}
+
+.anchor-info-wrap .room-btn .share-btn {
+    position: absolute;
+    right: 0;
+    height: 52rpx;
+    width: 220rpx;
+    padding: 0;
+}
+
+.anchor-info-wrap .room-btn .share-btn .share-img {
+    width: 100%;
+    height: 100%;
+}
+
+.anchor-info-wrap .room-btn .backToRoom {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    height: 48rpx;
+    line-height: 48rpx;
+}
+
+.anchor-info-wrap .room-btn .backToRoom .back-con {
+    margin-right: 10rpx;
+    font-size: 24rpx;
+    color: #666666;
+}
+
+.anchor-info-wrap .room-btn .backToRoom .back-img {
+    height: 20rpx;
+    width: 20rpx;
+}
+
+.room-btn .chatroom-guide {
+    position: absolute;
+    width: 446rpx;
+    height: 70rpx;
+    bottom: -77rpx;
+    right: 20rpx;
+    z-index: 6;
+    background-image: url(https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/chatr-guide.png?timestamp=1541570269);
+    background-size: 100% 100%;
+}
+
+.room-btn .chatroom-guide .guide-con {
+    font-size: 22rpx;
+    color: #209D25;
+    margin: 0 20rpx;
+    line-height: 83rpx;
+}
+
+.room-btn .chatroom-guide .guide-close {
+    display: inline-block;
+    height: 100%;
+    width: 15rpx;
+}
+
+.room-btn .chatroom-guide .guide-img {
+    height: 15rpx;
+    width: 15rpx;
+}
+
+.chatroom-tab {
+    width: 100%;
+    height: 68rpx;
+    line-height: 68rpx;
+    background: #FFFFFF;
+    border-bottom: 1rpx solid #DDDDDD;
+    font-size: 24rpx;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+
+.chatroom-tab .tab-con {
+    float: left;
+    color: #333333;
+    margin-right: 17rpx;
+}
+
+.chatroom-tab .tab-enter {
+    color: #999999;
+    float: right;
+}
+
+.chatroom-tab .tab-list {
+    display: inline-block;
+    height: 100%;
+    max-width: 450rpx;
+    overflow: hidden;
+}
+
+.tab-list .tab-img {
+    width: 52rpx;
+    height: 52rpx;
+    margin: 8rpx 10rpx 8rpx 0;
+    border-radius: 7rpx;
+}
+
+.video-player-box {
+    position: relative;
+    width: 750rpx;
+    height: 410rpx;
+}
+
+.video-player-box.yz {
+    height: 500rpx;
+}
+
+.video-player-box.yz .video-cover {
+}
+
+.video-player-box .video-player {
+    width: 100%;
+    height: 100%;
+}
+
+.video-player-box .loading-cover-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: 0;
+    top: 0rpx;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+}
+
+.video-player-box .loading-cover-wrap .bg {
+    position: absolute;
+    top: 0rpx;
+    bottom: 0;
+    left: 0;
+    font-size: 30rpx;
+    color: #fff;
+    z-index: 1;
+    filter: blur(10px);
+    opacity: 0.7;
+}
+
+.video-player-box .loading-cover-wrap .voice-img {
+    position: absolute;
+    font-size: 30rpx;
+    color: #fff;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+}
+
+.video-player-box .loading-cover-wrap .loading-cover {
+    padding: 10rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #adadad;
+}
+
+.video-player-box .loading-cover-wrap .text {
+    padding: 10rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #adadad;
+    width: 400rpx;
+}
+
+.video-player-box .loading-cover-wrap .loading-dot {
+    display: inline-block;
+    height: 1em;
+    line-height: 1;
+    text-align: left;
+    vertical-align: -0.25em;
+    overflow: hidden;
+}
+
+.video-player-box .loading-cover-wrap .loading-dot::before {
+    display: block;
+    content: '...\A..\A.';
+    white-space: pre-wrap;
+    animation: dot 3s infinite step-start both;
+}
+
+.video-player-box .loading-cover-wrap .loading.complete:before {
+    display: none;
+}
+
+.video-player-box .video-cover {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: 2;
+}
+
+.video-player-box .video-cover .control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.video-player-box .video-cover .control .bottom-banner {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 11;
+}
+
+.video-player-box .video-cover .control .bottom-banner .fullscreen {
+    width: 40rpx;
+    height: 40rpx;
+    display: inline-block;
+    float: right;
+    margin-bottom: 28rpx;
+    margin-right: 31rpx;
+}
+
+.video-player-box .video-cover image {
+    width: 750rpx;
+    height: 410rpx;
+}
+
+.video-player-box .video-cover.switch .tip-box {
+    background-color: rgba(0,0,0,1);
+}
+
+.video-player-box .video-cover.error .tip-box {
+    background-color: rgba(0,0,0,1);
+    font-size: 28rpx;
+    color: #999;
+}
+
+.video-player-box .video-cover.error .tip-box .button {
+    color: #FF5D23;
+    border: 1rpx solid #f70;
+    height: 60rpx;
+    line-height: 60rpx;
+    background-color: black;
+    margin-top: 30rpx;
+    font-size: 28rpx;
+}
+
+.video-player-box .video-cover .tip-box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding-top: 120rpx;
+    z-index: 1;
+    text-align: center;
+    font-size: 32rpx;
+    font-weight: 500;
+    box-sizing: border-box;
+    color: white;
+    background-color: rgba(0,0,0,.6);
+    letter-spacing: 1.5rpx;
+}
+
+.video-player-box .video-cover .tip-box .button {
+    background-color: #f70;
+    height: 80rpx;
+    width: 258rpx;
+    display: inline-block;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    margin-top: 40rpx;
+    border-radius: 5rpx;
+}

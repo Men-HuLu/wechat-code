@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>order_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="order_icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M15.3333333,6.70752501 C20.5950821,7.36365579 24.6666667,11.8521765 24.6666667,17.2916667 L24.6666667,21.0625 L3.33333333,21.0625 L3.33333333,17.2916667 C3.33333333,11.8521765 7.4049179,7.36365579 12.6666667,6.70752501 L12.6666667,4 L15.3333333,4 L15.3333333,6.70752501 Z M2,22.375 L26,22.375 L26,25 L2,25 L2,22.375 Z" id="Combined-Shape" fill="#FA9D3B"></path>
+    </g>
+</svg>

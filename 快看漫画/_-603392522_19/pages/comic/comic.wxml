@@ -1,0 +1,70 @@
+<template name="paytip">
+    <view class="pay-tip" wx:if="{{show}}">{{type}}一章是付费章节，您还没有解锁</view>
+</template>
+<wx-scope wx:scope-data="{{service_type:23,name:topicTit}}">
+    <view></view>
+</wx-scope>
+<movable-area scaleArea style="height: {{iPhoneX&&!fullScreen?'95.348':'100'}}%;">
+    <movable-view outOfBounds bindscale="handleScale" direction="all" disabled="{{!ifScale}}" scale="{{ifScale}}" scaleMax="2" scaleMin="1" scaleValue="{{scaleVal}}">
+        <scroll-view bindscroll="handleScroll" bindtap="handleTapScroll" class="comic-wrap" scrollIntoView="{{oriPos}}" scrollTop="{{scrollTop}}" scrollWithAnimation="{{scrollAnimation}}" scrollY="{{!toast&&!onGetting}}" style="padding-top: {{!fullScreen&&comicList[0].prevPay?98:0}}rpx; padding-bottom: {{!fullScreen&&comicList[comicList.length-1].nextPay?98:0}}rpx;">
+            <template is="paytip" data="{{show:comicList[comicIndex].prevPay,type:'上'}}"></template>
+            <kk-picture data-load="{{pic.load}}" height="{{pic.height}}" id="{{pic.id}}" load="{{pic.load}}" only="{{pic.height<120}}" src="{{pic.src}}" wx:for="{{imgList}}" wx:for-item="pic" wx:key="id"></kk-picture>
+            <template is="paytip" data="{{show:comicList[comicIndex].nextPay,type:'下'}}"></template>
+        </scroll-view>
+    </movable-view>
+</movable-area>
+<view class="btn-top" style="transform: translateY({{fullScreen?-100:0}}%);" wx:if="{{comicList.length&&!toast}}">
+    <view>
+        <view bindtap="handlePraise" class="btn">
+            <image src="/image/ico-praise{{comicList[comicIndex].praised?'-color':''}}.png"></image>
+            <text class="{{comicList[comicIndex].praised?'active':''}}">赞{{comicList[comicIndex].praiseNum||''}}</text>
+        </view>
+    </view>
+    <view>
+        <view bindtap="handleFav" class="btn">
+            <image src="/image/ico-follow{{followed?'-color':''}}.png"></image>
+            <text class="{{followed?'active':''}}">关注</text>
+        </view>
+    </view>
+    <view>
+        <button class="btn" openType="share">
+            <image src="/image/ico-share.png"></image>
+            <text>分享</text>
+        </button>
+    </view>
+</view>
+<view class="top-tip" style="top: {{fullScreen?0:98}}rpx; transform: translateY({{netTip?0:-100}}%); opacity: {{netTip?0.75:0}};">
+    <text>您当前正在使用流量阅读呢~</text>
+</view>
+<view class="blank" wx:if="{{iPhoneX&&!fullScreen}}"></view>
+<view class="btn-bottom" style="bottom: {{iPhoneX&&!fullScreen?'4.652':'0'}}%; transform: translateY({{fullScreen?100:0}}%);" wx:if="{{comicList.length&&!toast}}">
+    <view bindtap="jumpTopic" class="btn" data-id="{{topicId}}">
+        <view class="btn-hamburger">
+            <text></text>
+            <text></text>
+            <text></text>
+        </view>
+        <text>全集</text>
+    </view>
+    <view class="btn-group">
+        <button bindtap="jumpComic" class="btn" data-id="{{comicList[comicIndex].lastId}}" data-type="prev" disabled="{{!comicList[comicIndex].lastId||comicList[comicIndex].prevPay}}">
+            <view class="btn-prev">
+                <text></text>
+                <text></text>
+            </view>
+            <text>上一篇</text>
+        </button>
+        <button bindtap="jumpComic" class="btn" data-id="{{comicList[comicIndex].nextId}}" data-type="next" disabled="{{!comicList[comicIndex].nextId||comicList[comicIndex].nextPay}}">
+            <text>下一篇</text>
+            <view class="btn-next">
+                <text></text>
+                <text></text>
+            </view>
+        </button>
+    </view>
+</view>
+<view class="guide" style="opacity: {{guideShow?1:0}}; bottom: {{guideShow?iPhoneX?'192':'126':-100}}rpx;" wx:if="{{guideReady}}">
+    <view class="txt">关注后可收到更新提醒哦～</view>
+    <view bindtap="handleFav" class="btn">+ 关注</view>
+</view>
+<kk-ensure text="{{toast}}"></kk-ensure>

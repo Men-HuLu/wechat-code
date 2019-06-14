@@ -1,0 +1,152 @@
+<template name="specialPopup_countdown">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;z-index: 20;" wx:if="{{showCountdown}}">
+        <view bindtap="SpecialPopupCountdown_onClosed" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.8);"></view>
+        <view class="show-form" style="position:absolute;width:600rpx;height:556rpx;left:calc((100% - 600rpx)/2);top:calc((100% - 556rpx)/2);background: #FFFFFF;box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;">
+            <text class="center center2" style="position: absolute;left:0px;top:87rpx; font-size: 58rpx;color: #3663CD;text-align: center;width:100%;height:81rpx;">结算倒计时</text>
+            <view class="row center center2" style="position: absolute;left:0px;top:171rpx;width:100%;height:126rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/topic/icon_watch.png?v=1" style="width:110rpx;height:110rpx;"></image>
+                <view style="width:28rpx;"></view>
+                <text style="font-size: 90rpx;height:90rpx;line-height: 90rpx;color: #00E1BD;white-space: nowrap;">{{textCountdown}}</text>
+            </view>
+            <view style="position: absolute;left:0px;top:411rpx;height:30rpx;line-height: 30rpx;;font-size: 30rpx;color: #6CC4FF;text-align: center;width:100%">专题比赛正在结算,请稍后…</view>
+            <view bindtap="SpecialPopupCountdown_onClosed" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=0.1.12" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="specialPopup_noTicket">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;z-index: 20;" wx:if="{{showNoTicket}}">
+        <view bindtap="SpecialPopupNoTicket_onClosed" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.8);"></view>
+        <view class="show-form" style="position:absolute;width:620rpx;height:654rpx;left:calc((100% - 620rpx)/2);top:calc((100% - 654rpx)/2);background: #FFFFFF;box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;">
+            <text class="center center2" style="position: absolute;left:0px;top:96rpx; font-size: 64rpx;color: #3663CD;text-align: center;width:100%;height:90rpx;">入场券不足</text>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/topic/icon_ticket.png?v=1" style="position: absolute;left:calc((100% - 210rpx)/2);top:210rpx;width:210rpx;height:168rpx;"></image>
+            <view style="position: absolute;left:0px;top:420rpx;height:40rpx;line-height: 28frpx;;font-size: 28rpx;color: #30D1FC;text-align: center;width:100%">今日入场券已用完</view>
+            <view class="center center2" style="position: absolute;left:0px;bottom:0px;width:100%;height:180rpx;background: #EEF6FF;box-shadow: inset 0 1px 4px 0 rgba(223,223,223,0.50);border-bottom-left-radius: 20rpx;border-bottom-right-radius: 20rpx;">
+                <view bindtap="SpecialPopupNoTicket_onOk" class="center center2" hoverClass="brightness" style="background: #00E1BD;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;width:300rpx;height:90rpx;">
+                    <text style="font-size: 46rpx;color: #FFFFFF;">确 定</text>
+                </view>
+            </view>
+            <view bindtap="SpecialPopupNoTicket_onClosed" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=0.1.12" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="specialPopup_needTicket">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;z-index: 20;" wx:if="{{showNeedTicket}}">
+        <view bindtap="SpecialPopupNeedTicket_onClosed" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.8);"></view>
+        <view class="show-form" style="position:absolute;width:620rpx;height:654rpx;left:calc((100% - 620rpx)/2);top:calc((100% - 654rpx)/2);background: #FFFFFF;box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;">
+            <text class="center center2" style="position: absolute;left:0px;top:96rpx; font-size: 64rpx;color: #3663CD;text-align: center;width:100%;height:90rpx;">入场券不足</text>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/topic/icon_ticket.png?v=1" style="position: absolute;left:calc((100% - 210rpx)/2);top:210rpx;width:210rpx;height:168rpx;"></image>
+            <view style="position: absolute;left:0px;top:420rpx;height:40rpx;line-height: 28frpx;;font-size: 28rpx;color: #30D1FC;text-align: center;width:100%">邀请好友参赛可获得更多入场券 </view>
+            <view class="center center2" style="position: absolute;left:0px;bottom:0px;width:100%;height:180rpx;background: #EEF6FF;box-shadow: inset 0 1px 4px 0 rgba(223,223,223,0.50);border-bottom-left-radius: 20rpx;border-bottom-right-radius: 20rpx;">
+                <view bindtap="getTicketView_onOk" class="center center2" hoverClass="brightness" style="background: #00E1BD;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;width:340rpx;height:90rpx;">
+                    <text class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 46rpx;color: #FFFFFF;">更多入场券</text>
+                    <button id="request_ticket" openType="share" style="position: absolute; left:0; top:0; opacity:0; width:100%; height:100%;">隐藏的分享按钮</button>
+                </view>
+            </view>
+            <view bindtap="SpecialPopupNeedTicket_onClosed" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=0.1.12" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="ticket_info">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;z-index: 20;" wx:if="{{showTicketInfo}}">
+        <view bindtap="SpecialBtnTicketInfo_onClosed" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.8);"></view>
+        <view class="show-form" style="position:absolute;width:620rpx;height:780rpx;left:calc((100% - 620rpx)/2);top:calc((100% - 780rpx)/2);background: #FFFFFF;box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;">
+            <text class="center center2" style="position: absolute;left:0px;top:64rpx; font-size: 64rpx;color: #3663CD;text-align: center;width:100%;height:90rpx;">我的入场券</text>
+            <view class="row center center2" style="position: absolute;left:0px;top:157rpx;width:100%;height:168rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/topic/icon_ticket.png?v=1" style="width:210rpx;height:168rpx;"></image>
+                <view class="center center2" style="height:64rpx;line-height: 64frpx;font-size: 64rpx;color: #25A1FF;text-align: center;white-space: nowrap;">{{myTicket}}</view>
+            </view>
+            <view class="center center2" style="position: absolute;width:400rpx;height:120rpx;left:calc((100% - 400rpx)/2);top:406rpx; background: #7FC0FF;border: 6rpx solid #A2EBFF;box-shadow: inset 0 0 5rpx 0 #3A70E7;border-radius: 100px;">
+                <scroll-view scrollX="true" style="position:absolute;left:8rpx;width:calc(100% - 16rpx);top:0px;height:100%;">
+                    <view class="row start" style="height:100%;flex-wrap: wrap;width:calc({{friendsFrom.length}} * 129rpx);">
+                        <view class="column center center2" data-uid="{{item.uid}}" style="position:relative;width:129rpx;height:100%" wx:for="{{friendsFrom}}" wx:for-index="id" wx:key="id">
+                            <view class="userAvatar icon-rotate" style="position: absolute;top:calc((100% - 100rpx)/2);width: 100rpx;height: 100rpx;left:calc((100% - 100rpx)/2);">
+                                <template is="avatarOnly" data="{{avatarUrl:item.avatarUrl}}"></template>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="row center center2" style="position: absolute;left:0px;top:540rpx;width:100%">
+                <view style="width:206rpx;height:28rpx;line-height: 28rpx;text-align: right;font-size: 28rpx;color: #25A1FF;">今日好友助力</view>
+                <view style="width:13rpx"></view>
+                <view class="center center2" style="height:40rpx;line-height: 40rpx;font-size: 40rpx;color: #F447A2;text-align: center;white-space: nowrap;">{{getNum}}</view>
+            </view>
+            <view class="column center center2" style="position: absolute;left:0px;bottom:0px;width:100%;height:180rpx;background: #EEF6FF;box-shadow: inset 0 1px 4px 0 rgba(223,223,223,0.50);border-bottom-left-radius: 20rpx;border-bottom-right-radius: 20rpx;" wx:if="{{infoBtnState=='full'}}">
+                <view bindtap="SpecialBtnTicketInfo_fullClicked" class="center center2" hoverClass="brightness" style="position: relative; background: #00E1BD;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;width:340rpx;height:90rpx;">
+                    <text class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 46rpx;color: #FFFFFF;">更多入场券</text>
+                </view>
+                <view style="height:5rpx"></view>
+                <view class="center center2" style="height:33rpx;line-height: 24rpx;;font-size: 24rpx;color: #4A90E2;text-align: center;width:100%;white-space: nowrap;">邀请好友参赛可获得更多入场券</view>
+            </view>
+            <view class="column center center2" style="position: absolute;left:0px;bottom:0px;width:100%;height:180rpx;background: #EEF6FF;box-shadow: inset 0 1px 4px 0 rgba(223,223,223,0.50);border-bottom-left-radius: 20rpx;border-bottom-right-radius: 20rpx;" wx:elif="{{infoBtnState!='max'}}">
+                <view class="center center2" hoverClass="brightness" style="position: relative; background: #00E1BD;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;width:340rpx;height:90rpx;">
+                    <text class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 46rpx;color: #FFFFFF;">更多入场券</text>
+                    <button id="request_ticket" openType="share" style="position: absolute; left:0; top:0; opacity:0; width:100%; height:100%;">隐藏的分享按钮</button>
+                </view>
+                <view style="height:5rpx"></view>
+                <view class="center center2" style="height:33rpx;line-height: 24rpx;;font-size: 24rpx;color: #4A90E2;text-align: center;width:100%;white-space: nowrap;">邀请好友参赛可获得更多入场券</view>
+            </view>
+            <view class="column center center2" style="position: absolute;left:0px;bottom:0px;width:100%;height:180rpx;background: #EEF6FF;box-shadow: inset 0 1px 4px 0 rgba(223,223,223,0.50);border-bottom-left-radius: 20rpx;border-bottom-right-radius: 20rpx;" wx:else>
+                <view bindtap="SpecialBtnTicketInfo_onClosed" class="center center2" hoverClass="brightness" style="position: relative; background: #00E1BD;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;width:340rpx;height:90rpx;">
+                    <text class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 46rpx;color: #FFFFFF;">确 定</text>
+                </view>
+                <view style="height:5rpx"></view>
+                <view class="center center2" style="height:33rpx;line-height: 24rpx;;font-size: 24rpx;color: #4A90E2;text-align: center;width:100%;white-space: nowrap;">今日已获得全部入场券</view>
+            </view>
+            <view bindtap="SpecialBtnTicketInfo_onClosed" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=0.1.12" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="ticket_from_friend">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;z-index: 20;overflow: hidden;" wx:if="{{visible}}">
+        <view animation="{{ani_frame}}" style="position:absolute;width:182rpx;height:100rpx;right:0px;top:470rpx;transform: translate3d(100px,0,0);">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/img_tan2.png?v=1" style="width:182rpx;height:100rpx;"></image>
+            <view class="userAvatar icon-rotate" style="position: absolute;top:8rpx;width: 80rpx;height: 80rpx;left:10rpx;">
+                <template is="avatarOnly" data="{{avatarUrl:avatarUrl}}"></template>
+            </view>
+            <view animation="{{ani_ticket}}" style="position:absolute; left:0px;top:0px;width:100%;height:100%;transform: translate3d(100px,0,0) scale(0.4);opacity: 0;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/icon_ticket2.png?v=1" style="position: absolute;left:-40rpx;top:calc((100% - 200rpx)/2);width:240rpx;height:200rpx;"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="ticket_to_friend">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;z-index: 20;overflow: hidden;" wx:if="{{visible}}">
+        <view animation="{{ani_frame}}" style="position:absolute;width:182rpx;height:100rpx;left:0px;top:470rpx;transform: translate3d(-100px,0,0);">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/img_tan1.png?v=1" style="width:182rpx;height:100rpx;"></image>
+            <view class="userAvatar icon-rotate" style="position: absolute;top:8rpx;width: 80rpx;height: 80rpx;left:90rpx;">
+                <template is="avatarOnly" data="{{avatarUrl:avatarUrl}}"></template>
+            </view>
+            <view animation="{{ani_ticket}}" style="position:absolute; left:0px;top:0px;width:100%;height:100%;transform: translate3d(133px,-75px,0) scale(0.4);opacity: 0;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/icon_ticket2.png?v=1" style="position: absolute;left:10rpx;top:calc((100% - 200rpx)/2);width:240rpx;height:200rpx;"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="specialPopup_unlockRole">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;z-index: 20;" wx:if="{{visible}}">
+        <view bindtap="SpecialPopupUnlockRole_onClosed" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.8);"></view>
+        <view class="show-form" style="position:absolute;width:620rpx;height:730rpx;left:calc((100% - 620rpx)/2);top:calc((100% - 730rpx)/2);background: #FFFFFF;box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;">
+            <text class="center center2" style="position: absolute;left:0px;top:55rpx; font-size: 64rpx;color: #3663CD;text-align: center;width:100%;height:90rpx;">获得奖励</text>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/characters/{{img}}.png?v=1" style="position: absolute;left:calc((100% - 260rpx)/2);top:145rpx;width:260rpx;height:323rpx;"></image>
+            <view style="position: absolute;left:0px;top:499rpx;height:40rpx;line-height: 28frpx;;font-size: 28rpx;color: #30D1FC;text-align: center;width:100%">可在头脑吃鸡中使用</view>
+            <view class="center center2" style="position: absolute;left:0px;bottom:0px;width:100%;height:180rpx;background: #EEF6FF;box-shadow: inset 0 1px 4px 0 rgba(223,223,223,0.50);border-bottom-left-radius: 20rpx;border-bottom-right-radius: 20rpx;">
+                <view bindtap="gotoTNCJ" class="center center2" hoverClass="brightness" style="background: #00E1BD;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;width:340rpx;height:90rpx;">
+                    <text class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 46rpx;color: #FFFFFF;">去头脑吃鸡</text>
+                </view>
+            </view>
+            <view bindtap="SpecialPopupUnlockRole_onClosed" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=0.1.12" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="../../../template/avatarBase.wxml"></import>

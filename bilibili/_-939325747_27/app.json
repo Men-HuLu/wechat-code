@@ -1,0 +1,19 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/video/video",
+        "pages/pgcvideo/pgcvideo",
+        "pages/tagpage/tagpage",
+        "pages/download/download",
+        "pages/search/search",
+        "pages/indication/indication"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "white",
+        "navigationBarTitleText": "哔哩哔哩",
+        "navigationBarTextStyle": "black",
+        "onReachBottomDistance": 20,
+        "navigationStyle": "custom"
+    }
+}

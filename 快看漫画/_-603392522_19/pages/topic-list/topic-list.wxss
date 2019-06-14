@@ -1,0 +1,22 @@
+.list-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #f7f9fa;
+}
+
+.list-wrap .txt {
+    padding: 24rpx 20rpx 20rpx 30rpx;
+}
+
+.list-wrap .btn {
+    padding: 24rpx 32rpx 0 0;
+}
+
+.topic-list .topic {
+    border-top: 1rpx solid #e6e6e6;
+}
+
+.topic-list .topic:first-child {
+    border-top: 0;
+}

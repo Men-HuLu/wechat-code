@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>yl</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="====slice===" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-2" transform="translate(-549.000000, -923.000000)">
+            <g id="Group-11" transform="translate(549.000000, 923.000000)">
+                <rect id="Rectangle-57" stroke="#979797" stroke-width="0.583333333" fill="#D8D8D8" opacity="0" x="0.291666667" y="0.291666667" width="27.4166667" height="27.4166667"></rect>
+                <circle id="Oval-3" stroke="#1AAD19" stroke-width="2" cx="14" cy="14" r="12"></circle>
+                <path d="M9,13.5 L9,14.5 L13.5,14.5 L13.5,19 L14.5,19 L14.5,14.5 L19,14.5 L19,13.5 L14.5,13.5 L14.5,9 L13.5,9 L13.5,13.5 L9,13.5 Z" id="Combined-Shape" stroke="#1AAD19" stroke-width="2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

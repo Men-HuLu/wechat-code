@@ -1,0 +1,83 @@
+<view class="game-recharge-container">
+    <view class="game-recharge-header">
+        <view class="avatar">
+            <image class="default-icon" src="../assets/mycenter/defaulticon.png"></image>
+            <image class="avatar-icon" src="{{userInfo.avatar||''}}"></image>
+        </view>
+        <view class="user-content">
+            <view>
+                <view wx:if="{{isLogin}}">
+                    <text class="yuwan">鱼丸</text>
+                    <text class="nums">{{fishBall||0}}</text>
+                </view>
+                <view wx:if="{{!isLogin}}">
+                    <text class="unlogin">未登录</text>
+                </view>
+                <view class="name">{{userInfo.nickname||''}}</view>
+            </view>
+            <view catch:tap="showToast" class="get-yuwan" wx:if="{{isLogin}}">
+                <text>获取鱼丸</text>
+                <image class="arrow-icon" src="../assets/mycenter/arrowmore.png"></image>
+            </view>
+            <view class="login-wrap" wx:if="{{!isLogin}}">
+                <view bindtap="clickLoginBtn" class="login-btn">注册/登录</view>
+            </view>
+        </view>
+    </view>
+    <view class="game-recharge-wrap">
+        <view class="nav-change">
+            <view bindtap="chooseNav(0)" class="chat-tab {{isActive?'':'active'}}">
+                <text>全部</text>
+            </view>
+        </view>
+        <view class="game-recharge-content">
+            <view class="game-recharge-list">
+                <view class="game-recharge-item" wx:for="{{cardList}}" wx:for-index="idx" wx:key="index">
+                    <view class="game-recharge-item-image">
+                        <image class="hot" src="../assets/mycenter/hot-icon.png" wx:if="{{item.is_hot}}"></image>
+                        <image class="pic" src="{{item.logo_url}}"></image>
+                    </view>
+                    <view class="game-recharge-item-right">
+                        <view class="game-recharge-item-des">
+                            <text class="title">{{item.title}}</text>
+                            <text class="des">{{item.sub_title}}</text>
+                        </view>
+                        <view class="game-recharge-item-ctrl">
+                            <view class="go-use" wx:if="{{item.is_buy}}">
+                                <image class="usericon" src="https://cs-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/recharge-already.png?timestamp=1531487456"></image>
+                                <view bindtap="goUse" class="go-recharge-btn" data-item="{{item}}">去使用</view>
+                            </view>
+                            <view class="go-use" wx:if="{{!item.quantity||item.quantity<1}}">
+                                <image class="usericon" src="https://cs-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/recharge-out.png?timestamp=1531487503"></image>
+                                <view class="go-recharge-btn">暂抢光</view>
+                            </view>
+                            <view class="go-recharge" wx:if="{{!item.is_buy}}">
+                                <text class="real-price">￥{{item.oprice}}</text>
+                                <view bindtap="showRechargeModal" class="go-recharge-btn" data-item="{{item}}">限时免费</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <empty wx:if="{{isEmpty}}"></empty>
+            <error bindcustomevent="reload" wx:if="{{isError}}"></error>
+        </view>
+    </view>
+    <view catch:tap="hideToast" class="gift-toast" wx:if="{{showToast}}">
+        <view class="gift-toast-wrap">
+            <image class="gift-image" src="{{'https://cs-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/fish_ball.png?timestamp=1531472211'}}"></image>
+            <view class="gift-toast-content">{{toastMsg}}</view>
+            <view catch:tap="hideToast" class="bottom-btn">知道了</view>
+        </view>
+    </view>
+    <view catch:tap="hideModal" class="gift-toast free-toast" wx:if="{{showModal}}">
+        <view catch:tap="hideToast" class="gift-toast-wrap">
+            <view bindtap="hideModal" class="gift-close"> x </view>
+            <view class="free-toast-content">转发给群好友，免费领取腾讯游戏礼包~</view>
+            <button class="share-btn" openType="share">转发微信群</button>
+        </view>
+    </view>
+    <fromappshare curroominfo="curRoomInfo" wx:if="{{isFromAppShare}}"></fromappshare>
+    <goHome wx:else></goHome>
+    <popup from="game-recharge" wx:if="{{hasCard}}"></popup>
+</view>

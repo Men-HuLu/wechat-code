@@ -1,0 +1,23 @@
+.room-banner {
+    position: absolute;
+    bottom: 132rpx;
+    right: 30rpx;
+    width: 220rpx;
+    height: 132rpx;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+}
+
+.banner-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30rpx;
+    height: 30rpx;
+    opacity: 0.2;
+}

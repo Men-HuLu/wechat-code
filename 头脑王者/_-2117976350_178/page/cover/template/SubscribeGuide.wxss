@@ -1,0 +1,23 @@
+.discribe-arrow {
+    animation: frame-discribe-arrow 0.4s infinite alternate;
+}
+
+@-webkit-keyframes frame-discribe-arrow {
+    0% {
+        transform: translate3d(0,6px,0);
+    }
+
+    100% {
+        transform: translate3d(0,24px,0);
+    }
+}
+
+@keyframes frame-discribe-arrow {
+    0% {
+        transform: translate3d(0,6px,0);
+    }
+
+    100% {
+        transform: translate3d(0,24px,0);
+    }
+}

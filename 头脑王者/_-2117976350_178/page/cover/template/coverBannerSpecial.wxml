@@ -1,0 +1,31 @@
+<template name="bannerSpecial_over">
+    <view bindtap="bannerSpecial_onTapBanner" style="position: absolute;left:0px;top:0px;width:100%;height:100%;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/banner/{{subType}}.png?v=3" style="position: absolute;width:100%;height:100%;left:0px;top:0px;"></image>
+        <view class="center center2" style="position:absolute;width:132rpx;height:44rpx;right:0px;bottom:24rpx;">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_{{subType}}/button_over.png?v=3" style="width:100%;height:100%;"></image>
+        </view>
+    </view>
+</template>
+<template name="bannerSpecial_award">
+    <view bindtap="bannerSpecial_onTapBanner" style="position: absolute;left:0px;top:0px;width:100%;height:100%;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/banner/{{subType}}.png?v=3" style="position: absolute;width:100%;height:100%;left:0px;top:0px;"></image>
+        <view class="center center2" style="position:absolute;right:18rpx;bottom:38rpx;width:154rpx;height:44rpx;">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_{{subType}}/button_accept.png?v=3" style="width:100%;height:100%;"></image>
+        </view>
+        <view style="position: absolute;right:18rpx;bottom:12rpx;font-size: 20rpx;line-height:20rpx;color: #{{fontColor?fontColor:'FFFFFF'}};white-space: nowrap;">{{textCountdown}}</view>
+    </view>
+</template>
+<template name="bannerSpecial_calc">
+    <view bindtap="bannerSpecial_onTapBanner" style="position: absolute;left:0px;top:0px;width:100%;height:100%;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/banner/{{subType}}.png?v=3" style="position: absolute;width:100%;height:100%;left:0px;top:0px;"></image>
+        <view class="center center2" style="position:absolute;width:132rpx;height:44rpx;right:0px;bottom:24rpx;">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_{{subType}}/button_jiesuan.png?v=3" style="width:100%;height:100%;"></image>
+        </view>
+    </view>
+</template>
+<template name="bannerSpecial_normal">
+    <view bindtap="bannerSpecial_onTapBanner" style="position: absolute;left:0px;top:0px;width:100%;height:100%;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/banner/{{subType}}.png?v=3" style="position: absolute;width:100%;height:100%;left:0px;top:0px;"></image>
+        <view style="position: absolute;right:18rpx;bottom:12rpx;font-size: 20rpx;line-height:20rpx;color: #{{fontColor?fontColor:'FFFFFF'}};white-space: nowrap;">{{textCountdown}}</view>
+    </view>
+</template>

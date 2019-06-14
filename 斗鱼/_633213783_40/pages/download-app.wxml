@@ -1,0 +1,5 @@
+<view class="download-app">
+    <image class="download-top" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/download-app.png?timestamp=1537336732"></image>
+    <button bind:tap="clipboardLink" class="copy-link">点击复制链接</button>
+    <image class="download-bottom" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/bottom.png?timestamp=1537341245"></image>
+</view>

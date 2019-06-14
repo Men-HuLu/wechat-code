@@ -1,0 +1,67 @@
+.assistance-record {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #562ba1;
+}
+
+.record-list {
+    display: flex;
+    width: 93%;
+    height: 95%;
+    margin: auto;
+    background: url('https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/assistance-record.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.scroll-record-list {
+    width: 100%;
+    height: 95%;
+    margin: auto;
+}
+
+.record-item {
+    display: flex;
+    align-items: center;
+    height: 132rpx;
+    margin: 0 50rpx;
+}
+
+.record-avatar {
+    flex: 1;
+    display: flex;
+}
+
+.avatar-img {
+    width: 72rpx;
+    height: 72rpx;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.record-name {
+    flex: 3;
+    margin-left: 20rpx;
+    font-size: 29rpx;
+    color: #333333;
+}
+
+.record-success {
+    flex: 3;
+    font-size: 24rpx;
+    color: #ff5d23;
+    text-align: right;
+}
+
+.record-fail {
+    flex: 3;
+    font-size: 24rpx;
+    color: #999999;
+    text-align: right;
+}
+
+.record-res {
+    font-size: 22rpx;
+    color: #bbbbbb;
+    margin-top: 6rpx;
+}

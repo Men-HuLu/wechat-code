@@ -1,0 +1,7 @@
+<view class="noticebar" wx:if="{{isShow}}">
+    <text class="title">开启通知</text>
+    <text class="ctx">喜欢哔哩哔哩吗？可以开启新内容提醒哦~</text>
+    <button bindtap="startwatch" class="share-btn" disabled="{{disabled}}">
+    开启
+  </button>
+</view>

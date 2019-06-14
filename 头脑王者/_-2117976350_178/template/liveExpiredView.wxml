@@ -1,0 +1,20 @@
+<template name="liveExpiredView">
+    <view style="position:absolute;left:0px;top:0px;width:100%;height:100%;">
+        <view class="column-reverse start center2" style="background-color:#4E84E5;width:100%;height:100%"></view>
+        <view class="column center center2" style="position:absolute; width:100%; height:100%; left:0px; top:0px;">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/matching/img_logo.png" style="width:413rpx;height:190rpx;"></image>
+            <view style="height:38rpx"></view>
+            <view class="center2 center" style="width:100%; font-size: 36rpx;color: #fff;height:50rpx;font-weight:bold">发起者已经离开了对战</view>
+            <view class="center2 center" style="width:100%; font-size: 28rpx;color: #fff;height:40rpx;font-weight:bold">你可以自己发起一场对战，或去参加排位赛模式。</view>
+            <view style="height:116rpx"></view>
+            <view class="center center2" hoverClass="brightness" style="position:relative; width:310rpx;height:100rpx;font-size:36rpx; background-color:#5dbaff;border-radius:20rpx;box-shadow:0 2rpx 4rpx rgba(0,0,0,0.5);font-weight:bold">
+        发起好友对战
+        <button bindtap="liveExpiredView_onTapShareBtn" id="{{isZjw?'specialLiveFight':'liveFight'}}" openType="share" style="position:absolute;left:0px;top:0px;width:100%;height:100%;opacity: 0;">隐藏的分享按钮</button>
+            </view>
+            <view style="height:22rpx"></view>
+            <view bindtap="liveExpiredView_onTapPVEBtn" class="center center2" hoverClass="brightness" style="width:310rpx;height:100rpx;font-size:36rpx; background-color:#7ED321;border-radius:20rpx;box-shadow:0 2rpx 4rpx rgba(0,0,0,0.5);font-weight:bold">
+        参加排位赛
+      </view>
+        </view>
+    </view>
+</template>

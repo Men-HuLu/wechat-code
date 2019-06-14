@@ -1,0 +1,111 @@
+.class-wrap {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.class-top {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.class-top .tab-item {
+    min-width: 106rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+.filter-wrap {
+    position: relative;
+    font-size: 26rpx;
+    color: #555;
+    transition: height .3s;
+}
+
+.filter-wrap .filter-show {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding: 10rpx 0;
+}
+
+.filter-wrap .filter-line {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 66rpx;
+}
+
+.filter-wrap .filter {
+    position: relative;
+    min-width: 54rpx;
+    height: 46rpx;
+    line-height: 46rpx;
+    padding: 0 27rpx;
+    margin-top: 10rpx;
+    text-align: center;
+}
+
+.filter-wrap .filter:before {
+    content: "";
+    position: absolute;
+    left: -1rpx;
+    top: 13rpx;
+    width: 2rpx;
+    height: 20rpx;
+    background: #e6e6e6;
+}
+
+.filter-wrap .filter:first-child:before {
+    content: unset;
+}
+
+.filter-wrap .active {
+    color: #f5a623;
+}
+
+.filter-wrap .btn {
+    position: absolute;
+    right: 20rpx;
+    bottom: 20rpx;
+    line-height: 46rpx;
+}
+
+.filter-wrap .btn image {
+    width: 24rpx;
+    height: 24rpx;
+    margin: 14rpx 4rpx 0 0;
+}
+
+.swiper-wrap {
+    box-sizing: border-box;
+    z-index: 0;
+}
+
+.swiper-wrap,.swiper-wrap swiper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-wrap .scroll-view {
+    height: 100%;
+}
+
+.topic-list .topic {
+    border-top: 1rpx solid #e6e6e6;
+}
+
+.topic-list .topic:first-child {
+    border-top: 0;
+}
+
+.topic-list .txt {
+    padding: 24rpx 20rpx 20rpx 30rpx;
+}

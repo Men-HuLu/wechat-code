@@ -1,0 +1,13 @@
+<view class="wx-login">
+    <view class="wx-unauthorized">
+        <view class="default-icon-box">
+            <image class="default-icon" src="https://cs-op.douyucdn.cn/dyfelocal/act/5acc7c96d51caa4669f8b2de/defaulticon.png?timestamp=1527749111"></image>
+        </view>
+        <view class="default-title">未授权</view>
+        <view class="warm-tips">授权完善你的昵称、头像等公开信息</view>
+        <view class="warm-tips">获得更好体验</view>
+        <button bind:getuserinfo="bindGetUserInfo" class="goto-authorization" openType="getUserInfo" type="default">
+      去授权
+    </button>
+    </view>
+</view>

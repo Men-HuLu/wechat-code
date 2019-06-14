@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>CD</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="=slice=" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_充电">
+            <rect id="Rectangle-path" fill="#000000" fill-rule="nonzero" opacity="0" x="0" y="0" width="32" height="32"></rect>
+            <g id="Group" stroke-width="1" fill-rule="evenodd" transform="translate(7.000000, 2.000000)">
+                <polygon id="Shape" fill="#FFFFFF" fill-rule="nonzero" points="3.1134375 7.7725 17.5325 7.7725 17.5325 22.515625 3.1134375 22.515625"></polygon>
+                <path d="M16.296875,6.3559375 L16.296875,21.3465625 L1.703125,21.3465625 L1.703125,6.3559375 L16.296875,6.3559375 Z M17.796875,4.8559375 L0.203125,4.8559375 L0.203125,22.8465625 L17.796875,22.8465625 L17.796875,4.8559375 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                <path d="M4.71125,0.82125 L6.21125,0.82125 L6.21125,4.8559375 L4.71125,4.8559375 L4.71125,0.82125 Z M11.78875,0.82125 L13.28875,0.82125 L13.28875,4.955 L11.78875,4.955 L11.78875,0.82125 Z M8.25,21.6559375 L9.75,21.6559375 L9.75,27.17875 L8.25,27.17875 L8.25,21.6559375 Z M7.788125,18.24 L6.7275,17.179375 L9.2853125,14.6215625 L5.7075,13.8496875 L10.095,9.4625 L11.155625,10.523125 L8.7146875,12.9640625 L12.2925,13.735625 L7.788125,18.24 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

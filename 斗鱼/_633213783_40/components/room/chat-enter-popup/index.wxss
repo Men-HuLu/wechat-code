@@ -1,0 +1,76 @@
+.popup-chat {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,.5);
+}
+
+.popup-chat .popup-content {
+    position: relative;
+    width: 610rpx;
+    height: 508rpx;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: #FFFFFF;
+    border-radius: 16rpx;
+}
+
+.popup-content .popup-con {
+    width: 100%;
+    height: 419rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-con .popup-image {
+    width: 170rpx;
+    height: 180rpx;
+}
+
+.popup-con .popup-success {
+    width: 610rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #333333;
+    margin-top: 28rpx;
+}
+
+.popup-con .popup-invite {
+    width: 610rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #999999;
+    margin-top: 20rpx;
+}
+
+.popup-content .popup-line {
+    width: 100%;
+    height: 1rpx;
+    background-color: #EEEEEE;
+}
+
+.popup-content .popup-btn {
+    width: 100%;
+    height: 88rpx;
+}
+
+.popup-btn .share-btn {
+    width: 100%;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 32rpx;
+    color: #29A12E;
+    background-color: #ffffff;
+    border-radius: 16rpx;
+    padding: 0;
+}
+
+.share-btn::after {
+    border: none;
+}

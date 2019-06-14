@@ -1,0 +1,104 @@
+<import src="/template/model-topic.wxml"></import>
+<scroll-view scrollWithAnimation scrollY bindscrolltolower="updateComicList" bindscrolltoupper="updateComicList" class="topic-wrap" scrollTop="{{scrollTop}}" style="height: {{iPhoneX?'95.348':'100'}}%" upperThreshold="{{upperThreshold}}">
+    <view class="banner">
+        <kk-picture bindloaded="bannerLoaded" height="468" src="{{banner}}"></kk-picture>
+        <view class="shadow" style="opacity: {{bannerLoaded?0.7:0}}"></view>
+        <view bindtap="handleFav" class="follow {{followed?'followed':''}}" wx:if="{{bannerLoaded}}">
+            <text>{{followed?'已关注':'+ 关注'}}</text>
+        </view>
+        <view class="infos">
+            <view class="tag">
+                <view wx:for="{{topicInfo.tags}}" wx:key="*this">
+                    <text>{{item}}</text>
+                </view>
+            </view>
+            <view class="hot">
+                <text>总热度 {{topicInfo.hotnum}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="topic-tab-head">
+        <view class="topic-tab-btn {{item.id==tab?'active':''}}" wx:for="{{tabsData}}" wx:key="id">
+            <text bindtap="tabTap" bindtouchstart="tabTouch" data-current="{{item.id}}">{{item.name}}</text>
+        </view>
+    </view>
+    <view class="topic-tab-body">
+        <view class="topic-tab-infos" hidden="{{tab}}">
+            <view class="topic-detail">
+                <text class="title">作品简介</text>
+                <text class="intro">{{topicInfo.intro}}</text>
+                <scroll-view scrollX style="height: 60rpx">
+                    <view class="author-list">
+                        <text class="tit">作者：</text>
+                        <view class="author" wx:for="{{topicInfo.author}}" wx:key="id">
+                            <view class="face">
+                                <view class="user-facewrap">
+                                    <image class="user-face" src="{{item.avatar_url}}"></image>
+                                    <image class="user-grade" src="/image/ico-v.png"></image>
+                                </view>
+                            </view>
+                            <text>{{item.nickname}}</text>
+                        </view>
+                    </view>
+                </scroll-view>
+                <view class="data">
+                    <view>
+                        <image src="/image/ico-hot-color.png"></image>
+                        <text>人气值{{topicInfo.popular}}</text>
+                    </view>
+                    <view>
+                        <image src="/image/ico-comment-color.png"></image>
+                        <text>总评论{{topicInfo.comment}}</text>
+                    </view>
+                    <view>
+                        <image src="/image/ico-correct.png"></image>
+                        <text>{{topicInfo.follow}}人已关注</text>
+                    </view>
+                </view>
+            </view>
+            <view class="comment-list" hidden="{{!comment.num}}">
+                <view class="title">精彩漫评<text>（{{comment.num}}条）</text>
+                </view>
+                <view class="comment" wx:for="{{comment.list}}" wx:key="index">
+                    <view class="top">
+                        <view class="face">
+                            <view class="user-facewrap">
+                                <image class="user-face" src="{{item.avatar_url}}"></image>
+                                <image class="user-grade" src="/image/ico-v.png" wx:if="{{item.grade}}"></image>
+                            </view>
+                        </view>
+                        <view class="name-wrap">
+                            <view class="name">{{item.nickname}}</view>
+                            <view class="time">{{item.time}}</view>
+                        </view>
+                        <view bindtap="handlePraise" class="praise" data-id="{{item.id}}" data-index="{{item.index}}">
+                            <view class="praise-wrap">
+                                <image src="/image/{{item.praised?'ico-praise-color':'ico-praise'}}.png"></image>
+                                <text>{{item.praiseNum}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view bindtap="toggleCotent" class="content" data-index="{{item.index}}">
+                        <text class="{{!item.showAll?'expand':''}}">{{item.content}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="topic-tab-comic" hidden="{{!tab}}">
+            <view class="info">
+                <view>{{updateInfo}}</view>
+                <view bindtap="sortChange" class="order">{{sort?'正序':'倒序'}}<image src="/image/ico-{{sort?'head':'tail'}}.png"></image>
+                </view>
+            </view>
+            <template is="comiclist" data="{{list:comicView}}"></template>
+        </view>
+    </view>
+</scroll-view>
+<view class="blank" wx:if="{{iPhoneX}}"></view>
+<view class="btn-bottom" style="bottom: {{iPhoneX?'4.652':'0'}}%; transform: translateY({{comicView.length?'0':'98'}}rpx);">
+    <view class="comic">
+        <text>{{lastComicTit}}</text>
+    </view>
+    <view bindtap="jumpComic" class="btn" data-id="{{lastComicId}}">{{readList.length?'继续':'开始'}}阅读</view>
+</view>
+<kk-ensure text="{{toast}}"></kk-ensure>

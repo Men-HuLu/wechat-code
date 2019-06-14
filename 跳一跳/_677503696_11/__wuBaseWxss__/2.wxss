@@ -1,0 +1,36 @@
+.service-info {
+    font-size: 28rpx;
+}
+
+.service-info__avatar__wrp {
+    display: inline-block;
+    font-size: 0;
+    position: relative;
+    margin-right: 16rpx;
+    vertical-align: middle;
+}
+
+.unread-dot {
+    width: 12rpx;
+    height: 12rpx;
+    background-color: #00C777;
+    border-radius: 100%;
+    position: absolute;
+    right: -4rpx;
+    bottom: -4rpx;
+}
+
+.service-info__avatar {
+    width: 48rpx;
+    height: 48rpx;
+    border-radius: 4rpx;
+}
+
+.service-info__name {
+    vertical-align: middle;
+    font-size: 30rpx;
+}
+
+.service-info__ft .icon-more {
+    margin-left: 12rpx;
+}

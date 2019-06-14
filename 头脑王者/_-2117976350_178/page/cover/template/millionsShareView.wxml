@@ -1,0 +1,50 @@
+<template name="millionsShareView">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;" wx:if="{{visible}}">
+        <view style="position: absolute; left:0px; top:0px; width: 100%; height:100%; opacity: 0; overflow: hidden;">
+            <canvas canvasId="millionsShareViewCanvas" style="position: absolute;left:750rpx;top:0px;width:750px;height:1000px;"></canvas>
+        </view>
+        <view bindtap="onTapMillionsShareView_close" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="show-form" style="position:absolute;width:100%;height:100%;left:0px;top:0px;">
+            <view style="position: absolute;left:calc((100% - 600rpx)/2);top:190rpx; width:600rpx;height:780rpx;border-radius:20rpx;background: #fff">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/season/s3_milions/img_share2.jpg?v=1" style="position: absolute;left:0px;top:0px;width:600rpx;height:650rpx;border-radius:20rpx 20rpx 0 0;"></image>
+                <view class="column center center2" style="position: absolute;left:0px;top:0px;width:100%;height:650rpx;">
+                    <view style="position: absolute;left:0px;top:0px;width:100%;height:100%" wx:if="{{isKing}}">
+                        <view style="position: absolute;left:calc((100% - 428rpx)/2);top:46rpx;width:428rpx;height:90rpx;border-radius: 100rpx;background: #fff">
+                            <view style="width: 90rpx; height: 90rpx;position: absolute; left:0px; top:0px;">
+                                <template is="avatarOnly" data="{{avatarUrl:avatarUrl}}"></template>
+                            </view>
+                            <view style="position: absolute;left:90rpx;top:16rpx;height:24rpx;line-height: 24rpx;font-size: 24rpx;color: #F16928;white-space: nowrap;">击败{{beatNum||0}}位挑战者</view>
+                            <view style="position: absolute;left:90rpx;top:50rpx;height:28rpx;line-height: 28rpx;font-size: 28rpx;color: #436DBF;white-space: nowrap;">晋级第三赛季头脑王者</view>
+                        </view>
+                        <view style="position: absolute;left:50rpx;top:182rpx;height:30rpx;line-height: 30rpx;font-size: 30rpx;color: #fff;white-space: nowrap;">我共回答了{{answerNum||0}}道题目，</view>
+                        <view style="position: absolute;left:50rpx;top:224rpx;height:40rpx;line-height: 40rpx;font-size: 40rpx;color: #fff;white-space: nowrap;">只为每天了解世界多一点。</view>
+                    </view>
+                    <view style="position: absolute;left:0px;top:0px;width:100%;height:100%" wx:else>
+                        <view style="position: absolute;left:calc((100% - 428rpx)/2);top:46rpx;width:428rpx;height:90rpx;border-radius: 100rpx;background: #fff">
+                            <view style="width: 90rpx; height: 90rpx;position: absolute; left:0px; top:0px;">
+                                <template is="avatarOnly" data="{{avatarUrl:avatarUrl}}"></template>
+                            </view>
+                            <view class="row center center2 space-a" style="position: absolute;left:94rpx;top:0px;height:100%;right:0px;">
+                                <view style="height:24rpx;line-height: 24rpx;font-size: 24rpx;color: #3663CD;white-space: nowrap;">晋级第三赛季</view>
+                                <view style="height:34rpx;line-height: 34rpx;font-size: 34rpx;color: #F27337;white-space: nowrap;">{{matchName}}</view>
+                            </view>
+                        </view>
+                        <view style="position: absolute;left:50rpx;top:182rpx;height:30rpx;line-height: 30rpx;font-size: 30rpx;color: #fff;white-space: nowrap;">我共回答了{{answerNum||0}}道题目，</view>
+                        <view style="position: absolute;left:50rpx;top:224rpx;height:40rpx;line-height: 40rpx;font-size: 40rpx;color: #fff;white-space: nowrap;">只为每天了解世界多一点。</view>
+                    </view>
+                </view>
+                <view class="row center2 space-a" style="position: absolute;bottom:0px;left:0px; width:100%;height:130rpx;">
+                    <view bind:tap="onTapMillionsShareView_save" class="center center2" style="position: relative;background: #00E1BD;box-shadow: 0 4rpx 0 0 rgba(0,0,0,0.34);border-radius: 100rpx;width:240rpx;height:76rpx">
+                        <view class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 32rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);">
+                            保存到相册
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="onTapMillionsShareView_close" class="center center2" style="position: absolute;right: 8rpx; top:8rpx; width:80rpx;height:80rpx">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=1" style="width:30rpx;height:30rpx"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="/template/avatarBase.wxml"></import>

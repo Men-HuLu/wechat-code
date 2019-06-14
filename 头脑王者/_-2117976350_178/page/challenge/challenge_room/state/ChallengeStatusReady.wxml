@@ -1,0 +1,84 @@
+<template name="ChallengeStatusReady">
+    <view class="center center2 show-over" style="position:absolute;width:100%;height:calc(100% - 100rpx);left:0px;top:0px;" wx:if="{{showOver}}">
+        <view class="center center2" style="font-size:50rpx;font-weight:bold;white-space: nowrap;">比赛时间到</view>
+    </view>
+    <view class="column center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;" wx:else>
+        <view animation="{{ani_hole_winner}}" class="column start center2" id="challengerHole" style="position:absolute;left:calc((100% - 164rpx)/2);top:8px; width:164rpx;height:212rpx;transform:scale(1) translate3d(0,0,0);">
+            <view animation="{{ani_winner_null}}" style="position:absolute;left:calc((100% - 120rpx) / 2);top:0px;width:120rpx;height:120rpx;transform: scale(1);">
+                <image backgroundSize="cover" class="avatarOnly-bg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/img_friendmatch_opponent.png"></image>
+                <image class="avatarOnly-border" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/outline_user.png"></image>
+            </view>
+            <view animation="{{ani_winner_full}}" style="position:absolute;left:0px;top:0px;width:100%;height:100%;transform: scale(0) ;transform-origin: center 60rpx;">
+                <view class="center center2" style="position:absolute;left:calc((100% - 120rpx)/2);top:0px;width:120rpx;height:120rpx;">
+                    <template is="avatarOnly" data="{{...winnerInfo}}"></template>
+                </view>
+                <view style="position:absolute;left:0px;top:128rpx;width:100%; font-size: 24rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);white-space: nowrap;text-align: center;" wx:if="{{!!winnerInfo.name}}">{{winnerInfo.name}}</view>
+                <view class="row center center2" style="position:absolute;left:0px;top:161rpx;width:160rpx;height:50rpx; background: #F2B24B;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;" wx:if="{{!!winnerInfo.name}}">
+                    <view style="height:11rpx;width:11rpx;background: #8B572A;box-shadow: 0 0 2px 0 rgba(124,0,0,0.50);border-radius: 100rpx;"></view>
+                    <view style="width:128rpx;font-size: 36rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(153,0,0,0.50);text-align: center;">{{winnerInfo.successCount}}胜</view>
+                    <view style="height:11rpx;width:11rpx;background: #8B572A;box-shadow: 0 0 2px 0 rgba(124,0,0,0.50);border-radius: 100rpx;"></view>
+                </view>
+            </view>
+        </view>
+        <view animation="{{ani_centerview}}" class="column start center2" style="position:absolute;left:0px;top:404rpx;width:100%;transform: scale(1);">
+            <view style="position:absolute;top:0px;left:0px; width:100%;height:4rpx;background-image: linear-gradient(-90deg, rgba(255,255,255,0.00) 5%, #FFFFFF 50%, rgba(255,255,255,0.00) 97%);"></view>
+            <view style="height:18rpx"></view>
+            <view class="column center center2" style="width:80%;">
+                <view style="width:100%;" wx:if="{{btnStatus==0}}">
+                    <view style="width:100%;font-size: 42rpx; color: #FFFFFF;font-weight: bold;text-align: center;white-space: nowrap;line-height:42rpx;">等待对手加入...</view>
+                </view>
+                <view class="column center center2" style="width:100%;" wx:elif="{{btnStatus==1}}">
+                    <view class="row center center2" style="width:532rpx;height:130rpx;background: rgba(0,225,189,0.5);box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100px;">
+                        <view style="font-size: 80rpx;color: #FFFFFF;letter-spacing: 6.67rpx;;text-align: center;white-space: nowrap;font-weight: bolder">{{countdownToPlundering.text}}</view>
+                        <view style="width:36rpx"></view>
+                        <view style="font-size: 40rpx;color: #FFFFFF;letter-spacing: 6.67rpx;;text-align: center;white-space: nowrap">秒后开始抢位</view>
+                    </view>
+                </view>
+                <view class="column center center2" style="width:100%;" wx:elif="{{btnStatus==2}}">
+                    <view bindtap="onTapBtnPlundering" class="row center center2" hoverClass="brightness" style="width:532rpx;height:130rpx;background: rgba(0,225,189,1);box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100px;">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/img_thunder.png" style="width:61rpx;height:74rpx;"></image>
+                        <view style="width:40rpx"></view>
+                        <view style="font-size: 52rpx;color: #FFFFFF;letter-spacing: 6.67rpx;;text-align: center;white-space: nowrap;text-shadow: 0rpx 2rpx 4rpx #555;">我要挑战</view>
+                    </view>
+                </view>
+            </view>
+            <view style="height:14rpx"></view>
+            <view style="position:absolute;bottom:0rpx;left:0rpx; width:100%;height:4rpx;background-image: linear-gradient(-90deg, rgba(255,255,255,0.00) 5%, #FFFFFF 50%, rgba(255,255,255,0.00) 97%);"></view>
+        </view>
+        <view class="center center2" style="position:absolute;left:0px;top:428rpx;width:100%;height:190rpx;" wx:if="{{countdownToFight.visible}}">
+            <view animation="{{ani_countDownToFight}}" class="center center2" style="width:100%;height:100%;transform: scale(1);opacity: 1;">
+                <view style="font-size: 160rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);white-space: nowrap;font-weight: bold;" wx:if="{{countdownToFight.num>=1}}">{{countdownToFight.num}}</view>
+                <view style="font-size: 60rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);white-space: nowrap;font-weight: bold;" wx:else>答题开始</view>
+            </view>
+        </view>
+        <view animation="{{ani_hole_challenge}}" class="column start center2" id="challengerHole" style="position:absolute;left:calc((100% - 164rpx)/2);top:714rpx; width:164rpx;height:212rpx;transform:scale(1) translate3d(0,0,0);">
+            <view animation="{{ani_challenge_null}}" style="position:absolute;left:calc((100% - 120rpx) / 2);top:0px;width:120rpx;height:120rpx;transform: scale(1);">
+                <image backgroundSize="cover" class="avatarOnly-bg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/img_friendmatch_opponent.png"></image>
+                <image class="avatarOnly-border" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/outline_user.png"></image>
+            </view>
+            <view animation="{{ani_challenge_full}}" style="position:absolute;left:0px;top:0px;width:100%;height:100%;transform: scale(0) ;transform-origin: center 60rpx;">
+                <view class="center center2" style="position:absolute;left:calc((100% - 120rpx)/2);top:0px;width:120rpx;height:120rpx;">
+                    <template is="avatarOnly" data="{{...challengerInfo}}"></template>
+                </view>
+                <view style="position:absolute;left:0px;top:128rpx;width:100%; font-size: 24rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);white-space: nowrap;text-align: center;" wx:if="{{!!challengerInfo.name}}">{{challengerInfo.name}}</view>
+                <view class="row center center2" style="position:absolute;left:0px;top:161rpx;width:160rpx;height:50rpx; background:#F2B24B;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;" wx:if="{{!!challengerInfo.name}}">
+                    <view style="height:11rpx;width:11rpx;background: #8B572A;box-shadow: 0 0 2px 0 rgba(124,0,0,0.50);border-radius: 100rpx;"></view>
+                    <view style="width:128rpx;font-size: 36rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(153,0,0,0.50);text-align: center;">{{challengerInfo.successCount}}胜</view>
+                    <view style="height:11rpx;width:11rpx;background: #8B572A;box-shadow: 0 0 2px 0 rgba(124,0,0,0.50);border-radius: 100rpx;"></view>
+                </view>
+            </view>
+        </view>
+        <view class="center center2" style="position:absolute;width:188rpx;height:64rpx;left:calc((100% - 180rpx)/2);bottom:165rpx">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/btn_match_invite.png?v=2.1.7" style="width:100%;height:100%;"></image>
+            <button openType="share" style="position: absolute; left:0px;bottom:0px;opacity:0;width:100%;height:100%">看不见的分享按钮</button>
+        </view>
+        <view class="row center center2" style="position:absolute;left:0px;bottom:110rpx;width:100%;height:42rpx" wx:if="{{!!countDownToExpire}}">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/icon_match_alarm.png?v=2.1.7" style="width:30rpx;height:30rpx;"></image>
+            <view style="width:4rpx;"></view>
+            <view class="center center2" style="font-size: 24rpx;color: #fff;white-space: nowrap">擂台剩余时间{{countDownToExpire}}</view>
+        </view>
+        <image bindtap="onTapWifiBtn" src="/image/battle/icon_nowifi_small.png?v=0?v=0" style="width: 88rpx; height: 88rpx; position: absolute; bottom: 110rpx; right: 16rpx;" wx:if="{{wsconnectBreaking}}"></image>
+    </view>
+</template>
+<import src="/template/avatarBase.wxml"></import>
+<import src="../../template/audienceView.wxml"></import>

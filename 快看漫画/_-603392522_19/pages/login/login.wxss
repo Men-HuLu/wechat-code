@@ -1,0 +1,115 @@
+.login-wrap {
+    width: 100%;
+    height: 100%;
+}
+
+.form {
+    padding: 73rpx;
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1rpx solid #e6e6e6;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-top: 26rpx;
+}
+
+.label {
+    font-size: 28rpx;
+    color: #f5a623;
+    padding-right: 20rpx;
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    font-size: 40rpx;
+    color: #442509;
+}
+
+.phcolor {
+    font-size: 30rpx;
+    color: #999;
+}
+
+.btn-login {
+    width: 100%;
+    height: 92rpx;
+    line-height: 92rpx;
+    text-align: center;
+    margin-top: 60rpx;
+}
+
+.btn-wx {
+    background: #5bc33b;
+    display: flex;
+    justify-content: center;
+    font-size: 26rpx;
+    color: #fff;
+    border-radius: 10rpx;
+}
+
+.btn-wx image {
+    width: 40rpx;
+    height: 40rpx;
+    z-index: 1;
+    margin-top: 28rpx;
+    margin-right: 12rpx;
+}
+
+.line {
+    height: 112rpx;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.line-or {
+    font-size: 28rpx;
+    color: #d8d8d8;
+    width: 140rpx;
+    text-align: center;
+    line-height: 164rpx;
+}
+
+.line-border {
+    width: 100%;
+    margin: 80rpx 0rpx 30rpx;
+    height: 2rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.info-hit {
+    width: 100%;
+    line-height: 24px;
+    text-align: center;
+    padding-top: 40rpx;
+    font-size: 24rpx;
+    color: #d8d8d8;
+    font-weight: 200;
+}
+
+.secCode {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 26rpx;
+}
+
+.secCode button {
+    background: #fff;
+    color: #f5a623;
+    border: 1px solid #f5a623;
+    width: 220rpx;
+    height: 83rpx;
+    margin: 0;
+    font-size: 24rpx;
+    line-height: 79rpx;
+}
+
+.secCode button:after {
+    border: none;
+}

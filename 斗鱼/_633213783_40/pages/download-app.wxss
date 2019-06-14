@@ -1,0 +1,35 @@
+.download-app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.download-app .download-top {
+    width: 600rpx;
+    height: 874rpx;
+    margin-top: 40rpx;
+}
+
+.download-app .copy-link {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 170rpx;
+    width: 320rpx;
+    height: 84rpx;
+    color: #ffffff;
+    font-size: 32rpx;
+    background-image: linear-gradient(-90deg,#ffb11c 0%,#ff5d23 100%);
+    border-radius: 100rpx;
+}
+
+.download-app .download-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 750rpx;
+    height: 160rpx;
+}

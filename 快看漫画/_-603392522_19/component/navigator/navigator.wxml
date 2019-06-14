@@ -1,0 +1,9 @@
+<view style="height: {{statusBarHeight+navigatorHeight}}px">
+    <view class="navigator">
+        <view style="height: {{statusBarHeight}}px"></view>
+        <view style="height: {{navigatorHeight}}px; position: relative">
+            <text bindtap="test" class="title" style="line-height: {{navigatorHeight}}px">{{titleText}}</text>
+            <image bindtap="backHome" class="btn" mode="widthFix" src="/image/ico-home.png" style="width: {{navigatorHeight}}px; height: {{navigatorHeight}}px;"></image>
+        </view>
+    </view>
+</view>

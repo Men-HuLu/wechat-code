@@ -1,0 +1,104 @@
+<template name="rankItem">
+    <view class="column start center2" style="position:relative;width: 658rpx;height: 186rpx;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/img_ranking_list_{{item.itsMe?'green':'blue'}}.png" style="width:100%;height:186rpx;"></image>
+        <view bindtap="{{onItemTap}}" class="row center2 start" data-friend-id="{{item.uid}}" hoverClass="brightness" style="position:absolute;left:0px;top:0px;width: 100%;height: 186rpx;">
+            <view class="row start center2" style="color:#fff;font-size:36rpx;position:absolute;left:16rpx;top:12rpx;height:43rpx;font-weight:900;">{{item.rank}}
+            </view>
+            <view style="position:absolute;left:176rpx;top:calc((100% - 3rpx) / 2);height:3rpx;right:8rpx;background-color:#fff;"></view>
+            <view style="width: 120rpx; height: 120rpx;position: absolute; left:60rpx; top:calc((100% - 120rpx) / 2);">
+                <template is="avatarOnly" data="{{avatarUrl:item.avatarUrl,id:item.headId}}"></template>
+            </view>
+            <view class="end-with-3dot" style="position:absolute;left:206rpx;top:38rpx;height:40rpx;width:300rpx;font-size:28rpx;line-height: 40rpx;">{{item.nickName}}</view>
+            <view class="row-reverse start center2" style="position:absolute;right:16rpx;top:45rpx;height:33rpx;font-size:24rpx;white-space: nowrap;" wx:if="{{item.city}}">来自：{{item.city}}</view>
+            <view class="row start center2" style="position:absolute;left:194rpx;bottom:38rpx;width:300rpx;height:40rpx;">
+                <view style="position:relative;width:151rpx;height:40rpx;">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/img_degree.png" style="width:100%;height:100%;"></image>
+                    <view class="center center2" style="position:absolute;font-size:30rpx;color:#fff;width:100%;height:100%;left:0px;top:0px">{{item.matchName}}</view>
+                </view>
+                <view class="row start center2" style="height:50rpx;" wx:if="{{item.cupsSource&&item.cupsSource.length>0}}">
+                    <view class="row start center2">
+                        <view style="width:4rpx"></view>
+                        <view bindtap="btn_cup_clicked" data-id="{{cupitem.id}}" hoverClass="icon-rotate" style="width:{{166/item.cupsSource.length>54?54:166/item.cupsSource.length}}rpx;height:50rpx;" wx:for="{{item.cupsSource}}" wx:for-index="cupindex" wx:for-item="cupitem" wx:key="cupid">
+                            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/trophy/{{cupitem.id}}.png?v=0.1" style="width:50rpx;height:50rpx;"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="row start center2" style="position:absolute;right:16rpx;bottom:16rpx;width:135rpx;height:42rpx;border-radius: 21rpx;background-color:#4481DF;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/icon_star_default.png" style="width:38rpx;height:36rpx;padding-left:8rpx"></image>
+                <view style="font-size:30rpx;color:#fff;font-weight:bold;padding-left:4rpx">{{item.star}}</view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="../../template/avatarNoName.wxml"></import>
+<import src="../../template/shareBtn.wxml"></import>
+<import src="../../template/avatarBase.wxml"></import>
+<view class="aniMainView" style="background-position:{{backgroundPosition}};">
+    <view animation="{{ani_head_panel}}" class="column start center2" style="transform:translate3d(0,-110px,0);width: 100%; height: 220rpx; background-color: #4E84E5; display: flex; position: absolute;  left: 0px;border-bottom-left-radius: 20rpx;border-bottom-right-radius: 20rpx;">
+        <view style="height:116rpx;line-height:116rpx;font-weight:bold;" wx:if="{{tabPage==2}}">上赛季英雄榜</view>
+        <view class="column start center2" wx:else>
+            <view animation="{{ani_head_title}}" class="row center center2 space-a" style="transform:translate3d(0,0px,0); position:absolute;left:15%;width:70%;height:60rpx;opacity:0;">
+                <view class="center center2" style="width:160rpx;height:60rpx;font-size:40rpx;color:#fff;white-space: nowrap;border-bottom:  2px solid #fff;" wx:if="{{tabPage==0}}">好友排行</view>
+                <view bindtap="onTapTabBtn" class="center center2" style="width:160rpx;height:60rpx;font-size:40rpx;color:#8EBCFE;white-space: nowrap;" wx:if="{{tabPage==1}}">好友排行</view>
+                <view style="width:3rpx;height:100%;background-color:#8EBCFE"></view>
+                <view class="center center2" style="width:160rpx;height:60rpx;font-size:40rpx;color:#fff;white-space: nowrap;border-bottom:  2px solid #fff;" wx:if="{{tabPage==1}}">世界排行</view>
+                <view bindtap="onTapTabBtn" class="center center2" style="width:160rpx;height:60rpx;font-size:40rpx;color:#8EBCFE;white-space: nowrap;" wx:if="{{tabPage==0}}">世界排行</view>
+            </view>
+            <view style="height:116rpx"></view>
+        </view>
+        <image animation="{{ani_head_hole}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/img_mask_list.png" style=" width:660rpx;height:24rpx;transform: scale(0,1);"></image>
+    </view>
+    <view style="width: 100%; height: 220rpx; position: absolute; bottom: 0px; left: 0px;">
+        <view class="foot_show column start center2" style="transform: translate3d(0,0px,0); width: 100%; height: 100%; background-color: #4E84E5; display:flex; border-top-left-radius: 20rpx;border-top-right-radius: 20rpx;">
+            <view style="height:8rpx"></view>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/img_mask_list.png" style="width:660rpx;height:24rpx;transform:rotate(180deg);"></image>
+            <view wx:if="{{tabPage==1}}">
+                <view style="height:33rpx;font-size:24rpx;color:#fff;padding-top:16rpx;" wx:if="{{self.rank>0}}">当前我的世界排名{{self.rank}}</view>
+                <view style="height:33rpx;font-size:24rpx;color:#fff;padding-top:16rpx;" wx:else>未上榜</view>
+            </view>
+            <view wx:else>
+                <view class="center center2" style="height:33rpx;font-size:24rpx;color:#fff;padding-top:10rpx;">榜内为游戏好友，非微信好友。当前好友数：{{friendCount}}／150</view>
+            </view>
+            <view bindtap="btn_goto_lastseason" hoverClass="brightness" style="position: absolute;left:calc((100% - 443rpx)/2); bottom:20rpx;width:443rpx;height:125rpx;transition:transform 0.5s ease;transform: translate3d({{left_btn_last}}px,0,0);">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/btn_last_season.png" style="width:100%;height:100%;"></image>
+            </view>
+            <view bindtap="btn_goto_curseason" class="center center2" hoverClass="brightness" style="transition:transform 0.5s ease;transform: translate3d({{left_btn_back}}px,0,0);position:absolute;left:calc((100% - 310rpx)/2);bottom:40rpx;width:310rpx;height:100rpx;font-size:48rpx; background-color:#5dbaff;border-radius:20rpx;box-shadow:0 2rpx 4rpx rgba(0,0,0,0.5);font-weight:bold">
+                返回
+            </view>
+        </view>
+    </view>
+    <view class="column start center2" style="position: absolute;left:0px;top:122rpx;bottom:196rpx; width: 100%;overflow: hidden;" wx:if="{{tabPage==0}}">
+        <scroll-view animation="{{ani_list}}" name="view-listview" scrollY="true" style=" width: 650rpx;height:100%;transform: translate3d(0,-100%,0);">
+            <view class="column start center2" style="display:flex" wx:for="{{friends}}" wx:for-index="uid" wx:key="uid">
+                <template is="rankItem" data="{{item:item,onItemTap:item.uid>0?'callback_item_clicked':''}}" wx:if="{{item.uid>0}}"></template>
+                <view class="column center2" style="width:100%;height:874rpx; position: relative;align-self:center;box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);border-radius:10rpx;background-color:#fff" wx:else>
+                    <view style="height:124rpx"></view>
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/matching/img_logo.png" style="width:413rpx;height:190rpx;"></image>
+                    <view style="height:96rpx"></view>
+                    <view class="font-white-1 center center2" style="width:100%;height:67rpx;color:#4353A4;font-size:48rpx;font-weight:bold;">邀请朋友一起玩</view>
+                    <view class="font-blue-1 center center2" style="width:100%;height:50rpx;color:#5dbaff;font-size:36rpx;font-weight:bold;">将朋友从老年痴呆的状态拯救出来!</view>
+                    <view style="height:162rpx"></view>
+                    <view class="center center2" style="background-color:#5dbaff;border-radius:20rpx;width:310rpx;height:100rpx;color:#fff;font-size:36rpx;box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);">
+                            邀请好友加入
+                            <button openType="share" style="position: absolute; left:0;bottom:0px;opacity:0;width:100%;height:100%"></button>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="column start center2" style="position: absolute;left:0px;top:122rpx;bottom:196rpx; width: 100%;" wx:if="{{tabPage==1}}">
+        <scroll-view name="view-listview" scrollY="true" style="width: 650rpx;height:100%;">
+            <view class="column start center2" style="display:flex" wx:for="{{worldMatch}}" wx:for-index="uid" wx:key="uid">
+                <template is="rankItem" data="{{item:item,onItemTap:item.uid>0?'callback_worldrankitem_clicked':''}}"></template>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="column start center2" style="position: absolute;left:0px;top:122rpx;bottom:196rpx; width: 100%;overflow: hidden;" wx:if="{{tabPage==2}}">
+        <scroll-view animation="{{ani_list_last}}" name="view-listview" scrollY="true" style="width: 650rpx;height:100%;transform: translate3d(0,-100%,0);">
+            <view class="column start center2" style="display:flex" wx:for="{{lastSeasonRank}}" wx:for-index="uid" wx:key="uid">
+                <template is="rankItem" data="{{item:item,onItemTap:item.uid>0?'callback_lastmatchitem_clicked':'',hideRedPack:true}}"></template>
+            </view>
+        </scroll-view>
+    </view>
+</view>

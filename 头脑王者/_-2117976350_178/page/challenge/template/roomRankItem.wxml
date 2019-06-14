@@ -1,0 +1,36 @@
+<template name="roomRankItem">
+    <view class="column start center2" style="position:relative;width:650rpx;height:173rpx;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/img_ranking_list_{{item.isMe?'green':'blue'}}.png" style="width:100%;height:100%rpx;"></image>
+        <view class="row center2 start" hoverClass="brightness" style="position:absolute;left:0px;top:0px;width: 100%;height: 173rpx;">
+            <view class="row start center2" style="color:#fff;font-size:36rpx;position:absolute;left:16rpx;top:12rpx;height:43rpx;font-weight:900;">{{item.rank}}
+            </view>
+            <view style="position:absolute;left:176rpx;top:calc((100% - 3rpx) / 2);height:3rpx;right:8rpx;background-color:#fff;"></view>
+            <view style="width: 120rpx; height: 120rpx;position: absolute; left:60rpx; top:calc((100% - 120rpx) / 2);">
+                <template is="avatarOnly" data="{{avatarUrl:item.avatarUrl,id:item.headId}}"></template>
+            </view>
+            <view class="end-with-3dot" style="position:absolute;left:206rpx;top:38rpx;height:40rpx;width:300rpx;font-size:28rpx;line-height: 40rpx;">{{item.nickName}}</view>
+            <view class="row-reverse start center2" style="position:absolute;right:16rpx;top:45rpx;height:33rpx;font-size:24rpx;white-space: nowrap;" wx:if="{{item.city}}">来自：{{item.city}}</view>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/icon_match_medal_{{item.rank==1?'gold':item.rank==2?'silver':'bronze'}}.png" style="width:39rpx;height:52rpx;position:absolute;top:108rpx;left:12rpx;" wx:if="{{item.status==5&&(item.rank==1||item.rank==2||item.rank==3)}}"></image>
+            <view class="row start center2" style="position:absolute;left:194rpx;bottom:38rpx;width:300rpx;height:40rpx;">
+                <view style="position:relative;width:151rpx;height:40rpx;">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/img_degree.png" style="width:100%;height:100%;"></image>
+                    <view class="center center2" style="position:absolute;font-size:30rpx;color:#fff;width:100%;height:100%;left:0px;top:0px">{{item.matchName}}</view>
+                </view>
+                <view class="row start center2" style="height:50rpx;" wx:if="{{item.cupsSource&&item.cupsSource.length>0}}">
+                    <view class="row start">
+                        <block wx:for="{{item.cupsSource}}" wx:for-index="cupindex" wx:for-item="cupitem">
+                            <view style="width:4rpx"></view>
+                            <view class="icon-rotate" data-id="{{cupitem.id}}" hoverClass="icon-rotate" style="width:50rpx;height:50rpx;">
+                                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/trophy/{{cupitem.id}}.png?v=0.1" style="width:100%;height:100%;"></image>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="row start center2" style="position:absolute;right:16rpx;bottom:16rpx;width:135rpx;height:42rpx;border-radius: 21rpx;background-color:#4481DF;opacity: 0.75;">
+                <view style="font-size:30rpx;color:#fff;font-weight:bold;padding-left:4rpx;width:100%;text-align:center;">{{item.score}}胜</view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="../../../template/avatarBase.wxml"></import>

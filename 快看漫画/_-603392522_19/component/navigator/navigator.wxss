@@ -1,0 +1,23 @@
+.navigator {
+    position: fixed;
+    z-index: 2;
+    background: #fde23d;
+}
+
+.navigator,.title {
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.title {
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    text-align: center;
+}
+
+.btn {
+    position: relative;
+    z-index: 1;
+}

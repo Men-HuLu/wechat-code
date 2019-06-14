@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "头脑王者",
+    "disableScroll": true,
+    "usingComponents": {
+        "subscribe-view": "./component/subscribeView",
+        "dailyTaskView": "./component/dailyTaskView",
+        "cashtoxiacai": "./component/cashtoxiacai",
+        "beginnerGiftView": "./component/beginnerGiftView",
+        "beginnerGiftContentView": "/page/market/component/beginnerGiftContentView"
+    }
+}

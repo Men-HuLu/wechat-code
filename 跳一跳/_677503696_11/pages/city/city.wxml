@@ -1,0 +1,44 @@
+<navigation my_class="navigation-bar_color" title="选择地点">
+    <view class="navigation-bar__icon-opr" slot="left">
+        <image class="navigation-bar__icon-opr__image" src="/images/navigation_back.svg"></image>
+    </view>
+</navigation>
+<view class="select-city__hd wx-flex thin-border-bottom" hoverClass="bg-highlight" style="top: {{statusBarHeight+(platform==='android'?48:44)}}px;">
+    <view bindtap="changeCity" class="current-city wx-flex__item" data-city="{{city}}">
+        <image class="icon-location" src="/images/locationG_icon.svg"></image>
+        <text class="current-city__name font-size-34 middle">{{city}}</text>
+        <text class="current-city__tips font-size-26 tips-color middle">GPS定位</text>
+    </view>
+</view>
+<scroll-view enableBackToTop scrollY bindscroll="onScroll" class="page page-select-city" scrollIntoView="{{scrollId}}" style="top: {{statusBarHeight+(platform==='android'?98:94)}}px; height: {{screenHeight}}px">
+    <view class="city-group_part border-bottom">
+        <block wx:if="{{historyCityList.length!=0}}">
+            <view class="city-group__title font-size-26 tips-color">历史访问城市</view>
+            <view bindtap="changeCity" class="city-group__content">
+                <view class="square-tag" data-city="{{item}}" hoverClass="bg-highlight_dark" wx:for="{{historyCityList}}" wx:key="*this">{{item}}</view>
+            </view>
+        </block>
+        <view class="city-group__title font-size-26 tips-color">国内热门城市</view>
+        <view bindtap="changeCity" class="city-group__content">
+            <view class="square-tag" data-city="{{item}}" hoverClass="bg-highlight_dark" wx:for="{{hotCityList}}" wx:key="*this">{{item}}</view>
+        </view>
+    </view>
+    <view class="city_list_item" id="{{item.alpha}}" wx:for="{{cityList}}" wx:key="alpha">
+        <view class="city-group__title font-size-26 tips-color">{{item.alpha}}</view>
+        <view class="city-group__content">
+            <view bindtap="changeCity" class="city-group__list">
+                <view class="city-group__item thin-border-bottom" data-city="{{city.fullname}}" hoverClass="bg-highlight" wx:for="{{item.subCities}}" wx:for-item="city" wx:key="fullname">{{city.fullname}}</view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="anchor-bar__wrp wx-flex">
+    <view class="anchor-bar wx-flex__item">
+        <view catchtouchend="removeTapped" catchtouchmove="scrollTo" catchtouchstart="scrollTo" class="anchor-list">
+            <view class="anchor-item {{selectedId==id?tapped?'selected tapped':'selected':''}}" data-alpha="{{id}}" data-idx="{{idx}}" wx:for="{{alphabet}}" wx:for-index="idx" wx:for-item="id" wx:key="*this">
+                <view class="anchor-item__inner" data-alpha="{{id}}" data-idx="{{idx}}">{{id}}</view>
+                <view class="anchor-item__pop" data-alpha="{{id}}" data-idx="{{idx}}">{{id}}</view>
+            </view>
+        </view>
+    </view>
+</view>

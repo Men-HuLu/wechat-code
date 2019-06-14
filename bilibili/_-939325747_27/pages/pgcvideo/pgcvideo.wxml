@@ -1,0 +1,182 @@
+<view bindupdatePlayStat="updatePlay" class="video-page">
+    <custbar section="pgcdetail"></custbar>
+    <view catchtouchmove="stopMove" class="video-content" style="{{iPxBar?'top:177rpx':''}}">
+        <video autoplay="{{network}}" bindended="bindended" bindplay="playing" controls="{{true}}" customCache="{{false}}" id="myVideo" showCenterPlayBtn="{{false}}" showPlayBtn="{{true}}" src="{{durl}}">
+            <cover-view class="network-tips" wx:if="{{networkFlag&&!isPlay}}">
+                <cover-view class="network-name">正在使用非WIFI网络，播放将产生流量费用</cover-view>
+                <cover-view bindtap="play" class="play">
+                    <cover-image src="../../image/2.png"></cover-image>
+                </cover-view>
+            </cover-view>
+            <cover-view class="network-tips" wx:if="{{noright}}">
+                <cover-view class="network-name">由于平台限制，请前往哔哩哔哩客户端观看</cover-view>
+            </cover-view>
+            <cover-view class="network-tips" wx:if="{{islimit}}">
+                <cover-view class="network-name">{{limitInfo}}</cover-view>
+            </cover-view>
+            <cover-view class="network-tips" wx:if="{{isplayend}}">
+                <cover-view class="network-name">请前往客户端观看完整剧集</cover-view>
+            </cover-view>
+        </video>
+    </view>
+    <view class="switch" style="{{iPxBar?'margin-top:598rpx':''}}">
+        <view bindtap="switchHomeTag" class="sec-contain" data-tag="0" style="margin-left:-10%;">
+            <text class="sec {{nowTag==0?'active':''}}">简介</text>
+        </view>
+        <view bindtap="switchHomeTag" class="sec-contain" data-tag="1">
+            <text class="sec two {{nowTag==1?'active':''}}">评论<text style="font-size:24rpx;"> {{Filter.number2chn(epInfo.stat.reply)}}</text>
+            </text>
+        </view>
+        <view class="mask-pgc" wx:if="{{isShowFullPGC}}"></view>
+    </view>
+    <scroll-view scrollY scrollIntoView="{{backTop}}" style="height: {{deviceHeight-200-30-58-70+12}}px;">
+        <view class="video-infos" id="position0000" wx:if="{{nowTag==0}}">
+            <image class="tv" src="../../image/longtv.png"></image>
+            <view class="pgc-info">
+                <image class="coverimg" src="{{epInfo.cover}}"></image>
+                <view class="pgc-text-info">
+                    <view class="pgc-title">{{epInfo.title}}</view>
+                    <view class="play-info">
+                        <i class="icon General_playernumbe pgci">
+                            <text class="numtxt">{{Filter.number2chn(epInfo.stat.views)}}</text>
+                        </i>
+                        <i class="icon General_chasenumber pgci ri">
+                            <text class="numtxt">{{Filter.number2chn(epInfo.stat.favorites)}}</text>
+                        </i>
+                    </view>
+                    <view class="play-time">{{epInfo.new_ep.desc}}</view>
+                    <view class="pgc-detailinfo">{{epInfo.evaluate}}</view>
+                    <view class="score-section" wx:if="{{epInfo.rating.score}}">
+                        <text class="score-num">{{epInfo.rating.score}}</text>
+                        <text class="chn-score">分</text>
+                        <view class="play-num">{{Filter.number2chn(epInfo.rating.count)}}人</view>
+                    </view>
+                </view>
+            </view>
+            <view class="pgc-tag" wx:if="{{epList.length>1}}">
+                <view class="headline">
+                    <text class="chn-tag">选集</text>
+                    <view catchtap="isFullPGC" class="open-detail-tag" data-flag="{{true}}">
+                        <text class="update-tag"> {{epInfo.new_ep.desc}} </text>
+                        <i class="icon General_Right oi"></i>
+                    </view>
+                </view>
+                <scroll-view class="scroll-view_H-long" scrollIntoView="{{scrollPosition}}" scrollX="true" wx:if="{{epList[0].long_title}}">
+                    <view bindtap="epChoice" class="tag-info-long {{item.id==nowEPid?'active-tag':''}}" data-epid="{{item.id}}" id="position{{item.id}}" wx:for="{{epList}}" wx:key="{{index}}">
+                        <view class="title-content">
+                            <view class="main-title {{item.id==nowEPid?'choosed':''}}">{{item.title}}</view>
+                            <view class="sub-title {{item.id==nowEPid?'choosed':''}}">{{item.long_title}}</view>
+                        </view>
+                        <view class="corner {{item.badge_type==2?'orange':''}}" wx:if="{{item.badge}}">{{item.badge}}</view>
+                    </view>
+                    <view class="tag-info-long" wx:if="{{over100&&!shareover100}}">
+                        <view class="title-content">
+                            <view class="main-title grey" style="font-size:24rpx;">
+                                更多请到
+                            </view>
+                            <view class="sub-title grey">
+                                哔哩哔哩客户端观看
+                            </view>
+                        </view>
+                    </view>
+                    <view class="tag-info-long" wx:if="{{shareover100}}">
+                        <view class="title-content">
+                            <view class="sub-title" style="text-align:center;margin-top:16rpx;color:#C0C0C0;">...</view>
+                        </view>
+                    </view>
+                    <view class="tag-info-long active-tag" id="current" wx:if="{{shareover100}}">
+                        <view class="title-content">
+                            <view class="main-title choosed" style="font-size:24rpx;">{{title}}</view>
+                            <view class="sub-title choosed">{{long_title}}</view>
+                        </view>
+                    </view>
+                    <view class="tag-info-long" wx:if="{{shareover100}}">
+                        <view class="title-content">
+                            <view class="main-title" style="font-size:24rpx;color:#C0C0C0;">更多请到</view>
+                            <view class="sub-title" style="color:#C0C0C0;">哔哩哔哩客户端观看</view>
+                        </view>
+                    </view>
+                    <view class="end-tag"></view>
+                </scroll-view>
+                <scroll-view class="scroll-view_H" scrollIntoView="{{scrollPosition}}" scrollX="true" wx:else>
+                    <view bindtap="epChoice" class="tag-info {{item.id===nowEPid?'active-tag':''}}" data-epid="{{item.id}}" id="position{{item.id}}" wx:for="{{epList}}" wx:key="{{index}}">
+                        <text>{{item.title}}</text>
+                        <view class="corner {{item.badge_type===2?'orange':''}}" wx:if="{{item.badge}}">{{item.badge}}</view>
+                    </view>
+                    <view class="end-tag"></view>
+                </scroll-view>
+                <view wx:if="{{epInfo.seasons.length>1}}">
+                    <view class="headline" style="border-top:solid #E7E7E7 1rpx; margin-top:24rpx;">
+                        <text class="pgc-txt">{{epInfo.series.series_title}}系列</text>
+                    </view>
+                    <scroll-view class="season-wrap" scrollX="true" wx:if="{{seasonList.length>1}}">
+                        <view bindtap="checkNewss" class="per-season {{nowSStag==index?'activetag':''}}" data-idx="{{index}}" data-season_id="{{item.season_id}}" wx:for="{{seasonList}}" wx:key="{{item}}">
+                                {{item.season_title}}
+                            </view>
+                        <view class="end-tag"></view>
+                    </scroll-view>
+                </view>
+            </view>
+            <pgcchannel ssid="{{epInfo.season_id}}" wx:if="{{epInfo}}"></pgcchannel>
+        </view>
+        <view class="discuss" wx:if="{{nowTag==1}}">
+            <discuss aid="{{epOid}}"></discuss>
+        </view>
+    </scroll-view>
+</view>
+<view class="share-section">
+    <view class="divide">
+        <view class="sw border">
+            <button bindtap="shareRep" data-aid="{{cid}}" data-imageurl="{{coverImg}}" data-name="{{listInfo.title}}" hoverClass="none" openType="share">
+                <i class="icon icon-General_weixin fixbar" data-aid="{{cid}}" data-imageurl="{{coverImg}}" data-name="{{listInfo.title}}"></i>
+                <text class="shareWord">分享给好友</text>
+            </button>
+        </view>
+        <view class="sw">
+            <button bindgetuserinfo="onGotUserInfo" hoverClass="none" lang="zh_CN" openType="getUserInfo">
+                <i class="icon icon-General_pyq fixbar"></i>
+                <text class="shareWord">发朋友圈海报</text>
+            </button>
+        </view>
+    </view>
+    <view class="ipx-bottom" hidden="{{!iPxBar}}"></view>
+</view>
+<view class="pgc-full-info" style="height: {{deviceHeight-200-30-58-70+12+30+40-26}}px;" wx:if="{{isShowFullPGC}}">
+    <view class="pgc-head-ctr">
+        <text class="pgc-txt">选集（{{epList.length}}）</text>
+        <view catchtap="isFullPGC" class="pgc-close" data-flag="{{0}}">
+            <i class="icon General_Close_Big"></i>
+        </view>
+    </view>
+    <scroll-view scrollY style="height: {{deviceHeight-200-30-58-70+12}}px;">
+        <view bindtap="epChoice" class="pgc-tag-detail {{item.id===nowEPid?'active-tag':''}}" data-epid="{{item.id}}" wx:for="{{epList}}" wx:key="{{item}}">
+            <view class="pcg-detail-index {{item.id===nowEPid?'choosed':''}}">{{item.title}}</view>
+            <view class="pcg-detail-title {{item.id===nowEPid?'choosed':''}}">{{item.long_title}}</view>
+            <view class="corner {{item.badge_type===2?'orange':''}}" wx:if="{{item.badge}}">{{item.badge}}</view>
+        </view>
+        <view class="pgc-tag-detail" wx:if="{{shareover100}}">
+            <view class="pcg-detail-index"></view>
+            <view class="pcg-detail-title grey" style="text-align:center;">
+             ...
+            </view>
+        </view>
+        <view class="pgc-tag-detail active-tag" wx:if="{{shareover100}}">
+            <view class="pcg-detail-index choosed">{{title}}</view>
+            <view class="pcg-detail-title choosed">{{long_title}}</view>
+        </view>
+        <view class="pgc-tag-detail" wx:if="{{over100}}">
+            <view class="pcg-detail-index grey" style="margin-top:42rpx;">
+            更多请到
+            </view>
+            <view class="pg-detail-title grey">
+            哔哩哔哩客户端观看
+            </view>
+        </view>
+        <view class="end-circle"></view>
+    </scroll-view>
+</view>
+<button appParameter="bilibili://pgc/season/{{season_id}}?bsource=xcx" binderror="launchAppError" bindtap="reportEvent" class="open-btn" data-report="openapp" openType="launchApp" wx:if="{{iSopenBtn}}">
+    打开APP
+</button>
+<canvas canvasId="shareCanvas" id="shareCanvas" style="width:375px;height:603px;"></canvas>
+<wxs module="Filter" src="../../utils/filter/index.wxs" />

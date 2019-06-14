@@ -1,0 +1,9 @@
+{
+    "disableScroll": true,
+    "navigationBarTitleText": "个人中心",
+    "navigationBarBackgroundColor": "#FDE23D",
+    "backgroundColor": "#FDE23D",
+    "usingComponents": {
+        "kk-picture": "/component/picture/picture"
+    }
+}

@@ -1,0 +1,9 @@
+<view animation="{{ani}}" bindtap="onTapChooseBtn" class="battle_btn {{className}}">
+    <image class="battle_btnIconRight left" hidden="{{!leftRight}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_right.png"></image>
+    <image class="battle_btnIconRight right" hidden="{{!rightRight}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_right.png"></image>
+    <image class="battle_btnIconWrong left" hidden="{{!leftWrong}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_wrong.png"></image>
+    <image class="battle_btnIconWrong right" hidden="{{!rightWrong}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_wrong.png"></image>
+    <view style="display: flex; justify-content: center; align-items: center; width:334rpx;height:100%;transform: scale({{textScale}});">
+    {{answer}}
+  </view>
+</view>

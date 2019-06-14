@@ -1,0 +1,19 @@
+<view class="popup-anchor" wx:if="{{isPopup}}">
+    <view class="popup-content">
+        <view class="popup-con">
+            <view class="popup-title">{{title}}</view>
+            <view class="popup-select">
+                <view class="popup-cancel">{{cancelText}}
+						<form reportSubmit bindreset="formReset" bindsubmit="formSubmit" class="hidden-form hidden-form-left" data-fn="goMain">
+                        <button class="hidden-form-btn" formType="submit"></button>
+                    </form>
+                </view>
+                <view class="popup-confirm">{{confirmText}}
+						<form reportSubmit bindreset="formReset" bindsubmit="formSubmit" class="hidden-form" data-fn="goRecommend">
+                        <button class="hidden-form-btn" formType="submit"></button>
+                    </form>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

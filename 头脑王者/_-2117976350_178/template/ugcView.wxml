@@ -1,0 +1,17 @@
+<template name="ugc_help">
+    <view bindtap="btn_closeHelp_clicked" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+    <view class="center center2 show-form" style="width:100%;height:100%;left:0px;top:0px;position:absolute;">
+        <view class="column center2 form-normal" style="width:684rpx;height:900rpx; ">
+            <view bindtap="btn_closeHelp_clicked" class="center center2" hoverClass="brightness" style="position:absolute;right:0px;top:0px;width:80rpx;height:80rpx">
+                <image src="/image/ui/close.png" style="width:56rpx;height:56rpx"></image>
+            </view>
+            <view class="center center2 " style="font-size:60rpx;height:120rpx;text-shadow: 0rpx 0rpx 16rpx #51bafe;">出题帮助</view>
+            <textarea class="font-blue-1" disabled="true" maxlength="1024" style="font-size:30rpx;width:90%;height:80%;line-height: 42rpx" value="	每道题目都需要选择其分类、科目和难度，并填写题目内容、正确答案和3个错误答案。题目内容的长度要在12~36字以内，答案的长度要在1~8字以内。提交内容若侵犯他人权利或触犯法律者，由提交者承担相应责任。提交的文本内容版权归《头脑王者》所有。
+
+	全部填写完成后就可以提交等待审核。每位玩家同一时间最多能提交5道题目，全部提交后就需要等待审核完成才能再次提交。
+
+	每周首次提交问题，玩家就能立刻获得1个奖励福袋。但是提交无用信息可能会导致出题功能被禁用一个月。"></textarea>
+        </view>
+    </view>
+</template>
+<import src="../template/propItem.wxml"></import>

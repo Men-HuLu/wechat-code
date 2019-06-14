@@ -1,0 +1,60 @@
+<template name="pveStagePickerView">
+    <view class="column end center2" style="width:100%;height:100%">
+        <div name="pickerView" style="position: absolute;width: 100%;left: 0px;top: 0px;bottom:0px;">
+            <scroll-view enableBackToTop="true" name="view-listview" scrollTop="{{scrollTop}}" scrollWithAnimation="true" scrollY="true" style="width: 100%;height: 100%;">
+                <view class="start center2 column" style="position:relative;width:100%">
+                    <block wx:for="{{dataSource}}" wx:for-index="id" wx:key="id">
+                        <template is="normalItem" data="{{...item,kuang:id-5+205001,matchStat:matchStats[item.id],callback_item_clicked:callback_item_clicked}}"></template>
+                        <view style="height:10rpx"></view>
+                    </block>
+                    <template is="questionMark" data wx:if="{{showQMark}}"></template>
+                </view>
+            </scroll-view>
+        </div>
+    </view>
+</template>
+<template name="questionMark">
+    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/challenge/icon_more_challenge.png" style="width:86rpx;height:294rpx;padding:10rpx;"></image>
+</template>
+<template name="normalItem">
+    <view bindtap="{{callback_item_clicked?callback_item_clicked:''}}" class="{{id==300001&&num==0?'item-shine':''}}" data-stage-id="{{id}}" name="view-picker-item" style="width: 650rpx;height: 174rpx;position:relative;">
+        <view class="row start center center2 {{!lock?'':'alpha'}} {{bannerAni}} " style="position: relative; width:100%;height:100%;background-image: linear-gradient(-180deg, #13C1EA 0%, #25E1EB 100%); box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 10rpx;">
+            <view style="width:16rpx"></view>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/challenge/icon/{{id}}.png" style="width:120rpx;height:120rpx;"></image>
+            <view style="position:absolute;left:16rpx;top:calc((100% - 120rpx)/2); width:120rpx;height:120rpx;">
+                <image class="avatarOnly-tiers" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/tiers/{{kuang}}.png" wx:if="{{kuang>=205001}}"></image>
+            </view>
+            <view class="column center" style="height:100%;width:200rpx">
+                <view class="row start">
+                    <view style="width:16rpx"></view>
+                    <view class="row start center2" style="height:56rpx; font-size: 40rpx;color: #FFFFFF;font-weight:bold;white-space:nowrap;">{{name}}</view>
+                </view>
+                <view style="width:100%;height:3rpx;background-color:#fff;"></view>
+                <view class="row start center2" style="width:100%;height:38rpx;font-size: 30rpx; color: #FFF393; white-space:nowrap;">
+                    <view style="width:16rpx"></view>
+                    <view>奖金：{{bonusGold}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="row start center2" style="position:absolute; top:10rpx; right:10rpx; height:38rpx;font-size: 30rpx;color: #FFFFFF;white-space:nowrap;">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png" style="width:35rpx;height:35rpx;"></image>
+            <view>{{fee}}</view>
+        </view>
+        <view class="row-reverse center center2" style="height:50rpx;position:absolute;right:8rpx;bottom:15rpx;width:{{starGroup.length*45+16}}rpx;background-color:#17BEF7;border-radius:30rpx" wx:if="{{id<300014}}">
+            <view class="startCell" wx:for="{{starGroup}}" wx:key="index">
+                <image class="starImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/challenge/icon_star_black.png?v=0"></image>
+            </view>
+        </view>
+        <view class="row-reverse center center2" style="height:50rpx;position:absolute;right:8rpx;bottom:15rpx;width:{{starGroup.length*45+16}}rpx;" wx:if="{{id<300014}}">
+            <view class="startCell" wx:for="{{starGroup}}" wx:key="index">
+                <image class="lightEff {{item.lightAni}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/challenge/light.png" wx:if="{{item.lightAni}}"></image>
+                <image class="starImg {{item.animation}}" src="{{item.src}}" wx:if="{{item.src}}"></image>
+            </view>
+        </view>
+        <view class="row center center2" style="height:50rpx;position:absolute;right:16rpx;bottom:15rpx;background-color:#13C1EA;border-radius:30rpx;padding: 0px 16rpx 0px 16rpx;" wx:if="{{id>=300014}}">
+            <image class="starImg flex-none" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/challenge/icon_star_default.png?v=0" style="position: relative;" wx:if="{{!lock}}"></image>
+            <view class="center end2 flex-none" style="height:100%;color:#fff; font-size:34rpx;" wx:if="{{!lock}}">×{{star||0}}</view>
+        </view>
+        <image class="{{!lock?'hide':''}} {{lockAni}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/challenge/icon_lock_challenge.png" style="max-width:98rpx;height:128rpx;position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;"></image>
+    </view>
+</template>

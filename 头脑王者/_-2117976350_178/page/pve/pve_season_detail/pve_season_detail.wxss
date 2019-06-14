@@ -1,0 +1,17 @@
+.avatarOnly-tiers {
+    position: absolute;
+    top: calc(50% - 130% / 2);
+    left: calc(50% - 130% / 2);
+    width: 130%;
+    height: 130%;
+    flex: none;
+}
+
+.avatarOnly-border {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    flex: none;
+}

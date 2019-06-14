@@ -1,0 +1,120 @@
+@import "../../template/avatarBase.wxss";
+
+.userName {
+    white-space: nowrap;
+    font-size: 36rpx;
+    color: #3663CD;
+    letter-spacing: 0;
+    width: 500rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    position: absolute;
+    left: calc(50% - 500rpx / 2);
+    top: 262rpx;
+}
+
+.shareMenuBtn {
+    background: #00E1BD;
+    box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50),inset 0 2rpx 0 0 #FFDDB5;
+    border-radius: 100rpx;
+    font-size: 48rpx;
+    color: #FFFFFF;
+    letter-spacing: -2.1rpx;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);
+    position: absolute;
+    height: 103rpx;
+    width: 290rpx;
+    left: 70rpx;
+    bottom: 145rpx;
+}
+
+.moreBtn {
+    background: #FFAF48;
+    box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50),inset 0 2rpx 0 0 #FFDDB5;
+    border-radius: 100rpx;
+    font-size: 48rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);
+    position: absolute;
+    height: 103rpx;
+    width: 290rpx;
+    right: 70rpx;
+    bottom: 145rpx;
+}
+
+.menuView {
+    width: 670rpx;
+    height: 190rpx;
+    position: absolute;
+    left: calc(50% - 670rpx / 2);
+    bottom: -170rpx;
+    background: #FFFFFF;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    box-shadow: 0 -3rpx 4rpx 0 rgba(0,0,0,0.50);
+}
+
+.line {
+    background: #EAE8E8;
+    width: 3rpx;
+    height: 140rpx;
+    position: absolute;
+    left: calc(50% - 3rpx / 2);
+    top: calc(50% - 140rpx / 2);
+}
+
+.shareIcon {
+    width: 116rpx;
+    height: 116rpx;
+    position: absolute;
+    top: 20rpx;
+    left: calc(25% - 116rpx / 2);
+}
+
+.saveIcon {
+    width: 116rpx;
+    height: 116rpx;
+    position: absolute;
+    top: 20rpx;
+    right: calc(25% - 116rpx / 2);
+}
+
+.shareLabel {
+    font-size: 28rpx;
+    color: #9B9B9B;
+    letter-spacing: 0;
+    width: 112rpx;
+    height: 40rpx;
+    position: absolute;
+    bottom: 4rpx;
+    left: calc(25% - 112rpx / 2);
+}
+
+.saveLabel {
+    font-size: 28rpx;
+    color: #9B9B9B;
+    letter-spacing: 0;
+    width: 112rpx;
+    height: 40rpx;
+    position: absolute;
+    bottom: 4rpx;
+    right: calc(25% - 112rpx / 2);
+}
+
+.menuMainView {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.menuMask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: rgba(0,0,0,0.5);
+}

@@ -1,0 +1,115 @@
+<import src="../../template/ItemDetail.wxml"></import>
+<import src="../../template/propItem.wxml"></import>
+<import src="../pve/template/PveWatchdog.wxml"></import>
+<view class="column-reverse start center2" style="background-color:#4E84E5;width:100%;height:100%"></view>
+<view class="column start center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;overflow:hidden;">
+    <view style="display: flex; width: 712rpx; height: 277rpx; position: relative; flex: none;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/knowledge/img_kownleage_up.png" style="width: 712rpx;height: 314rpx;position: absolute;top: 0px; left: 0px"></image>
+        <view bindtap="btn_help_clicked" class="center center2" style="position:absolute;left:-10rpx;top:-10rpx;width:100rpx;height:100rpx">
+            <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/challenge/btn_moreinfo.png" style="width:48rpx;height:48rpx;"></image>
+        </view>
+    </view>
+    <view class="column center center2" style="position: absolute;top:290rpx;bottom:0px;width:100%;overflow:hidden;">
+        <scroll-view class="center" name="view-listview" scrollY="true" style="width: 100%;height: 100%;">
+            <view class="column start center2">
+                <block wx:for="{{groups}}" wx:for-index="id" wx:for-item="group" wx:key="id">
+                    <view animation="{{aniGroups[id]}}" class="item-normal" style="position:relative;width:670rpx;">
+                        <view class="row start" style="position:relative;width:100%;background-color:{{group.color}};border-radius:20rpx;box-shadow:0 0 8rpx rgba(0,0,0,0.5);">
+                            <view class="column center center2" style="position:absolute;left:0px;top:0px; width:155rpx;height:200rpx;">
+                                <view hoverClass="icon-rotate" style="width:110rpx;height:110rpx;">
+                                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/question_factory/type/{{group.index+1}}.png" style="width:100%;height:100%;"></image>
+                                </view>
+                                <view style="height:50rpx;font-size:32rpx;font-weight:bold">{{group.title}}</view>
+                            </view>
+                            <view style="width:155rpx;"></view>
+                            <view class="row start center2" style="width:500rpx;height:100%;background-color:#fff;flex-wrap:wrap;">
+                                <view bindtap="callback_item_clicked" class="column center center2" data-id="{{item.id}}" hoverClass="brightness" style="position:relative;width:166rpx;height:190rpx;" wx:for="{{group.items}}" wx:for-index="id" wx:key="id">
+                                    <view class="column center center2" style="position:relative;width:152rpx;height:155rpx;">
+                                        <view class="center center2" style="position: absolute; top:40rpx; left:16rpx; height:40rpx; " wx:if="{{item.newCount>0}}">
+                                            <view class="center center2" style="font-size: 24rpx; padding: 5rpx 10rpx 5rpx 10rpx; min-width: 20rpx;">{{item.newCount}}</view>
+                                            <view style="background: #E31E36; border-top-left-radius: 40rpx; border-bottom-left-radius: 40rpx; height:40rpx; width:20rpx; position: absolute; top:0px; left:0px;"></view>
+                                            <view style="background: #E31E36; height:40rpx; position:absolute; top:0px; left:19rpx; right:19rpx;"></view>
+                                            <view style="background: #E31E36; border-top-right-radius: 40rpx; border-bottom-right-radius: 40rpx; height:40rpx; width:20rpx; position: absolute; top:0px; right:0px;"></view>
+                                            <view class="center center2" style="font-size: 24rpx; color: #FFFFFF; width:100%; height:100%; position:absolute; left:0px; top:0px;">{{item.newCount}}</view>
+                                        </view>
+                                        <view class="center center2" style="height:32rpx;width:100rpx;font-size:28rpx;border-radius:16rpx;color:{{group.color}};font-wieght:bold;">{{item.name}}</view>
+                                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{item.id}}.png?v=0.1.12" style="width:88rpx;height:88rpx;"></image>
+                                        <view class="center center2" style="height:30rpx;width:100%;position:relative;">
+                                            <view class="center center2" style="height:100%;width:70rpx;font-size:24rpx;color:#5dbaff;white-space:nowrap;font-weight:bold">等级{{item.levelMax?'Max':item.level}}</view>
+                                        </view>
+                                        <view style="position:absolute;right:4rpx;bottom:15px;width:60rpx;height:60rpx;overflow:hidden;" wx:if="{{item.bookNum/item.needBook>=1&&!item.levelMax}}">
+                                            <image class="arrow-up" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/knowledge/levelup_animate.png" style="position:absolute;left:0rpx;bottom:0px; width:180rpx;height:60rpx;"></image>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view style="height:32rpx"></view>
+                </block>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+<view class="column start space-a" style="position:absolute;left:127rpx;top:20rpx;width:500rpx;height:580rpx;background: #3E61DD;border-radius: 16rpx;" wx:if="{{showHelpPanel}}">
+    <view class="row center center2" style="width:100%;height:42;">
+        <view style="width:60rpx;height:2rpx;background:#FFFFFF"></view>
+        <view style="width:10rpx;"></view>
+        <view style="font-size: 30rpx;color: #FFFFFF;">知识升级说明</view>
+        <view style="width:10rpx;"></view>
+        <view style="width:60rpx;height:2rpx;background:#FFFFFF"></view>
+    </view>
+    <view class="row start" style="width:100%;">
+        <view style="width:37rpx;"></view>
+        <view style="font-size: 24rpx;color: #A9DCFF;width:408rpx;line-height: 33rpx;">根据玩家参与的比赛段位：</view>
+    </view>
+    <view class="row start" style="width:100%;">
+        <view style="width:37rpx;"></view>
+        <view style="background: #50E3C2;border-radius: 100rpx;width:6rpx;height:6rpx;margin-top: 14rpx;"></view>
+        <view style="width:7rpx;"></view>
+        <view style="font-size: 24rpx;color: #A9DCFF;width:408rpx;line-height: 33rpx;">入门新手至傲气白银段位，知识升级不发挥效果</view>
+    </view>
+    <view class="row start" style="width:100%;">
+        <view style="width:37rpx;"></view>
+        <view style="background: #50E3C2;border-radius: 100rpx;width:6rpx;height:6rpx;margin-top: 14rpx;"></view>
+        <view style="width:7rpx;"></view>
+        <view style="font-size: 24rpx;color: #A9DCFF;width:408rpx;line-height: 33rpx;">聪慧黄金至无暇钻石段位，知识升级最多生效5级</view>
+    </view>
+    <view class="row start" style="width:100%;">
+        <view style="width:37rpx;"></view>
+        <view style="background: #50E3C2;border-radius: 100rpx;width:6rpx;height:6rpx;margin-top: 14rpx;"></view>
+        <view style="width:7rpx;"></view>
+        <view style="font-size: 24rpx;color: #A9DCFF;width:408rpx;line-height: 33rpx;">智者大师至智慧传说段位，知识升级最多生效10级</view>
+    </view>
+    <view class="row start" style="width:100%;">
+        <view style="width:37rpx;"></view>
+        <view style="background: #50E3C2;border-radius: 100rpx;width:6rpx;height:6rpx;margin-top: 14rpx;"></view>
+        <view style="width:7rpx;"></view>
+        <view style="font-size: 24rpx;color: #A9DCFF;width:408rpx;line-height: 33rpx;">头脑王者段位中知识升级效果不限</view>
+    </view>
+    <view class="row start" style="width:100%;">
+        <view style="width:37rpx;"></view>
+        <view style="background: #50E3C2;border-radius: 100rpx;width:6rpx;height:6rpx;margin-top: 14rpx;"></view>
+        <view style="width:7rpx;"></view>
+        <view style="font-size: 24rpx;color: #A9DCFF;width:408rpx;line-height: 33rpx;">知识书每升1级，提高对应科目得分2%</view>
+    </view>
+    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/knowledge/img_kownleage_arrow.png" style="width: 40rpx;height: 40rpx;position: absolute;top: 30rpx; left: -36rpx"></image>
+</view>
+<view style="position: absolute;left:0px;top:0px;width:100%;height:100%" wx:if="{{itemSelected}}">
+    <template is="ItemDetail_book" data="{{...itemSelected}}"></template>
+</view>
+<view style="position: absolute;left:0px;top:0px;width:100%;height:100%" wx:if="{{newKnow}}">
+    <template is="ItemDetail_book_uplevel" data="{{...newKnow}}"></template>
+</view>
+<view style="position: absolute;left:0px;top:0px;width:100%;height:100%" wx:if="{{showBookNone}}">
+    <template is="ItemDetail_book_none" data="{{...itemSelected}}"></template>
+</view>
+<view style="position: absolute;left:0px;top:0px;width:100%;height:100%" wx:if="{{showNoMoney_share}}">
+    <template is="no_money_share" data="{{...itemSelected}}"></template>
+</view>
+<view style="position: absolute;left:0px;top:0px;width:100%;height:100%" wx:if="{{showNoMoney_shop}}">
+    <template is="no_money_shop" data="{{...itemSelected}}"></template>
+</view>
+<view id="PveWatchdog" style="position:absolute;left:0px;top:0px;width:100%;height:100%" wx:if="{{pveWatchdog.visible}}">
+    <template is="PveWatchdog" data="{{...pveWatchdog}}"></template>
+</view>

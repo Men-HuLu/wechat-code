@@ -1,0 +1,3 @@
+<view animation="{{animationRocketData}}" class="GiftContent-rocket">
+    <image class="GiftContent-rocket-img" mode="aspectFit" src="{{rocketBigPic}}"></image>
+</view>

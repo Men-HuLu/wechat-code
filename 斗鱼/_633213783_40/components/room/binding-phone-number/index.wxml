@@ -1,0 +1,51 @@
+<view class="binding-phone-number {{isYz?'yz':''}}" wx:if="{{isshow}}">
+    <view bind:tap="clickCancelMask" class="bpn-mask"></view>
+    <view class="bpn-main-content">
+        <view class="mc-title">发送弹幕需要完成手机号码绑定</view>
+        <view bind:tap="showAreaPop" class="area-box border">
+            <text class="area-name">国家与地区</text>
+            <view class="area-icon">{{areaName}}
+        <image class="t-icon" src="../../../assets/room/morearea.png"></image>
+            </view>
+        </view>
+        <view class="phone-box border">
+            <text class="area-num">+{{areaNum}}</text>
+            <input bindinput="phoneInput" class="phone-num" placeholder="输入手机号码" placeholderStyle="color: #adadad" type="number" value="{{phoneInputValue}}"></input>
+            <icon bind:tap="clearPhoneInput" class="t-icon" color="rgba(0,0,0, 0.1)" size="18" type="clear" wx:if="{{phoneInputValue}}"></icon>
+        </view>
+        <view class="pic-box">
+            <view class="pic-num-box border">
+                <input bindinput="picVerifyCodeInput" class="pic-num" placeholder="输入图片验证码" placeholderStyle="color: #adadad" type="text" value="{{picVerifyCodeValue}}"></input>
+                <icon bind:tap="clearPicVerifyCodeInput" class="t-icon" color="rgba(0,0,0, 0.1)" size="18" type="clear" wx:if="{{picVerifyCodeValue}}"></icon>
+            </view>
+            <image bind:tap="refreshVerifyCode" class="pic-verify" src="{{verifyCodeUrl}}"></image>
+        </view>
+        <view class="message-box">
+            <view class="message-num-box border">
+                <input bindinput="verifyCodeInput" class="message-num" maxlength="6" placeholder="输入6位验证码" placeholderStyle="color: #adadad" type="number" value="{{verifyCodeValue}}"></input>
+                <icon bind:tap="clearVerifyCodeInput" class="t-icon" color="rgba(0,0,0, 0.1)" size="18" type="clear" wx:if="{{verifyCodeValue}}"></icon>
+            </view>
+            <view bind:tap="sendPhoneCaptcha" class="send-message-btn {{phoneInputValue&&picVerifyCodeValue&&!countdown?'':'is-disable'}}">
+                <text wx:if="{{!countdown}}">{{smsBtn}}</text>
+                <text wx:if="{{countdown}}">{{intervalTime}}秒</text>
+            </view>
+        </view>
+        <view bind:tap="sendBindPhone" class="submit-verify {{phoneInputValue&&picVerifyCodeValue&&verifyCodeValue&&!finalIsSending?'':'is-disable'}}">绑定手机</view>
+    </view>
+    <view class="bpn-are-content" wx:if="{{areashow}}">
+        <view bind:tap="back" class="mc-title">
+            <view class="icon-back-box">
+                <image class="icon-back" src="../../../assets/room/backToLast.png"></image>
+            </view>
+      选择国家与地区
+    </view>
+        <scroll-view class="area-list" scrollY="{{isscroll}}">
+            <repeat wx:for="{{areaList}}" wx:for-item="areaItem" wx:key="index">
+                <view bind:tap="chooseArea" class="area-list-item {{index===areaIndexNow?'hasChoose':''}}" data-code="{{areaItem.code}}" data-index="{{index}}" data-name="{{areaItem.area}}">
+                    <text class="area-name">{{areaItem.area}}</text>
+                    <text class="area-number">+{{areaItem.code}}</text>
+                </view>
+            </repeat>
+        </scroll-view>
+    </view>
+</view>

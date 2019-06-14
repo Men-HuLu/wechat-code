@@ -1,0 +1,11 @@
+<swiper autoplay="{{autoplay}}" duration="{{duration}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+    <swiper-item wx:for="{{imgUrls}}">
+        <view>asdfasdfasdf</view>
+    </swiper-item>
+</swiper>
+<button bindtap="changeIndicatorDots"> indicator-dots </button>
+<button bindtap="changeAutoplay"> autoplay </button>
+<slider showValue bindchange="intervalChange" max="2000" min="500"></slider>
+ interval
+<slider showValue bindchange="durationChange" max="10000" min="1000"></slider>
+ duration

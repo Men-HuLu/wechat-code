@@ -1,0 +1,106 @@
+<view style="transition:all 0.2s ease-out;position:absolute;left:0px;top:0px;width:100%;height:100%;transform: translate3d({{(myIndex-index)*750}}rpx,0,0);" wx:if="{{isHeightWX}}">
+    <scroll-view scrollY="true" style="position:absolute;left:calc((100% - 678rpx)/2);top:14rpx;width:678rpx;bottom:0px">
+        <view class="row start" style="flex-wrap:wrap;">
+            <view bindtap="callback_item_clicked" data-pid="{{item.exId}}" hoverClass="brightness" style="position: relative;width:226rpx;height:280rpx" wx:for="{{dataSource}}" wx:for-index="id" wx:key="id">
+                <view style="position:absolute;right:0px;bottom:0px;width:200rpx;height:254rpx;background: #83CCFF;border: 5rpx solid #6AE3FF;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 10rpx;" wx:if="{{item.tab==2&&item.own==1}}">
+                    <view style="position: absolute;left:calc((100% - 136rpx)/2);top:21rpx;height:26rpx;width:136rpx;background:#4E84E5;border-radius: 100rpx;">
+                        <view class="center center2" style="font-size: 20rpx;width:100%;height:100%;color: #FFFFFF;text-align: center;">{{item.name}}</view>
+                    </view>
+                    <view style="position: absolute;left:calc((100% - 110rpx)/2);top:56rpx;width:110rpx;height:110rpx;">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/head_frame/img_moren.png" style="position:absolute;left:0px;top:0px;width:100%;height:100%;"></image>
+                        <image class="avatarOnly-tiers" src="{{item.iconUrl}}"></image>
+                    </view>
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/shop_and_items/img_hot.png?v=0.1.13" style="position: absolute;left:-18rpx;top:-23rpx;width:78rpx;height:78rpx;" wx:if="{{item.hot==1}}"></image>
+                    <view class="center center2" style="position:absolute;left:0px;bottom:0px;height:76rpx;width:100%;background: #55A9FF;border-bottom-left-radius: 10rpx;border-bottom-right-radius: 10rpx;">
+                        <view style="font-size: 36rpx;color: #0a69c7;text-align: center;line-height: 36rpx;">已拥有</view>
+                    </view>
+                </view>
+                <view style="position:absolute;right:0px;bottom:0px;width:200rpx;height:254rpx;background: #C2E6FF;border: 5rpx solid rgba(208,236,255,0.72);box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 10rpx;" wx:else>
+                    <view style="position: absolute;left:calc((100% - 136rpx)/2);top:21rpx;height:26rpx;width:136rpx;background:#4E84E5;border-radius: 100rpx;">
+                        <view class="center center2" style="font-size: 20rpx;width:100%;height:100%;color: #FFFFFF;text-align: center;">{{item.name}}</view>
+                    </view>
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{item.itemId}}.png?v=0.1.13" style="position: absolute;left:calc((100% - 110rpx)/2);top:56rpx;width:110rpx;height:110rpx;" wx:if="{{item.tab!=2}}"></image>
+                    <view style="position: absolute;left:calc((100% - 110rpx)/2);top:56rpx;width:110rpx;height:110rpx;" wx:else>
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/head_frame/img_moren.png" style="position:absolute;left:0px;top:0px;width:100%;height:100%;"></image>
+                        <image class="avatarOnly-tiers" src="{{item.iconUrl}}"></image>
+                    </view>
+                    <view class="row-reverse center2" style="position: absolute;left:130rpx;top:140rpx;right:0px;height;31rpx;font-size: 26rpx;color: #4990E2;" wx:if="{{item.tab!=2}}">X{{item.itemNum}}</view>
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/shop_and_items/img_hot.png?v=0.1.13" style="position: absolute;left:-18rpx;top:-23rpx;width:78rpx;height:78rpx;" wx:if="{{item.hot==1}}"></image>
+                    <view class="center center2" style="position:absolute;left:0px;bottom:0px;height:76rpx;width:100%;background: #8BD6FF;border-bottom-left-radius: 10rpx;border-bottom-right-radius: 10rpx;">
+                        <view style="position: relative;width:156rpx;height:52rpx;background: #F5A623;box-shadow: 0 2rpx 3rpx 0 rgba(0,0,0,0.50), inset 0 1rpx 1rpx 1rpx #FFCA45;border-radius: 50rpx;">
+                            <view class="row center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 30rpx;color: #FFFFFF;text-align: center;text-shadow: 0 1rpx 2rpx rgba(0,0,0,0.50);">
+                                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/shop_and_items/icon_diamonds.png" style="width:40rpx;height:36rpx;" wx:if="{{item.type==1}}"></image>
+                                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png" style="width:40rpx;height:40rpx;" wx:else></image>
+                                <view style="width:5rpx"></view>
+                  {{item.onsale==1?item.cost:item.price}}
+                </view>
+                            <view style="position:absolute;left:50%;top:-20rpx;width:71rpx;height:30rpx" wx:if="{{item.onsale==1}}">
+                                <view class="center center2" style="position:absolute;left:0px;top:0px;width:100%;height:100%;font-size:22rpx;color:#FFF9AF;text-shadow:2rpx 2rpx 0px #814E1E;">{{item.price}}</view>
+                                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/shop_and_items/img_Slash.png" style="position:absolute;left:0px;top:0px;width:100%;height:100%;"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view style="width:100%;height:100rpx;"></view>
+    </scroll-view>
+    <view style="position: absolute;top:0px;left:calc((100% - 711rpx) / 2);width:711rpx;height:90rpx;background-image: linear-gradient(-180deg, rgba(40,129,218,0.00) 64%, #145DD7 92%);box-shadow: 0 4rpx 6rpx 0 #5891F7;border-radius: 0 0 30rpx 30rpx;transform:rotate(180deg);"></view>
+    <view style="position: absolute;bottom:0px;left:calc((100% - 711rpx) / 2);width:711rpx;height:90rpx;background-image: linear-gradient(-180deg, rgba(40,129,218,0.00) 64%, #145DD7 92%);box-shadow: 0 4rpx 6rpx 0 #5891F7;border-radius: 0 0 30rpx 30rpx;" wx:if="{{dataSource.length>6}}"></view>
+    <view class="center center2" style="position: absolute;left:calc((100% - 386rpx)/2);bottom:-44rpx;width:386rpx;height38rpx;background: #2D6CDD;border-radius: 19rpx;font-size: 22rpx;color: #FFFFFF;" wx:if="{{!!endTime_onSale}}">
+    打折剩余时间 {{endTime_onSale}}
+  </view>
+</view>
+<view style="position:absolute;left:{{(myIndex-index)*750}}rpx;top:0px;width:100%;height:100%;" wx:else>
+    <scroll-view scrollY="true" style="position:absolute;left:calc((100% - 678rpx)/2);top:14rpx;width:678rpx;bottom:247rpx">
+        <view class="row start" style="flex-wrap:wrap;">
+            <view bindtap="callback_item_clicked" data-pid="{{item.exId}}" hoverClass="brightness" style="position: relative;width:226rpx;height:280rpx" wx:for="{{dataSource}}" wx:for-index="id" wx:key="id">
+                <view style="position:absolute;right:0px;bottom:0px;width:200rpx;height:254rpx;background: #83CCFF;border: 5rpx solid #6AE3FF;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 10rpx;" wx:if="{{item.tab==2&&item.own==1}}">
+                    <view style="position: absolute;left:calc((100% - 136rpx)/2);top:21rpx;height:26rpx;width:136rpx;background:#4E84E5;border-radius: 100rpx;">
+                        <view class="center center2" style="font-size: 20rpx;width:100%;height:100%;color: #FFFFFF;text-align: center;">{{item.name}}</view>
+                    </view>
+                    <view style="position: absolute;left:calc((100% - 110rpx)/2);top:56rpx;width:110rpx;height:110rpx;">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/head_frame/img_moren.png" style="position:absolute;left:0px;top:0px;width:100%;height:100%;"></image>
+                        <image class="avatarOnly-tiers" src="{{item.iconUrl}}"></image>
+                    </view>
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/shop_and_items/img_hot.png?v=0.1.13" style="position: absolute;left:-18rpx;top:-23rpx;width:78rpx;height:78rpx;" wx:if="{{item.hot==1}}"></image>
+                    <view class="center center2" style="position:absolute;left:0px;bottom:0px;height:76rpx;width:100%;background: #55A9FF;border-bottom-left-radius: 10rpx;border-bottom-right-radius: 10rpx;">
+                        <view style="font-size: 36rpx;color: #0a69c7;text-align: center;line-height: 36rpx;">已拥有</view>
+                    </view>
+                </view>
+                <view style="position:absolute;right:0px;bottom:0px;width:200rpx;height:254rpx;background: #C2E6FF;border: 5rpx solid rgba(208,236,255,0.72);box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 10rpx;" wx:else>
+                    <view style="position: absolute;left:calc((100% - 136rpx)/2);top:21rpx;height:26rpx;width:136rpx;background:#4E84E5;border-radius: 100rpx;">
+                        <view class="center center2" style="font-size: 20rpx;width:100%;height:100%;color: #FFFFFF;text-align: center;">{{item.name}}</view>
+                    </view>
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{item.itemId}}.png?v=0.1.13" style="position: absolute;left:calc((100% - 110rpx)/2);top:56rpx;width:110rpx;height:110rpx;" wx:if="{{item.tab!=2}}"></image>
+                    <view style="position: absolute;left:calc((100% - 110rpx)/2);top:56rpx;width:110rpx;height:110rpx;" wx:else>
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/head_frame/img_moren.png" style="position:absolute;left:0px;top:0px;width:100%;height:100%;"></image>
+                        <image class="avatarOnly-tiers" src="{{item.iconUrl}}"></image>
+                    </view>
+                    <view class="row-reverse center2" style="position: absolute;left:130rpx;top:140rpx;right:0px;height;31rpx;font-size: 26rpx;color: #4990E2;" wx:if="{{item.tab!=2}}">X{{item.itemNum}}</view>
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/shop_and_items/img_hot.png?v=0.1.13" style="position: absolute;left:-18rpx;top:-23rpx;width:78rpx;height:78rpx;" wx:if="{{item.hot==1}}"></image>
+                    <view class="center center2" style="position:absolute;left:0px;bottom:0px;height:76rpx;width:100%;background: #8BD6FF;border-bottom-left-radius: 10rpx;border-bottom-right-radius: 10rpx;">
+                        <view style="position: relative;width:156rpx;height:52rpx;background: #F5A623;box-shadow: 0 2rpx 3rpx 0 rgba(0,0,0,0.50), inset 0 1rpx 1rpx 1rpx #FFCA45;border-radius: 50rpx;">
+                            <view class="row center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 30rpx;color: #FFFFFF;text-align: center;text-shadow: 0 1rpx 2rpx rgba(0,0,0,0.50);">
+                                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/shop_and_items/icon_diamonds.png" style="width:40rpx;height:36rpx;" wx:if="{{item.type==1}}"></image>
+                                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png" style="width:40rpx;height:40rpx;" wx:else></image>
+                                <view style="width:5rpx"></view>
+                  {{item.onsale==1?item.cost:item.price}}
+                </view>
+                            <view style="position:absolute;left:50%;top:-20rpx;width:71rpx;height:30rpx" wx:if="{{item.onsale==1}}">
+                                <view class="center center2" style="position:absolute;left:0px;top:0px;width:100%;height:100%;font-size:22rpx;color:#FFF9AF;text-shadow:2rpx 2rpx 0px #814E1E;">{{item.price}}</view>
+                                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/shop_and_items/img_Slash.png" style="position:absolute;left:0px;top:0px;width:100%;height:100%;"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view style="width:100%;height:100rpx;"></view>
+    </scroll-view>
+    <view style="position: absolute;top:0px;left:calc((100% - 711rpx) / 2);width:711rpx;height:90rpx;background-image: linear-gradient(-180deg, rgba(40,129,218,0.00) 64%, #145DD7 92%);box-shadow: 0 4rpx 6rpx 0 #5891F7;border-radius: 0 0 30rpx 30rpx;transform:rotate(180deg);"></view>
+    <view style="position: absolute;bottom:0px;left:calc((100% - 711rpx) / 2);width:711rpx;height:90rpx;background-image: linear-gradient(-180deg, rgba(40,129,218,0.00) 64%, #145DD7 92%);box-shadow: 0 4rpx 6rpx 0 #5891F7;border-radius: 0 0 30rpx 30rpx;" wx:if="{{dataSource.length>6}}"></view>
+    <view class="center center2" style="position: absolute;left:calc((100% - 386rpx)/2);bottom:-44rpx;width:386rpx;height38rpx;background: #2D6CDD;border-radius: 19rpx;font-size: 22rpx;color: #FFFFFF;" wx:if="{{!!endTime_onSale}}">
+    打折剩余时间 {{endTime_onSale}}
+  </view>
+</view>

@@ -1,0 +1,79 @@
+.shareBtn_icon {
+    width: 58rpx;
+    height: 55rpx;
+    position: absolute;
+    left: calc((100% - 58rpx) / 2);
+    top: 0px;
+    animation: shareBtnIconAni 1s ease-in-out infinite alternate;
+}
+
+.shareBtn_label {
+    position: absolute;
+    width: 100%;
+    height: 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0px;
+    bottom: 55rpx;
+    font-size: 28rpx;
+    color: #fff;
+    white-space: nowrap;
+    animation: shareBtnLabelAni 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes shareBtnLabelAni {
+    from {
+        text-shadow: 0 0 10rpx #0157cd,0 0 17rpx #0157cd,0 0 20rpx #0157cd,0 0 25rpx #0157cd,0 0 37rpx #0157cd;
+    }
+
+    80% {
+        text-shadow: 0 0 20rpx #0157cd,0 0 35rpx #0157cd,0 0 40rpx #0157cd,0 0 50rpx #0157cd,0 0 75rpx #0157cd;
+    }
+
+    to {
+        text-shadow: 0 0 20rpx #0157cd,0 0 35rpx #0157cd,0 0 40rpx #0157cd,0 0 50rpx #0157cd,0 0 75rpx #0157cd;
+    }
+}
+
+@keyframes shareBtnLabelAni {
+    from {
+        text-shadow: 0 0 10rpx #0157cd,0 0 17rpx #0157cd,0 0 20rpx #0157cd,0 0 25rpx #0157cd,0 0 37rpx #0157cd;
+    }
+
+    80% {
+        text-shadow: 0 0 20rpx #0157cd,0 0 35rpx #0157cd,0 0 40rpx #0157cd,0 0 50rpx #0157cd,0 0 75rpx #0157cd;
+    }
+
+    to {
+        text-shadow: 0 0 20rpx #0157cd,0 0 35rpx #0157cd,0 0 40rpx #0157cd,0 0 50rpx #0157cd,0 0 75rpx #0157cd;
+    }
+}
+
+@-webkit-keyframes shareBtnIconAni {
+    from {
+        top: 0rpx;
+    }
+
+    80% {
+        top: -15rpx;
+    }
+
+    to {
+        top: -15rpx;
+    }
+}
+
+@keyframes shareBtnIconAni {
+    from {
+        top: 0rpx;
+    }
+
+    80% {
+        top: -15rpx;
+    }
+
+    to {
+        top: -15rpx;
+    }
+}

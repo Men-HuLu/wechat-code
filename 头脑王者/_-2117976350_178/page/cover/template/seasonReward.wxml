@@ -1,0 +1,78 @@
+<template name="seasonRewardRankItem">
+    <view class="column start center2" style="position:relative;width: 658rpx;height: 186rpx;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/img_ranking_list_{{item.itsMe?'green':'blue'}}.png" style="width:100%;height:186rpx;"></image>
+        <view class="row center2 start" hoverClass="brightness" style="position:absolute;left:0px;top:0px;width: 100%;height: 186rpx;">
+            <view class="row start center2" style="color:#fff;font-size:36rpx;position:absolute;left:16rpx;top:12rpx;height:43rpx;font-weight:900;">{{item.rank}}
+            </view>
+            <view style="position:absolute;left:176rpx;top:calc((100% - 3rpx) / 2);height:3rpx;right:8rpx;background-color:#fff;"></view>
+            <view style="width: 120rpx; height: 120rpx;position: absolute; left:60rpx; top:calc((100% - 120rpx) / 2);">
+                <template is="avatarOnly" data="{{avatarUrl:item.avatarUrl,id:item.headId}}"></template>
+            </view>
+            <view class="end-with-3dot" style="position:absolute;left:206rpx;top:38rpx;height:40rpx;width:300rpx;font-size:28rpx;line-height: 40rpx;">{{item.nickName}}</view>
+            <view class="row-reverse start center2" style="position:absolute;right:16rpx;top:45rpx;height:33rpx;font-size:24rpx;white-space: nowrap;" wx:if="{{item.city}}">来自：{{item.city}}</view>
+            <view class="row start center2" style="position:absolute;left:194rpx;bottom:38rpx;width:300rpx;height:40rpx;">
+                <view style="position:relative;width:151rpx;height:40rpx;">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/img_degree.png" style="width:100%;height:100%;"></image>
+                    <view class="center center2" style="position:absolute;font-size:30rpx;color:#fff;width:100%;height:100%;left:0px;top:0px">{{item.matchName}}</view>
+                </view>
+                <view style="font-size:30rpx;color:#AFDEFF;font-weight:bold;padding-left:12rpx">等级{{item.level}}</view>
+            </view>
+            <view class="row start center2" style="position:absolute;right:16rpx;bottom:16rpx;width:135rpx;height:42rpx;border-radius: 21rpx;background-color:#2F5BA0;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/icon_star_default.png" style="width:38rpx;height:36rpx;padding-left:8rpx"></image>
+                <view style="font-size:30rpx;color:#fff;font-weight:bold;padding-left:4rpx">{{item.star}}</view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="seasonReward">
+    <view style="position: absolute; left:0px; top:0px; width:100%; height:100%;" wx:if="{{visible}}">
+        <view class="seasonReward_mainView">
+            <view class="seasonReward_mask1"></view>
+            <view animation="{{mainViewAni}}" style="width:100%; height:100%; position: absolute; left:0px; top:0px;">
+                <view class="seasonReward_title">
+                    <image class="seasonReward_title_bg" src="{{seasonImgSrc}}"></image>
+                    <image class="seasonReward_title_mask" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/img_mask_list.png"></image>
+                </view>
+                <view class="column start center2 seasonReward_rankView" wx:if="{{list}}">
+                    <template is="seasonRewardRankItem" data="{{item:item}}" wx:for="{{list}}" wx:key="rank"></template>
+                </view>
+                <view class="seasonReward_shareBtn">
+                    <image class="seasonReward_shareBtnIcon" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/info/btn_info_share.png"></image>
+                    <view class="seasonReward_shareBtnLabel">分享</view>
+                </view>
+                <button class="seasonReward_shareBtn" id="seasonReward" openType="share" style="opacity: 0;">透明分享按钮</button>
+                <view bindtap="seasonReward_onTapGetBtn" class="seasonReward_getBtn">领取奖励</view>
+            </view>
+        </view>
+        <view class="seasonReward_rewardView {{rewardViewVisible?'':'hide'}}">
+            <view animation="{{rewardViewAni}}" style="width:100%; height:100%; position: absolute; left:0px; top:0px; opacity: 0;">
+                <view class="seasonReward_rewardView_bg">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/info/bg_info_up.png" style="position: absolute;left:0px;top:0px;width:728rpx;height:530rpx;"></image>
+                    <view style="position: absolute;left:0px;bottom:0px;width:728rpx;height:calc(100% - 530rpx);background:#479dfa"></view>
+                </view>
+                <view class="seasonReward_avatar">
+                    <template is="avatarOnly" data="{{avatarUrl:avatarUrl,id:headId}}"></template>
+                </view>
+                <view class="seasonReward_userName">{{nickName}}</view>
+                <view class="seasonReward_rewardView_subView {{rewardSubViewVisible?'':'hide'}}">
+                    <view animation="{{itemAni}}" bindtap="callback_item_clicked" class="seasonReward_subjectView {{subjectVisible?'':'hide'}}">
+                        <image class="seasonReward_subject" src="{{itemImgSrc}}"></image>
+                        <view class="seasonReward_subjectNum">×{{itemNum}}</view>
+                    </view>
+                    <image animation="{{tierAni}}" class="seasonReward_tier {{tierVisible?'':'hide'}}" src="{{headIdIconSrc}}"></image>
+                    <image animation="{{trophyAni}}" class="seasonReward_trophy {{trophyVisible?'':'hide'}}" src="{{cupImgSrc}}"></image>
+                    <image animation="{{titleImgAni}}" class="seasonReward_rewardTitleImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/reward_title_default.png"></image>
+                    <view animation="{{titleLabelAni}}" class="seasonReward_rewardTitleLabel">{{rewardDesc}}</view>
+                    <view animation="{{getBtn2Ani}}" bindtap="seasonReward_onTapGetBtn2" class="seasonReward_getBtn2">领 取</view>
+                </view>
+            </view>
+            <view animation="{{nextViewAni}}" class="seasonReward_nextView {{nextViewVisible?'':'hide'}}">
+                <image class="seasonReward_nextView_img" src="{{nextSeasonImgSrc}}"></image>
+                <view class="center center2" style="position:absolute;width:100%;left:0px;top:444rpx;height:33rpx;font-size: 24rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(6,51,82,0.50);white-space: nowrap;text-align: center;">{{nextSeasonTime}}</view>
+                <view class="seasonReward_nextView_label">新赛季已开启 请诸君努力吧！</view>
+                <view bindtap="seasonReward_onTapGetBtn3" class="seasonReward_nextView_btn">知道了</view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="/template/avatarBase.wxml"></import>

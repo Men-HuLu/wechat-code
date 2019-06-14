@@ -1,0 +1,96 @@
+<view class="home-main">
+    <custbar fromPage="{{fromPage}}" section="index"></custbar>
+    <view class="loading" style="margin-top:{{isiPhoneX?'36rpx':'-10rpx;'}}"></view>
+    <view class="searchtag">
+        <i class="icon General_Search si" style="top:20rpx;"></i>
+        <view bindtap="change2Search" class="search-box" data-open="{{true}}" wx:if="{{!isSearch}}">
+      {{defkw}}
+    </view>
+        <view catchtouchmove="myCatchTouch" class="search-detail" style="top:{{isiPhoneX?'177rpx':'130rpx'}}" wx:if="{{isSearch}}">
+            <input bindconfirm="searchEvent" bindinput="getsuggestion" class="search-box searchline" confirmType="search" focus="{{isfoucus}}" placeholder="{{defkw}}" placeholderClass="input-pl" value="{{keyword}}"></input>
+            <i catchtap="deleteKeyword" class="icon icon-Search_Delete sc"></i>
+            <text bindtap="change2Search" class="search-canel" data-open="{{false}}">取消</text>
+            <view class="search-ctx" hidden="{{sugArr.length>0}}">
+                <text class="search-title">大家都在搜</text>
+                <view class="keyword-box">
+                    <view bindtap="navtoSearch" class="keyword-item" data-kw="{{item.keyword}}" data-type="hot" wx:for="{{keywordlist}}" wx:key="{{item}}">
+            {{item.keyword}}
+          </view>
+                </view>
+            </view>
+            <view class="search-his" hidden="{{sugArr.length>0||localkeywordlist.length<=0}}">
+                <text class="search-title">搜索历史</text>
+                <view class="local-keyword" wx:for="{{localkeywordlist}}" wx:key="{{item}}">
+                    <i class="icon Search_HistoryRecor lfsh"></i>
+                    <text bindtap="navtoSearch" class="localkeyword" data-kw="{{item}}" data-type="history">{{item}}</text>
+                    <i catchtap="deleteItem" class="icon General_Close_Big rtsh" data-idx="{{index}}"></i>
+                </view>
+                <view bindtap="cleanlocalkw" class="local-keyword center">
+          清除搜索历史
+          </view>
+            </view>
+            <view class="sug-list">
+                <rich-text bindtap="searchBysug" class="sug-item" data-sug="{{item.value}}" nodes="{{item.name}}" wx:for="{{sugArr}}">
+                    <view class="border-line"></view>
+                </rich-text>
+            </view>
+        </view>
+    </view>
+    <view class="switch" wx:if="{{!isSearch}}">
+        <text bindtap="switchHomeTag" class="sec {{nowTag==0?'active':''}}" data-tag="0">热门</text>
+        <text bindtap="switchHomeTag" class="sec {{nowTag==1?'active':''}}" data-tag="1" style="margin-left:192rpx;">追番</text>
+    </view>
+    <view class="page-body" hidden="{{isSearch}}">
+        <view class="page-section" wx:if="{{nowTag==0}}">
+            <view class="home-rank">
+                <scroll-view bindscrolltolower="refreshBottom" bindscrolltoupper="scrollFn" class="scroll-wrap" scrollY="{{true}}" style="height: {{deviceHeight-160}}px;">
+                    <view class="rank-item" wx:for="{{lists}}" wx:key="{{item.aid}}">
+                        <view bindtap="openPlayPage" class="rank-item-top" data-aid="{{item.aid}}" hidden="{{isPlayId===item.aid}}">
+                            <image class="rank-item-img" src="{{item.pic+'@686w_384h_1e_1c.png'}}"></image>
+                            <view class="fade-box"></view>
+                            <text class="item-info item-info-time">{{Filter.formattime(item.duration)}}</text>
+                            <text class="item-info item-info-view">{{Filter.number2chn(item.stat.view)}}次播放</text>
+                            <text class="item-info item-info-barrage">
+              {{Filter.number2chn(item.stat.danmaku)}}弹幕
+            </text>
+                        </view>
+                        <view class="rank-item-title">
+                            <view class="avator" style="background:url('../../image/avatar.png') center no-repeat">
+                                <image src="{{item.author.face}}"></image>
+                            </view>
+                            <view catchtap="openPlayPage" class="video-info" data-aid="{{item.aid}}">
+                                <text class="item-detail">{{item.title}}</text>
+                                <text class="up-name">{{item.author.name}}</text>
+                                <text class="pub-time">{{Filter.formatdate(item.ctime)}}</text>
+                            </view>
+                            <view class="tag-info">
+                                <view catchtap="toTag" class="tag-name" data-tagname="{{item.tags[0].name}}" data-tagnum="{{item.tags[0].id}}">
+                {{item.tags[0].name}}
+              </view>
+                                <button bindtap="reportEvent" data-aid="{{item.aid}}" data-imageurl="{{item.pic}}" data-name="{{item.title}}" data-report="mainindex" hoverClass="none" hoverStopPropagation="{{stoppregation}}" openType="share">
+                                    <i class="icon General_Share big" data-aid="{{item.aid}}" data-imageurl="{{item.pic}}" data-name="{{item.title}}"></i>
+                                </button>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="read-more" hidden="{{!reachbottom}}">更多请到bilibili客户端观看</view>
+        </view>
+        <view class="page-section" wx:if="{{nowTag==1}}">
+            <timeline></timeline>
+        </view>
+    </view>
+    <view class="update-tag" wx:if="{{isUpdate}}">{{tips}}</view>
+    <view class="update-tag no-net" wx:if="{{noNetwork}}">技能冷却中 稍后再试试</view>
+    <view class="update-tag" wx:if="{{isNewcontent}}">热门内容已更新~</view>
+    <button appParameter="wechat" binderror="launchAppError" bindtap="reportEvent" class="open-btn" data-report="openapp" openType="launchApp" wx:if="{{iSopenBtn}}">
+    打开APP
+  </button>
+    <view class="first-into" wx:if="{{showGuide}}">
+        <image class="guidepng" src="../../image/guide.png"></image>
+        <view bindtap="closeGuide" class="know-box">知道了!</view>
+    </view>
+    <welcome wx:if="{{false}}"></welcome>
+</view>
+<wxs module="Filter" src="../../utils/filter/index.wxs" />

@@ -1,0 +1,18 @@
+.battle_round {
+    white-space: nowrap;
+    font-size: 72rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);
+    width: 100%;
+    height: 100%;
+    line-height: 100%;
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    opacity: 1;
+    transform: scale(0);
+}

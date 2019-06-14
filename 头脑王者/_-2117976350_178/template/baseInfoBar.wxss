@@ -1,0 +1,11 @@
+@import "avatarNoName.wxss";
+
+.title-bar {
+    height: 130rpx;
+    width: 682rpx;
+    background-color: rgba(35,85,154,0.6);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1rpx solid rgba(255,255,255,0.1);
+    position: relative;
+}

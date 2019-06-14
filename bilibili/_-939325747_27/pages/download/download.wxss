@@ -1,0 +1,31 @@
+.share-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+image {
+    margin-top: 174rpx;
+    margin-bottom: 24rpx;
+    width: 270rpx;
+    height: 270rpx;
+}
+
+text {
+    display: block;
+    font-size: 28rpx;
+    color: #212121;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 40rpx;
+}
+
+button {
+    margin-top: 40rpx;
+    background: #FB7299;
+    border-radius: 4px;
+    color: white;
+    width: 282rpx;
+    font-size: 32rpx;
+}

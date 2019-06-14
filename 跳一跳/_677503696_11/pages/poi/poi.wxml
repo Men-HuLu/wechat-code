@@ -1,0 +1,137 @@
+<navigation my_class="navigation-bar_color" title="">
+    <view class="navigation-bar__icon-opr" slot="left">
+        <image class="navigation-bar__icon-opr__image" src="/images/navigation_back_white.svg"></image>
+    </view>
+</navigation>
+<view class="page">
+    <view class="page_placeholder" wx:if="{{!poi.store_name}}">
+        <view class="page-poi__hd poi-placeholder" style="padding-top: {{statusBarHeight+(platform==='android'?48:44)}}px;">
+            <view class="page-poi__hd__content">
+                <image class="page-poi__avatar poi-placeholder" src=""></image>
+                <view class="page-poi__name_placeholder poi-placeholder"></view>
+                <view class="page-poi__details">
+                    <view class="page-poi__details_placeholder poi-placeholder"></view>
+                    <view class="page-poi__details_placeholder short poi-placeholder"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <block wx:else>
+        <view class="page-poi__hd" style="padding-top: {{statusBarHeight+(platform==='android'?48:44)}}px;">
+            <view class="page-poi__hd-bg__wrp">
+                <image class="page-poi__hd-bg" src="{{poi.logo}}"></image>
+                <view class="page-poi__hd-bg__mask"></view>
+            </view>
+            <view class="page-poi__hd__content">
+                <image class="page-poi__avatar" src="{{poi.logo}}"></image>
+                <view class="page-poi__name font-size-34">{{poi.store_name}}</view>
+                <view class="page-poi__details">
+                    <view bindtap="openMap" class="cell-item wx-flex" wx:if="{{poi.address}}">
+                        <view class="cell-item__hd">
+                            <image class="icon-details" src="/images/location_icon.svg"></image>
+                        </view>
+                        <view class="cell-item__bd wx-flex__item">{{poi.address}}</view>
+                        <view class="cell-item__ft location-offset">
+                            <text class="opacity-tips font-size-26 middle">{{poi.distance}}</text>
+                            <image class="icon-more-large" src="/images/nextw_icon.svg"></image>
+                        </view>
+                    </view>
+                    <view class="cell-item wx-flex" wx:if="{{poi.open_time&&hasUpdated}}">
+                        <view class="cell-item__hd">
+                            <image class="icon-details" src="/images/time_icon.svg"></image>
+                        </view>
+                        <view class="cell-item__bd wx-flex__item">{{poi.open_time}}</view>
+                        <view class="cell-item__ft"></view>
+                    </view>
+                    <view bindtap="makeCall" class="cell-item wx-flex" wx:if="{{poi.phone&&hasUpdated}}">
+                        <view class="cell-item__hd">
+                            <image class="icon-details" src="/images/tel_icon.svg"></image>
+                        </view>
+                        <view class="cell-item__bd wx-flex__item">{{poi.phone}}</view>
+                        <view class="cell-item__ft">
+                            <image class="icon-more-large" src="/images/nextw_icon.svg"></image>
+                        </view>
+                    </view>
+                </view>
+                <block wx:if="{{poi.poi_type==1&&canUseCustomer||poi.poi_type==2&&clientCustomer&&canUseCustomer}}">
+                    <view bindtap="openCustomer" class=" wx-flex service-info button-reset thin-border-bottom" wx:if="{{hasUpdated&&poi.customer.avatar}}">
+                        <view class="service-info__bd wx-flex__item">
+                            <view class="service-info__avatar__wrp">
+                                <image class="service-info__avatar" mode="aspectFill" src="{{poi.customer.avatar}}"></image>
+                            </view>
+                            <text class="service-info__name">{{poi.customer.label}}</text>
+                        </view>
+                        <view class="service-info__ft">
+                            <text class="opacity-tips font-size-26">{{poi.customer.status==1?'在线':'离线'}}</text>
+                            <image class="icon-more-large" src="/images/nextw_icon.svg"></image>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="page-poi__bd border-bottom" wx:if="{{poi.service_down.length!=0||wxpay_info.qr_key||card_info_list.length!=0||poi.service_top.length!=0}}">
+            <view class="config-area_main wx-flex" wx:if="{{hasUpdated}}">
+                <view bindtap="handleClickWxpay" class="config-item wx-flex__item" wx:if="{{hasPaySve}}">
+                    <image class="icon-service" src="/images/services/md.svg"></image>
+                    <text>买单</text>
+                </view>
+                <view bindtap="handleClickCard" class="config-item wx-flex__item" data-idx="{{memberCardIdx}}" data-name="会员" wx:if="{{hasMemberSve}}">
+                    <image class="icon-service" src="/images/services/hy.svg"></image>
+                    <text>会员</text>
+                </view>
+                <view bindtap="handleClickCard" class="config-item wx-flex__item" data-idx="{{discountCardIdx}}" data-name="优惠" wx:if="{{hasDiscountSve}}">
+                    <image class="icon-service" src="/images/services/yh.svg"></image>
+                    <text>优惠</text>
+                </view>
+                <view bindtap="navigateToApp" class="config-item wx-flex__item" data-appid="{{item.appid}}" data-idx="{{index}}" data-path="{{item.path}}" data-pos="top" hoverClass="none" wx:for="{{poi.service_top}}" wx:key="name">
+                    <image class="icon-service" src="{{item.logo}}"></image>
+                    <text class="">{{item.name}}</text>
+                </view>
+            </view>
+            <view class="config-area_extra" wx:if="{{hasUpdated}}">
+                <view class="list-border">
+                    <view bindtap="navigateToApp" class="thin-border-top wx-flex config-area__cell-item" data-appid="{{item.appid}}" data-idx="{{index}}" data-path="{{item.path}}" data-pos="down" hidden="{{index>1&&showMoreService}}" hoverClass="bg-highlight" wx:for="{{poi.service_down}}" wx:key="desc">
+                        <view class="cell-item__bd wx-flex__item">{{item.name}}</view>
+                        <view class="cell-item__ft">
+                            <image class="icon-more-large" src="/images/nextb_icon.svg"></image>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="showMoreService" class="config-area_extra__opr font-size-28 link-color thin-border-top" hidden="{{!showMoreService}}" hoverClass="tap-highlight">
+          展开更多服务
+          </view>
+            </view>
+            <view bindtap="reportAppTap" class="wx-flex config-area__cell-item default-weapp__item" data-appid="{{appid}}" hoverClass="bg-highlight" wx:if="{{!hasUpdated}}">
+                <view class="cell-item__hd">
+                    <image class="cell-item__avatar" src="{{poi.logo}}"></image>
+                </view>
+                <view class="cell-item__bd wx-flex__item">{{poi.store_name}}</view>
+                <view class="cell-item__ft">
+                    <image class="icon-weapp" src="/images/minip.svg"></image>
+                    <image class="icon-more-large" src="/images/nextb_icon.svg"></image>
+                </view>
+            </view>
+        </view>
+        <view class="page-poi__ft" wx:if="{{hasUpdated}}">
+            <view class="cell-item_muti" wx:for="{{videoinfo_list}}" wx:key="src">
+                <view class="cell-item__hd wx-flex">
+                    <view class="wx-flex__item">门店视频</view>
+                </view>
+                <view class="cell-item__bd poi-details__video_wrp">
+                    <video autoplay="{{videoAutoPlay}}" class="poi-details__video" controls="{{true}}" id="store_video" loop="{{true}}" muted="{{videoMuted}}" onerror="videoError" poster="{{item.poster}}" src="{{item.src}}"></video>
+                    <cover-view class="top-control__area">
+                        <cover-image bindtap="clickMute" class="icon-mute" src="{{videoMuted?'/images/v_off@3X.png':'/images/v_on@3X.png'}}"></cover-image>
+                    </cover-view>
+                </view>
+            </view>
+            <view class="cell-item_muti" wx:if="{{poi.store_photo_list.length>0}}">
+                <view class="cell-item__hd wx-flex">
+                    <view class="wx-flex__item">门店图片</view>
+                </view>
+                <view class="cell-item__bd poi-details__pic_wrp">
+                    <image bindtap="previewImg" class="poi-details__pic" data-src="{{item}}" mode="aspectFill" src="{{item}}" wx:for="{{poi.store_photo_list}}" wx:for-index="idx" wx:key="*this"></image>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,38 @@
+.find-wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 88rpx;
+}
+
+.swiper-wrap {
+    height: 432rpx;
+}
+
+.swiper-item {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding: 0 8rpx;
+}
+
+.rank-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 37rpx 48rpx 20rpx;
+}
+
+.rank-wrap image {
+    width: 88rpx;
+    height: 88rpx;
+    margin: 0 auto 6rpx;
+    background: #fff;
+}
+
+.rank-wrap .tit {
+    text-align: center;
+    font-size: 26rpx;
+    color: #333;
+}

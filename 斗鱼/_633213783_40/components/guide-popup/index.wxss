@@ -1,0 +1,22 @@
+.guide-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    z-index: 150;
+}
+
+.guide-content {
+    position: absolute;
+    width: 750rpx;
+    height: 567rpx;
+    top: 0;
+    right: 0;
+}
+
+.guide-img {
+    width: 100%;
+    height: 100%;
+}

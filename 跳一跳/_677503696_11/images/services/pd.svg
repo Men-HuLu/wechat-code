@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>pd</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="0923-无关系链" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pd">
+            <circle id="Combined-Shape" stroke="#1588F4" stroke-width="2" cx="14" cy="14" r="11"></circle>
+            <g id="Group-26" transform="translate(13.247455, 12.494784) rotate(-116.000000) translate(-13.247455, -12.494784) translate(9.247455, 7.494784)" fill="#1588F4" fill-rule="nonzero">
+                <path d="M2.69080525,4.98751936 L7.68900684,7.42530516 C7.77587513,7.46767365 7.81194935,7.57244077 7.76958085,7.65930907 L7.04626846,9.14231924 C7.00389996,9.22918754 6.89913284,9.26526175 6.81226455,9.22289325 L0.940143445,6.35886842 C0.795362957,6.28825426 0.73523927,6.1136424 0.805853432,5.96886191 L0.827410227,5.92466393 L0.807471919,5.92466393 C0.743038698,5.92466393 0.690805252,5.87243049 0.690805252,5.80799726 L0.690805252,0.266330598 C0.690805252,0.169680767 0.769155421,0.0913305983 0.865805252,0.0913305983 L2.51580525,0.0913305983 C2.61245508,0.0913305983 2.69080525,0.169680767 2.69080525,0.266330598 L2.69080525,4.98751936 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

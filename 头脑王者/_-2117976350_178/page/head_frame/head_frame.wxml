@@ -1,0 +1,78 @@
+<import src="/template/avatarBase.wxml"></import>
+<view class="column start center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;overflow:hidden;">
+    <view style="position: absolute;left:0px;top:0px;width:100%;height:100%;background:#C8E8FF;"></view>
+    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/head_frame/img_background.png" style="position:absolute;left:0px;top:0px;width:750rpx;height:408rpx;"></image>
+    <view class="start center2 column">
+        <view class="userAvatar">
+            <template is="avatarOnly" data="{{avatarUrl:avatarUrl,id:curHead.id}}"></template>
+        </view>
+        <view class="center center2" style="position: absolute;left:0px;top:209rpx;width:100%;height:45rpx;font-size: 32rpx;color: #7FEEFF;">-{{!!curHead?curHead.name:'无头像框'}}-</view>
+        <view class="center center2" style="position: absolute;left:0px;top:250rpx;width:100%;height:37rpx;font-size: 26rpx;color: #E6EEFF;">{{curHead.desc}}</view>
+        <view style="position: absolute;left:0px;top:343rpx;width:100%;height:140rpx;" wx:if="{{!!headList&&headList.length>0}}">
+            <view class="center center2" style="position: absolute;left:calc(50% - 140rpx);top:12rpx;width:280rpx;height:93rpx;background: #FFBA6B;border-radius: 100px;box-shadow: 0 2rpx 5rpx 0 rgba(34,97,124,0.45), inset 0 -4rpx 1rpx 0 rgba(255,143,0,0.72), inset 0 4rpx 1rpx 0 #FFD48B;" wx:if="{{!!curHead&&!!usingHead&&curHead.id==usingHead.id}}">
+                <view style="font-size: 48rpx;color: #ffffff;line-height: 48px;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);">使用中</view>
+            </view>
+            <view bindtap="callback_btnExchange_clicked" class="center center2" style="position: absolute;left:calc(50% - 140rpx);top:12rpx;width:280rpx;height:93rpx;background: #F5A623;border-radius: 100px;box-shadow: 0 2rpx 5rpx 0 rgba(34,97,124,0.45), inset 0 -4rpx 1rpx 0 rgba(255,143,0,0.72), inset 0 4rpx 1rpx 0 #FFD48B;" wx:elif="{{curHead.notOwn==1}}">
+                <view class="row center center2" style="font-size: 48rpx;color: #ffffff;line-height: 48px;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/shop_and_items/icon_diamonds.png" style="width:62rpx;height:47rpx;" wx:if="{{curHead.type==1}}"></image>
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png" style="width:62rpx;height:62rpx;" wx:else></image>
+            {{curHead.price}}
+          </view>
+            </view>
+            <view bindtap="callback_btnUse_clicked" class="center center2" hoverClass="brightness" style="position: absolute;left:calc(50% - 152rpx);top:0px;width:304rpx;height:120rpx;" wx:else>
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/head_frame/buton_send.png" style="width:304rpx;height:120rpx;"></image>
+            </view>
+            <view class="center center2" style="position: absolute;left:0px;top:120rpx;width:100%;height:30rpx;font-size: 22rpx;color: #25A1FF;" wx:if="{{curHead.expiredAt==0}}">{{curHead.desc}}</view>
+            <view class="center center2" style="position: absolute;left:0px;top:120rpx;width:100%;height:30rpx;font-size: 22rpx;color: #25A1FF;" wx:elif="{{curHead.expiredAt==-1}}">已过期</view>
+            <view class="center center2" style="position: absolute;left:0px;top:120rpx;width:100%;height:30rpx;font-size: 22rpx;color: #25A1FF;" wx:elif="{{curHead.expiredAt>0}}">{{curHead.textExpiredAt}}</view>
+        </view>
+    </view>
+    <view class="column start center2" style="position: absolute;left:0px;top:527rpx;width:100%;height:calc(100% - 527rpx);" wx:if="{{!!headList&&headList.length>0}}">
+        <scroll-view scrollY="true" style="position:absolute;left:calc(50% - 355rpx);top:0px;width:710rpx;height:100%;">
+            <view class="row start" style="flex-wrap:wrap;">
+                <view bindtap="callback_item_clicked" class="column center center2" data-hid="{{item.id}}" hoverClass="brightness" style="position:relative;width:236rpx;height:264rpx" wx:for="{{headList}}" wx:for-index="id" wx:key="id">
+                    <view class="center center2" style="position: relative;width:220rpx;height:230rpx;">
+                        <view style="position: relative;width:214rpx;height:230rpx;background:#FFBA6B;border: 8rpx solid #FFFBF5;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.35);border-radius: 10rpx;" wx:if="{{usingHead&&usingHead.id==item.id}}">
+                            <view class="center center2" style="background: #F9631D;border-radius: 20rpx;position: absolute;left:calc(50% - 76rpx);top:12rpx;width:152rpx;height:28rpx;">
+                                <view class="center center2" style="font-size: 20rpx;color: #FFFFFF;line-height: 20rpx;">{{item.name}}</view>
+                            </view>
+                            <view class="userAvatar">
+                                <template is="avatarFrame" data="{{avatarUrl:'',id:item.id}}"></template>
+                            </view>
+                            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/head_frame/icon_right.png" style="position:absolute;right:16rpx;bottom:16rpx;width:74rpx;height:74rpx;"></image>
+                        </view>
+                        <view style="position: relative;width:220rpx;height:230rpx;background: #77DBFF;border: 6rpx solid #26B2F9;border-radius: 10rpx;" wx:elif="{{item.selected&&item.notOwn!=1}}">
+                            <view class="center center2" style="background: #2796F7;border-radius: 20rpx;position: absolute;left:calc(50% - 76rpx);top:12rpx;width:152rpx;height:28rpx;">
+                                <view class="center center2" style="font-size: 20rpx;color: #FFFFFF;line-height: 20rpx;">{{item.name}}</view>
+                            </view>
+                            <view class="userAvatar">
+                                <template is="avatarFrame" data="{{avatarUrl:'',id:item.id}}"></template>
+                            </view>
+                        </view>
+                        <view style="position: relative;width:220rpx;height:230rpx;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.35);border-radius: 10rpx;opacity: {{item.selected?1:0.4}};background: #0048EF;" wx:elif="{{item.notOwn==1}}">
+                            <view class="center center2" style="background: #4990E2;border-radius: 20rpx;position: absolute;left:calc(50% - 76rpx);top:12rpx;width:152rpx;height:28rpx;">
+                                <view class="center center2" style="font-size: 20rpx;color: #FFFFFF;line-height: 20rpx;">{{item.name}}</view>
+                            </view>
+                            <view class="userAvatar">
+                                <template is="avatarFrame" data="{{avatarUrl:'',id:item.id}}"></template>
+                            </view>
+                            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/head_frame/img_lock.png" style="position:absolute;left:calc((100% - 96rpx)/2);top:calc((100% - 120rpx)/2);width:96rpx;height:120rpx;"></image>
+                        </view>
+                        <view style="position: relative;width:220rpx;height:230rpx;background: #ECF8FF;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.35);border-radius: 10rpx;" wx:else>
+                            <view class="center center2" style="background: #4990E2;border-radius: 20rpx;position: absolute;left:calc(50% - 76rpx);top:12rpx;width:152rpx;height:28rpx;">
+                                <view class="center center2" style="font-size: 20rpx;color: #FFFFFF;line-height: 20rpx;">{{item.name}}</view>
+                            </view>
+                            <view class="userAvatar">
+                                <template is="avatarFrame" data="{{avatarUrl:'',id:item.id}}"></template>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view style="position: absolute;left:calc(50% - 355rpx);top:-4rpx;width:710rpx;height:24rpx; background-image: linear-gradient(-180deg, #69B8F0 4%, rgba(116,188,240,0.08) 96%);border-radius: 20rpx;"></view>
+    </view>
+    <view class="column start center2" style="position: absolute;left:0px;top:527rpx;width:100%;height:calc(100% - 527rpx);" wx:else>
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/head_frame/img_empty.png" style="width:500rpx;height:500rpx;"></image>
+    </view>
+</view>

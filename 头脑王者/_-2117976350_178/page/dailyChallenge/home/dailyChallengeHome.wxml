@@ -1,0 +1,43 @@
+<import src="../../../util/daliyTask/dailyTaskNotifiyView.wxml"></import>
+<view class="mainView">
+    <view class="goldView">
+        <image class="goldImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_money.png"></image>
+        <view class="goldLabel">{{goldStr}}</view>
+    </view>
+    <view class="nounView">剩余挑战数：{{nounStr}}次</view>
+    <view bind:tap="onTapNomalBtn" class="nomalView" hoverClass="brightness">
+        <view class="nomalFlagView">
+            <view class="costView">
+                <view class="costLabel">入场费</view>
+                <image class="costIcon" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_money.png"></image>
+                <view class="costNumLabel">{{dcData[0].fee}}</view>
+                <view></view>
+            </view>
+        </view>
+    </view>
+    <view bind:tap="onTapMiddleBtn" class="middleView" hoverClass="brightness">
+        <view class="middleFlagView">
+            <view class="costView">
+                <view class="costLabel">入场费</view>
+                <image class="costIcon" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_money.png"></image>
+                <view class="costNumLabel">{{dcData[1].fee}}</view>
+            </view>
+        </view>
+    </view>
+    <view bind:tap="onTapHardBtn" class="hardView" hoverClass="brightness">
+        <view class="hardFlagView">
+            <view class="costView">
+                <view class="costLabel">入场费</view>
+                <image class="costIcon" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_money.png"></image>
+                <view class="costNumLabel">{{dcData[2].fee}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="jackpotView" hoverClass="brightness">
+        <image bind:tap="onTapJackpotBtn" class="jackpotBtn" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/icon_jackpot.png"></image>
+    </view>
+    <navigator appId="{{linkAppId}}" bind:tap="onTapLinkBtn" class="linkImg" extraData="{{linkExtraData}}" openType="navigate" path="{{linkPath}}" target="miniProgram" version="release" wx:if="{{linkImg}}">
+        <image src="{{linkImg}}" style="width:100%; height:100%;"></image>
+    </navigator>
+</view>
+<template is="dailyTaskNotifiyView" data="{{...taskUpdate}}"></template>

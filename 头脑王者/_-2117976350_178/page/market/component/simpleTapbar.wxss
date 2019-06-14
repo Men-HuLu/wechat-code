@@ -1,0 +1,47 @@
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.start {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.center2 {
+    display: flex;
+    align-items: center;
+}
+
+.brightness {
+    filter: brightness(1.2);
+}
+
+.onsale-arrow {
+    animation: frame-onsale-arrow 0.4s infinite alternate;
+}
+
+@-webkit-keyframes frame-onsale-arrow {
+    0% {
+        transform: translate3d(5px,-2px,0);
+    }
+
+    100% {
+        transform: translate3d(0px,0px,0);
+    }
+}
+
+@keyframes frame-onsale-arrow {
+    0% {
+        transform: translate3d(5px,-2px,0);
+    }
+
+    100% {
+        transform: translate3d(0px,0px,0);
+    }
+}

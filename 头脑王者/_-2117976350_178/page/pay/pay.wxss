@@ -1,0 +1,120 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100%;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+}
+
+.button {
+    display: block;
+    margin: 0 auto;
+    padding: 0 1.3em;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 10rpx;
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+    outline: 0;
+    box-shadow: none;
+    line-height: 2.33;
+    color: #fff;
+    border: 1rpx solid #00a2ff;
+    font-size: 30rpx;
+    background-color: #00a2ff;
+}
+
+.fix-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.order-cont {
+    justify-content: flex-start;
+}
+
+.order {
+    background-color: #047bca;
+    color: white;
+    padding: 10% 0 10% 11%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.orderFail {
+    width: 100%;
+    background-color: #047bca;
+    color: white;
+    padding: 10% 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.item-fail {
+    font-size: 32rpx;
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.re-pay {
+    width: 100%;
+}
+
+.order-info {
+    font-size: 28rpx;
+    text-align: center;
+    font-weight: normal;
+    color: #8b8b8b;
+    padding: 5% 0 10% 0;
+}
+
+.game-name {
+    font-size: 42rpx;
+    line-height: 100rpx;
+}
+
+.game-cost {
+    font-size: 56rpx;
+    line-height: 100rpx;
+}
+
+.game-tools {
+    font-size: 36rpx;
+    line-height: 100rpx;
+}
+
+.btn-return {
+    margin: 5% 10%;
+}
+
+.btn-returns {
+    margin: 20% 10% 5% 10%;
+}
+
+button[type=other] {
+    color: #fff;
+    background-color: #66a6ff;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.center2 {
+    display: flex;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.button3 {
+    width: 600rpx;
+    height: 100rpx;
+}

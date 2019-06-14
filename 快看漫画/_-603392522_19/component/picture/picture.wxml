@@ -1,0 +1,4 @@
+<image bindload="picLoaded" class="picture" mode="{{mode}}" src="{{load?src:''}}" style="height: {{min}}"></image>
+<view class="holder" hidden="{{loaded}}" style="height: {{min}}; margin-top: -{{min}}">
+    <image hidden="{{only}}" mode="aspectFit" src="/image/placeholder.png"></image>
+</view>

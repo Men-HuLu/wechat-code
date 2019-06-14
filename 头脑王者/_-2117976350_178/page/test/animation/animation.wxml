@@ -1,0 +1,1 @@
+<view>{{shakeInfo.num}}</view>

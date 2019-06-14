@@ -1,0 +1,9 @@
+<template name="guildAvatar">
+    <view class="guildInfo center center2">
+        <image backgroundSize="cover" class="guildinfo-bg" src="https://question-resource-wscdn.hortorgames.com/image/ui/question_mark.png"></image>
+        <view class="{{avatarList.length>0?'':'hide'}}" style="position: absolute;top: 10rpx;left: 10rpx; background-color:#23559a;width:170rpx;height:170rpx;"></view>
+        <view class="guildAvatarView type{{avatarList.length}}" style="position: absolute;top: 0px;left: 0px;width:100%;height:100%">
+            <image backgroundSize="cover" class="guildAvatarItem type{{avatarList.length}}" src="{{avatarUrl}}" wx:for="{{avatarList}}" wx:for-item="avatarUrl" wx:key="*this"></image>
+        </view>
+    </view>
+</template>

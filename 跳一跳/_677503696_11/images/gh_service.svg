@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>GH_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="GH_icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M8,6 L20,6 C21.1045695,6 22,6.8954305 22,8 L22,20 C22,21.1045695 21.1045695,22 20,22 L8,22 C6.8954305,22 6,21.1045695 6,20 L6,8 C6,6.8954305 6.8954305,6 8,6 Z" id="Rectangle-13" fill="#6367F0" transform="translate(14.000000, 14.000000) rotate(-315.000000) translate(-14.000000, -14.000000) "></path>
+        <path d="M13,13 L13,10.3 C13,10.1343146 13.1343146,10 13.3,10 L14.7,10 C14.8656854,10 15,10.1343146 15,10.3 L15,13 L17.7,13 C17.8656854,13 18,13.1343146 18,13.3 L18,14.7 C18,14.8656854 17.8656854,15 17.7,15 L15,15 L15,17.7 C15,17.8656854 14.8656854,18 14.7,18 L13.3,18 C13.1343146,18 13,17.8656854 13,17.7 L13,15 L10.3,15 C10.1343146,15 10,14.8656854 10,14.7 L10,13.3 C10,13.1343146 10.1343146,13 10.3,13 L13,13 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+    </g>
+</svg>

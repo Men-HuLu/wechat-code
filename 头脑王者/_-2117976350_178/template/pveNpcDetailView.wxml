@@ -1,0 +1,32 @@
+<template name="pveNpcDetailView">
+    <view style="width:100%;height:100%">
+        <view name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="column start center2" name="pickerView" style="position:absolute; width:500rpx; height:700rpx; left:0; top:0; right:0; bottom:0; margin:auto; background-color:#23559a;border-radius: 5rpx; overflow:hidden;">
+            <view style="height:40rpx"></view>
+            <view class="center2 start column" style="width:432rpx;">
+                <view class="center center2" name="view-picker-main-panel-up" style="width:432rpx;height:150rpx;background-color:#4c68c1;border-radius:5rpx;">
+                    <view class="center center2" style="font-size:32rpx;color:#fff;width:90%;height:90%">{{npc.text}}</view>
+                </view>
+                <view style="width: 0;height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent;border-top: 20px solid #4c68c1;"></view>
+            </view>
+            <view style="height:30rpx"></view>
+            <view class="column center2 start" name="view-picker-main-panel-center" style="width: 100%;">
+                <image backgroundSize="cover" src="https://question-resource-wscdn.hortorgames.com/image/npc/{{npc.avatar}}.png" style="display:flex; width:120rpx; height:120rpx; border-radius: 50%; border: 6rpx solid #ffffff; flex: none;" wx:if="{{avatar}}"></image>
+                <view class="center center2" style="font-size:32rpx;color:#fff;width:90%;height:60rpx">{{npc.name}}</view>
+                <view class="center center2" style="font-size:32rpx;color:#51bafe;width:90%;height:60rpx" wx:if="{{npc.winNum<npc.defeat}}">击败我{{npc.defeat}}次可以晋级</view>
+                <view class="center center2" style="font-size:32rpx;color:#51bafe;width:90%;height:60rpx" wx:if="{{npc.winNum>=npc.defeat}}">你可以挑战下一位了</view>
+                <view class="center center2" style="font-size:50rpx;color:#51bafe;width:90%;height:120rpx">{{npc.winNum}}/{{npc.defeat}}</view>
+                <view class="row start center2" style="width:80%;height:80rpx">
+                    <image src="../../image/ui/gold.png" style="width:40rpx;height:40rpx"></image>
+                    <view style="width:16rpx"></view>
+                    <view class="center2" style="font-size:32rpx;color:#868c94;width:90%;height:60rpx">{{npc.fee}}</view>
+                </view>
+                <view class="row center center2" style="width:80%">
+                    <button bindtap="{{callback_fight_clicked}}" class="{{npc.winNum<npc.defeat?'':'hide'}}">挑战</button>
+                    <view style="width:20rpx"></view>
+                    <button bindtap="{{callback_back_clicked}}">返回</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

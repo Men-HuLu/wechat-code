@@ -1,0 +1,28 @@
+.propinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 132rpx;
+    height: 132rpx;
+    flex: none;
+}
+
+.view-avatar {
+    width: 132rpx;
+    height: 132rpx;
+    position: relative;
+}
+
+.propinfo-avatar {
+    width: 66rpx;
+    height: 66rpx;
+}
+
+.propinfo-name {
+    color: #aaa;
+    font-size: 10pt;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

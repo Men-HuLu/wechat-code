@@ -1,0 +1,9 @@
+<view class="room-list">
+    <view class="room-list-head">
+        <text>{{rooms.tabName}}</text>
+        <text bind:tap="goRoomList" class="room-list-more" data-short-name="{{rooms.shortName}}" data-tab-name="{{rooms.tabName}}">更多</text>
+    </view>
+    <view class="room-list-body">
+        <room-item room="{{room}}" type="{{rooms.shortName}}" wx:for="{{rooms.list}}" wx:for-index="$roomHotList$roomItem$index" wx:for-item="room" wx:key="$roomHotList$roomItem$index"></room-item>
+    </view>
+</view>

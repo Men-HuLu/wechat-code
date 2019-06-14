@@ -1,0 +1,42 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+.share-section {
+    position: fixed;
+    height: 130rpx;
+    width: 100%;
+    background: white;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+}
+
+.sw {
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+    font-size: 32rpx;
+    line-height: 32rpx;
+    color: #505050;
+}
+
+.border {
+    border-right: solid 1px #e7e7e7;
+}
+
+button::after {
+    border: none;
+}
+
+button {
+    color: #505050;
+    display: inline-block;
+    margin-left: none;
+    margin-right: none;
+    padding-left: none;
+    padding-right: none;
+    box-sizing: none;
+    font-size: none;
+    overflow: visible;
+    font-size: 32rpx;
+    background: white;
+}

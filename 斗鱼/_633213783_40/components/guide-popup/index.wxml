@@ -1,0 +1,5 @@
+<view catchtap="closePopup" class="guide-popup" wx:if="{{isGuide}}">
+    <view class="guide-content">
+        <image class="guide-img" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/guide.png?timestamp=1539072999"></image>
+    </view>
+</view>

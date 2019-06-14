@@ -1,0 +1,16 @@
+<template name="SubscribeGuide">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;" wx:if="{{visible}}">
+        <view bindtap="onTapMillionsShareView_close" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.8);"></view>
+        <view class="show-form" style="position:absolute;width:100%;height:100%;left:0px;top:0px;">
+            <view style="position: absolute;left:calc((100% - 650rpx)/2);top:calc((100% - 920rpx)/2);width:650rpx;height:920rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/subscribe/subscribeGuide.png?v=1" style="position: absolute;left:0px;top:0px;width:100%;height:100%;"></image>
+                <view bindtap="subscribeGuide_onTapClose" class="center center2" style="position: absolute;right: 10rpx; top:4rpx; width:80rpx;height:80rpx">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=1" style="width:30rpx;height:30rpx"></image>
+                </view>
+            </view>
+        </view>
+        <view class="discribe-arrow" style="position: absolute;right:104rpx;top:0px;width:80rpx;height:90rpx;transform: translate3d(0,0,0);">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/subscribe/subscribeArrow.png?v=1" style="position: absolute;right:0px;top:0px;width:80rpx;height:90rpx;"></image>
+        </view>
+    </view>
+</template>

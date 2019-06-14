@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "pgcchannel": "/components/pgcchannel/pgcchannel",
+        "discuss": "/components/discuss/discuss",
+        "custbar": "/components/custbar/custbar"
+    },
+    "disableScroll": true,
+    "enablePullDownRefresh": false
+}

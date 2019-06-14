@@ -1,0 +1,10 @@
+<view class="ensure-wrap" hidden="{{!text}}">
+    <view class="dialog">
+        <view class="title">
+            <text>{{text}}</text>
+        </view>
+        <view bindtap="ensure" class="btn">
+            <text>我知道了</text>
+        </view>
+    </view>
+</view>

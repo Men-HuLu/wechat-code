@@ -1,0 +1,112 @@
+.video-container {
+    width: 100%;
+    overflow-x: hidden;
+    padding-top: 10rpx;
+}
+
+.video-container .room-list {
+    width: 100%;
+    background-color: white;
+}
+
+.video-container .room-list .room-list-body {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.video-container .room-list .room-list-body .room-vitem .room-vitem-banner {
+    position: relative;
+    width: 370rpx;
+    height: 210rpx;
+}
+
+.video-container .room-list .room-list-body .room-vitem .room-vitem-banner .room-default-image {
+    width: 370rpx;
+    height: 210rpx;
+    z-index: 5;
+}
+
+.video-container .room-list .room-list-body .room-vitem .room-vitem-banner .room-vitem-image {
+    width: 370rpx;
+    height: 210rpx;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.video-container .room-list .room-list-body .room-vitem .room-vitem-banner .room-vitem-banner-footer-wrap {
+    position: absolute;
+    color: #fff;
+    font-size: 22rpx;
+    width: 100%;
+    height: 88rpx;
+    box-sizing: border-box;
+    bottom: 0rpx;
+    background: linear-gradient(to bottom,transparent,rgba(0,0,0,.3));
+    z-index: 10;
+    padding-bottom: 8rpx;
+    align-items: flex-end;
+    justify-content: space-between;
+    display: flex;
+}
+
+.video-container .room-list .room-list-body .room-vitem .room-vitem-banner .room-vitem-banner-footer-wrap .room-vitem-banner-footer {
+    display: flex;
+    align-items: center;
+    align-center: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.video-container .room-list .room-list-body .room-vitem .room-vitem-banner .room-vitem-banner-footer-wrap .room-vitem-banner-footer .room-vitem-footer-name {
+    position: relative;
+    float: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 14rpx;
+    height: 22rpx;
+    line-height: 22rpx;
+}
+
+.video-container .room-list .room-list-body .room-vitem .room-vitem-banner .room-vitem-banner-footer-wrap .room-vitem-banner-footer .room-vitem-footer-play {
+    position: relative;
+    float: right;
+    flex: 1;
+    height: 22rpx;
+    line-height: 22rpx;
+}
+
+.video-container .room-list .room-list-body .room-vitem .room-vitem-banner .room-vitem-banner-footer-wrap .room-vitem-banner-footer i {
+    margin-left: 14rpx;
+    content: '';
+    float: left;
+    height: 18rpx;
+    width: 18rpx;
+    margin-right: 8rpx;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA2UExURUxpcfT09Pj4+Pj4+Pf39/j4+Pj4+P////f39/f39/f39/f39/j4+Pj4+Pj4+Pj4+Pj4+Pj4+Ax1jAsAAAARdFJOUwAYc57y2kgI/Ddgi+Ykx7d/q1bP+gAAAFlJREFUKM+VkUkOgDAMxMralq3y/z/LDVFUI5irpcSZhPCSbCANXRvA2Mc2gGkWAGUXQFpjG8C2CIAjC6BSp8pNnUcu9Y9ARtly0ZUDrRIpUWqXR+lrc/iTE2mZDCvPMSMxAAAAAElFTkSuQmCC");
+    background-size: 100% 100%;
+}
+
+.video-container .room-list .room-list-body .room-vitem .room-vitem-info {
+    width: 370rpx!important;
+    height: 82rpx;
+    margin-top: 10rpx;
+    margin-bottom: 36rpx;
+}
+
+.video-container .room-list .room-list-body .room-vitem .room-vitem-info view {
+    padding-left: 14rpx;
+    font-size: 28rpx;
+    color: #3f3f3f;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

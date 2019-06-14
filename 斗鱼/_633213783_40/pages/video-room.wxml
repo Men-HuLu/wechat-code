@@ -1,0 +1,70 @@
+<view class="vroom-container {{isIpx?'is-iphonex':''}}">
+    <video-player autoPlay="{{autoPlay}}" bind:customevent="reload" class="element component" danmuList="{{danmuList}}" isLive="{{isLive}}" isNrt="{{isNrt}}" isYz="{{isVertical}}" showCenterPlayBtn="{{showCenterPlayBtn}}" src="{{stream}}"></video-player>
+    <view class="vroom-content-wrap">
+        <view class="vroom-content" wx:if="{{!isEmpty&&!isError&&!isLoading}}">
+            <view class="video-des-wrap">
+                <view class="video-des-t">{{videoInfo.title}} </view>
+                <view class="video-des-w">
+                    <text class="video-des-d">{{videoInfo.date}} · {{videoInfo.view_num}}次播放</text>
+                    <text bind:tap="toggleDes" class="video-des-r {{isDesOpen?'open':''}}" wx:if="{{!!videoInfo.contents}}"> {{isDesOpen?'收起':'简介'}}</text>
+                </view>
+                <view class="video-des-c" wx:if="{{isDesOpen}}">{{videoInfo.contents}}</view>
+            </view>
+            <view class="video-intr-wrap">
+                <image src="{{videoInfo.owner_avatar||'https://cs-op.douyucdn.cn/dyfelocal/act/5acc7c96d51caa4669f8b2de/defaulticon.png'}}"></image>
+                <view class="video-intr-name">{{videoInfo.nickname}}</view>
+                <view class="video-intr-follows">{{videoInfo.follow_num}}人关注</view>
+            </view>
+            <view class="video-list-wrap">
+                <view class="video-list-header">推荐视频</view>
+                <view class="video-list">
+                    <view bind:tap="goVideoRoom" class="video-item" data-hash-id="{{item.hash_id}}" wx:for="{{recVideoList}}" wx:key="{{index}}">
+                        <view class="video-item-left">
+                            <image class="vroom-default-image" mode="scaleToFill" src="{{'../assets/images/hengzhanweitu.png'}}"></image>
+                            <image src="{{item.video_pic}}"></image>
+                            <view class="room-vitem-banner-footer">
+                                <text class="video-item-duration">{{item.date}}</text>
+                            </view>
+                        </view>
+                        <view class="video-item-right">
+                            <view class="">
+                                <text class="video-item-title">{{item.title}}</text>
+                                <text class="video-item-author">{{item.nickname}}</text>
+                                <text class="video-item-num">{{item.view_num}}次播放</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="video-danmulist-wrap">
+                <view class="video-danmu-header">全部弹幕（{{ctotal}}条）</view>
+                <view class="video-danmu-item" wx:for="{{commentList}}" wx:key="{{index}}">
+                    <view class="video-danmu-item">
+                        <view class="video-danmu-left">
+                            <image src="{{item.owner_avatar||'https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/default_header.png'}}"></image>
+                        </view>
+                        <view class="video-danmu-right">
+                            <view class="video-danmu-author">
+                                <text>{{item.nickname}}</text>
+                                <image class="video-level-icon" src="{{item.level_icon}}"></image>
+                            </view>
+                            <text class="video-danmu-title">{{item.time}}</text>
+                            <view class="video-danmu-content">{{item.content}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="comment-empty" wx:if="{{!commentList.length}}">
+                    <image class="empty-icon" src="../assets/images/error.png"></image>
+                    <view class="empty-title">没有弹幕</view>
+                </view>
+            </view>
+            <button class="share-btn" hoverClass="share-hover" openType="share" type="default">分享视频</button>
+            <loading-footer isLoading="{{isLoadingMore}}" wx:if="{{showLoading&&commentList.length>0}}"></loading-footer>
+        </view>
+        <loading wx:if="{{isLoading}}"></loading>
+        <error bind:customevent="reload" wx:if="{{isError}}"></error>
+    </view>
+    <empty title="查看的内容不存在" wx:if="{{isEmpty}}"></empty>
+    <fromappshare oType="video" params="{{videoInfo}}" wx:if="{{isFromAppShare}}"></fromappshare>
+    <goHome wx:else></goHome>
+</view>

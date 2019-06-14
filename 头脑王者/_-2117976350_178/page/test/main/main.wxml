@@ -1,0 +1,5 @@
+<text>
+    
+    main
+</text>
+<view bindtap="onBtn" style="width:200rpx;height:150rpx;background:red">看视频</view>

@@ -1,0 +1,17 @@
+@import "../../template/avatarBase.wxss";
+
+.userAvatar {
+    width: 140rpx;
+    height: 140rpx;
+    position: absolute;
+    top: 59rpx;
+    left: calc(50% - 140rpx / 2);
+}
+
+.userInfoView {
+    width: 678rpx;
+    height: 277rpx;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}

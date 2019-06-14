@@ -1,0 +1,203 @@
+<import src="/template/liveExpiredView.wxml"></import>
+<import src="/template/rewardEXView.wxml"></import>
+<import src="/template/avatarBase.wxml"></import>
+<import src="/page/cover/template/beginnerTestView.wxml"></import>
+<import src="/page/cover/template/gotoTNWZView.wxml"></import>
+<import src="/page/cover/template/dailyRewardView.wxml"></import>
+<import src="/page/cover/template/subscribeRewardView.wxml"></import>
+<import src="/page/cover/template/bankShareView.wxml"></import>
+<import src="/page/cover/template/seasonReward.wxml"></import>
+<import src="/page/cover/template/settingView.wxml"></import>
+<import src="/page/cover/template/noticeView.wxml"></import>
+<import src="/page/cover/template/coverBanner.wxml"></import>
+<import src="/page/pvr/template/PvrPopup.wxml"></import>
+<import src="/page/cover/template/SubscribeGuide.wxml"></import>
+<import src="/page/cover/template/dailyTask.wxml"></import>
+<import src="../../util/daliyTask/dailyTaskNotifiyView.wxml"></import>
+<view class="pageView">
+    <view class="coverBg"></view>
+    <image class="mask1" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/bg_lightblue.png?v=2.5"></image>
+    <scroll-view bindscroll="onBindscroll" class="scrollView" scrollTop="{{scrollTop}}" scrollWithAnimation="{{true}}" scrollY="true">
+        <view class="scrollContentView">
+            <view class="userInfoMainView">
+                <image class="userInfoBg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/img_home_info.png?v=2.5"></image>
+                <view class="start center2 column">
+                    <view class="userName end-with-3dot">{{roleInfo.userInfo.nickName}}</view>
+                    <view bindtap="btn_avatar_clicked" class="userAvatar">
+                        <template is="avatarOnly" data="{{avatarUrl:roleInfo.userInfo.avatarUrl,id:roleInfo.headId}}"></template>
+                        <image class="newFrame-arrow" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/head_frame/icon_new.png" style="position: absolute;width:55rpx;height:55rpx;left:-20rpx;top:-20rpx" wx:if="{{roleInfo.hasNewHeadFrame}}"></image>
+                    </view>
+                    <view class="row start center2 userLevelView">
+                        <view class="userLevel">Lv.{{roleInfo.level}}</view>
+                        <view style="width:3rpx"></view>
+                        <view class="start center2 userExp">
+                            <view class="userExp2" style="width:{{roleInfo.exp*100/roleInfo.maxExp}}%;"></view>
+                        </view>
+                    </view>
+                    <view class="row start center2 userGoldView">
+                        <image bindtap="callback_mode_gm" class="userGoldImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png?v=2.5"></image>
+                        <view style="width:11rpx"></view>
+                        <view class="userGoldNum">{{roleInfo.gold}}</view>
+                    </view>
+                    <view class="row start center2 userDiamondView" wx:if="{{!isIOS}}">
+                        <image bindtap="callback_mode_gm" class="userDiamondImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_home_Diamonds.png?v=2.5"></image>
+                        <view style="width:11rpx"></view>
+                        <view class="userDiamondNum">{{roleInfo.diamond}}</view>
+                    </view>
+                </view>
+                <view class="row-reverse start center2" style="position: absolute;left:0px;top:0px;width:100%;height:80rpx">
+                    <view style="width:22rpx"></view>
+                    <view class="center center2" style="width:60rpx;height:80rpx">
+                        <image bindtap="btn_code_clicked" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/head_frame/icon_info.png?v=2.5" style="width: 42rpx; height: 44rpx;"></image>
+                    </view>
+                </view>
+            </view>
+            <view style="position: relative;width:678rpx;height:160rpx;margin: 0rpx 0px 20rpx 0px;" wx:if="{{!!banner.visible}}">
+                <template is="coverBanner" data="{{...banner}}"></template>
+            </view>
+            <view class="picWallView">
+                <view class="picWallSubView">
+                    <view class="challengeView {{mask_challenge_show?'alpha':''}} {{function_switch.challenge?'':'not-open'}} {{showNewUser?'item-shine':''}}">
+                        <form bindreset="" bindsubmit="form_submit" class="challengeForm" hoverClass="alpha" reportSubmit="{{true}}">
+                            <image class="challengeImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_challenge.png?v=2.5"></image>
+                            <view animation="{{matchStatsAni}}" class="row end end2" style="position:absolute;right:15rpx;top:15rpx;height:40rpx">
+                                <view class="row start center2 challengUserCount">{{matchStats}}</view>
+                                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_online_user.png?v=2.5" style="width:33rpx;height:30rpx;"></image>
+                            </view>
+                            <button bindtap="btn_challenge_clicked" class="challengScope" formType="submit" wx:if="{{function_switch.challenge}}"></button>
+                        </form>
+                    </view>
+                    <view bindtap="btn_friends_ranking_clicked" class="rankView {{function_switch.friends_ranking?'':'not-open'}}" hoverClass="alpha">
+                        <image class="rankImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_ranking.png?v=2.5"></image>
+                    </view>
+                    <view bindtap="onTapIntegralWall" class="scorewall" hoverClass="alpha" style="position:relative">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_fuli.png?v=4" style="width: 100%;height:100%;"></image>
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_home_more_point.png?v=4" style="position: absolute;bottom:8rpx;right:8rpx;width:24rpx;height:24rpx;" wx:if="{{integral_wall_data.hasNewReward}}"></image>
+                        <image class="newFrame-arrow" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_home_more_new.png?v=4" style="position: absolute;left:132rpx;bottom:64rpx;width:63rpx;height:59rpx;" wx:if="{{integral_wall_data.hasNewGame}}"></image>
+                    </view>
+                    <view bindtap="btn_shop_clicked" class="shopView {{function_switch.shop?'':'not-open'}} " hoverClass="alpha" wx:if="{{!isIOS}}">
+                        <image class="shopImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_shop_2.png?v=2.5"></image>
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/img_home_sale.png?v=3" style="position: absolute;top:-8rpx;right:-6rpx;width:125rpx;height:125rpx;" wx:if="{{roleInfo.onsale}}"></image>
+                    </view>
+                    <view bindtap="btn_know_clicked" class="knowledgeView {{function_switch.knowledge?'':'not-open'}}" hoverClass="alpha">
+                        <image class="knowledgeImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_knowledge.png?v=3"></image>
+                        <view class="center center2" style="position: absolute; top:80rpx; left:50rpx; height:40rpx; " wx:if="{{newKnowledgeCount>0}}">
+                            <view class="center center2" style="font-size: 24rpx; padding: 5rpx 10rpx 5rpx 10rpx; min-width: 20rpx;">{{newKnowledgeCount}}</view>
+                            <view style="background: #E31E36; border-top-left-radius: 40rpx; border-bottom-left-radius: 40rpx; height:40rpx; width:20rpx; position: absolute; top:0px; left:0px;"></view>
+                            <view style="background: #E31E36; height:40rpx; position:absolute; top:0px; left:19rpx; right:19rpx; margin: 0px;"></view>
+                            <view style="background: #E31E36; border-top-right-radius: 40rpx; border-bottom-right-radius: 40rpx; height:40rpx; width:20rpx; position: absolute; top:0px; right:0px;"></view>
+                            <view class="center center2" style="font-size: 24rpx; color: #FFFFFF; width:100%; height:100%; position:absolute; left:0px; top:0px;">{{newKnowledgeCount}}</view>
+                        </view>
+                    </view>
+                    <view bindtap="btn_bank_clicked" class="bankView {{function_switch.bank?'':'not-open'}} {{function_switch.bank&&roleInfo.exp>0&&goldInBank>=roleInfo.bankInfo.bankCap||bankShining?'item-shine':''}}" hoverClass="alpha">
+                        <image class="bankImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_bank.png?v=2.5"></image>
+                        <view class="start center2" style="position: absolute; top:135rpx; left:14rpx; width:146rpx; height:30rpx; background: rgba(126,61,179,0.50); border: 4rpx solid #A353DE; border-radius: 90rpx;">
+                            <view style="background: linear-gradient(-180deg, #FFB200 0%, #FF8A00 100%); border-radius: 20rpx; width:{{goldInBank*100/roleInfo.bankInfo.bankCap}}%; height:100%; flex: none;"></view>
+                        </view>
+                        <view style="margin: 4rpx; text-align:center; position: absolute; width: 146rpx; height: 30rpx; line-height:30rpx; left:14rpx; top:135rpx; font-size: 18rpx; color: #FFFFFF; letter-spacing: 0;text-shadow: 0 1rpx 2rpx #5F2B85;">{{fullTime}}</view>
+                        <view class="row start center2" style="position: absolute; top:95rpx; left: 18rpx; height: 40rpx;">
+                            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png?v=2.5" style="width: 40rpx; height: 40rpx; "></image>
+                            <view style="color:#fff; font-size: 22rpx; line-height: 26rpx; height: 26rpx; margin: 0px 9rpx 0px 5rpx;">{{goldInBank}}/{{roleInfo.bankInfo.bankCap?roleInfo.bankInfo.bankCap:0}}</view>
+                        </view>
+                    </view>
+                    <view bindtap="btn_items_clicked" class="itemView {{function_switch.goods?'':'not-open'}}" hoverClass="alpha">
+                        <image class="itemImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_item.png?v=2.5"></image>
+                        <view class="center center2" style="position: absolute; top:28rpx; left:260rpx; height:40rpx; " wx:if="{{newItemCount>0}}">
+                            <view class="center center2" style="font-size: 24rpx; padding: 5rpx 10rpx 5rpx 10rpx; min-width: 20rpx;">{{newItemCount}}</view>
+                            <view style="background: #E31E36; border-top-left-radius: 40rpx; border-bottom-left-radius: 40rpx; height:40rpx; width:20rpx; position: absolute; top:0px; left:0px;"></view>
+                            <view style="background: #E31E36; height:40rpx; position:absolute; top:0px; left:19rpx; right:19rpx;"></view>
+                            <view style="background: #E31E36; border-top-right-radius: 40rpx; border-bottom-right-radius: 40rpx; height:40rpx; width:20rpx; position: absolute; top:0px; right:0px;"></view>
+                            <view class="center center2" style="font-size: 24rpx; color: #FFFFFF; width:100%; height:100%; position:absolute; left:0px; top:0px;">{{newItemCount}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="picWallSubView">
+                    <beginnerGiftView bind:onBGVChanged="onBeginnerGiftVisibleChanged" bind:onTapEntry="onTapBeginnerGiftContextEntry" id="beginnerGiftView"></beginnerGiftView>
+                    <view class="livematchView {{mask_live_show?'alpha':''}} {{function_switch.live?'':'not-open'}}" hoverClass="alpha">
+                        <image bindtap="btn_live_clicked" class="livematchImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_livematch.png?v=4"></image>
+                        <button id="liveFight" openType="share" style="position: absolute; left:0; top:0; opacity:0; width:100%; height:100%;" wx:if="{{function_switch.live&&liveShareBtnVisible}}">隐藏的分享按钮</button>
+                    </view>
+                    <view bindtap="onTapDailyTask" class="dailyTaskView">
+                        <dailyTaskView></dailyTaskView>
+                    </view>
+                    <view bindtap="onTapDailyChallenge" class="daliyChallenge {{function_switch.daliyChallenge?'':'not-open'}}" hoverClass="alpha">
+                        <image class="daliyChallengeImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_dc.png?v=2.5"></image>
+                    </view>
+                    <navigator appId="wx42e2437205706adc" bind:tap="onTapRightwrong" class="rightwrongView" openType="navigate" path="?channel=wzcj" target="miniProgram" version="release">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_rightwrong.png?v=1.0" style="width: 100%;height:100%;"></image>
+                    </navigator>
+                    <navigator appId="wx3301a6cbd35d9935" bind:tap="onTapLinkBtn" class="gameClub" extraData="" openType="navigate" path="pages/circle/list/list?channel=tnwz&category=2" target="miniProgram" version="release" wx:if="{{isIOS&&function_switch.iosQz||!isIOS}}">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_group.png?v=2.0" style="width: 100%;height:100%;"></image>
+                    </navigator>
+                    <view bindtap="onTapSettingBtn" class="settingView" hoverClass="alpha">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_setting.png?v=2.5" style="width: 328rpx; height: 150rpx; "></image>
+                    </view>
+                    <view class="center center2" style="position: relative;width:328rpx;height:181rpx;" wx:if="{{showFilledRect}}">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_comingsoon.png?v=2.1" style="width: 100%;height:100%;"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="column center2 start" hoverStopPropagation="{{true}}" style="position:absolute;width:1rpx;height:1rpx;left:200rpx;top:500rpx" wx:if="{{showNewUser}}">
+                <image class="guide-arrow" data-stage-id="300001" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/new_user/img_lead_startgame.png?v=2.5" style="position:absolute; left:0px;top:20rpx; width:412rpx;height:184rpx;"></image>
+            </view>
+        </view>
+    </scroll-view>
+    <view bindtap="onTapKnowledgeRP" class="{{knowledgePromptVisible?'':'hide'}}" style="position:absolute;left:80rpx;bottom:143rpx;width:0px;height:0px;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_prompt.png?v=2.5" style="position: absolute; width: 125rpx; height: 143rpx; top:0px; left:calc(50% - 125rpx / 2);"></image>
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_knowledge_prompt.png?v=2.5" style="position: absolute; width: 118rpx; height: 88rpx; top:16rpx; left:calc(50% - 118rpx / 2);"></image>
+        <view class="center center2" style="position: absolute; top:0px; left:20rpx; height:40rpx; ">
+            <view class="center center2" style="font-size: 24rpx; padding: 5rpx 10rpx 5rpx 10rpx; min-width: 20rpx;">{{newKnowledgeCount}}</view>
+            <view style="background: #E31E36; border-top-left-radius: 40rpx; border-bottom-left-radius: 40rpx; height:40rpx; width:20rpx; position: absolute; top:0px; left:0px;"></view>
+            <view style="background: #E31E36; height:40rpx; position:absolute; top:0px; left:19rpx; right:19rpx;"></view>
+            <view style="background: #E31E36; border-top-right-radius: 40rpx; border-bottom-right-radius: 40rpx; height:40rpx; width:20rpx; position: absolute; top:0px; right:0px;"></view>
+            <view class="center center2" style="font-size: 24rpx; color: #FFFFFF; width:100%; height:100%; position:absolute; left:0px; top:0px;">{{newKnowledgeCount}}</view>
+        </view>
+    </view>
+    <view bindtap="onTapItemRP" class="{{itemPromptVisible?'':'hide'}}" style="position:absolute;left:230rpx;bottom:143rpx;width:0px;height:0px;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_prompt.png?v=2.5" style="position: absolute; width: 125rpx; height: 143rpx; top:0px; left:calc(50% - 125rpx / 2);"></image>
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_item_Prompt.png?v=2.5" style="position: absolute; width: 98rpx; height: 105rpx; top:4rpx; left:calc(50% - 98rpx / 2);"></image>
+        <view class="center center2" style="position: absolute; top:0px; left:20rpx; height:40rpx; ">
+            <view class="center center2" style="font-size: 24rpx; padding: 5rpx 10rpx 5rpx 10rpx; min-width: 20rpx;">{{newItemCount}}</view>
+            <view style="background: #E31E36; border-top-left-radius: 40rpx; border-bottom-left-radius: 40rpx; height:40rpx; width:20rpx; position: absolute; top:0px; left:0px;"></view>
+            <view style="background: #E31E36; height:40rpx;position:absolute; top:0px; left:19rpx; right:19rpx;"></view>
+            <view style="background: #E31E36; border-top-right-radius: 40rpx; border-bottom-right-radius: 40rpx; height:40rpx; width:20rpx; position: absolute; top:0px; right:0px;"></view>
+            <view class="center center2" style="font-size: 24rpx; color: #FFFFFF; width:100%; height:100%; position:absolute; left:0px; top:0px;">{{newItemCount}}</view>
+        </view>
+    </view>
+    <view bindtap="onTapZjwEntry" style="position: absolute;bottom: 300rpx;right: 0px;" wx:if="{{isZjwQrCode}}">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/img_commission.png?v=2" style="width:270rpx;height:124rpx;"></image>
+    </view>
+    <view animation="{{subscribeViewAni}}" class="subscribeView">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/img_faq2.png?v=1" style="width:317rpx;height:133rpx;"></image>
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/giftbox.gif" style="position:absolute;left:10rpx;top:4rpx; width:116rpx;height:116rpx;"></image>
+        <button bindtap="onTapSubscribeView" class="opacity0" style="width:100%;height:100%;position:absolute;top:0px;left:0px"></button>
+    </view>
+    <navigator appId="{{linkAppId}}" bind:tap="onTapLinkBtn" class="linkImg" extraData="{{linkExtraData}}" openType="navigate" path="{{linkPath}}" target="miniProgram" version="release" wx:if="{{linkImg}}">
+        <image src="{{linkImg}}" style="width:100%; height:100%;"></image>
+    </navigator>
+    <view class="row center space_a center2" style="position:absolute;width:100%;height:100rpx;left:0;bottom:0;background-color:#000" wx:if="{{isGM}}">
+        <input bindinput="callback_command_input" placeholder="输入指令" style="width:60%" type="text"></input>
+        <button bindtap="btn_command_exec">执行</button>
+    </view>
+    <view bind:tap="onTapShareTest" style="width: 140rpx; height: 140rpx; position: absolute; bottom: 300rpx; right: 16rpx" wx:if="{{shareTestType}}">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/activity/activity_{{shareTestType}}/img_enter1.png" style="width: 140rpx; height: 140rpx;">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/activity/activity_{{shareTestType}}/activity_enter1.gif" style="width: 142rpx; height: 164rpx; position: absolute; bottom: 10rpx; left:calc(50% - 142rpx / 2);"></image>
+        </image>
+    </view>
+    <canvas canvasId="pvrShareCanvas" style="position: absolute; left:750rpx; top:0px; width:400px; height:320px;"></canvas>
+</view>
+<template is="PvrPopup" data="{{...pvr}}" wx:if="{{pvr&&pvr.visible}}"></template>
+<template is="bankShareView" data wx:if="{{bankShareViewVisible}}"></template>
+<template is="settingView" data="{{...settingData}}" wx:if="{{settingData.settingViewVisible}}"></template>
+<template is="liveExpiredView" data="{{...liveExpiredViewData}}" wx:if="{{liveExpiredViewData.visible}}"></template>
+<template is="rewardEXView" data="{{...bcReward}}" wx:if="{{bcReward.visible}}"></template>
+<template is="subscribeRewardView" data="{{...subscribeReward}}" wx:if="{{subscribeReward.visible}}"></template>
+<template is="SubscribeGuide" data="{{...subscribeGuideData}}"></template>
+<template is="rewardEXView" data="{{...rewardEXData}}" wx:if="{{rewardEXData.visible}}"></template>
+<template is="beginnerTestView" data="{{...beginnerTestViewData}}"></template>
+<template is="noticeView" data="{{...noticeData}}" wx:if="{{noticeData.noticeViewVisible}}"></template>
+<template is="dailyRewardView" data="{{...dailyRewardViewData}}"></template>
+<template is="seasonReward" data="{{...seasonRewardData}}"></template>
+<template is="dailyTask" data="{{...dailyTaskData.data}}" wx:if="{{dailyTaskData.visible}}"></template>
+<template is="dailyTaskNotifiyView" data="{{...taskUpdate}}"></template>
+<beginnerGiftContentView bind:onTapBtnTryToBuy="onTapBtnTryToBuy" id="beginnerGiftContentView"></beginnerGiftContentView>

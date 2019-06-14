@@ -1,0 +1,465 @@
+.game-recharge-container {
+    width: 100%;
+    height: 100%;
+    background: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-recharge-container .game-recharge-header {
+    height: 200rpx;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 33rpx 0 36rpx;
+}
+
+.game-recharge-container .game-recharge-header .avatar {
+    width: 118rpx;
+    height: 118rpx;
+    position: relative;
+}
+
+.game-recharge-container .game-recharge-header .avatar .default-icon {
+    position: absolute;
+    width: 118rpx;
+    height: 118rpx;
+    border-radius: 50%;
+}
+
+.game-recharge-container .game-recharge-header .avatar .avatar-icon {
+    z-index: 2;
+    position: absolute;
+    width: 118rpx;
+    height: 118rpx;
+    border-radius: 50%;
+}
+
+.game-recharge-container .game-recharge-header .user-content {
+    padding-left: 20rpx;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-recharge-container .game-recharge-header .user-content .yuwan {
+    color: #3F3F3F;
+    font-size: 32rpx;
+    margin-right: 10rpx;
+    font-weight: bold;
+}
+
+.game-recharge-container .game-recharge-header .user-content .unlogin {
+    font-size: 28rpx;
+    color: #5c5c5c;
+    margin-left: 20rpx;
+}
+
+.game-recharge-container .game-recharge-header .user-content .nums {
+    color: #FF5D23;
+    font-size: 36rpx;
+    font-weight: bold;
+}
+
+.game-recharge-container .game-recharge-header .user-content .name {
+    color: #3F3F3F;
+    font-size: 26rpx;
+    margin-top: 10rpx;
+    width: 380rpx;
+}
+
+.game-recharge-container .game-recharge-header .user-content .get-yuwan {
+    display: flex;
+    align-items: center;
+    font-size: 24rpx;
+    color: #5C5C5C;
+}
+
+.game-recharge-container .game-recharge-header .user-content .login-wrap {
+    display: flex;
+    align-items: center;
+    font-size: 24rpx;
+    color: #5C5C5C;
+}
+
+.game-recharge-container .game-recharge-header .user-content .login-wrap .login-btn {
+    background: #fff;
+    box-shadow: 0 2rpx 3rpx 0 rgba(255,157,122,.49);
+    border-radius: 100rpx;
+    padding: 0;
+    border: 1rpx solid #FF5D23;
+    font-size: 24rpx;
+    line-height: 68rpx;
+    width: 180rpx;
+    font-size: 30rpx;
+    color: #FF5D23;
+    text-align: center;
+}
+
+.game-recharge-container .game-recharge-header .user-content .arrow-icon {
+    margin-left: 20rpx;
+    width: 13rpx;
+    height: 23rpx;
+}
+
+.game-recharge-container .game-recharge-wrap {
+    flex: 1;
+    margin-top: 20rpx;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-recharge-container .game-recharge-wrap .nav-change {
+    display: flex;
+    box-sizing: border-box;
+    border-bottom: 1rpx solid #eee;
+    padding: 0 16rpx;
+    height: 88rpx;
+}
+
+.game-recharge-container .game-recharge-wrap .nav-change .chat-tab,.game-recharge-container .game-recharge-wrap .nav-change .anchor-tab {
+    position: relative;
+    padding: 0 20rpx;
+    height: 100%;
+    text-align: center;
+    line-height: 80rpx;
+    font-size: 28rpx;
+    color: #3f3f3f;
+}
+
+.game-recharge-container .game-recharge-wrap .nav-change .chat-tab::after,.game-recharge-container .game-recharge-wrap .nav-change .anchor-tab::after {
+    display: none;
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: 2;
+    transform: translateX(-50%);
+    border-radius: 3rpx;
+    width: 50rpx;
+    height: 6rpx;
+    background: #ff5d23;
+}
+
+.game-recharge-container .game-recharge-wrap .nav-change .chat-tab.active::after,.game-recharge-container .game-recharge-wrap .nav-change .anchor-tab.active::after {
+    display: block;
+}
+
+.game-recharge-container .game-recharge-wrap .nav-change .chat-tab.active,.game-recharge-container .game-recharge-wrap .nav-change .anchor-tab.active {
+    color: #ff5d23;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content {
+    position: relative;
+    flex: 1;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list {
+    position: relative;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list .game-recharge-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 188rpx;
+    padding: 0 0 0 36rpx;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list .game-recharge-item .game-recharge-item-image {
+    position: relative;
+    padding-right: 30rpx;
+    height: 128rpx;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list .game-recharge-item .game-recharge-item-image .hot {
+    position: absolute;
+    width: 42rpx;
+    height: 38rpx;
+    top: 6rpx;
+    left: -6rpx;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list .game-recharge-item .game-recharge-item-image .pic {
+    width: 128rpx;
+    height: 128rpx;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list .game-recharge-item .game-recharge-item-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 188rpx;
+    border-bottom: 1px solid #F2F2F2;
+    flex: 1;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list .game-recharge-item .game-recharge-item-right .game-recharge-item-des {
+    flex: 1;
+    padding: 0 30rpx 0 0;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list .game-recharge-item .game-recharge-item-right .game-recharge-item-des .title {
+    font-size: 28rpx;
+    color: #3f3f3f;
+    display: block;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list .game-recharge-item .game-recharge-item-right .game-recharge-item-des .des {
+    margin-top: 10rpx;
+    display: block;
+    font-size: 24rpx;
+    color: #ADADAD;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list .game-recharge-item .game-recharge-item-right .game-recharge-item-ctrl {
+    border-left: 1px solid #F2F2F2;
+    padding: 0 28rpx;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list .game-recharge-item .game-recharge-item-right .game-recharge-item-ctrl .go-use {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list .game-recharge-item .game-recharge-item-right .game-recharge-item-ctrl .go-use .usericon {
+    width: 82rpx;
+    height: 82rpx;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list .game-recharge-item .game-recharge-item-right .game-recharge-item-ctrl .go-use .go-recharge-btn {
+    margin-top: 18rpx;
+    background: #fff;
+    box-shadow: 0 2rpx 3rpx 0 rgba(255,157,122,.49);
+    border-radius: 100rpx;
+    padding: 0;
+    border: 1rpx solid #FF5D23;
+    font-size: 24rpx;
+    line-height: 44rpx;
+    width: 120rpx;
+    color: #FF5D23;
+    text-align: center;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list .game-recharge-item .game-recharge-item-right .game-recharge-item-ctrl .go-recharge {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list .game-recharge-item .game-recharge-item-right .game-recharge-item-ctrl .go-recharge .real-price {
+    font-size: 22rpx;
+    color: #ADADAD;
+    text-decoration: line-through;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list .game-recharge-item .game-recharge-item-right .game-recharge-item-ctrl .go-recharge .yuwan {
+    font-size: 24rpx;
+    color: #ff5d23;
+}
+
+.game-recharge-container .game-recharge-wrap .game-recharge-content .game-recharge-list .game-recharge-item .game-recharge-item-right .game-recharge-item-ctrl .go-recharge .go-recharge-btn {
+    margin-top: 18rpx;
+    background: #FF5D23;
+    box-shadow: 0 2rpx 3rpx 0 rgba(255,157,122,.49);
+    border-radius: 100rpx;
+    width: 120rpx;
+    padding: 0;
+    font-size: 24rpx;
+    text-align: center;
+    line-height: 44rpx;
+    color: #fff;
+}
+
+.game-recharge-container .gift-detail-modal {
+    position: absolute;
+    background: rgba(0,0,0,.60);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.game-recharge-container .gift-detail-modal .gift-detail-content {
+    transition: all .5s ease-in;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    bottom: -110rpx;
+    background-color: #fff;
+    z-index: 11;
+    border-top-left-radius: 8rpx;
+    border-top-right-radius: 8rpx;
+}
+
+.game-recharge-container .gift-detail-modal .gift-detail-content.active {
+    bottom: 0;
+}
+
+.game-recharge-container .gift-detail-modal .gift-detail-content .gift-image-wrap {
+    position: absolute;
+    z-index: 11;
+    top: -62rpx;
+    left: 42%;
+    background-color: #fff;
+    padding: 8rpx;
+    border-radius: 8rpx;
+}
+
+.game-recharge-container .gift-detail-modal .gift-detail-content .gift-image-wrap .gift-image {
+    width: 128rpx;
+    height: 128rpx;
+}
+
+.game-recharge-container .gift-detail-modal .gift-detail-content .title {
+    font-size: 32rpx;
+    margin-top: 99rpx;
+    color: #3F3F3F;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+}
+
+.game-recharge-container .gift-detail-modal .gift-detail-content .des {
+    font-size: 24rpx;
+    color: #ADADAD;
+    letter-spacing: 0.56px;
+    text-align: center;
+    margin-top: 15rpx;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.game-recharge-container .gift-detail-modal .gift-detail-content .go-recharge-btn {
+    padding: 0rpx 70rpx;
+    margin-top: 18rpx;
+    color: #fff;
+    background: #FF5D23;
+    box-shadow: 0 2rpx 3rpx 0 rgba(255,157,122,.49);
+    border-radius: 100rpx;
+    font-size: 28rpx;
+}
+
+.game-recharge-container .gift-detail-modal .gift-detail-content .bottom-text {
+    font-size: 24rpx;
+    color: #FF5D23;
+    letter-spacing: 0.56px;
+    text-align: center;
+    margin-top: 27rpx;
+    margin-bottom: 30rpx;
+}
+
+.game-recharge-container .gift-toast {
+    position: absolute;
+    background: rgba(0,0,0,.60);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+}
+
+.game-recharge-container .gift-toast .gift-toast-wrap {
+    margin-left: 12%;
+    height: 340rpx;
+    width: 574rpx;
+    top: 30%;
+    position: absolute;
+    background-color: #fff;
+    z-index: 10;
+    border-radius: 8rpx;
+}
+
+.game-recharge-container .gift-toast .gift-toast-wrap .gift-close {
+    position: absolute;
+    top: 10rpx;
+    right: 10rpx;
+    width: 40rpx;
+    height: 40rpx;
+    flow: right;
+    color: #ADADAD;
+    font-size: 30rpx;
+}
+
+.game-recharge-container .gift-toast .gift-toast-wrap .gift-image {
+    position: absolute;
+    z-index: 11;
+    top: -104rpx;
+    left: 23%;
+    border: 8rpx soild #fff;
+    padding: 8rpx;
+    border-radius: 8rpx;
+    width: 297rpx;
+    height: 204rpx;
+}
+
+.game-recharge-container .gift-toast .gift-toast-wrap .gift-toast-content {
+    margin: 120rpx auto 0;
+    font-size: 30rpx;
+    color: #3F3F3F;
+    letter-spacing: 0.7rpx;
+    text-align: center;
+    line-height: 42rpx;
+    width: 510rpx;
+}
+
+.game-recharge-container .gift-toast .gift-toast-wrap .bottom-btn {
+    height: 100rpx;
+    font-size: 32rpx;
+    color: #3F3F3F;
+    letter-spacing: 0.75px;
+    text-align: center;
+    background: #F2F2F2;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8rpx;
+}
+
+.game-recharge-container .free-toast .free-toast-content {
+    margin: 80rpx auto 0;
+    font-size: 32rpx;
+    width: 330rpx!important;
+    color: #3F3F3F;
+    letter-spacing: 0.7rpx;
+    text-align: center;
+    line-height: 42rpx;
+}
+
+.game-recharge-container .free-toast .share-btn {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background: #FF5D23;
+    box-shadow: 0 4px 10px 0 rgba(255,93,35,.43);
+    border-radius: 100px;
+    width: 330rpx;
+    height: 72rpx;
+    color: white;
+    text-align: center;
+    margin: 40rpx auto 0;
+    font-size: 28rpx;
+}

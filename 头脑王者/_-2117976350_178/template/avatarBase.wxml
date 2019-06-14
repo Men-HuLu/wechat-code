@@ -1,0 +1,31 @@
+<template name="avatarBase">
+    <view class="userinfo avatarViewSize" data-uid="{{uid}}">
+        <image class="userinfo-bg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/img_friendmatch_opponent.png"></image>
+        <image class="userinfo-avatar" data-uid="{{uid}}" src="{{avatarUrl}}" wx:if="{{!!avatarUrl}}"></image>
+        <view class="userinfo-border"></view>
+        <view class="userinfo-nickname-view">
+            <text class="userinfo-nickname">{{nickName}}</text>
+        </view>
+    </view>
+</template>
+<template name="avatarEmpty">
+    <view class="avatarOnly-view">
+        <image class="avatarOnly-border" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/outline_user.png"></image>
+    </view>
+</template>
+<template name="avatarFrame">
+    <view class="avatarOnly-view">
+        <image backgroundSize="cover" class="avatarOnly-bg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/head_frame/img_moren.png"></image>
+        <image class="avatarOnly-avatar" src="{{avatarUrl}}"></image>
+        <image class="avatarOnly-tiers" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/tiers/{{id}}.png" wx:if="{{!!id}}"></image>
+        <image class="avatarOnly-border" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/outline_user.png" wx:else></image>
+    </view>
+</template>
+<template name="avatarOnly">
+    <view class="avatarOnly-view">
+        <image backgroundSize="cover" class="avatarOnly-bg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/img_friendmatch_opponent.png"></image>
+        <image class="avatarOnly-avatar" src="{{avatarUrl}}"></image>
+        <image class="avatarOnly-tiers" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/tiers/{{id}}.png" wx:if="{{!!id}}"></image>
+        <image class="avatarOnly-border" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/outline_user.png" wx:else></image>
+    </view>
+</template>

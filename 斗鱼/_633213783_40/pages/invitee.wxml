@@ -1,0 +1,17 @@
+<view class="assistance-record">
+    <view class="record-list">
+        <scroll-view scrollY bindscrolltolower="lower" class="scroll-record-list" scrollWithAnimation="true">
+            <view class="record-item" wx:for="{{list}}" wx:key="{{index}}">
+                <view class="record-avatar">
+                    <image class="avatar-img" src="{{item.inviteeIcon}}"></image>
+                </view>
+                <view class="record-name">{{item.inviteeName}}</view>
+                <view class="record-success" style="display: {{item.help==0?'none':'block'}}">助力成功</view>
+                <view class="record-fail" style="display: {{item.help==0?'block':'none'}}">
+                    <view>助力失败</view>
+                    <view class="record-res">本月已访问过活动页面</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

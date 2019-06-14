@@ -1,0 +1,64 @@
+<import src="/template/model-usual.wxml"></import>
+<import src="/template/model-topic.wxml"></import>
+<view class="search-wrap">
+    <view class="search-view search-sear {{value&&'search-blot'}}">
+        <image src="/image/-search.png"></image>
+        <input focus bindconfirm="search" bindinput="handleInput" confirmType="search" placeholder="{{holder||'搜索作品名'}}" placeholderClass="placeholder" type="text" value="{{value}}"></input>
+    </view>
+    <view bindtap="clearValue" class="btn-clear" hidden="{{!value}}">
+        <image src="/image/ico-delete.png"></image>
+    </view>
+    <navigator class="btn-cancel" hoverClass="none" openType="navigateBack">取消</navigator>
+</view>
+<view bindtap="clearValue" class="search-mask" hidden="{{!value}}">
+    <view class="hits-wrap" hidden="{{!searching}}">
+        <view catchtap="search" class="hits-btn">
+            <view>搜索<text>"{{value}}"</text>
+            </view>
+        </view>
+        <view class="hits-item" wx:for="{{hitsList}}" wx:key="topic_id">
+            <view catchtap="jumpTopic" class="search-btn search-padding" data-id="{{item.topic_id}}" data-tit="{{item.title}}">
+                <text>{{item.title}}</text>
+            </view>
+        </view>
+    </view>
+    <scroll-view scrollY bindscrolltolower="loadMore" class="search-list" hidden="{{searching}}">
+        <template is="topiclist" data="{{list:resultList,cover:[134,182],showFav:true,minHeight:resultList.length?'100%':'auto'}}"></template>
+        <template is="loadmore" data="{{loading:onGetting,nomore:listOver,nodata:!resultList.length,bgColor:'#f7f9fa'}}"></template>
+    </scroll-view>
+</view>
+<view class="search-content" hidden="{{value}}">
+    <view hidden="{{!hotsList.length}}">
+        <view class="search-tit">
+            <view>热门搜索</view>
+            <view bindtap="hotExchange">
+                <image src="/image/ico-refresh.png" style="width: 64rpx; height: 44rpx;"></image>
+            </view>
+        </view>
+        <view class="search-hot">
+            <view bindtap="jump{{item.jump}}" data-id="{{item.id}}" data-tit="{{item.title}}" wx:for="{{hotsList}}" wx:key="index">
+                <text>{{item.title}}</text>
+                <text class="tag" style="background: {{item.bgColor}}" wx:if="{{item.tag}}">{{item.tag}}</text>
+            </view>
+        </view>
+    </view>
+    <view hidden="{{!searchHis.length}}">
+        <view class="search-tit">
+            <view>搜索历史</view>
+            <view bindtap="clearHistory">
+                <image src="/image/ico-clear.png" style="width: 64rpx; height: 45rpx;"></image>
+            </view>
+        </view>
+        <view class="search-his">
+            <view class="history-item" wx:for="{{searchHis}}" wx:key="*this">
+                <view bindtap="clickHistory" data-index="{{index}}" data-value="{{item}}">
+                    <image src="/image/ico-his.png" style="width: 28rpx; height: 28rpx;"></image>
+                    <text>{{item}}</text>
+                </view>
+                <view bindtap="removeHistory" data-index="{{index}}">
+                    <image src="/image/ico-close.png" style="width: 30rpx; height: 30rpx;"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

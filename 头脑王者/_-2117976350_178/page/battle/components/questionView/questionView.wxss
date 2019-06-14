@@ -1,0 +1,14 @@
+.battle_questionView {
+    width: 100%;
+    height: 100%;
+    font-size: 36rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: left;
+    line-height: 53rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-break: break-all;
+    opacity: 0;
+}

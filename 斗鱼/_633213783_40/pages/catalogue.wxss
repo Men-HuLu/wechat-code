@@ -1,0 +1,98 @@
+.content-wrap {
+    flex: 1;
+    width: 100%;
+}
+
+.content-swiper-wrap {
+    height: 100%;
+}
+
+.catalog-zhanwei {
+    width: 100%;
+    height: 116rpx;
+}
+
+.scroll-view-content {
+    width: 100%;
+    white-space: nowrap;
+    border-top: 1px solid #eee;
+}
+
+.weui-grid {
+    position: relative;
+    float: left;
+    padding: 18rpx 0 8rpx 0;
+    width: 24.9999%;
+    text-align: center;
+    height: 224rpx;
+    box-sizing: border-box;
+}
+
+.weui-grid .des {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 9rpx 0;
+}
+
+.weui-grid .des text {
+    font-size: 24rpx;
+    color: #5c5c5c;
+}
+
+.weui-grid:before {
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    bottom: 0;
+    border-right: 1px solid #eee;
+    color: #d9d9d9;
+}
+
+.weui-grid:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid #eee;
+    color: #d9d9d9;
+}
+
+.weui-grid:active {
+    background-color: #ececec;
+}
+
+.weui-grid-item {
+    width: 130rpx;
+    height: 130rpx;
+    margin: 0 auto;
+    position: relative;
+}
+
+.weui-grid-item .catalog-item-default {
+    width: 130rpx;
+    height: 130rpx;
+    z-index: 4;
+    display: block;
+}
+
+.weui-grid-item .catalog-item-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}

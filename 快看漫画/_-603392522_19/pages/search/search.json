@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "kk-picture": "/component/picture/picture"
+    }
+}

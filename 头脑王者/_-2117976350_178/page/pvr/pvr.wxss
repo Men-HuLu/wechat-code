@@ -1,0 +1,46 @@
+@import "../../template/avatarBase.wxss";
+
+.userAvatar {
+    width: 150rpx;
+    height: 150rpx;
+    position: absolute;
+    top: 4rpx;
+    left: calc((100% - 150rpx) / 2);
+}
+
+.userAvatar-item {
+    width: 80rpx;
+    height: 80rpx;
+    position: absolute;
+    left: calc((100% - 80rpx) / 2);
+}
+
+.user-left {
+    position: absolute;
+    width: 177rpx;
+    height: 144rpx;
+    left: 0rpx;
+    top: 0px;
+    border-top-right-radius: 72rpx;
+    border-bottom-right-radius: 72rpx;
+    background-color: #66CAFD;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.user-right {
+    position: absolute;
+    width: 177rpx;
+    height: 144rpx;
+    right: 0rpx;
+    top: 0px;
+    border-top-left-radius: 72rpx;
+    border-bottom-left-radius: 72rpx;
+    background-color: #FA537F;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}

@@ -1,0 +1,23 @@
+.dailyRewardView_title {
+    font-size: 48rpx;
+    color: #fff;
+    text-shadow: 0 0 20rpx #0267ff,0 0 35rpx #0267ff,0 0 40rpx #0267ff,0 0 50rpx #0267ff;
+    margin: 13rpx 0rpx 0rpx 0rpx;
+}
+
+.dailyRewardView_itemRenderer_title {
+    color: #c6f9f9;
+    font-size: 24rpx;
+    text-shadow: 0 0 20rpx #0d84d7,0 0 35rpx #0d84d7,0 0 40rpx #0d84d7;
+}
+
+.dailyRewardView_itemRenderer_num {
+    color: #51bafe;
+    font-size: 24rpx;
+}
+
+.dailyRewardView_itemRenderer_day {
+    color: #c6f9f9;
+    font-size: 24rpx;
+    text-shadow: 0 0 20rpx #0641ff,0 0 35rpx #0641ff,0 0 40rpx #0641ff;
+}

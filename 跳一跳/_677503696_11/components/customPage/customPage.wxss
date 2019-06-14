@@ -1,0 +1,5 @@
+@import "../navigation/navigation.wxss";
+
+.page {
+    background-color: #fff;
+}

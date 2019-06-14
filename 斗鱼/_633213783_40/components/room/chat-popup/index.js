@@ -1,0 +1,6 @@
+getApp();
+
+Component({
+    properties: {},
+    methods: {}
+});

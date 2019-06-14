@@ -1,0 +1,38 @@
+<template name="baseInfoBar">
+    <view style="height:1rpx"></view>
+    <view class="row start center2 title-bar" style="width:678rpx; height:130rpx; flex:none; ">
+        <view style="width:26rpx;flex:none"></view>
+        <view class="center center2" style="width:112rpx;height:112rpx;flex:none;position: relative">
+            <image backgroundSize="cover" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/img_friendmatch_opponent.png" style="position: absolute;width: 104rpx;height: 104rpx;left:0px;top:0px; border-radius: 50%;border: 4rpx solid #ffffff;"></image>
+            <image backgroundSize="contain" bindtap="{{callback_avata_clicked}}" src="{{userInfo.avatarUrl}}" style="position: absolute;width: 104rpx;height: 104rpx;left:0px;top:0px;border-radius: 50%;border: 4rpx solid #ffffff;"></image>
+        </view>
+        <view style="width:22rpx;flex:none"></view>
+        <view class="column center" style="height:100rpx; width:400rpx; flex:none; position:absolute;top:15rpx; right:124rpx;">
+            <view class="start center2" style="height:50%; width:100%">
+                <view class="row center2" style="width:50%;height:25rpx;">
+                    <view class="font-white-1 start center2">{{userInfo.nickName}}</view>
+                </view>
+                <view class="row center2" style="position:relative; width:50%;height:25rpx;background-color:rgba(34,36,87,0.6);border-radius: 13px;">
+                    <image src="../../image/ui/gold.png" style="position:absolute;left:-20rpx;top:-10rpx; width:40rpx;height:40rpx;flex:none"></image>
+                    <view bindtap="btn_shop_clicked" style="font-size:30rpx;color:#51bafe;width:274rpx;text-align:center">{{gold}}</view>
+                    <image bindtap="btn_shop_clicked" class="btn_shop_clicked?'':'hide'" src="../../image/cover/btn_add_gold.png" style="width:25rpx;height:25rpx;flex:none;˝"></image>
+                </view>
+            </view>
+            <view class="row start center2" style="height:50%;width:100%">
+                <view class="font-white-1" style="width:60rpx;">等级</view>
+                <view class="font-white-1" style="width:90rpx;">{{level}}</view>
+                <view class="row start center2" style="width:100%;height:25rpx;background-color:rgba(34,36,87,0.6);border-radius: 13px;">
+                    <view style="width:2rpx"></view>
+                    <view style="width:100%;height:21rpx">
+                        <view style="background-color:#fff;width:{{exp*100/maxExp}}%;height:100%;border-radius: 10px"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="btn_code_clicked" class="center center2" style="position: absolute;right:8rpx;top:11rpx;">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/user_detail/t1.png " style="width:108rpx;height:108rpx;"></image>
+        </view>
+    </view>
+    <view style="height:8rpx"></view>
+</template>
+<import src="../template/avatarNoName.wxml"></import>

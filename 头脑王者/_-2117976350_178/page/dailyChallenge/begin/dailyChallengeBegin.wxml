@@ -1,0 +1,62 @@
+<view class="mainView">
+    <image class="flagImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/{{flagImg}}" wx:if="{{flagImg}}"></image>
+    <view class="labelView">连续回答12道问题</view>
+    <view class="labelView2">答错离场，答对继续</view>
+    <view class="dotMainView">
+        <view class="dotView">
+            <image class="dotImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/icon_dot_pressed.png"></image>
+            <view class="dotLabel">1</view>
+        </view>
+        <view class="dotView">
+            <image class="dotImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/icon_dot_pressed.png"></image>
+            <view class="dotLabel">2</view>
+        </view>
+        <view class="dotView">
+            <image class="dotImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/icon_dot_pressed.png"></image>
+            <view class="dotLabel">3</view>
+        </view>
+        <view class="dotView">
+            <view class="dotLabel3">{{bonus1}}</view>
+            <image class="dotIcon3" src="{{itemIconUrl}}" wx:if="{{itemIconUrl}}"></image>
+            <image class="dotImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/icon_dot_pressed.png"></image>
+            <view class="dotLabel2">4</view>
+        </view>
+        <view class="dotView">
+            <image class="dotImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/icon_dot_pressed.png"></image>
+            <view class="dotLabel">5</view>
+        </view>
+        <view class="dotView">
+            <image class="dotImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/icon_dot_pressed.png"></image>
+            <view class="dotLabel">6</view>
+        </view>
+        <view class="dotView">
+            <image class="dotImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/icon_dot_pressed.png"></image>
+            <view class="dotLabel">7</view>
+        </view>
+        <view class="dotView">
+            <view class="dotLabel3">{{bonus2}}</view>
+            <image class="dotIcon3" src="{{itemIconUrl}}" wx:if="{{itemIconUrl}}"></image>
+            <image class="dotImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/icon_dot_pressed.png"></image>
+            <view class="dotLabel2">8</view>
+        </view>
+        <view class="dotView">
+            <image class="dotImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/icon_dot_pressed.png"></image>
+            <view class="dotLabel">9</view>
+        </view>
+        <view class="dotView">
+            <image class="dotImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/icon_dot_pressed.png"></image>
+            <view class="dotLabel">10</view>
+        </view>
+        <view class="dotView">
+            <image class="dotImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/icon_dot_pressed.png"></image>
+            <view class="dotLabel">11</view>
+        </view>
+        <view class="dotView">
+            <view class="dotLabel3">{{bonus3}}</view>
+            <image class="dotIcon3" src="{{itemIconUrl}}" wx:if="{{itemIconUrl}}"></image>
+            <image class="dotImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/icon_dot_pressed.png"></image>
+            <view class="dotLabel2">12</view>
+        </view>
+    </view>
+    <view bind:tap="onTapBeginBtn" class="beginBtn">开始答题</view>
+</view>

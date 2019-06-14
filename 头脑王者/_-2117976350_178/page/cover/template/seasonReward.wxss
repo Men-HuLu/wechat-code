@@ -1,0 +1,524 @@
+.seasonReward_mainView {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-image: url(https://question-resource-wscdn.hortorgames.com/image/new_skin/home/pattern.jpg);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: 0rpx 0rpx;
+    transition: background-position 10s linear;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+
+.seasonReward_mask1 {
+    width: 100%;
+    height: 66rpx;
+    background-color: #4E84E5;
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.seasonReward_title {
+    width: 680rpx;
+    height: 202rpx;
+    position: absolute;
+    top: 0px;
+    left: calc(50% - 680rpx / 2);
+}
+
+.seasonReward_title_bg {
+    width: 680rpx;
+    height: 202rpx;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.seasonReward_title_mask {
+    width: 660rpx;
+    height: 24rpx;
+    position: absolute;
+    left: calc(50% - 660rpx / 2);
+    bottom: 5rpx;
+}
+
+.seasonReward_rankView {
+    width: 658rpx;
+    height: auto;
+    position: absolute;
+    left: calc(50% - 658rpx / 2);
+    top: 173rpx;
+}
+
+.seasonReward_shareBtn {
+    width: 280rpx;
+    height: 99rpx;
+    background: #5dbaff;
+    box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);
+    border-radius: 20rpx;
+    position: absolute;
+    bottom: 108rpx;
+    left: 60rpx;
+}
+
+.seasonReward_shareBtnLabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48rpx;
+    color: #FFFFFF;
+    letter-spacing: 20rpx;
+    width: 138rpx;
+    height: 67rpx;
+    line-height: 67rpx;
+    position: absolute;
+    top: 14rpx;
+    right: 33rpx;
+}
+
+.seasonReward_shareBtnIcon {
+    width: 58rpx;
+    height: 55rpx;
+    position: absolute;
+    top: 24rpx;
+    left: 30rpx;
+}
+
+.seasonReward_getBtn {
+    width: 280rpx;
+    height: 99rpx;
+    box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);
+    border-radius: 20rpx;
+    background: #F5A623;
+    font-size: 48rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    position: absolute;
+    bottom: 108rpx;
+    right: 60rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seasonReward_rewardView {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.seasonReward_rewardView_subView {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.seasonReward_rewardView_bg {
+    width: 728rpx;
+    height: 100%;
+    position: absolute;
+    left: calc(50% - 728rpx / 2);
+    top: 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.seasonReward_avatar {
+    width: 120rpx;
+    height: 120rpx;
+    position: absolute;
+    top: 26rpx;
+    left: calc((100% - 120rpx) / 2);
+}
+
+.seasonReward_userName {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    left: 0px;
+    top: 160rpx;
+    color: #fff;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seasonReward_getBtn2 {
+    width: 310rpx;
+    height: 100rpx;
+    position: absolute;
+    left: calc(50% - 310rpx / 2);
+    bottom: 265rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #7ED321;
+    box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);
+    border-radius: 20rpx;
+    white-space: nowrap;
+    font-size: 50rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    transform: scale(0);
+}
+
+.seasonReward_rewardTitleImg {
+    width: 538rpx;
+    height: 148rpx;
+    position: absolute;
+    left: calc(50% - 538rpx / 2);
+    top: 540rpx;
+    transform: scale(0,1);
+}
+
+.seasonReward_rewardTitleLabel {
+    width: 288rpx;
+    height: 45rpx;
+    font-size: 32rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-shadow: 0 2rpx 4rpx #D84F00;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 570rpx;
+    left: calc(50% - 288rpx / 2);
+    transform: scale(0,1);
+}
+
+.seasonReward_trophy {
+    width: 170rpx;
+    height: 170rpx;
+    position: absolute;
+    left: calc(50% - 170rpx / 2);
+    top: 350rpx;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.seasonReward_tier {
+    width: 260rpx;
+    height: 260rpx;
+    position: absolute;
+    left: calc(50% - 260rpx / 2);
+    top: 300rpx;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.seasonReward_subjectView {
+    position: absolute;
+    left: calc(50% - 170rpx / 2);
+    top: 350rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 170rpx;
+    height: 170rpx;
+}
+
+.seasonReward_subject {
+    width: 170rpx;
+    height: 170rpx;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.seasonReward_subjectNum {
+    height: 34rpx;
+    width: 100%;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: 0px;
+    top: 117rpx;
+    font-size: 32rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-shadow: 0 0 4rpx rgba(0,0,0,0.50);
+}
+
+.seasonReward_goldView {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #4554a1;
+    opacity: 0;
+}
+
+.seasonReward_goldView_bg {
+    width: 750rpx;
+    height: 519rpx;
+    position: absolute;
+    left: calc((100% - 750rpx) / 2);
+    top: 202rpx;
+}
+
+.seasonReward_goldView_panelView {
+    position: absolute;
+    left: calc((100% - 600rpx)/2);
+    top: calc((100% - 888rpx)/2);
+    width: 600rpx;
+    height: 888rpx;
+    background: #fff;
+    box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);
+    border-radius: 20rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.seasonReward_goldView_titleImg {
+    width: 600rpx;
+    height: 129rpx;
+}
+
+.seasonReward_goldView_text {
+    font-size: 36rpx;
+    color: #4353A4;
+    letter-spacing: 0;
+    width: 527rpx;
+    height: 150rpx;
+    position: absolute;
+    left: calc(50% - 527rpx / 2);
+    top: 130rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-weight: bold;
+}
+
+.seasonReward_goldView_icon {
+    width: 120rpx;
+    height: 120rpx;
+    position: absolute;
+    left: 180rpx;
+    top: 533rpx;
+    opacity: 0;
+}
+
+.seasonReward_goldView_num {
+    width: 104rpx;
+    height: 50rpx;
+    position: absolute;
+    left: 300rpx;
+    top: 604rpx;
+    line-height: 50rpx;
+    font-size: 42rpx;
+    color: #FF7063;
+    letter-spacing: 0;
+    opacity: 0;
+}
+
+.seasonReward_goldView_img {
+    width: 191rpx;
+    height: 75rpx;
+    position: absolute;
+    top: 265rpx;
+    left: 207rpx;
+    opacity: 0;
+}
+
+.seasonReward_goldView_label2 {
+    width: 191rpx;
+    height: 75rpx;
+    position: absolute;
+    top: 265rpx;
+    left: 207rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-shadow: 0 2rpx 4rpx #F5A623;
+    opacity: 0;
+}
+
+.seasonReward_goldView_oldGold {
+    width: 90rpx;
+    height: 90rpx;
+    position: absolute;
+    top: 262rpx;
+    left: 91rpx;
+    opacity: 0;
+}
+
+.seasonReward_goldView_oldGoldNum {
+    width: 146rpx;
+    height: 34rpx;
+    position: absolute;
+    left: 64rpx;
+    top: 347rpx;
+    line-height: 50rpx;
+    font-size: 28rpx;
+    color: #FF7063;
+    letter-spacing: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    opacity: 0;
+}
+
+.seasonReward_goldView_newGold {
+    width: 140rpx;
+    height: 140rpx;
+    position: absolute;
+    top: 232rpx;
+    right: 37rpx;
+    opacity: 0;
+}
+
+.seasonReward_goldView_newGoldNum {
+    width: 146rpx;
+    height: 34rpx;
+    position: absolute;
+    right: 35rpx;
+    top: 372rpx;
+    line-height: 50rpx;
+    font-size: 28rpx;
+    color: #FF7063;
+    letter-spacing: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    opacity: 0;
+}
+
+.seasonReward_goldView_label {
+    font-size: 50rpx;
+    color: #FF7063;
+    letter-spacing: 0;
+    width: 240rpx;
+    height: 84rpx;
+    position: absolute;
+    top: 456rpx;
+    left: calc(50% - 240rpx / 2);
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.seasonReward_getBtn3 {
+    width: 310rpx;
+    height: 100rpx;
+    position: absolute;
+    left: calc(50% - 310rpx / 2);
+    bottom: 50rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #7ED321;
+    box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);
+    border-radius: 20rpx;
+    white-space: nowrap;
+    font-size: 50rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    opacity: 0;
+}
+
+.seasonReward_nextView {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+}
+
+.seasonReward_nextView_img {
+    width: 688rpx;
+    height: 220rpx;
+    position: absolute;
+    left: calc(50% - 688rpx / 2);
+    top: 315rpx;
+}
+
+.seasonReward_nextView_label {
+    font-size: 36rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-shadow: 0 2rpx 4rpx #202F7D;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 558rpx;
+    height: 50rpx;
+    position: absolute;
+    left: calc(50% - 558rpx / 2);
+    top: 545rpx;
+}
+
+.seasonReward_nextView_btn {
+    width: 310rpx;
+    height: 100rpx;
+    position: absolute;
+    left: calc(50% - 310rpx / 2);
+    bottom: 265rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #7ED321;
+    box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);
+    border-radius: 20rpx;
+    white-space: nowrap;
+    font-size: 50rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}

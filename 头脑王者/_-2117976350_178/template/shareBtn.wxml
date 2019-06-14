@@ -1,0 +1,12 @@
+<template name="shareBtn">
+    <view class="column center2" hoverClass="brightness" style="flex:none;position:relative; width:360rpx; height:140rpx;">
+        <image class="shareBtn_icon" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/info/btn_info_share.png"></image>
+        <view class="shareBtn_label">{{desc}}</view>
+        <view style="height:98rpx"></view>
+        <view class="row center2" wx:if="{{shareRewardText}}">
+            <view class="center center2" style="height:30rpx;font-size:24rpx;white-space: nowrap;color:#A9DCFF">{{shareRewardText}}</view>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png" style="width:30rpx;height:30rpx"></image>
+        </view>
+        <button openType="share" style="position: absolute; left:0;bottom:0px;opacity:0;width:100%;height:100%"></button>
+    </view>
+</template>

@@ -1,0 +1,10 @@
+<view class="view" hidden="{{!visible}}">
+    <image class="rw" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_rw{{groupId+1}}.png" wx:if="{{groupId>=0&&groupId<=3}}"></image>
+    <image class="baoXiang" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/img_baoxiang{{groupId+1}}.png" wx:if="{{status!==1&&groupId>=0&&groupId<3}}"></image>
+    <image class="baoXiang shake-Z animated" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/img_baoxiangkai{{groupId+1}}.png" style="animation-duration: 2s;animation-iteration-count: infinite" wx:if="{{status===1&&groupId>=0&&groupId<3}}"></image>
+    <image class="tiao" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/img_tiao{{groupId+1}}.png" wx:if="{{groupId>=0&&groupId<3}}"></image>
+    <view class="xingView x{{index}}" wx:for="{{tasks}}">
+        <image class="xing add" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/img_xing.png"></image>
+        <image class="lightEff addStar" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/challenge/light.png"></image>
+    </view>
+</view>

@@ -1,0 +1,37 @@
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.center2 {
+    display: flex;
+    align-items: center;
+}
+
+.start {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.avatarOnly-tiers {
+    position: absolute;
+    top: calc(50% - 130% / 2);
+    left: calc(50% - 130% / 2);
+    width: 130%;
+    height: 130%;
+    flex: none;
+}
+
+.brightness {
+    filter: brightness(1.2);
+}
+
+.row-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}

@@ -1,0 +1,16 @@
+.emojiView_img {
+    position: absolute;
+    width: 90rpx;
+    height: 90rpx;
+    top: calc(50% - 90rpx / 2);
+    opacity: 0;
+    transform: scale(0);
+}
+
+.emojiView_img.left {
+    left: calc(50% - 90rpx / 2);
+}
+
+.emojiView_img.right {
+    right: calc(50% - 90rpx / 2);
+}

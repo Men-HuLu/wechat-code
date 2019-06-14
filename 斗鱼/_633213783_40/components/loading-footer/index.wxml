@@ -1,0 +1,6 @@
+<view class="loadingFooter" hidden="{{isHidden}}">
+    <view class="loading" hidden="{{!isLoading}}">正在载入更多
+      <dot>...</dot>
+    </view>
+    <view class="loading complete" hidden="{{isLoading}}">已经全部加载完毕</view>
+</view>

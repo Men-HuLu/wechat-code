@@ -1,0 +1,3 @@
+<form reportSubmit bindreset="formReset" bindsubmit="formSubmit" class="hidden-form">
+    <button class="hidden-form-btn" formType="submit">{{sid}}</button>
+</form>

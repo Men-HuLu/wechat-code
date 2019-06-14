@@ -1,0 +1,4 @@
+<view bindtap="clickGotoHome" class="goto-home-btn">
+    <hiddenForm></hiddenForm>
+    <image class="homepage-btn-pic" src="../../assets/room/homepagebtn.png"></image>
+</view>

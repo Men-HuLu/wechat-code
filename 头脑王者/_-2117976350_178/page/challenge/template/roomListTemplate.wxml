@@ -1,0 +1,28 @@
+<template name="roomListItem">
+    <view style="width:100%;position:relative;">
+        <view bindtap="onTapRoomItem" data-id="{{item.id}}" style="background: #5DBAFF;box-shadow: 0 2rpx 4rpx 0 rgba(1,31,80,0.50);border-radius: 20rpx;width:640rpx;height:200rpx;position:relative;margin-bottom:10rpx;">
+            <view style="background: #A9DCFF;width:612rpx;height:3rpx;position:absolute;top:97rpx;left:calc( 50% - 306rpx);"></view>
+            <view style="color: #FFFFFF;letter-spacing: 0;text-shadow: 0 1rpx 2rpx #2C86E9;width:400rpx;height:59rpx;line-height:59rpx;position:absolute;top:30rpx;left:15rpx;white-space: nowrap;">
+                <open-data openGid="{{item.openGid}}" style="width:100%;font-size: 30rpx;" type="groupName"></open-data>
+            </view>
+            <view style="width:70rpx;height:70rpx;position:absolute;top:112rpx;left:{{10+50*index}}rpx;" wx:for="{{item.members}}" wx:key="uid">
+                <template is="avatarOnly" data="{{avatarUrl:item.avatarUrl,id:item.headId}}"></template>
+            </view>
+            <view style="height:30rpx;line-height:30rpx;font-size: 22rpx;color: #FFFFFF;letter-spacing: 0;position:absolute;top:152rpx;right:200rpx;" wx:if="{{item.membersCount&&item.membersCount>6}}">共{{item.membersCount}}人</view>
+        </view>
+        <view bindtap="onRoomlistItem_TapRank" data-id="{{item.id}}" hoverClass="hover-scale2" id="itemTap" style="width:146rpx;height:66rpx;position:absolute;top:112rpx;right:18rpx;">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/btn_match_room_ranking.png" style="width:146rpx;height:66rpx;"></image>
+        </view>
+    </view>
+</template>
+<template name="roomListTemplate">
+    <view style="position:absolute;left:0px;top:0px;width:100%;height:100%">
+        <view style="position:absolute;left:calc((100% - 634rpx)/2);top:20rpx; width:640rpx;height:calc(100% - 50rpx)">
+            <scroll-view scrollY class="center" scrollWithAnimation="{{true}}" style="width:100%;height:100%;">
+                <template is="roomListItem" data="{{item:item}}" wx:for="{{roomList}}" wx:for-index="uid" wx:key="uid"></template>
+            </scroll-view>
+        </view>
+        <image src="https://question-resource-wscdn.hortorgames.com/image/cash/ranking/img_ranking_mask.png" style="width:711rpx;height:90rpx;position:absolute;left:calc( 50% - 355rpx);bottom:0rpx;"></image>
+    </view>
+</template>
+<import src="../../../template/avatarBase.wxml"></import>

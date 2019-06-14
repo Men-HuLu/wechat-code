@@ -1,0 +1,10 @@
+<view style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; overflow: hidden;">
+    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/activity/activity_{{shareTestType}}/img_backgroundup.png" style="position: absolute; top: 0px; left: 0px; width: 750rpx; height: 200rpx;" wx:if="{{shareTestType}}"></image>
+    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/activity/activity_{{shareTestType}}/img_backgrounddown.png" style="position: absolute; bottom: 0px; left: 0px; width: 750rpx; height: 200rpx;" wx:if="{{shareTestType}}"></image>
+    <image animation="{{ani}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/activity/activity_comon/img_screen.png" style="position: absolute; width: 636rpx; height:968rpx; top:-968rpx; left:calc(50% - 636rpx / 2);" wx:if="{{shareTestType}}">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/activity/activity_{{shareTestType}}/img_examples1.png" style="position: absolute; width: 640rpx; height: 798rpx; top:160rpx; left:calc(50% - 640rpx / 2);" wx:if="{{shareTestType}}"></image>
+    </image>
+    <view bind:tap="onTapTestBtn" class="center center2" style="background: #FFAF48; box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50), inset 0 2rpx 0 0 #FFDDB5; border-radius: 100rpx; position: absolute; height: 120rpx; width: 434rpx; left:calc(50% - 434rpx /2); bottom: 94rpx; font-size: 50rpx; color: #FFFFFF; letter-spacing: 0; text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);">
+    开始测试
+  </view>
+</view>

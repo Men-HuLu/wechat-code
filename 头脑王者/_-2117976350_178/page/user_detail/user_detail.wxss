@@ -1,0 +1,193 @@
+@import "../../template/baseInfoBar.wxss";
+
+@import "../../template/shareBtn.wxss";
+
+@import "../../template/avatarBase.wxss";
+
+.mainView {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://question-resource-wscdn.hortorgames.com/image/new_skin/home/pattern.jpg);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: 0rpx 0rpx;
+    transition: background-position 10s linear;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.field-title {
+    color: #7afbff;
+    font-size: 24rpx;
+    white-space: nowrap;
+}
+
+.field-context {
+    color: #fff;
+    font-size: 24rpx;
+    white-space: nowrap;
+}
+
+.field-background {
+    position: relative;
+    width: 80%;
+    height: 46rpx;
+    border-radius: 23rpx;
+    background-color: #4E84E5;
+}
+
+.field-column-left {
+    width: 42%;
+    height: 80%;
+    padding-left: 16rpx;
+}
+
+.field-column-right {
+    width: 42%;
+    height: 80%;
+}
+
+.field-midline {
+    position: absolute;
+    left: calc(50% - 1rpx);
+    top: 4rpx;
+    width: 3rpx;
+    height: 38rpx;
+    background-color: #44A7FF;
+}
+
+.wang-rotate {
+    animation: rotate_shun 0.5s ease-out;
+}
+
+@-webkit-keyframes rotate_shun {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rotate_shun {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.field-show-1 {
+    animation: frames-field-show-1 0.5s ease-out;
+}
+
+@-webkit-keyframes frames-field-show-1 {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes frames-field-show-1 {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.field-show-2 {
+    animation: frames-field-show-2 0.5s ease-out;
+}
+
+@-webkit-keyframes frames-field-show-2 {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes frames-field-show-2 {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.field-show-3 {
+    animation: frames-field-show-3 0.5s ease-out;
+}
+
+@-webkit-keyframes frames-field-show-3 {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes frames-field-show-3 {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.share-show {
+    animation: frames-share-show 0.5s ease-out;
+}
+
+@-webkit-keyframes frames-share-show {
+    0% {
+        bottom: -90px;
+    }
+
+    100% {
+        bottom: 0px;
+    }
+}
+
+@keyframes frames-share-show {
+    0% {
+        bottom: -90px;
+    }
+
+    100% {
+        bottom: 0px;
+    }
+}

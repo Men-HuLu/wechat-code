@@ -1,0 +1,8 @@
+<view hidden="{{!visible}}" style="position: absolute; top:0px; left:0px; width: 100%; height: 100%; background-color: #4459ed;">
+    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/subscribe/ui_bg.png?v=1" style="position: absolute; left: 0px; top:0px; width: 750rpx; height: 959rpx"></image>
+    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/subscribe/ui_1.png" style="position: absolute; left:calc(50% - 680rpx/2); top:810rpx; width:680rpx; height:220rpx;"></image>
+    <image bindtap="onTapCopy" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/subscribe/btn_copy.png" style="position: absolute; left:520rpx; top:900rpx; width:155rpx; height:68rpx;"></image>
+    <view bindtap="onTapClose" style="position: absolute;right: 0px; top:0px; width:120rpx;height:120rpx; display: flex; justify-content: center; align-items: center;">
+        <image src="http://question-resource-zh.hortor.net/image/new_skin/popup/icon_close.png" style="width:45rpx;height:45rpx"></image>
+    </view>
+</view>

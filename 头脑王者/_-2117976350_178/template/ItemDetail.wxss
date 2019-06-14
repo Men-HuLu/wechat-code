@@ -1,0 +1,61 @@
+@import "propItem.wxss";
+
+.lighting_rotate {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    animation: rotate_shun 5s infinite linear;
+}
+
+@-webkit-keyframes rotate_shun {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate_shun {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.item-hole {
+    position: absolute;
+    left: calc(50% - 85rpx);
+    top: -85rpx;
+    width: 170rpx;
+    height: 170rpx;
+}
+
+.book-hole {
+    position: absolute;
+    left: calc(50% - 85rpx);
+    top: -85rpx;
+    width: 170rpx;
+    height: 170rpx;
+    border-radius: 50%;
+    border: 10rpx solid #fff;
+    background-color: #F14A3F;
+}
+
+.item-num {
+    position: absolute;
+    left: 0px;
+    bottom: 4rpx;
+    width: 100%;
+    font-size: 24rpx;
+    height: 29rpx;
+    color: #fff;
+    text-shadow: 0rpx 0rpx 3rpx rgba(0,0,0,0.5);
+}
+
+.avatarOnly-tiers {
+    position: absolute;
+    top: calc(50% - 130% / 2);
+    left: calc(50% - 130% / 2);
+    width: 130%;
+    height: 130%;
+    flex: none;
+}

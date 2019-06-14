@@ -1,0 +1,76 @@
+.navigation-bar {
+    position: fixed;
+    text-align: center;
+    height: 44px;
+    background-color: #fff;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.navigation-bar.navigation-bar_android {
+    height: 48px;
+}
+
+.navigation-bar__left-area,.navigation-bar__right-area {
+    position: absolute;
+    bottom: 0;
+}
+
+.navigation-bar__left-area {
+    left: 0;
+}
+
+.navigation-bar__right-area {
+    right: 0;
+    padding: 4px 12px;
+}
+
+.navigation-bar_android .navigation-bar__left-area {
+    padding-bottom: 2px;
+}
+
+.navigation-bar_android .navigation-bar__right-area {
+    padding: 6px 12px;
+}
+
+.navigation-bar_android .navigation-bar__center-area {
+    text-align: left;
+    padding-left: 36px;
+}
+
+.navigation-bar__icon-opr {
+    padding: 13px 10px;
+    font-size: 0;
+}
+
+.navigation-bar__right-area {
+    font-size: 0;
+}
+
+.navigation-bar__icon-opr__image {
+    width: 11px;
+    height: 19px;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.navigation-bar__icon-opr__text {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.navigation-bar_android .navigation-bar__icon-opr__text {
+    font-size: 0;
+    display: none;
+}
+
+.navigation-bar__title {
+    text-align: center;
+    font-size: 17px;
+    line-height: 44px;
+}
+
+.navigation-bar_android .navigation-bar__title {
+    line-height: 48px;
+}

@@ -1,0 +1,3 @@
+<view animation="{{questionViewAni}}" class="battle_questionView">
+  {{question}}
+</view>

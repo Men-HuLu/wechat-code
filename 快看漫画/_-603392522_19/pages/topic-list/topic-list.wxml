@@ -1,0 +1,11 @@
+<import src="/template/model-usual.wxml"></import>
+<import src="/template/model-topic.wxml"></import>
+<view class="list-wrap">
+    <view class="wrong-info" wx:if="{{errorLoad}}">
+        <image mode="widthFix" src="/image/err-load.png"></image>
+    </view>
+    <block wx:else>
+        <template is="topiclist" data="{{list:topicList,cover:[324,203],showFav:true,minHeight:topicList.length&&!noMore?'auto':'100%',tagBorder:true}}"></template>
+        <template is="loadmore" data="{{loading:onGetting,nomore:noMore,nodata:noData,bgColor:'#f7f9fa'}}"></template>
+    </block>
+</view>

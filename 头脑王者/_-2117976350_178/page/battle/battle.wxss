@@ -1,0 +1,67 @@
+.battle_mainView {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex: none;
+}
+
+.battle_round {
+    width: 275rpx;
+    height: 100rpx;
+    position: absolute;
+    top: 330rpx;
+    left: calc(50% - 275rpx / 2);
+}
+
+.battle_btnView {
+    width: 440rpx;
+    height: 500rpx;
+    position: absolute;
+    flex: none;
+    left: calc(50% - 440rpx / 2);
+    bottom: 195rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+}
+
+.battle_questionView {
+    position: absolute;
+    left: calc(50% - 590rpx / 2);
+    width: 590rpx;
+    top: 175rpx;
+    bottom: 750rpx;
+}
+
+.shareTestBg {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex: none;
+}
+
+.shareTestBgUpImg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 750rpx;
+    height: 200rpx;
+}
+
+.shareTestBgDownImg {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 750rpx;
+    height: 200rpx;
+}

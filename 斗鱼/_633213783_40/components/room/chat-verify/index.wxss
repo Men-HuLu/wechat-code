@@ -1,0 +1,341 @@
+.chat-verify {
+    position: absolute;
+    top: 410rpx;
+    left: 0;
+    bottom: 0;
+    z-index: 200;
+    width: 100%;
+}
+
+.chat-verify.yz {
+    top: 500rpx;
+}
+
+.chat-verify .bpn-mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+}
+
+.chat-verify .bpn-main-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    padding: 0 50rpx;
+    width: 100%;
+    background: #fff;
+}
+
+.chat-verify .bpn-main-content .mc-title {
+    width: 100%;
+    font-size: 32rpx;
+    color: #3F3F3F;
+    padding: 40rpx 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.chat-verify .bpn-main-content .border {
+    color: #3f3f3f;
+    border: 1rpx solid #dddddd;
+    border-radius: 4rpx;
+}
+
+.chat-verify .bpn-main-content .area-box {
+    margin-bottom: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 72rpx;
+    padding: 0 20rpx;
+    font-size: 28rpx;
+}
+
+.chat-verify .bpn-main-content .area-box .area-name {
+    display: block;
+}
+
+.chat-verify .bpn-main-content .area-box .area-icon {
+    display: flex;
+    align-items: center;
+}
+
+.chat-verify .bpn-main-content .area-box .area-icon .t-icon {
+    width: 13rpx;
+    height: 23rpx;
+    margin-left: 12rpx;
+}
+
+.chat-verify .bpn-main-content .phone-box {
+    margin-bottom: 30rpx;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 72rpx;
+    padding: 0 20rpx;
+    font-size: 28rpx;
+}
+
+.chat-verify .bpn-main-content .phone-box .area-num {
+    margin-right: 20rpx;
+    margin-top: -2rpx;
+}
+
+.chat-verify .bpn-main-content .phone-box .phone-num {
+    flex: 1;
+    height: 100%;
+}
+
+.chat-verify .bpn-main-content .pic-box {
+    margin-bottom: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 72rpx;
+}
+
+.chat-verify .bpn-main-content .pic-box .pic-num-box {
+    box-sizing: border-box;
+    padding: 0 20rpx;
+    height: 100%;
+    font-size: 28rpx;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-verify .bpn-main-content .pic-box .pic-num-box .pic-num {
+    flex: 1;
+    height: 100%;
+}
+
+.chat-verify .bpn-main-content .pic-box .pic-verify {
+    border-radius: 4rpx;
+    width: 170rpx;
+    height: 100%;
+    margin-left: 20rpx;
+}
+
+.chat-verify .bpn-main-content .message-box {
+    margin-bottom: 40rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 72rpx;
+}
+
+.chat-verify .bpn-main-content .message-box .message-num-box {
+    box-sizing: border-box;
+    padding: 0 20rpx;
+    height: 100%;
+    font-size: 28rpx;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-verify .bpn-main-content .message-box .message-num-box .message-num {
+    flex: 1;
+    height: 100%;
+}
+
+.chat-verify .bpn-main-content .message-box .send-message-btn {
+    border-radius: 4rpx;
+    width: 170rpx;
+    height: 100%;
+    text-align: center;
+    line-height: 72rpx;
+    margin-left: 20rpx;
+    font-size: 28rpx;
+    color: #fff;
+    background-color: #ff5d23;
+}
+
+.chat-verify .bpn-main-content .message-box .send-message-btn.is-disable {
+    background-color: #dddddd;
+}
+
+.chat-verify .bpn-main-content .submit-verify {
+    border-radius: 4rpx;
+    width: 400rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    margin: 40rpx auto;
+    text-align: center;
+    font-size: 28rpx;
+    color: #fff;
+    background-color: #ff5d23;
+}
+
+.chat-verify .bpn-main-content .submit-verify.is-disable {
+    background-color: #dddddd;
+}
+
+.chat-verify .bpn-are-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 670rpx;
+    background: #fff;
+    z-index: 10;
+}
+
+.chat-verify .bpn-are-content .mc-title {
+    position: relative;
+    width: 100%;
+    height: 126rpx;
+    line-height: 126rpx;
+    font-size: 32rpx;
+    color: #3F3F3F;
+    text-align: center;
+    font-weight: bold;
+}
+
+.chat-verify .bpn-are-content .mc-title .icon-back-box {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 13rpx;
+    height: 100%;
+    top: 0;
+    left: 40rpx;
+}
+
+.chat-verify .bpn-are-content .mc-title .icon-back-box .icon-back {
+    width: 13rpx;
+    height: 22rpx;
+}
+
+.chat-verify .bpn-are-content .area-list {
+    box-sizing: border-box;
+    height: 544rpx;
+    border-top: 1px solid #ddd;
+}
+
+.chat-verify .bpn-are-content .area-list .area-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 88rpx;
+    padding: 0 40rpx;
+    box-sizing: border-box;
+    color: #3f3f3f;
+    font-size: 28rpx;
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-verify .bpn-are-content .area-list .area-list-item.hasChoose {
+    color: #ff5d23;
+}
+
+.chat-verify .barrage-verify-container {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+    font-size: 28rpx;
+}
+
+.chat-verify .barrage-verify-container .barrage-verify-panel {
+    width: 600rpx;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.chat-verify .barrage-verify-container .barrage-verify-panel .barrage-verify-content {
+    background-color: white;
+    width: 100%;
+    border-radius: 12rpx;
+    padding-bottom: 24rpx;
+}
+
+.chat-verify .barrage-verify-container .barrage-verify-panel .barrage-verify-content .barrage-verify-title {
+    color: #333;
+    font-weight: bold;
+    padding: 22rpx 0;
+}
+
+.chat-verify .barrage-verify-container .barrage-verify-panel .barrage-verify-content .barrage-verify-hr {
+    height: 2rpx;
+    background-color: #DDD;
+    width: 540rpx;
+    margin: 0 auto;
+}
+
+.chat-verify .barrage-verify-container .barrage-verify-panel .barrage-verify-content .barrage-verify-tip-tel {
+    color: #333;
+    font-weight: bold;
+    margin-top: 30rpx;
+    margin-bottom: 24rpx;
+}
+
+.chat-verify .barrage-verify-container .barrage-verify-panel .barrage-verify-content .barrage-verify-tip-tel .verify-phone {
+    color: #666;
+}
+
+.chat-verify .barrage-verify-container .barrage-verify-panel .barrage-verify-content .barrage-verify-send {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 36rpx;
+}
+
+.chat-verify .barrage-verify-container .barrage-verify-panel .barrage-verify-content .barrage-verify-send.is-content {
+    margin-bottom: 24rpx;
+}
+
+.chat-verify .barrage-verify-container .barrage-verify-panel .barrage-verify-content .barrage-verify-send .highlight {
+    color: #F70;
+}
+
+.chat-verify .barrage-verify-container .barrage-verify-panel .barrage-verify-content .barrage-verify-send .highlight.normal {
+    font-weight: normal;
+}
+
+.chat-verify .barrage-verify-container .barrage-verify-panel .barrage-verify-content .barrage-verify-button-group {
+    height: 80rpx;
+    width: 516rpx;
+    margin: 0 auto;
+    color: white;
+    line-height: 80rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-verify .barrage-verify-container .barrage-verify-panel .barrage-verify-content .barrage-verify-button-group .barrage-verify-button {
+    height: 100%;
+    width: 240rpx;
+    border-radius: 4rpx;
+    background-color: #ff5d23;
+}
+
+.chat-verify .barrage-verify-container .barrage-verify-panel .barrage-verify-content .barrage-verify-send-tip {
+    width: 100%;
+    font-size: 20rpx;
+    color: #999;
+}
+
+.chat-verify .barrage-verify-container .barrage-verify-panel .barrage-verify-content .barrage-verify-send-tip .barrage-verify-op-tip {
+    color: #FF0000;
+    margin-top: 24rpx;
+    margin-bottom: 10rpx;
+}
+
+.chat-verify .barrage-verify-container .barrage-verify-panel .barrage-verify-close {
+    margin-top: 20rpx;
+    width: 57rpx;
+    height: 57rpx;
+}

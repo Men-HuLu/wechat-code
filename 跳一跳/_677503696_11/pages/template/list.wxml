@@ -1,0 +1,59 @@
+<template name="list">
+    <view class="poi-list list-border">
+        <view class="poi-item list-border__item" wx:for="{{list}}" wx:for-index="idx" wx:key="appid">
+            <view bindtap="goPoi" class="poi-item__main wx-flex_middle" data-idx="{{idx}}" hoverClass="bg-highlight">
+                <view class="wx-flex">
+                    <view class="poi-item__hd">
+                        <image class="poi-item__avatar" src="{{item.headimg}}"></image>
+                    </view>
+                    <view class="poi-item__bd">
+                        <view class="wx-flex">
+                            <view class="poi-item__name wx-flex__item ellipsis-1 font-size-34">{{item.store_name||item.nickname}}</view>
+                            <view class="poi-item__distance font-size-26 gray-opacity-mid">{{item.distance}}</view>
+                        </view>
+                        <view class="poi-item__row">
+                            <view class="poi-item__category font-size-26 gray-opacity-mid">{{item.subCategory}}</view>
+                            <view class="tags-list" wx:if="{{item.serviceTags.length}}">
+                                <view class="tags-item {{m1.getTagColor(item)}} " wx:if="{{index<4}}" wx:for="{{item.serviceTags}}" wx:key="*this">{{item}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="gray-opacity font-size-26 social-info__tips" wx:if="{{item.friend_use_num&&item.friend_use_num>0}}">{{item.friend_use_num}}位朋友使用过</view>
+            </view>
+            <block wx:if="{{item.type==1&&canUseCustomer||item.type==2&&clientCustomer&&canUseCustomer}}">
+                <view class="poi-item__extra" hoverClass="bg-highlight" wx:if="{{item.customer&&item.customer.status==1}}">
+                    <view bindtap="openCustomer" class="poi-item__extra__meta wx-flex service-info button-reset" data-idx="{{idx}}">
+                        <view class="service-info__bd wx-flex__item">
+                            <view class="service-info__avatar__wrp">
+                                <image class="service-info__avatar" src="{{item.customer.avatar}}"></image>
+                            </view>
+                            <text class="service-info__name">{{item.customer.label}}</text>
+                        </view>
+                        <view class="service-info__ft">
+                            <text class="gray-opacity font-size-26 middle">咨询</text>
+                            <image class="icon-more" src="/images/next.svg"></image>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</template>
+<wxs module="m1">
+var getTagColor = (function(name) {
+    var type1 = ['外送', '会员', '排队', '乘车'];
+    var type2 = ['预约', '快递', '缴费', '优惠'];
+    var type3 = ['买单', '挂号', '购票', '点餐', '充电'];
+    var color = '';
+    if (type1.indexOf(name) != -1) {
+        color = 'type1'
+    } else if (type2.indexOf(name) != -1) {
+        color = 'type2'
+    } else {
+        color = 'type3'
+    };
+    return (color)
+});
+module.exports.getTagColor = getTagColor;
+</wxs>

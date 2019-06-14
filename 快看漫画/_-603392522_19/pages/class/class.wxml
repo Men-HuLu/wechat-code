@@ -1,0 +1,27 @@
+<import src="/template/model-usual.wxml"></import>
+<import src="/template/model-topic.wxml"></import>
+<view class="class-wrap">
+    <view class="class-top" wx:if="{{tagList.length>1}}">
+        <view catchtap="clickTab" class="tab-item {{index==tagIndex?' active':''}}" data-index="{{index}}" wx:for="{{tagList}}" wx:key="id">{{item.tit}}</view>
+    </view>
+    <view class="swiper-wrap" style="padding-top: {{tagHeight}}">
+        <swiper bindanimationfinish="swiperTouch" current="{{swiperIndex}}" skipHiddenItemLayout="true">
+            <swiper-item wx:for="{{swiperList}}" wx:for-item="swiper" wx:key="id">
+                <scroll-view scrollY bindscroll="scrolling" bindscrolltolower="getMore" class="scroll-view" data-nomore="{{swiper.nomore}}" enableBackToTop="true" scrollTop="{{swiper.scroll}}">
+                    <view class="filter-wrap" style="height: {{filterOpen?'152rpx':'76rpx'}}">
+                        <view class="filter-show">
+                            <view class="filter-line" wx:for="{{filters}}" wx:for-index="type" wx:for-item="filter" wx:key="{{ type }}">
+                                <view catchtap="clickFilter" class="filter {{index==(type==0?status:sort)?'active':''}}" data-index="{{index}}" data-type="{{type}}" wx:for="{{filter}}" wx:key="*this">{{item}}</view>
+                            </view>
+                            <view catchtap="switchFilter" class="btn">
+                                <image src="/image/arrow-{{filterOpen?'up':'down'}}.png"></image>筛选</view>
+                        </view>
+                    </view>
+                    <template is="topiclist" data="{{list:swiperObj[swiper.id],cover:[324,202],minHeight:swiper.nomore&&swiperObj[swiper.id].length?'100%':'auto'}}" wx:if="{{loadList}}"></template>
+                    <template is="loadmore" data="{{loading:swiper.loading||!swiperObj[swiper.id],nomore:swiper.nomore,nodata:swiperObj[swiper.id]&&!swiperObj[swiper.id].length}}"></template>
+                </scroll-view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>
+<kk-bubble control="{{bubble}}"></kk-bubble>

@@ -1,0 +1,8 @@
+{
+    "enablePullDownRefresh": false,
+    "disableScroll": false,
+    "onReachBottomDistance": 100,
+    "usingComponents": {
+        "custom-page": "/components/customPage/customPage"
+    }
+}

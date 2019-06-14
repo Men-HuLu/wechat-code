@@ -1,0 +1,9 @@
+{
+    "enablePullDownRefresh": false,
+    "disableScroll": false,
+    "onReachBottomDistance": 100,
+    "backgroundColor": "#f7f7f7",
+    "usingComponents": {
+        "navigation": "/components/navigation/navigation"
+    }
+}

@@ -1,0 +1,10 @@
+<view class="mainView">
+    <image class="logo" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/matching/img_logo.png?v=0"></image>
+    <view class="center center2" style="flex-direction: column; position: absolute; bottom: 30rpx; width: 100%; color: #4990E2;">
+        <view style="font-size: 24rpx;">健康游戏忠告</view>
+        <view style="font-size: 22rpx;">抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。</view>
+        <view style="font-size: 22rpx;">适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</view>
+    </view>
+    <view class="loginBtn center center2" hidden="{{!loginBtnVisible}}">登录</view>
+    <button bind:getuserinfo="onGetUserInfo" class="loginBtn" hidden="{{!loginBtnVisible}}" openType="getUserInfo" style="opacity: 0;">登录</button>
+</view>

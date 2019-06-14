@@ -1,0 +1,15 @@
+<view class="fixbar-container" style="height:{{navH*2}}rpx">
+    <view class="left-control" wx:if="{{isDetail||isTage||isFromVideo||isFromPGC||isIdx}}">
+        <view catchtap="back" class="back btn">
+            <i class="icon icon-nav_title_black" style="font-size:40rpx;"></i>
+        </view>
+        <view catchtap="backHome" class="home btn">
+            <i class="icon General_home" style="font-size:36rpx;"></i>
+        </view>
+    </view>
+    <view class="title" style="{{isiPhoneX?'margin-top:104rpx;':''}}" wx:if="{{!isDetail&&!isFromPGC}}">{{title}}</view>
+    <view bindtap="toIndexSearch" class="search-btn" style="{{isiPhoneX?'margin-top:104rpx;':''}}" wx:if="{{isDetail||isFromPGC}}">
+        <i class="icon General_Search"></i>
+        <text class="searchWord">搜索哔哩哔哩内容</text>
+    </view>
+</view>

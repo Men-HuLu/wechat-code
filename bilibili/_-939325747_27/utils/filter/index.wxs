@@ -1,0 +1,61 @@
+var Filter = ({
+    number2chn: (function(n) {
+        if (n >= 10000 && n < 100000000) {
+            n = (n / 10000).toFixed(1);
+            return (n + '万')
+        } else if (n >= 100000000) {
+            n = (n / 100000000).toFixed(1);
+            return (n + '亿')
+        } else {
+            return (n)
+        }
+    }),
+    formatdate: (function(t) {
+        if (!t) return;;
+        var date = getDate(t * 1000);
+        console.log(date);
+        var Y = date.getFullYear() + '-';
+        var M = date.getMonth() + 1 + '-';
+        var D = date.getDate();
+        return ('·' + M + D)
+    }),
+    formatdateNormal: (function(t) {
+        if (!t) return;;
+        var date = getDate(t * 1000);
+        console.log(date);
+        var Y = date.getFullYear() + '-';
+        var M = date.getMonth() + 1 + '-';
+        var D = date.getDate();
+        return (Y + M + D)
+    }),
+    formattime: (function(n) {
+        var hour;
+        var min;
+        var sec;
+        var secStr;
+        var minStr;
+        if (n < 60) {
+            secStr = n < 10 ? "0" + n : n;
+            return ("00:" + secStr)
+        } else if (n < 3600) {
+            sec = n % 60;
+            min = parseInt(n / 60);
+            secStr = sec < 10 ? "0" + sec : sec;
+            minStr = min < 10 ? "0" + min : min;
+            return (minStr + ":" + secStr)
+        } else {
+            sec = n % 60;
+            min = parseInt((n % 3600) / 60);
+            hour = parseInt(n / 3600);
+            secStr = sec < 10 ? "0" + sec : sec;
+            minStr = min < 10 ? "0" + min : min;
+            return (hour + ":" + minStr + ":" + secStr)
+        }
+    }),
+});
+module.exports = ({
+    number2chn: Filter.number2chn,
+    formatdate: Filter.formatdate,
+    formattime: Filter.formattime,
+    formatdateNormal: Filter.formatdateNormal,
+});

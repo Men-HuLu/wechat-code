@@ -1,0 +1,67 @@
+.guildInfo {
+    width: 170rpx;
+    height: 170rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    flex: none;
+}
+
+.guildinfo-bg {
+    width: 170rpx;
+    height: 170rpx;
+    flex: none;
+}
+
+.guildAvatarView {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 10%;
+    border: 8rpx solid #ffffff;
+    display: flex;
+    overflow: hidden;
+    flex: none;
+}
+
+.guildAvatarItem {
+    display: flex;
+    flex: none;
+}
+
+.guildAvatarView.type9,.guildAvatarView.type8,.guildAvatarView.type7,.guildAvatarView.type4,.guildAvatarView.type3,.guildAvatarView.type2,.guildAvatarView.type1 {
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.guildAvatarView.type6,.guildAvatarView.type5 {
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.guildAvatarItem.type9,.guildAvatarItem.type8,.guildAvatarItem.type7,.guildAvatarItem.type6,.guildAvatarItem.type5 {
+    width: 30%;
+    height: 30%;
+    padding: 1%;
+}
+
+.guildAvatarItem.type4,.guildAvatarItem.type3,.guildAvatarItem.type2 {
+    width: 48%;
+    height: 48%;
+    padding: 1%;
+}
+
+.guildAvatarItem.type1 {
+    width: 100%;
+    height: 100%;
+}

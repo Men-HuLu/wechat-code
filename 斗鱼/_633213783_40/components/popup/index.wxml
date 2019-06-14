@@ -1,0 +1,18 @@
+<view wx:if="{{isPopup}}">
+    <view class="popup-anchor" from="{{from}}" lyList="{{lyList||[]}}">
+        <view bindtap="clickClosePopup" class="{{from==='home'?'popup-content':'popup-game'}}" data-from="{{from}}">
+            <view bindtap="goBeautyRoom" class="popup-formid" data-from="{{from}}">
+                <image class="popup-img" mode="widthFix" src="{{imgUrl}}"></image>
+                <form reportSubmit bindreset="formReset" bindsubmit="formSubmit" class="hidden-form">
+                    <button class="hidden-form-btn" formType="submit"></button>
+                </form>
+            </view>
+            <view catchtap="closePopup" class="popup-close" data-from="{{from}}">
+                <image class="popup-close-img" src="../../assets/images/popup-close.png"></image>
+                <form reportSubmit bindreset="formReset" bindsubmit="formSubmit" class="hidden-form">
+                    <button class="hidden-form-btn" formType="submit"></button>
+                </form>
+            </view>
+        </view>
+    </view>
+</view>

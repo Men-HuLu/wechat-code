@@ -1,0 +1,381 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.header {
+    width: 100%;
+}
+
+page {
+    height: 100%;
+    font-size: 32rpx;
+    line-height: 1.6;
+}
+
+.home-main {
+    background: white;
+    margin-top: 140rpx;
+}
+
+.page-body {
+    margin-top: 24rpx;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+
+.avator {
+    border-radius: 50%;
+    height: 72rpx;
+    width: 72rpx;
+    overflow: hidden;
+    margin: 0rpx 12rpx 12rpx 0rpx;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.video-info {
+    width: 350rpx;
+    display: inline-block;
+    font-size: 0rpx;
+}
+
+.fade-box {
+    position: absolute;
+    background-image: linear-gradient(360deg,#000000 -50%,rgba(0,0,0,0.00) 70%);
+    height: 128rpx;
+    width: 100%;
+    top: 256rpx;
+    z-index: 1000;
+    opacity: 0.4;
+    border-bottom-left-radius: 8rpx;
+    border-bottom-right-radius: 8rpx;
+}
+
+.item-detail {
+    width: 480rpx;
+    overflow: hidden;
+    font-size: 28rpx;
+    text-overflow: ellipsis;
+    display: -webkit-inline-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 36rpx;
+}
+
+.up-name {
+    display: inline-block;
+    color: #999;
+    font-size: 12px;
+    margin-top: 1rpx;
+}
+
+.pub-time {
+    display: inline-block;
+    color: #999;
+    font-size: 12px;
+    margin-top: -10rpx;
+}
+
+.page-section {
+}
+
+.tag-info {
+    float: right;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 26rpx;
+}
+
+.tag-name {
+    vertical-align: top;
+    font-size: 22rpx;
+    display: inline-block;
+    background: #F4F4F4;
+    padding: 14rpx 24rpx;
+    border-radius: 40rpx;
+    color: #505050;
+    max-width: 105rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search input {
+    background: #F4F4F4;
+    border-radius: 1000rpx;
+    width: 100%;
+    height: 60rpx;
+    margin: 14rpx 0rpx;
+    margin-right: 24rpx;
+    display: inline-block;
+}
+
+.cancel {
+    display: inline-block;
+    background: pink;
+    vertical-align: top;
+}
+
+.switch {
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    height: 100rpx;
+    border-bottom: solid 2rpx #E7E7E7;
+    position: fixed;
+    z-index: 99;
+    background: white;
+    width: 100%;
+}
+
+.switch .sec {
+    color: #757575;
+    text-align: center;
+    width: 64rpx;
+    line-height: 100rpx;
+}
+
+.sec.active {
+    color: #FB7299;
+    border-bottom: solid #FB7299 16rpx;
+}
+
+.header {
+    width: 100%;
+    height: 88rpx;
+}
+
+.scrollBar {
+    width: 100%;
+    height: 88rpx;
+}
+
+.home-rank {
+}
+
+.rank-item {
+    padding: 0 32rpx;
+    margin-bottom: 30rpx;
+    position: relative;
+    border-bottom: solid 1rpx #e7e7e7;
+}
+
+.rank-item-img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    border-radius: 8rpx;
+}
+
+.rank-item-top {
+    position: relative;
+    height: 384rpx;
+}
+
+.item-info {
+    position: absolute;
+    left: 0;
+    font-size: 24rpx;
+    color: #FFFFFF;
+    z-index: 1001;
+}
+
+.item-info-time {
+    padding: 0rpx 8rpx;
+    text-align: center;
+    border-radius: 4px;
+    left: 12rpx;
+    background: rgba(0,0,0,0.50);
+    bottom: 12rpx;
+}
+
+.item-info-view {
+    left: 130rpx;
+    bottom: 12rpx;
+}
+
+.item-info-barrage {
+    margin-left: 50rpx;
+    left: 250rpx;
+    bottom: 12rpx;
+}
+
+.item-icon {
+    width: 88rpx;
+    height: 88rpx;
+    position: absolute;
+    bottom: 8rpx;
+    right: 16rpx;
+    z-index: 1001;
+}
+
+.rank-item-title {
+    font-size: 28rpx;
+    color: #212121;
+    padding-top: 20rpx;
+    padding-bottom: 36rpx;
+}
+
+.myVideo {
+    position: relative;
+    width: 100%;
+    height: 384rpx;
+}
+
+.none {
+    display: none;
+}
+
+.video-content {
+    width: 100%;
+    height: 400rpx;
+}
+
+.cover-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 999;
+    filter: blur(.34133rem);
+}
+
+.play,.pause {
+    width: 68rpx;
+    height: 62rpx;
+    position: absolute;
+    bottom: 22rpx;
+    right: 24rpx;
+    z-index: 90;
+}
+
+.video-title {
+    font-size: 28rpx;
+    color: #212121;
+    margin-bottom: 20rpx;
+}
+
+.video-desc {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.hot {
+    height: 100%;
+}
+
+.rec {
+    height: 100%;
+}
+
+.General_Share {
+    margin-left: 10rpx;
+    color: #757575;
+}
+
+.loading {
+    display: inline-block;
+    width: 140rpx;
+    height: 140rpx;
+    position: relative;
+    top: 110rpx;
+}
+
+.def-section {
+    display: none;
+    height: 500rpx;
+    width: 100%;
+    text-align: center;
+}
+
+button::after {
+    border: none;
+}
+
+.button-hover {
+    color: none;
+    background-color: none;
+}
+
+button {
+    display: inline-block;
+    margin-left: 24rpx;
+    margin-right: none;
+    padding: 0;
+    box-sizing: none;
+    line-height: 50rpx;
+    font-size: none;
+    background: white;
+}
+
+image {
+    display: inline;
+}
+
+.update-tag {
+    position: fixed;
+    width: 228rpx;
+    height: 72rpx;
+    background: rgba(0,0,0,0.80);
+    border-radius: 4px;
+    top: 32rpx;
+    z-index: 999;
+    left: 50%;
+    margin-left: -114rpx;
+    color: white;
+    line-height: 72rpx;
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.big {
+    font-size: 40rpx;
+}
+
+.read-more {
+    color: #C0C0C0;
+    font-size: 28rpx;
+    height: 88rpx;
+    width: 100%;
+    line-height: 88rpx;
+    text-align: center;
+    margin-top: -30rpx;
+}
+
+.open-btn {
+    margin-left: 0rpx;
+    padding: 10rpx 20rpx;
+    position: fixed;
+    bottom: 120rpx;
+    left: 50%;
+    font-size: 24rpx;
+    transform: translateX(-50%);
+    background: #FB7299;
+    color: white;
+    border-radius: 50rpx;
+    z-index: 100;
+    width: 200rpx;
+    font-size: 32rpx;
+    height: 75rpx;
+    line-height: 55rpx;
+}
+
+button {
+    display: inline-block;
+    margin-left: 24rpx;
+    margin-right: none;
+    padding: 0;
+    box-sizing: none;
+    line-height: 50rpx;
+    font-size: none;
+    background: white;
+}

@@ -1,0 +1,14 @@
+<view class="video-player-box {{isYz?'yz':''}}" style="height: {{isYz?windowHeight:'410rpx'}}">
+    <video controls loop autoplay="{{autoPlay}}" bindended="liveEnded" binderror="liveLoadError" bindfullscreenchange="fullscreenchange" bindpause="livepaused" bindplay="liveplay" bindtimeupdate="liveupdate" class="video-player" danmuList="{{danmuList}}" direction="{{isYz?'0':'90'}}" id="myVideo" showCenterPlayBtn="{{showCenterPlayBtn}}" showFullscreenBtn="{{!isNrt}}" src="{{src}}" wx:if="{{liveStatus&&!liveerror&&!liveswitch}}"></video>
+    <view class="video-cover error" wx:elif="{{liveerror}}">
+        <view class="tip-box">
+            <view>
+                <text>{{liveerror_tip}}</text>
+            </view>
+            <view bind:tap="retry" class="button">{{liveerror_op}}</view>
+        </view>
+    </view>
+    <view class="video-cover switch" wx:elif="{{liveswitch}}">
+        <view class="tip-box"></view>
+    </view>
+</view>

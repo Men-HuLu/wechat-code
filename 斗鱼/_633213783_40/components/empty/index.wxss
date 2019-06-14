@@ -1,0 +1,38 @@
+.empty-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 97;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+}
+
+.empty-box .empty-icon {
+    margin-bottom: 60rpx;
+    width: 294rpx;
+    height: 236rpx;
+}
+
+.empty-box .empty-title {
+    width: 100%;
+    text-align: center;
+    line-height: 32rpx;
+    font-size: 30rpx;
+    color: #5c5c5c;
+    margin: 26rpx auto;
+}
+
+.empty-box .empty-content {
+    width: 100%;
+    text-align: center;
+    line-height: 32rpx;
+    font-size: 28rpx;
+    color: #ADADAD;
+}

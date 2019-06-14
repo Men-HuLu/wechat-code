@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="19px" viewBox="0 0 11 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_back</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="视觉-v15.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="更多资料-copy" transform="translate(-10.000000, -57.000000)" fill="#000000">
+            <g id="Bars/Navigation-Bar/X---Light">
+                <g id="Group-2" transform="translate(10.000000, 55.000000)">
+                    <g id="Back-Button">
+                        <g id="Group-4" transform="translate(0.000000, 2.000000)">
+                            <path d="M4.5,3 L15.5,3 C15.7761424,3 16,3.22385763 16,3.5 L16,4.5 C16,4.77614237 15.7761424,5 15.5,5 L5,5 L5,15.5 C5,15.7761424 4.77614237,16 4.5,16 L3.5,16 C3.22385763,16 3,15.7761424 3,15.5 L3,3.5 C3,3.22385763 3.22385763,3 3.5,3 L4.5,3 Z" id="Chevron" transform="translate(9.500000, 9.500000) rotate(-45.000000) translate(-9.500000, -9.500000) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

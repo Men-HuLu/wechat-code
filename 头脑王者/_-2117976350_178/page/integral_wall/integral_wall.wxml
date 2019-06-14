@@ -1,0 +1,51 @@
+<template name="rankItem">
+    <view class="column start center2" style="position:relative;width: 654rpx;height: 176rpx;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/Integral_wall/Integral_wall_list.png" style="width:100%;height:176rpx;"></image>
+        <view class="row center2 start" style="position:absolute;left:0px;top:0px;width: 100%;height: 100%;">
+            <view style="position:absolute;left:144rpx;right:26rpx;top:85rpx;height:2rpx;background-color:#fff;"></view>
+            <image src="{{item.icon}}" style="position: absolute;left:26rpx;top:22rpx;width:122rpx;height:122rpx;border-radius: 20rpx;border: 4rpx solid #fff;"></image>
+            <view class="center2" style="position:absolute;left:168rpx;top:34rpx;height:50rpx;width:290rpx;font-size: 36rpx;color: #FFFFFF;text-shadow: 0 1rpx 2rpx rgba(0,0,0,0.50);">{{item.name}}</view>
+            <view class="row start center2" style="position:absolute;left:452rpx;top:40rpx;right:0px;height:40rpx;">
+                <view class="row start center2" style="height:28rpx;font-size:28rpx;white-space: nowrap;">奖励</view>
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png" style="width:40rpx;height:40rpx;"></image>
+                <view style="width:3rpx"></view>
+                <view class="row start center2" style="height:28rpx;font-size:28rpx;white-space: nowrap;">{{item.awareValue}}</view>
+            </view>
+            <view class="row start center2" style="position: absolute;left:168rpx;top:93rpx;height:30rpx;font-size:22rpx;white-space: nowrap;" wx:if="{{item.customState==0}}">{{item.desc}}</view>
+            <view class="row start center2" style="position: absolute;left:168rpx;top:93rpx;height:30rpx;font-size:22rpx;white-space: nowrap;" wx:elif="{{item.customState==1}}">{{item.awareDesc}}</view>
+            <view class="row start center2" style="position: absolute;left:168rpx;top:93rpx;height:30rpx;font-size:22rpx;white-space: nowrap;" wx:else>已完成</view>
+            <view bindtap="onItemTap" class="center center2" data-id="{{item.taskId}}" hoverClass="brightness" style="position: absolute;width:160rpx;height:60rpx;bottom:16rpx;right:26rpx; background-image: linear-gradient(-179deg, #FFD430 6%, #FFA800 93%);box-shadow: 0 2rpx 1rpx 0 rgba(0,45,105,0.30), inset 0 2rpx 0 0 rgba(255,246,135,0.81), inset 0 -2rpx 0 0 #D56810;border-radius: 36rpx;" wx:if="{{item.customState==0}}">
+                <view class="" style="font-size:38rpx;text-shadow: 0 1rpx 3rpx rgba(0,0,0,0.50);white-space: nowrap;">{{item.actionName}}</view>
+            </view>
+            <view bindtap="onItemTap" class="center center2" data-id="{{item.taskId}}" hoverClass="brightness" style="position: absolute;width:160rpx;height:60rpx;bottom:16rpx;right:26rpx;background-image: linear-gradient(-179deg, #00FFA8 6%, #00E8C3 90%);box-shadow: 0 3rpx 1rpx 0 rgba(0,132,167,0.88), inset 0 2rpx 0 0 #B3FFD5, inset 0 -2rpx 0 0 #08D5B6;border-radius: 36rpx;" wx:elif="{{item.customState==1}}">
+                <view class="" style="font-size:38rpx;text-shadow: 0 1rpx 3rpx rgba(0,0,0,0.50);white-space: nowrap;">领 取</view>
+            </view>
+            <view class="center center2" style="position: absolute;width:160rpx;height:60rpx;bottom:16rpx;right:26rpx; " wx:else>
+                <view class="" style="font-size: 36rpx;color: #7FEEFF;letter-spacing: 2rpx;text-align: center;text-shadow: 0 1rpx 2rpx rgba(0,0,0,0.50);white-space: nowrap;">已领取</view>
+            </view>
+        </view>
+    </view>
+</template>
+<view class="aniMainView" style="background-position:{{backgroundPosition}};">
+    <canvas canvasId="horwall_canvas" style="position: absolute;left:750rpx;top:0px;width:750px;height:1334px;"></canvas>
+    <view class="" style="position: absolute;  left: 0px;width: 100%; height: 220rpx; background-color: #4E84E5; display: flex; border-bottom-left-radius: 20rpx;border-bottom-right-radius: 20rpx;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/Integral_wall/Integral_wall_ling.png" style="position:absolute;left:calc(50% - 311rpx);top:-50rpx;width:622rpx;height:255rpx;"></image>
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/img_mask_list.png" style="position: absolute;left:calc(50% - 330rpx);bottom:29rpx; width:660rpx;height:24rpx;transform: scale(1,1);"></image>
+    </view>
+    <view style="width: 100%; height: 170rpx; position: absolute; bottom: 0px; left: 0px;">
+        <view class="" style="transform: translate3d(0,0px,0); width: 100%; height: 100%; background-color: #4E84E5; display:flex; border-top-left-radius: 20rpx;border-top-right-radius: 20rpx;">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/img_mask_list.png" style="position: absolute;left:calc(50% - 330rpx);top:23rpx;width:660rpx;height:24rpx;transform:rotate(180deg);"></image>
+            <view class="center center2" style="position: absolute;left:0px;top:75rpx;width:100%;height:33rpx;font-size:24rpx;color:#A9DCFF;">试玩游戏后返回当前页面领奖</view>
+        </view>
+    </view>
+    <view class="column start center2" style="position: absolute;left:0px;top:173rpx;bottom:134rpx; width: 100%;overflow: hidden;">
+        <scroll-view animation="{{ani_list}}" name="view-listview" scrollY="true" style=" width: 650rpx;height:100%;transform: translate3d(0,-100%,0);">
+            <block wx:for="{{gameList}}" wx:for-index="taskId" wx:key="taskId">
+                <view class="column start center2" style="display:flex">
+                    <template is="rankItem" data="{{item:item}}"></template>
+                </view>
+                <view style="height:10rpx"></view>
+            </block>
+        </scroll-view>
+    </view>
+</view>

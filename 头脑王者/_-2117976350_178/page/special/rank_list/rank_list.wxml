@@ -1,0 +1,70 @@
+<template name="rankItem">
+    <view class="column start center2" style="position:relative;width: 658rpx;height: 186rpx;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/img_ranking_list_{{item.itsMe?'green':'blue'}}.png" style="width:100%;height:186rpx;"></image>
+        <view class="row center2 start" data-friend-id="{{item.uid}}" style="position:absolute;left:0px;top:0px;width: 100%;height: 186rpx;">
+            <view class="row start center2" style="color:#fff;font-size:36rpx;position:absolute;left:16rpx;top:12rpx;height:43rpx;font-weight:900;">
+                {{item.rank}}
+            </view>
+            <view style="position:absolute;left:176rpx;top:calc((100% - 3rpx) / 2);height:3rpx;right:8rpx;background-color:#fff;"></view>
+            <view style="width: 120rpx; height: 120rpx;position: absolute; left:60rpx; top:calc((100% - 120rpx) / 2);">
+                <template is="avatarOnly" data="{{avatarUrl:item.avatarUrl,id:item.headId}}"></template>
+            </view>
+            <view class="end-with-3dot" style="position:absolute;left:206rpx;top:38rpx;height:40rpx;width:300rpx;font-size:28rpx;line-height: 40rpx;">
+                {{item.nickName}}
+            </view>
+            <view class="row-reverse start center2" style="position:absolute;right:16rpx;top:45rpx;height:33rpx;font-size:24rpx;white-space: nowrap;" wx:if="{{item.city}}">
+                来自：{{item.city}}
+            </view>
+            <view class="row start center2" style="position:absolute;right:16rpx;bottom:16rpx;width:135rpx;height:42rpx;border-radius: 21rpx;background-color:#4481DF;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/icon_theme_trophycup2.png" style="width:38rpx;height:36rpx;padding-left:8rpx"></image>
+                <view style="font-size:30rpx;color:#fff;font-weight:bold;padding-left:10rpx">{{item.score}}</view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="/template/avatarBase.wxml"></import>
+<view class="pageView center" style="width: 100%;height: 100%;overflow: hidden">
+    <view class="grayWhiteBg" style="width: 100%;height: 100%"></view>
+    <view class="center2 column" style="width: 100%;height: 100%">
+        <image class="top topMask1" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/bg_lightblue.png?v=2.5"></image>
+        <image class="top topicTitleImage {{animates.topicTitleImage}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_{{topicName}}/banner2.png?v=2"></image>
+        <view bindtap="onTapGoto" class="row center center2" hoverClass="brightness" style="position: absolute;left:32rpx;top:10rpx;width: 168rpx;height:62rpx;z-index: 2; ">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_{{topicName}}/button_go.png?v=3" style="width:100%;height:100%;" wx:if="{{!!topicName}}"></image>
+        </view>
+        <image class="center2 topicTitleMask" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_{{topicName}}/shade.png?v=2"></image>
+        <scroll-view class="center2 topicScrollView" scrollY="true">
+            <view class="center2 column start" style="width: 100%">
+                <template is="rankItem" data="{{item:item}}" wx:for="{{list}}" wx:key="uid"></template>
+            </view>
+        </scroll-view>
+        <image class="topicScrollViewBottomMask" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/img_mask_list.png?v=2.5"></image>
+        <view class="center2 bottomSpace column">
+            <text class="bottomSelfRank" style="white-space:nowrap;">我的比赛排名：{{selfRank}}</text>
+            <text class="fontStyle center center2" style="visibility: {{awardState===0?'visible':'hidden'}}" wx:if="{{awardState===0}}">{{myAwardDes}}
+            </text>
+            <button class="button" openType="share" style="background: #5DBAFF;" wx:if="{{awardState===2}}">
+                <image class="shareImage" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/info/btn_info_share.png?v=2.5"></image>
+                <text class="buttonShareText">分 享</text>
+            </button>
+            <button bindtap="onTapShowGetAward" class="button" style="background: #00E1BD" wx:if="{{awardState===1}}">领取奖励</button>
+        </view>
+    </view>
+    <view class="center {{animates.getAwardNode}} full getAwardNodeBackground" style="top: {{getAwardNodeTop}}%;">
+        <view class="full column center2" style="background: #3e94f9">
+            <image class="getAwardNodeBackgroundTop" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/info/bg_info_up.png"></image>
+            <view class="getAwardNodeAvatar {{animates.avatar}}" src="{{userAvatar}}">
+                <template is="avatarOnly" data="{{avatarUrl:userAvatar,id:1}}"></template>
+            </view>
+            <text class="center center2 getAwardNodeNickname">{{nickName}}</text>
+            <text class="center center2 getAwardNodeMyRank">我的比赛排名：{{selfRank}}</text>
+            <image class="{{animates.itemIcon}}" src="{{awardItem}}" style="width: 170rpx;height: 170rpx;position: absolute;top: 300rpx;left: calc((100% - 170rpx) / 2);"></image>
+            <text class="{{animates.awardNum}}" style="position: absolute;width: auto;height: 30rpx;white-space: nowrap;font-size: 30rpx;top: 410rpx;left:calc(50% + 100rpx)">{{awardNum}}</text>
+            <view class="center2 column {{animates.banner}}" style="position: absolute;top: 480rpx;height: 145rpx*2;width: 538rpx;left:calc((100% - 538rpx)/2)">
+                <image class="center center2" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/reward_title_default.png" style="width:538rpx;height: 145rpx">
+                    <text style="position: absolute;left: calc(50% - 288rpx/2);top: calc(50% - 47rpx);;font-size: 32rpx">恭喜获得比赛奖励</text>
+                </image>
+            </view>
+            <button bindtap="onTapGetRewardInner" class="button2 {{animates.btnGetAward}}" style="position: absolute;bottom: 30%;left:calc((100% - 300rpx)/2)">领取</button>
+        </view>
+    </view>
+</view>

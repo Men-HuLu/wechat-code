@@ -1,0 +1,30 @@
+<view class="activity-container" wx:if="{{!isLoading&&!isError}}">
+    <view class="activity-list">
+        <view class="activity-list-item" wx:for="{{activityList}}" wx:key="index">
+            <form reportSubmit bindsubmit="formSubmit" class="hidden-form" data-id="{{item.id}}" data-jumptype="{{item.jump_type}}" data-jumpurl="{{item.jump_url}}" data-title="{{item.title}}">
+                <button class="hidden-form-btn" formType="submit"></button>
+            </form>
+            <view class="activity-list-item-wrap">
+                <view class="activity-list-header">
+          {{item.title}}
+        </view>
+                <view class="activity-list-content">
+                    <image class="activity-default" mode="scaleToFill" src="../assets/images/activity-default.png"></image>
+                    <image class="activity-image" lazyLoad="true" mode="scaleToFill" src="{{item.banner}}"></image>
+                    <view class="activity-hot-tag" wx:if="{{item.recom===0&&item.hot===1}}">热门推荐</view>
+                    <view class="activity-recom-tag" wx:if="{{item.recom===1}}">小编推荐</view>
+                </view>
+                <view class="activity-list-bottom">
+                    <text class="activity-date">{{item.show_btime}}发布</text>
+                    <view class="activity-amount-wrap">
+                        <text class="activity-amount">{{item.people}}</text>人参与
+          </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<empty wx:if="{{(!activityList||!activityList.length)&&!isLoading}}"></empty>
+<loadingFooter :isLoading="false" wx:if="{{activityList.length>0}}"></loadingFooter>
+<loading wx:if="{{isLoading}}"></loading>
+<error bindcustomevent="reload" wx:if="{{isError}}"></error>

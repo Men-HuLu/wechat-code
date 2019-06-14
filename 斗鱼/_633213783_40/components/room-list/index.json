@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "room-item": "/components/room-item/index"
+    }
+}

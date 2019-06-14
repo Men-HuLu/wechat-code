@@ -1,0 +1,2 @@
+<input autoFocus bindinput="bindKeyInput" placeholder="输入order id" style="width:500rpx;height:30rpx;background:#ffffff;color: #000000"></input>
+<view bindtap="onSubmit" class="center center2" style="position:absolute;left:200rpx;top:400rpx;width:200rpx;height:80rpx;background:grey;color:black;">提交</view>

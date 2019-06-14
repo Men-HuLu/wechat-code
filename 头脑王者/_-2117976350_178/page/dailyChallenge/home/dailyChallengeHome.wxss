@@ -1,0 +1,241 @@
+.mainView {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.goldView {
+    position: absolute;
+    left: 20rpx;
+    top: 10rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.goldImg {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.goldLabel {
+    height: 50rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 40rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    font-weight: bold;
+    margin: 0px 0px 0px 10rpx;
+}
+
+.nounView {
+    height: 40rpx;
+    font-size: 28rpx;
+    color: #FFFFFF;
+    text-shadow: 0 1rpx 2rpx rgba(0,0,0,0.50);
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    top: 10rpx;
+    right: 20rpx;
+    position: absolute;
+}
+
+.nomalView {
+    width: 604rpx;
+    height: 204rpx;
+    position: absolute;
+    top: 145rpx;
+    left: calc(50% - 604rpx / 2);
+    background-size: 604rpx 204rpx;
+    background-image: url(https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/btn_dailychallenge_board_nomal.png?v=2);
+    animation: nomalViewAni 1s ease-out;
+}
+
+@-webkit-keyframes nomalViewAni {
+    from {
+        top: calc(145rpx + 2000rpx);
+    }
+
+    to {
+        top: 145rpx;
+    }
+}
+
+@keyframes nomalViewAni {
+    from {
+        top: calc(145rpx + 2000rpx);
+    }
+
+    to {
+        top: 145rpx;
+    }
+}
+
+.nomalFlagView {
+    width: 242rpx;
+    height: 165rpx;
+    position: absolute;
+    top: 0px;
+    left: 57rpx;
+    background-size: 242rpx 165rpx;
+    background-image: url(https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/img_dailychallenge_flag_nomal.png?v=2);
+}
+
+.middleView {
+    width: 604rpx;
+    height: 204rpx;
+    position: absolute;
+    top: calc(145rpx + 204rpx + 36rpx);
+    left: calc(50% - 604rpx / 2);
+    background-size: 604rpx 204rpx;
+    background-image: url(https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/btn_dailychallenge_board_middle.png?v=2);
+    animation: middleViewAni 1s ease-out;
+}
+
+@-webkit-keyframes middleViewAni {
+    from {
+        top: calc(145rpx + 204rpx + 36rpx + 2000rpx);
+    }
+
+    40% {
+        top: calc(145rpx + 204rpx + 36rpx + 2000rpx);
+    }
+
+    to {
+        top: calc(145rpx + 204rpx + 36rpx);
+    }
+}
+
+@keyframes middleViewAni {
+    from {
+        top: calc(145rpx + 204rpx + 36rpx + 2000rpx);
+    }
+
+    40% {
+        top: calc(145rpx + 204rpx + 36rpx + 2000rpx);
+    }
+
+    to {
+        top: calc(145rpx + 204rpx + 36rpx);
+    }
+}
+
+.middleFlagView {
+    width: 242rpx;
+    height: 165rpx;
+    position: absolute;
+    top: 0px;
+    left: 57rpx;
+    background-size: 242rpx 165rpx;
+    background-image: url(https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/img_dailychallenge_flag_middle.png?v=2);
+}
+
+.hardView {
+    width: 604rpx;
+    height: 204rpx;
+    position: absolute;
+    top: calc(145rpx + (204rpx + 36rpx) * 2);
+    left: calc(50% - 604rpx / 2);
+    background-size: 604rpx 204rpx;
+    background-image: url(https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/btn_dailychallenge_board_hard.png?v=2);
+    animation: hardViewAni 1s ease-out;
+}
+
+@-webkit-keyframes hardViewAni {
+    from {
+        top: calc(145rpx + (204rpx + 36rpx) * 2 + 2000rpx);
+    }
+
+    80% {
+        top: calc(145rpx + (204rpx + 36rpx) * 2 + 2000rpx);
+    }
+
+    to {
+        top: calc(145rpx + (204rpx + 36rpx) * 2);
+    }
+}
+
+@keyframes hardViewAni {
+    from {
+        top: calc(145rpx + (204rpx + 36rpx) * 2 + 2000rpx);
+    }
+
+    80% {
+        top: calc(145rpx + (204rpx + 36rpx) * 2 + 2000rpx);
+    }
+
+    to {
+        top: calc(145rpx + (204rpx + 36rpx) * 2);
+    }
+}
+
+.hardFlagView {
+    width: 242rpx;
+    height: 165rpx;
+    position: absolute;
+    top: 0px;
+    left: 57rpx;
+    background-size: 242rpx 165rpx;
+    background-image: url(https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/img_dailychallenge_flag_hard.png?v=2);
+}
+
+.costView {
+    height: 33rpx;
+    width: 180rpx;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    position: absolute;
+    top: 15rpx;
+    left: calc((242rpx - 180rpx) / 2);
+}
+
+.costIcon {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.costLabel {
+    height: 30rpx;
+    font-size: 24rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-shadow: 0 1rpx 2rpx rgba(0,0,0,0.50);
+    line-height: 30rpx;
+}
+
+.costNumLabel {
+    height: 30rpx;
+    font-size: 24rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);
+    font-weight: bold;
+    line-height: 30rpx;
+}
+
+.jackpotView {
+    width: 160rpx;
+    height: 170rpx;
+    position: absolute;
+    bottom: 20rpx;
+    right: 30rpx;
+}
+
+.jackpotBtn {
+    width: 160rpx;
+    height: 170rpx;
+}
+
+.linkImg {
+    width: 124rpx;
+    height: 143rpx;
+    position: absolute;
+    bottom: 34rpx;
+    left: 50rpx;
+}

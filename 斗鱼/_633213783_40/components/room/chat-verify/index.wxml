@@ -1,0 +1,53 @@
+<view class="chat-verify {{isYz?'yz':''}}">
+    <view bind:tap="clickCancelMask" class="bpn-mask"></view>
+    <view class="bpn-main-content" wx:if="{{verifytype===1||verifytype===2}}">
+        <view class="mc-title">{{titleNow}}</view>
+        <view class="phone-box border" wx:if="{{verifytype===2}}">
+            <input class="phone-num" disabled="true" placeholder="输入手机号码" placeholderStyle="color: #adadad" type="text" value="{{verifyinfo.phone}}"></input>
+        </view>
+        <view class="pic-box" wx:if="{{verifytype===1||verifytype===2}}">
+            <view class="pic-num-box border">
+                <input bindinput="picVerifyCodeInput" class="pic-num" placeholder="输入图片验证码" placeholderStyle="color: #adadad" type="text" value="{{picVerifyCodeValue}}"></input>
+                <icon bind:tap="clearPicVerifyCodeInput" class="t-icon" color="rgba(0,0,0, 0.1)" size="18" type="clear" wx:if="{{picVerifyCodeValue}}"></icon>
+            </view>
+            <image bind:tap="refreshVerifyCode" class="pic-verify" src="{{verifyCodeUrl}}"></image>
+        </view>
+        <view class="message-box" wx:if="{{verifytype===2}}">
+            <view class="message-num-box border">
+                <input bindinput="verifyCodeInput" class="message-num" maxlength="6" placeholder="输入6位验证码" placeholderStyle="color: #adadad" type="number" value="{{verifyCodeValue}}"></input>
+                <icon bind:tap="clearVerifyCodeInput" class="t-icon" color="rgba(0,0,0, 0.1)" size="18" type="clear" wx:if="{{verifyCodeValue}}"></icon>
+            </view>
+            <view bind:tap="sendPhoneCaptcha" class="send-message-btn {{cansendPhoneCaptcha?'':'is-disable'}}">
+                <text wx:if="{{!countdown}}">{{smsBtn}}</text>
+                <text wx:if="{{countdown}}">{{intervalTime}}秒</text>
+            </view>
+        </view>
+        <view bind:tap="sendVerify" class="submit-verify {{cansendVerify?'':'is-disable'}}">提交验证</view>
+    </view>
+    <view class="barrage-verify-container" wx:if="{{verifytype===3}}">
+        <view class="barrage-verify-panel">
+            <view class="barrage-verify-content">
+                <view class="barrage-verify-title">您的帐号存在安全风险，请验证身份</view>
+                <view class="barrage-verify-hr"></view>
+                <view>
+                    <view class="barrage-verify-tip-tel">验证方式：
+                            <text class="verify-phone">手机验证 ({{verifyinfo.phone}})</text>
+                    </view>
+                    <view class="barrage-verify-send is-content">请编辑短信: <text class="highlight">{{codeUpper}}</text>
+                    </view>
+                    <view class="barrage-verify-send">发送到: <text class="highlight normal">{{verifyinfo.dyphone}}</text>
+                    </view>
+                </view>
+                <view class="barrage-verify-button-group">
+                    <view bind:tap="setClipBoard" class="barrage-verify-button">复制号码</view>
+                    <view bind:tap="sendVerifyBarrage" class="barrage-verify-button">我已发送</view>
+                </view>
+                <view class="barrage-verify-send-tip">
+                    <view class="barrage-verify-op-tip"></view>
+                    <view>短信费用一般为0.1元/条，全部由运营商收取</view>
+                </view>
+            </view>
+            <image bind:tap="clickCancelMask" class="barrage-verify-close" src="../../../assets/room/closeverify.png"></image>
+        </view>
+    </view>
+</view>

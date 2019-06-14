@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "plane": "../gift/plane/index",
+        "rocket": "../gift/rocket/index"
+    }
+}

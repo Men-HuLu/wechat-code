@@ -1,0 +1,29 @@
+<template name="dailyRewardView">
+    <view style="position:absolute;width:100%;height:100%;left:0px;top:0px;background:#4E84E5" wx:if="{{visible}}">
+        <view class="center center2" style="width:635rpx; height:833rpx; background: rgba(94,223,255,0.24);border-radius: 34rpx; position:absolute; left:calc(50% - 635rpx / 2); top:calc(40% - 833rpx / 2); ">
+            <view class="column start center2" style="width:600rpx; height:798rpx; position:relative; background: #fff;box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/reward_title_default.png" style="width:530rpx;height:145rpx;position:absolute;left:calc((100% - 530rpx)/2);top:-52rpx;"></image>
+                <view class="center center2" style="position:absolute;left:0px;top:-33rpx;width:100%; height:67rpx;font-size:48rpx;text-shadow: 0 2rpx 4rpx #D84F00;font-weight:bold">每日登录奖励</view>
+                <view class="flex-none" style="height:100rpx"></view>
+                <view class="center ac-start  row warp flex-none">
+                    <template is="dailyRewardView_itemRenderer" data="{{...item}}" wx:for="{{source}}" wx:key="item"></template>
+                </view>
+            </view>
+        </view>
+        <view bindtap="dailyRewardView_onTapOKBtn" class="center center2" style="position:absolute;left:calc(50% - 310rpx / 2);bottom:90rpx;width:310rpx;height:100rpx; background: #7ED321;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;font-size:64rpx;font-weight:bold;">
+            领取
+        </view>
+    </view>
+</template>
+<template name="dailyRewardView_itemRenderer">
+    <view class="column center center2" style="position:relative;width:172rpx;height:230rpx;">
+        <view class="column center center2 {{receive?'alpha':''}}" style="position:relative;width:140rpx;height:140rpx;">
+            <view class="center center2 " style="position:absolute;left:calc((100% - 152rpx)/2);top: -28rpx;height:28rpx;width:152rpx;border-radius: 14rpx;font-size: 20rpx;background-color: #4670CD;font-weight:bold">{{name}}</view>
+            <image class="{{activate?'heart-bit':''}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{id}}.png" style="width:100%;height:100%;"></image>
+            <view class="row center center2" style="background: #C7FFFF; box-shadow: 0 2rpx 2rpx 0 rgba(92,180,188,0.72), inset 0 2rpx 1rpx 0 rgba(211,255,248,0.88);border-radius: 100rpx;position:absolute;width:64rpx;height:27rpx;left:calc(50% - 64rpx / 2);top:120rpx;line-height: 27rpx;color:#3663CD; font-size:20rpx;">X{{num}}</view>
+        </view>
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_got_default.png" style="width:52rpx;height:50rpx;position:absolute;right:2rpx;bottom:60rpx;" wx:if="{{receive}}"></image>
+        <view style="height:10rpx"></view>
+        <view class="center center2" style="height:34rpx;width:100%;font-size: 28rpx;color: #D86100;font-weight:bold">{{dayLabel}}</view>
+    </view>
+</template>

@@ -1,0 +1,58 @@
+<template name="luckyRewardView_books">
+    <view class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%">
+        <view bindtap="onTapRewardDetailClosed" name="background" style="position: absolute;left:0px;top:0px; width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="show-form column center2 form-normal" style="width:500rpx; min-height:700rpx;">
+            <view style="height:95rpx"></view>
+            <view class="font-title-white center center2" style="width:100%;height:75rpx;background-color:#4e84e5">
+                恭喜你获得
+            </view>
+            <view style="height:34rpx"></view>
+            <view class="center center2" style="position: relative;width:150rpx;height:150rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/{{reward.data.itemId}}.png?v=0.1.12" style="width:100%;height:100%;"></image>
+                <view class="center center2" style="position: absolute;left:0px;bottom:4rpx;width:100%;height:34rpx;font-size: 28rpx;color: #FFFFFF;text-shadow: 0 2rpx 0 #3432CB;">x{{reward.data.itemNum}}</view>
+            </view>
+            <view style="height:26rpx"></view>
+            <view style="font-size: 20rpx;color: #4E79E5;font-weight: bold;white-space: nowrap;line-height: 20rpx;">－获得以下知识书－</view>
+            <view style="height:10rpx"></view>
+            <view class="row center center2" style="width:70%;flex-wrap:wrap;">
+                <view class="center center2" style="position:relative;" wx:for="{{items}}" wx:key="id">
+                    <view class="column center center2" style="position: relative;width:80rpx;">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_subjects_book/{{item.itemId}}.png?v=0.1.12" style="width:80rpx;height:80rpx;"></image>
+                        <view class="center center2" style="width:100%;height:28rpx;font-size: 20rpx;color: #4E79E5;">{{item.name}}</view>
+                    </view>
+                </view>
+            </view>
+            <view style="height:40rpx"></view>
+            <view bindtap="onTapRewardDetailClosed" class="center center2" hoverClass="brightness" style="position:relative;width:318rpx;height:100rpx;background: #00E1BD;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;">
+                <view class="center center2" style="position:absolute;left:0px;top:0px;width:100%;height:100%;font-weight:bold;font-size: 48rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);">好的</view>
+            </view>
+            <view style="height:40rpx"></view>
+            <view bindtap="onTapRewardDetailClosed" class="center center2" hoverClass="brightness" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="luckyRewardView_gold">
+    <view style="position: absolute;left:0px;top:0px;width:100%;height:100%">
+        <view bindtap="onTapRewardDetailClosed" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="show-form column center2 form-normal" style="position:absolute; width:500rpx; height:660rpx; left:0; top:0; right:0; bottom:0; margin:auto;">
+            <view style="height:95rpx"></view>
+            <view class="font-title-white center center2" style="width:100%;height:75rpx;background-color:#4e84e5">
+                恭喜你获得
+            </view>
+            <view style="height:85rpx"></view>
+            <view class="center center2" style="position: relative;width:150rpx;height:150rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/{{reward.data.itemId}}.png?v=0.1.12" style="width:100%;height:100%;"></image>
+                <view class="center center2" style="position: absolute;left:0px;bottom:4rpx;width:100%;height:34rpx;font-size: 28rpx;color: #FFFFFF;text-shadow: 0 2rpx 0 #3432CB;">X{{reward.data.itemNum}}</view>
+            </view>
+            <view style="height:115rpx"></view>
+            <view bindtap="onTapRewardDetailClosed" class="center center2" hoverClass="brightness" style="position:relative;width:318rpx;height:100rpx;background: #00E1BD;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;">
+                <view class="center center2" style="position:absolute;left:0px;top:0px;width:100%;height:100%;font-weight:bold;font-size: 48rpx;color: #FFFFFF;letter-spacing: 20rpx;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);">好的</view>
+            </view>
+            <view bindtap="onTapRewardDetailClosed" class="center center2" hoverClass="brightness" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>

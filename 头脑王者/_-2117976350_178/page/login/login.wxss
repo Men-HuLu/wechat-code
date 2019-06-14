@@ -1,0 +1,32 @@
+.mainView {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://question-resource-wscdn.hortorgames.com/image/new_skin/home/pattern.jpg);
+    background-repeat: repeat;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.logo {
+    position: absolute;
+    width: 603rpx;
+    height: 278rpx;
+    display: flex;
+    flex: none;
+    left: calc((100% - 603rpx)/2);
+    top: calc(50% - 203rpx);
+}
+
+.loginBtn {
+    position: absolute;
+    left: calc(50% - 310rpx / 2);
+    bottom: 160rpx;
+    width: 310rpx;
+    height: 100rpx;
+    background: #7ED321;
+    box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);
+    border-radius: 20rpx;
+    font-size: 50rpx;
+    font-weight: bold;
+}

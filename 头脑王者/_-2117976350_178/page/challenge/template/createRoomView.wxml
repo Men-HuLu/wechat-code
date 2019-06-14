@@ -1,0 +1,51 @@
+<template name="createRoomView">
+    <view class="center center2 " style="position:absolute;left:0px;top:0px;width:100%;height:100%;z-index:10;background-color:rgba(0,0,0,0.5);opacity:{{settingOpacity}};transition: opacity 0.3s linear;" wx:if="{{visible}}">
+        <view class="show-form column start center2" style="position:absolute;left:calc((100% - 576rpx)/2);top:150rpx;width:576rpx;height:{{moreSetting?900:689}}rpx;background-color: #fff;box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;transition:all 0.3s;">
+            <view style="height:96rpx"></view>
+            <view class="font-title-white center center2" style="width:100%;height:75rpx;background-color:#4670CD">创建比赛</view>
+            <view style="height:44rpx"></view>
+            <view class="row center center2" style="height:67rpx;width:100%">
+                <view style="font-size: 48rpx;color: #4251A6;font-weight: border;white-space: nowrap;line-height:48rpx;">房间名：</view>
+                <view class="center center2" style="width:272rpx;height:60rpx;background: #{{isInputDisable?'':'CDE4F3'}};border-radius: 10rpx;">
+                    <input bindblur="callback_roomName_bindblur" bindfocus="callback_roomName_focus" bindinput="callback_roomName_input" data-id="{{id}}" disabled="{{isInputDisable}}" focus="{{isGetInputFocus}}" placeholder="{{''}}" placeholderStyle="color:#AC4830；" style="width:240rpx;height:30rpx;line-height: 30rpx;text-align:left;color:#7F7F7F;font-size:30rpx;" type="text" value="{{defaultRoomName}}"></input>
+                </view>
+                <view style="width:8rpx"></view>
+            </view>
+            <view class="column-reverse" style="position:absolute;top:290rpx;left:360rpx;font-size: 20rpx;color:{{lenOfInputName>8||lenOfInputName==0?'#ff6a3d':'#8EBCFE'}} ;line-height:28rpx;height:28rpx;width:34rpx;">{{lenOfInputName}}/8</view>
+            <view bindtap="onTapCheckRoomName" hoverClass="hover-scale2" style="width:40rpx;height:40rpx;position:absolute;top:228rpx;right:20rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/{{isInputDisable?'icon_match_edit':'icon_match_edit_done'}}.png" style="width:40rpx;height:40rpx"></image>
+            </view>
+            <view style="height:65rpx;"></view>
+            <view class="center center2" style="font-size: 32rpx;color: #468EE5;font-weight: border;white-space: nowrap;line-height:32rpx;height:45rpx;font-weight: bolder;">比赛获胜条件</view>
+            <view class="center center2" style="font-size: 28rpx;color: #4A4A4A;font-weight: border;white-space: nowrap;line-height:28rpx;height:40rpx;font-weight: bolder;">{{titleSelected}}</view>
+            <view style="height:10rpx;"></view>
+            <view style="position:absolute;left:calc((100% - {{moreSetting?550:150}}rpx)/2);top:464rpx; border: 2rpx solid #8EBCFE;width:{{moreSetting?550:150}}rpx;transition:all 0.3s;"></view>
+            <view bindtap="onTapMoreSetting" class="center center2" style="position:absolute;left:calc((100% - 180rpx)/2);top:435rpx; border: 4rpx solid #8EBCFE;border-radius: 100rpx;width:180rpx;height:54rpx;background:#fff;">
+                <view class="center center2" style="font-size: 26rpx;color: #8EBCFE;font-weight: border;white-space: nowrap;line-height:26rpx;height:37rpx;font-weight: bolder;">{{moreSetting?'收起设置':'更多设置'}}</view>
+                <view style="width:10rpx"></view>
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/img_match_moresetting_up.png?v=1.6.8" style="width:30rpx;height:30rpx;transform: rotate({{moreSetting?0:180}}deg);transition:all 0.3s;"></image>
+            </view>
+            <view style="position:absolute;left:0px;top:516rpx;width:100%;height:220rpx;transform:scale({{moreSetting?1:0}});transform-origin: center top;transition:all 0.3s;">
+                <view class="row start center2" style="flex-wrap:wrap;">
+                    <view bindtap="onTapMoreSettingItem" class="row start center2" data-id="{{index}}" style="position:relative;width:50%;height:73rpx;" wx:for="{{items}}" wx:key="id">
+                        <view style="width:70rpx"></view>
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/img_match_moresetting_unselected.png?v=1.6.8" style="width:42rpx;height:42rpx;" wx:if="{{!item.selected}}"></image>
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/img_match_moresetting_selected.png?v=1.6.8" style="width:42rpx;height:42rpx;" wx:else></image>
+                        <view style="width:10rpx"></view>
+                        <view class="center center2" style="font-size: 30rpx;color: #{{item.selected?'4990E2':'A9DCFF'}};font-weight: border;white-space: nowrap;line-height:30rpx;font-weight: bolder;">{{item.title}}</view>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="onTapBtnCreateRoom" class="center center2 space-a" hoverClass="{{isCanCreateRoom?'brightness':''}}" style="position:absolute;left:calc((100% - 310rpx)/2);bottom:40rpx; width:310rpx;height:100rpx; background: #{{isCanCreateRoom?'4A90E2':'cccccc'}};box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;">
+                <view class="center center2" style="font-size: 36rpx;color: #FFFFFF;font-weight: bolder;white-space: nowrap;">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/img_thunder.png" style="width:49rpx;height:60rpx;position:absolute;top:20rpx;left:24rpx;"></image>
+                    <view style="width:217rpx;height:50rpx;line-height:50rpx;position:absolute;right:0px;top:25rpx;font-size: 36rpx;text-align:left;">创建并邀请</view>
+                    <button id="createRoom" openType="{{isCanCreateRoom?'share':''}}" style="width:100%;height:100%;position:absolute;left:0px;top:0px;opacity:0;">隐藏的分享按钮</button>
+                </view>
+            </view>
+            <view bindtap="onTapCreateRoomViewCloseBtn" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=0.1.12" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>

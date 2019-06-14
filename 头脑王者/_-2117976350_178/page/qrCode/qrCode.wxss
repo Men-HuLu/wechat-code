@@ -1,0 +1,145 @@
+@import "../../template/QRCodeCreater.wxss";
+
+.mainView {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    display: flex;
+    background: #0576F9;
+}
+
+.upImg {
+    width: 750rpx;
+    height: 889rpx;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.downImg {
+    width: 750rpx;
+    height: 384rpx;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.shareBtn {
+    width: 265rpx;
+    height: 96rpx;
+    position: absolute;
+    top: 682rpx;
+    left: 83rpx;
+}
+
+.saveBtnForm {
+    width: 265rpx;
+    height: 96rpx;
+    position: absolute;
+    top: 682rpx;
+    right: 83rpx;
+}
+
+.saveBtn {
+    width: 265rpx;
+    height: 96rpx;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.gameBtn {
+    background: #7ED321;
+    box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);
+    border-radius: 20rpx;
+    width: 434rpx;
+    height: 120rpx;
+    position: absolute;
+    bottom: 115rpx;
+    left: calc(50% - 434rpx / 2);
+    white-space: nowrap;
+    font-size: 54rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottomText {
+    font-size: 32rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    white-space: nowrap;
+    position: absolute;
+    bottom: 49rpx;
+    left: calc(50% - 448rpx / 2);
+    width: 448rpx;
+    height: 45rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coordinateImg {
+    width: 473rpx;
+    height: 476rpx;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.coordinateView {
+    width: 473rpx;
+    height: 476rpx;
+    position: absolute;
+    top: 7rpx;
+    left: calc(50% - 473rpx / 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coordinateCanvas {
+    width: 241px;
+    height: 241px;
+    flex: none;
+}
+
+.text1 {
+    font-size: 32rpx;
+    color: #4353A4;
+    letter-spacing: 0;
+    white-space: nowrap;
+    line-height: 45rpx;
+    width: 256rpx;
+    height: 45rpx;
+    position: absolute;
+    left: calc(50% - 256rpx / 2);
+    top: 529rpx;
+    flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text2 {
+    font-size: 32rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    white-space: nowrap;
+    line-height: 45rpx;
+    width: 256rpx;
+    height: 45rpx;
+    position: absolute;
+    left: calc(50% - 256rpx / 2);
+    top: 573rpx;
+    flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

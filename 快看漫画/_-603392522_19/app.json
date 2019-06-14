@@ -1,0 +1,53 @@
+{
+    "pages": [
+        "pages/find/find",
+        "pages/class/class",
+        "pages/my/my",
+        "pages/search/search",
+        "pages/topic-list/topic-list",
+        "pages/rank/rank",
+        "pages/topic/topic",
+        "pages/comic/comic",
+        "pages/login/login"
+    ],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "",
+        "navigationBarBackgroundColor": "#ffffff",
+        "backgroundColor": "#f7f9fa",
+        "enablePullDownRefresh": false,
+        "navigationStyle": "default"
+    },
+    "tabBar": {
+        "color": "#7F8389",
+        "selectedColor": "#333333",
+        "borderStyle": "white",
+        "list": [
+            {
+                "text": "发现",
+                "pagePath": "pages/find/find",
+                "iconPath": "image/ico-bar-find.png",
+                "selectedIconPath": "image/ico-bar-find-active.png"
+            },
+            {
+                "text": "分类",
+                "pagePath": "pages/class/class",
+                "iconPath": "image/ico-bar-class.png",
+                "selectedIconPath": "image/ico-bar-class-active.png"
+            },
+            {
+                "text": "我的",
+                "pagePath": "pages/my/my",
+                "iconPath": "image/ico-bar-my.png",
+                "selectedIconPath": "image/ico-bar-my-active.png"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "debug": true
+}

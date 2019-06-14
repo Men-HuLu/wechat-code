@@ -1,0 +1,141 @@
+<import src="template/specialPopup.wxml"></import>
+<import src="/template/avatarBase.wxml"></import>
+<import src="./template/getTicketView.wxml"></import>
+<view class="column start center2 maxSize" style="position: absolute;left:0px;top:0px;width:100%;height:100%;overflow:hidden;">
+    <view class="grayWhiteBg"></view>
+    <image class="topMask1" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/bg_lightblue.png?v=2.9"></image>
+    <scroll-view scrollWithAnimation="{{true}}" scrollY="true" style="position: absolute;width: 100%;height: 100%;top: 0px;left: 0px;">
+        <view style="justify-content: flex-start;align-items: center;flex-direction: column;display: flex;position: relative;width:680rpx;left:calc((100% - 680rpx)/2);">
+            <view animation="{{ani_banner}}" style="position: absolute;left:0px;top:0px;width:100%;height:260rpx;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;transform: scale(0);">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_{{subType}}/{{bannerName}}?v=3.0" style="width:100%;height:100%;" wx:if="{{!!subType}}"></image>
+                <view bindtap="onTapGoto" class="row center center2" hoverClass="brightness" style="position: absolute;left:0px;bottom:18rpx;width: 168rpx;height:62rpx; z-index: 2;">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_{{subType}}/button_go.png?v=3" style="width:100%;height:100%;" wx:if="{{!!subType}}"></image>
+                </view>
+                <image bindtap="onTapHezuoBtn" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_{{subType}}/icon_hezuo.png?v=4.0" style="width:146rpx;height:60rpx;position: absolute;right: 24rpx;top:0px;" wx:if="{{!!subType}}"></image>
+                <view style="position: absolute;left:18rpx;top:18rpx;font-size: 20rpx;line-height:20rpx;color: #{{fontColor?fontColor:'c3fff0'}};" wx:if="{{!!textCountdown}}">{{textCountdown}}</view>
+                <view class="row center center2" hoverClass="brightness" style="position: absolute;left:calc((100% - 248rpx)/2);bottom:18rpx;width:248rpx;height:63rpx; z-index: 2;" wx:if="{{subType==='commission'}}">
+                    <image bindtap="onTapSpacialLive" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_{{subType}}/button_match.png?v=4.2" style="width:100%;height:100%;" wx:if="{{!!subType}}"></image>
+                    <button id="liveFight" openType="share" style="position: absolute; left:0; top:0; opacity:0; width:100%; height:100%;">隐藏的分享按钮</button>
+                </view>
+            </view>
+            <view animation="{{ani_body}}" class="column start center2" style="position: absolute;left:0px;top:280rpx;width:100%;transform: scale(0);">
+                <view style="position: relative;width:100%;height:463rpx;z-index: 10;">
+                    <view style="position: absolute;left:0px;width:100%;height:148rpx;top:315rpx;background: #FFFFFF;box-shadow: 0 3rpx 5rpx 0 rgba(198,223,236,0.50);"></view>
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_{{subType}}/ditu.png?v=2.9" style="position: absolute;left:0px;top:0px;width:100%;height:341rpx;box-shadow: 0 2rpx 10rpx 0 rgba(113,162,201,0.50);" wx:if="{{!!subType}}"></image>
+                    <view style="position: absolute;left:0px;top:0px;width:100%;height:341rpx;">
+                        <view class="userInfoMainView" style="top:0px;">
+                            <view class="start center2 column">
+                                <view class="userAvatar icon-rotate" style="top:38rpx;width: 100rpx;height: 100rpx;left: calc(50% - 100rpx / 2);">
+                                    <template is="avatarOnly" data="{{avatarUrl:player.avatarUrl}}"></template>
+                                </view>
+                                <view class="end-with-3dot" style="position: absolute;left:0px;top:144rpx;width:100%;height:24rpx;text-align: center;line-height: 24rpx;font-size: 24rpx;color: #FFFFFF;text-shadow: 0 1rpx 1rpx rgba(21,63,127,0.50);">{{player.nickName}}</view>
+                                <text class="center center2" style="position: absolute;left:0px;top:177rpx;width:100%;height:20rpx;line-height: 20rpx;font-size: 20rpx;color: #7AFBFF;text-shadow: 0 1rpx 1rpx rgba(3,79,116,0.50);white-space: nowrap;" wx:if="{{player.rank>0}}">{{subName}} 第{{player.rank}}名</text>
+                                <text class="center center2" style="position: absolute;left:0px;top:177rpx;width:100%;height:20rpx;line-height: 20rpx;font-size: 20rpx;color: #7AFBFF;text-shadow: 0 1rpx 1rpx rgba(3,79,116,0.50);white-space: nowrap;" wx:else>{{subName}} 未上榜</text>
+                                <view class="center center2" style="position: absolute;left:0px;top:216rpx;width:100%;height:44rpx;">
+                                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/icon_theme_trophycup2.png?v=2.9" style="width:56rpx;height:44rpx;"></image>
+                                    <text style="line-height: 48rpx;font-size: 48rpx;color: #FFFFFF;text-shadow: 0 1rpx 1rpx rgba(3,79,116,0.50);padding-left: 8rpx;">{{player.cup}}</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view bindtap="SpecialBtnTicketInfo_onClicked" class="row start center2" hoverClass="brightness" style="position: absolute;left:26rpx;top:0px;height:85rpx;" wx:if="{{showTicket}}">
+                            <image animation="{{ani_getTicket}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/icon_theme_ticket1.png?v=2.9" style="width:90rpx;height:60rpx;transform: scale(1);"></image>
+                            <view style="font-size: 36rpx;height:36rpx;line-height: 36rpx;color: #FFFFFF;padding-left:11rpx; text-shadow: 0 1rpx 1rpx rgba(21,63,127,0.50);">{{player.ticket}}</view>
+                            <view animation="{{ani_add_ticket}}" style="position: absolute;left:0px;top:0px;height:100%;width:100%; opacity: 0;transform: translate3d(0,0,0);">
+                                <view style="position: absolute;right:0px;top:calc((100% - 24rpx)/2); font-size: 36rpx;height:36rpx;line-height: 36rpx;color: #FFFFFF;">{{num_add_ticket}}</view>
+                            </view>
+                        </view>
+                        <view bindtap="onHelp" class="row-reverse start" hoverClass="hover-scale2" style="position:absolute;width:90rpx;height:90rpx;right:20rpx;top:20rpx">
+                            <image src="https://question-resource-wscdn.hortorgames.com/image/cash/main/icon_rule.png?v=0.02" style="width:40rpx;height:40rpx;"></image>
+                        </view>
+                    </view>
+                    <view animation="{{ani_btnEntry}}" bindtap="onTapGo" class="row center center2" hoverClass="hover-scale2" style="position: absolute;left:calc((100% - 442rpx)/2);top:279rpx;width:430rpx;height:112rpx;background: #00E8C3;border:6rpx solid #FFFFFF;box-shadow: 0 0 10rpx 0 rgba(188,188,188,0.50);border-radius: 100rpx;transform: scale(0);">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/icon_theme_ticket.png?v=2.9" style="width:37rpx;height:24rpx;"></image>
+                        <view style="width:8rpx"></view>
+                        <view style="font-size: 28rpx;height:28rpx;line-height: 24rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);">x{{costTicket}}</view>
+                        <view style="width:16rpx"></view>
+                        <view style="font-size: 52rpx;color: #fff;line-height: 52px;text-shadow: 0 2rpx 2rpx rgba(3,79,116,0.50);">进入比赛</view>
+                    </view>
+                    <view class="row center center2" style="position: absolute;left:0px;bottom:16rpx;;width:100%;height:28rpx;">
+                        <view style="width:32rpx;height:3rpx;background: #25A1FF;"></view>
+                        <view style="width:10rpx"></view>
+                        <view style="font-size: 28rpx;color: #25A1FF;line-height: 28rpx;">比赛排行榜</view>
+                        <view style="width:10rpx"></view>
+                        <view style="width:32rpx;height:3rpx;background: #25A1FF;"></view>
+                    </view>
+                </view>
+                <view class="column start center2" style="position: relative;width:100%;background: #EFF8FE;box-shadow: 0 2rpx 5rpx 0 rgba(0,0,0,0.40);border-bottom-left-radius: 10rpx;border-bottom-right-radius: 10rpx;">
+                    <view class="row start center2" style="position: relative;height:106rpx;width:100%;" wx:for="{{rankList}}" wx:key="id">
+                        <view class="center center2" style="width:86rpx;height:100%;">
+                            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/{{item.rank==1?'icon_gold':item.rank==2?'icon_silver':'icon_brass'}}.png?v=2.9" style="width:42rpx;height:56rpx;" wx:if="{{item.rank<=3}}"></image>
+                            <view style="font-size: 32rpx;color: #3663CD;line-height: 32rpx;" wx:else>{{item.rank}}</view>
+                        </view>
+                        <view style="position: relative;width:80rpx;height:80rpx;">
+                            <template is="avatarOnly" data="{{avatarUrl:item.avatarUrl,id:item.headId}}"></template>
+                        </view>
+                        <view style="width:6rpx;"></view>
+                        <view class="column center" style="width:370rpx;height:100%">
+                            <view style="font-size: 24rpx;color: #4A90E2;line-height: 24rpx;">{{item.nickName}}</view>
+                            <view style="height:7rpx;"></view>
+                            <view style="font-size: 20rpx;color: #6CC4FF;line-height: 20rpx;">来自：{{item.city||'远方'}}</view>
+                        </view>
+                        <view class="row start center2" style="height:100%;">
+                            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/icon_theme_trophycup2.png?v=2.9" style="width:49rpx;height:39rpx;"></image>
+                            <text style="line-height: 36rpx;font-size: 36rpx;color: #25A1FF;padding-left: 10rpx;transform: scale({{item.scoreScale}})">{{item.score}}</text>
+                        </view>
+                        <view style="position: absolute;left:9rpx;right:9rpx;bottom:0rpx;height:2rpx;background: #D4E2EC;"></view>
+                    </view>
+                    <view style="position: relative;width:100%;height:100rpx;"></view>
+                    <view bindtap="onTapMoreRank" class="center center2" hoverClass="brightness" style="width: 300rpx;height:96rpx;background: #5DBAFF;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100px;" wx:if="{{hasMoreBtn}}">
+                        <view style="font-size: 42rpx;color: #FFFFFF;text-shadow: 0 1rpx 3rpx rgba(0,0,0,0.50);line-height: 42rpx;">更多排行</view>
+                    </view>
+                    <text style="line-height: 36rpx;font-size: 36rpx;color: #25A1FF;padding-left: 10rpx;" wx:elif="{{rankList.length==0}}">暂无排行</text>
+                    <view style="position: relative;width:100%;height:100rpx;"></view>
+                </view>
+                <view style="position: relative;width:100%;height:200rpx;"></view>
+            </view>
+        </view>
+    </scroll-view>
+    <view animation="{{ani_bottom}}" style="position: absolute;left:0px;bottom:-100rpx;right:0px;height:80rpx;background: #4E84E5;box-shadow: inset 0 2rpx 0 0 #88B3FF;">
+        <view animation="{{tipsAni}}" class="row start center2" style="position:absolute; left: 0px; top: 0px; width: 100%; height:100%">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/icon_theme_horn.png?v=2.9" style="width:37rpx;height:34rpx; margin: 0px 0px 0px 44rpx;"></image>
+            <view style="font-size: 24rpx;color: #A9DCFF;line-height: 24rpx;white-space: nowrap;padding-left:11rpx;">{{tipsText}}</view>
+        </view>
+        <view animation="{{tipsAni2}}" class="row start center2" style="position:absolute; left: 100%; top: 0px; width: 100%; height:100%">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/icon_theme_horn.png?v=2.9" style="width:37rpx;height:34rpx; margin: 0px 0px 0px 44rpx;"></image>
+            <view style="font-size: 24rpx;color: #A9DCFF;line-height: 24rpx;white-space: nowrap;padding-left:11rpx;">{{tipsText2}}</view>
+        </view>
+    </view>
+</view>
+<view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;" wx:if="{{hezuoViewVisible&&subType==='commission'}}">
+    <view bindtap="hezuoView_onClosed" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.8);"></view>
+    <view class="show-form" style="position:absolute;width:600rpx;height:786rpx;left:calc((100% - 600rpx)/2);top:calc((100% - 786rpx)/2);background: #FFFFFF;box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/icon_hezuo2.png?v=2.9" style="width: 214rpx; height: 214rpx; position: absolute; top: 100rpx; left:calc(50% - 214rpx / 2);"></image>
+        <view class="center center2" style="width: 100%; height: 67rpx; position: absolute; left: 0px; top: 350rpx; font-size: 40rpx; color:#41ADFF;">中央纪委国家监委网站</view>
+        <view class="center center2" style="width: 100%; height: 67rpx; position: absolute; left: 0px; top: 420rpx; font-size: 40rpx; color:#41ADFF;">头脑王者</view>
+        <view class="center center2" style="width: 100%; height: 67rpx; position: absolute; left: 0px; top: 490rpx; font-size: 40rpx; color:#3663CD;">合作出品</view>
+        <view class="center center2" style="width: 100%; height: 67rpx; position: absolute; left: 0px; top: 630rpx; font-size: 36rpx; color:#41ADFF;">联系头脑王者</view>
+        <view class="center center2" style="width: 100%; height: 50rpx; position: absolute; left: 0px; top: 700rpx; font-size: 36rpx; color:#3663CD;">hz_tnwz@hortorgames.com</view>
+        <view bindtap="hezuoView_onClosed" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+            <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=0.1.12" style="width:30%;height:30%"></image>
+        </view>
+    </view>
+</view>
+<view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;" wx:elif="{{hezuoViewVisible}}">
+    <view bindtap="hezuoView_onClosed" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.8);"></view>
+    <view class="show-form" style="position:absolute;width:600rpx;height:556rpx;left:calc((100% - 600rpx)/2);top:calc((100% - 556rpx)/2);background: #FFFFFF;box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/icon_hezuo2.png?v=2.9" style="width: 214rpx; height: 214rpx; position: absolute; top: 100rpx; left:calc(50% - 214rpx / 2);"></image>
+        <view class="center center2" style="width: 100%; height: 67rpx; position: absolute; left: 0px; top: 350rpx; font-size: 48rpx; color:#41ADFF;">商务合作请联系</view>
+        <view class="center center2" style="width: 100%; height: 50rpx; position: absolute; left: 0px; top: 420rpx; font-size: 36rpx; color:#3663CD;">hz_tnwz@hortorgames.com</view>
+        <view bindtap="hezuoView_onClosed" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+            <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=0.1.12" style="width:30%;height:30%"></image>
+        </view>
+    </view>
+</view>
+<template is="specialPopup_needTicket" data="{{...popupData}}"></template>
+<template is="specialPopup_noTicket" data="{{...popupData}}"></template>
+<template is="specialPopup_countdown" data="{{...popupData}}"></template>
+<template is="getTicketView" data="{{...getTicketViewData}}"></template>
+<template is="ticket_info" data="{{...popupData}}"></template>
+<template is="ticket_to_friend" data="{{...giveTicketToFriendData}}"></template>
+<template is="ticket_from_friend" data="{{...getTicketFromFriendData}}"></template>
+<template is="specialPopup_unlockRole" data="{{...unlockRoleViewData}}"></template>

@@ -1,0 +1,11 @@
+<view animation="{{bannerItem.animationBannerData}}" class="GiftContent-banner" wx:if="{{!!bannerItem.bannerBg}}" wx:for="{{bannerList}}" wx:for-item="bannerItem" wx:key="index">
+    <image class="GiftContent-back" src="{{bannerItem.bannerBg}}"></image>
+    <image class="GiftContent-usericon" src="{{bannerItem.userIcon}}"></image>
+    <text class="GiftContent-username">{{bannerItem.userName}}</text>
+    <text class="GiftContent-giftname">送出 {{bannerItem.giftName}}</text>
+    <image animation="{{bannerItem.animationPicData}}" class="GiftContent-giftpic" src="{{bannerItem.giftSmPic}}"></image>
+    <view animation="{{bannerItem.animationNumData}}" class="GiftContent-figure" wx:if="{{bannerItem.bannerBg}}">
+        <image class="GiftContent-flag" src="../../../../assets/room/Banner-icon-flag.png"></image>
+        <image class="GiftContent-num" src="../../../../assets/room/Banner-icon-{{item}}.png" wx:if="{{item>=0}}" wx:for="{{bannerItem.giftNumArr}}" wx:key="index"></image>
+    </view>
+</view>

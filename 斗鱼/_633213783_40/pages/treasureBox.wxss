@@ -1,0 +1,497 @@
+.treasure-activity {
+    background: #562ba1;
+    background-image: url("https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/bg.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.treasure-activity image {
+    display: block;
+    margin: 0 auto;
+}
+
+.treasure-activity .treasure-desc {
+    width: 750rpx;
+    height: 306rpx;
+}
+
+.treasure-activity .treasure-card {
+    width: 721rpx;
+    height: 714rpx;
+}
+
+.treasure-activity .treasure-content {
+    width: 640rpx;
+    height: 606rpx;
+    position: absolute;
+    top: 382rpx;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.treasure-activity .treasure-content .treasure-tip {
+    font-size: 28rpx;
+    display: block;
+    text-align: center;
+}
+
+.treasure-activity .treasure-content .treasure-tip .needNum {
+    color: #ff4d00;
+}
+
+.treasure-activity .treasure-content .treasure-progress {
+    width: 100%;
+    height: 260rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.treasure-activity .treasure-content .treasure-progress .treasure-proarea {
+    width: 491rpx;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.treasure-activity .treasure-content .treasure-progress .treasure-proarea .treasure-bar {
+    width: 491rpx;
+    height: 8rpx;
+    background-image: url("https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/progress_grey.png");
+    background-size: 491rpx 8rpx;
+}
+
+.treasure-activity .treasure-content .treasure-progress .treasure-proarea .treasure-bar image {
+    float: left;
+    border-radius: 8rpx;
+}
+
+.treasure-activity .treasure-content .treasure-progress .treasure-proarea .treasure-images {
+    width: 483rpx;
+    height: 100%;
+    position: absolute;
+    left: 4rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.treasure-activity .treasure-content .treasure-progress .treasure-get {
+    width: 124rpx;
+    height: 60rpx;
+    margin: 0;
+    background: none;
+    background-image: url("https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/get_new.png");
+    background-size: 124rpx 60rpx;
+}
+
+.treasure-activity .treasure-content .treasure-progress .treasure-get::after {
+    border: none;
+}
+
+.treasure-activity .treasure-content .treasure-invite {
+    width: 640rpx;
+    height: 96rpx;
+    margin: 0;
+    background: none;
+    background-image: url("https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/invite_new.png");
+    background-size: 640rpx 96rpx;
+}
+
+.treasure-activity .treasure-content .treasure-invite::after {
+    border: none;
+}
+
+.treasure-activity .treasure-content .treasure-invite-bottom {
+    font-size: 22rpx;
+    color: #999;
+    display: block;
+    text-align: center;
+}
+
+.treasure-activity .treasure-strategy {
+    width: 750rpx;
+    height: 366rpx;
+}
+
+.treasure-activity .treasure-rule {
+    width: 750rpx;
+    height: 543rpx;
+}
+
+.treasure-bullet {
+    height: 80rpx;
+    background: rgba(0,0,0,.5);
+    border-radius: 40rpx;
+    position: absolute;
+    top: 214rpx;
+    left: 750rpx;
+    display: flex;
+    align-items: center;
+}
+
+.treasure-bullet .treasure-bullet-image {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 30rpx;
+    display: inline-block;
+    margin-left: 10rpx;
+    opacity: 1;
+}
+
+.treasure-bullet .treasure-bullet-text {
+    width: 205rpx;
+    margin-left: 12rpx;
+    font-size: 24rpx;
+    color: #fff;
+    opacity: 1;
+    flex-direction: column;
+    align-content: center;
+    display: flex;
+}
+
+.treasure-bullet .treasure-bullet-text .treasure-bullet-name {
+    width: 168rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.treasure-bullet .treasure-bullet-text text {
+    display: inline-block;
+}
+
+.treasure-bullet .treasure-bullet-text .treasure-bullet-info {
+    margin-top: 6rpx;
+}
+
+.treasure-bullet .treasure-bullet-text .treasure-bullet-info text {
+    color: #ffe300;
+}
+
+.treasure-bullet-hidden {
+    opacity: 0;
+}
+
+.treasure-pro1 {
+    width: 70rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.treasure-pro1 text {
+    font-size: 34rpx;
+    font-weight: 800rpx;
+    color: #ff4d00;
+    display: block;
+    text-align: center;
+    margin-bottom: 10rpx;
+}
+
+.treasure-pro1 image {
+    width: 52rpx;
+    height: 52rpx;
+}
+
+.treasure-pro1 view image {
+    display: none;
+}
+
+.treasure-pro1 view text {
+    font-size: 22rpx;
+    color: #333333;
+    margin: 14rpx 0;
+}
+
+.treasure-pro2 {
+    width: 70rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.treasure-pro2 text {
+    font-size: 24rpx;
+    color: #ff4d00;
+    display: block;
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+
+.treasure-pro2 image {
+    width: 42rpx;
+    height: 42rpx;
+}
+
+.treasure-pro2 view {
+    text-align: center;
+}
+
+.treasure-pro2 view image {
+    width: 16rpx;
+    height: 19rpx;
+    display: inline-block;
+}
+
+.treasure-pro2 view text {
+    font-size: 22rpx;
+    color: #bbb;
+    display: inline-block;
+    margin-top: 20rpx;
+    margin-bottom: 0;
+}
+
+.treasure-pro3 {
+    width: 70rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.treasure-pro3 text {
+    font-size: 24rpx;
+    color: #ccc;
+    display: block;
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+
+.treasure-pro3 image {
+    width: 42rpx;
+    height: 42rpx;
+}
+
+.treasure-pro3 view image {
+    display: none;
+}
+
+.treasure-pro3 view text {
+    font-size: 22rpx;
+    color: #bbb;
+    margin: 17rpx 0 5rpx;
+}
+
+.treasure-friends {
+    width: 100%;
+    height: 60rpx;
+    margin: 50rpx 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.treasure-friends .treasure-portrait {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.treasure-friends .treasure-portrait .treasure-p2 {
+    height: 60rpx;
+    width: 60rpx;
+    border-radius: 30rpx;
+    margin-right: 20rpx;
+    display: inline-block;
+}
+
+.treasure-friends .treasure-support {
+    display: flex;
+    align-items: center;
+}
+
+.treasure-friends .treasure-support .treasure-quantity {
+    font-size: 24rpx;
+    color: #999;
+    display: inline-block;
+}
+
+.treasure-friends .treasure-support .treasure-more {
+    height: 24rpx;
+    width: 24rpx;
+    margin-left: 8rpx;
+    display: inline-block;
+}
+
+.treasure-invite-none {
+    font-size: 28rpx;
+    color: #ddd;
+    display: block;
+    margin: 68rpx auto;
+    text-align: center;
+}
+
+.treasure-mask {
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 10;
+    position: absolute;
+}
+
+.treasure-mask .treasure-window {
+    width: 540rpx;
+    height: 474rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 15;
+}
+
+.treasure-mask .treasure-window .treasure-title {
+    width: 443rpx;
+    height: 99rpx;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.treasure-mask .treasure-window .treasure-winbg {
+    width: 540rpx;
+    height: 440rpx;
+    background: #fff;
+    border-radius: 26rpx;
+    position: absolute;
+    bottom: 0;
+}
+
+.treasure-mask .treasure-window .treasure-winbg .treasure-two {
+    width: 148rpx;
+    height: 97rpx;
+    display: block;
+    margin: 105rpx auto 40rpx;
+}
+
+.treasure-mask .treasure-window .treasure-winbg .treasure-gift {
+    font-size: 32rpx;
+    color: #ff5d23;
+    font-weight: 700;
+    display: block;
+    text-align: center;
+}
+
+.treasure-mask .treasure-window .treasure-winbg .treasure-gift .treasure-congratulate {
+    color: #333;
+    font-weight: 500;
+}
+
+.treasure-mask .treasure-window .treasure-winbg .treasure-get-now {
+    display: block;
+    margin: 44rpx 44rpx 40rpx;
+    font-size: 32rpx;
+    background: none;
+    background: #ff5d23;
+    color: #fff;
+    border-radius: 44rpx;
+    z-index: 30;
+}
+
+.treasure-endtime {
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+    z-index: 100;
+    position: absolute;
+}
+
+.treasure-endtime text {
+    font-size: 36rpx;
+    color: #fff;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.treasure-authorize {
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 50;
+    position: fixed;
+}
+
+.treasure-authorize .treasure-auWindow {
+    width: 580rpx;
+    height: 500rpx;
+    background-color: #fff;
+    border-radius: 16rpx;
+    color: #333333;
+    font-size: 32rpx;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+}
+
+.treasure-authorize .treasure-auWindow .treasure-weixin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36rpx;
+    font-weight: bold;
+    height: 88rpx;
+    border-bottom: 1rpx solid #eeeeee;
+}
+
+.treasure-authorize .treasure-auWindow .treasure-img {
+    margin: 40rpx 72rpx 0;
+    border-bottom: 1rpx solid #eeeeee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.treasure-authorize .treasure-auWindow .treasure-img .t-img {
+    width: 66rpx;
+    height: 66rpx;
+    border-radius: 50%;
+}
+
+.treasure-authorize .treasure-auWindow .treasure-img .t-content {
+    margin: 32rpx 0;
+    font-weight: bold;
+}
+
+.treasure-authorize .treasure-auWindow .treasure-info {
+    padding: 32rpx 72rpx 55rpx;
+    color: #666666;
+    border-bottom: 1rpx solid #eeeeee;
+    font-size: 26rpx;
+    text-align: center;
+}
+
+.treasure-authorize .treasure-auWindow .treasure-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.treasure-authorize .treasure-auWindow .treasure-button .treasure-confirm {
+    flex: 1;
+    color: #ff5d23;
+    background-color: #ffffff;
+    border-radius: 0;
+    border-bottom-right-radius: 16rpx;
+    border-left: 1px solid #eeeeee;
+}
+
+.treasure-authorize .treasure-auWindow .treasure-button .treasure-confirm::after {
+    border: none;
+}
+
+.treasure-authorize .treasure-auWindow .treasure-button .treasure-cancel {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 0;
+    border-bottom-left-radius: 16rpx;
+}
+
+.treasure-authorize .treasure-auWindow .treasure-button .treasure-cancel::after {
+    border: none;
+}

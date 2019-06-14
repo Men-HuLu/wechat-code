@@ -1,0 +1,23 @@
+<view class="channel-page">
+    <view class="channel-lists">
+        <view bindtap="changeNewlist" class="channel-item clearfix" data-aid="{{item.aid}}" wx:if="{{!item.redirect_url}}" wx:for="{{lists}}" wx:key="{{item.aid}}">
+            <view class="channel-img" style="background-image:url({{item.pic?item.pic:'../../image/ugc-default.png'}});background-size:100%"></view>
+            <view class="channel-infos">
+                <view class="channel-title">{{item.title}}</view>
+                <view class="channel-card">
+                    <i class="icon General_UP"></i>
+                    <text class="channel-view">{{item.owner.name}}</text>
+                    <view class="info-stat">
+                        <i class="icon General_playernumbe"></i>
+                        <text class="channel-view">{{Filter.number2chn(item.stat.view)}}</text>
+                        <i class="icon  General_barragenumb"></i>
+                        <text class="channel-favorites">{{Filter.number2chn(item.stat.danmaku)}}</text>
+                    </view>
+                </view>
+                <view class="channel-type">{{item.typename}}</view>
+            </view>
+        </view>
+        <view class="read-more">更多请到bilibili客户端观看</view>
+    </view>
+</view>
+<wxs module="Filter" src="../../utils/filter/index.wxs" />

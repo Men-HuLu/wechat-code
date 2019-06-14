@@ -1,0 +1,4 @@
+<view class="gift-content" hidden="{{effectShow}}">
+    <rocket bind:endAnima="endAnima" class="component"></rocket>
+    <plane bind:endAnima="endAnima" class="component"></plane>
+</view>

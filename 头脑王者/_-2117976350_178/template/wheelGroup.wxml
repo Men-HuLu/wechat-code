@@ -1,0 +1,12 @@
+<template name="wheelGroup">
+    <view style="position: relative;width:100%;height:100%;overflow:hidden;">
+        <image class="wheel_big_1" src="../../image/live/wheel_big.png"></image>
+        <image class="wheel_mid_1" src="../../image/live/wheel_mid.png"></image>
+        <image class="wheel_mid_2" src="../../image/live/wheel_mid2.png"></image>
+        <image class="wheel_small_1" src="../../image/live/wheel_small.png"></image>
+        <image class="wheel_big_2" src="../../image/live/wheel_big2.png"></image>
+        <image class="wheel_mid_3" src="../../image/live/wheel_mid2.png"></image>
+        <image class="wheel_mid_4" src="../../image/live/wheel_mid.png"></image>
+        <image class="wheel_small_2" src="../../image/live/wheel_small.png"></image>
+    </view>
+</template>

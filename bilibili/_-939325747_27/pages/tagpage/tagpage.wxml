@@ -1,0 +1,48 @@
+<custbar section="tage" tagname="{{navbartitle}}"></custbar>
+<view class="home-main" style="{{isiPhoneX?'margin-top:188rpx':''}}">
+    <view class="page-body">
+        <view class="page-section">
+            <view class="home-rank">
+                <view class="rank-item" wx:for="{{lists}}" wx:key="{{item.aid}}">
+                    <view bindtap="startPlay" class="rank-item-top" data-aid="{{item.aid}}" hidden="{{isPlayId===item.aid}}">
+                        <image class="rank-item-img" src="{{item.pic}}" style="background:url('../../image/main-default.png') center no-repeat"></image>
+                        <view class="fade-box"></view>
+                        <text class="item-info item-info-time">{{Filter.formattime(item.duration)}}</text>
+                        <text class="item-info item-info-view">{{Filter.number2chn(item.stat.view)}}次播放</text>
+                        <text class="item-info item-info-barrage">{{Filter.number2chn(item.stat.danmaku)}}弹幕</text>
+                        <image class="item-icon" src="../../image/2.png"></image>
+                    </view>
+                    <view wx:if="{{isPlayId===item.aid}}">
+                        <video bindended="bindended" class="myVideo" controls="{{true}}" danmuList="" id="myVideo{{item.aid}}" showCenterPlayBtn="{{false}}" showFullscreenBtn="{{false}}" showPlayBtn="{{true}}" src="{{item.aid===isPlayId?durl:''}}">
+                            <cover-view bindtap="reportEvent" class="play" data-aid="{{item.aid}}" data-report="playbtn" wx:if="{{isPlayId===''&&!isPlay}}">
+                                <cover-image src="../../image/2.png"></cover-image>
+                            </cover-view>
+                        </video>
+                    </view>
+                    <view class="rank-item-title">
+                        <view class="avator" style="background:url('../../image/avatar.png') center no-repeat">
+                            <image src="{{item.owner.face}}"></image>
+                        </view>
+                        <view class="video-info">
+                            <view catchtap="openPlayPage" class="video-info" data-aid="{{item.aid}}">
+                                <text class="item-detail">{{item.title}}</text>
+                            </view>
+                            <text class="up-name">{{item.owner.name}}</text>
+                            <text class="pub-time">{{Filter.formatdate(item.ctime)}}</text>
+                        </view>
+                        <view class="tag-info">
+                            <button bindtap="reportEvent" data-aid="{{item.aid}}" data-imageurl="{{item.pic}}" data-name="{{item.title}}" data-report="mainindex" hoverClass="none" hoverStopPropagation="{{stoppregation}}" openType="share">
+                                <i class="icon General_Share big" data-aid="{{item.aid}}" data-imageurl="{{item.pic}}" data-name="{{item.title}}"></i>
+                            </button>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <button appParameter="wechat" binderror="launchAppError" bindtap="reportEvent" class="open-btn" data-report="openapp" openType="launchApp" wx:if="{{iSopenBtn}}">
+        打开APP
+      </button>
+            <view class="read-more" wx:if="{{reachbottom}}">更多请到bilibili客户端观看</view>
+        </view>
+    </view>
+</view>
+<wxs module="Filter" src="../../utils/filter/index.wxs" />

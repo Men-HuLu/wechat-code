@@ -1,0 +1,3 @@
+@import "../../../template/avatarBase.wxss";
+
+@import "../template/finalRankTemplate.wxss";

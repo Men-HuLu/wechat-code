@@ -1,0 +1,30 @@
+<template name="rewardView">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.5);">
+        <view class="column start center2 form-normal" style="width:648rpx; position:relative;">
+            <view class="center center2 dailyRewardView_title" style="height:80rpx">{{title}}</view>
+            <textarea class="font-white-1" disabled="true" maxlength="1024" style="font-size:30rpx;width:90%;height:140rpx;line-height: 42rpx" value="{{content}}"></textarea>
+            <view class="center ac-start row warp flex-none">
+                <scroll-view class="center" name="view-listview" scrollY="true" style="width: 100%;height: 90%;">
+                    <view style="width:648rpx">
+                        <view class="row center" style="flex-wrap:wrap;">
+                            <view style="position:relative;width:164rpx;height:220rpx;margin:24rpx 26rpx 24rpx 26rpx" wx:for="{{items}}" wx:for-index="id" wx:key="id">
+                                <image src="https://question-resource-wscdn.hortorgames.com/image/shop/item_frame.png" style="width:100%;height:100%;position:absolute;"></image>
+                                <view bindtap="callback_item_clicked" class="column center2 start" data-id="{{item.itemId}}" hoverClass="brightness" style="width:100%;height:100%; position:absolute;">
+                                    <view class="center center2 font-white-1 " style="flex:none;height:40rpx;width:100%;font-size:25rpx">{{item.name}}</view>
+                                    <view class="center center2" style="width:130rpx;height:130rpx;flex:none;position:relative;">
+                                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{item.itemId}}.png?v=0.1.12" style="width:124rpx;height:120rpx;"></image>
+                                    </view>
+                                    <view class="center center2 font-blue-1" style="height:50rpx;width:100%;font-size:25rpx;flex:none;">数量：{{item.itemNum}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="column start center2" style="height:180rpx;">
+                <view style="height:40rpx"></view>
+                <button bindtap="onBucangViewBtn">确定</button>
+            </view>
+        </view>
+    </view>
+</template>

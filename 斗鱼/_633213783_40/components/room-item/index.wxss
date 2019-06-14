@@ -1,0 +1,108 @@
+.room-item .room-item-banner {
+    position: relative;
+    width: 370rpx;
+    height: 210rpx;
+}
+
+.room-item .room-item-banner .room-default-image {
+    width: 370rpx;
+    height: 210rpx;
+    z-index: 5;
+}
+
+.room-item .room-item-banner .room-item-image {
+    width: 370rpx;
+    height: 210rpx;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.right-tag {
+    position: absolute;
+    color: #fff;
+    font-size: 22rpx;
+    border-radius: 2px;
+    top: 10rpx;
+    right: 10rpx;
+    background-color: rgba(0,0,0,.6);
+    z-index: 10;
+    padding: 5rpx 6rpx;
+}
+
+.right-tag-yz {
+    position: absolute;
+    font-size: 22rpx;
+    border-radius: 4rpx;
+    top: 10rpx;
+    right: 10rpx;
+    z-index: 10;
+    padding: 8rpx 12rpx!important;
+    border-color: rgba(255,255,255,.5)!important;
+    border-width: 2rpx!important;
+    border-style: solid;
+    color: #fefefe!important;
+    background-color: rgba(0,0,0,.2)!important;
+}
+
+.room-item .room-item-banner .room-item-banner-footer {
+    position: absolute;
+    color: #fff;
+    font-size: 22rpx;
+    width: 100%;
+    height: 88rpx;
+    box-sizing: border-box;
+    bottom: 0rpx;
+    background: linear-gradient(to bottom,transparent,rgba(0,0,0,.3));
+    z-index: 10;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 8rpx;
+}
+
+.room-item .room-item-banner .room-item-banner-footer .room-item-footer-name {
+    position: relative;
+    left: 14rpx;
+    float: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1;
+    padding-right: 10rpx;
+}
+
+.room-item .room-item-banner .room-item-banner-footer .room-item-footer-nums {
+    position: relative;
+    right: 18rpx;
+    margin-left: 25rpx;
+    float: right;
+}
+
+.room-item .room-item-banner .room-item-banner-footer .room-item-footer-nums::before {
+    content: '';
+    float: left;
+    height: 16rpx;
+    width: 15rpx;
+    margin-top: 10rpx;
+    margin-right: 8rpx;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAMAAAD+iNU2AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABOUExURUxpcf///////////////////////////////////////////////////////////////////////////////////////////////////zaAtHkAAAAZdFJOUwANAk7rGZ/U84m9OxPiLpReMyBsxcp2rPn9+EhoAAAAc0lEQVQI11WOSRLDIBADhc02MXjJWvr/R4MS4iJ9GRqVYADxtICRSD+PnkgOF0tT5rPiFJNb1+udXx771HTOPLk4rBwxvP48wWv42D1D7RSK/7n+WoA11s+DMJVEkd/gavdJcVvgqLn0paPTIdiu2LajjTdikwuo1IgWzwAAAABJRU5ErkJggg==");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.room-item .room-item-info {
+    width: 370rpx!important;
+    height: 60rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.room-item .room-item-info text {
+    padding-left: 14rpx;
+    font-size: 28rpx;
+    color: #3f3f3f;
+}

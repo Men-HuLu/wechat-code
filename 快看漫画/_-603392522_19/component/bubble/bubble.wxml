@@ -1,0 +1,11 @@
+<view class="bubble-wrap" hidden="{{!bubbleInfo||!control}}">
+    <view bindtap="jumpFollow" class="bubble-info">
+        <view class="info-text">
+            <view class="info-title">《<text>{{bubbleInfo['tit']}}</text>》</view>
+            <view class="info-update">更新{{bubbleInfo['num']}}话</view>
+        </view>
+        <view bindtap="closeBubble" class="info-close">
+            <image src="/image/ico-close.png"></image>
+        </view>
+    </view>
+</view>

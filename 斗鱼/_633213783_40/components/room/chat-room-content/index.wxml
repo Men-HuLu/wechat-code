@@ -1,0 +1,33 @@
+<scroll-view bind:touchend="barrageTouchEnd" bind:touchstart="barrageTouchStart" bindscroll="scrollBarrageContainer" class="barrage-content" scrollTop="{{scrollTop}}" scrollY="{{isscroll}}">
+    <view>
+        <view class="system-tip">
+            <view class="st-title">系统通知</view>
+            <text class="st-content">欢迎来到VIP聊天室，和朋友们一起愉快地看直播吧</text>
+        </view>
+        <view class="system-tip" hidden="{{tcpConnected}}">
+            <view class="st-content">网络异常：弹幕服务器连接失败</view>
+        </view>
+        <view class="barrage-item" hidden="{{!tcpConnected}}" wx:for="{{barrages}}" wx:key="bid">
+            <block wx:if="{{item._barrageType==='CHATROOM'}}">
+                <text class="username {{item.isSelf?'self':''}}">{{item.nick}}： </text>
+                <text class="dm-text">{{item.message}}</text>
+            </block>
+            <text class="username self" wx:elif="{{item._barrageType==='JOIN'}}">{{item.nick}} 加入了群聊</text>
+            <text class="username self" wx:elif="{{item._barrageType==='LEAVE'}}">{{item.nick}} 退出了群聊</text>
+        </view>
+    </view>
+</scroll-view>
+<banner></banner>
+<view class="footer-controls" style="height:{{focusHeight}}">
+    <view class="send-danmu-wrap" style="width:{{isShowInput?'450rpx':'100%'}}">
+        <view class="sdw-input-box">
+            <input adjustPosition="{{adjustPosition}}" bindblur="inputBlur" bindconfirm="inputConfirm" bindfocus="inputFocus" bindinput="bindinputEvent" class="dm-input" maxlength="50" placeholder="{{inChatroom?'和好友一起畅聊~':''}}" placeholderStyle="color: #adadad" value="{{inputValue}}"></input>
+            <view bind:tap="clickSendDM" class="send-content" wx:if="{{!isShowInput}}">
+                <view class="send-dm-btn {{isDisable?'active':''}}">发送</view>
+            </view>
+        </view>
+    </view>
+    <button class="footer-share-btn" openType="share" wx:if="{{isShowInput}}">
+        <image class="c-icon" mode="scaleToFill" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/shareroom.png?timestamp=1541129072"></image>
+    </button>
+</view>

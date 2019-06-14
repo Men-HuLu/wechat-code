@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>kd</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="0923-无关系链" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-5-Copy-3">
+            <rect id="Rectangle-Copy-3" x="0" y="0" width="28" height="28"></rect>
+            <g id="Group-20-Copy" transform="translate(2.000000, 3.000000)">
+                <g id="Group-22-Copy-3">
+                    <g id="Group">
+                        <path d="M1,4.91574381 L1,19 C1,20.1045695 1.8954305,21 3,21 L21,21 C22.1045695,21 23,20.1045695 23,19 L23,4.91574381 L19.9408251,1 L4.05917485,1 L1,4.91574381 Z" id="Rectangle-34" stroke="#FA9D3B" stroke-width="2"></path>
+                        <path d="M0.763636351,4.36363636 L22.1454546,4.36363636 C22.5671993,4.36363636 22.9090909,4.705528 22.9090909,5.12727271 L22.9090909,5.60000001 C22.9090909,6.02174472 22.5671993,6.36363636 22.1454546,6.36363636 L0.763636351,6.36363636 C0.34189164,6.36363636 1.62671133e-16,6.02174472 1.11022302e-16,5.60000001 L0,5.12727271 C-5.1648831e-17,4.705528 0.34189164,4.36363636 0.763636351,4.36363636 Z" id="Rectangle-10" fill="#FA9D3B"></path>
+                        <rect id="Rectangle-37" fill="#FA9D3B" x="15" y="13" width="5" height="2"></rect>
+                        <rect id="Rectangle-37-Copy" fill="#FA9D3B" x="15" y="16" width="5" height="2"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

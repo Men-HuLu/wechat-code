@@ -1,0 +1,5 @@
+<view bind:tap="onTapEntry" style="position: relative;width:328rpx;height:208rpx;margin: 0px 0px 20rpx 0px;">
+    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/btn_home_xiacai.png?v=9" style="width:100%;height:100%"></image>
+    <view style="position: absolute;left:16rpx;top:74rpx;line-height: 24rpx;color:'{{contextColor}}';font-size: 24rpx;">{{context}}</view>
+    <navigator appId="wxfba6c24ce6dc21c8" bind:tap="onTapLinkBtn" extraData="" openType="navigate" path="pages/index/index?channel=tnwz" style="position: absolute;left:0px;top:0px;width:100%;height:100%;" target="miniProgram" version="release" wx:if="{{status!=1}}"></navigator>
+</view>

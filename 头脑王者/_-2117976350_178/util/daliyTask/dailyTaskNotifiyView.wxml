@@ -1,0 +1,12 @@
+<template name="dailyTaskNotifiyView">
+    <view class="center center2" style="width:100%;height:110rpx;position:absolute;bottom:0px;left:0px;overflow: hidden;" wx:if="{{visible}}">
+        <view animation="{{ani_move}}" class="center center2" style="position: absolute;left:0px;bottom:-120rpx;width:100%;height:100rpx;">
+            <view class="row start center2" style="width: 600rpx;height:100%; background: #D2ECFF;border: 5rpx solid #FFFFFF;box-shadow: 0 4rpx 2rpx 1px rgba(0,69,150,0.60);border-top-left-radius: 20rpx;border-top-right-radius: 20rpx;">
+                <view style="width:24rpx;"></view>
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_tasks/img_tasks_completed.png?v=0.2" style="width:80rpx;height:80rpx;"></image>
+                <view style="width:14rp;"></view>
+                <view class="center center2" style="font-size: 36rpx;color: #3663CD;line-height: 36rpx;height:36rpx;width:460rpx;white-space: nowrap;">{{context}}</view>
+            </view>
+        </view>
+    </view>
+</template>

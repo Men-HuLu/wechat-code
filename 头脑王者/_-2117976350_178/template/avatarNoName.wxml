@@ -1,0 +1,7 @@
+<template name="avatarNoName">
+    <view class="userinfo">
+        <view style="background-color:#23559a;width:154rpx;height:154rpx;border-radius: 50%;"></view>
+        <image backgroundSize="cover" class="userinfo-bg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/img_friendmatch_opponent.png"></image>
+        <image backgroundSize="cover" class="userinfo-avatar" src="{{avatarUrl}} " wx:if="{{!!avatarUrl}}"></image>
+    </view>
+</template>

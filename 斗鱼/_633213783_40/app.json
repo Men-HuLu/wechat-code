@@ -1,0 +1,72 @@
+{
+    "pages": [
+        "pages/home",
+        "pages/room",
+        "pages/index/index",
+        "pages/wxauthorization",
+        "pages/catalogue",
+        "pages/video",
+        "pages/video-room",
+        "pages/activity",
+        "pages/mycenter",
+        "pages/weblogin",
+        "pages/game-recharge",
+        "pages/calalogue-list",
+        "pages/web",
+        "pages/treasureBox",
+        "pages/invitee",
+        "pages/download-app",
+        "pages/rechargeexplain"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#ff5d23",
+        "backgroundTextStyle": "dark",
+        "navigationBarTitleText": "斗鱼直播",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#1d1d1d",
+        "selectedColor": "#ff5d23",
+        "borderStyle": "white",
+        "backgroundColor": "#f9f9f9",
+        "list": [
+            {
+                "text": "首页",
+                "pagePath": "pages/home",
+                "iconPath": "assets/images/tab-home-off.png",
+                "selectedIconPath": "assets/images/tab-home-on.png"
+            },
+            {
+                "text": "视频",
+                "pagePath": "pages/video",
+                "iconPath": "assets/images/tab-video-off.png",
+                "selectedIconPath": "assets/images/tab-video-on.png"
+            },
+            {
+                "text": "活动",
+                "pagePath": "pages/activity",
+                "iconPath": "assets/images/tab-activity-off.png",
+                "selectedIconPath": "assets/images/tab-activity-on.png"
+            },
+            {
+                "text": "我的",
+                "pagePath": "pages/mycenter",
+                "iconPath": "assets/images/tab-me-off.png",
+                "selectedIconPath": "assets/images/tab-me-on.png"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 6000,
+        "connectSocket": 5000
+    },
+    "navigateToMiniProgramAppIdList": [
+        "wxa59e1b72a4298b07",
+        "wx25bba907e33848f4",
+        "wx23652363c578bd37",
+        "wxf7b411799a16bdd2",
+        "wxd60fe11da186e58e",
+        "wxaefbe1376ed4cd90",
+        "wxbe106b8cb3172c3d"
+    ]
+}

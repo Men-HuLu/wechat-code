@@ -1,0 +1,10 @@
+.recharge-explain-page {
+    width: 100%;
+    min-height: 100%;
+    background: #d6f3ff;
+}
+
+.recharge-explain-page .recharge-image {
+    width: 100%;
+    height: 1626rpx;
+}

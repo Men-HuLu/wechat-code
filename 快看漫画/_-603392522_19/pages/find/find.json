@@ -1,0 +1,8 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "快看漫画",
+    "usingComponents": {
+        "kk-picture": "/component/picture/picture",
+        "kk-bubble": "/component/bubble/bubble"
+    }
+}

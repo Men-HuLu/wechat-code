@@ -1,0 +1,30 @@
+<import src="/template/model-usual.wxml"></import>
+<import src="/template/model-find.wxml"></import>
+<view class="find-wrap">
+    <view style="min-height: {{modelList.length?'auto':'100%'}}">
+        <view class="search-wrap">
+            <navigator class="search-view search-find" url="/pages/search/search">
+                <image src="/image/ico-search.png"></image>
+                <text>搜索作品名</text>
+            </navigator>
+        </view>
+        <swiper autoplay="true" circular="{{bannerConfig['circular']}}" class="swiper-wrap" current="{{bannerConfig['current']}}" duration="500" hidden="{{initOver&&!bannerList.length}}" indicatorActiveColor="#FDE23D" indicatorColor="rgba(255,255,255,0.5)" indicatorDots="{{bannerConfig['dots']}}" interval="4000" nextMargin="{{bannerConfig['margin']}}" previousMargin="{{bannerConfig['margin']}}">
+            <swiper-item wx:for="{{bannerList}}" wx:key="id">
+                <view bindtap="jump{{item.jump}}" class="swiper-item" data-id="{{item.id}}">
+                    <kk-picture height="432" mode="widthFix" src="{{item.url}}"></kk-picture>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view class="rank-wrap" style="margin-bottom: {{modelList.length?0:30}}rpx;">
+            <view bindtap="jumpRank" data-type="{{item.id}}" wx:for="{{rankList}}" wx:key="id">
+                <image src="{{item.img}}"></image>
+                <view class="tit">{{item.tit}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="model-wrap">
+        <template is="find{{item.type}}" data="{{...item}}" wx:for="{{modelList}}" wx:key="index"></template>
+    </view>
+    <template is="loadmore" data="{{loading:!modelList.length,nomore:modelList.length,bgColor:modelList.length&&'#f7f9fa'}}"></template>
+    <kk-bubble control="{{bubble}}"></kk-bubble>
+</view>

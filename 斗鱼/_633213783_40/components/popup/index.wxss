@@ -1,0 +1,68 @@
+.popup-anchor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,.5);
+}
+
+.popup-content {
+    position: relative;
+    width: 520rpx;
+    height: 710rpx;
+    left: 50%;
+    top: 43%;
+    transform: translate(-50%,-50%);
+}
+
+.popup-game {
+    position: relative;
+    width: 520rpx;
+    height: 620rpx;
+    left: 50%;
+    top: 43%;
+    transform: translate(-50%,-50%);
+}
+
+.popup-formid {
+    width: 100%;
+    height: 100%;
+}
+
+.popup-img {
+    width: 100%;
+    height: 100%;
+}
+
+.hidden-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    opacity: 0;
+}
+
+.hidden-form-btn {
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    opacity: 0;
+}
+
+.popup-close {
+    position: absolute;
+    width: 64rpx;
+    height: 64rpx;
+    bottom: -100rpx;
+    left: 228rpx;
+    z-index: 30;
+}
+
+.popup-close-img {
+    width: 100%;
+    height: 100%;
+}

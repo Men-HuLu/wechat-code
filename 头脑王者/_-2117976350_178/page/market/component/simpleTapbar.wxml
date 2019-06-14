@@ -1,0 +1,15 @@
+<view style="position:absolute;left:calc((100% - {{rectWidth}}rpx)/2);top:0px;width:{{rectWidth}}rpx;height:100%;">
+    <view class="row start" style="flex-wrap:wrap;width:100%">
+        <view bindtap="callback_item_clicked" class="column center center2" data-index="{{index}}" hoverClass="brightness" style="position:relative;width:calc(100% / {{items.length}});height:45rpx;" wx:for="{{items}}" wx:key="id">
+            <view style="font-size: 32rpx;color:{{index==selectedIndex?colorItemNorml:colorItemSelected}};text-align: center;">{{item}}</view>
+            <view style="position:absolute;right:0px;top:0px;bottom:0px;width:2rpx;background: #5692ff;border-radius: 2rpx;" wx:if="{{index<items.length-1}}"></view>
+            <image class="onsale-arrow" src="{{badgeUrl}}" style="position:absolute;right:{{-badgeWidth/3}}rpx;top:{{-badgeHeight/2}}rpx;width:{{badgeWidth}}rpx;height:{{badgeHeight}}rpx;" wx:if="{{badgeStatus[index]}}"></image>
+        </view>
+        <view class="center center2" style="transition:all 0.2s ease-out;position:absolute;left:0px;bottom:0px;height:4rpx;width:calc(100% / {{items.length}});transform: translate3d({{linex}}rpx,0,0);" wx:if="{{isHeightWX}}">
+            <view style="background:{{colorLine}};border-radius: 2rpx;width:70%;height:100%"></view>
+        </view>
+        <view class="center center2" style="position:absolute;left:{{linex}}rpx;bottom:0px;height:4rpx;width:calc(100% / {{items.length}});" wx:else>
+            <view style="background:{{colorLine}};border-radius: 2rpx;width:70%;height:100%"></view>
+        </view>
+    </view>
+</view>

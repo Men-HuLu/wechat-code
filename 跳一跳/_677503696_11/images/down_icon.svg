@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>down_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="down_icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-15-Copy-5">
+            <rect id="Rectangle" fill="#D8D8D8" opacity="0" x="0" y="0" width="16" height="16"></rect>
+            <path d="M8.03884022,6.90998816 L3.8719348,11.1695038 L3.01426362,10.3118326 L7.08975772,6.14575992 C7.12071762,6.11411194 7.15326426,6.08495625 7.18714767,6.05829561 L7.17461336,6.04576131 L7.25444528,5.96592939 C7.64496957,5.5754051 8.27813455,5.5754051 8.66865884,5.96592939 L12.9646338,10.2619043 L12.1776951,11.048843 L8.03884022,6.90998816 Z" id="Combined-Shape" fill="#000000" fill-rule="nonzero" transform="translate(7.989449, 8.421270) scale(1, -1) translate(-7.989449, -8.421270) "></path>
+        </g>
+    </g>
+</svg>

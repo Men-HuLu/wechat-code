@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "斗鱼直播",
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#ff5d23",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#eee",
+    "usingComponents": {
+        "loading": "/components/loading/index",
+        "error": "/components/error/index",
+        "empty": "/components/empty/index",
+        "loadingFooter": "/components/loading-footer/index"
+    }
+}

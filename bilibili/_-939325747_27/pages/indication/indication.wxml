@@ -1,0 +1,45 @@
+<view>
+    <custbar section="idx"></custbar>
+    <view catchtouchmove="moveBan" class="contain-wrap">
+        <view class="switch" style="top:{{isiPhoneX?'164rpx':'128rpx'}}">
+            <view class="section sec-one">
+                <text bindtap="bangumiSwitch" class="sec-word {{isBangumi?'choosed':''}}" data-ban="true">番剧</text>
+            </view>
+            <view class="section sec-two">
+                <text bindtap="bangumiSwitch" class="sec-word {{!isBangumi?'choosed':''}}">国创</text>
+            </view>
+        </view>
+        <view class="filter" style="top:{{isiPhoneX?'248rpx':'212rpx'}}">
+            <view bindtap="filter" class="filter-item {{versionName?'targeted':''}}" data-index="0" data-type="season_version">{{versionName?versionName:'全部类型'}} <i class="icon {{fltIndex===0&&arrowUp?'General_UpArrow pink':'General_DownArrow grey'}} arrow"></i>
+            </view>
+            <view bindtap="filter" class="filter-item {{styleName?'targeted':''}}" data-index="1" data-type="style_id">{{styleName?styleName:'全部风格'}} <i class="icon {{fltIndex===1&&arrowUp?'General_UpArrow pink':'General_DownArrow grey'}} arrow"></i>
+            </view>
+            <view bindtap="filter" class="filter-item {{finishName?'targeted':''}}" data-index="2" data-type="is_finish">{{finishName?finishName:'全部状态'}} <i class="icon {{fltIndex===2&&arrowUp?'General_UpArrow pink':'General_DownArrow grey'}} arrow"></i>
+            </view>
+        </view>
+        <view class="condition" style="top:{{isiPhoneX?'331rpx':'295rpx'}}">
+            <view class="condition-item" wx:for="{{conditionList}}" wx:key="{{item}}">
+                <view bindtap="pickOne" class="item-word {{filterType==='season_version'&!versionName&item.id==-1||filterType==='style_id'&!styleName&item.id==-1||filterType==='is_finish'&!finishName&item.id==-1?'selected':''}} {{filterType==='season_version'&versionName===item.name||filterType==='style_id'&styleName===item.name||filterType==='is_finish'&finishName===item.name?'selected':''}}" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+            </view>
+            <view bindtap="closeCon" class="condition-mc" wx:if="{{conditionList.length}}"></view>
+        </view>
+        <view class="test" style="height:{{isiPhoneX?'331rpx':'295rpx'}}"></view>
+        <scroll-view scrollY bindscrolltolower="scrolltolower" class="card-wrap" scrollTop="{{scrollTop}}" style="height:{{deviceHeight-147}}px">
+            <view bindtap="toPgcVideo" class="card-item" data-ssid="{{item.season_id}}" wx:for="{{cardList}}" wx:key="{{item}}">
+                <view class="card-cover" style="background-image:url({{item.cover}});background-size:100%"></view>
+                <view class="card-corner {{item.badge_type===2?'orange':''}}" wx:if="{{item.badge}}">{{item.badge}}</view>
+                <view class="card-mc"></view>
+                <view class="card-follow">{{item.order.follow}}</view>
+                <view class="card-title">{{item.title}}</view>
+                <view class="card-total">{{item.index_show}}</view>
+            </view>
+            <block wx:if="{{invalid}}">
+                <image class="invalid-img" src="../../image/invalid.png"></image>
+                <view class="invalid-text">
+                    <view class="invalid-word">这里还什么都没有呢～</view>
+                </view>
+            </block>
+        </scroll-view>
+        <view class="read-more" wx:if="{{break}}">更多请到bilibili客户端观看</view>
+    </view>
+</view>

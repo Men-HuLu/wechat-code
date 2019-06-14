@@ -1,0 +1,4 @@
+<view class="">
+    <video autoplay="{{false}}" id="myVideo" initialTime="{{seek}}" src="{{src}}"></video>
+    <view>应该从第{{seek}}秒开始播放</view>
+</view>

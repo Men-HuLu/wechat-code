@@ -1,0 +1,48 @@
+<template name="settingView">
+    <view class="center center2 " style="position:absolute;left:0px;top:0px;width:100%;height:100%;background-color:rgba(0,0,0,0.5);opacity:{{settingOpacity}};transition: opacity 0.3s;" wx:if="{{settingViewVisible}}">
+        <view class="show-form column start center2" style="position:relative;width:500rpx;background-color: #fff;box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;">
+            <view class="icon-rotate" hoverClass="icon-rotate" style="position:absolute;top:-85rpx;left:calc((100% - 170rpx)/2);width:170rpx;height:170rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_setting.png?v=0.1.12" style="width:100%;height:100%;"></image>
+            </view>
+            <view style="height:105rpx"></view>
+            <view class="font-title-white center center2" style="width:100%;height:75rpx;background-color:#4670CD">
+                设置
+            </view>
+            <view style="height:61rpx"></view>
+            <view class="center2 center" style="width:100%;height:76rpx;">
+                <view style="font-size: 36rpx;color: #4353A4;font-weight:bold">推送</view>
+                <view style="width:30rpx"></view>
+                <view bindtap="onTapSettingView_pushBtn" style="transition:all 0.5s;position:relative;background-color:{{tmpForbiddenPush?'#B2D2FF':'#5dbaff'}};border: 8rpx solid #5dbaff;width:123rpx;height:52rpx;border-radius:60rpx;">
+                    <view style="transition:left 0.5s;width:60rpx;height:60rpx;position:absolute;top:calc((100% - 60rpx)/2);left:{{tmpForbiddenPush?'-4':'66'}}rpx;background-color:#fff;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius:30rpx;"></view>
+                </view>
+            </view>
+            <view style="height:50rpx"></view>
+            <view class="center2 center" style="width:100%;height:76rpx;">
+                <view style="font-size: 36rpx;color: #4353A4;font-weight:bold">音效</view>
+                <view style="width:30rpx"></view>
+                <view bindtap="onTapSettingView_soundBtn" style="transition:all 0.5s;position:relative;background-color:{{tmpSoundOff?'#B2D2FF':'#5dbaff'}};border: 8rpx solid #5dbaff;width:123rpx;height:52rpx;border-radius:60rpx;">
+                    <view style="transition:left 0.5s;width:60rpx;height:60rpx;position:absolute;top:calc((100% - 60rpx)/2);left:{{tmpSoundOff?'-4':'66'}}rpx;background-color:#fff;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius:30rpx;"></view>
+                </view>
+            </view>
+            <view style="height:68rpx"></view>
+            <view bindtap="onTapNoticeInSettingView" class="center center2" style="background:#2191FF;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;width:270rpx;height:100rpx;font-size:48rpx;font-weight:bold;" wx:if="{{hasAnyNotice}}">
+                公告
+            </view>
+            <view style="height:20rpx"></view>
+            <view style="position:relative;width:270rpx;height:100rpx" wx:if="{{scopeBtnVisible}}">
+                <view class="center center2" style="background:#7ED321;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;width:100%;height:100%;font-size:48rpx;font-weight:bold;">
+                    授权信息
+                </view>
+                <button bindgetuserinfo="userInfoHandler_setting" lang="zh_CN" openType="getUserInfo" style="width:100%;height:100%;opacity:0;position:absolute;left:0px;top:0px;width:100%;height:100%"></button>
+            </view>
+            <view class="column space-a center2" style="height:100rpx;width:100%">
+                <view style="font-size: 28rpx;color: #4353A4;text-align: center;width:100%;height:40rpx;">商务合作请联系</view>
+                <view style="width: 100%; height: 42rpx; font-size: 30rpx;color: #FB6C4A;text-align: center;">hz_tnwz@hortorgames.com</view>
+            </view>
+            <view style="height:40rpx"></view>
+            <view bindtap="onTapSettingViewCloseBtn" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=0.1.12" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>

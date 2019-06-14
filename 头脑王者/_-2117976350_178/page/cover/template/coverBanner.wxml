@@ -1,0 +1,16 @@
+<template name="coverBanner">
+    <view style="position: absolute;left:0px;top:0px;width:100%;height:100%;" wx:if="{{type=='million'}}">
+        <template is="millionsBanner" data="{{...s3}}" wx:if="{{status=='s3'}}"></template>
+        <template is="millionsGetCashAreadyBanner" data="{{...s3}}" wx:elif="{{status=='s4GetCashAready'}}"></template>
+        <template is="millionsGetCashBanner" data="{{...s3}}" wx:elif="{{status=='s4GetCash'}}"></template>
+        <template is="s4millionsOverBanner" data="{{...s3}}" wx:elif="{{status=='s4millionsOver'}}"></template>
+    </view>
+    <view style="position: absolute;left:0px;top:0px;width:100%;height:100%;" wx:elif="{{type=='specialMatch'}}">
+        <template is="bannerSpecial_normal" data="{{...special}}" wx:if="{{special.status=='bannerSpecial_normal'}}"></template>
+        <template is="bannerSpecial_calc" data="{{...special}}" wx:if="{{special.status=='bannerSpecial_calc'}}"></template>
+        <template is="bannerSpecial_award" data="{{...special}}" wx:if="{{special.status=='bannerSpecial_award'}}"></template>
+        <template is="bannerSpecial_over" data="{{...special}}" wx:if="{{special.status=='bannerSpecial_over'}}"></template>
+    </view>
+</template>
+<import src="/page/cover/template/coverBannerMillion.wxml"></import>
+<import src="/page/cover/template/coverBannerSpecial.wxml"></import>

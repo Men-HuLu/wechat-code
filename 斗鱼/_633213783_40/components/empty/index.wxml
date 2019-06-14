@@ -1,0 +1,5 @@
+<view class="empty-box">
+    <image class="empty-icon" src="../../assets/images/error.png"></image>
+    <view class="empty-title">{{title}}</view>
+    <view class="empty-content">{{content}}</view>
+</view>

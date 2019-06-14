@@ -1,0 +1,29 @@
+@import "../../../template/avatarBase.wxss";
+
+.user-in {
+    animation: frame-user-in 0.4s;
+}
+
+@-webkit-keyframes frame-user-in {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+
+    100% {
+        width: 54rpx;
+        height: 54rpx;
+    }
+}
+
+@keyframes frame-user-in {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+
+    100% {
+        width: 54rpx;
+        height: 54rpx;
+    }
+}

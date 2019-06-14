@@ -1,0 +1,74 @@
+<import src="../../template/avatarBase.wxml"></import>
+<view class="column start center2" style="position:absolute;left:0px;top:0px;width:100%;height:100%; overflow: hidden;background-image: linear-gradient(-180deg, #4E84E5 0%, #4E62E5 97%);">
+    <view class="column center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;" wx:if="{{!textStatus&&!itsMe}}">
+        <image animation="{{aniFlower}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/img_decoration.png?v=0.1.12" style="width:455rpx;height:130rpx;position:absolute;left:calc((100% - 455rpx)/2);top:0px;opacity:0;transform:scale(0.5)"></image>
+        <view animation="{{aniMsg}}" class="center center2" style="position:absolute;top:320rpx; width:100%;height:144rpx;font-size:28rpx;font-weight:bold;opacity:0">准备对战</view>
+        <view style="height:6rpx"></view>
+        <view animation="{{aniAvartar}}" class="center center2" style="width:1300rpx;height:144rpx; position:relative;">
+            <view class="user-left">
+                <view style="width:14rpx"></view>
+                <view style="position:relative; width:120rpx;height:120rpx;">
+                    <template is="avatarOnly" data="{{avatarUrl:userInfo.avatarUrl,id:userInfo.headId}}"></template>
+                    <view class="end-with-3dot" style="text-align: center; position:absolute;left:calc((100% - 200rpx)/2);bottom:-60rpx;width:200rpx;height:40rpx;line-height:40rpx;font-size:28rpx;white-space:nowrap">{{userInfo.nickName}}</view>
+                </view>
+            </view>
+            <view class="user-right" wx:if="{{!!rivalUser.uid}}">
+                <view style="width:14rpx"></view>
+                <view style="position:relative;width:120rpx;height:120rpx;">
+                    <template is="avatarOnly" data="{{avatarUrl:rivalUser.avatarUrl,id:rivalUser.headId}}"></template>
+                    <view class="end-with-3dot" style="text-align: center;position:absolute;left:calc((100% - 200rpx)/2);bottom:-60rpx;width:200rpx;height:40rpx;line-height:40rpx;font-size:28rpx;white-space:nowrap">{{rivalUser.nickName}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style="position: absolute;left:0px;top:0px;width:100%;height:100%;" wx:else>
+        <view style="width:150rpx;height:150rpx;">
+            <view bindtap="btn_avatar_clicked" class="userAvatar">
+                <template is="avatarOnly" data="{{avatarUrl:roomInfo.rivalUser.avatarUrl,id:roomInfo.rivalUser.headId}}"></template>
+            </view>
+        </view>
+        <view style="height:8rpx"></view>
+        <view class="center center2" style="font-size: 28rpx;color: #FFFFFF;width:100%;height:40rpx;white-space: nowrap;text-align: center;">{{roomInfo.rivalUser.nickName}}</view>
+        <view class="center center2" style="font-size: 32rpx;color: #A9DCFF;width:100%;height:38rpx;white-space: nowrap;text-align: center;">Lv.{{roomInfo.rivalUser.level}}</view>
+        <view style="height:30rpx"></view>
+        <view class="column start center2" style="position:absolute;left:calc((100% - 650rpx)/2);top:257rpx; width:650rpx;bottom:289rpx; background: #5DBAFF;box-shadow: 0 2rpx 5rpx 0 rgba(7,16,29,0.42);border-radius: 20rpx;">
+            <view style="height:8rpx"></view>
+            <view class="center center2" style="width:100%;height:56rpx;font-size: 40rpx;color: #FFFFFF;letter-spacing: -1.67rpx;text-shadow: 0 1rpx 4rpx rgba(15,61,100,0.50);line-height:100%;white-space: normal;text-align: center">
+                挑战排行
+            </view>
+            <view class="center center2" style="width:290rpx;height:40rpx;background:rgba(88,80,200,0.5);border-radius: 20rpx;">
+                <view class="center center2" style="width:100%;height:100%;white-space: nowrap;font-size: 24rpx;color: #FFFFFF;text-align: center">剩余挑战时间：{{textExpireTime}}</view>
+            </view>
+            <view style="position:absolute;top:124rpx;left:24rpx;right:24rpx;bottom:24rpx;border-radius: 10rpx;background:#4E84E5;">
+                <scroll-view scrollY="true" style="width: 100%;height: 100%;">
+                    <view class="start center2 column" style="position:relative;width:100%">
+                        <block wx:for="{{roomInfo.list}}" wx:for-index="id" wx:key="id">
+                            <view class="row start center2" style="width:100%;height:100rpx;position:relative;">
+                                <view class="center center2" style="width:64rpx;height:100%;font-size: 36rpx;color: #FFFFFF;">{{id+1}}</view>
+                                <view class="center center2" style="width:80rpx;height:80rpx;position:relative;">
+                                    <view bindtap="btn_avatar_clicked" class="userAvatar-item">
+                                        <template is="avatarOnly" data="{{avatarUrl:item.rivalUser.avatarUrl,id:item.rivalUser.headId}}"></template>
+                                    </view>
+                                </view>
+                                <view style="width:12rpx"></view>
+                                <view style="font-size: 28rpx;color: #FFFFFF;line-height:28rpx;white-space: nowrap;">{{item.rivalUser.nickName}}</view>
+                                <view style="position:absolute;right:30rpx;font-size: 28rpx;color: #7AFBFF;;line-height:28rpx;white-space: nowrap;height:28rpx;top:calc((100% - 28rpx)/2);">{{item.score}}分</view>
+                            </view>
+                            <view style="height:2rpx;width:98%;background: rgba(62,164,218,0.50);"></view>
+                        </block>
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+        <view style="position:absolute;left:0px;bottom:0px;height:289rpx;width:100%;">
+            <view class="center center2" style="position:absolute;left:0px;top:0px;width:100%;height:40rpx; font-size: 28rpx;color: #fff;" wx:if="{{roomInfo.had&&myRanking==0}}">您的成绩为{{roomInfo.myScore}}分，很遗憾未能进入排行榜</view>
+            <view class="row center2 space-a" style="position:absolute;left:0px;top:100rpx;width:100%;height:120rpx;">
+                <view bindtap="onBtnBackClicked" class="center center2" hoverClass="brightness" style="width:310rpx;height:90rpx;font-size:48rpx; background-color: #5AA2F7;border-radius:20rpx;box-shadow:0 2rpx 4rpx rgba(0,0,0,0.5);font-weight:bold">
+                    返回
+                </view>
+            </view>
+            <view class="center center2" style="position:absolute;left:0px;bottom:30rpx;width:100%;height:45rpx; font-size: 32rpx;color: #fff;" wx:if="{{!!textStatus}}">{{textStatus}}</view>
+        </view>
+    </view>
+    <canvas canvasId="pvrShareCanvas" style="position: absolute; left:750rpx; top:0px; width:400px; height:320px;"></canvas>
+</view>

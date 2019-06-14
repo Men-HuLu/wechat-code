@@ -1,0 +1,8 @@
+<template name="emojiView">
+    <view style="position: absolute; width: 0px; height: 0px;" wx:if="{{itemList}}">
+        <block wx:for="{{itemList}}" wx:for-index="id" wx:key="id">
+            <image animation="{{item.ani}}" class="emojiView_img left" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/emotion/b{{item.fid}}.png" wx:if="{{inLeft}}"></image>
+            <image animation="{{item.ani}}" class="emojiView_img right" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/emotion/b{{item.fid}}.png" wx:else></image>
+        </block>
+    </view>
+</template>

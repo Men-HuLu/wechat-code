@@ -1,0 +1,11 @@
+<template name="propItem">
+    <view class="propinfo">
+        <view bindtap="{{callback_clicked?callback_clicked:''}}" class="view-avatar">
+            <view class="center center2" style="position: relative;width:132rpx;height:132rpx">
+                <view class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{id}}.png?v=0.1.12" style="width:124rpx;height:120rpx;"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

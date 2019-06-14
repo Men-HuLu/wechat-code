@@ -1,0 +1,10 @@
+<view class="{{showRightBtn?'home-nav':''}} scroll-view-wrap">
+    <scroll-view class="scroll-view-catalog" scrollLeft="{{scrollLeft}}" scrollWithAnimation="true" scrollX="true">
+        <repeat wx:for="{{cate1Info}}" wx:key="item.cate2Id">
+            <view bind:tap="chooseCatalog" class="scroll-view-item {{showActivity&&index===activeIndex?'active-catalog':''}}" data-index="{{index}}" id="{{item.shortName}}">{{item.cate1Name}}</view>
+        </repeat>
+    </scroll-view>
+    <view bind:tap="goCatalogue" class="cata-wrap-left" wx:if="{{showRightBtn}}">
+        <image class="cata-image" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/cata.png"></image>
+    </view>
+</view>

@@ -1,0 +1,24 @@
+<template name="bankShareView">
+    <view class="center center2" style="width:100%;height:100%;position:absolute;top:0px;left:0px;">
+        <view bindtap="onTapBankShareViewCloseBtn" class="center center2" name="background" style="position: absolute;top:0px;left:0px;width:100%;height:100%;background-color:#000;opacity: 0.5;"></view>
+        <view class="form-normal show-form column center2" style="position:absolute; width:500rpx; height:320rpx;top:700rpx;left:calc((100% - 500rpx)/2)">
+            <view style="height:31rpx"></view>
+            <view class="center center2" style="width:100%;height:50rpx;font-size:36rpx;color:#4353A4;font-weight:bold">分享到微信群</view>
+            <view style="height:4rpx"></view>
+            <view class="row center center2" style="width:100%;">
+                <view style="width:30rpx"></view>
+                <view class="center center2" style="height:84rpx;font-size:50rpx;color:#4353A4;font-weight:bold;white-space: nowrap;">获得</view>
+                <view class="center center2" style="height:84rpx;font-size:50rpx;color:#F5A623;font-weight:bold;white-space: nowrap;">双倍王者币！</view>
+            </view>
+            <view style="height:12rpx"></view>
+            <view class="center center2" style="width:310rpx;height:100rpx;background-color:#5dbaff;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;font-size:48rpx;font-weight:bold;white-space:nowrap">
+        立刻分享
+        <button id="bank" openType="share" style="width:100%;height:100%;opacity:0;position:absolute;left:0px;top:0px;width:100%;height:100%">看不见的立即分享</button>
+            </view>
+            <image class="gold-most" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/img_double_coin_king.png" style="width:450rpx;height:463rpx;position:absolute;left:calc((100% - 450rpx)/2);bottom:265rpx;"></image>
+            <view bindtap="onTapBankShareViewCloseBtn" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>

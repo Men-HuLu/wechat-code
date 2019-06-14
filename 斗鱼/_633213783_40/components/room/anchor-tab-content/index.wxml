@@ -1,0 +1,28 @@
+<view class="anchor-tab-content">
+    <view class="related-live-wrap" wx:if="{{!isLoading&&liveData.length}}">
+        <view class="related-live-title">精彩推荐</view>
+        <view class="related-live-content">
+            <view bind:tap="clickLiveRoom" class="rlc-live-item" data-isv="{{item.isVertical||0}}" data-rid="{{item.hash_id||item.rid}}" data-type="{{item.type}}" wx:for="{{liveData}}" wx:key="rid">
+                <view class="li-content">
+                    <image class="con-zhanweitu" src="../../../assets/images/hengzhanweitu.png"></image>
+                    <image class="con-cover" src="{{item.roomSrc||item.video_pic||''}}"></image>
+                    <text class="con-duration" wx:if="{{!item.type}}">{{item.video_duration}}</text>
+                    <image class="con-icon" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/liveicon.png?timestamp=1537946557" wx:if="{{item.type&&!item.isYz}}"></image>
+                    <image class="con-icon" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/makefriend.png?timestamp=1537946557" wx:if="{{item.type&&item.isYz}}"></image>
+                </view>
+                <view class="li-des">
+                    <view class="li-des-title">{{item.roomName||item.title||''}}</view>
+                    <view class="li-des-anchor">{{item.nickname||'主播很神秘'}}</view>
+                    <view class="li-play">
+                        <image class="li-icon" src="../../../assets/room/videoPlay.png" wx:if="{{!item.type}}"></image>
+                        <text class="li-times" wx:if="{{!item.type}}">{{item.view_num||0}}次播放</text>
+                        <image class="li-icon-hot" src="../../../assets/room/videoHot.png" wx:if="{{item.type}}"></image>
+                        <text class="li-times" wx:if="{{item.type}}">{{item.hn||0}}热度</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <error bind:customevent="retry" wx:if="{{!isLoading&&!liveData.length}}"></error>
+    <loading wx:if="{{isLoading}}"></loading>
+</view>

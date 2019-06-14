@@ -1,0 +1,110 @@
+<template name="PveWatchdog">
+    <view style="width:100%;height:100%" wx:if="{{youCanShare}}">
+        <view bindtap="onPveWatchdog_closed" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="show-form column center2 form-normal" style="position:absolute; width:650rpx; height:734rpx; left:0; top:0; right:0; bottom:0; margin:auto;">
+            <view class="item-hole icon-rotate" hoverClass="icon-rotate" style="width:170rpx;height:170rpx;position: absolute;left: calc(50% - 85rpx);top: -85rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_exclamatory_mark.png?v=0.1.12" style="width:100%;height:100%;"></image>
+            </view>
+            <view style="height:105rpx"></view>
+            <view class="font-title-white center center2" style="width:100%;height:75rpx;background-color:#4670CD;letter-spacing: 10rpx;">
+        王者币不足
+      </view>
+            <view style="height:80rpx"></view>
+            <view class="center center2" style="width:100%;height:36rpx;line-height: 100%;font-size: 36rpx;color: #4354A6;white-space:nowrap;font-weight:bold">分享可获得王者币</view>
+            <view style="height:17rpx"></view>
+            <view class="row center center2" style="width:100%;height:42rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png" style="width:40rpx;height:40rpx"></image>
+                <view class="center center2" style="padding-left:5rpx;height:42rpx;line-height: 30rpx;font-size: 30rpx;color: #F5A623;white-space:nowrap;font-weight:bold">{{shareRewardNum}}</view>
+            </view>
+            <view style="height:70rpx"></view>
+            <view class="center center2" style="position:relative;width:360rpx;height:120rpx;">
+                <view style="width:360rpx;height:120rpx;background: #F5A623;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx; font-weight:bold;text-align: center;line-height:120rpx;font-size: 52rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(110,44,7,0.64);">去分享</view>
+                <button id="noMoneyShare" openType="share" style="position: absolute; left:0px;bottom:0px;opacity:0;width:100%;height:100%">看不见的分享按钮</button>
+            </view>
+            <view style="height:30rpx"></view>
+            <view bindtap="onPveWatchdog_gotoShop" hoverClass="brightness" style="width:360rpx;height:80rpx;line-height:80rpx;font-weight:bold;font-size: 38rpx;color: #8CBBFF;letter-spacing: 4.75rpx;background: rgba(74,144,226,0.00);border: 5rpx solid #8CBBFF;border-radius: 20rpx;text-align: center;">去商店</view>
+            <view bindtap="onPveWatchdog_closed" class="center center2" hoverClass="brightness" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+    <view style="width:100%;height:100%" wx:if="{{youCanDraw}}">
+        <view bindtap="onPveWatchdog_closed" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="show-form column center2 form-normal" style="position:absolute; width:650rpx; height:734rpx; left:0; top:0; right:0; bottom:0; margin:auto;">
+            <view class="item-hole icon-rotate" hoverClass="icon-rotate" style="width:170rpx;height:170rpx;position: absolute;left: calc(50% - 85rpx);top: -85rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_exclamatory_mark.png?v=0.1.12" style="width:100%;height:100%;"></image>
+            </view>
+            <view style="height:105rpx"></view>
+            <view class="font-title-white center center2" style="width:100%;height:75rpx;background-color:#4670CD;letter-spacing: 10rpx;">
+        王者币不足
+      </view>
+            <view style="height:80rpx"></view>
+            <view class="center center2" style="width:100%; height:36rpx;line-height: 100%;font-size: 36rpx;color: #4354A6;white-space:nowrap;font-weight:bold">前往银行领取王者币</view>
+            <view style="height:127rpx"></view>
+            <view class="center center2" style="position:relative;width:360rpx;height:120rpx;">
+                <view bindtap="onPveWatchdog_gotoDraw" hoverClass="brightness" style="width:360rpx;height:120rpx;background: #F5A623;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx; font-weight:bold;text-align: center;line-height:120rpx;font-size: 52rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(110,44,7,0.64);">去银行</view>
+            </view>
+            <view style="height:30rpx"></view>
+            <view bindtap="onPveWatchdog_gotoShop" hoverClass="brightness" style="width:360rpx;height:80rpx;line-height:80rpx;font-weight:bold;font-size: 38rpx;color: #8CBBFF;letter-spacing: 4.75rpx;background: rgba(74,144,226,0.00);border: 5rpx solid #8CBBFF;border-radius: 20rpx;text-align: center;">去商店</view>
+            <view bindtap="onPveWatchdog_closed" class="center center2" hoverClass="brightness" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+    <view style="width:100%;height:100%" wx:if="{{youShopping}}">
+        <view bindtap="onPveWatchdog_closed" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="show-form column center2 form-normal" style="position:absolute; width:650rpx; height:734rpx; left:0; top:0; right:0; bottom:0; margin:auto;">
+            <view class="item-hole icon-rotate" hoverClass="icon-rotate" style="width:170rpx;height:170rpx;position: absolute;left: calc(50% - 85rpx);top: -85rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_exclamatory_mark.png?v=0.1.12" style="width:100%;height:100%;"></image>
+            </view>
+            <view style="height:105rpx"></view>
+            <view class="font-title-white center center2" style="width:100%;height:75rpx;background-color:#4670CD;letter-spacing: 10rpx;">
+        王者币不足
+      </view>
+            <view style="height:80rpx"></view>
+            <view class="center center2" style="width:100%; height:36rpx;line-height: 100%;font-size: 36rpx;color: #4354A6;white-space:nowrap;font-weight:bold">前往商店购买王者币</view>
+            <view style="height:198rpx"></view>
+            <view class="center center2" style="position:relative;width:360rpx;height:120rpx;">
+                <view bindtap="onPveWatchdog_gotoShop" hoverClass="brightness" style="width:360rpx;height:120rpx;background: #F5A623;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx; font-weight:bold;text-align: center;line-height:120rpx;font-size: 52rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(110,44,7,0.64);">去商店</view>
+            </view>
+            <view style="height:30rpx"></view>
+            <view bindtap="onPveWatchdog_closed" class="center center2" hoverClass="brightness" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+    <view style="width:100%;height:100%" wx:if="{{money2MaxDan}}">
+        <view bindtap="onPveWatchdog_closed" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="show-form column center2 form-normal" style="position:absolute; width:650rpx; height:850rpx; left:0; top:0; right:0; bottom:0; margin:auto;">
+            <view class="item-hole icon-rotate" hoverClass="icon-rotate" style="width:170rpx;height:170rpx;position: absolute;left: calc(50% - 85rpx);top: -85rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_exclamatory_mark.png?v=0.1.12" style="width:100%;height:100%;"></image>
+            </view>
+            <view style="height:105rpx"></view>
+            <view class="font-title-white center center2" style="width:100%;height:75rpx;background-color:#4670CD;letter-spacing: 10rpx;">
+        王者币不足
+      </view>
+            <view style="height:27rpx"></view>
+            <view class="center center2" style="width:100%; height:47rpx;line-height: 100%;font-size: 32rpx;color: #4354A6;white-space:nowrap;font-weight:bold">现有王者币最高可进入</view>
+            <view style="height:30rpx"></view>
+            <view class="center center2" style="width:200rpx;height:60rpx;background: #8CBBFF;border-radius: 100rpx;">
+                <view style="width:100%;height:36rpx;font-size: 36rpx;color: #FFFFFF;letter-spacing: 2rpx;line-height:36rpx;text-align: center;">{{money2MaxDan.name}}</view>
+            </view>
+            <view style="height:14rpx"></view>
+            <view class="center center2" style="position:relative;width:180rpx;height:180rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/challenge/icon/{{money2MaxDan.id}}.png" style="width:150rpx;height:150rpx;"></image>
+                <view style="position:absolute;left:calc((100% - 150rpx)/2);top:calc((100% - 150rpx)/2); width:150rpx;height:150rpx;">
+                    <image class="avatarOnly-tiers" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/tiers/{{money2MaxDan.kuang}}.png" wx:if="{{money2MaxDan.kuang>=205001}}"></image>
+                </view>
+            </view>
+            <view style="height:41rpx"></view>
+            <view class="center center2" style="position:relative;width:360rpx;height:120rpx;">
+                <view bindtap="onPveWatchdog_gotoPve" data-stage-id="{{money2MaxDan.id}}" hoverClass="brightness" style="width:360rpx;height:120rpx;background: #F5A623;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx; font-weight:bold;text-align: center;line-height:120rpx;font-size: 52rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(110,44,7,0.64);">去查看</view>
+            </view>
+            <view style="height:30rpx"></view>
+            <view bindtap="onPveWatchdog_gotoShop" hoverClass="brightness" style="width:360rpx;height:80rpx;line-height:80rpx;font-weight:bold;font-size: 38rpx;color: #8CBBFF;letter-spacing: 4.75rpx;background: rgba(74,144,226,0.00);border: 5rpx solid #8CBBFF;border-radius: 20rpx;text-align: center;">去商店</view>
+            <view bindtap="onPveWatchdog_closed" class="center center2" hoverClass="brightness" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>

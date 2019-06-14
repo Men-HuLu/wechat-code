@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "头脑王者",
+    "disableScroll": true,
+    "usingComponents": {
+        "simpleTapbar": "./component/simpleTapbar",
+        "diamondListView": "./component/diamondListView",
+        "itemListView": "./component/itemListView"
+    }
+}

@@ -1,0 +1,45 @@
+<navigation my_class="navigation-bar_color" title="选择地点">
+    <view class="navigation-bar__icon-opr" slot="left">
+        <image class="navigation-bar__icon-opr__image" src="/images/navigation_back.svg"></image>
+    </view>
+</navigation>
+<view class="select-poi__hd wx-flex thin-border-bottom" style="top: {{statusBarHeight+(platform==='android'?48:44)}}px;">
+    <navigator class="select-poi__city" hoverClass="none" url="../city/city">
+        <text class="font-size-32">{{city}}</text>
+        <image class="icon-arrow" src="/images/arrow_down.svg"></image>
+    </navigator>
+    <view class="select-poi__search wx-flex__item">
+        <view class="select-poi__search__input__wrp wx-flex">
+            <image class="icon-search" src="/images/search_icon.svg"></image>
+            <input focus bindconfirm="searchPoi" bindinput="searchPoi" class="select-poi__search__input wx-flex__item" placeholder="搜索地点" placeholderClass="gray-opacity"></input>
+        </view>
+    </view>
+</view>
+<view class="page page-select-poi" style="padding-top: {{statusBarHeight+(platform==='android'?48+56:44+56)}}px;">
+    <view class="page-select-poi__default-area" hidden="{{showSuggestion}}">
+        <view class="current-poi">
+            <view class="font-size-24 current-poi__tips gray-opacity">当前位置</view>
+            <view class="wx-flex">
+                <view bindtap="changePoi2" class="current-poi__name wx-flex__item ellipsis-1">{{address}}</view>
+                <view bindtap="resetLocation" class="primary-color" hoverClass="tap-highlight">
+                    <image class="icon-focus" src="/images/f_icon.svg"></image>
+                    <text class="middle">重新定位</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="page-select-pot__result-area" hidden="{{!showSuggestion}}">
+        <view class="result-list">
+            <view bindtap="changePoi" class="result-item thin-border-bottom" data-idx="{{idx}}" hoverClass="bg-highlight" wx:for="{{poiSuggestions}}" wx:for-index="idx" wx:for-item="poi" wx:key="id">
+                <view class="result-item__hd wx-flex">
+                    <rich-text class="result-item__title wx-flex__item ellipsis-1" nodes="{{poi.richTitle}}"></rich-text>
+                    <view class="result-item__distance font-size-26 gray-opacity">{{poi.richDistance}}</view>
+                </view>
+                <view class="result-item__bd">
+                    <view class="redult-item__desc font-size-24 gray-opacity ellipsis-1">{{poi.address}}</view>
+                </view>
+            </view>
+        </view>
+        <view hidden class="result-empty font-size-26 tips-color">暂无符合条件的结果</view>
+    </view>
+</view>

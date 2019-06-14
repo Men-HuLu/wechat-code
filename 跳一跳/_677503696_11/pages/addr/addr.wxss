@@ -1,0 +1,86 @@
+page {
+    background-color: #f7f7f7;
+}
+
+.page-select-poi {
+    background-color: #FFFFFF;
+}
+
+.select-poi__hd {
+    position: fixed;
+    height: 56px;
+    background-color: #fff;
+    left: 0;
+    right: 0;
+    z-index: 990;
+}
+
+.select-poi__search__input__wrp {
+    background-color: #f6f8f9;
+    border-radius: 4px;
+    padding-right: 20rpx;
+}
+
+.select-poi__search__input {
+    height: 36px;
+    line-height: 36px;
+}
+
+.select-poi__city {
+    padding: 0 30rpx;
+}
+
+.select-poi__search {
+    padding-right: 24rpx;
+}
+
+.result-list {
+    background-color: #f7f7f7;
+}
+
+.result-item {
+    padding: 24rpx;
+    background-color: #fff;
+}
+
+.result-list .result-item:last-child.thin-border-bottom:after {
+    display: none;
+}
+
+.result-item.thin-border-bottom:after {
+    left: 24rpx;
+}
+
+.result-item__hd {
+    margin-bottom: 12rpx;
+}
+
+.result-item__title {
+    padding-right: 20rpx;
+    font-size: 32rpx;
+    line-height: 36rpx;
+    height: 36rpx;
+}
+
+.redult-item__desc {
+    line-height: 32rpx;
+}
+
+.result-empty {
+    padding-top: 100rpx;
+    text-align: center;
+}
+
+.current-poi__name {
+    padding-right: 20rpx;
+    font-size: 32rpx;
+}
+
+.current-poi {
+    padding: 24rpx;
+    padding-bottom: 34rpx;
+}
+
+.current-poi__tips {
+    margin-bottom: 24rpx;
+}

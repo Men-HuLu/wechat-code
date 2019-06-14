@@ -1,0 +1,73 @@
+.GiftContent-banner {
+    position: absolute;
+    width: 243px;
+    height: 40px;
+    margin-left: -243px;
+    top: 5%;
+}
+
+.GiftContent-back {
+    width: 243px;
+    height: 40px;
+}
+
+.GiftContent-usericon {
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background-image: url(https://cs-op.douyucdn.cn/dyfelocal/act/5acc7c96d51caa4669f8b2de/defaulticon.png?timestamp=1527749111);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.GiftContent-username {
+    position: absolute;
+    top: 2px;
+    left: 53px;
+    font-size: 15px;
+    color: #fa930f;
+    width: 45%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.GiftContent-giftname {
+    position: absolute;
+    top: 23px;
+    left: 53px;
+    font-size: 10px;
+    color: #fa930f;
+}
+
+.GiftContent-giftpic {
+    position: absolute;
+    top: -16px;
+    left: 152px;
+    width: 50px;
+    height: 50px;
+    margin-left: -243px;
+}
+
+.GiftContent-figure {
+    position: absolute;
+    top: 8px;
+    right: 7px;
+    opacity: 0;
+}
+
+.GiftContent-figure .GiftContent-num {
+    display: inline-block;
+    width: 14px;
+    height: 18px;
+    margin-right: -4px;
+}
+
+.GiftContent-figure .GiftContent-flag {
+    width: 13px;
+    height: 11px;
+}

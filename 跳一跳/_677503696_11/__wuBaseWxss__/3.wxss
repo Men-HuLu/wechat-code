@@ -1,0 +1,34 @@
+.square-tag {
+    color: #9a9a9a;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: #f7f7f7;
+    font-size: 24rpx;
+    position: relative;
+}
+
+.square-tag:after {
+    content: "";
+    width: 200%;
+    height: 200%;
+    border: 1px solid #f7f7f7;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.square-tag.selected {
+    background: rgba(26,173,25,0.10);
+    color: #1AAD19;
+}
+
+.square-tag.selected:after {
+    border: 1px solid #1AAD19;
+}

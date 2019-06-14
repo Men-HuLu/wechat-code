@@ -1,0 +1,228 @@
+@import "../../../app.wxss";
+
+@import "../../../__wuBaseWxss__/1.wxss";
+
+.dailyTaskMainNode {
+    position: absolute;
+    top: 132rpx;
+    left: calc(50% - 680rpx/2);
+    width: 680rpx;
+    height: 900rpx;
+    background: #FFFFFF;
+    box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);
+    border-radius: 20rpx;
+}
+
+.taskTitleIcon {
+    width: 180rpx;
+    height: 180rpx;
+    position: absolute;
+    left: calc(50% - 180rpx/2);
+    top: calc(-180rpx/2);
+}
+
+.taskLevelDetail {
+    height: 100rpx;
+    width: 100%;
+    position: absolute;
+    top: 102rpx;
+    font-family: PingFangSC-Semibold;
+    font-size: 54rpx;
+    color: #FFFFFF;
+    letter-spacing: 10rpx;
+}
+
+.taskLevelDetailBackground_0 {
+    background: #7ED321;
+}
+
+.taskLevelDetailBackground_1 {
+    background: #4FC5FF;
+}
+
+.taskLevelDetailBackground_2 {
+    background: #D354ED;
+}
+
+.taskListScrollView {
+    width: 580rpx;
+    height: 400rpx;
+    top: 240rpx;
+    position: absolute;
+    left: calc(50% - 580rpx/2);
+}
+
+.taskItemNode {
+    width: 100%;
+    height: 120rpx;
+    position: relative;
+    margin-top: 25rpx;
+}
+
+.taskName {
+    font-family: PingFangSC-Semibold;
+    font-size: 36rpx;
+    line-height: 36rpx;
+    color: #2890E3;
+    white-space: nowrap;
+    position: absolute;
+    left: 60rpx;
+    top: 15rpx;
+}
+
+.taskDetail {
+    font-family: PingFangSC-Semibold;
+    font-size: 24rpx;
+    white-space: nowrap;
+    color: #69BCFF;
+    position: absolute;
+    top: 55rpx;
+    left: 60rpx;
+}
+
+.taskStateDetail {
+    font-family: PingFangSC-Semibold;
+    font-size: 28rpx;
+    position: absolute;
+    top: 15rpx;
+    right: 5rpx;
+    white-space: nowrap;
+}
+
+.taskStateDetail_true {
+    color: #00EBF7;
+}
+
+.taskStateDetail_false {
+    color: #FFA500;
+}
+
+.taskCheckBox {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    left: 0rpx;
+    top: 10rpx;
+}
+
+.taskCheckBox_false {
+    border: 4rpx solid #2890E3;
+}
+
+.taskCheckBox_true {
+    border: 4rpx solid #00EBF7;
+}
+
+.taskProgressBackground {
+    width: 440rpx;
+    z-index: 1;
+    border-radius: 100px;
+    height: 8rpx;
+    background: #CDCDCD;
+    position: absolute;
+    left: 55rpx;
+    bottom: 15rpx;
+}
+
+.taskProgress {
+    width: 460rpx;
+    z-index: 1;
+    border-radius: 100rpx;
+    height: 8rpx;
+    background: #00EBF7;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+.taskPercent {
+    font-family: PingFangSC-Semibold;
+    font-size: 24rpx;
+    position: absolute;
+    right: 5rpx;
+    bottom: 5rpx;
+}
+
+.taskPercent_false {
+    color: #2890E3;
+}
+
+.taskPercent_true {
+    color: #00EBF7;
+}
+
+.buttonListBack {
+    box-shadow: 0 0 rgba(0,0,0,0.50);
+    border-radius: 100rpx;
+    background: #00E1BD;
+    width: 310rpx;
+    height: 100rpx;
+    position: absolute;
+    left: calc(50% - 310rpx/2);
+    bottom: 70rpx;
+    font-family: PingFangSC-Semibold;
+    font-size: 48rpx;
+    color: #FFFFFF;
+    letter-spacing: 2rpx;
+}
+
+.tip {
+    font-family: PingFangSC-Semibold;
+    font-size: 28rpx;
+    color: #00EBF7;
+    width: 280rpx;
+    height: 40rpx;
+    position: absolute;
+    bottom: 180rpx;
+    left: calc(50% - 280rpx/2);
+}
+
+.taskAllClearMain {
+    background: #FFFFFF;
+    box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);
+    border-radius: 20rpx;
+    width: 500rpx;
+    height: 660rpx;
+    position: absolute;
+    top: 200rpx;
+    left: calc(50% - 500rpx/2);
+}
+
+.taskAllClearDetail {
+    font-family: PingFangSC-Semibold;
+    font-size: 48rpx;
+    color: #00E1BD;
+    letter-spacing: 0;
+    width: 288rpx;
+    position: absolute;
+    left: calc(50% - 288rpx/2);
+    top: 100rpx;
+}
+
+.taskAllClearTip {
+    font-family: PingFangSC-Semibold;
+    font-size: 28rpx;
+    color: #4A4A4A;
+    letter-spacing: 0;
+}
+
+.taskAllClearTipUp {
+    position: absolute;
+    top: calc(45%);
+    left: calc(50% - 280rpx/2);
+}
+
+.taskAllClearTipDown {
+    position: absolute;
+    top: calc(45% + 40rpx);
+    left: calc(50% - 180rpx/2);
+}
+
+.taskIconClose {
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    right: 0rpx;
+    top: 0rpx;
+    z-index: 1;
+}

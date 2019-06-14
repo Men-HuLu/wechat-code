@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>gh_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="=slice=" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M26,13.25 L18.75,13.25 L18.75,6 C18.75,5.86192881 18.6380712,5.75 18.5,5.75 L13.5,5.75 C13.3619288,5.75 13.25,5.86192881 13.25,6 L13.25,13.25 L6,13.25 C5.86192881,13.25 5.75,13.3619288 5.75,13.5 L5.75,18.5 C5.75,18.6380712 5.86192881,18.75 6,18.75 L13.25,18.75 L13.25,26 C13.25,26.1380712 13.3619288,26.25 13.5,26.25 L18.5,26.25 C18.6380712,26.25 18.75,26.1380712 18.75,26 L18.75,18.75 L26,18.75 C26.1380712,18.75 26.25,18.6380712 26.25,18.5 L26.25,13.5 C26.25,13.3619288 26.1380712,13.25 26,13.25 Z" id="Combined-Shape" stroke="#000000" stroke-width="1.5"></path>
+    </g>
+</svg>

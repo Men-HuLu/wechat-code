@@ -1,0 +1,32 @@
+@import "../../template/propItem.wxss";
+
+@import "../../template/ItemDetail.wxss";
+
+.arrow-up {
+    animation: frames-arrow-up 1s steps(3) infinite;
+}
+
+@-webkit-keyframes frames-arrow-up {
+    from {
+        left: 0rpx;
+    }
+
+    to {
+        left: -180rpx;
+    }
+}
+
+@keyframes frames-arrow-up {
+    from {
+        left: 0rpx;
+    }
+
+    to {
+        left: -180rpx;
+    }
+}
+
+.item-normal {
+    opacity: 0;
+    transform: scale(1.1) rotate(-5deg);
+}

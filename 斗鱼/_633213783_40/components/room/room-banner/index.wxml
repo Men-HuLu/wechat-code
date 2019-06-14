@@ -1,0 +1,4 @@
+<view class="room-banner" wx:if="{{ifBanner}}">
+    <image bindtap="gotoBanner" class="banner-img" src="{{imgUrl}}"></image>
+    <image bindtap="closeBanner" class="banner-close" src="../../../assets/room/closeBanner.png"></image>
+</view>

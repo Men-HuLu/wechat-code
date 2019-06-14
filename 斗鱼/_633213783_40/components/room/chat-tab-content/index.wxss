@@ -1,0 +1,225 @@
+.barrage-content {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 102rpx;
+}
+
+.barrage-content .system-tip {
+    box-sizing: border-box;
+    margin-bottom: 16rpx;
+    width: 100%;
+    line-height: 39rpx;
+    font-size: 26rpx;
+    color: #ff5d23;
+    word-break: break-all;
+    padding: 16rpx 20rpx 0;
+}
+
+.barrage-content .system-tip .st-title {
+    display: inline-block;
+    width: 110rpx;
+    height: 34rpx;
+    font-size: 21rpx;
+    color: #FF5D23;
+    margin-right: 10rpx;
+    background-color: #FFEDE6;
+    text-align: center;
+    line-height: 34rpx;
+}
+
+.barrage-content .system-tip .st-content .st-sp {
+    font-weight: bold;
+    padding: 0 8rpx;
+}
+
+.barrage-content .barrage-item {
+    margin-bottom: 10rpx;
+    width: 100%;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    color: #3f3f3f;
+    word-break: break-all;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+
+.barrage-content .barrage-item .username {
+    vertical-align: middle;
+    color: #999;
+}
+
+.barrage-content .barrage-item .username.self {
+    color: #ff5d23;
+}
+
+.barrage-content .barrage-item .dm-text {
+    vertical-align: middle;
+}
+
+.block-share {
+    background: #FFF6DC;
+    border: 1px solid #FFE7A2;
+    border-radius: 4rpx;
+    padding: 5rpx 10rpx 13rpx;
+}
+
+.share-btn {
+    width: 178rpx;
+    height: 48rpx;
+    margin: 5rpx 0 0 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+.share-img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.share-btn::after {
+    border: none;
+}
+
+.share-barrage {
+    padding: 0 10rpx!important;
+}
+
+.footer-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    border-top: 1px solid #eee;
+    padding: 11rpx 20rpx 11rpx 20rpx;
+    width: 100%;
+    background: #fff;
+    transition: all .2s;
+    z-index: 200;
+}
+
+.footer-controls .send-danmu-wrap {
+    display: flex;
+    box-sizing: border-box;
+    border-radius: 100rpx;
+    background: #f5f5f5;
+    height: 76rpx;
+    z-index: 15;
+}
+
+.footer-controls .send-danmu-wrap.focus {
+    width: 411rpx;
+}
+
+.footer-controls .send-danmu-wrap.focus.ios {
+    width: 510rpx;
+}
+
+.footer-controls .send-danmu-wrap.blur {
+    width: 100%;
+}
+
+.footer-controls .send-danmu-wrap .sdw-input-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.footer-controls .send-danmu-wrap .sdw-input-box .dm-input {
+    display: block;
+    box-sizing: border-box;
+    padding-left: 20rpx;
+    width: 100%;
+    height: 100%;
+    font-size: 26rpx;
+    color: #3f3f3f;
+}
+
+.footer-controls .send-danmu-wrap .sdw-input-box .send-content {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.footer-controls .send-danmu-wrap .sdw-input-box .send-dm-btn {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50rpx;
+    text-align: center;
+    line-height: 50rpx;
+    font-size: 28rpx;
+    color: #ff7d23;
+    border-left: 1px solid #ddd;
+}
+
+.footer-controls .send-danmu-wrap .sdw-input-box .send-dm-btn.active {
+    color: #adadad;
+}
+
+.footer-controls .send-danmu-wrap .shut-up-box {
+    box-sizing: border-box;
+    padding-left: 16rpx;
+    width: 100%;
+    height: 100%;
+    line-height: 56rpx;
+    color: #f70;
+    font-size: 28rpx;
+}
+
+.footer-controls .gift-btn {
+    width: 40rpx;
+    height: 100%;
+    margin-left: 40rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-controls .c-icon {
+    width: 40rpx;
+    height: 40rpx;
+    margin-bottom: 9rpx;
+}
+
+.footer-controls .c-text {
+    font-size: 20rpx;
+    color: #333333;
+    line-height: 20rpx;
+}
+
+.footer-controls .download-btn {
+    width: 40rpx;
+    height: 100%;
+    margin-left: 59rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-controls .footer-share-btn {
+    width: 40rpx;
+    height: 100%;
+    margin: 0 20rpx 0 59rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: #FFFFFF;
+    border-radius: 0;
+}
+
+.footer-controls .footer-share-btn::after {
+    border: none;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>house_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M20,16 L20,22.5 C20,22.7761424 19.7761424,23 19.5,23 L14,23 L14,18 L12,18 L12,23 L6.5,23 C6.22385763,23 6,22.7761424 6,22.5 L6,16 L2.46970093,16 C2.3414729,16 2.21814588,15.9507355 2.12520915,15.8623885 C1.92506752,15.6721309 1.91705489,15.3556499 2.10731245,15.1555082 L12.562398,4.1572702 C12.5673892,4.15201971 12.5724939,4.1468783 12.5777085,4.14184964 C12.7764826,3.95016378 13.093013,3.95590994 13.2846988,4.15468404 L23.8907419,15.1529221 C23.9806115,15.2461149 24.0308295,15.3705339 24.0308295,15.5 C24.0308295,15.7761424 23.8069719,16 23.5308295,16 L20,16 Z" id="path-1"></path>
+    </defs>
+    <g id="house_icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon31" transform="translate(1.000000, 1.000000)">
+            <g id="Combined-Shape">
+                <use fill="#D8D8D8" xlink:href="#path-1"></use>
+                <use fill="#09BB07" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

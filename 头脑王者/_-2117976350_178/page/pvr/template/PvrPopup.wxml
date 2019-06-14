@@ -1,0 +1,35 @@
+<template name="PvrPopup">
+    <view style="position:absolute;left:0px;top:0px; width:100%;height:100%" wx:if="{{expire}}">
+        <view bindtap="onPvrPopup_closed" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="show-form column center2 form-normal" style="position:absolute; width:500rpx; height:556rpx; left:0; top:0; right:0; bottom:0; margin:auto;">
+            <view class="item-hole icon-rotate" hoverClass="icon-rotate" style="width:170rpx;height:170rpx;position: absolute;left: calc(50% - 85rpx);top: -85rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_exclamatory_mark.png?v=0.1.12" style="width:100%;height:100%;"></image>
+            </view>
+            <view style="height:159rpx"></view>
+            <view class="center center2" style="width:100%; height:36rpx;line-height: 100%;font-size: 50rpx;color: #4354A6;white-space:nowrap;font-weight:bold">挑战已过期</view>
+            <view style="height:176rpx"></view>
+            <view bindtap="onPvrPopup_closed" style="width:360rpx;height:120rpx;background: #F5A623;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx; font-weight:bold;text-align: center;line-height:120rpx;font-size: 52rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(110,44,7,0.64);">确定</view>
+            <view style="height:30rpx"></view>
+            <view bindtap="onPvrPopup_closed" class="center center2" hoverClass="brightness" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+    <view style="position:absolute;left:0px;top:0px;width:100%;height:100%" wx:if="{{isFull}}">
+        <view bindtap="onPvrPopup_closed" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="show-form column center2 form-normal" style="position:absolute; width:500rpx; height:556rpx; left:0; top:0; right:0; bottom:0; margin:auto;">
+            <view class="item-hole icon-rotate" hoverClass="icon-rotate" style="width:170rpx;height:170rpx;position: absolute;left: calc(50% - 85rpx);top: -85rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_exclamatory_mark.png?v=0.1.12" style="width:100%;height:100%;"></image>
+            </view>
+            <view style="height:159rpx"></view>
+            <text class="center center2" style="width:100%; line-height: 50rpx;font-size: 50rpx;color: #4354A6;font-weight:bold;text-align: center">该房间人数已满
+无法挑战</text>
+            <view style="height:176rpx"></view>
+            <view bindtap="onPvrPopup_closed" style="width:360rpx;height:120rpx;background: #F5A623;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx; font-weight:bold;text-align: center;line-height:120rpx;font-size: 52rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(110,44,7,0.64);">确定</view>
+            <view style="height:30rpx"></view>
+            <view bindtap="onPvrPopup_closed" class="center center2" hoverClass="brightness" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>

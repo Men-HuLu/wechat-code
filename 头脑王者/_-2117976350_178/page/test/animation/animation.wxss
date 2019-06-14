@@ -1,0 +1,27 @@
+.show-form {
+    animation: ripple 0.4s infinite linear;
+}
+
+@-webkit-keyframes ripple {
+    0% {
+        left: 0px;
+        top: 20rpx;
+    }
+
+    100% {
+        left: 10rpx;
+        top: 10rpx;
+    }
+}
+
+@keyframes ripple {
+    0% {
+        left: 0px;
+        top: 20rpx;
+    }
+
+    100% {
+        left: 10rpx;
+        top: 10rpx;
+    }
+}

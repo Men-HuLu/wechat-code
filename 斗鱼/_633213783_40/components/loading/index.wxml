@@ -1,0 +1,4 @@
+<view class="loading-box">
+    <image class="loading-icon" src="{{'../../assets/images/loading.gif'}}"></image>
+    <view class="loading-title">加载中...</view>
+</view>

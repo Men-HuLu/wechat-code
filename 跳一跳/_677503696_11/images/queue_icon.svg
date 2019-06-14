@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>queue_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-4-Copy">
+            <g id="common_icons_discover-copy">
+                <path d="M11,20 C6.02943725,20 2,15.9705627 2,11 C2,6.02943725 6.02943725,2 11,2 C15.9705627,2 20,6.02943725 20,11 C20,15.9705627 15.9705627,20 11,20 Z" id="Combined-Shape" fill="#10AEFF" fill-rule="nonzero"></path>
+                <rect id="Rectangle-2" fill="#FFFFFF" x="9.9" y="6" width="1.21000003" height="6.1"></rect>
+                <rect id="Rectangle-2-Copy" fill="#FFFFFF" transform="translate(12.215552, 12.686182) rotate(-240.000000) translate(-12.215552, -12.686182) " x="11.6105524" y="10.361709" width="1.21000003" height="4.64894538"></rect>
+            </g>
+        </g>
+        <g id="Group-4-Copy">
+            <g id="common_icons_discover-copy">
+                <path d="M11,20 C6.02943725,20 2,15.9705627 2,11 C2,6.02943725 6.02943725,2 11,2 C15.9705627,2 20,6.02943725 20,11 C20,15.9705627 15.9705627,20 11,20 Z" id="Combined-Shape" fill="#10AEFF" fill-rule="nonzero"></path>
+                <rect id="Rectangle-2" fill="#FFFFFF" x="9.9" y="6" width="1.21000003" height="6.1"></rect>
+                <rect id="Rectangle-2-Copy" fill="#FFFFFF" transform="translate(12.215552, 12.686182) rotate(-240.000000) translate(-12.215552, -12.686182) " x="11.6105524" y="10.361709" width="1.21000003" height="4.64894538"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

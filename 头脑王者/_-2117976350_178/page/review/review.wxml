@@ -1,0 +1,191 @@
+<template name="battleBtn-forimg">
+    <view class="battle_btn_forimage {{item.className}}" data-index="{{item.index}}">
+        <image class="battle_btn_forimageIconRight left {{item.lImg==2?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_right.png?v=0"></image>
+        <image class="battle_btn_forimageIconRight right {{item.rImg==2?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_right.png?v=0"></image>
+        <image class="battle_btn_forimageIconWrong left {{item.lImg==1?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_wrong.png?v=0"></image>
+        <image class="battle_btn_forimageIconWrong right {{item.rImg==1?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_wrong.png?v=0"></image>
+        <view class="center center2" style="width:208rpx;height:100%;transform: scale({{item.scale}});">
+      {{item.answer}}
+    </view>
+    </view>
+</template>
+<template name="battleBtn">
+    <view class="battle_btn {{item.className}}" data-index="{{item.index}}">
+        <image class="battle_btnIconRight left {{item.lImg==2?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_right.png?v=0"></image>
+        <image class="battle_btnIconRight right {{item.rImg==2?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_right.png?v=0"></image>
+        <image class="battle_btnIconWrong left {{item.lImg==1?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_wrong.png?v=0"></image>
+        <image class="battle_btnIconWrong right {{item.rImg==1?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_wrong.png?v=0"></image>
+        <view class="center center2" style="width:256rpx;height:100%;transform: scale({{item.scale}});">
+      {{item.answer}}
+    </view>
+    </view>
+</template>
+<template name="commentItem">
+    <view class="row center" style="position:relative; width: 100%;">
+        <view style="position: absolute;width: 60rpx; height: 60rpx;  left:35rpx; top:8rpx;">
+            <template is="avatarOnly" data="{{avatarUrl:avatar}}"></template>
+        </view>
+        <view style="width:115rpx;"></view>
+        <view class="column start" style="width:500rpx;">
+            <view style="height:11rpx;"></view>
+            <view class="row start center2" style="font-size: 22rpx;color: #A9C2FF;height:30rpx;white-space: nowrap;">{{name}}</view>
+            <text style="font-size: 22rpx; color: #FFFFFF;text-align: left;line-height: 30rpx;display: flex;word-break: break-all;">{{content}}</text>
+            <view style="height:10rpx;"></view>
+            <view class="row start center2">
+                <view class="row start center2" style="font-size: 18rpx;color: #A9C2FF;height:25rpx;white-space: nowrap;">{{textCreatedAt||'刚刚'}}</view>
+                <view style="width:40rpx"></view>
+                <view class="row start center2" style="font-size: 18rpx;color: #A9C2FF;height:25rpx;white-space: nowrap;">{{textStatus}}</view>
+                <view style="width:40rpx"></view>
+                <view bindtap="{{isBlack?'':'onTapBtn_commentBlack'}}" class="row start center2" data-id="{{id}}" style="font-size: 18rpx;color: #A9C2FF;height:25rpx;white-space: nowrap;">{{isBlack?'已举报':'举报'}}</view>
+            </view>
+            <view style="height:9rpx;"></view>
+        </view>
+        <view style="position: relative; width:94rpx;">
+            <view class="column start center2" style="position: absolute;left:10rpx;top:20rpx;width:40rpx;">
+                <image bindtap="onTapBtn_CommentPraise" data-id="{{id}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/review/icon_review_message_heart_selected.png?v=2.2" style="width:50rpx;height:47rpx;" wx:if="{{isPraise}}"></image>
+                <image bindtap="onTapBtn_CommentPraise" data-id="{{id}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/review/icon_review_message_heart_default.png?v=2.2" style="width:50rpx;height:47rpx;" wx:else></image>
+                <view class="center center2" style="height:25rpx;font-size: 18rpx;color: #FFFFFF;white-space: nowrap;">{{praiseNum}}</view>
+            </view>
+        </view>
+        <view style="position: absolute;left:0px;bottom:0px; width:100%;height:2rpx;background: #9BB3F9;"></view>
+    </view>
+</template>
+<import src="../../template/avatarBase.wxml"></import>
+<view class="column start center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;overflow:hidden;background-image: linear-gradient(-180deg, #4E84E5 0%, #4E62E5 97%);">
+    <view class="column start center2" style="position: absolute; left:0px;top:0rpx;width:100%;height:100%;">
+        <view animation="{{ani_top}}" class="column center center2" style="position: relative;width:100%;height:160rpx;transform: translate3d(0,-100px,0);">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/review/btn_review_msak.png?v=2.2" style="position: absolute;width:100%;height:112rpx;left:0px;bottom:0px;"></image>
+            <view class="row center center2" style=";width:100%;height:80rpx;flex:none;z-index: 10;">
+                <view class="row start center2" style="position:relative;width:196rpx;height:100%">
+                    <view class="row-reverse start center2" style="position: absolute;right:0px;top:calc((100% - 50rpx)/2);height:50rpx;width:174rpx;background: #66CAFD;border-radius: 100rpx">
+                        <view class="center center2" style="width:124rpx;height:100%;font-size: 40rpx;color: #FFFFFF;">{{review.items[index].score.left}}</view>
+                    </view>
+                    <view style="width: 80rpx;height: 80rpx;display: flex;flex-direction: column;align-items: center;justify-content: flex-start;position: relative;flex: none;">
+                        <image backgroundSize="cover" class="avatar-left" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/img_friendmatch_opponent.png"></image>
+                        <image backgroundSize="cover" class="avatar-left" src="{{review.userInfo.avatarUrl}}" wx:if="{{!!review.userInfo.avatarUrl}}"></image>
+                    </view>
+                </view>
+                <view class="center center2" style="width:155rpx;height:100%;font-size: 40rpx;color: #FFFFFF;">
+          {{index+1}}/{{review.items.length}}
+        </view>
+                <view class="row-reverse start center2" style="position:relative;width:196rpx;height:100%">
+                    <view class="row start center2" style="position: absolute;left:0px;top:calc((100% - 50rpx)/2);height:50rpx;width:174rpx;background: #FA537F;border-radius: 100rpx">
+                        <view class="center center2" style="width:124rpx;height:100%;font-size: 40rpx;color: #FFFFFF;">{{review.items[index].score.right}}</view>
+                    </view>
+                    <view style="width: 80rpx;height: 80rpx;display: flex;flex-direction: column;align-items: center;justify-content: flex-start;position: relative;flex: none;">
+                        <image backgroundSize="cover" class="avatar-right" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/img_friendmatch_opponent.png"></image>
+                        <image backgroundSize="cover" class="avatar-right" src="{{review.rivalUser.avatarUrl}} " wx:if="{{!!review.rivalUser.avatarUrl}}"></image>
+                    </view>
+                </view>
+            </view>
+            <view style="height:23rpx"></view>
+        </view>
+        <view style="height:15rpx"></view>
+        <swiper animation="{{ani_center}}" autoplay="{{false}}" bindanimationfinish="onBindanimationfinish" bindchange="onSwiperChange" current="{{index}}" duration="300" indicatorDots="{{false}}" interval="5000" style="width:600rpx;height:700rpx;overflow: hidden;transform: scale(0);">
+            <swiper-item wx:for="{{review.items}}" wx:key="num">
+                <view class="column start center2" wx:if="{{!!item.imageId}}">
+                    <view class="center center2" style="width:552rpx;height:310rpx;">
+                        <image mode="aspectFit" src="https://question-resource-wscdn.hortorgames.com/image/quiz/{{item.imageId}}.jpg" style="width:100%;height:100%"></image>
+                    </view>
+                    <view style="height:13rpx"></view>
+                    <view class="battle_questionView_forimg">
+                        <view>{{item.question}}</view>
+                    </view>
+                    <view style="height:13rpx"></view>
+                    <view class="row start" style="width:100%;height:180rpx;flex-wrap:wrap;">
+                        <template is="battleBtn-forimg" data="{{ item:item.answer[0] }}"></template>
+                        <view style="width:20rpx;"></view>
+                        <template is="battleBtn-forimg" data="{{ item:item.answer[1] }}"></template>
+                        <view style="width:100%;height:20rpx;"></view>
+                        <template is="battleBtn-forimg" data="{{ item:item.answer[2] }}"></template>
+                        <view style="width:20rpx;"></view>
+                        <template is="battleBtn-forimg" data="{{ item:item.answer[3] }}"></template>
+                    </view>
+                    <view style="height:52rpx"></view>
+                </view>
+                <view class="column start center2" wx:else>
+                    <view class="battle_questionView">
+                        <view>{{item.question}}</view>
+                    </view>
+                    <view style="height:18rpx"></view>
+                    <view class="column center2 space-a" style="width:352rpx;height:383rpx">
+                        <template is="battleBtn" data="{{ item:item.answer[0] }}"></template>
+                        <template is="battleBtn" data="{{ item:item.answer[1] }}"></template>
+                        <template is="battleBtn" data="{{ item:item.answer[2] }}"></template>
+                        <template is="battleBtn" data="{{ item:item.answer[3] }}"></template>
+                    </view>
+                    <view style="height:100rpx"></view>
+                </view>
+                <view class="row center center2" style="width:100%;height:45rpx;">
+                    <view class="row center center2" style="left:10rpx;top:20rpx;">
+                        <image bindtap="onTapBtn_QuizPraise" data-id="{{index}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/review/icon_review_message_heart_selected.png?v=2.2" style="width:50rpx;height:47rpx;" wx:if="{{item.isPraise}}"></image>
+                        <image bindtap="onTapBtn_QuizPraise" data-id="{{index}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/review/icon_review_message_heart_default.png?v=2.2" style="width:50rpx;height:47rpx;" wx:else></image>
+                        <view class="row start center2" style="height:24rpx;width:115rpx;font-size: 24rpx;color: #FFFFFF;white-space: nowrap;text-align: left;padding-top: 10rpx;padding-left: 8rpx;">{{item.praiseNum||0}}</view>
+                    </view>
+                    <view class="center center2" hoverClass="brightness" style=" width: 80rpx;height: 80rpx;z-index: 99;">
+                        <image bind:tap="onTapBlackQuiz" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/review/btn_review_notice.png?v=2.2" style=" width: 41rpx;height: 36rpx;" wx:if="{{!report.blackQuiz_submit[index]}}"></image>
+                        <image class="alpha" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/review/btn_review_notice.png?v=2.2" style="width: 41rpx;height: 36rpx;" wx:else></image>
+                    </view>
+                    <view style="width:93rpx;" wx:if="{{isCommentOpen}}"></view>
+                    <view class="center center2" hoverClass="brightness" style="position: relative; width: 80rpx;height: 80rpx;z-index: 99;" wx:if="{{isCommentOpen}}">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/review/btn_review_share.png?v=2.2" style=" width: 40rpx;height: 38rpx;"></image>
+                        <button id="shareQuestion" openType="share" style="width:100%;height:100%;opacity:0;position:absolute;left:0px;top:0px;width:100%;height:100%">看不见的立即分享</button>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view bindtap="onTapBtnLeft" class="{{leftGray?'hide':''}}" hoverClass="brightness" style="position: absolute;left:20rpx;top:160rpx;width:67rpx;height:850rpx;">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/review/btn_review_arrow.png?v=2.2" style="width:100%;height:100%;transform: scale(-1,1);"></image>
+        </view>
+        <view animation="{{ani_right}}" bindtap="onTapBtnRight" class="{{rightGray?'hide':''}}" hoverClass="brightness" style="position: absolute;right:20rpx;top:160rpx;width:67rpx;height:850rpx;opacity: 0;transform: translate3d(-10px,0,0);">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/review/btn_review_arrow.png?v=2.2" style="width:100%;height:100%;"></image>
+        </view>
+        <view style="position: absolute;width:100%;height:0px;left:0px;bottom:0px" wx:if="{{isCommentOpen}}">
+            <view style="position: absolute;left:0px;bottom:{{isIphoneX?'50px':'0px'}};width:100%;height:0px;">
+                <view animation="{{ani_bottom}}" style="position: absolute;left:0px;bottom:{{-commentMaxHeight*1.5}}px;width:100%;height:{{commentMaxHeight}}px;">
+                    <view bindtap="onTapBtn_CommentViewTitle" style="position: absolute;left:0px;top:-1000rpx;height:4000rpx;width:100%" wx:if="{{isFullView}}"></view>
+                    <view style="position: absolute;left:0px;top:52rpx;width:100%;height:calc(100% - 152rpx);background:#4057DA;"></view>
+                    <view style="position: absolute;width:100%;height:54rpx;left:0px;top:0px;">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/review/img_review_message_top.png?v=2.2" style="position: absolute;width:100%;height:54rpx;left:0px;top:0px;"></image>
+                        <view class="center center2" style="position: absolute;left:0px;top:22rpx; width:100%;height:30rpx;font-size: 22rpx;color: #7597FB;">{{commentTitle}}</view>
+                    </view>
+                    <view animation="{{ani_commentClose}}" bindtap="onTapBtn_CommentViewTitle" class="column start center2" hoverClass="brightness" style="position: absolute;top:54rpx;right:0px;width:80rpx;height:80rpx;opacity: 0;">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/review/btn_review_message_closed.png?v=2.2" style="width:41rpx;height:41rpx;"></image>
+                    </view>
+                    <view style="position: absolute;left:calc((100% - 710rpx)/2);top:95rpx;width:710rpx;bottom:10rpx;">
+                        <scroll-view bindscrolltolower="comment_onBindscrolltolower" scrollWithAnimation="{{true}}" scrollY="{{true}}" style="position: absolute;left:0px;top:0px;width:100%;height:100%;">
+                            <view class="column start center2" data-id="{{item.id}}" wx:for="{{commentList}}" wx:key="id">
+                                <template is="commentItem" data="{{...item}}"></template>
+                            </view>
+                            <view style="height:200rpx"></view>
+                        </scroll-view>
+                    </view>
+                    <view bindtap="onTapBtn_CommentViewTitle" bindtouchmove="comment_handletouchmove" bindtouchstart="comment_handletouchtart" style="position: absolute;left:0px;top:0px;width:100%;height:{{isFullView?'100rpx':'300rpx'}};"></view>
+                </view>
+                <view animation="{{ani_input}}" style="position: absolute;left:0px;bottom:0px;width:100%;height:198rpx;background:#4057DA;transform: translate3d(0,200px,0);">
+                    <view style="position: absolute;opacity: 0.5;left:0px;top:1rpx;width:100%;height:20rpx;background-image: linear-gradient(180deg, #283FC2 44%,  rgba(64,87,218,0.00) 100%);"></view>
+                    <view class="row center2 space-a" style="position: absolute;left:0px;top:20rpx;width:100%;height:50rpx;">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/review/icon_review_message_editarea_pencil_selected.png?v=2.2" style="width:37rpx;height:47rpx;" wx:if="{{isCommentInputing}}"></image>
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/review/icon_review_message_editarea_pencil_default.png?v=2.2" style="width:37rpx;height:47rpx;" wx:else></image>
+                        <input bindblur="commentInput_onBindblur" bindconfirm="commentInput_onConfirm" bindfocus="commentInput_onBindfocus" bindinput="commentInput_onInput" confirmType="send" focus="{{getFocus}}" maxlength="300" placeholder="科普一下这个题目的知识点" placeholderStyle="color: #7597FB" style="width:590rpx;height:28rpx;font-size: 28rpx;line-height: 28rpx;color: #7597FB;" value="{{inputContent}}"></input>
+                        <view bindtap="onTapBtn_commentSend" class="center center2" hoverClass="brightness" style="width:80rpx;height:80rpx;">
+                            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/review/icon_review_message_editarea.png?v=2.2" style="width:53rpx;height:39rpx;"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="column center center2" style="position: absolute;left:0px;bottom:0px;width:100%;height:calc(100% - 954rpx);" wx:else>
+            <view animation="{{ani_bottom}}" class="column center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;transform: translate3d(0,100%,0);">
+                <view style="position: absolute;left:calc((100% - 1400rpx)/2);top:calc(50% - 64rpx);width:1400rpx;height:1400rpx;background-image: linear-gradient(-180deg, #6292FF 0%,rgba(78,132,229,0.00)  8%);border-radius: 48%;"></view>
+                <view class="center center2" style="position: relative;width:440rpx;height:120rpx;background: #5DBAFF;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;font-size:54rpx;text-shadow: 0 1rpx 3rpx rgba(0,0,0,0.50);font-weight:bold;white-space:nowrap;">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/info/btn_info_share.png?v=2.2" style="width:48rpx;height:49rpx;"></image>
+                    <view style="width:20rpx"></view>
+          分享
+          <button id="shareQuestion" openType="share" style="width:100%;height:100%;opacity:0;position:absolute;left:0px;top:0px;width:100%;height:100%">看不见的立即分享</button>
+                </view>
+                <view style="height:30rpx"></view>
+            </view>
+        </view>
+    </view>
+</view>

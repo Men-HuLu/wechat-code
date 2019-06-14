@@ -1,0 +1,136 @@
+.main-type__list {
+    padding: 20rpx 14rpx;
+}
+
+.main-type__item {
+    text-align: center;
+    padding: 20rpx 0;
+}
+
+.main-type__icon {
+    width: 56rpx;
+    height: 56rpx;
+    margin-bottom: 10rpx;
+}
+
+.main-type__text {
+    font-size: 28rpx;
+}
+
+.main-type__item .icon-more-large {
+    display: none;
+}
+
+.length-1.main-type__list {
+    padding: 0;
+}
+
+.length-1 .main-type__item {
+    display: flex;
+    width: auto;
+    align-items: center;
+    padding: 40rpx 24rpx 40rpx 52rpx;
+}
+
+.length-1 .main-type__icon {
+    margin-right: 38rpx;
+    margin-bottom: 0;
+}
+
+.length-1 .main-type__text {
+    flex: 1;
+    text-align: left;
+    font-size: 34rpx;
+}
+
+.length-1 .icon-more-large {
+    display: inline-block;
+}
+
+.length-4.main-type__list {
+    display: flex;
+    padding-top: 36rpx;
+}
+
+.length-4 .main-type__item {
+    width: auto;
+    flex: 1;
+}
+
+@import "../../__wuBaseWxss__/1.wxss";
+
+page {
+    background-color: #f2f2f2;
+}
+
+.page {
+    background-color: #fff;
+}
+
+.position__area {
+    font-size: 14px;
+    vertical-align: middle;
+    padding: 14px 12px 11px;
+    margin: -4px -12px;
+}
+
+.position__name {
+    font-size: 32rpx;
+    display: -webkit-inline-box;
+    max-width: 360rpx;
+    vertical-align: middle;
+}
+
+.position__area .icon-arrow {
+    margin-right: -14px;
+}
+
+.main-type__item {
+    font-size: 0;
+}
+
+.main-type__item {
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+    font-size: 28rpx;
+}
+
+.category-all__popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.1s all;
+}
+
+.category-all__popup.animation-start {
+    visibility: visible;
+    opacity: 1;
+}
+
+.category-all__mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.category-all__wrp {
+    position: relative;
+    background-color: #fff;
+    z-index: 1001;
+}
+
+.category-all__opr {
+    font-size: 30rpx;
+    text-align: center;
+    height: 96rpx;
+    line-height: 96rpx;
+}

@@ -1,0 +1,95 @@
+<template name="gotoXcxGuide">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;z-index: 20;" wx:if="{{visible}}">
+        <view bindtap="gotoXcxGuide_onTapClose" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.8);"></view>
+        <view class="show-form" style="position:absolute;width:620rpx;height:744rpx;left:calc((100% - 620rpx)/2);top:calc((100% - 744rpx)/2);background: #FFFFFF;box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;">
+            <text class="center center2" style="position: absolute;left:0px;top:39rpx; font-size: 36rpx;color: #3663CD;text-align: center;width:100%;height:50rpx;">收藏头脑王者</text>
+            <text class="center center2" style="position: absolute;left:0px;top:76rpx; font-size: 60rpx;color: #30D1FC;text-align: center;width:100%;height:84rpx;">领取大宝箱!</text>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/img_kuaisutu.png?v=1" style="position: absolute;left:calc((100% - 406rpx)/2);top:181rpx;width:406rpx;height:340rpx;"></image>
+            <view style="position: absolute;left:0px;top:521rpx;height:40rpx;line-height: 24rpx;font-size: 24rpx;color: #30D1FC;text-align: center;width:100%">每天快速启动可获得登录奖励</view>
+            <view class="center center2" style="position: absolute;left:0px;bottom:0px;width:100%;height:180rpx;background: #EEF6FF;box-shadow: inset 0 1px 4px 0 rgba(223,223,223,0.50);border-bottom-left-radius: 20rpx;border-bottom-right-radius: 20rpx;">
+                <view bindtap="gotoXcxGuide_btnGo_onclicked" class="center center2" hoverClass="brightness" style="background: #00E1BD;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;width:340rpx;height:90rpx;">
+                    <text class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 46rpx;color: #FFFFFF;">去收藏</text>
+                </view>
+            </view>
+            <view bindtap="gotoXcxGuide_onTapClose" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=0.1.12" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="XcxGuide">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;z-index: 20;" wx:if="{{visible}}">
+        <view bindtap="XcxGuide_onTapClose" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.8);"></view>
+        <view class="show-form" style="position:absolute;width:620rpx;height:744rpx;left:calc((100% - 620rpx)/2);top:calc((100% - 744rpx)/2);background: #FFFFFF;box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;">
+            <text class="center center2" style="position: absolute;left:0px;top:39rpx; font-size: 36rpx;color: #3663CD;text-align: center;width:100%;height:50rpx;">收藏头脑王者</text>
+            <text class="center center2" style="position: absolute;left:0px;top:76rpx; font-size: 60rpx;color: #30D1FC;text-align: center;width:100%;height:84rpx;">领取大宝箱!</text>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/img_zhidao1.png?v=1" style="position: absolute;left:calc((100% - 555rpx)/2);top:164rpx;width:555rpx;height:365rpx;" wx:if="{{step==1}}"></image>
+            <image class="show-form" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/img_zhidao2.png?v=1" style="position: absolute;left:calc((100% - 555rpx)/2);top:177rpx;width:556rpx;height:388rpx;" wx:elif="{{step==2}}"></image>
+            <view class="center center2" style="position: absolute;left:0px;bottom:0px;width:100%;height:180rpx;background: #EEF6FF;box-shadow: inset 0 1px 4px 0 rgba(223,223,223,0.50);border-bottom-left-radius: 20rpx;border-bottom-right-radius: 20rpx;">
+                <view bindtap="XcxGuide_btnNext_onclicked" class="center center2" hoverClass="brightness" style="background: #00E1BD;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;width:340rpx;height:90rpx;">
+                    <text class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 46rpx;color: #FFFFFF;">{{step==1?'下一步':'去试试'}}</text>
+                </view>
+            </view>
+            <view bindtap="XcxGuide_onTapClose" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=0.1.12" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="xcxGuideReward_bigbox">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;z-index: 20;" wx:if="{{visible}}">
+        <view bindtap="xcxGuideReward_bigbox_onTapClose" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.8);"></view>
+        <view class="show-form" style="position:absolute;width:620rpx;height:744rpx;left:calc((100% - 620rpx)/2);top:calc((100% - 744rpx)/2);background: #FFFFFF;box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;">
+            <text class="center center2" style="position: absolute;left:0px;top:39rpx; font-size: 36rpx;color: #3663CD;text-align: center;width:100%;height:50rpx;">收藏头脑王者</text>
+            <text class="center center2" style="position: absolute;left:0px;top:76rpx; font-size: 60rpx;color: #30D1FC;text-align: center;width:100%;height:84rpx;">领取大宝箱!</text>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/img_kuaisutu.png?v=1" style="position: absolute;left:calc((100% - 406rpx)/2);top:181rpx;width:406rpx;height:340rpx;"></image>
+            <view style="position: absolute;left:0px;top:521rpx;height:40rpx;line-height: 24rpx;font-size: 24rpx;color: #30D1FC;text-align: center;width:100%">{{desc}}</view>
+            <view class="center center2" style="position: absolute;left:0px;bottom:0px;width:100%;height:180rpx;background: #EEF6FF;box-shadow: inset 0 1px 4px 0 rgba(223,223,223,0.50);border-bottom-left-radius: 20rpx;border-bottom-right-radius: 20rpx;">
+                <view bindtap="xcxGuideReward_bigbox_btnGet_onclicked" class="center center2" hoverClass="brightness" style="background: #00E1BD;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;width:340rpx;height:90rpx;" wx:if="{{!hasGot&&intoFromA}}">
+                    <text class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 46rpx;color: #FFFFFF;">领取</text>
+                </view>
+                <view bindtap="xcxGuideReward_bigbox_btnGet_onclicked" class="center center2" hoverClass="brightness" style="background: #C7C7C7;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;width:340rpx;height:90rpx;" wx:elif="{{!hasGot}}">
+                    <text class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 46rpx;color: #FFFFFF;">领取</text>
+                </view>
+                <view class="center center2" style="background: #C7C7C7;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;width:340rpx;height:90rpx;" wx:else>
+                    <text class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 46rpx;color: #FFFFFF;">已领取</text>
+                </view>
+            </view>
+            <view bindtap="xcxGuideReward_bigbox_onTapClose" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=0.1.12" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="xcxGuideReward_gold">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;z-index: 20;" wx:if="{{visible}}">
+        <view bindtap="xcxGuideReward_gold_onTapClose" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.8);"></view>
+        <view class="show-form" style="position:absolute;width:620rpx;height:744rpx;left:calc((100% - 620rpx)/2);top:calc((100% - 744rpx)/2);background: #FFFFFF;box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;">
+            <text class="center center2" style="position: absolute;left:0px;top:84rpx; font-size: 48rpx;color: #3663CD;text-align: center;width:100%;height:67rpx;">每日快速启动福利</text>
+            <text class="center center2" style="position: absolute;left:0px;top:144rpx; font-size: 36rpx;color: #F447A2;text-align: center;width:100%;height:50rpx;">{{xcxGoldDay}}/{{maxDayNum}}</text>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/img_bx1.png?v=1" style="position: absolute;left:calc((100% - 308rpx)/2);top:236rpx;width:308rpx;height:280rpx;" wx:if="{{!hasGot}}"></image>
+            <view style="position: absolute;left:calc((100% - 308rpx)/2);top:236rpx;width:308rpx;height:280rpx;" wx:else>
+                <image animation="{{ani_box2}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/img_bx2.png?v=1" style="position: absolute;left:0px;top:0px;width:100%;height:100%;opacity: 1;"></image>
+                <view animation="{{ani_gold}}" class="row center center2" style="position: absolute;left:calc((100% - 750rpx)/2);top:0px;width:750rpx;height:100%;opacity: 0;transform: scale(0);">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_money.png?v=1" style="width:150rpx;height:150rpx;"></image>
+                    <text class="center center2" style="font-size: 48rpx;color: #3663CD;">X{{xcxGoldNum}}</text>
+                </view>
+            </view>
+            <view style="position: absolute;left:0px;top:521rpx;height:40rpx;line-height: 24rpx;font-size: 24rpx;color: #30D1FC;text-align: center;width:100%">{{desc}}</view>
+            <view class="center center2" style="position: absolute;left:0px;bottom:0px;width:100%;height:180rpx;background: #EEF6FF;box-shadow: inset 0 1px 4px 0 rgba(223,223,223,0.50);border-bottom-left-radius: 20rpx;border-bottom-right-radius: 20rpx;">
+                <view bindtap="xcxGuideReward_gold_btnGet_onclicked" class="center center2" hoverClass="brightness" style="background: #00E1BD;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;width:340rpx;height:90rpx;" wx:if="{{!hasGot&&intoFromA}}">
+                    <text class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 46rpx;color: #FFFFFF;">领取</text>
+                </view>
+                <view class="center center2" hoverClass="brightness" style="background: #C7C7C7;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;width:340rpx;height:90rpx;" wx:elif="{{!hasGot}}">
+                    <text class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 46rpx;color: #FFFFFF;">领取</text>
+                </view>
+                <view class="center center2" style="background: #C7C7C7;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;width:340rpx;height:90rpx;" wx:else>
+                    <text class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 46rpx;color: #FFFFFF;">已领取</text>
+                </view>
+            </view>
+            <view bindtap="xcxGuideReward_gold_onTapClose" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=0.1.12" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>

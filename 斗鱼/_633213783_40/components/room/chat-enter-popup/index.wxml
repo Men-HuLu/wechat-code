@@ -1,0 +1,13 @@
+<cover-view class="popup-chat" wx:if="{{isPopup}}">
+    <cover-view class="popup-content">
+        <cover-view class="popup-con">
+            <cover-image class="popup-image" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/chatroom.png?timestamp=1541124390"></cover-image>
+            <cover-view class="popup-success">进入VIP聊天室</cover-view>
+            <cover-view class="popup-invite">和好友一起畅聊看直播</cover-view>
+        </cover-view>
+        <cover-view class="popup-line"></cover-view>
+        <cover-view class="popup-btn">
+            <button bindgetuserinfo="onGotUserInfo" class="share-btn" openType="getUserInfo">确定</button>
+        </cover-view>
+    </cover-view>
+</cover-view>

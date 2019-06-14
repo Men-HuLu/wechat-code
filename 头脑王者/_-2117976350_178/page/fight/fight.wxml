@@ -1,0 +1,431 @@
+<template name="battleBtn2">
+    <view animation="{{item.ani}}" bindtap="onTapChooseBtn" class="battle_btn2 {{item.className}}" data-index="{{item.index}}">
+        <image class="battle_btnIconRight2 left {{item.lImg==2?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_right.png?v=0"></image>
+        <image class="battle_btnIconRight2 right {{item.rImg==2?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_right.png?v=0"></image>
+        <image class="battle_btnIconWrong2 left {{item.lImg==1?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_wrong.png?v=0"></image>
+        <image class="battle_btnIconWrong2 right {{item.rImg==1?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_wrong.png?v=0"></image>
+        <view class="center center2" style="width:334rpx;height:100%;transform: scale({{item.scale}});">
+            {{item.answer}}
+        </view>
+    </view>
+</template>
+<template name="battleBtn">
+    <view animation="{{item.ani}}" bindtap="onTapChooseBtn" class="battle_btn {{item.className}}" data-index="{{item.index}}">
+        <image class="battle_btnIconRight left {{item.lImg==2?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_right.png?v=0"></image>
+        <image class="battle_btnIconRight right {{item.rImg==2?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_right.png?v=0"></image>
+        <image class="battle_btnIconWrong left {{item.lImg==1?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_wrong.png?v=0"></image>
+        <image class="battle_btnIconWrong right {{item.rImg==1?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_btn_answer_wrong.png?v=0"></image>
+        <view class="center center2" style="width:334rpx;height:100%;transform: scale({{item.scale}});">
+            {{item.answer}}
+        </view>
+    </view>
+</template>
+<import src="/template/avatarBase.wxml"></import>
+<import src="/template/emojiSelectView.wxml"></import>
+<import src="/template/emojiView.wxml"></import>
+<import src="../challenge/template/audienceView.wxml"></import>
+<import src="../../util/daliyTask/dailyTaskNotifiyView.wxml"></import>
+<view style="position: absolute;left:0px;top:0px;width:100%;height:100%;overflow: hidden;">
+    <canvas canvasId="pvrShareCanvas" style="position: absolute; left:750rpx; top:0px; width:400px; height:320px;"></canvas>
+</view>
+<view class="matchMainView {{matchViewData.visible?'':'hide'}}">
+    <view animation="{{matchViewData.matchViewAni}}" class="matchView {{matchViewData.matchViewVisible?'':'hide'}}">
+        <image class="matchViewEarth" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/matching/img_matching_earth.png?v=0"></image>
+        <view class="matchViewInsideView">
+            <image class="matchViewInsideImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/matching/img_matching_round_inside.png?v=0"></image>
+        </view>
+        <view class="matchViewOutsideView">
+            <image class="matchViewOutsideImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/matching/img_matching_round_outside.png?v=0"></image>
+        </view>
+        <view class="matchViewAvatar">
+            <template is="avatarOnly" data="{{avatarUrl:a.userInfo.avatarUrl,id:a.headId}}"></template>
+        </view>
+        <view class="matchNameView">
+            <view class="matchName">{{a.userInfo.nickName}}</view>
+            <view class="matchCity"> {{a.userInfo.city?'来自：'+a.userInfo.city:''}} </view>
+            <view class="matchLevel">等级{{a.userInfo.level}}</view>
+            <view class="vsFee start center2" wx:if="{{a.fee}}">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png?v=0" style="width:40rpx; height:40rpx;"></image>
+                <view style="width:10rpx"></view>
+                <view animation="{{matchViewData.feeAniLeft}}">{{a.feeLabel}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="vsMainView {{matchViewData.vsViewVisible?'':'hide'}}">
+        <image animation="{{matchViewData.decorationAImgAni}}" class="vsDecorationAImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/matching/img_popup_user_decoration.png"></image>
+        <view class="vsAView" hidden="{{!matchViewData.aViewVisible}}">
+            <view animation="{{matchViewData.aViewAni}}" class="vsAViewRelative">
+                <image class="vsABgImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/matching/img_popup_user.png"></image>
+                <view class="vsAAvatar">
+                    <template is="avatarOnly" data="{{avatarUrl:a.userInfo.avatarUrl,id:a.headId}}"></template>
+                </view>
+                <view class="vsWinwinViewLeft" wx:if="{{battleViewData.winwinVisible&&matchViewData.rowWinNumLeft>1}}">
+                    <view animation="{{matchViewData.winwinAniLeft}}" class="vsWinwinViewRelativeLeft">
+                        <image class="vsWinwinImgLeft" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/bg_doublewin.png"></image>
+                        <view class="vsWinwinTextLeft">{{matchViewData.rowWinNumLeft}}连胜</view>
+                    </view>
+                </view>
+                <view class="vsCpuViewLeft" wx:if="{{a&&a.cupId}}">
+                    <view animation="{{matchViewData.cupAniLeft}}" class="vsCpuViewRelativeLeft">
+                        <image class="vsCpuImgLeft" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/trophy/{{a.cupId}}.png?v=0.1"></image>
+                    </view>
+                </view>
+                <view class="vsANameView">
+                    <view class="vsName">{{a.userInfo.nickName}}</view>
+                    <view class="vsCity"> {{a.userInfo.city?'来自：'+a.userInfo.city:''}} </view>
+                </view>
+            </view>
+        </view>
+        <image animation="{{matchViewData.decorationBImgAni}}" class="vsDecorationBImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/matching/img_popup_match_decoration.png"></image>
+        <view class="vsBView" hidden="{{!matchViewData.bViewVisible}}">
+            <view animation="{{matchViewData.bViewAni}}" class="vsBViewRelative">
+                <image class="vsBBgImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/matching/img_popup_match.png"></image>
+                <view class="vsBAvatar">
+                    <template is="avatarOnly" data="{{avatarUrl:b.userInfo.avatarUrl,id:b.headId}}"></template>
+                </view>
+                <view class="vsWinwinViewRight" wx:if="{{battleViewData.winwinVisible&&matchViewData.rowWinNumRight>1}}">
+                    <view animation="{{matchViewData.winwinAniRight}}" class="vsWinwinViewRelativeRight">
+                        <image class="vsWinwinImgRight" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/bg_doublewin.png"></image>
+                        <view class="vsWinwinTextRight">{{matchViewData.rowWinNumRight}}连胜</view>
+                    </view>
+                </view>
+                <view class="vsCpuViewRight" wx:if="{{b&&b.cupId}}">
+                    <view animation="{{matchViewData.cupAniRight}}" class="vsCpuViewRelativeRight">
+                        <image class="vsCpuImgRight" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/trophy/{{b.cupId}}.png?v=0.1"></image>
+                    </view>
+                </view>
+                <view class="vsBNameView">
+                    <view class="vsName">{{b.userInfo.nickName}}</view>
+                    <view class="vsCity"> {{b.userInfo.city?'来自：'+b.userInfo.city:''}} </view>
+                </view>
+            </view>
+        </view>
+        <image animation="{{matchViewData.vsLogoAni}}" class="vsLogo" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/matching/img_logo.png"></image>
+    </view>
+</view>
+<view animation="{{battleViewData.mainViewAni}}" class="battle_mainView {{battleViewData.visible?'':'hide'}}">
+    <view animation="{{a.avatarAni}}" class="battle_aAvatarView">
+        <view animation="{{a.avatarBgAni}}" class="battle_aAvatarBg"></view>
+        <view class="battle_aAvatarView2">
+            <template is="avatarOnly" data="{{avatarUrl:a.userInfo.avatarUrl,id:a.headId}}"></template>
+        </view>
+        <view animation="{{a.avatarNameAni}}" class="battle_aName">{{a.userInfo.nickName||a.userInfo.name}}</view>
+        <view class="row center center2" style="position:absolute;left:20rpx;top:120rpx;width:160rpx;height:50rpx; background:#F2B24B;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;z-index:999;" wx:if="{{liveData}}">
+            <view style="height:11rpx;width:11rpx;background: #8B572A;box-shadow: 0 0 2px 0 rgba(124,0,0,0.50);border-radius: 100rpx;"></view>
+            <view style="width:128rpx;font-size: 36rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(153,0,0,0.50);text-align: center;">{{liveData.aSuccessCount}}胜</view>
+            <view style="height:11rpx;width:11rpx;background: #8B572A;box-shadow: 0 0 2px 0 rgba(124,0,0,0.50);border-radius: 100rpx;"></view>
+        </view>
+    </view>
+    <view animation="{{b.avatarAni}}" class="battle_bAvatarView">
+        <view animation="{{b.avatarBgAni}}" class="battle_bAvatarBg"></view>
+        <view class="battle_bAvatarView2">
+            <template is="avatarOnly" data="{{avatarUrl:b.userInfo.avatarUrl,id:b.headId}}"></template>
+        </view>
+        <view animation="{{b.avatarNameAni}}" class="battle_bName">{{b.userInfo.nickName||b.userInfo.name}}</view>
+        <view class="row center center2" style="position:absolute;right:20rpx;top:120rpx;width:160rpx;height:50rpx; background:#F2B24B;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;z-index:999;" wx:if="{{liveData}}">
+            <view style="height:11rpx;width:11rpx;background: #8B572A;box-shadow: 0 0 2px 0 rgba(124,0,0,0.50);border-radius: 100rpx;"></view>
+            <view style="width:128rpx;font-size: 36rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(153,0,0,0.50);text-align: center;">{{liveData.bSuccessCount}}胜</view>
+            <view style="height:11rpx;width:11rpx;background: #8B572A;box-shadow: 0 0 2px 0 rgba(124,0,0,0.50);border-radius: 100rpx;"></view>
+        </view>
+    </view>
+    <view class="timeBg" hidden="{{!battleViewData.timeVisible}}">
+        <canvas canvasId="timeCanvas" class="timeCanvas"></canvas>
+    </view>
+    <view animation="{{battleViewData.titleViewAni}}" class="battle_questionTitleView">
+        <image class="battle_questionTitleBg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/img_title_question.png"></image>
+        <view class="battle_questionTitle">{{battleViewData.questionTypeName}}</view>
+    </view>
+    <image animation="{{battleViewData.doubleAni}}" class="battle_double" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/img_popup_double.png"></image>
+    <view animation="{{battleViewData.leftScoreViewAni}}" class="battle_scoreView left">
+        <view class="battle_scoreFrame">
+            <view animation="{{a.scoreProgressViewAni}}" class="battle_scoreProgressView">
+                <view animation="{{a.scoreProgressAni}}" class="battle_scoreProgress"></view>
+            </view>
+        </view>
+    </view>
+    <view animation="{{battleViewData.rightScoreViewAni}}" class="battle_scoreView right">
+        <view class="battle_scoreFrame">
+            <view animation="{{b.scoreProgressViewAni}}" class="battle_scoreProgressView">
+                <view animation="{{b.scoreProgressAni}}" class="battle_scoreProgress"></view>
+            </view>
+        </view>
+    </view>
+    <view animation="{{a.scoreAni}}" class="battle_score left">{{a.scoreStr}}</view>
+    <view animation="{{b.scoreAni}}" class="battle_score right">{{b.scoreStr}}</view>
+    <view animation="{{battleViewData.questionViewAni}}" class="battle_questionView" wx:if="{{!battleViewData.imageId}}">
+        {{battleViewData.question}}
+    </view>
+    <view animation="{{battleViewData.questionViewAni}}" class="battle_questionImgView" wx:else>
+        <image class="battle_questionImg" mode="aspectFit" src="https://question-resource-wscdn.hortorgames.com/image/quiz/{{battleViewData.imageId}}.jpg"></image>
+        <view class="battle_questionImgLabel">{{battleViewData.question}}</view>
+    </view>
+    <view animation="{{battleViewData.leftComboViewAni}}" class="battle_comboView left">
+        <image class="battle_comboViewBg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/bg_popup_combo.png"></image>
+        <view class="battle_mainBuffView left">
+            <view class="battle_buffView" wx:if="{{battleViewData.bookScoreLeft&&battleViewData.bookTypeLeft}}">
+                <image class="battle_bookImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{battleViewData.bookTypeLeft}}.png"></image>
+                <view class="battle_buffText">{{battleViewData.bookScoreLeft}}</view>
+            </view>
+            <view class="battle_buffView" wx:if="{{battleViewData.buffScoreLeft}}">
+                <image class="battle_buffImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/img_icon_jiafen.png"></image>
+                <view class="battle_buffText">{{battleViewData.buffScoreLeft}}</view>
+            </view>
+        </view>
+    </view>
+    <view animation="{{battleViewData.rightComboViewAni}}" class="battle_comboView right">
+        <image class="battle_comboViewBg right" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/bg_popup_combo.png"></image>
+        <view class="battle_mainBuffView right">
+            <view class="battle_buffView" wx:if="{{battleViewData.bookScoreRight&&battleViewData.bookTypeRight}}">
+                <image class="battle_bookImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{battleViewData.bookTypeRight}}.png"></image>
+                <view class="battle_buffText">{{battleViewData.bookScoreRight}}</view>
+            </view>
+            <view class="battle_buffView" wx:if="{{battleViewData.buffScoreRight}}">
+                <image class="battle_buffImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/img_icon_jiafen.png"></image>
+                <view class="battle_buffText">{{battleViewData.buffScoreRight}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="battle_contributorView" wx:if="{{battleViewData.contributor}}">
+        {{battleViewData.contributor}}
+    </view>
+    <image class="battle_contributorZhihu" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/partner/{{battleViewData.partner}}.png?v=2.0" wx:if="{{battleViewData.partner>0}}"></image>
+    <view animation="{{battleViewData.btnViewAni}}" class="battle_btnView" wx:if="{{!battleViewData.imageId}}">
+        <template is="battleBtn" data="{{ item:battleViewData.answer[0] }}"></template>
+        <template is="battleBtn" data="{{ item:battleViewData.answer[1] }}"></template>
+        <template is="battleBtn" data="{{ item:battleViewData.answer[2] }}"></template>
+        <template is="battleBtn" data="{{ item:battleViewData.answer[3] }}"></template>
+    </view>
+    <view animation="{{battleViewData.btnViewAni}}" class="battle_btnView2" wx:else>
+        <template is="battleBtn2" data="{{ item:battleViewData.answer[0] }}"></template>
+        <template is="battleBtn2" data="{{ item:battleViewData.answer[1] }}"></template>
+        <template is="battleBtn2" data="{{ item:battleViewData.answer[2] }}"></template>
+        <template is="battleBtn2" data="{{ item:battleViewData.answer[3] }}"></template>
+    </view>
+    <view animation="{{battleViewData.roundAni}}" class="battle_round">{{battleViewData.roundText}}</view>
+    <view animation="{{battleViewData.fullShadeAni}}" class="battle_fullShade {{battleViewData.fullShadeVisible?'':'hide'}}"></view>
+</view>
+<view animation="{{resultViewData.mainViewAni}}" class="result_mainView" hidden="{{!resultViewData.visible}}">
+    <view animation="{{resultViewData.scoreViewLeftAni}}" class="result_scoreViewLeft {{!!resultViewData.liveRank?'z0':''}}">
+        <view animation="{{resultViewData.scoreTextViewLeftAni}}" class="result_scoreView left">
+            <view class="{{resultViewData.isWin==2?'result_smallScore':'result_score'}}">{{resultViewData.scoreLeft}}</view>
+            <view class="result_score2">分</view>
+        </view>
+    </view>
+    <view animation="{{resultViewData.scoreViewRightAni}}" class="result_scoreViewRight {{!!resultViewData.liveRank?'z0':''}}">
+        <view animation="{{resultViewData.scoreTextViewRightAni}}" class="result_scoreView right">
+            <view class="{{resultViewData.isWin==1?'result_smallScore':'result_score'}}">{{resultViewData.scoreRight}}</view>
+            <view class="result_score2">分</view>
+        </view>
+    </view>
+    <view animation="{{resultViewData.comboLeftAni}}" class="result_comboLeft {{resultViewData.comboLeft>1?'':'hide'}}">
+        <view class="result_comboTextLeft">连续答对{{resultViewData.comboLeft}}题</view>
+    </view>
+    <view animation="{{resultViewData.comboRightAni}}" class="result_comboRight {{resultViewData.comboRight>1?'':'hide'}}">
+        <view class="result_comboTextRight">连续答对{{resultViewData.comboRight}}题</view>
+    </view>
+    <view animation="{{resultViewData.wwLeftAni}}" class="result_winwinViewLeft {{battleViewData.winwinVisible&&resultViewData.rowWinNumLeft>1?'':'hide'}}" wx:if="{{!resultViewData.liveRank}}">
+        <image class="result_winwinImgLeft" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/bg_doublewin.png"></image>
+        <view class="result_winwinTextLeft">{{resultViewData.rowWinNumLeft}}连胜</view>
+    </view>
+    <view animation="{{resultViewData.wwRightAni}}" class="result_winwinViewRight {{battleViewData.winwinVisible&&resultViewData.rowWinNumRight>1?'':'hide'}}" wx:if="{{!resultViewData.liveRank}}">
+        <image class="result_winwinImgRight" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/bg_doublewin.png"></image>
+        <view class="result_winwinTextRight">{{resultViewData.rowWinNumRight}}连胜</view>
+    </view>
+    <view style="position:absolute;left:0px;top:0px;width:100%;height:100%;" wx:if="{{!resultViewData.hideReward}}">
+        <view animation="{{resultViewData.goldViewAni}}" class="result_goldView">
+            <image class="result_goldImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png"></image>
+            <view class="start center2" style="position: relative;">
+                <view class="result_goldText" style="opacity: 0;">{{resultViewData.gold}}</view>
+                <view class="result_goldText" style="position: absolute;top:0px;left:0px;">{{resultViewData.addGold}}</view>
+            </view>
+            <image animation="{{resultViewData.buff3Ani}}" class="result_buff3" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/buff/2030032.png" wx:if="{{resultViewData.buff3Visible}}"></image>
+            <image animation="{{resultViewData.buff4Ani}}" class="result_buff4" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/buff/2030042.png" wx:if="{{resultViewData.buff4Visible}}"></image>
+        </view>
+        <view animation="{{resultViewData.goldLineAni}}" class="result_line"></view>
+        <view animation="{{resultViewData.expViewAni}}" class="result_expView">
+            <image class="result_expImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_exp.png"></image>
+            <view class="start center2" style="position: relative;">
+                <view class="result_expText" style="opacity: 0;">{{resultViewData.exp}}</view>
+                <view class="result_expText" style="position: absolute;top:0px;left:0px;">{{resultViewData.addExp}}</view>
+            </view>
+            <image animation="{{resultViewData.buff1Ani}}" class="result_buff1" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/buff/2030012.png" wx:if="{{resultViewData.buff1Visible}}"></image>
+            <image animation="{{resultViewData.buff2Ani}}" class="result_buff2" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/buff/2030022.png" wx:if="{{resultViewData.buff2Visible}}"></image>
+        </view>
+        <view animation="{{resultViewData.expLineAni}}" class="result_line exp"></view>
+    </view>
+    <view class="specialView" wx:if="{{resultViewData.isSpecial&&resultViewData.isWin!=2}}">
+        <view animation="{{resultViewData.specailLineAni}}" class="special_line"></view>
+        <image animation="{{resultViewData.specialIconAni}}" class="specialIcon" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/icon_theme_trophycup_1.png"></image>
+        <image animation="{{resultViewData.specialLightEff0Ani}}" class="specialLightEff" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/challenge/light.png"></image>
+        <image animation="{{resultViewData.specialLightEff1Ani}}" class="specialLightEff" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/challenge/light.png"></image>
+        <image animation="{{resultViewData.specialLightEff2Ani}}" class="specialLightEff" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/challenge/light.png"></image>
+        <view animation="{{resultViewData.specialLabelAni}}" class="specialLabel">x{{resultViewData.cupNum}}</view>
+        <view animation="{{resultViewData.specailLine2Ani}}" class="special_line2"></view>
+    </view>
+    <view class="specialView" wx:if="{{resultViewData.isSpecial&&resultViewData.isWin==2}}">
+        <view animation="{{resultViewData.specailLineAni}}" class="special_line"></view>
+        <view animation="{{resultViewData.specialLoseLabelAni}}" class="specialLoseLabel">挑战失败</view>
+        <view animation="{{resultViewData.specailLine2Ani}}" class="special_line2"></view>
+    </view>
+    <view style="position:absolute;left:0px;top:0px;width:100%;height:100%;" wx:if="{{!!resultViewData.liveRank}}">
+        <view style="position:absolute;left:0px;top:497rpx;width:100%;height:42rpx;overflow: hidden;">
+            <view animation="{{resultViewData.ani_title}}" class="center center2" style="position:absolute;left:0px;top:100%;width:100%;height:100%;font-size: 30rpx;">－房间排行榜－</view>
+        </view>
+        <view animation="{{resultViewData.ani_condition}}" style="transform:scale(0,1);position:absolute;left:0px;top: 539rpx;width:100%;height:4rpx">
+            <view class="result_line" style="top:0px"></view>
+        </view>
+        <view class="column start center" style="position:absolute;left:0px;top:560rpx;width:100%;height:250rpx;overflow: hidden;">
+            <view animation="{{resultViewData.ani_rank}}" style="position:absolute;left:0px;top:-250rpx;width:100%;height:250rpx;">
+                <view class="row center center2" style="position:relative; width:100%;height:82rpx;" wx:for="{{resultViewData.liveRank}}" wx:for-index="uid">
+                    <view class="center center2" style="font-size:30rpx;width:60rpx;">{{item.rank}}</view>
+                    <view style="width:12rpx"></view>
+                    <view style="position:relative;width:64rpx;height:64rpx;">
+                        <template is="avatarOnly" data="{{avatarUrl:item.avatarUrl}}"></template>
+                    </view>
+                    <view style="width:30rpx"></view>
+                    <view class="center center2" style="background: #F2B24B;box-shadow: 0 0 2rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;width:83rpx;height:40rpx;">
+                        <view style="font-size: 28rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx #D75E12;">{{item.score}}胜</view>
+                    </view>
+                    <view style=" position: absolute; width: 330rpx;height: 4rpx;bottom: 0px;left: calc((100% - 330rpx) / 2);background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.00) 4%, #FFFFFF 49%, rgba(255, 255, 255, 0.00) 96%);"></view>
+                </view>
+            </view>
+        </view>
+        <view class="center center2" style="position:absolute;left:0px;top:912rpx;width:100%;height:59rpx;" wx:if="{{!!resultViewData.liveCountDown2back}}">
+            <view animation="{{resultViewData.ani_countDown2back}}" class="center center2" style="width:100%;height:100%;transform: scale(0);">
+                <view class="center center2" style="font-size: 38rpx;color: #A9DCFF;white-space: nowrap;">{{resultViewData.liveCountDown2back}}</view>
+            </view>
+        </view>
+        <view style="position:absolute;left:calc((100% - 384rpx)/2);bottom:104rpx;width:384rpx;height:37rpx;opacity: 0.97;background-image: linear-gradient(90deg, rgba(103,173,255,0.00) 2%, #6AA4FF 52%, rgba(107,201,255,0.00) 99%);" wx:if="{{!!resultViewData.liveMyWinNum}}">
+            <view animation="{{resultViewData.ani_myNum}}" class="center center2" style="position:absolute;left:0px;top:0px;width:100%;height:100%;transform: scale(0,1);">
+                <view style="font-size: 26rpx;">{{resultViewData.liveMyWinNum}}</view>
+            </view>
+        </view>
+    </view>
+    <view animation="{{resultViewData.rewardViewAni}}" class="result_rewardView" wx:if="{{resultViewData.rewardItem.visible}}">
+        <view class="result_rewardText">获得物品：</view>
+        <image animation="{{resultViewData.rewardItemAni}}" class="result_rewardImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{resultViewData.rewardItem.id}}.png"></image>
+    </view>
+    <view animation="{{resultViewData.ticketViewAni}}" class="result_ticketView" wx:if="{{resultViewData.ticketVisible}}">
+        <view class="result_ticketText">获得入场券：</view>
+        <image animation="{{resultViewData.ticketItemAni}}" class="result_ticketImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/icon_theme_ticket.png"></image>
+    </view>
+    <image animation="{{resultViewData.titleAni}}" class="result_successImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_challenge_success.png" wx:if="{{resultViewData.isWin==1}}"></image>
+    <image animation="{{resultViewData.titleAni}}" class="result_dogfallImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_challenge_dogfall.png" wx:if="{{resultViewData.isWin==0}}"></image>
+    <view class="specialStartMainView" wx:if="{{resultViewData.isSpecial}}">
+        <view animation="{{resultViewData.specialStartView0Ani}}" class="specialStartView">
+            <image class="specialStart" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/icon_theme_star.png"></image>
+        </view>
+        <view animation="{{resultViewData.specialStartView1Ani}}" class="specialStartView">
+            <image class="specialStart" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/icon_theme_star.png"></image>
+        </view>
+        <view animation="{{resultViewData.specialStartView2Ani}}" class="specialStartView">
+            <image class="specialStart" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/icon_theme_star.png"></image>
+        </view>
+    </view>
+    <image animation="{{resultViewData.criticalAni}}" class="result_criticalImg {{resultViewData.criticalVisible?'':'hide'}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/critical_strike.png"></image>
+    <view animation="{{resultViewData.funcBntAni}}" bindtap="onTapFuncBtn" class="result_funcBtn" wx:if="{{!resultViewData.hideFuncBtn}}">
+        <view class="result_funcBtnText">{{resultViewData.funcBtnLabel}}</view>
+    </view>
+    <view animation="{{resultViewData.shareBtnAni}}" class="{{resultViewData.isWin==2?'result_shareBtnFail':'result_shareBtn'}} {{resultViewData.shareBtnVisible?'':'hide'}}" wx:if="{{!resultViewData.showKnowBtn}}">
+        <image class="result_shareBtnIcon" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png" wx:if="{{!!resultViewData.hasShareReward}}"></image>
+        <image class="result_shareBtnIcon2" src="https://question-resource-wscdn.hortorgames.com/image/new_skin//battle/img_icon_share.png" wx:else></image>
+        <view class="result_shareBtnText">{{resultViewData.isWin==1?'炫耀成绩':'分享结果'}}</view>
+        <button class="result_hideShareBtn" openType="share">隐藏的分享按钮</button>
+    </view>
+    <view animation="{{resultViewData.shareBtnAni}}" class="smallShareBtn" wx:if="{{!!resultViewData.showKnowBtn}}">
+        <image class="result_smallShareBtnIcon" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png" wx:if="{{!!resultViewData.hasShareReward}}"></image>
+        <image class="result_smallShareBtnIcon2" src="https://question-resource-wscdn.hortorgames.com/image/new_skin//battle/img_icon_share.png" wx:else></image>
+        <view class="result_smallShareBtnText">分享结果</view>
+        <button class="result_hideShareBtn" openType="share">隐藏的分享按钮</button>
+    </view>
+    <view animation="{{resultViewData.shareBtnAni}}" bindtap="onTapKnowBtn" class="result_knowBtn" wx:if="{{!!resultViewData.showKnowBtn}}">
+        <image class="result_knowBtnIcon" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/img_icon_up.png"></image>
+        <view class="result_smallShareBtnText">知识升级</view>
+    </view>
+    <view animation="{{resultViewData.shareDescAni}}" class="result_shareDescView" wx:if="{{resultViewData.hasShareReward}}">
+        <view class="result_shareDescText">{{resultViewData.shareText}}</view>
+        <image class="result_shareDescImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png"></image>
+    </view>
+    <view bindtap="onTapReportBtn" class="result_reportView">
+        <image animation="{{resultViewData.reportImgAni}}" class="result_reportImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/img_report1.png?v=3.0.0"></image>
+    </view>
+    <view bindtap="onTapReviewBtn" style="position: absolute;right:0px;top:526rpx; width:206rpx;height:112rpx;" wx:if="{{resultViewData.showReviewBtn}}">
+        <view animation="{{resultViewData.reviewBannerAni}}" style="position: absolute;right:-100%;top:0px; width:100%;height:100%;">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/img_blackboard.png?v=2.1" style="position: absolute;right:0px;top:0px;width:100%;height:100%;"></image>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/blackboard.gif?v=2.1" style="position: absolute;left:15rpx;bottom:4px;width:110rpx;height:112rpx;"></image>
+        </view>
+    </view>
+    <navigator appId="{{linkAppId}}" bind:tap="onTapLinkBtn" class="linkImg" extraData="{{linkExtraData}}" openType="navigate" path="{{linkPath}}" target="miniProgram" version="release" wx:if="{{linkImg}}">
+        <image src="{{linkImg}}" style="width:100%; height:100%;"></image>
+    </navigator>
+</view>
+<view bindtap="levelUpView_onTapClosedBtn" class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.5);" wx:if="{{levelUpViewData.visible}}">
+    <view class="levelUp_mainView">
+        <image class="levelUp_titleImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/rocket.gif?v=0.1"></image>
+        <view class="levelUp_cView">
+            <view class="levelUp_lvView" style="font-weight:bold;">等级{{levelUpViewData.level}}</view>
+            <view class="levelUp_unlockView" wx:if="{{levelUpViewData.unlockSource.length>0}}">
+                <view class="row center center2 levelUpUnLockLabel" style="flex:none" wx:for="{{levelUpViewData.unlockSource}}" wx:key="index">
+                    <view class="levelUp_unLockText" style="{{item.index!=0?'opacity:0':''}};font-weight:bold;">功能解锁：</view>
+                    <view class="levelUp_unLockText" style="font-weight:bold;display: flex;justify-content: flex-start;align-items: center;">{{item.label}}</view>
+                </view>
+            </view>
+            <view class="levelUp_unlockView levelUp_unLockText" style="font-weight:bold;" wx:else>恭喜升级</view>
+            <view class="levelUp_btn" style="font-weight:bold;">
+                返回
+            </view>
+        </view>
+    </view>
+</view>
+<image bindtap="onTapWifiBtn" src="/image/battle/icon_nowifi_small.png" style="width: 88rpx; height: 88rpx; position: absolute; bottom: 16rpx; right: 16rpx;" wx:if="{{wsconnectBreaking}}"></image>
+<template is="emojiSelectView" data="{{...emojiSelectData,left:85,top:90}}"></template>
+<view style="position: absolute; top: 70rpx; left:220rpx;">
+    <template is="emojiView" data="{{...userEmoji}}"></template>
+</view>
+<view style="position: absolute; top: 70rpx; right:220rpx;">
+    <template is="emojiView" data="{{...rivalEmoji}}"></template>
+</view>
+<view style="position:absolute; width:100%; height:100%; left:0px; top:0px;z-index: 999;" wx:if="{{resultViewData.reportVisible}}">
+    <view bindtap="onTapReportClose" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+    <view class="column form-normal center2 show-form" style="position:absolute; width:650rpx; height:743rpx; left:0; top:0; right:0; bottom:0; margin:auto;">
+        <view class="center center2" style="position: absolute;left: calc(50% - 180rpx / 2);top: -85rpx;width: 160rpx;height: 160rpx;border-radius: 50%;border: 10rpx solid #fff;background-color: #F14A3F;">
+            <view class="icon-rotate" hoverClass="icon-rotate" style="width:160rpx;height:160rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_report_title.png" style="width:100%;height:100%;"></image>
+            </view>
+        </view>
+        <view class="font-title-white center center2" style="position:absolute; left:0px; top:92rpx; width:100%;height:85rpx;background-color:#4670CD; font-size: 52rpx;">举报</view>
+        <view class="center center2" style="font-size: 30rpx; color: #4354A6; width:650rpx; height:40rpx; position:absolute; left:calc(50% - 650rpx / 2); top:200rpx;">请您选择举报类型，我们会认真审查</view>
+        <view class="center center2" style="font-size: 30rpx; color: #4354A6; width:650rpx; height:40rpx; position:absolute; left:calc(50% - 650rpx / 2); top:240rpx;">您的举报和反馈对我们非常重要。</view>
+        <view bindtap="onTapBlackRole" class="start center2" style="position:absolute; top:340rpx; left:100rpx; height:60rpx;" wx:if="{{!resultViewData.blackRole}}">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_report1.png?v=0" style="width:60rpx;height:60rpx;"></image>
+            <view style="width:10rpx;"></view>
+            <view class="start center2" style="font-size: 40rpx; color: #8CBBFF;">对方疑似作弊</view>
+        </view>
+        <view bindtap="{{resultViewData.blackRole_submit?'':'onTapBlackRole'}}" class="start center2" style="position:absolute; top:340rpx; left:100rpx; height:60rpx;" wx:else>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/{{resultViewData.blackRole_submit?'icon_report3':'icon_report2'}}.png?v=0" style="width:60rpx;height:60rpx;"></image>
+            <view style="width:10rpx;"></view>
+            <view class="start center2" style="font-size: 40rpx; color: {{resultViewData.blackRole_submit?'#BFD9FF':'#F2594B'}};">对方疑似作弊</view>
+        </view>
+        <view bindtap="onTapBlackSubRole" class="start center2" style="position:absolute; top:452rpx; left:100rpx; height:60rpx;" wx:if="{{!resultViewData.blackSubRole}}">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_report1.png?v=0" style="width:60rpx;height:60rpx;"></image>
+            <view style="width:10rpx;"></view>
+            <view class="start center2" style="font-size: 40rpx; color: #8CBBFF;">对方头像和昵称违规</view>
+        </view>
+        <view bindtap="{{resultViewData.blackSubRole_submit?'':'onTapBlackSubRole'}}" class="start center2" style="position:absolute; top:452rpx; left:100rpx; height:60rpx;" wx:else>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/{{resultViewData.blackSubRole_submit?'icon_report3':'icon_report2'}}.png?v=0" style="width:60rpx;height:60rpx;"></image>
+            <view style="width:10rpx;"></view>
+            <view class="start center2" style="font-size: 40rpx; color:{{resultViewData.blackSubRole_submit?'#BFD9FF':'#F2594B'}};">对方头像和昵称违规</view>
+        </view>
+        <view bindtap="{{resultViewData.btnGray?'':'onTapReportOK'}}" class="center center2" hoverClass="{{resultViewData.btnGray?'':'brightness'}}" style="font-size: 48rpx; color: #FFFFFF; background: {{resultViewData.btnGray?'#aaaaaa':'#00E1BD'}};box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;position: absolute; left:calc(50% - 310rpx / 2); top:584rpx;width:310rpx;height:100rpx;">
+            提交
+        </view>
+        <view bindtap="onTapReportClose" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+            <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=0" style="width:30rpx;height:30rpx"></image>
+        </view>
+    </view>
+</view>
+<view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-image: linear-gradient(-180deg, #4E84E5 0%, #4E62E5 97%);" wx:if="{{resultViewData.liveShowOver}}">
+    <view class="center center2 show-over" style="font-size:50rpx;font-weight:bold;white-space: nowrap;">本场比赛结束</view>
+</view>
+<template is="audienceView" data="{{...audienceView}}" wx:if="{{audienceView}}"></template>
+<template is="dailyTaskNotifiyView" data="{{...taskUpdate}}"></template>

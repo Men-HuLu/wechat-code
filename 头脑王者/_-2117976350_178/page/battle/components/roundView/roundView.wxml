@@ -1,0 +1,1 @@
+<view animation="{{roundAni}}" class="battle_round">{{roundText}}</view>

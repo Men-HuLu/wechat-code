@@ -1,0 +1,125 @@
+.anchor-tab-content {
+    width: 100%;
+}
+
+.related-live-wrap {
+    width: 100%;
+}
+
+.related-live-wrap .related-live-title {
+    box-sizing: border-box;
+    padding-left: 20rpx;
+    width: 100%;
+    height: 76rpx;
+    line-height: 106rpx;
+    font-size: 32rpx;
+    color: #333;
+    font-weight: bold;
+}
+
+.related-live-wrap .related-live-content {
+    width: 100%;
+    overflow: hidden;
+}
+
+.related-live-wrap .related-live-content .rlc-live-item {
+    width: 100%;
+    height: 158rpx;
+    padding: 30rpx 19rpx;
+    border-bottom: 1rpx solid #EEEEEE;
+}
+
+.related-live-wrap .related-live-content .rlc-live-item .li-content {
+    position: relative;
+    display: inline-block;
+    width: 280rpx;
+    height: 100%;
+    overflow: hidden;
+}
+
+.related-live-wrap .related-live-content .rlc-live-item .li-content .con-zhanweitu {
+    width: 100%;
+    height: 100%;
+    border-radius: 12rpx;
+}
+
+.related-live-wrap .related-live-content .rlc-live-item .li-content .con-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    border-radius: 12rpx;
+}
+
+.related-live-wrap .related-live-content .rlc-live-item .li-content .con-duration {
+    position: absolute;
+    right: 10rpx;
+    bottom: 6rpx;
+    font-size: 20rpx;
+    color: #FFFFFF;
+    z-index: 20;
+}
+
+.related-live-wrap .related-live-content .rlc-live-item .li-content .con-icon {
+    position: absolute;
+    width: 68rpx;
+    height: 32rpx;
+    left: 10rpx;
+    top: 10rpx;
+    z-index: 20;
+}
+
+.related-live-wrap .li-des {
+    display: inline-block;
+    padding: 0 27rpx;
+    height: 100%;
+    width: 404rpx;
+    text-align: left;
+    overflow: hidden;
+}
+
+.related-live-wrap .li-des .li-des-title {
+    height: 74rpx;
+    line-height: 37rpx;
+    width: 100%;
+    font-size: 30rpx;
+    color: #333333;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.related-live-wrap .li-des .li-des-anchor {
+    height: 33rpx;
+    line-height: 33rpx;
+    font-size: 24rpx;
+    color: #3F3F3F;
+    margin-top: 12rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.related-live-wrap .li-des .li-play {
+    height: 28rpx;
+    line-height: 28rpx;
+    font-size: 20rpx;
+    color: #ADADAD;
+    margin-top: 8rpx;
+}
+
+.related-live-wrap .li-des .li-play .li-icon {
+    width: 12rpx;
+    height: 16rpx;
+}
+
+.related-live-wrap .li-des .li-play .li-times {
+    padding-left: 6rpx;
+}
+
+.related-live-wrap .li-des .li-play .li-icon-hot {
+    width: 14rpx;
+    height: 18rpx;
+}

@@ -1,0 +1,77 @@
+.scroll-view-wrap {
+    width: 100%;
+    height: 114rpx;
+    background-color: #fff;
+    z-index: 11;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: none;
+}
+
+.scroll-view-wrap .scroll-view-catalog {
+    height: 114rpx;
+    width: 100%;
+    font-size: 16px;
+    white-space: nowrap;
+    display: flex;
+}
+
+.scroll-view-wrap .scroll-view-catalog .scroll-view-item {
+    padding: 31rpx 25rpx;
+    display: inline-block;
+    font-size: 38rpx;
+    color: #1d1d1d;
+    font-weight: bold;
+}
+
+.scroll-view-wrap .scroll-view-catalog .active-catalog {
+    color: #ff5d23;
+}
+
+.scroll-view-wrap .cata-wrap-left {
+    z-index: 9;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 76rpx;
+    background: linear-gradient(to right,rgba(255,92,8,.0),rgba(255,92,8,.8) 10%,#ff5d23 20%,#ff5d23);
+}
+
+.scroll-view-wrap .cata-wrap-left .cata-image {
+    padding: 24rpx 25rpx;
+    height: 29rpx;
+    width: 40rpx;
+}
+
+.home-nav.home-container-content {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    margin-top: 76rpx;
+}
+
+.home-nav.scroll-view-wrap {
+    height: 76rpx;
+    background-color: #ff5d23;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: none;
+}
+
+.home-nav .scroll-view-wrap .scroll-view-catalog {
+    height: 76rpx;
+    width: 680rpx;
+}
+
+.home-nav.scroll-view-wrap .scroll-view-catalog .scroll-view-item {
+    padding: 19rpx 23rpx;
+    font-size: 29rpx;
+    color: #fff;
+    font-weight: normal;
+}
+
+.home-nav.scroll-view-wrap .scroll-view-catalog .active-catalog {
+    font-weight: bold;
+}

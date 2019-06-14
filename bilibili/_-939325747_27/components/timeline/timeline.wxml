@@ -1,0 +1,80 @@
+<view class="timeline-box">
+    <view class="week">
+        <view catchtap="weekswitch" class="day {{nowtag==index?'active':''}} {{index==3?'today':''}}" data-idx="{{index}}" wx:for="{{dailyInfo}}" wx:key="item">
+      {{(nowtag==index?'周':'')+week[item.day_of_week-1]}}
+    </view>
+    </view>
+    <view class="seasoncard">
+        <view class="noFan" wx:if="{{!nowDayInfo.length}}">当天没有更新的番剧～</view>
+        <block wx:else>
+            <view catchtap="toPGC" class="card-info" data-ssid="{{item.season_id}}" data-type="seasoncard" wx:for="{{nowDayInfo}}" wx:key="{{item}}">
+                <view class="pgc-sml-cover" style="background:url('{{item.square_cover}}');background-size:100%;"></view>
+                <view class="card-content">{{item.title}}</view>
+                <view class="card-update" wx:if="{{item.delay==1}}">{{item.delay_reason}}</view>
+                <view class="card-update" wx:if="{{item.pub_index}}">{{item.pub_index}}</view>
+                <view class="card-update" wx:if="{{item.pub_index&&item.delta<4*60*60}}">
+          即将更新{{item.pub_index}}
+        </view>
+            </view>
+        </block>
+    </view>
+    <view catchtap="showFull" class="all-card-btn" wx:if="{{fullDayInfo.length>8&&!isShow}}">
+    显示今天所有更新番剧
+    <i class="icon General_DownArrow si"></i>
+    </view>
+    <view class="headline">
+        <text class="chn-tag">索引</text>
+        <view catchtap="toindicate" class="open-detail-tag" data-type="more">
+            <text class="more">查看更多</text>
+            <i class="icon General_Right oi"></i>
+        </view>
+    </view>
+    <view class="idx-box">
+        <view catchtap="toindicate" class="idx-cover" data-type="card" data-url="{{item.desc}}&name={{item.title}}" wx:for="{{idxArr}}" wx:key="{{item}}">
+            <text class="idx-title">
+        {{item.title}}
+      </text>
+        </view>
+    </view>
+    <view class="headline" style="border-top:solid 1rpx #E7E7E7;margin-top:4rpx;">
+        <text class="chn-tag">番剧推荐</text>
+    </view>
+    <view class="pgc-box">
+        <view catchtap="toPGC" class="pgc-single" data-ssid="{{item.season_id}}" data-type="bangumi" wx:for="{{pgcRecShow}}">
+            <view class="pgc-cover" style="background:url('{{item.cover}}');background-size:100%;">
+                <view class="card-mc"></view>
+                <text class="watch-num">{{Filter.number2chn(item.stat.follow)}}人追番</text>
+                <text class="badge bg-{{item.badge_type}}" wx:if="{{item.badge}}">{{item.badge}}</text>
+            </view>
+            <view class="pgc-title">{{item.title}}</view>
+            <view class="desc">{{item.desc}}</view>
+        </view>
+        <view class="headline" style="font-size:24rpx;text-align:center;color:#FB7299;">
+            <view catchtap="refreshPGC" class="refresh-btn">
+                <i class="icon icon_refresh_pink sml {{isRotate?'rotating':''}}"></i>
+        换一换
+      </view>
+        </view>
+    </view>
+    <view class="headline" style="border-top:solid 1rpx #E7E7E7;">
+        <text class="chn-tag">国创推荐</text>
+    </view>
+    <view class="pgc-box">
+        <view catchtap="toPGC" class="pgc-single" data-ssid="{{item.season_id}}" data-type="guochuang" wx:for="{{chpgcRecRec}}">
+            <view class="pgc-cover" style="background:url('{{item.cover}}');background-size:100%;">
+                <view class="card-mc"></view>
+                <text class="watch-num">{{Filter.number2chn(item.stat.follow)}}人追番</text>
+                <text class="badge bg-{{item.badge_type}}" wx:if="{{item.badge}}">{{item.badge}}</text>
+            </view>
+            <view class="pgc-title">{{item.title}}</view>
+            <view class="desc">{{item.desc}}</view>
+        </view>
+        <view class="headline" style="font-size:24rpx;text-align:center;color:#FB7299;margin-bottom:48rpx;">
+            <view catchtap="refreshCHC" class="refresh-btn">
+                <i class="icon icon_refresh_pink sml {{isRotateCHN?'rotating':''}}"></i>
+        换一换
+      </view>
+        </view>
+    </view>
+</view>
+<wxs module="Filter" src="../../utils/filter/index.wxs" />

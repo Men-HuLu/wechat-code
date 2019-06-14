@@ -1,0 +1,20 @@
+<view>
+    <scroll-menu activeIndex="{{activeIndex}}" bind:chooseCallBack="chooseCatalog" cate1Info="{{cate1Info}}" currentCate1Id="{{currentCate1Id}}"></scroll-menu>
+    <view class="content-wrap">
+        <view class="catalog-zhanwei"></view>
+        <scroll-view scrollY class="scroll-view-content" scrollWithAnimation="true">
+            <view bind:tap="goCatalogList" class="weui-grid" data-i="{{i}}" wx:for="{{cate1Info[activeIndex].cate2Info}}" wx:for-item="i" wx:key="{{index}}">
+                <view class="weui-grid-item">
+                    <image class="catalog-item-default" src="../assets/images/catalogs-cover.png"></image>
+                    <image bind:error="errImg" class="catalog-item-image" data-err-img-index="{{activeIndex+'-'+index}}" lazyLoad="{{true}}" mode="aspectFill" src="{{errImgList[activeIndex+'-'+index]?errImgList[activeIndex+'-'+index]:i.smallIcon||'../assets/images/catalogs-cover.png'}}"></image>
+                </view>
+                <view class="des">
+                    <text>{{i.cate2Name}}</text>
+                </view>
+            </view>
+            <empty wx:if="{{(!cate1Info[activeIndex].cate2Info||!cate1Info[activeIndex].cate2Info.length)&&!isLoading}}"></empty>
+        </scroll-view>
+    </view>
+</view>
+<loading wx:if="{{isLoading}}"></loading>
+<error bind:customevent="reload" wx:if="{{isError}}"></error>

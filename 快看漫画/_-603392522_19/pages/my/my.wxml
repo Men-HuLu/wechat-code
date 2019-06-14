@@ -1,0 +1,121 @@
+<import src="/template/model-find.wxml"></import>
+<import src="/template/model-usual.wxml"></import>
+<view class="my-wrap">
+    <view class="my-head">
+        <view class="bg">
+            <image src="/image/bg-mypage.png"></image>
+        </view>
+        <view class="user-info">
+            <view bindtap="faceClick" class="user-icon">
+                <view class="user-facewrap" style="opacity: {{faceLoaded?1:0}}" wx:if="{{userInfo}}">
+                    <image bindload="faceLoaded" class="user-face" src="{{userInfo.user.avatar_url}}"></image>
+                    <image class="user-grade" src="/image/ico-v.png" wx:if="{{userInfo.user.grade}}"></image>
+                </view>
+                <text wx:if="{{!userInfo}}">登录</text>
+            </view>
+            <view class="user-name">
+                <view class="name">
+                    <text>{{userInfo.user.nickname}}</text>
+                    <view class="sex" wx:if="{{userInfo.base_info.gender>0}}">
+                        <image src="/image/ico-{{userInfo.base_info.gender==1?'male':'female'}}.png"></image>
+                    </view>
+                </view>
+                <view class="feedback">
+                    <button openType="feedback">
+                        <image mode="widthFix" src="/image/ico-feedback.png"></image>
+                        <text>意见反馈</text>
+                    </button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="my-tab-head">
+        <view>
+            <view bindtap="switchTab" class="my-tab-btn {{item.id==tab?'active':''}} {{item.id==1&&reddot?'reddot':''}}" data-current="{{item.id}}" wx:for="{{tabsData}}" wx:key="{{ item.id }}">{{item.name}}</view>
+        </view>
+    </view>
+    <swiper bindchange="switchTab" class="my-tab-body" current="{{tab}}" duration="150">
+        <swiper-item>
+            <scroll-view scrollY bindscrolltolower="getHisList" class="scroll-view">
+                <view class="my-list-wrap" style="min-height: {{hisList.length&&hisNomore?'100%':'auto'}}" wx:if="{{hisList.length}}">
+                    <view bindlongpress="hisPress" class="my-list {{hisActive&&hisActive-1==index?'active':''}}" data-index="{{index}}" wx:for="{{hisList}}" wx:key="topicId">
+                        <view bindtap="jumpTopic" class="topic-wrap" data-id="{{item.topicId}}">
+                            <view class="pic">
+                                <kk-picture height="140" src="{{item.imgUrl}}"></kk-picture>
+                            </view>
+                        </view>
+                        <view bindtap="jumpComic" class="comic-wrap" data-id="{{item.comicId}}" data-rate="{{item.rate}}">
+                            <view class="info-wrap">
+                                <view class="info-tit">
+                                    <text>{{item.topicTit}}</text>
+                                </view>
+                                <view class="info-a">
+                                    <text class="txt-a">{{item.comicTit}}</text>
+                                    <text class="txt-b">{{item.rateTxt}}</text>
+                                </view>
+                                <view class="datahis">
+                                    <progress active="true" activecolor="#ff751a" percent="{{item.rate}}" strokeWidth="1"></progress>
+                                </view>
+                            </view>
+                            <view class="cotinued-wrap">
+                                <view>续看</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="wrong-info" hidden="{{!(hisNomore&&getHisOver)}}" wx:else>
+                    <image mode="widthFix" src="/image/err-his.png"></image>
+                </view>
+                <template is="loadmore" data="{{loading:!getHisOver,nomore:hisList.length&&hisNomore}}"></template>
+            </scroll-view>
+        </swiper-item>
+        <swiper-item>
+            <scroll-view scrollY bindscrolltolower="getFolList" class="scroll-view">
+                <view class="my-list-wrap" style="min-height: {{folList.length&&folNomore?'100%':'auto'}}" wx:if="{{folList.length}}">
+                    <view class="my-list" wx:for="{{folList}}" wx:key="topicId">
+                        <view bindtap="jumpTopic" class="topic-wrap" data-id="{{item.topicId}}">
+                            <view class="pic">
+                                <kk-picture height="140" src="{{item.imgUrl}}"></kk-picture>
+                            </view>
+                            <block wx:if="{{item.lasTime}}">
+                                <view class="flag">
+                                    <text>{{item.lasTime}}</text>
+                                </view>
+                                <view class="triangle"></view>
+                            </block>
+                        </view>
+                        <view bindtap="jumpComic" class="comic-wrap" data-id="{{item.comicId}}" data-rate="{{item.rate}}">
+                            <view class="info-wrap">
+                                <view class="info-tit">
+                                    <text>{{item.topicTit}}</text>
+                                </view>
+                                <view class="info-b">
+                                    <text wx:if="{{item.lastNum}}">有<text class="num">{{item.lastNum}}</text>话未读</text>
+                                    <text wx:else>已追到最新啦</text>
+                                </view>
+                                <view class="info-c">
+                                    <text>更新至：{{item.comicTit}}</text>
+                                </view>
+                            </view>
+                            <view class="cotinued-wrap">
+                                <view hidden="{{item.lastNum===0}}">续看</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <block wx:elif="{{folNomore&&getFolOver}}">
+                    <block wx:if="{{userInfo}}">
+                        <view class="wrong-info" style="height: {{comList.length?'auto':'100%'}};">
+                            <image mode="widthFix" src="/image/err-fav.png"></image>
+                        </view>
+                        <template is="findC" data="{{title:'为你推荐',list:comList}}"></template>
+                    </block>
+                    <view class="wrong-info" wx:else>
+                        <image mode="widthFix" src="/image/err-login.png"></image>
+                    </view>
+                </block>
+                <template is="loadmore" data="{{loading:!getFolOver,nomore:folList.length&&folNomore}}"></template>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+</view>

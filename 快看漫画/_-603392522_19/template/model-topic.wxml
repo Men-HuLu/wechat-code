@@ -1,0 +1,67 @@
+<template name="comiclist">
+    <view class="comic-list">
+        <view bindtap="jumpComic" class="comic {{item.readed&&'readed'}}" data-id="{{item.id}}" wx:for="{{list}}" wx:key="id">
+            <view class="pic">
+                <kk-picture height="140" src="{{item.imgUrl}}"></kk-picture>
+                <view class="cover-pay {{item.haspay?'cover-bought':''}}" wx:if="{{item.ispay}}">
+                    <image src="/image/ico-lock{{item.haspay?'off':'on'}}.png"></image>
+                </view>
+            </view>
+            <view class="txt">
+                <text class="tit">{{item.tit}}</text>
+                <view class="infos">
+                    <text class="time">{{item.time}}</text>
+                    <text class="new" wx:if="{{item.new}}">NEW</text>
+                    <view class="praise-wrap">
+                        <image backgroundSize="cover" src="/image/ico-praise.png"></image>
+                        <text>{{item.praise}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="clock" wx:if="{{item.ifLast}}">
+                <image src="/image/ico-clock.png"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="topiclist">
+    <view class="topic-list" style="min-height: {{minHeight}}">
+        <view catchtap="jumpTopic" class="topic" data-id="{{item.id}}" wx:for="{{list}}" wx:key="id">
+            <view class="pic" style="width: {{cover[0]}}rpx; min-width: {{cover[0]}}rpx;">
+                <kk-picture height="{{cover[1]}}" src="{{item.img}}"></kk-picture>
+            </view>
+            <view class="txt">
+                <text class="tit">{{item.title}}</text>
+                <text class="author" wx:if="{{item.author}}">{{item.author}}</text>
+                <view class="tags" wx:if="{{item.category}}">
+                    <text style="font-size: {{tagBorder?22:24}}rpx; border: {{tagBorder?'1rpx solid #ccc':0}}; margin-left: {{tagBorder?0:'-6rpx'}}; margin-right: {{tagBorder?10:5}}rpx;" wx:for="{{item.category}}" wx:for-item="tag" wx:key="*this">{{tag}}</text>
+                </view>
+                <view class="data" wx:if="{{item.praise||item.comment||item.popular}}">
+                    <view class="praise" wx:if="{{item.praise}}">
+                        <image src="/image/ico-praise.png"></image>
+                        <text>{{item.praise}}</text>
+                    </view>
+                    <view class="comment" wx:if="{{item.comment}}">
+                        <image src="/image/ico-comment.png"></image>
+                        <text>{{item.comment}}</text>
+                    </view>
+                    <view class="popular" wx:if="{{item.popular}}">
+                        <image src="/image/ico-hot.png"></image>
+                        <text>{{item.popular}}</text>
+                    </view>
+                </view>
+                <text class="des" wx:if="{{item.description}}">{{item.description}}</text>
+            </view>
+            <view class="btn" wx:if="{{showFav}}">
+                <view catchtap="handleFav" class="follow" data-id="{{item.id}}" data-index="{{index}}" hidden="{{item.fav}}">
+                    <text>+ 关注</text>
+                </view>
+            </view>
+            <view class="btn" wx:if="{{showRank}}">
+                <image src="/image/ico-r{{index+1}}.png" style="height: {{index?'88rpx':'100rpx'}}" wx:if="{{index<3}}"></image>
+                <text wx:else>{{index>8?index+1:'0'+index+1}}</text>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="/template/model-usual.wxml"></import>

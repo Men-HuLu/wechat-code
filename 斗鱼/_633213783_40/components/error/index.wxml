@@ -1,0 +1,6 @@
+<view class="error-box">
+    <image class="error-icon" src="../../assets/images/error.png"></image>
+    <view class="error-title">无法获取网络内容</view>
+    <view class="error-content">别紧张，请查看网络设置</view>
+    <button bindtap="onTap" class="goto-authorization" type="default">点击重试</button>
+</view>

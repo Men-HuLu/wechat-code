@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "channel": "/components/channel/channel",
+        "discuss": "/components/discuss/discuss",
+        "custbar": "/components/custbar/custbar"
+    },
+    "disableScroll": true,
+    "enablePullDownRefresh": false
+}

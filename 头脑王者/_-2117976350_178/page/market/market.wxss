@@ -1,0 +1,13 @@
+@import "../../template/ItemDetail.wxss";
+
+.context_with_banner {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 600rpx);
+}
+
+.context_without_banner {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 400rpx);
+}

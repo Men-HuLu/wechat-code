@@ -1,0 +1,30 @@
+<view class="channel-page">
+    <view class="headline">更多推荐</view>
+    <view class="channel-lists">
+        <view bindtap="changeNewlist" class="channel-item clearfix" data-seaid="{{item.season_id}}" wx:if="{{!item.redirect_url}}" wx:for="{{lists}}" wx:key="{{item.aid}}">
+            <view class="channel-img" style="background-image:url({{item.cover}});background-size:100%">
+                <view class="badge bg-{{item.badge_type}}" wx:if="{{item.badge}}">{{item.badge}}</view>
+            </view>
+            <view class="channel-infos">
+                <view class="channel-title">{{item.title}}</view>
+                <view class="channel-card">
+                    <text class="channel-view">{{item.new_ep.index_show}}</text>
+                    <view class="info-stat">
+                        <i class="icon General_playernumbe"></i>
+                        <text class="channel-view">{{Filter.number2chn(item.stat.view)}}</text>
+                        <i class="icon General_chasenumber"></i>
+                        <text class="channel-favorites">{{Filter.number2chn(item.stat.follow)}}</text>
+                    </view>
+                </view>
+                <view class="channel-type">{{item.typename}}</view>
+            </view>
+            <view class="score-section" wx:if="{{item.rating.score>0}}">
+                <text class="score-num">{{item.rating.score}}</text>
+                <text class="chn-score">分</text>
+                <view class="play-num">{{Filter.number2chn(item.rating.count)}}人</view>
+            </view>
+        </view>
+        <view class="read-more">更多请到bilibili客户端观看</view>
+    </view>
+</view>
+<wxs module="Filter" src="../../utils/filter/index.wxs" />

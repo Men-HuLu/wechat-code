@@ -1,0 +1,59 @@
+@import "../../template/avatarNoName.wxss";
+
+@import "../../template/shareBtn.wxss";
+
+@import "../../template/avatarBase.wxss";
+
+.text-outlight {
+    font-size: 32rpx;
+    text-shadow: 0 0 0.2em #006bfd,-0 -0 0.2em #006bfd;
+}
+
+.foot_show {
+    transform: translate3d(0,0px,0);
+    animation: frames_foot_show 0.5s ease-out;
+}
+
+@-webkit-keyframes frames_foot_show {
+    0% {
+        transform: translate3d(0,60px,0);
+    }
+
+    100% {
+        transform: translate3d(0,0px,0);
+    }
+}
+
+@keyframes frames_foot_show {
+    0% {
+        transform: translate3d(0,60px,0);
+    }
+
+    100% {
+        transform: translate3d(0,0px,0);
+    }
+}
+
+.list2_show {
+    animation: frames_list2_show 0.5s ease-out;
+}
+
+@-webkit-keyframes frames_list2_show {
+    0% {
+        bottom: 4rpx;
+    }
+
+    100% {
+        bottom: 64rpx;
+    }
+}
+
+@keyframes frames_list2_show {
+    0% {
+        bottom: 4rpx;
+    }
+
+    100% {
+        bottom: 64rpx;
+    }
+}

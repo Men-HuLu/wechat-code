@@ -1,0 +1,73 @@
+@import "avatarEmoji.wxss";
+
+.emojiSelectMainView {
+    height: 0px;
+    width: 0px;
+    flex: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.emojiSelectBtn {
+    position: absolute;
+    width: 65rpx;
+    height: 50rpx;
+    top: 0px;
+    left: 0px;
+}
+
+.emojiSelectPanel {
+    position: absolute;
+    width: calc(537rpx + 24rpx);
+    height: 375rpx;
+    left: -40rpx;
+    top: -10rpx;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.emojiSelectPanelFrame {
+    background: #FFFFFF;
+    border-radius: 20rpx;
+    position: absolute;
+    width: 537rpx;
+    height: 375rpx;
+    left: 24rpx;
+    top: 70rpx;
+    box-shadow: 0 0 4rpx #000;
+}
+
+.emojiSelectPanelContentView {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 508rpx;
+    height: 292rpx;
+    position: absolute;
+    top: 115rpx;
+    left: 32rpx;
+}
+
+.emojiSelectTriangle {
+    width: 24rpx;
+    height: 32rpx;
+    position: absolute;
+    top: 42rpx;
+    left: 40rpx;
+    transform: rotate(90deg);
+}
+
+.emojiSelectCloseBtn {
+    width: 90rpx;
+    height: 90rpx;
+    position: absolute;
+    top: calc(50% - 90rpx / 2);
+    right: -45rpx;
+}
+
+.emojiSelectViewItemHover {
+    filter: brightness(2);
+}

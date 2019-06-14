@@ -1,0 +1,43 @@
+<import src="../../template/ItemDetail.wxml"></import>
+<view class="column start center2" style="position: absolute;left:0px;top:0px;background-color:#4E84E5;width:100%;height:100%"></view>
+<view class="column start center2 main-show" style="position: absolute;left:0px;top:0px;width:100%;height:100%;" wx:if="{{isShopClosed.length>0}}">
+    <view style="height:162rpx"></view>
+    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/shop_and_items/img_pay_ios.png" style="width:570rpx;height:402rpx;"></image>
+    <view class="center center2" style="font-size:48rpx;height:67rpx;width:100%;font-weight:bold;">{{isShopClosed[0]}}</view>
+    <view class="center center2" style="font-size:48rpx;height:67rpx;width:100%;font-weight:bold;color:#BDDBFF;opacity: 0.7;" wx:if="{{isShopClosed.length>1}}">{{isShopClosed[1]}}</view>
+</view>
+<view class="column start center2" style="position:absolute;width:100%;height:100%;overflow:hidden;left:0px;top:0px;" wx:else>
+    <view class="space-a row center2" style="position: relative;width:100%;height:100rpx; background-image: linear-gradient(-180deg, #4E84E5 0%, #57A3FF 100%);border-radius: 0 0 100px 100px;">
+        <view style="position:relative;width:150rpx;height:40rpx;background: #1B79E7;border-radius: 20rpx;">
+            <view class="row start center2" style="position:absolute;left:32rpx;top:0px;right:0px;height:100%;color: #FFFFFF;font-size: 32rpx;">{{gold}}</view>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png?v=2.5" style="position:absolute;left:-25rpx;top:calc((100% - 50rpx)/2);width:50rpx;height:50rpx;"></image>
+        </view>
+        <view style="position:relative;width:150rpx;height:40rpx;background: #1B79E7;border-radius: 20rpx;">
+            <view class="row start center2" style="position:absolute;left:32rpx;top:0px;right:0px;height:100%;color: #FFFFFF;font-size: 32rpx;">{{diamond}}</view>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_home_Diamonds.png?v=2.5" style="position:absolute;left:-25rpx;top:calc((100% - 39rpx)/2);width:53rpx;height:39rpx"></image>
+        </view>
+    </view>
+    <view style="height:15rpx;"></view>
+    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/shop_and_items/banner/{{banner}}" style="width:686rpx;height:180rpx;" wx:if="{{!!banner}}"></image>
+    <view style="height:17rpx;"></view>
+    <view style="position: relative;width:100%;height:64rpx;">
+        <simpleTapbar badgeHeight="59" badgeUrl="https://question-resource-wscdn.hortorgames.com/image/new_skin/shop_and_items/icon_shop_sale.png" badgeWidth="95" bind:onItemClicked="onTapbarItemClicked" id="simpleTapbar" indexNormal="{{pageIndex}}" items="{{['钻石','王者币','道具','头像框']}}" rectWidth="650"></simpleTapbar>
+    </view>
+    <view style="height:12rpx;"></view>
+    <view class="{{!!banner?'context_with_banner':'context_without_banner'}}">
+        <diamondListView bind:onDiamondClicked="onDiamondClicked" dataSource="{{diamondList}}" id="diamondListView" index="{{pageIndex}}" myIndex="0"></diamondListView>
+        <itemListView bind:onItemClicked="onItemClicked" dataSource="{{goldList}}" id="goldListView" index="{{pageIndex}}" myIndex="1"></itemListView>
+        <itemListView bind:onItemClicked="onItemClicked" dataSource="{{itemList}}" id="itemListView" index="{{pageIndex}}" myIndex="2"></itemListView>
+        <itemListView bind:onItemClicked="onItemClicked" dataSource="{{headFrameList}}" id="headFrameListView" index="{{pageIndex}}" myIndex="3"></itemListView>
+    </view>
+</view>
+<view style="position:absolute;left:calc((100% - 312rpx)/2);height:84rpx;width:312rpx;bottom:60rpx; background: #00E1BD;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 42rpx;">
+    <view class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 38rpx;color: #FFFFFF;text-align: center;">邀请好友来玩</view>
+    <button openType="share" style="width:100%;height:100%;position:absolute;left:0px;top:0px;opacity:0">看不见的分享</button>
+</view>
+<view style="position: absolute;left:0px;top:0px;width:100%;height:100%" wx:if="{{!!diamondSelected}}">
+    <template is="productDetail" data="{{...diamondSelected}}"></template>
+</view>
+<view style="position: absolute;left:0px;top:0px;width:100%;height:100%" wx:if="{{!!itemSelected}}">
+    <template is="exchangeView" data="{{...itemSelected}}"></template>
+</view>

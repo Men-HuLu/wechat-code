@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>dc</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="0923-无关系链" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-4" transform="translate(13.000000, 14.000000) scale(-1, 1) translate(-13.000000, -14.000000) translate(-1.000000, 0.000000)">
+            <rect id="Rectangle-11" transform="translate(14.000000, 14.000000) scale(-1, 1) translate(-14.000000, -14.000000) " x="0" y="0" width="28" height="28"></rect>
+            <g id="Group-6" transform="translate(13.500000, 14.000000) scale(-1, 1) translate(-13.500000, -14.000000) ">
+                <rect id="Rectangle-4" stroke="#1AAD19" stroke-width="2" transform="translate(13.634698, 14.732657) rotate(-315.000000) translate(-13.634698, -14.732657) " x="6.63183852" y="5.10746273" width="14.0057195" height="19.2503888" rx="1.14285714"></rect>
+                <g id="Group-27" transform="translate(9.850147, 10.407450) rotate(-30.000000) translate(-9.850147, -10.407450) translate(3.350147, 2.407450)">
+                    <rect id="Rectangle-8" fill="#FFFFFF" transform="translate(6.481854, 7.691229) rotate(-60.000000) translate(-6.481854, -7.691229) " x="-0.586608237" y="4.75002114" width="14.1369237" height="5.88241636"></rect>
+                    <path d="M5.81193044,1.02477852 L7.4690733,1.02477852 C7.56375068,1.02477852 7.64050187,1.1015297 7.64050187,1.19620709 L7.64050187,14.796736 L5.64050187,14.796736 L5.64050187,1.19620709 C5.64050187,1.1015297 5.71725305,1.02477852 5.81193044,1.02477852 Z" id="Rectangle-25" fill="#1AAD19" transform="translate(6.640502, 7.910757) rotate(30.000000) translate(-6.640502, -7.910757) "></path>
+                </g>
+                <rect id="Rectangle-10" fill="#1AAD19" transform="translate(17.621130, 11.443688) rotate(-315.000000) translate(-17.621130, -11.443688) " x="14.1152123" y="10.4436877" width="7.01183555" height="2"></rect>
+                <rect id="Rectangle-10-Copy" fill="#1AAD19" transform="translate(15.158417, 15.529186) rotate(-315.000000) translate(-15.158417, -15.529186) " x="12.9255926" y="14.5291859" width="4.46564951" height="2"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

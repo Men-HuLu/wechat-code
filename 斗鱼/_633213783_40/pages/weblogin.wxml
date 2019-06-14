@@ -1,0 +1,3 @@
+<view>
+    <web-view bindmessage="bindGetMsg" src="{{hosturl}}/xcx/login?biz_type=85&type={{type}}&param={{param}}&did={{did}}"></web-view>
+</view>

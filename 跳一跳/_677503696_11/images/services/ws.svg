@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>ws</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="0923-无关系链" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-14">
+            <rect id="Rectangle" fill="#D8D8D8" opacity="0" x="0" y="0" width="28" height="28"></rect>
+            <path d="M21.2559089,5.60786716 L22.2559089,5.60786716 C22.8081936,5.60786716 23.2559089,6.05558241 23.2559089,6.60786716 L23.2559089,19.4236568 L21.2559089,19.4236568 L21.2559089,5.60786716 Z" id="Rectangle-59" fill="#1588F4" transform="translate(22.255909, 12.515762) rotate(-27.000000) translate(-22.255909, -12.515762) "></path>
+            <path d="M17.0783691,4.92163091 L19.0783691,4.92163091 L19.0783691,8.07836909 C19.0783691,8.63065384 18.6306538,9.07836909 18.0783691,9.07836909 L17.0783691,9.07836909 L17.0783691,4.92163091 Z" id="Rectangle-59-Copy-2" fill="#1588F4" transform="translate(18.078369, 7.000000) rotate(-90.000000) translate(-18.078369, -7.000000) "></path>
+            <path d="M3.33649576,19 C3.11659145,19.4626449 3,19.9719151 3,20.5 C3,22.4329966 4.56700338,24 6.5,24 C8.43299662,24 10,22.4329966 10,20.5 C10,19.9719151 9.88340855,19.4626449 9.66350424,19 L3.33649576,19 Z" id="Combined-Shape" stroke="#1588F4" stroke-width="2"></path>
+            <path d="M13.242081,14.5625928 L22.5006282,14.6542079 C23.0490259,14.6596344 23.4907335,15.1057344 23.4907335,15.6541589 L23.4907335,16.6640051 L13.242081,16.5625928 L13.242081,14.5625928 Z" id="Rectangle-6" fill="#1588F4" transform="translate(18.366407, 15.613299) rotate(-225.000000) translate(-18.366407, -15.613299) "></path>
+            <path d="M10,18 L16,18 L16,19 C16,19.5522847 15.5522847,20 15,20 L10,20 L10,18 Z" id="Rectangle-6-Copy" fill="#1588F4"></path>
+            <circle id="Oval-2-Copy" stroke="#1588F4" stroke-width="2" cx="22.5" cy="20.5" r="3.5"></circle>
+            <path d="M2,19 L13,19 L13,5 L2,5 L2,19 Z" id="Rectangle-60" stroke="#1588F4" stroke-width="2"></path>
+        </g>
+    </g>
+</svg>

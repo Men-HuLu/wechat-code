@@ -1,0 +1,7 @@
+{
+    "disableScroll": true,
+    "usingComponents": {
+        "kk-picture": "/component/picture/picture",
+        "kk-ensure": "/component/ensure/ensure"
+    }
+}

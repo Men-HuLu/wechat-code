@@ -1,0 +1,20 @@
+<view bind:tap="gotoRoom" class="room-item" data-rid="{{room.rid}}" data-type="{{type}}" hoverStopPropagation="true">
+    <view class="room-item-banner">
+        <image class="room-default-image" mode="scaleToFill" src="../../assets/images/hengzhanweitu.png"></image>
+        <image class="room-item-image" lazyLoad="{{true}}" mode="scaleToFill" src="{{room.roomSrc}}"></image>
+        <view class="right-tag-yz" wx:if="{{type==='yz'&&room.liveCity}}">
+      {{room.liveCity}}
+    </view>
+        <view class="right-tag" wx:if="{{type===''&&room.cate2Name}}">
+      {{room.cate2Name}}
+    </view>
+        <view class="room-item-banner-footer">
+            <text class="room-item-footer-name">{{room.nickname}}</text>
+            <text class="room-item-footer-nums">{{room.hn}}</text>
+            <i></i>
+        </view>
+    </view>
+    <view class="room-item-info">
+        <text>{{room.roomName}}</text>
+    </view>
+</view>

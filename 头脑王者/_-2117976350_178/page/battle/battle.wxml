@@ -1,0 +1,17 @@
+<import src="../../util/daliyTask/dailyTaskNotifiyView.wxml"></import>
+<view class="shareTestBg" wx:if="{{shareTestBgVisible}}">
+    <image class="shareTestBgUpImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/activity/activity_{{shareTestType}}/img_backgroundup.png"></image>
+    <image class="shareTestBgDownImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/activity/activity_{{shareTestType}}/img_backgrounddown.png"></image>
+</view>
+<view animation="{{mainViewAni}}" class="battle_mainView">
+    <questionView class="battle_questionView" id="questionView" wx:if="{{questionViewVisible}}"></questionView>
+    <view class="battle_btnView" wx:if="{{btnViewVisible}}">
+        <answerBtn bind:selected="onTapChooseBtn" data="{{answer[0]}}" id="answerBtn0"></answerBtn>
+        <answerBtn bind:selected="onTapChooseBtn" data="{{answer[1]}}" id="answerBtn1"></answerBtn>
+        <answerBtn bind:selected="onTapChooseBtn" data="{{answer[2]}}" id="answerBtn2"></answerBtn>
+        <answerBtn bind:selected="onTapChooseBtn" data="{{answer[3]}}" id="answerBtn3"></answerBtn>
+    </view>
+    <roundView class="battle_round" id="roundView" visible="{{roundViewVisible}}" wx:if="{{roundViewVisible}}"></roundView>
+</view>
+<image bindtap="onTapWifiBtn" src="/image/battle/icon_nowifi_small.png" style="width: 88rpx; height: 88rpx; position: absolute; bottom: 16rpx; right: 16rpx;" wx:if="{{wsconnectBreaking}}"></image>
+<template is="dailyTaskNotifiyView" data="{{...taskUpdate}}"></template>

@@ -1,0 +1,55 @@
+<import src="../template/luckyRewardView.wxml"></import>
+<import src="../../../util/daliyTask/dailyTaskNotifiyView.wxml"></import>
+<audio id="sound_eff" src="https://question-resource-wscdn.hortorgames.com/image/media/button_click.mp3" wx:if="{{!soundOff}}"></audio>
+<view style="position: absolute;left:0px;top:0px;background-color:#4E84E5;width:100%;height:100%;overflow: hidden;"></view>
+<view class="column center2 space-b" style="position:absolute;width:100%;height:100%;overflow:hidden;left:0px;top:0px;display: flex; overflow: hidden;">
+    <view class="row end" style="position: relative;width:100%;height:80rpx;align-items: flex-end;flex:none;">
+        <view style="font-size: 24rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);font-weight: bold;white-space: nowrap;">拥有数量：</view>
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/icon_clover.png?v=0.2" style="width:70rpx;height:70rpx;"></image>
+        <view style="width:178rpx"></view>
+        <view style="position: absolute;left:calc(100% - 178rpx);bottom:0px;width:178rpx;height:38rpx;">
+            <view style="position: absolute;left:0px;bottom:0px;height:38rpx;font-size: 32rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);font-weight: bold;white-space: nowrap;padding-left:8rpx;">x{{mindRoll}}</view>
+            <view animation="{{ani_oneCost}}" style="position: absolute;left:0px;bottom:0px; height:38rpx;font-size: 32rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);font-weight: bold;white-space: nowrap;padding-left:8rpx;transform: translate3d(0,0,0);opacity: 0;">-{{oneCost}}</view>
+        </view>
+    </view>
+    <view class="center center2" style="position: relative; width:680rpx;height:840rpx; background: #4560ED;border: 8rpx solid rgba(105,196,255,0.25);border-radius: 40rpx;flex:none;">
+        <view class="row start" style="position: absolute;left:0px;top:0px; flex-wrap:wrap;width:100%;height:100%">
+            <view class="center center2 {{item.visible?'':'hide'}}" style="position:relative;width:calc(100% / 4);height:calc(100% / 5);" wx:for="{{rewardGrids}}" wx:key="id">
+                <view class="{{item.brightness?'brightness-more':''}}" style="position: relative;width:150rpx;height:150rpx;">
+                    <view style="position: absolute;left:0px;top:0px;width:100%;height:100%;background:#3954E3;border-radius: 30rpx;"></view>
+                    <view animation="{{item.ani_base}}" class="center center2 " style="position: absolute;left:calc((100% - 170rpx)/2);top:calc((100% - 170rpx)/2);width:170rpx;height:170rpx;opacity: 0;">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/border_jackpot_item_.png?v=0.2" style="width:100%;height:100%"></image>
+                    </view>
+                    <view class="center center2 {{indexHightlight==item.idx?'':'hide'}}" style="position: absolute;left:calc((100% - 170rpx)/2);top:calc((100% - 170rpx)/2);width:170rpx;height:170rpx;">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/border_jackpot_item_.png?v=0.2" style="width:100%;height:100%"></image>
+                    </view>
+                    <view style="position: absolute;left:0px;top:0px;width:100%;height:100%;" wx:if="{{item.data}}">
+                        <image animation="{{item.ani_icon}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/{{item.data.itemId}}.png?v=2.3" style="position: absolute;left:0px;top:0px;;width:100%;height:100%;transform: scale(1);"></image>
+                        <view class="center center2" style="position: absolute;left:0px;bottom:4rpx;width:100%;height:34rpx;font-size: 28rpx;color: #FFFFFF;text-shadow: 0 2rpx 0 #3432CB;">x{{item.data.itemNum}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view animation="{{ani_center}}" style="position: absolute;left:calc((100% - 150rpx)/2);top:calc((100% - 150rpx)/2);width:150rpx;height:150rpx;transform: scale(1);">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/border_jackpot_item_.png?v=0.2" style="position: absolute;left:calc((100% - 170rpx)/2);top:calc((100% - 170rpx)/2);width:170rpx;height:170rpx;"></image>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/icon_jackpot_item.png?v=0.2" style="position: absolute;left:0px;top:0px;;width:100%;height:100%;" wx:if="{{!reward}}"></image>
+            <view style="position: absolute;left:0px;top:0px;width:100%;height:100%;" wx:else>
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/{{reward.data.itemId}}.png?v=2.3" style="position: absolute;left:0px;top:0px;;width:100%;height:100%;transform: scale(1);"></image>
+                <view class="center center2" style="position: absolute;left:0px;bottom:4rpx;width:100%;height:34rpx;font-size: 28rpx;color: #FFFFFF;text-shadow: 0 2rpx 0 #3432CB;">x{{reward.data.itemNum}}</view>
+            </view>
+        </view>
+    </view>
+    <view animation="{{ani_btnBegin}}" bindtap="onTabBtnBegin" class="row center center2" hoverClass="brightness" style="position: relative;width:440rpx;height:114rpx;background: #00E1BD;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.34);border-radius: 100rpx;transform: scale(1);flex:none;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_challenge/icon_clover.png?v=0.2" style="width:48rpx;height:50rpx;"></image>
+        <view style="height:38rpx;font-size: 32rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);font-weight: bold;white-space: nowrap;padding-left:8rpx;">x{{oneCost}}</view>
+        <view class="center center2" style="text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);font-size: 56rpx;letter-spacing: 4rpx;line-height: 78rpx;font-weight: bold;white-space: nowrap;padding-left:12rpx;">
+      开始抽奖
+    </view>
+    </view>
+    <view style="height:30rpx;width:100%;flex:none;"></view>
+</view>
+<view style="position: absolute;left:0px;top:0px;width:100%;height:100%" wx:if="{{curReward}}">
+    <template is="luckyRewardView_gold" data="{{...curReward}}" wx:if="{{curReward.reward.data.itemId==200000}}"></template>
+    <template is="luckyRewardView_books" data="{{...curReward}}" wx:else></template>
+</view>
+<template is="dailyTaskNotifiyView" data="{{...taskUpdate}}"></template>

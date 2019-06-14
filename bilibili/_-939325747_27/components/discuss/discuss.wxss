@@ -1,0 +1,103 @@
+.disscus-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+.single-discuss {
+    border-bottom: solid 1rpx #e7e7e7;
+}
+
+.uname {
+    color: #757575;
+    font-size: 26rpx;
+    padding-top: 20rpx;
+    display: block;
+}
+
+.content {
+    display: block;
+    font-size: 28rpx;
+    color: #212121;
+}
+
+.avator {
+    border-radius: 50%;
+    height: 60rpx;
+    width: 60rpx;
+    overflow: hidden;
+    margin: 14rpx 24rpx;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0rpx;
+}
+
+.box {
+    display: inline-block;
+    width: 80%;
+}
+
+.single-discuss {
+    padding: 27rpx 30rpx;
+}
+
+.content {
+    margin-top: 18rpx;
+}
+
+.child-box {
+    border-top: solid 1rpx #e7e7e7;
+    margin-top: 18rpx;
+    margin-right: -50px;
+    overflow: hidden;
+}
+
+.hotline {
+}
+
+.isvip {
+    color: #fb7299;
+}
+
+.read-more {
+    color: #C0C0C0;
+    font-size: 28rpx;
+    height: 88rpx;
+    width: 100%;
+    line-height: 88rpx;
+    text-align: center;
+    margin-bottom: 100rpx;
+}
+
+.loading {
+    width: 100%;
+    padding-top: 200rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.loadinggif {
+    width: 560rpx;
+    height: 308rpx;
+}
+
+.ban-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+.ban-image {
+    display: block;
+    width: 560rpx;
+    height: 320rpx;
+    margin: 128rpx auto 0;
+}
+
+.ban-word {
+    width: 560rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    font-size: 16px;
+    color: #999999;
+    margin: 4rpx auto 0;
+    text-align: center;
+}

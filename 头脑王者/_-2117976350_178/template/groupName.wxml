@@ -1,0 +1,6 @@
+<template name="groupName">
+    <view class="center center2" style="width:383rpx;height:50rpx;font-size: 36rpx;color: #FFFFFF;font-weight:bold;white-space: nowrap;" wx:if="{{name}}">
+    {{name}}
+    </view>
+    <open-data class="center center2" openGid="{{openGId}}" style="width:383rpx;height:50rpx;font-size:32rpx;font-size: 36rpx;color: #FFFFFF;font-weight:bold;white-space: nowrap;" type="groupName" wx:else></open-data>
+</template>

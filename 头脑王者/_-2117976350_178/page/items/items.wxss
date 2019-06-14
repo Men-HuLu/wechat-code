@@ -1,0 +1,18 @@
+@import "../../template/propItem.wxss";
+
+@import "../../template/ItemDetail.wxss";
+
+.nullView {
+    position: absolute;
+    left: calc(50% - 680rpx / 2);
+    top: 33rpx;
+    width: 680rpx;
+    bottom: 260rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+}

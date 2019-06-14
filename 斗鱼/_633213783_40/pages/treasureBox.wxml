@@ -1,0 +1,77 @@
+<view class="treasure-authorize" wx:if="{{authDisplay}}">
+    <view class="treasure-auWindow">
+        <view class="treasure-weixin">微信授权</view>
+        <view class="treasure-img">
+            <image class="t-img" src="/assets/images/treasure-img.png"></image>
+            <view class="t-content">斗鱼小程序申请获得以下权限：</view>
+        </view>
+        <view class="treasure-info">获得你的公开信息（昵称、头像等）</view>
+        <view class="treasure-button">
+            <button bind:tap="bindCancel" class="treasure-cancel">拒绝</button>
+            <button bindgetuserinfo="bindGetUserInfo" class="treasure-confirm" openType="getUserInfo" wx:if="{{canIUse}}">允许</button>
+        </view>
+    </view>
+</view>
+<view class="treasure-endtime" wx:if="{{showEndTime}}">
+    <text>{{endTimeText}}</text>
+</view>
+<view bind:tap="clickMask" class="treasure-mask" wx:if="{{showMask.maskDisplay}}">
+    <view catchtap="clickWindow" class="treasure-window">
+        <image class="treasure-title" src="{{showMask.titleUrl}}"></image>
+        <view class="treasure-winbg">
+            <image class="treasure-two" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/two_yuwan.png"></image>
+            <text class="treasure-gift">
+                <text class="treasure-congratulate" style="display:{{showMask.textDisplay}}">恭喜你获得</text>100鱼丸</text>
+            <button bind:tap="clickGetNowBtn" class="treasure-get-now">立即领取</button>
+        </view>
+    </view>
+</view>
+<view class="treasure-activity" style="height:{{showMask.acHeight}}">
+    <image class="treasure-desc" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/descri.png"></image>
+    <view animation="{{animationData}}" class="treasure-bullet">
+        <image class="treasure-bullet-image" src="{{src}}"></image>
+        <view class="treasure-bullet-text">
+            <text class="treasure-bullet-name">{{name}}</text>
+            <text class="treasure-bullet-info">领取了<text>{{num}}</text>鱼丸</text>
+        </view>
+    </view>
+    <image class="treasure-card" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/card.png"></image>
+    <view class="treasure-content">
+        <text class="treasure-tip" wx:if="{{support<30}}">还差<text class="needNum">{{needFrNum}}</text>个好友助力即可再领取<text class="needNum">{{needYwNum}}</text>鱼丸</text>
+        <text class="treasure-tip" wx:else>您已领取本月所有鱼丸</text>
+        <view class="treasure-progress">
+            <view class="treasure-proarea">
+                <view class="treasure-bar">
+                    <image src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/progress.png" style="width: {{proWidth}}rpx; height: 8rpx;"></image>
+                </view>
+                <view class="treasure-images">
+                    <view class="{{key<=support?value?'treasure-pro3':'treasure-pro1':'treasure-pro2'}}" wx:for="{{rew}}" wx:for-index="key" wx:for-item="value" wx:key="index">
+                        <text>{{key==='0'?100:key==='1'?200:key==='5'?500:key==='15'?800:1500}}</text>
+                        <image src="{{key<=support?value?'https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/got.png':'https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/to_get_new.png':'https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/need.png'}}"></image>
+                        <view>
+                            <image src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/people.png" wx:if="{{key>support}}"></image>
+                            <text wx:if="{{key<=support}}">{{value?'已领取':'待领取'}}</text>
+                            <text wx:if="{{key>support}}">{{'×'+key}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <button bind:tap="clickGetNowBtn" class="treasure-get" disabled="{{getDisabled}}" style="opacity: {{getDisabled?0.5:1}}"></button>
+        </view>
+        <button bind:tap="{{dyUserInfo.uid?'':'gotoLogin'}}" class="treasure-invite" openType="{{dyUserInfo.uid?'share':''}}"></button>
+        <view class="treasure-friends" wx:if="{{support}}">
+            <view class="treasure-portrait">
+                <image class="treasure-p2" src="{{item.inviteeIcon}}" wx:for="{{friendsList}}" wx:key="{{index}}"></image>
+            </view>
+            <view bind:tap="clickMoreHelpInfo" class="treasure-support">
+                <text class="treasure-quantity">{{support}}位好友已助力</text>
+                <image class="treasure-more" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/more.png"></image>
+            </view>
+        </view>
+        <text class="treasure-invite-none" wx:if="{{!support}}">暂无好友助力</text>
+        <text class="treasure-invite-bottom">邀请好友访问活动页面即可领取鱼丸</text>
+    </view>
+    <image class="treasure-strategy" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/strategy.png"></image>
+    <image class="treasure-rule" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/rule.png"></image>
+    <goHome></goHome>
+</view>

@@ -1,0 +1,115 @@
+<view class="room-container {{isIpx?'fit-iphonex':''}}">
+    <view class="video-player-box {{isYz?'yz':''}}" style="height: {{isYz?windowHeight:'410rpx'}}">
+        <live-player autoPlay="true" bindfullscreenchange="fullscreenchange" bindstatechange="statechange" class="video-player" direction="{{isYz?'0':'90'}}" id="myVideo" src="{{stream}}" wx:if="{{liveStatus&&!liveerror&&!liveswitch}}">
+            <cover-view bind:tap="coverTap" class="video-cover" hidden="{{videoStatus===0}}">
+                <cover-view class="control" hidden="{{hiddenControl}}">
+                    <cover-view class="bottom-banner">
+                        <cover-image catch:tap="fullScreenEvent" class="fullscreen" src="../../../assets/room/{{fullScreen?'quit-fullscreen.png':'fullscreen.png'}}"></cover-image>
+                    </cover-view>
+                </cover-view>
+                <cover-image class="voice-img" src="https://cs-op.douyucdn.cn/dyfelocal/act/5acc7c96d51caa4669f8b2de/audio-live-cover.png?timestamp=1530193807" wx:if="{{isNrt}}"></cover-image>
+            </cover-view>
+            <cover-view class="loading-cover-wrap" wx:if="{{videoStatus>0}}">
+                <cover-view class="loading-cover" wx:if="{{videoStatus===1}}">
+          直播加载中...
+        </cover-view>
+                <cover-view class="text" wx:if="{{videoStatus===2}}">网络异常，请检查网络设置    </cover-view>
+            </cover-view>
+        </live-player>
+        <view class="video-cover" wx:elif="{{!liveStatus}}">
+            <view class="tip-box">
+                <view>
+                    <text>{{statusTip}}</text>
+                </view>
+                <view bind:tap="clickGotoCatalog" class="button" wx:if="{{!closeHasVideo}}">热门直播</view>
+                <view bind:tap="clickGotoVideo" class="button" wx:if="{{closeHasVideo}}">TA的视频</view>
+            </view>
+            <image src="../../../assets/room/liveclose.png"></image>
+        </view>
+        <view class="video-cover error" wx:elif="{{liveerror}}">
+            <view class="tip-box">
+                <view>
+                    <text>{{liveerror_tip}}</text>
+                </view>
+                <view bind:tap="retry" class="button">{{liveerror_op}}</view>
+            </view>
+        </view>
+        <view class="video-cover switch" wx:elif="{{liveswitch}}">
+            <view class="tip-box"></view>
+        </view>
+    </view>
+    <view class="anchor-info-wrap">
+        <view class="anchor-info">
+            <view class="anchor-icon">
+                <image class="anchor-icon-img" src="{{curRoomInfo.owner_avatar||'../assets/mycenter/defaulticon.png'}}"></image>
+                <image class="anchor-level-img" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b7ba78e5b25742b09e61cc0/{{levelIcon}}.png" wx:if="{{isLevelIcon}}"></image>
+            </view>
+            <view class="ai-show-content">
+                <view class="ai-username">
+                    <text class="room-cate">{{curRoomInfo.nickname||''}}</text>
+                    <text bind:tap="clickGotoCatalog" class="room-label">{{curRoomInfo.cate2_name}}</text>
+                    <text class="room-hot" wx:if="{{liveStatus}}">热度:{{curHot||0}}</text>
+                </view>
+                <view class="ai-room-info">
+                    <view class="ai-title" wx:if="{{liveStatus}}">标题</view>
+                    <view class="ai-title" wx:if="{{!liveStatus}}">公告</view>
+                    <view class="room-des" wx:if="{{liveStatus}}">{{roomName||''}}</view>
+                    <view class="room-des" wx:if="{{!liveStatus}}">{{showDetail||''}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="room-btn">
+            <view bind:tap="clickGotoHome" class="button back-btn">
+                <image class="back-img" src="../assets/room/backToMainpage.png"></image>回首页
+      </view>
+            <view bind:tap="clickAnchorkNav" class="button recommend-btn" wx:if="{{!isHideChatContent}}">相关推荐</view>
+            <view bind:tap="clickChatNav" class="button recommend-btn" wx:if="{{isHideChatContent}}">返回聊天</view>
+            <button bindgetuserinfo="onGotUserInfo" class="button share-btn" openType="getUserInfo" wx:if="{{liveStatus&&!inChatroom}}">
+                <image class="share-img" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/buildroom.png?timestamp=1541129072"></image>
+            </button>
+            <view bind:tap="clickToggleRoom" class="backToRoom" wx:if="{{inChatroom}}">
+                <view class="back-con">返回直播间</view>
+                <image class="back-img" src="../assets/room/backToRoom.png"></image>
+            </view>
+            <view bind:tap="clickOtherAnchor" class="button change-btn" wx:if="{{!liveStatus&&!inChatroom}}">
+                <image class="change-img" src="../assets/room/changeAnchor.png"></image>换个房间
+      </view>
+            <view class="chatroom-guide" wx:if="{{liveStatus&&isGuideChatroom&&!hasChatroom}}">
+                <text class="guide-con">创建你的专属房间，和群好友边看边聊</text>
+                <view bind:tap="closeGuide" class="guide-close">
+                    <image class="guide-img" src="../assets/room/closeGuide.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="chatroom-tab" wx:if="{{hasChatroom}}">
+        <text bind:tap="openChatroom" class="tab-con">群聊({{chatroomNum}}人)</text>
+        <view bind:tap="openChatroom" class="tab-list">
+            <repeat wx:for="{{chatroomImg}}" wx:for-item="itemImg" wx:key="{{i}}">
+                <image class="tab-img" src="{{itemImg}}"></image>
+            </repeat>
+        </view>
+        <text bind:tap="clickToggleRoom" class="tab-enter" wx:if="{{!inChatroom}}">进入</text>
+        <text bind:tap="clickQuitRoom" class="tab-enter" wx:if="{{inChatroom}}">退出</text>
+    </view>
+    <view class="main-content-box {{isYz?'yz':''}} {{hasChatroom&&isYz?'yzcr':''}} {{hasChatroom&&!isYz?'cr':''}}" style="{{expandStyle}}">
+        <view class="main-content {{isHideChatContent?'active2':'active1'}}">
+            <view class="chat-content-wrap">
+                <chattabcontent bind:callChatVerify="callChatVerify" bind:callPhoneBind="callPhoneBind" bind:changeGiftPanelState="changeGiftPanelState" bind:exec="exec" bind:toggleChatContent="toggleChatContent" class="component chat-tab-content" curroominfo="{{curRoomInfo}}" hiddenstate="{{isHideGiftPanel}}" isYz="{{isYz}}" isscroll="{{isScroll}}" style="visibility:{{inChatroom?'hidden':'visible'}}"></chattabcontent>
+                <chatroomcontent bind:closeChatroom="closeChatroom" bind:exec="exec" bind:toggleChatContent="toggleChatContent" chatroomJoindata="{{chatroomJoindata}}" chatroomNick="{{chatroomNick}}" class="component chat-room-content" id="chatroom" inChatroom="{{inChatroom}}" isscroll="{{isScroll}}" style="visibility:{{inChatroom?'visible':'hidden'}}" wid="{{wid}}" wx:if="{{hasChatroom}}"></chatroomcontent>
+            </view>
+            <scroll-view scrollY class="anchor-content-wrap" hidden="{{!!expandStyle}}">
+                <anchortabcontent bind:getLiveData="getLiveData" class="component" liveData="{{liveData}}" roomId="{{rid}}"></anchortabcontent>
+            </scroll-view>
+        </view>
+    </view>
+    <giftpanel bind:changeGiftPanelState="changeGiftPanelState" bind:exec="exec" class="component" giftList="{{giftList}}" hiddenstate="{{isHideGiftPanel}}" isscroll="{{isScroll}}" roomid="{{rid}}"></giftpanel>
+    <gifteffect class="component" giftList="{{giftList}}"></gifteffect>
+    <bindingphonenumber bind:bindPhoneCallback="bindPhoneCallback" class="component" isYz="{{isYz}}" isshow="{{isShowBindPhoneNum}}"></bindingphonenumber>
+    <chatverify bind:close="closeChatVerify" class="component" isYz="{{isYz}}" verifyinfo="{{chatVerifyInfo}}" verifytype="{{chatVerifyType}}" wx:if="{{isShowChatVerify}}"></chatverify>
+    <fromappshare class="component" oType="live" params="{{curRoomInfo}}" wx:if="{{isFromAppShare}}"></fromappshare>
+    <roomBanner></roomBanner>
+    <popup bind:close="closePopup" liveData="{{liveData}}" recommend="{{popupRecommend}}" wx:if="{{isPopup}}"></popup>
+    <chatPopup wx:if="{{isChatpopup}}"></chatPopup>
+    <chatenterPopup bind:enterChatroom="enterChatroom" wx:if="{{isChatenter}}"></chatenterPopup>
+</view>

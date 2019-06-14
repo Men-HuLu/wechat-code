@@ -1,0 +1,3 @@
+<view animation="{{animationPlaneData}}" class="gift-content-plane">
+    <image class="gift-content-plane-img" mode="aspectFit" src="{{planeBigPic}}"></image>
+</view>

@@ -1,0 +1,29 @@
+<template name="rewardEXView">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.5);">
+        <view class="column start center2 show-form" style="width:600rpx;  position:relative;background: #FFF1D5;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.5);">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/reward_title_default.png" style="width:530rpx;height:145rpx;position:absolute;left:calc((100% - 530rpx)/2);top:-52rpx;"></image>
+            <view class="center center2" style="position:absolute;left:0px;top:-33rpx;width:100%; height:67rpx;font-size:48rpx;text-shadow: 0 2rpx 4rpx #D84F00;font-weight:bold">{{title}}</view>
+            <view style="height:140rpx"></view>
+            <text disabled="true" maxlength="1024" style="font-size: 30rpx;color: #4353A4;width:90%;line-height: 42rpx;font-weight:bold">{{content}}</text>
+            <view class="center ac-start row warp flex-none">
+                <scroll-view class="center" name="view-listview" scrollY="true" style="width: 100%;height: 290;">
+                    <view style="width:100%">
+                        <view class="row center" style="flex-wrap:wrap;">
+                            <view bindtap="callback_item_clicked" class="column center center2" data-id="{{item.itemId}}" hoverClass="brightness" style="width:200rpx;height:290rpx;" wx:for="{{items}}" wx:for-index="id" wx:key="id">
+                                <view class="center center2 " style="background-color: #4670CD;border-radius: 20rpx;font-size: 20rpx;color: #FFF;width:152rpx;height:28rpx;font-weight:bold">{{item.name}}</view>
+                                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{item.itemId}}.png?v=0.1.12" style="width:124rpx;height:124rpx;"></image>
+                                <view class="center center2" style="font-size: 28rpx;color: #4353A4;height:34rpx;font-weight:bold">X{{item.itemNum}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+            <view style="height:40rpx"></view>
+            <view class="center center2" style="background: #7ED321;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;font-size:64rpx;font-weight:bold;width:310rpx;height:100rpx;font-weight:bold">
+                领取
+                <button bindtap="onTapRewardEXViewBtn" data-type="{{type}}" style="position:absolute;left:0px;top:0px;width:100%;height:100%;opacity:0;">看不见的领取</button>
+            </view>
+            <view style="height:40rpx"></view>
+        </view>
+    </view>
+</template>

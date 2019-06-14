@@ -1,0 +1,66 @@
+<import src="../../template/groupName.wxml"></import>
+<import src="../../template/avatarBase.wxml"></import>
+<import src="../../template/shareBtn.wxml"></import>
+<view class="aniMainView" style="background-position:{{backgroundPosition}};">
+    <view style="width: 100%; height: 66rpx; background-color: #4E84E5; display: flex; position: absolute; top: 0px; left: 0px;"></view>
+    <view class="start center2 column" style="width: 728rpx;height:100%;position: relative">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/info/bg_info_up.png" style="position: absolute;left:0px;top:0px;width:728rpx;height:530rpx;"></image>
+        <view style="position: absolute;left:0px;bottom:0px;width:728rpx;height:calc(100% - 530rpx);background:#479dfa"></view>
+    </view>
+    <view style="position: absolute;left:16rpx;top:556rpx;width:294rpx;height:144rpx;">
+        <view animation="{{aniFeild[0]}}" style="position: absolute;transform: translate3d(-160px,0,0);width:100%;height:100%;border-bottom-right-radius: 72rpx;border-top-right-radius: 72rpx;background-color:#66CAFD">
+            <view class="icon-rotate" hoverClass="icon-rotate" style="width: 120rpx; height: 120rpx;position: absolute; right:12rpx; top:calc((100% - 120rpx) / 2);">
+                <template is="avatarOnly" data="{{avatarUrl:roleInfo.userInfo.avatarUrl,id:roleInfo.headId}}"></template>
+            </view>
+            <view class="label-user-name  end-with-3dot">{{roleInfo.userInfo.nickName}}</view>
+        </view>
+    </view>
+    <view style="position: absolute;right:16rpx;top:556rpx;width:294rpx;height:144rpx;">
+        <view animation="{{aniFeild[0]}}" style="position: absolute;transform: translate3d(160px,0,0);width:100%;height:100%;border-bottom-left-radius: 72rpx;border-top-left-radius: 72rpx;background-color:#66CAFD">
+            <view class="icon-rotate" hoverClass="icon-rotate" style="width: 120rpx; height: 120rpx;position: absolute; left:12rpx; top:calc((100% - 120rpx) / 2);">
+                <template is="avatarOnly" data="{{avatarUrl:rivalUser.userInfo.avatarUrl,id:rivalUser.headId}}"></template>
+            </view>
+            <view class="label-user-name end-with-3dot">{{rivalUser.userInfo.nickName}}</view>
+        </view>
+    </view>
+    <view class="column space-b center2" style="position: absolute;left:16rpx;top:772rpx;width:294rpx;height:158rpx;">
+        <view animation="{{aniFeild[1]}}" class="row start center2" style="transform: translate3d(-150px,0,0);width:232rpx;height:46rpx;border-radius: 23rpx;background-color:#4E84E5">
+            <view class="field-title">段位</view>
+            <view class="field-context">{{roleInfo.matchName}}</view>
+        </view>
+        <view animation="{{aniFeild[2]}}" class="row start center2" style="transform: translate3d(-150px,0,0);width:232rpx;height:46rpx;border-radius: 23rpx;background-color:#4E84E5">
+            <view class="field-title">正解数</view>
+            <view class="field-context">{{killedQuestions}}</view>
+        </view>
+        <view animation="{{aniFeild[3]}}" class="row start center2" style="transform: translate3d(-150px,0,0);width:232rpx;height:46rpx;border-radius: 23rpx;background-color:#4E84E5">
+            <view class="field-title">胜场</view>
+            <view class="field-context">{{roleInfo.winRoom}}</view>
+        </view>
+    </view>
+    <view class="column space-b center2" style="position: absolute;right:16rpx;top:772rpx;width:294rpx;height:158rpx;">
+        <view animation="{{aniFeild[1]}}" class="row start center2" style="transform: translate3d(150px,0,0);width:232rpx;height:46rpx;border-radius: 23rpx;background-color:#4E84E5">
+            <view class="field-title">段位</view>
+            <view class="field-context">{{rivalUser.matchName}}</view>
+        </view>
+        <view animation="{{aniFeild[2]}}" class="row start center2" style="transform: translate3d(150px,0,0);width:232rpx;height:46rpx;border-radius: 23rpx;background-color:#4E84E5">
+            <view class="field-title">正解数</view>
+            <view class="field-context">{{killedQuestions_rival}}</view>
+        </view>
+        <view animation="{{aniFeild[3]}}" class="row start center2" style="transform: translate3d(150px,0,0);width:232rpx;height:46rpx;border-radius: 23rpx;background-color:#4E84E5">
+            <view class="field-title">胜场</view>
+            <view class="field-context">{{rivalUser.winRoom}}</view>
+        </view>
+    </view>
+    <view style="position: absolute;left:0px;bottom:0px;width:100%;height:160rpx" wx:if="{{roleInfo}}">
+        <view animation="{{ani_foot}}" class="column start center2" style="position: absolute;left:calc((100% - 360rpx) / 2);width:360rpx;height:100%;transform:translate3d(0,90px,0);">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/info/img_info_share.png?v=1" style="position: absolute;left:calc((100% - 753rpx) / 2);bottom:40rpx;width:753rpx;height:140rpx;"></image>
+            <view style="width:750rpx;height:40rpx;left:calc((100% - 750rpx) / 2);bottom:0px;position: absolute;background-color:#4e84e5"></view>
+            <template is="shareBtn" data="{{desc:'分享到其他群 继续看排行',shareRewardText:shareRewardText}}"></template>
+        </view>
+    </view>
+    <view animation="{{ani_web}}" class="column center center2 flex-none" style="position:absolute;left:0px;top:66rpx; width:100%;height:241px;transform: scale(3) rotate(-90deg);opacity:0;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/info/img_info_coordinate.png?v=0.1.06" style="width:236px;height:239px"></image>
+        <canvas canvasId="myCanvas2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;border: 0px solid;" wx:if="{{showSharp1}}"></canvas>
+        <canvas canvasId="myCanvas" style="position: absolute;left:0px;top:0px;width:100%;height:100%;border: 0px solid;" wx:if="{{showSharp2}}"></canvas>
+    </view>
+</view>

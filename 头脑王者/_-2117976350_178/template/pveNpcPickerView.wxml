@@ -1,0 +1,35 @@
+<template name="pveNpcPickerView">
+    <view style="width:100%;height:100%;position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.5);"></view>
+    <view class="start center2 column" style="width:584rpx;height:900rpx;border-radius:10rpx;overflow:hidden;background-color:#4c68c1; position:relative">
+        <view class="center center2" style="width:100%;height:96rpx;font-size:48rpx;font-color:#fff;background-color:#3d4996">
+            <view>{{name}}</view>
+            <image bindtap="{{callback_closed_clicked}}" src="../../image/ui/close.png" style="width:56rpx; height:56rpx; position:absolute; top:18prx; right:18rpx">返回</image>
+        </view>
+        <view style="width:100%; height:1rpx; background-color:#212f42"></view>
+        <view style="height:20rpx"></view>
+        <view class="row space-a center2 ac-start warp" style="width:100%">
+            <template is="npcItem" data="{{...item,callback_item_clicked:callback_item_clicked,isNewUser:isNewUser}}" wx:for="{{npc}}" wx:for-index="id" wx:key="id"></template>
+        </view>
+        <view style="text-align:center; width:100%; position:absolute;left:0px; bottom:16rpx; color:#51bafe; font-size:30rpx">
+    击败所有对手就能开启本场
+    </view>
+        <view class="column center2 start" hoverStopPropagation="{{true}}" style="position:absolute;width:75%;height:50%;left:0px;top:40%" wx:if="{{isNewUser}}">
+            <image src="../../image/ui/arrow.png" style="width:114rpx;height:145rpx"></image>
+            <view style="height:20rpx"></view>
+            <view>点击开启挑战</view>
+        </view>
+    </view>
+</template>
+<template name="npcItem">
+    <view class="center center2 column " style="width:158rpx; margin:20rpx;position:relative;">
+        <view bindtap="{{callback_item_clicked?callback_item_clicked:''}}" class="center center2 {{passed_or_fighting?'':'dark'}}" data-npc-id="{{id}}" style="width:132rpx; height:132rpx; border-radius:50%; border:13rpx solid #ae6abe;">
+            <image backgroundSize="cover" class="flex-none {{isNewUser?'item-shine':''}}" src="https://question-resource-wscdn.hortorgames.com/image/npc/{{avatar}}.png" style="width:120rpx; height:120rpx; border-radius:50%; border:6rpx solid #ffffff; " wx:if="{{avatar}}"></image>
+        </view>
+        <view class="center center2 {{passed_or_fighting?'hide':''}}" style="position:absolute; top:0px; left:0px; width:158rpx; height:158rpx;">
+            <image class="flex-none" src="../../image/ui/lock.png" style="width:46rpx;height:56rpx;"></image>
+        </view>
+        <view class="center center2 flex-none {{passed_or_fighting?'':'hide'}}" style="border-radius:10rpx; background-color:#ae6abe; width:110rpx; height:46rpx; margin:10rpx; ">
+            <text style="color:#fff; font-size:35rpx;">{{label}}</text>
+        </view>
+    </view>
+</template>

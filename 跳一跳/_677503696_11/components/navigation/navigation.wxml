@@ -1,0 +1,12 @@
+<view class="navigation-bar {{platform==='android'?'navigation-bar_android':''}} my_class" style="padding-top:{{statusBarHeight}}px;">
+    <view bindtap="back" class="navigation-bar__left-area">
+        <slot name="left"></slot>
+    </view>
+    <view class="navigation-bar__center-area">
+        <text class="navigation-bar__title" wx:if="{{title}}">{{title}}</text>
+        <slot name="center"></slot>
+    </view>
+    <view class="navigation-bar__right-area">
+        <slot name="right"></slot>
+    </view>
+</view>

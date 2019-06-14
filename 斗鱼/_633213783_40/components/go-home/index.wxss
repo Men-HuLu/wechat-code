@@ -1,0 +1,17 @@
+.goto-home-btn {
+    position: fixed;
+    bottom: 130rpx;
+    right: 32rpx;
+    z-index: 9;
+    width: 102rpx;
+    height: 102rpx;
+}
+
+.goto-home-btn .homepage-btn-pic {
+    width: 100%;
+    height: 100%;
+}
+
+.is-iphonex .goto-home-btn,.fit-iphonex .goto-home-btn {
+    bottom: 202rpx;
+}

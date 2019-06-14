@@ -1,0 +1,23 @@
+<import src="/template/model-usual.wxml"></import>
+<import src="/template/model-topic.wxml"></import>
+<view class="rank-wrap">
+    <view class="rank-top">
+        <view catchtap="clickTab" class="tab-item {{index==tagIndex?' active':''}}" data-index="{{index}}" wx:for="{{tagList}}" wx:key="id">{{item}}</view>
+    </view>
+    <view class="swiper-wrap">
+        <swiper bindchange="swiperTouch" current="{{tagIndex}}" duration="{{duration}}">
+            <swiper-item data-index="{{index}}" wx:for="{{tagList}}" wx:key="index">
+                <view class="rank-item" wx:if="{{swiperObj[index].list.length}}">
+                    <view class="info" wx:if="{{swiperObj[index].time}}">
+                        <text>下次出榜时间：{{swiperObj[index].time}}</text>
+                    </view>
+                    <template is="topiclist" data="{{list:swiperObj[index].list,cover:[248,328],tagBorder:true,showRank:true}}"></template>
+                    <view class="rules">
+                        <text wx:for="{{rulesList[index]}}" wx:key="index">{{item}}</text>
+                    </view>
+                </view>
+                <template is="loadmore" data="{{loading:!swiperObj[index],nodata:swiperObj[index]&&!swiperObj[index].list.length}}"></template>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

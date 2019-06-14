@@ -1,0 +1,306 @@
+@import "../../cover/cover.wxss";
+
+@import "../../../template/avatarNoName.wxss";
+
+@import "../../../__wuBaseWxss__/1.wxss";
+
+@import "../../../app.wxss";
+
+.full {
+    width: 100%;
+    height: 100%;
+    top: 0rpx;
+    bottom: 0rpx;
+    left: 0rpx;
+    right: 0rpx;
+    position: absolute;
+}
+
+.top {
+    position: absolute;
+    top: 0rpx;
+}
+
+.topicTitleImage {
+    z-index: 1;
+    width: 688rpx;
+    height: 200rpx;
+    left: calc(50% - 688rpx / 2);
+}
+
+.topicTitleMask {
+    position: absolute;
+    left: calc(50% - 660rpx / 2);
+    top: 170rpx;
+    height: 24rpx;
+    width: 660rpx;
+    z-index: 2;
+}
+
+.topicScrollView {
+    z-index: 1;
+    border-radius: 22rpx;
+    width: 660rpx;
+    top: 180rpx;
+    bottom: 185rpx;
+    left: calc((100% - 660rpx) / 2);
+    position: absolute;
+}
+
+.topicScrollViewBottomMask {
+    z-index: 1;
+    transform: scaleY(-1);
+    height: 24rpx;
+    width: 660rpx;
+    bottom: 180rpx;
+    left: calc(50% - 660rpx/2);
+    position: absolute;
+}
+
+.bottomSpace {
+    width: 100%;
+    height: 200rpx;
+    background: #4F85E5;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    position: absolute;
+    bottom: 0rpx;
+    left: 0rpx;
+    z-index: 0;
+}
+
+.bottomSelfRank {
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    color: #7FEEFF;
+    letter-spacing: 0;
+    line-height: 24rpx;
+    width: 226rpx;
+    margin-top: 40rpx;
+}
+
+.button {
+    border: 0rpx;
+    width: 300rpx;
+    height: 96rpx;
+    box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);
+    border-radius: 100rpx;
+    margin-top: 60rpx;
+    z-index: 1;
+    position: absolute;
+    bottom: 28rpx;
+    left: calc(50% - 300rpx/2);
+}
+
+.buttonShareText {
+    font-family: PingFangSC-Semibold;
+    font-size: 42rpx;
+    line-height: 42rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-shadow: 0 1rpx 3rpx rgba(0,0,0,0.50);
+    position: absolute;
+    top: calc(50% - 42rpx/2);
+    left: 120rpx;
+}
+
+.shareImage {
+    width: 58rpx;
+    height: 55rpx;
+    position: absolute;
+    left: 30rpx;
+    top: calc(50% - 42rpx/2);
+}
+
+.button2 {
+    background: #00E1BD;
+    border: 0rpx;
+    box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);
+    border-radius: 100rpx;
+    width: 310rpx;
+    height: 100rpx;
+}
+
+.fontStyle {
+    font-family: PingFangSC-Semibold;
+    font-size: 36rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);
+    width: 360rpx;
+    height: 50rpx;
+    position: absolute;
+    bottom: 68rpx;
+    left: calc(50% - 360rpx/2);
+}
+
+.getAwardNodeBackground {
+    z-index: 4;
+    width: 719rpx;
+    height: 100%;
+    position: absolute;
+    left: calc(50% - 719rpx/2);
+}
+
+.getAwardNodeBackgroundTop {
+    position: absolute;
+    top: -10rpx;
+    left: calc(50% - 719rpx/2);
+    width: 719rpx;
+}
+
+.getAwardNodeAvatar {
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    top: 18rpx;
+    left: calc((100% - 100rpx)/2);
+}
+
+.getAwardNodeNickname {
+    position: absolute;
+    left: calc(50% - 300rpx/2);
+    top: 140rpx;
+    height: 22rpx;
+    width: 300rpx;
+    line-height: 22rpx;
+    font-family: PingFangSC-Semibold;
+    font-size: 22rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    display: flex;
+    space-around: 100rpx;
+}
+
+.getAwardNodeMyRank {
+    position: absolute;
+    left: calc(50% - 300rpx/2);
+    top: 180rpx;
+    height: 22rpx;
+    width: 300rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    color: #7FEEFF;
+    letter-spacing: 0;
+    display: flex;
+    space-around: 100rpx;
+}
+
+.getAwardNodeEnter {
+    animation: moveIn 0.3s forwards;
+}
+
+@-webkit-keyframes moveIn {
+    0% {
+        transform: translate3d(0,0,0);
+    }
+
+    to {
+        transform: translate3d(0,-105%,0);
+    }
+}
+
+@keyframes moveIn {
+    0% {
+        transform: translate3d(0,0,0);
+    }
+
+    to {
+        transform: translate3d(0,-105%,0);
+    }
+}
+
+.getAwardNodeExit {
+    animation: moveOut 0.3s forwards;
+    animation-delay: 1s;
+}
+
+@-webkit-keyframes moveOut {
+    0% {
+        transform: translate3d(0,5,0);
+    }
+
+    to {
+        transform: translate3d(0,105%,0);
+    }
+}
+
+@keyframes moveOut {
+    0% {
+        transform: translate3d(0,5,0);
+    }
+
+    to {
+        transform: translate3d(0,105%,0);
+    }
+}
+
+.avatarExit {
+    animation: tada 1s;
+}
+
+.bannerEnter {
+    animation: scaleInX 0.3s 0.3s forwards;
+}
+
+.itemIconEnter {
+    animation: scaleIn 0.3s 0.3s forwards;
+}
+
+.itemIconExit {
+    animation: toAvatar 1s forwards;
+}
+
+@-webkit-keyframes toAvatar {
+    0% {
+        opacity: 1;
+        scale: scale(1,1);
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0,0) translate(0,-1200rpx);
+        transform-origin: top;
+    }
+}
+
+@keyframes toAvatar {
+    0% {
+        opacity: 1;
+        scale: scale(1,1);
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0,0) translate(0,-1200rpx);
+        transform-origin: top;
+    }
+}
+
+.bannerExit {
+    animation: scaleOutX 0.3s forwards;
+}
+
+.btnGetAwardExit {
+    animation: fadeOut 0.3s forwards;
+}
+
+.topicTitleImageEnter {
+    animation: fadeOut 0.3s forwards;
+}
+
+.topicTitleImageExit {
+    animation: fadeIn 0.3s forwards;
+}
+
+.awardNumExit {
+    animation: fadeOut 0.1s forwards;
+}

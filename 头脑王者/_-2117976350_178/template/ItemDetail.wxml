@@ -1,0 +1,315 @@
+<template name="no_money_shop">
+    <view style="width:100%;height:100%">
+        <view bindtap="callback_nomoney_close_clicked" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="column form-normal center2 show-form" style="position:absolute; width:500rpx; height:660rpx; left:0; top:0; right:0; bottom:0; margin:auto;">
+            <view class="icon-rotate item-hole" hoverClass="icon-rotate">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_exclamatory_mark.png?v=0.1.12" style="width:100%;height:100%;"></image>
+            </view>
+            <view style="height:178rpx"></view>
+            <view class="center center2" style="width:100%;height:67rpx;color:#FF7063;font-size: 48rpx;;font-weight:bold;">
+        王者币数量不足
+      </view>
+            <view class="center center2" style="width:100%;height:40rpx;color:#4A4A4A;font-size:28rpx;">请去商店购买</view>
+            <view class="column center center2" style="height:230rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png?v=0.1.12" style="width:80rpx;height:80rpx;"></image>
+                <view class="row center center2" style="width:100%">
+                    <view class="center center2" style="height:34rpx;color:#FF7063;font-size:28rpx;font-weight:bold">{{needGold}}</view>
+                </view>
+            </view>
+            <view bindtap="callback_nomoney_shop_clicked" class="row center center2" hoverClass="brightness" style="position:absolute;left:calc((100% - 310rpx)/2);bottom:40rpx;width:310rpx;height:100rpx;font-size:48rpx; background-color:#5dbaff;border-radius:20rpx;box-shadow:0 2rpx 4rpx rgba(0,0,0,0.5);font-weight:bold">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/info/btn_info_share.png?v=0.1.12" style="width:50rpx;height:46rpx"></image>
+                <view style="width:30rpx"></view> 购买
+      </view>
+            <view bindtap="callback_nomoney_close_clicked" class="center center2" hoverClass="brightness" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30rpx;height:30rpx"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="no_money_share">
+    <view style="width:100%;height:100%">
+        <view bindtap="callback_nomoney_close_clicked" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="column form-normal center2 show-form" style="position:absolute; width:500rpx; height:660rpx; left:0; top:0; right:0; bottom:0; margin:auto;">
+            <view class="icon-rotate item-hole" hoverClass="icon-rotate">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_exclamatory_mark.png?v=0.1.12" style="width:100%;height:100%;"></image>
+            </view>
+            <view style="height:178rpx"></view>
+            <view class="center center2" style="width:100%;height:67rpx;color:#FF7063;font-size: 48rpx;;font-weight:bold;">
+        王者币数量不足
+      </view>
+            <view class="center center2" style="width:100%;height:40rpx;color:#4A4A4A;font-size:28rpx;">分享到微信群获得免费王者币</view>
+            <view class="column center center2" style="height:230rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png?v=0.1.12" style="width:80rpx;height:80rpx;"></image>
+                <view class="row center center2" style="width:100%">
+                    <view class="center center2" style="height:34rpx;color:#FF7063;font-size:28rpx;font-weight:bold">{{needGold}}</view>
+                </view>
+            </view>
+            <view class="row center center2" hoverClass="brightness" style="position:absolute;bottom:40rpx;left:calc((100% - 310rpx)/2);width:310rpx;height:100rpx;font-size:48rpx; background-color:#5dbaff;border-radius:20rpx;box-shadow:0 2rpx 4rpx rgba(0,0,0,0.5);font-weight:bold">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/info/btn_info_share.png?v=0.1.12" style="width:50rpx;height:46rpx"></image>
+                <view style="width:30rpx"></view> 分享
+        <button openType="share" style="position: absolute; left:0; top:0; opacity:0; width:100%; height:100%;">隐藏的分享按钮</button>
+            </view>
+            <view bindtap="callback_nomoney_close_clicked" class="center center2" hoverClass="brightness" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30rpx;height:30rpx"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="ItemDetail_book_none">
+    <view style="width:100%;height:100%">
+        <view bindtap="callback_booknone_close_clicked" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="column form-normal center2 show-form" style="position:absolute; width:500rpx; height:660rpx; left:0; top:0; right:0; bottom:0; margin:auto;">
+            <view class="icon-rotate item-hole" hoverClass="icon-rotate">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_exclamatory_mark.png?v=0.1.12" style="width:100%;height:100%;"></image>
+            </view>
+            <view style="height:178rpx"></view>
+            <view class="center center2" style="width:100%;height:67rpx;color:#FF7063;font-size: 48rpx;;font-weight:bold;">
+        知识书数量不足
+      </view>
+            <view class="center center2" style="width:100%;height:40rpx;color:#4A4A4A;font-size:28rpx;">请去商店购买幸运草</view>
+            <view class="column center center2" style="height:230rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_subjects_book/{{id}}.png?v=0.1.12" style="width:80rpx;height:80rpx;"></image>
+                <view class="row center center2" style="width:100%">
+                    <view class="center center2" style="height:34rpx;color:#FF7063;font-size:28rpx;font-weight:bold">{{bookNum}}</view>
+                    <view class="center center2" style="height:34rpx;color:#4353A4;font-size:28rpx;font-weight:bold">/{{needBook}}</view>
+                </view>
+            </view>
+            <view bindtap="callback_booknone_goshop_clicked" class="center center2" hoverClass="brightness" style="position:absolute;left:calc((100% - 310rpx)/2);bottom:40rpx;width:310rpx;height:100rpx;font-size:48rpx; background-color:#F5A623;border-radius:20rpx;box-shadow:0 2rpx 4rpx rgba(0,0,0,0.5);font-weight:bold">
+        购买
+      </view>
+            <view bindtap="callback_booknone_close_clicked" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="ItemDetail_book_uplevel">
+    <view style="width:100%;height:100%">
+        <view bindtap="{{callback_uplevel_back_clicked}}" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="column form-normal center2 show-form" style="position:absolute; width:500rpx; height:660rpx; left:0; top:0; right:0; bottom:0; margin:auto;">
+            <view class="icon-rotate book-hole" hoverClass="icon-rotate">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{id}}.png?v=0.1.12" style="width:100%;height:100%;"></image>
+            </view>
+            <view style="height:105rpx"></view>
+            <view class="center center2" style="width:100%;height:75rpx;color:#447414;font-size: 48rpx;;font-weight:900;">
+        升级成功
+      </view>
+            <view class="column start center2" style="width:100%">
+                <view class="center center2" style="font-size:32rpx;color:#4353A4;font-weight:bold">等级{{level+1}}</view>
+                <view style="height:20rpx"></view>
+                <view class="center center2" style="width:80%;height:280rpx;line-height: 40rpx;color:#4A4A4A;font-size:28rpx;font-weight:bold">{{name}}类题目答对得分+{{nextUp}}%</view>
+                <view bindtap="{{callback_uplevel_back_clicked}}" class="center center2" hoverClass="{{bookNum<needBook?'':'brightness'}}" style="position:relative;width:318rpx;height:108rpx">
+                    <image class="{{bookNum<needBook?'gray':''}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/btn_green.png" style="width:100%;height:100% "></image>
+                    <view class="font-button-white " style="position:absolute;left:0px;top:0px;width:100%;height:100% ">返回</view>
+                </view>
+            </view>
+            <view bindtap="{{callback_uplevel_back_clicked}}" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="ItemDetail_book">
+    <view style="width:100%;height:100%">
+        <view bindtap="{{callback_back_clicked}}" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="column form-normal center2 show-form" style="position:absolute; width:500rpx; height:700rpx; left:0; top:0; right:0; bottom:0; margin:auto;">
+            <view class="book-hole center center2">
+                <view class="icon-rotate" hoverClass="icon-rotate" style="width:170rpx;height:170rpx;">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{id}}.png?v=0.1.12" style="width:100%;height:100%;"></image>
+                </view>
+            </view>
+            <view style="height:105rpx"></view>
+            <view class="font-title-white center center2" style="width:100%;height:75rpx;background-color:#4e84e5">
+        {{name}}
+      </view>
+            <view class="column start center2" style="width:100%" wx:if="{{!levelMax}}">
+                <view class="center center2" style="width:100%; height:42rpx;font-size:36rpx;font-weight:900;color:#4670CD">等级{{level}}</view>
+                <view style="height:20rpx"></view>
+                <view class="center center2" style="width:80%;line-height: 40rpx;color:#4A4A4A;font-size:28rpx;">{{desc}}</view>
+                <view style="height:15rpx"></view>
+                <view class="center center2" style="width:140rpx;height:40rpx;background-color:#5dbaff;border-radius:20rpx;font-size:22rpx;font-weight:bold">升级消耗</view>
+                <view class="row center center2" style="width:100%;height:140rpx;">
+                    <view class="column center2">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_subjects_book/{{id}}.png?v=0.1.12" style="width:80rpx;height:80rpx;"></image>
+                        <view class="center center2" style="width:112rpx;height:34rpx;color:#4353A4;font-size:28rpx;font-weight:bold">{{bookNum}}/{{needBook}}</view>
+                    </view>
+                    <view style="width:50rpx"></view>
+                    <view class="column center2">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png" style="width:80rpx;height:80rpx;"></image>
+                        <view class="center center2" style="width:112rpx;height:34rpx;color:#F5A623;font-size:28rpx;font-weight:bold">{{needGold}}</view>
+                    </view>
+                </view>
+                <view style="height:15rpx"></view>
+                <view bindtap="{{callback_use_clicked}}" class="center center2" hoverClass="{{bookNum<needBook?'':'brightness'}}" style="position:relative;width:318rpx;height:108rpx">
+                    <image class="{{bookNum<needBook?'gray':''}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/btn_green.png" style="width:100%;height:100% "></image>
+                    <view class="font-button-white " style="position:absolute;left:0px;top:0px;width:100%;height:100% ">升级</view>
+                </view>
+            </view>
+            <view class="column center center2" wx:else>
+                <view style="height:20rpx;"></view>
+                <view class="center center2" style="width:100%; height:42rpx;font-size:36rpx;font-weight:900;color:#4670CD">满级</view>
+                <view style="height:10rpx;"></view>
+                <view class="center center2" style="width:80%;line-height: 40rpx;color:#4A4A4A;font-size:28rpx;">{{desc}}</view>
+                <view style="height:40rpx;"></view>
+                <view class="row center center2" style="width:100%;height:160rpx;">
+                    <view class="column center2">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_subjects_book/{{id}}.png?v=0.1.12" style="width:80rpx;height:80rpx;"></image>
+                        <view class="center center2" style="width:112rpx;height:34rpx;color:#4353A4;font-size:28rpx;font-weight:bold">{{bookNum}}</view>
+                    </view>
+                </view>
+                <view style="height:30rpx"></view>
+                <view bindtap="{{callback_back_clicked}}" hoverClass="brightness" style="position:relative;width:318rpx;height:108rpx">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/btn_green.png" style="width:100%;height:100%"></image>
+                    <view class="font-button-white " style="position:absolute;left:0px;top:0px;width:100%;height:100%">返回</view>
+                </view>
+            </view>
+            <view bindtap="{{callback_back_clicked}}" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="ItemDetail_fudai">
+    <view style="width:100%;height:100%">
+        <view bindtap="{{callback_fudaiBack_clicked}}" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="show-form column start center2 form-normal" style="position:absolute; width:680rpx; height:838rpx; left:0; top:0; right:0; bottom:0; margin:auto;">
+            <view class="item-hole center center2">
+                <view class="icon-rotate" hoverClass="icon-rotate" style="width:170rpx;height:170rpx;">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{fudai_id}}.png?v=0.1.12" style="width:100%;height:100%;"></image>
+                </view>
+            </view>
+            <view style="height:105rpx"></view>
+            <view class="font-title-white center center2" style="width:100%;height:75rpx;background-color:#4e84e5">
+        {{fudai_name}}
+      </view>
+            <view style="width:100%">
+                <scroll-view scrollY style="width:100%;flex-wrap:wrap;height:500rpx;">
+                    <view class="row start" style="flex-wrap:wrap;">
+                        <view style="position:relative;width:226rpx;height:260rpx;" wx:for="{{items}}" wx:for-index="id" wx:key="id">
+                            <view bindtap="" class="column center center2 " data-id="{{item.id}}" hoverClass="brightness" style="width:100%;height:100%; position:absolute;">
+                                <view class="center center2" style="height:28rpx;width:152rpx;font-size:20rpx;background-color:#4670CD;border-radius:14rpx">{{item.name}}</view>
+                                <view class="center center2" style="position:relative; width:124rpx;height:124rpx;" wx:if="{{item.typeId==4}}">
+                                    <view style="width:116rpx;height:116rpx;background-color:{{item.color}};border-radius:50%;"></view>
+                                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_subjects_book/{{item.id}}.png?v=0.1.12" style="position:absolute;left:calc((100% - 100rpx)/2);top:calc((100% - 100rpx)/2); width:100rpx;height:100rpx"></image>
+                                </view>
+                                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{item.id}}.png?v=0.1.12" style="width:124rpx;height:124rpx;" wx:else></image>
+                                <view class="center center2" style="height:34rpx;width:100%;font-size:28rpx;font-weight:bold;color:#4353A4">X{{item.num}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+            <view style="height:10rpx"></view>
+            <view bindtap="{{callback_fudaiBack_clicked}}" class="center center2" hoverClass="brightness" style="position:absolute;width:318rpx;height:108rpx;left:calc(50% - 318rpx / 2); bottom:40rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/btn_green.png" style="width:100%;height:100%"></image>
+                <view class="font-button-white" style="position:absolute;left:0px;top:0px;width:100%;height:100%">返回</view>
+            </view>
+            <view bindtap="{{callback_fudaiBack_clicked}}" class="center center2" hoverClass="brightness" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="ItemDetail_buy">
+    <view style="width:100%;height:100%">
+        <view bindtap="{{callback_back_clicked}}" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="{{ani_form||''}}" style="position:absolute; width:500rpx; height:660rpx; left:0; top:0; right:0; bottom:0; margin:auto;transform: rotate3d(0, 0, 1, 0deg);">
+            <view class="show-form column center2 form-normal" style="width:100%; height:100%;">
+                <view class="item-hole center center2">
+                    <view class="icon-rotate gray" hoverClass="icon-rotate" style="width:170rpx;height:170rpx;">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{id}}.png?v=0.1.12" style="width:100%;height:100%;"></image>
+                    </view>
+                </view>
+                <view style="height:105rpx"></view>
+                <view class="font-title-white center center2" style="width:100%;height:75rpx;background-color:#4e84e5">
+          {{name}}
+        </view>
+                <view class="font-context-black center center2" style="width:80%; height:300rpx;line-height: 55rpx;">{{desc}}</view>
+                <view bindtap="{{btnLock?'':callback_use_clicked}}" class="center center2" style="position:absolute; left:calc(50% - 310rpx / 2); bottom:30rpx; background: {{btnLock?'#cfcfcf':'#7ED321'}};box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;font-size:64rpx;font-weight:bold;width:310rpx;height:100rpx;">购买</view>
+                <view bindtap="{{callback_back_clicked}}" class="center center2" hoverClass="brightness" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx" wx:if="{{canBuy}}">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="ItemDetail">
+    <view style="width:100%;height:100%">
+        <view bindtap="{{callback_back_clicked}}" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="{{ani_form||''}}" style="position:absolute; width:500rpx; height:660rpx; left:0; top:0; right:0; bottom:0; margin:auto;transform: rotate3d(0, 0, 1, 0deg);">
+            <view class="show-form column center2 form-normal" style="width:100%; height:100%;">
+                <view class="item-hole center center2">
+                    <view class="icon-rotate" hoverClass="icon-rotate" style="width:170rpx;height:170rpx;">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{id}}.png?v=0.1.12" style="width:100%;height:100%;"></image>
+                    </view>
+                </view>
+                <view style="height:105rpx"></view>
+                <view class="font-title-white center center2" style="width:100%;height:75rpx;background-color:#4e84e5">
+          {{name}}
+        </view>
+                <view class="font-context-black center center2" style="width:80%; height:300rpx;line-height: 55rpx;">{{desc}}</view>
+                <view style="position:absolute; display:flex; justify-content: center; align-items: center; width:100%; left:0px; bottom:136rpx; font-size: 30rpx;color: #8CBBFF; height:40rpx; margin: 10rpx;" wx:if="{{num}}">剩余数量：{{num}}</view>
+                <view bindtap="{{btnLock?'':callback_use_clicked}}" class="center center2" style="position:absolute; left:calc(50% - 310rpx / 2); bottom:30rpx; background: {{btnLock?'#cfcfcf':'#7ED321'}};box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;font-size:64rpx;font-weight:bold;width:310rpx;height:100rpx;">使用</view>
+                <view bindtap="{{callback_back_clicked}}" class="center center2" hoverClass="brightness" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="exchangeView">
+    <view style="width:100%;height:100%">
+        <view bindtap="{{callback_exchangeView_back_clicked}}" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="show-form column center2 form-normal" style="position:absolute; width:500rpx; height:660rpx; left:0; top:0; right:0; bottom:0; margin:auto;">
+            <view class="item-hole icon-rotate" hoverClass="icon-rotate" style="width:170rpx;height:170rpx;position: absolute;left: calc(50% - 85rpx);top: -85rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{itemId}}.png?v=0.1.12" style="width:100%;height:100%;" wx:if="{{!iconUrl}}"></image>
+                <view style="position: relative;width:100%;height:100%;" wx:else>
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/head_frame/img_moren.png" style="position:absolute;left:0px;top:0px;width:100%;height:100%;"></image>
+                    <image class="avatarOnly-tiers" src="{{iconUrl}}"></image>
+                </view>
+            </view>
+            <view style="height:105rpx"></view>
+            <view class="font-title-white center center2" style="width:100%;height:75rpx;background-color:#4e84e5">
+        {{name}}
+      </view>
+            <view class="font-context-black center center2" style="width:80%; height:256rpx;line-height: 55rpx;">{{typeName}}X{{itemNum}}</view>
+            <view style="height:60rpx"></view>
+            <view bindtap="{{callback_exchangeView_ok_clicked}}" class="center center2" hoverClass="brightness" style="position:relative;width:318rpx;height:108rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/btn_green.png" style="width:100%;height:100%"></image>
+                <view class="font-button-white center center2" style="position:absolute;left:0px;top:0px;width:100%;height:100%;font-weight:bold">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/shop_and_items/icon_diamonds.png?v=0.1.13" style="width:50rpx;height:42rpx;"></image>
+          {{factPrice}}兑换
+        </view>
+            </view>
+            <view bindtap="{{callback_exchangeView_back_clicked}}" class="center center2" hoverClass="brightness" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="productDetail">
+    <view style="width:100%;height:100%">
+        <view bindtap="{{callback_back_clicked}}" name="background" style="width:100%;height:100%;background-color:rgba(0,0,0,0.5);"></view>
+        <view class="show-form column center2 form-normal" style="position:absolute; width:500rpx; height:660rpx; left:0; top:0; right:0; bottom:0; margin:auto;">
+            <view class="item-hole icon-rotate" hoverClass="icon-rotate" style="width:170rpx;height:170rpx;position: absolute;left: calc(50% - 85rpx);top: -85rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{itemId}}.png?v=0.1.12" style="width:100%;height:100%;"></image>
+            </view>
+            <view style="height:105rpx"></view>
+            <view class="font-title-white center center2" style="width:100%;height:75rpx;background-color:#4e84e5">
+        {{name}}
+      </view>
+            <view style="height:60rpx"></view>
+            <view class="font-context-black center center2" style="width:80%; height:100rpx;line-height: 55rpx;">{{desc}}</view>
+            <view style="height:60rpx"></view>
+            <view class="font-context-black center center2" style="width:80%; height:55rpx;line-height: 55rpx;" wx:if="{{double==1&&!hasBuybuybuy}}">首冲可获得双倍钻石</view>
+            <view bindtap="{{callback_use_clicked}}" class="center center2" hoverClass="brightness" style="position:absolute;width:318rpx;height:108rpx;left:calc((100% - 318rpx)/2);bottom:50rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/btn_green.png" style="width:100%;height:100%"></image>
+                <view class="font-button-white" style="position:absolute;left:0px;top:0px;width:100%;height:100%;font-weight:bold">￥{{price}}购买</view>
+            </view>
+            <view bindtap="{{callback_back_clicked}}" class="center center2" hoverClass="brightness" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="../template/propItem.wxml"></import>

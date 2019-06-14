@@ -1,0 +1,68 @@
+<template name="s4millionsOverBanner">
+    <view bindtap="onTapMillionsOverBanner" style="position: absolute;left:0px;top:0px;width:100%;height:100%;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/season/s3_milions/img_share_banner.png?v=3" style="position: absolute;width:100%;height:100%;left:0px;top:0px;"></image>
+        <view style="position: absolute;width:340rpx;height:100%;right:0px;top:0px">
+            <view style="position: absolute;left:0px;top:15rpx;font-size: 22rpx;color: #FFFFFF;text-shadow: 0 1rpx 3rpx rgba(0,0,0,0.50);">第三赛季产生了 {{kingsNum||0}} 位王者</view>
+            <view class="row start center2" style="position: absolute;left:0px;top:50rpx;">
+                <view style="font-size: 22rpx;color: #FFFFFF;text-shadow: 0 1rpx 3rpx rgba(0,0,0,0.50);">已平分总奖金</view>
+                <view style="font-size: 28rpx;color: #fecf48;text-shadow: 0 1rpx 3rpx rgba(0,0,0,0.50);">{{kingsReward||0}}万</view>
+            </view>
+            <view class="center center2" style="position: absolute;right:2px;bottom:26rpx;opacity: 0.6;background: #981EEE;border-radius: 24rpx 0 0 24rpx;width:160rpx;height:48rpx;">
+                <view style="font-size: 28rpx;color: #7FEEFF;line-height: 28rpx">活动已结束</view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="millionsGetCashAreadyBanner">
+    <view bindtap="onTapGetCashAreadyBanner" style="position: absolute;left:0px;top:0px;width:100%;height:100%;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/season/s3_milions/img_share_banner.png?v=3" style="position: absolute;width:100%;height:100%;left:0px;top:0px;"></image>
+        <view style="position: absolute;width:340rpx;height:100%;right:0px;top:0px">
+            <view style="position: absolute;left:0px;top:15rpx;font-size: 22rpx;color: #FFFFFF;text-shadow: 0 1rpx 3rpx rgba(0,0,0,0.50);">第三赛季产生了 {{kingsNum||0}} 位王者</view>
+            <view class="row start center2" style="position: absolute;left:0px;top:50rpx;">
+                <view style="font-size: 22rpx;color: #FFFFFF;text-shadow: 0 1rpx 3rpx rgba(0,0,0,0.50);">已平分总奖金</view>
+                <view style="font-size: 28rpx;color: #fecf48;text-shadow: 0 1rpx 3rpx rgba(0,0,0,0.50);">{{kingsReward||0}}万</view>
+            </view>
+            <view class="center center2" style="position: absolute;width:192rpx;height:48rpx;right:24rpx;bottom:22rpx; background: #CCA2FF;box-shadow: 0 -1rpx 0 0 rgba(255,190,145,0.80), 0 2rpx 4rpx 0 rgba(77,0,80,0.50);border-radius: 100rpx;" wx:if="{{showGetCashBtn}}">
+                <view style="font-size: 34rpx;color: #9169FF;text-shadow: 0 1rpx 2rpx rgba(0,0,0,0.50);line-height: 34rpx;">
+                    已领取奖金
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="millionsGetCashBanner">
+    <view style="position: absolute;left:0px;top:0px;width:100%;height:100%;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/season/s3_milions/img_share_banner.png?v=3" style="position: absolute;width:100%;height:100%;left:0px;top:0px;"></image>
+        <view style="position: absolute;width:340rpx;height:100%;right:0px;top:0px">
+            <view style="position: absolute;left:0px;top:15rpx;font-size: 22rpx;color: #FFFFFF;text-shadow: 0 1rpx 3rpx rgba(0,0,0,0.50);">第三赛季产生了 {{kingsNum||0}} 位王者</view>
+            <view class="row start center2" style="position: absolute;left:0px;top:50rpx;">
+                <view style="font-size: 22rpx;color: #FFFFFF;text-shadow: 0 1rpx 3rpx rgba(0,0,0,0.50);">已平分总奖金</view>
+                <view style="font-size: 28rpx;color: #fecf48;text-shadow: 0 1rpx 3rpx rgba(0,0,0,0.50);">{{kingsReward||0}}万</view>
+            </view>
+            <view bindtap="onTapGetSeasonMoney" class="center center2" hoverClass="brightness" style="position: absolute;width:192rpx;height:48rpx;right:24rpx;bottom:22rpx; background: #FF9A1B;box-shadow: 0 -1rpx 0 0 rgba(255,190,145,0.80), 0 2rpx 4rpx 0 rgba(77,0,80,0.50);border-radius: 100rpx;" wx:if="{{showGetCashBtn}}">
+                <view style="font-size: 34rpx;color: #FFFFFF;text-shadow: 0 1rpx 2rpx rgba(0,0,0,0.50);line-height: 34rpx;">
+                    领取奖金
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="millionsBanner">
+    <view bindtap="millionsPopupView_onBanner" style="position: absolute;left:0px;top:0px;width:100%;height:100%;">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/img_home_banner_million.png?v=3" style="position: absolute;width:100%;height:100%;left:0px;top:0px;"></image>
+        <view style="position: absolute;width:338rpx;height:90rpx;right:0px;bottom:0px">
+            <view class="row start center2" style="position: absolute;left:0px;top:0px;height:30rpx;">
+                <view class="row start center2" style="height:30rpx;font-size: 22rpx;color: #FFF;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);white-space: nowrap;line-height:30rpx;font-weight: bold;">本赛季已产生</view>
+                <view style="width:12rpx;"></view>
+                <view animation="{{kingsNumAni}}" class="row start center2" style="height:30rpx;font-size: 22rpx;color: #FFF;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);white-space: nowrap;line-height:30rpx;transform: scale(1);font-weight: bold;">{{kingsNum||0}}</view>
+                <view style="width:12rpx;"></view>
+                <view class="row start center2" style="height:30rpx;font-size: 22rpx;color: #FFF;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);white-space: nowrap;line-height:30rpx;font-weight: bold;">位王者</view>
+            </view>
+            <view class="row start center2" style="position: absolute;left:0px;top:35rpx;height:30rpx;width:100%;font-size: 26rpx;color: #FFF;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);white-space: nowrap;line-height:30rpx;font-weight: bold;">将平分奖金</view>
+            <view style="background: #FF7738;border-radius: 20rpx;position: absolute;left:141rpx;top:32rpx;height:34rpx;width:183rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/img_home_banner_million_coin.png?v=3" style="position: absolute;left:-8rpx;top:-6rpx; width:43rpx;height:44rpx;"></image>
+                <view class="row start center2" style="position: absolute;left:39rpx;top:0px;height:100%;width:calc(100% - 54rpx);font-size: 32rpx;color: #FFF;text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);white-space: nowrap;line-height:39rpx;font-weight: bold;display:flex;justify-content:center;align-items: center;">{{kingsReward||0}}万</view>
+            </view>
+        </view>
+    </view>
+</template>

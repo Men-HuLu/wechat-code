@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>f_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="0923-无关系链" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" fill-rule="nonzero">
+            <circle id="Oval-3" stroke="#1AAD19" cx="9.5" cy="9.5" r="7"></circle>
+            <circle id="Oval-4" fill="#1AAD19" cx="9.5" cy="9.5" r="1.5"></circle>
+            <rect id="Rectangle-12" fill="#1AAD19" x="14" y="9" width="5" height="1" rx="0.2"></rect>
+            <rect id="Rectangle-12-Copy" fill="#1AAD19" x="0" y="9" width="5" height="1" rx="0.2"></rect>
+            <rect id="Rectangle-12-Copy-2" fill="#1AAD19" transform="translate(9.500000, 2.500000) rotate(-270.000000) translate(-9.500000, -2.500000) " x="7" y="2" width="5" height="1" rx="0.2"></rect>
+            <rect id="Rectangle-12-Copy-3" fill="#1AAD19" transform="translate(9.500000, 16.500000) rotate(-270.000000) translate(-9.500000, -16.500000) " x="7" y="16" width="5" height="1" rx="0.2"></rect>
+        </g>
+    </g>
+</svg>

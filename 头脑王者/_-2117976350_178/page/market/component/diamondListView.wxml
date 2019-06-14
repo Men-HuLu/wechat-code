@@ -1,0 +1,24 @@
+<view style="{{viewStyle}}">
+    <scroll-view scrollY="true" style="position:absolute;left:calc((100% - 678rpx)/2);top:14rpx;width:678rpx;bottom:0px">
+        <view class="row start" style="flex-wrap:wrap;">
+            <view bindtap="callback_item_clicked" data-pid="{{item.id}}" hoverClass="brightness" style="position: relative;width:226rpx;height:280rpx" wx:for="{{dataSource}}" wx:for-index="id" wx:key="id">
+                <view style="position:absolute;right:0px;bottom:0px;width:200rpx;height:254rpx;background: #C2E6FF;border: 5rpx solid rgba(208,236,255,0.72);box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 10rpx;">
+                    <view style="position: absolute;left:calc((100% - 136rpx)/2);top:21rpx;height:26rpx;width:136rpx;background:#4E84E5;border-radius: 100rpx;">
+                        <view class="center center2" style="font-size: 20rpx;width:100%;height:100%;color: #FFFFFF;text-align: center;">{{item.name}}</view>
+                    </view>
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/{{item.id}}.png?v=0.1.13" style="position: absolute;left:calc((100% - 110rpx)/2);top:56rpx;width:110rpx;height:110rpx;"></image>
+                    <view class="row-reverse center2" style="position: absolute;left:130rpx;top:140rpx;right:0px;height;31rpx;font-size: 26rpx;color: #4990E2;text-align: center;">X{{item.num}}</view>
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/shop_and_items/img_double.png?v=0.1.13" style="position: absolute;left:-18rpx;top:-23rpx;width:78rpx;height:78rpx;" wx:if="{{item.double==1&&!item.hasBuybuybuy}}"></image>
+                    <view class="center center2" style="position:absolute;left:0px;bottom:0px;height:76rpx;width:100%;background: #8BD6FF;border-bottom-left-radius: 10rpx;border-bottom-right-radius: 10rpx;">
+                        <view style="position: relative;width:156rpx;height:52rpx;background: #F5A623;box-shadow: 0 2rpx 3rpx 0 rgba(0,0,0,0.50), inset 0 1rpx 1rpx 1rpx #FFCA45;border-radius: 50rpx;">
+                            <view class="center center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;font-size: 30rpx;color: #FFFFFF;text-align: center;text-shadow: 0 1rpx 2rpx rgba(0,0,0,0.50);">￥{{item.price}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view style="width:100%;height:100rpx;"></view>
+    </scroll-view>
+    <view style="position: absolute;top:0px;left:calc((100% - 711rpx) / 2);width:711rpx;height:90rpx;background-image: linear-gradient(-180deg, rgba(40,129,218,0.00) 64%, #145DD7 92%);box-shadow: 0 4rpx 6rpx 0 #5891F7;border-radius: 0 0 30rpx 30rpx;transform:rotate(180deg);"></view>
+    <view style="position: absolute;bottom:247rpx;left:calc((100% - 711rpx) / 2);width:711rpx;height:90rpx;background-image: linear-gradient(-180deg, rgba(40,129,218,0.00) 64%, #145DD7 92%);box-shadow: 0 4rpx 6rpx 0 #5891F7;border-radius: 0 0 30rpx 30rpx;" wx:if="{{dataSource.length>6}}"></view>
+</view>

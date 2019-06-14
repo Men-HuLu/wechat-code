@@ -1,0 +1,45 @@
+<view class="specialDesPageMain flipInY animated">
+    <image class="titleBackground" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/reward_title_default.png">
+        <text class="titleText">赛制说明</text>
+    </image>
+    <scroll-view class="specialInner shake-Z animated" scrollY="true">
+        <view style="display: flex;flex-direction: column;align-items: center;height: auto;width: 100%;">
+            <view class="specialTitle center center2">
+                <text style="line-height: 36rpx">活动规则</text>
+            </view>
+            <text class="center center2" style="font-size: 24rpx;color:#4A90E2 ;margin-top: 0rpx; width: 524rpx">
+                {{des}}
+            </text>
+            <view class="specialTitle center center2" wx:if="{{!!awardConfig&&awardConfig.length>0}}">
+                <text style="line-height: 36rp">活动奖励</text>
+            </view>
+            <view class="specialAwardList" wx:if="{{!!awardConfig&&awardConfig.length>0}}">
+                <view class="listTitle">
+                    <text class="center center2" style="background: #64D3FF;height: 100%; width: 50%;border-top-left-radius: 14rpx;">名次
+                    </text>
+                    <text class="center center2" style="width: 50%">奖励</text>
+                </view>
+                <view class="specialAwardItem" wx:if="{{idx<awardConfig.length-1}}" wx:for="{{awardConfig}}" wx:for-index="idx" wx:key="name">
+                    <view style="background: #D5F7FF ;height:100%;width: 50%;display: flex;align-items: center;justify-content: center;">
+                        <text class="awardName" wx:if="{{item.icon===''}}">{{item.name}}</text>
+                        <image class="awardName" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/theme/theme_comon/{{item.icon}}.png?v=1.0" style="width: 44rpx;height: 60rpx" wx:if="{{item.icon!==''}}"></image>
+                    </view>
+                    <view style="width: 50%; justify-content: flex-start;display: flex;align-items: center">
+                        <image class="awardImage" src="{{item.imgUrl}}"></image>
+                        <text class="awardDescription">{{item.description}}</text>
+                    </view>
+                </view>
+                <view class="specialAwardItem bottom" wx:if="{{idx===awardConfig.length-1}}" wx:for="{{awardConfig}}" wx:for-index="idx" wx:key="name">
+                    <view style="background: #D5F7FF ;height:100%;width: 50%;display: flex;align-items: center;justify-content: center; border-bottom-left: 0rpx solid #BFCBE5;border-bottom-left-radius: 14rpx;border-bottom-right: 0rpx solid #BFCBE5;border-bottom-right-radius: 14rpx;">
+                        <text class="awardName">{{item.name}}</text>
+                    </view>
+                    <view style="width: 50%; justify-content: flex-start;display: flex;align-items: center">
+                        <image class="awardImage" src="{{item.imgUrl}}"></image>
+                        <text class="awardDescription">{{item.description}}</text>
+                    </view>
+                </view>
+            </view>
+            <view style="height: 20rpx"></view>
+        </view>
+    </scroll-view>
+</view>

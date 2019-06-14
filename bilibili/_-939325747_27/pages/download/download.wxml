@@ -1,0 +1,8 @@
+<view class="share-box">
+    <image src="../../image/downloadpage.png"></image>
+    <view>
+        <text>复制链接在浏览器中打开</text>
+        <text>直接下载哔哩哔哩APP</text>
+    </view>
+    <button bindtap="copyfilber">复制链接</button>
+</view>

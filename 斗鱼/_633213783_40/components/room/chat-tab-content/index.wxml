@@ -1,0 +1,55 @@
+<scroll-view bind:touchend="barrageTouchEnd" bind:touchstart="barrageTouchStart" bindscroll="scrollBarrageContainer" class="barrage-content" scrollTop="{{scrollTop}}" scrollY="{{isscroll}}">
+    <view>
+        <view class="system-tip">
+            <view class="st-title">系统通知</view>
+            <text class="st-content">欢迎来到<text class="st-sp">{{curroominfo.nickname}}</text>的直播间。斗鱼提倡健康的直播环境，对直播内容24小时巡查。任何传播违法、违规、低俗等不良信息的行为将被封号。</text>
+        </view>
+        <view class="system-tip" hidden="{{tcpConnected}}">
+            <view class="st-content">网络异常：弹幕服务器连接失败</view>
+        </view>
+        <view class="barrage-item {{item._barrageType==='SHARE'?'share-barrage':''}}" hidden="{{!tcpConnected}}" wx:for="{{barrages}}" wx:key="bid">
+            <block wx:if="{{item._barrageType==='CHAT'}}">
+                <text class="username {{item.isSelf?'self':''}}">{{item.nn}}：</text>
+                <text class="dm-text">{{item.txt}}</text>
+            </block>
+            <block wx:elif="{{item._barrageType==='ENTER'}}">
+                <text class="dm-text">欢迎</text>
+                <text class="username self"> {{item.nn}} </text>
+                <text class="dm-text">光临直播间</text>
+            </block>
+            <view class="block-share" wx:elif="{{item._barrageType==='SHARE'}}">
+                <text class="username self">{{item.nickname}}</text>
+                <text class="dm-text"> 分享了直播间，为主播增加热度！</text>
+                <button class="button share-btn" openType="share">
+                    <image class="share-img" src="../../../assets/room/barrage-share.png"></image>
+                </button>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<banner></banner>
+<view class="footer-controls" style="height:{{focusHeight}}">
+    <view class="send-danmu-wrap {{isIOS?'ios':''}} {{isShowInput?'focus':'blur'}}">
+        <view class="shut-up-box" hidden="{{!isShutUp}}">
+            <text>禁言至 {{shutUpTime}}</text>
+        </view>
+        <view class="sdw-input-box" hidden="{{isShutUp}}">
+            <input adjustPosition="{{adjustPosition}}" bindblur="inputBlur" bindconfirm="inputConfirm" bindfocus="inputFocus" bindinput="bindinputEvent" class="dm-input" maxlength="33" placeholder="吐个槽呗~" placeholderStyle="color: #adadad" value="{{inputValue}}"></input>
+            <view bind:tap="clickSendDM" class="send-content" wx:if="{{!isShowInput}}">
+                <view class="send-dm-btn {{isDisable?'active':''}}">{{sendDMText}}</view>
+            </view>
+        </view>
+    </view>
+    <view bind:tap="clickGiftBtn" class="gift-btn" wx:if="{{!isIOS&&isShowInput}}">
+        <image class="c-icon" mode="scaleToFill" src="/assets/room/icongift.png"></image>
+        <view class="c-text">礼物</view>
+    </view>
+    <view bind:tap="clickDownloadBtn" class="download-btn" style="margin-left: {{!isIOS?'59rpx':'40rpx'}}" wx:if="{{isShowInput}}">
+        <image class="c-icon" mode="scaleToFill" src="/assets/room/iconDownload.png"></image>
+        <view class="c-text">下载</view>
+    </view>
+    <button class="footer-share-btn" openType="share" wx:if="{{isShowInput}}">
+        <image class="c-icon" mode="scaleToFill" src="/assets/room/roomShare.png"></image>
+        <view class="c-text">分享</view>
+    </button>
+</view>

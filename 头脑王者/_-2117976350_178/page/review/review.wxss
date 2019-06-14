@@ -1,0 +1,171 @@
+@import "../../template/avatarBase.wxss";
+
+.avatar-left {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+    border: 5rpx solid #66CAFD;
+    flex: none;
+}
+
+.avatar-right {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+    border: 5rpx solid #FA537F;
+    flex: none;
+}
+
+.battle_btn {
+    flex: none;
+    width: 352rpx;
+    height: 72rpx;
+    border-radius: 20rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    white-space: nowrafffp;
+    font-size: 32rpx;
+    color: #fff;
+    line-height: 80rpx;
+    border: 4rpx solid #FFFFFF;
+}
+
+.battle_btn.false {
+    background: #FF7063;
+}
+
+.battle_btn.true {
+    background: #00E1BD;
+}
+
+.battle_btnIconRight {
+    flex: none;
+    position: absolute;
+    width: 33rpx;
+    height: 33rpx;
+}
+
+.battle_btnIconRight.left {
+    top: calc(50% - 33rpx / 2);
+    left: 10rpx;
+}
+
+.battle_btnIconRight.right {
+    top: calc(50% - 33rpx / 2);
+    right: 10rpx;
+}
+
+.battle_btnIconWrong {
+    position: absolute;
+    width: 28rpx;
+    height: 28rpx;
+}
+
+.battle_btnIconWrong.left {
+    top: calc(50% - 28rpx / 2);
+    left: 10rpx;
+}
+
+.battle_btnIconWrong.right {
+    top: calc(50% - 28rpx / 2);
+    right: 10rpx;
+}
+
+.battle_questionView {
+    width: 540rpx;
+    height: 135rpx;
+    font-size: 32rpx;
+    color: #FFFFFF;
+    text-align: left;
+    line-height: 45rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-break: break-all;
+}
+
+.battle_questionView_forimg {
+    width: 540rpx;
+    height: 90rpx;
+    font-size: 26rpx;
+    color: #FFFFFF;
+    text-align: left;
+    line-height: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-break: break-all;
+}
+
+.comment-full {
+    animation: frame-hover-scale3 0.2s ease-out;
+}
+
+.battle_btn_forimage {
+    flex: none;
+    width: 280rpx;
+    height: 80rpx;
+    border-radius: 20rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    white-space: nowrafffp;
+    font-size: 26rpx;
+    color: #fff;
+    line-height: 80rpx;
+    border: 4rpx solid #FFFFFF;
+}
+
+.battle_btn_forimage.false {
+    background: #FF7063;
+}
+
+.battle_btn_forimage.true {
+    background: #00E1BD;
+}
+
+.battle_btn_forimageIconRight {
+    flex: none;
+    position: absolute;
+    width: 33rpx;
+    height: 33rpx;
+}
+
+.battle_btn_forimageIconRight.left {
+    top: calc(50% - 33rpx / 2);
+    left: 4rpx;
+}
+
+.battle_btn_forimageIconRight.right {
+    top: calc(50% - 33rpx / 2);
+    right: 4rpx;
+}
+
+.battle_btn_forimageIconWrong {
+    position: absolute;
+    width: 28rpx;
+    height: 28rpx;
+}
+
+.battle_btn_forimageIconWrong.left {
+    top: calc(50% - 28rpx / 2);
+    left: 4rpx;
+}
+
+.battle_btn_forimageIconWrong.right {
+    top: calc(50% - 28rpx / 2);
+    right: 4rpx;
+}

@@ -1,0 +1,44 @@
+<template name="taskItem">
+    <view class="start row taskItemNode">
+        <image class="taskCheckBox" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_tasks/icon_tasks_finished.png?v=0.2" wx:if="{{item.progress>=item.condVal}}"></image>
+        <image class="taskCheckBox" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_tasks/icon_tasks_default.png?v=0.2" wx:if="{{item.progress<item.condVal}}"></image>
+        <text class="taskName">{{item.content}}</text>
+        <view class="taskProgressBackground">
+            <view class="taskProgress" style="width: {{440*(item.progress/item.condVal>1?1:item.progress/item.condVal)}}rpx"></view>
+        </view>
+        <text class="taskPercent taskPercent_{{item.progress>=item.condVal}}">{{item.progress+'/'+item.condVal}}</text>
+        <text class="taskStateDetail taskStateDetail_{{item.progress>=item.condVal}}">{{item.progress>=item.condVal?'已完成':'未完成'}}</text>
+    </view>
+</template>
+<template name="dailyTask">
+    <view class="scaleIn animated" style="animation-duration: 0.3s;z-index:5;background: rgba(0,0,0,0.5);width: 100%;height: 100%;position: absolute;top: 0px;left: 0px;">
+        <view class="dailyTaskMainNode" wx:if="{{status!==2}}">
+            <view bindtap="onDailyTaskCloseTap" class="taskIconClose">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=0.2" style="position: absolute;width: 30rpx;height: 30rpx;top:calc(50% - 30rpx/2);left:calc(50% - 30rpx/2)"></image>
+            </view>
+            <image class="taskTitleIcon tada animated" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_tasks/img_baoxiang{{groupId+1}}.png?v=0.2" wx:if="{{groupId>=0}}"></image>
+            <view class="center taskLevelDetail taskLevelDetailBackground_{{groupId}}">
+                <text class="center center2">{{taskLevelDetail}}任务宝箱</text>
+            </view>
+            <scrollView class="center2 column start taskListScrollView" scrollY="{{true}}">
+                <template is="taskItem" data="{{item:item,index:index}}" wx:for="{{tasks}}" wx:key="item.name"></template>
+            </scrollView>
+            <view bindtap="onDailyTaskCloseTap" class="center buttonListBack" hoverClass="brightness">
+                <text class="center center2">确 定</text>
+            </view>
+            <text class="tip">完成所有任务解锁宝箱</text>
+        </view>
+        <view class="taskAllClearMain" wx:if="{{status===2}}">
+            <view bindtap="onDailyTaskCloseTap" class="taskIconClose">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png?v=0.2" style="position: absolute;width: 30rpx;height: 30rpx;top:calc(50% - 30rpx/2);left:calc(50% - 30rpx/2)"></image>
+            </view>
+            <image class="taskTitleIcon" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/daily_tasks/img_tasks_completed.png?v=0.2"></image>
+            <text class="taskAllClearDetail">宝箱任务完成</text>
+            <text class="taskAllClearTip taskAllClearTipUp">今日宝箱已全部开完，</text>
+            <text class="taskAllClearTip taskAllClearTipDown">请等待明天...</text>
+            <view bindtap="onDailyTaskCloseTap" class="center buttonListBack" hoverClass="brightness" style="position: absolute;bottom: 40rpx">
+                <text class="center center2">返回</text>
+            </view>
+        </view>
+    </view>
+</template>

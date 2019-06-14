@@ -1,0 +1,73 @@
+.battle_btnIconRight {
+    flex: none;
+    position: absolute;
+    width: 33rpx;
+    height: 33rpx;
+}
+
+.battle_btnIconRight.left {
+    top: calc(50% - 33rpx / 2);
+    left: 20rpx;
+}
+
+.battle_btnIconRight.right {
+    top: calc(50% - 33rpx / 2);
+    right: 20rpx;
+}
+
+.battle_btnIconWrong {
+    position: absolute;
+    width: 28rpx;
+    height: 28rpx;
+}
+
+.battle_btnIconWrong.left {
+    top: calc(50% - 28rpx / 2);
+    left: 22rpx;
+}
+
+.battle_btnIconWrong.right {
+    top: calc(50% - 28rpx / 2);
+    right: 22rpx;
+}
+
+.battle_btn {
+    flex: none;
+    width: 432rpx;
+    height: 92rpx;
+    background: #FFFFFF;
+    box-shadow: 0 4rpx 0 0 rgba(0,0,0,0.34);
+    border-radius: 70rpx;
+    letter-spacing: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    white-space: nowrap;
+    font-size: 40rpx;
+    color: #4354A6;
+    line-height: 100rpx;
+    border: 4rpx solid transparent;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.battle_btn.false {
+    background: #FF7063;
+    color: #FFFFFF;
+    border: 4rpx solid transparent;
+}
+
+.battle_btn.true {
+    background: #00E1BD;
+    color: #FFFFFF;
+    border: 4rpx solid transparent;
+}
+
+.battle_btn.selected {
+    background: #4E79E5;
+    color: #FFFFFF;
+    border: 4rpx solid #ffff;
+}

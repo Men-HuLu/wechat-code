@@ -1,0 +1,49 @@
+<import src="../template/list.wxml"></import>
+<custom-page my_class="navigation-bar_color" title="{{title}}">
+    <view bindtap="exit" class="navigation-bar__icon-opr" hidden="{{showAllServices}}" hoverClass="none" slot="left">
+        <image class="navigation-bar__icon-opr__image" src="/images/navigation_back.svg"></image>
+    </view>
+    <view bindtap="goAddr" class="position__area" hidden="{{showAllServices}}" slot="right">
+        <view class="position__wrp">
+            <image class="icon-location-big" src="/images/locationB_icon.svg"></image>
+            <text class="position__name ellipsis-1">{{location.address}}</text>
+            <image class="icon-more-large" src="/images/nextb_icon.svg"></image>
+        </view>
+    </view>
+    <view class="page-inner" slot="page">
+        <view class="main-type__list border-bottom {{services.length+categories.length==1?'length-1':''}} {{services.length+categories.length<5&&services.length+categories.length>1?'length-4':''}}" wx:if="{{services.length+categories.length>0}}">
+            <view bindtap="reportService" class="main-type__item" data-idx="{{index}}" hoverClass="none" wx:for="{{services}}" wx:key="name">
+                <image class="main-type__icon" src="{{item.logo}}"></image>
+                <view class="main-type__text">{{item.name}}</view>
+                <image class="icon-more-large" src="/images/nextb_icon.svg"></image>
+            </view>
+            <view bindtap="reportCategory" class="main-type__item" data-idx="{{index}}" hoverClass="none" wx:for="{{categories}}" wx:key="name">
+                <image class="main-type__icon" src="{{item.logo}}"></image>
+                <view class="main-type__text">{{item.name}}</view>
+                <image class="icon-more-large" src="/images/nextb_icon.svg"></image>
+            </view>
+            <view bindtap="showAllService" class="main-type__item" hoverClass="none" wx:if="{{services.length+totalCategories.length>10}}">
+                <image class="main-type__icon" src="/images/more@3x.png"></image>
+                <view class="main-type__text">全部</view>
+            </view>
+        </view>
+        <template is="list" data="{{list:list}}"></template>
+        <view class="empty-item light-gray-color font-size-26" wx:if="{{!loading&&list.length==0}}">暂无可展示的小程序</view>
+    </view>
+</custom-page>
+<view class="category-all__popup {{showAllServices?'animation-start':''}}" style="top: {{statusBarHeight+(platform==='android'?48:44)}}px;">
+    <view bindtap="hideAllService" class="category-all__mask"></view>
+    <view class="category-all__wrp">
+        <view class="main-type__list">
+            <view bindtap="reportService" class="main-type__item" data-idx="{{index}}" hoverClass="none" wx:for="{{services}}" wx:key="name">
+                <image class="main-type__icon" src="{{item.logo}}"></image>
+                <view class="main-type__text">{{item.name}}</view>
+            </view>
+            <view bindtap="reportCategory" class="main-type__item" data-idx="{{index}}" hoverClass="none" wx:for="{{totalCategories}}" wx:key="name">
+                <image class="main-type__icon" src="{{item.logo}}"></image>
+                <view class="main-type__text">{{item.name}}</view>
+            </view>
+        </view>
+        <view bindtap="hideAllService" class="category-all__opr thin-border-top" hoverClass="bg-highlight">收起</view>
+    </view>
+</view>

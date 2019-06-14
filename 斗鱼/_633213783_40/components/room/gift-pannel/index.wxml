@@ -1,0 +1,43 @@
+<view bind:tap="clickGiftPanelWrap" class="gift-panel-wrap" wx:if="{{!hiddenstate}}">
+    <view catchtap="stopClick" class="gift-panel">
+        <view animation="{{giftItem.animationData}}" class="animate-gift-icon" style="{{giftAnimateStyle}}">
+            <image id="{{index}}" mode="scaleToFill" src="{{giftItem.seltGiftObj.mobile_icon_v2||'../../../assets/room/defaultgift.png'}}"></image>
+        </view>
+        <swiper class="gift-list" indicatorActiveColor="#f50" indicatorColor="#eee" indicatorDots="true" wx:if="{{swiperItemData.length>0}}">
+            <swiper-item wx:for="{{swiperItemData}}" wx:for-index="dataindex" wx:for-item="datalist" wx:key="dataindex">
+                <view catchtap="clickGiftItem" class="gift-item {{seltGiftId===item.id?'active':''}}" data-index="{{index}}" data-item="{{item}}" wx:for="{{datalist}}" wx:key="index">
+                    <block wx:if="{{item.id!=-1}}">
+                        <image class="gift-icon " mode="scaleToFill" src="{{item.mobile_icon_v2||'../../../assets/room/defaultgift.png'}}" wx:if="{{item.mobile_icon_v2}}"></image>
+                        <view class="gift-info-wrap">
+                            <view class="gift-name">{{item.name}}</view>
+                            <view class="gift-price">{{item.pc}} {{item.type===2?'鱼翅':'鱼丸'}}</view>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <image class="gift-icon bottom" mode="scaleToFill" src="../../../assets/room/defaultgift.png"></image>
+                        <view class="expect-gift" wx:if="{{item.expect*1===1}}">敬请期待</view>
+                    </block>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view class="gift-list-empty" wx:if="{{swiperItemData.length===0}}">
+            <image class="empty-img" mode="scaleToFill" src="../../../assets/room/defaultgift.png"></image>
+            <view class="empty-text">敬请期待</view>
+        </view>
+        <view class="send-gift-box">
+            <view class="show-yuwan-box show-yue">
+                <image class="yuwan-icon yue-price" src="../../../assets/room/yuwanicon.png"></image>
+                <text class="yuwan-nums yue-num">{{yuwanStr}}</text>
+            </view>
+            <view catchtap="clickJumpTo" class="show-yuchi-box show-yue">
+                <image class="yuchi-icon yue-price" src="../../../assets/room/yuchiicon.png"></image>
+                <text class="yuchi-nums yue-num">{{yuchiStr}}</text>
+                <image class="more-icon yue-more" src="../../../assets/room/moreicon.png" wx:if="{{platform==='android'}}"></image>
+            </view>
+            <view catchtap="clickSendGift" class="send-gift-btn send-gift-btn-active" hoverClass="hove-classname" hoverStartTime="10" hoverStayTime="50" wx:if="{{seltGiftId&&yuwanStr!='-'}}">
+        发送
+      </view>
+            <view class="send-gift-btn" wx:else>发送</view>
+        </view>
+    </view>
+</view>

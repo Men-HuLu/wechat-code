@@ -1,0 +1,12 @@
+<view class="share-section">
+    <view catchtap="backHome" class="sw border">
+        <i class="icon General_home"></i>
+    首页
+  </view>
+    <view class="sw">
+        <button bindgetuserinfo="onGotUserInfo" bindtap="sharethisAv" hoverClass="none" hoverStopPropagation="true" openType="getUserInfo">
+            <i class="icon General_Share"></i>
+      分享
+    </button>
+    </view>
+</view>

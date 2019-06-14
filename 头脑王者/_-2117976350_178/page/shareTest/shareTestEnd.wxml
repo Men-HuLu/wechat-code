@@ -1,0 +1,34 @@
+<import src="/template/avatarBase.wxml"></import>
+<view style="position: absolute;left:0px;top:0px;width:100%;height:100%;overflow: hidden;">
+    <canvas canvasId="shareCanvas" style="position: absolute; left:750rpx; top:0px; width:750px; height:1334px;"></canvas>
+</view>
+<view style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; overflow: hidden;">
+    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/activity/activity_{{shareTestType}}/img_backgroundup.png" style="position: absolute; top: 0px; left: 0px; width: 750rpx; height: 200rpx;" wx:if="{{shareTestType}}"></image>
+    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/activity/activity_{{shareTestType}}/img_backgrounddown.png" style="position: absolute; bottom: 0px; left: 0px; width: 750rpx; height: 200rpx;" wx:if="{{shareTestType}}"></image>
+    <image animation="{{ani}}" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/activity/activity_{{shareTestType}}/img_resultpop.png" style="position: absolute; width: 612rpx; height:764rpx; top:154rpx; left:calc(50% - 612rpx / 2);" wx:if="{{shareTestType}}">
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/activity/activity_{{shareTestType}}/img_result/{{imageId}}.png" style="position: absolute; width: 612rpx; height: 764rpx; top:0rpx; left:calc(50% - 612rpx / 2);" wx:if="{{shareTestType}}"></image>
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/activity/activity_{{shareTestType}}/profile/{{imageId}}.png" style="position: absolute; width:612rpx; height: 50rpx; bottom:45rpx; left:calc(50% - 612rpx / 2);" wx:if="{{shareTestType}}"></image>
+    </image>
+    <view class="center center2" style="position:absolute;left:calc((100% - 160rpx)/2);top:80rpx;width:160rpx;height:160rpx;">
+        <template is="avatarOnly" data="{{...userInfo,id:headId}}"></template>
+    </view>
+    <view style="height: 8rpx"></view>
+    <view class="userName center center2">{{userInfo.nickName}}</view>
+    <view bind:tap="onTapShareMenuBtn" class="shareMenuBtn center center2">
+    分享结果
+  </view>
+    <view bind:tap="onTapMoreBtn" class="moreBtn center center2">
+    {{btnText}}
+  </view>
+    <view class="menuMainView" wx:if="{{menuViewVisible}}">
+        <view bind:tap="onTapCloseMenuBtn" class="menuMask"></view>
+        <view animation="{{ani}}" class="menuView">
+            <view class="line"></view>
+            <image bind:tap="onTapSharBtn" class="shareIcon" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/activity/activity_comon/icon_friend.png"></image>
+            <button class="shareIcon" openType="share" style="opacity: 0;">隐藏的分享按钮</button>
+            <image bind:tap="onTapSaveBtn" class="saveIcon" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/activity/activity_comon/icon_quan.png"></image>
+            <view class="shareLabel center center2">微信好友</view>
+            <view class="saveLabel center center2">朋友圈</view>
+        </view>
+    </view>
+</view>

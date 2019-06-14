@@ -1,0 +1,16 @@
+<template name="subscribeRewardView">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.5);">
+        <view class="column start center2 show-form" style="width:600rpx; height:666rpx; position:relative;background: #FFF1D5;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.5);">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/reward_title_default.png" style="width:530rpx;height:145rpx;position:absolute;left:calc((100% - 530rpx)/2);top:-52rpx;"></image>
+            <view class="center center2" style="position:absolute;left:0px;top:-33rpx;width:100%; height:67rpx;font-size:48rpx;text-shadow: 0 2rpx 4rpx #D84F00;font-weight:bold">{{title}}</view>
+            <view style="height:152rpx"></view>
+            <text class="center center2 " style="width:90%;height:67rpx;font-size: 48rpx;color: #4353A4;font-weight:bold">{{content}}</text>
+            <view class="center center2" style="width:100%;height:300rpx">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/icon_items/201004.png" style="width:200rpx;height:200rpx;"></image>
+            </view>
+            <view bindtap="onTapSubscribeRewardViewBtn" class="center center2" style="background: #7ED321;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;font-size:64rpx;font-weight:bold;width:310rpx;height:100rpx">
+                领取
+            </view>
+        </view>
+    </view>
+</template>

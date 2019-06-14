@@ -1,0 +1,18 @@
+<template name="roomItem">
+    <view class="column start center2" style="background: #5DBAFF;box-shadow: 0 2rpx 4rpx 0 rgba(1,31,80,0.50);border-radius: 20rpx;width:634rpx;height:160rpx;position:relative;margin-bottom:10rpx;">
+        <view style="font-size: 42rpx;color: #FFFFFF;letter-spacing: 0;text-shadow: 0 1rpx 2rpx rgba(10,63,114,0.65);width:400rpx;height:59rpx;line-height:59rpx;position:absolute;top:10rpx;left:10rpx;font-weight:bold;">{{item.name}}</view>
+        <view style="font-size: 22rpx;color: #FFFFFF;letter-spacing: 0;text-shadow: 0 1rpx 2rpx rgba(10,63,114,0.65);width:400rpx;height:30rpx;line-height:30rpx;position:absolute;top:69rpx;left:10rpx;">
+            <open-data openGid="{{item.openGid}}" type="groupName"></open-data>
+        </view>
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/icon_match_medal_{{item.rank==1?'gold':item.rank==2?'silver':'bronze'}}.png" style="width:39rpx;height:52rpx;position:absolute;top:20rpx;right:20rpx;" wx:if="{{item.rank==1||item.rank==2||item.rank==3}}"></image>
+        <view style="background: #289BFD;border-radius: 20rpx;width:260rpx;height:36rpx;position:absolute;top:114rpx;left:10rpx;"></view>
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/icon_match_alarm.png" style="width:28rpx;height:28rpx;position:absolute;top:118rpx;left:14rpx;"></image>
+        <view style="width:169rpx;height:33rpx;line-height:33rpx;font-size: 24rpx;color: #FFFFFF;text-shadow: 0 1rpx 1rpx rgba(8,64,103,0.70);position:absolute;top:116rpx;left:52rpx;">结束时间：</view>
+        <view style="font-size: 24rpx;color: #FFFFFF;width:108rpx;height:33rpx;line-height:33rpx;text-align:right;position:absolute;top:116rpx;left:150rpx;">{{item.time}}</view>
+        <view style="font-size: 32rpx;color: #FFFFFF;letter-spacing: 0;text-shadow: 0 1rpx 2rpx rgba(0,0,0,0.50);;width:64rpx;height:45rpx;line-height:45rpx;position:absolute;bottom:16rpx;right:20rpx;" wx:if="{{false}}">未上榜</view>
+        <view style="font-size: 32rpx;color: #FFFFFF;letter-spacing: 0;text-shadow: 0 1rpx 2rpx rgba(0,0,0,0.50);;width:64rpx;height:45rpx;line-height:45rpx;position:absolute;bottom:16rpx;right:74rpx;" wx:if="{{false}}">排名</view>
+        <view style="font-size: 48rpx;color: #FFFFFF;letter-spacing: 0;text-shadow: 0 1rpx 2rpx rgba(0,0,0,0.50);;width:63rpx;height:58rpx;line-height:58rpx;position:absolute;bottom:10rpx;right:10rpx;font-weight:bold;" wx:if="{{false}}">{{item.rank}}</view>
+        <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/img_match_overtime.png" style="width:140rpx;height:46rpx;position:absolute;top:0px;right:30rpx;" wx:if="{{false}}"></image>
+        <view style="height:10rpx;"></view>
+    </view>
+</template>

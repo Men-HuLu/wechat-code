@@ -1,0 +1,10 @@
+<view class="home-container {{isIpx?'iphonex':''}}" lowerThreshold="50" scrollY="true">
+    <view class="room-list-body {{query.type==='yz'?'yz':''}}">
+        <room-item room="{{room}}" type="{{type}}" wx:for="{{list}}" wx:for-item="room" wx:key="$roomHotList$roomItem$index"></room-item>
+    </view>
+    <loading-footer isLoading="{{isLoadingMore}}" wx:if="{{showLoading}}"></loading-footer>
+</view>
+<loading wx:if="{{isLoading}}"></loading>
+<error bind:customevent="reload" wx:if="{{isError}}"></error>
+<empty wx:if="{{isEmpty}}"></empty>
+<bottom-tip></bottom-tip>

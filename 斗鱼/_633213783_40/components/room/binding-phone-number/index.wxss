@@ -1,0 +1,241 @@
+.binding-phone-number {
+    position: absolute;
+    top: 410rpx;
+    left: 0;
+    bottom: 0;
+    z-index: 200;
+    width: 100%;
+}
+
+.binding-phone-number.yz {
+    top: 500rpx;
+}
+
+.binding-phone-number .bpn-mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.binding-phone-number .bpn-main-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    padding: 0 50rpx;
+    width: 100%;
+    height: 656rpx;
+    background: #fff;
+}
+
+.binding-phone-number .bpn-main-content .mc-title {
+    width: 100%;
+    font-size: 32rpx;
+    color: #3f3f3f;
+    padding: 40rpx 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.binding-phone-number .bpn-main-content .border {
+    color: #3f3f3f;
+    border: 1rpx solid #ddd;
+    border-radius: 4rpx;
+}
+
+.binding-phone-number .bpn-main-content .area-box {
+    margin-bottom: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 72rpx;
+    padding: 0 20rpx;
+    font-size: 28rpx;
+}
+
+.binding-phone-number .bpn-main-content .area-box .area-name {
+    display: block;
+}
+
+.binding-phone-number .bpn-main-content .area-box .area-icon {
+    display: flex;
+    align-items: center;
+}
+
+.binding-phone-number .bpn-main-content .area-box .area-icon .t-icon {
+    width: 13rpx;
+    height: 23rpx;
+    margin-left: 12rpx;
+}
+
+.binding-phone-number .bpn-main-content .phone-box {
+    margin-bottom: 30rpx;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 72rpx;
+    padding: 0 20rpx;
+    font-size: 28rpx;
+}
+
+.binding-phone-number .bpn-main-content .phone-box .area-num {
+    margin-right: 20rpx;
+    margin-top: -2rpx;
+}
+
+.binding-phone-number .bpn-main-content .phone-box .phone-num {
+    flex: 1;
+    height: 100%;
+}
+
+.binding-phone-number .bpn-main-content .pic-box {
+    margin-bottom: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 72rpx;
+}
+
+.binding-phone-number .bpn-main-content .pic-box .pic-num-box {
+    box-sizing: border-box;
+    padding: 0 20rpx;
+    height: 100%;
+    font-size: 28rpx;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.binding-phone-number .bpn-main-content .pic-box .pic-num-box .pic-num {
+    flex: 1;
+    height: 100%;
+}
+
+.binding-phone-number .bpn-main-content .pic-box .pic-verify {
+    border-radius: 4rpx;
+    width: 170rpx;
+    height: 100%;
+    margin-left: 20rpx;
+}
+
+.binding-phone-number .bpn-main-content .message-box {
+    margin-bottom: 40rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 72rpx;
+}
+
+.binding-phone-number .bpn-main-content .message-box .message-num-box {
+    box-sizing: border-box;
+    padding: 0 20rpx;
+    height: 100%;
+    font-size: 28rpx;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.binding-phone-number .bpn-main-content .message-box .message-num-box .message-num {
+    flex: 1;
+    height: 100%;
+}
+
+.binding-phone-number .bpn-main-content .message-box .send-message-btn {
+    border-radius: 4rpx;
+    width: 170rpx;
+    height: 100%;
+    text-align: center;
+    line-height: 72rpx;
+    margin-left: 20rpx;
+    font-size: 28rpx;
+    color: #fff;
+    background-color: #ff5d23;
+}
+
+.binding-phone-number .bpn-main-content .message-box .send-message-btn.is-disable {
+    background-color: #ddd;
+}
+
+.binding-phone-number .bpn-main-content .submit-verify {
+    border-radius: 4rpx;
+    width: 400rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 28rpx;
+    color: #fff;
+    background-color: #ff5d23;
+}
+
+.binding-phone-number .bpn-main-content .submit-verify.is-disable {
+    background-color: #ddd;
+}
+
+.binding-phone-number .bpn-are-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 670rpx;
+    background: #fff;
+    z-index: 10;
+}
+
+.binding-phone-number .bpn-are-content .mc-title {
+    position: relative;
+    width: 100%;
+    height: 126rpx;
+    line-height: 126rpx;
+    font-size: 32rpx;
+    color: #3f#f#f;
+    text-align: center;
+    font-weight: bold;
+}
+
+.binding-phone-number .bpn-are-content .mc-title .icon-back-box {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 13rpx;
+    height: 100%;
+    top: 0;
+    left: 40rpx;
+}
+
+.binding-phone-number .bpn-are-content .mc-title .icon-back-box .icon-back {
+    width: 13rpx;
+    height: 22rpx;
+}
+
+.binding-phone-number .bpn-are-content .area-list {
+    box-sizing: border-box;
+    height: 544rpx;
+    border-top: 1px solid #ddd;
+}
+
+.binding-phone-number .bpn-are-content .area-list .area-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 88rpx;
+    padding: 0 40rpx;
+    box-sizing: border-box;
+    color: #3f3f3f;
+    font-size: 28rpx;
+    border-bottom: 1px solid #ddd;
+}
+
+.binding-phone-number .bpn-are-content .area-list .area-list-item.hasChoose {
+    color: #ff5d23;
+}

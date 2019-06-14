@@ -1,0 +1,70 @@
+<import src="/template/pveStagePickerView.wxml"></import>
+<import src="/template/baseInfoBar.wxml"></import>
+<import src="/template/avatarBase.wxml"></import>
+<import src="/template/ItemDetail.wxml"></import>
+<import src="template/PveWatchdog.wxml"></import>
+<view class="mainView">
+    <view class="pveBg" style="transform: translate3d({{backgroundPosition}},0px);"></view>
+    <view class="column start center2" style="position: absolute;left:0px;top:0px;width:100%;height:100%;overflow: hidden;">
+        <image class="mask1" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/bg_lightblue.png"></image>
+        <view class="userInfoMainView">
+            <image class="userInfoBg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/season/img_bg_season_{{seasonId}}.png?v={{resVer}}"></image>
+            <view class="center center2" style="font-weight: bold;position:absolute;width:100%;left:0px;top:118rpx;height:33rpx;font-size: 24rpx;color: #FFFFFF;text-shadow: 0 2rpx 4rpx rgba(6,51,82,0.50);white-space: nowrap;text-align: center;">{{seasonTime}}</view>
+            <view class="start center2 column">
+                <view class="row start center2 userGoldView">
+                    <image class="userGoldImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/home/icon_king_yuan.png"></image>
+                    <view class="userGoldNum">{{roleInfo.gold}}</view>
+                </view>
+                <view class="userBuffMainView">
+                    <view bindtap="onTapBuffBtn" class="userBuffView" data-buff-id="1">
+                        <image class="userBuffImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/buff/2030012.png" wx:if="{{buffActivate1}}"></image>
+                        <image class="userBuffImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/buff/2030011.png" wx:else></image>
+                        <view class="userBuffCountText">{{buffText1}}</view>
+                    </view>
+                    <view bindtap="onTapBuffBtn" class="userBuffView" data-buff-id="2">
+                        <image class="userBuffImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/buff/2030022.png" wx:if="{{buffActivate2}}"></image>
+                        <image class="userBuffImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/buff/2030021.png" wx:else></image>
+                        <view class="userBuffTimeText">{{buffText2}}</view>
+                    </view>
+                    <view bindtap="onTapBuffBtn" class="userBuffView" data-buff-id="3">
+                        <image class="userBuffImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/buff/2030032.png" wx:if="{{buffActivate3}}"></image>
+                        <image class="userBuffImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/buff/2030031.png" wx:else></image>
+                        <view class="userBuffCountText">{{buffText3}}</view>
+                    </view>
+                    <view bindtap="onTapBuffBtn" class="userBuffView" data-buff-id="4">
+                        <image class="userBuffImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/buff/2030042.png" wx:if="{{buffActivate4}}"></image>
+                        <image class="userBuffImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/buff/2030041.png" wx:else></image>
+                        <view class="userBuffTimeText">{{buffText4}}</view>
+                    </view>
+                    <view bindtap="onTapBuffBtn" class="userBuffView" data-buff-id="5">
+                        <image class="userBuffImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/buff/2030052.png" wx:if="{{buffActivate5}}"></image>
+                        <image class="userBuffImg" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/buff/2030051.png" wx:else></image>
+                        <view class="userBuffCountText">{{buffText5}}</view>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="btn_help_clicked" class="center center2" style="position:absolute;left:-10rpx;top:-10rpx;width:100rpx;height:100rpx">
+                <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/challenge/btn_moreinfo.png" style="width:48rpx;height:48rpx;"></image>
+            </view>
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/ranking_list/img_mask_list.png" style="position:absolute;left:calc((100% - 660rpx)/2);bottom:2rpx; width:660rpx;height:24rpx;"></image>
+        </view>
+        <view class="pveMainView" style="position:absolute;left:0px;top:294rpx;bottom:0px;width:100%">
+            <template is="pveStagePickerView" data="{{...pvePickerViewData}}"></template>
+        </view>
+    </view>
+    <view class="column center2 start" hoverStopPropagation="{{true}}" style="position:absolute;width:1rpx;height:1rpx;left:340rpx;top:220rpx" wx:if="{{showGuideArrow}}">
+        <image bindtap="callback_pve_item_clicked" class="guide-arrow" data-stage-id="300001" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/new_user/img_lead_startgame.png" style="position:absolute; left:0px;top:20rpx; width:412rpx;height:184rpx;"></image>
+    </view>
+</view>
+<view style="position: absolute;left:0px;top:0px;width:100%;height:100%" wx:if="{{buffItemSelected}}">
+    <template is="ItemDetail" data="{{...buffItemSelected}}"></template>
+</view>
+<view style="position: absolute;left:0px;top:0px;width:100%;height:100%" wx:if="{{buyBuffItemSelected}}">
+    <template is="ItemDetail_buy" data="{{...buyBuffItemSelected,canBuy:canBuy}}"></template>
+</view>
+<view id="PveWatchdog" style="position:absolute;left:0px;top:0px;width:100%;height:100%" wx:if="{{pveWatchdog.visible}}">
+    <template is="PveWatchdog" data="{{...pveWatchdog}}"></template>
+</view>
+<navigator appId="{{linkAppId}}" bind:tap="onTapLinkBtn" class="linkImg" extraData="{{linkExtraData}}" openType="navigate" path="{{linkPath}}" target="miniProgram" version="release" wx:if="{{linkImg}}">
+    <image src="{{linkImg}}" style="width:100%; height:100%;"></image>
+</navigator>

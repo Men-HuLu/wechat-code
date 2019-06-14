@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "welcome": "/components/welcomebar/welcomebar",
+        "custbar": "/components/custbar/custbar",
+        "timeline": "/components/timeline/timeline"
+    },
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+}

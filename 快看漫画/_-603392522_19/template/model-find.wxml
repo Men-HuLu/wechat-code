@@ -1,0 +1,80 @@
+<template name="findD">
+    <view class="find-col">
+        <view bindtap="jump{{topicInfo.jump}}" class="topic" data-id="{{topicInfo.id}}">
+            <kk-picture height="320" mode="widthFix" src="{{topicInfo.image}}"></kk-picture>
+            <title>{{title}}</title>
+        </view>
+        <view class="scroll-wrap" style="background: {{topicInfo.bgColor}}">
+            <view class="fav" style="color: {{topicInfo.color}}; opacity: {{opacity}}" wx:if="{{topicInfo.showFav}}">
+                <view class="txt">
+                    <text selectable class="tit">{{topicInfo.tit}}</text>
+                    <text class="des">{{topicInfo.des}}</text>
+                </view>
+                <view class="btn" style="border-color: {{topicInfo.color}}">{{topicInfo.isFav?'已':''}}关注</view>
+            </view>
+            <scroll-view scrollX bindscroll="colScroll" class="scroll-view" data-index="{{index}}">
+                <view class="compilations" style="margin-left: {{topicInfo.showFav&&'210rpx'}}">
+                    <view bindtap="jump{{item.jump}}" class="comic" data-id="{{item.id}}" wx:for="{{list}}" wx:key="id">
+                        <view class="pic">
+                            <kk-picture height="200" src="{{item.img}}"></kk-picture>
+                        </view>
+                        <view class="tit" style="background: {{item.bgColor}}">
+                            <text style="color: {{item.color}}">{{item.tit}}</text>
+                        </view>
+                    </view>
+                    <view bindtap="handleFav" class="btn-fake" data-id="{{topicInfo.id}}" data-index="{{index}}" hidden="{{topicInfo.isFav}}" style="left: {{btnLeft}}rpx"></view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</template>
+<template name="exchange">
+    <view class="find-more" wx:if="{{more}}">
+        <view bindtap="jumpList" data-id="{{more}}" data-tit="{{title}}">查看更多</view>
+        <view bindtap="exchange" data-id="{{more}}" data-index="{{index}}">
+            <image src="/image/ico-change.png"></image>
+            <text>换一换</text>
+        </view>
+    </view>
+</template>
+<template name="findC">
+    <view class="find-model find-c" wx:if="{{list.length>2}}">
+        <title>{{title}}</title>
+        <view class="model" wx:for="{{list}}" wx:key="id">
+            <view bindtap="jump{{item.jump}}" class="pic" data-id="{{item.id}}">
+                <kk-picture height="328" src="{{item.img}}"></kk-picture>
+            </view>
+            <view class="txt">
+                <text selectable class="tit">{{item.tit}}</text>
+                <text class="des">{{item.des}}</text>
+            </view>
+        </view>
+    </view>
+    <template is="exchange" data="{{more:more,title:title,index:index}}"></template>
+</template>
+<template name="findB">
+    <view class="find-model find-b" wx:if="{{list.length>1}}">
+        <title>{{title}}</title>
+        <view class="model" hidden="{{idx>=maxnum}}" wx:for="{{list}}" wx:for-index="idx" wx:key="id">
+            <view bindtap="jump{{item.jump}}" class="pic" data-id="{{item.id}}">
+                <kk-picture height="{{height}}" src="{{item.img}}"></kk-picture>
+            </view>
+            <view class="txt">
+                <text selectable class="tit">{{item.tit}}</text>
+                <text class="des">{{item.des}}</text>
+            </view>
+        </view>
+    </view>
+    <template is="exchange" data="{{more:more,title:title,index:index}}"></template>
+</template>
+<template name="findA">
+    <view class="find-model find-a" wx:if="{{list.length}}">
+        <title wx:if="{{showTit}}">{{title}}</title>
+        <view class="model" wx:for="{{list}}" wx:key="id">
+            <view bindtap="jump{{item.jump}}" class="pic" data-id="{{item.id}}">
+                <kk-picture height="246" src="{{item.img}}"></kk-picture>
+            </view>
+        </view>
+    </view>
+    <template is="exchange" data="{{more:more,title:title,index:index}}"></template>
+</template>

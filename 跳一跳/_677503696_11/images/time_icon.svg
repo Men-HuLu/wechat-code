@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>time</title>
+    <desc>Created with Sketch.</desc>
+    <g id="1008-根据体验版调试" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-78.000000, -13.000000)">
+            <g id="common_icons_discover-copy-2" transform="translate(79.000000, 14.000000)">
+                <path d="M8,15 C4.13400675,15 1,11.8659932 1,8 C1,4.13400675 4.13400675,1 8,1 C11.8659932,1 15,4.13400675 15,8 C15,11.8659932 11.8659932,15 8,15 Z" id="Combined-Shape" stroke="#FFFFFF" fill-rule="nonzero"></path>
+                <path d="M8,8.0815345 L8,4.2 C8,4.08954305 8.08954305,4 8.2,4 L9.00000005,4 C9.110457,4 9.20000005,4.08954305 9.20000005,4.2 L9.20000005,8.4 C9.20000005,8.66196468 9.03211578,8.88471789 8.7980693,8.96653755 C8.78122875,9.00142466 8.75409537,9.03179803 8.71801686,9.05262797 L5.82320512,10.7239483 C5.72754659,10.7791768 5.60522851,10.7464018 5.55000003,10.6507432 L5.15000001,9.95792287 C5.09477154,9.86226434 5.12754657,9.73994626 5.2232051,9.68471778 L8,8.0815345 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

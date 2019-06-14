@@ -1,0 +1,29 @@
+<view class="video-container {{isIpx?'is-iphonex':''}}" wx:if="{{!isLoading&&!isError}}">
+    <view class="room-list">
+        <view class="room-list-body">
+            <repeat wx:for="{{rooms}}" wx:for-item="room" wx:key="{{i}}">
+                <view bind:tap="gotoVideo" class="room-vitem" data-hash-id="{{room.hash_id}}" hoverStopPropagation="true">
+                    <view class="room-vitem-banner">
+                        <image class="room-default-image" mode="scaleToFill" src="{{'../assets/images/hengzhanweitu.png'}}"></image>
+                        <image class="room-vitem-image" lazyLoad="{{true}}" mode="scaleToFill" src="{{room.video_pic}}"></image>
+                        <view class="room-vitem-banner-footer-wrap">
+                            <view class="room-vitem-banner-footer">
+                                <i></i>
+                                <text class="room-vitem-footer-play">{{room.view_num}}</text>
+                                <text class="room-vitem-footer-name">{{room.video_duration}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="room-vitem-info" wx:if="{{type!=='yz'}}">
+                        <view>{{room.title}}</view>
+                    </view>
+                </view>
+            </repeat>
+        </view>
+    </view>
+    <loading-footer isLoading="{{isLoadingMore}}" wx:if="{{showLoading}}"></loading-footer>
+</view>
+<loading wx:if="{{isLoading}}"></loading>
+<error bind:customevent="reload" wx:if="{{isError}}"></error>
+<empty title="查看的内容不存在" wx:if="{{isEmpty}}"></empty>
+<bottom-tip></bottom-tip>

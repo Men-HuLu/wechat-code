@@ -1,0 +1,20 @@
+.customer-service {
+    display: flex;
+    position: fixed;
+    bottom: 50rpx;
+    right: 0;
+    padding: 0;
+    z-index: 100;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.customer-service::after {
+    border: none;
+}
+
+.customer-service .service-icon {
+    margin: auto;
+    width: 122rpx;
+    height: 65rpx;
+}

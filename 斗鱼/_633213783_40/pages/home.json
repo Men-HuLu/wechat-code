@@ -1,0 +1,17 @@
+{
+    "navigationBarTitleText": "斗鱼直播",
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#ff5d23",
+    "backgroundTextStyle": "dark",
+    "usingComponents": {
+        "scroll-menu": "/components/scroll-menu/index",
+        "room-item": "/components/room-item/index",
+        "room-list": "/components/room-list/index",
+        "loading": "/components/loading/index",
+        "error": "/components/error/index",
+        "loading-footer": "/components/loading-footer/index",
+        "bottom-tip": "/components/bottom-tip/index",
+        "popup": "/components/popup/index",
+        "guidePopup": "/components/guide-popup/index"
+    }
+}

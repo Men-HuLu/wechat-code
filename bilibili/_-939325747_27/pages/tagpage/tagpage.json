@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "custbar": "/components/custbar/custbar"
+    },
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+}

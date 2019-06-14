@@ -1,0 +1,19 @@
+<template name="loadmore">
+    <view class="loadmore-wrap" style="background: {{bgColor||'#fff'}}">
+        <view class="loadmore loadmore-nodata" wx:if="{{nodata}}">
+            <view class="loadmore-tips" style="background: {{bgColor||'#fff'}}">暂无数据</view>
+        </view>
+        <view class="loadmore loadmore-nomore" wx:elif="{{nomore}}">
+            <view class="loadmore-tips" style="background: {{bgColor||'#fff'}}">到底啦～不要再拉啦^_^</view>
+        </view>
+        <view class="loadmore" wx:elif="{{loading}}">
+            <view class="loading"></view>
+            <view class="loadmore-tips" style="background: {{bgColor||'#fff'}}">加载中...</view>
+        </view>
+    </view>
+</template>
+<template name="copyright">
+    <view class="copyright">
+        <text>Copyright © 2018 kuainkanmanhua.com All Rights</text>
+    </view>
+</template>

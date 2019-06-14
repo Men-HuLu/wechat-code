@@ -1,0 +1,43 @@
+<template name="dcResultView">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:rgba(0,0,0,0.5);">
+        <view class="show-form" style="position: relative; width:500rpx; height:616rpx; background: #FFFFFF; box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50); border-radius: 20rpx;" wx:if="{{mode==1}}">
+            <view style="font-size: 48rpx; color: #4354A6; line-height:67rpx; height:67rpx; width:100%; text-align: center; position: absolute; top:144rpx; left:0px; font-weight: bolder;">挑战结束</view>
+            <view bindtap="onTapDcResultCloseBtn" class="center center2" style="background: #00E1BD; box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50); border-radius: 100px; width:310rpx; height:100rpx; position: absolute; bottom:150rpx; left:calc(50% - 310rpx / 2);">
+                <view style="font-size: 46rpx; color: #FFFFFF; letter-spacing: 0; text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);">返回</view>
+            </view>
+            <view style="background: #5DBAFF; box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50); border-radius: 100px; width:310rpx; height:100rpx; position: absolute; bottom:25rpx; left:calc(50% - 310rpx / 2);">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/info/btn_info_share.png" style="width:58rpx; height:55rpx; position: absolute; left:45rpx; top:27rpx;"></image>
+                <view class="center center2" style="width:205rpx; height:67rpx; position: absolute; right:10rpx; top:16rpx; font-size: 42rpx; color: #FFFFFF; letter-spacing: 0; text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);">分享战绩</view>
+            </view>
+            <button id="lose" openType="share" style="width:310rpx; height:100rpx; position: absolute; bottom:25rpx; left:calc(50% - 310rpx / 2); opacity: 0;"></button>
+        </view>
+        <view class="show-form" style="position: relative; width:500rpx; height:616rpx; background: #FFFFFF; box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50); border-radius: 20rpx;" wx:if="{{mode==2}}">
+            <view style="font-size: 48rpx; color: #4354A6; line-height:67rpx; height:67rpx; width:100%; text-align: center; position: absolute; top:79rpx; left:0px; font-weight: bolder;">挑战结束</view>
+            <view style="font-size: 24rpx; color: #4354A6; line-height:33rpx; height:33rpx; width:100%; text-align: center; position: absolute; top:144rpx; left:0px;">本次挑战获得</view>
+            <image src="{{iconUrl}}" style="width:100rpx; height:100rpx; position: absolute; left:calc(50% - 100rpx / 2); top:180rpx;"></image>
+            <view style="font-size: 46rpx; color: #F5A623; line-height:55rpx; height:55rpx; width:100%; text-align: center; position: absolute; top:280rpx; left:0px;">{{itemNum}}</view>
+            <view bindtap="onTapDcResultCloseBtn" class="center center2" style="background: #00E1BD; box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50); border-radius: 100px; width:310rpx; height:100rpx; position: absolute; bottom:150rpx; left:calc(50% - 310rpx / 2);">
+                <view style="font-size: 46rpx; color: #FFFFFF; letter-spacing: 0; text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);">领取奖励</view>
+            </view>
+            <view style="background: #5DBAFF; box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50); border-radius: 100rpx; width:310rpx; height:100rpx; position: absolute; bottom:25rpx; left:calc(50% - 310rpx / 2);">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/info/btn_info_share.png" style="width:58rpx; height:55rpx; position: absolute; left:45rpx; top:27rpx;"></image>
+                <view class="center center2" style="width:205rpx; height:67rpx; position: absolute; right:10rpx; top:16rpx; font-size: 42rpx; color: #FFFFFF; letter-spacing: 0; text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);">分享战绩</view>
+            </view>
+            <button id="lose" openType="share" style=" width:310rpx; height:100rpx; position: absolute; bottom:25rpx; left:calc(50% - 310rpx / 2); opacity: 0;"></button>
+        </view>
+        <view class="show-form" style="position: relative; width:500rpx; height:616rpx; background: #FFF1D5;; box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50); border-radius: 20rpx;" wx:if="{{mode==3}}">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/reward_title_default.png" style="width:530rpx;height:145rpx;position:absolute;left:calc((100% - 530rpx)/2);top:-60rpx;"></image>
+            <view style="font-size: 42rpx; color: #FFFFFF; letter-spacing: 0; font-weight: bolder; width:100%; position: absolute; left:0px; top:-36rpx; text-align: center;">恭喜获得12胜奖励</view>
+            <image src="{{iconUrl}}" style="width:100rpx; height:100rpx; position: absolute; left:calc(50% - 100rpx / 2); top:140rpx;"></image>
+            <view style="font-size: 46rpx; color: #F5A623; line-height:55rpx; height:55rpx; width:100%; text-align: center; position: absolute; top:240rpx; left:0px;">{{itemNum}}</view>
+            <view bindtap="onTapDcResultCloseBtn" class="center center2" style="background: #00E1BD; box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50); border-radius: 100px; width:310rpx; height:100rpx; position: absolute; bottom:150rpx; left:calc(50% - 310rpx / 2);">
+                <view style="font-size: 46rpx; color: #FFFFFF; letter-spacing: 0; text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);">领取奖励</view>
+            </view>
+            <view style="background: #5DBAFF; box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50); border-radius: 100rpx; width:310rpx; height:100rpx; position: absolute; bottom:25rpx; left:calc(50% - 310rpx / 2);">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/info/btn_info_share.png" style="width:58rpx; height:55rpx; position: absolute; left:45rpx; top:27rpx;"></image>
+                <view class="center center2" style="width:205rpx; height:67rpx; position: absolute; right:10rpx; top:16rpx; font-size: 42rpx; color: #FFFFFF; letter-spacing: 0; text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.50);">分享战绩</view>
+            </view>
+            <button id="win" openType="share" style=" width:310rpx; height:100rpx; position: absolute; bottom:25rpx; left:calc(50% - 310rpx / 2); opacity: 0;"></button>
+        </view>
+    </view>
+</template>

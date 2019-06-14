@@ -1,0 +1,24 @@
+<view class="container order-cont fix-top">
+    <view class="order" wx:if="{{!orderStatus}}">
+        <view class="game-name">{{order.gameName}}</view>
+        <view class="game-cost">{{order.totalFee}}元</view>
+        <view class="game-tools">购买 {{order.goodsName}}</view>
+    </view>
+    <view class="orderFail" wx:if="{{orderStatus}}">
+        <view class="">订单创建失败!</view>
+    </view>
+    <view style="width:100%;height:100rpx;" wx:if="{{orderStatus}}">
+        <view class="order-info">请点击右上角按钮返回游戏，重新下单</view>
+    </view>
+    <view class="center" style="width:100%" wx:if="{{!orderStatus&&!payFail}}">
+        <view bindtap="onBackGame">
+            <button class="button3" type="other">返回游戏</button>
+        </view>
+    </view>
+    <view class="re-pay column center2" wx:if="{{payFail}}">
+        <view style="height:40rpx;"></view>
+        <button bindtap="orderOnPay" class="button3" type="primary">点击支付</button>
+        <view style="height:40rpx;"></view>
+        <button bindtap="moreGames" class="button3" style="font-weight:normal;" type="default">更多游戏</button>
+    </view>
+</view>

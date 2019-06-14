@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>jh</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="====slice===" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-2" transform="translate(-496.000000, -922.000000)">
+            <g id="Group-3" transform="translate(494.000000, 921.000000)">
+                <g id="Group-2">
+                    <g id="Group-22-Copy-6" transform="translate(16.000000, 14.000000) rotate(-180.000000) translate(-16.000000, -14.000000) translate(2.000000, 0.000000)" fill="#FFFFFF" opacity="0">
+                        <rect id="Rectangle-11" x="0" y="0" width="28" height="28"></rect>
+                    </g>
+                    <ellipse id="Oval-13-Copy" stroke="#FA9D3B" stroke-width="2" transform="translate(19.000000, 15.666667) rotate(-225.000000) translate(-19.000000, -15.666667) " cx="19" cy="15.6666667" rx="11.3333333" ry="7"></ellipse>
+                    <polygon id="Path-9" fill="#FFFFFF" transform="translate(17.245697, 7.886121) rotate(-180.000000) translate(-17.245697, -7.886121) " points="20.660676 7.39892026 16.8156639 10.4382406 13.830717 8.16802432 17.703424 5.33400165"></polygon>
+                    <ellipse id="Oval-13-Copy-2" stroke="#FA9D3B" stroke-width="2" transform="translate(12.826220, 12.899343) rotate(-510.000000) translate(-12.826220, -12.899343) " cx="12.82622" cy="12.8993429" rx="8.84044671" ry="6.43399044"></ellipse>
+                    <polygon id="Path-10" fill="#FFFFFF" transform="translate(9.560342, 18.552681) rotate(-180.000000) translate(-9.560342, -18.552681) " points="7.56119993 15.6478701 7.12068431 19.0542752 11.1556606 21.4574919 12 17.2927923"></polygon>
+                    <path d="M7.12929377,19.03456 C8.07042314,19.0497164 9.3570806,19.4994652 10.9892661,20.3838064 C12.2026329,19.7192845 12.6790381,19.2353805 12.4184817,18.9320946 C11.3472462,18.0587082 9.66804125,17.3880032 8.24152683,17.1207713 C7.36850316,17.0364233 7.76408295,18.2257977 7.12929377,19.03456 Z" id="Path-11" fill="#FA9D3B" transform="translate(9.808433, 18.750163) rotate(-105.000000) translate(-9.808433, -18.750163) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

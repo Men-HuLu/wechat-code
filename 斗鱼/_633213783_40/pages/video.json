@@ -1,0 +1,14 @@
+{
+    "navigationBarTitleText": "斗鱼视频",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 150,
+    "navigationBarBackgroundColor": "#ff5d23",
+    "backgroundTextStyle": "dark",
+    "usingComponents": {
+        "loading": "/components/loading/index",
+        "error": "/components/error/index",
+        "empty": "/components/empty/index",
+        "loading-footer": "/components/loading-footer/index",
+        "bottom-tip": "/components/bottom-tip/index"
+    }
+}

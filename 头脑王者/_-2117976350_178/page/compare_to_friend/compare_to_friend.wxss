@@ -1,0 +1,55 @@
+@import "../../template/baseInfoBar.wxss";
+
+@import "../../template/groupName.wxss";
+
+@import "../../template/avatarBase.wxss";
+
+@import "../../template/shareBtn.wxss";
+
+.test {
+    position: relative;
+}
+
+.user-left {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+.user-right {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    top: 0px;
+}
+
+.label-user-name {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 24rpx;
+    left: 0rpx;
+    bottom: -60rpx;
+    color: #fff;
+    white-space: nowrap;
+    text-shadow: 0rpx 0rpx 4rpx rgba(0,0,0,0.5);
+}
+
+.field-title {
+    color: #A9DCFF;
+    font-size: 24rpx;
+    white-space: nowrap;
+    padding-left: 27rpx;
+    width: 80rpx;
+}
+
+.field-context {
+    color: #fff;
+    font-size: 24rpx;
+    white-space: nowrap;
+}

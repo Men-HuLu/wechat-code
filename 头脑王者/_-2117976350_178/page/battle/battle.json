@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "对战",
+    "disableScroll": true,
+    "usingComponents": {
+        "roundView": "./components/roundView/roundView",
+        "answerBtn": "./components/answerBtn/answerBtn",
+        "questionView": "./components/questionView/questionView"
+    }
+}

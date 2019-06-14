@@ -1,0 +1,19 @@
+@import "avatarBase.wxss";
+
+.emojiItem {
+    position: absolute;
+    width: 170rpx;
+    height: 96rpx;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.emojiItem.left {
+    top: -50rpx;
+    left: 30rpx;
+}
+
+.emojiItem.right {
+    top: -50rpx;
+    left: -70rpx;
+}

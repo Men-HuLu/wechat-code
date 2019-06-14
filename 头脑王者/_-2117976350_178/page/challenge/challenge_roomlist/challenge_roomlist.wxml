@@ -1,0 +1,29 @@
+<import src="../template/createRoomView.wxml"></import>
+<import src="../template/audienceView.wxml"></import>
+<import src="../template/roomListTemplate.wxml"></import>
+<import src="../template/finalRankTemplate.wxml"></import>
+<view class="column start center2" style="position: absolute;background-image: linear-gradient(-180deg, #4E84E5 0%, #4E62E5 97%);left:0px;top:0px;width:100%;height:100%;overflow:hidden">
+    <view style="position:absolute;left:0px;top:0px;width:100%;height:100%" wx:if="{{!loading}}">
+        <view class="center center2" style="position:absolute;left:0px;top:0px;width:100%;height:calc(100% - 88rpx);" wx:if="{{roomList.length==0}}">
+            <view class="center center2" hoverClass="brightness" style="position:relative; width:420rpx;height:120rpx; background: #00E1BD;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/img_thunder.png" style="width:57rpx;height:70rpx;"></image>
+                <view style="width:27rpx"></view>
+                <view class="center center2" style="font-size: 52rpx;color: #FFFFFF;white-space: nowrap;">发起比赛</view>
+                <button id="createRoom" openType="share" style="left:0px;top:0px;width:420rpx;height:120rpx;opacity:0;border-radius: 20rpx;position:absolute;">隐藏的分享按钮</button>
+            </view>
+        </view>
+        <view style="position:absolute;left:0px;top:0px;width:100%;height:calc(100% - 212rpx);" wx:else>
+            <template is="roomListTemplate" data="{{roomList:roomList}}"></template>
+            <view class="row center center2" style="position:absolute;left:0px;bottom:-148rpx;width:100%;">
+                <view style="width:40rpx"></view>
+                <view class="row center center2" hoverClass="brightness" style="width:360rpx;height:100rpx; background: #00E1BD;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;position:relative;">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/friend_match/img_thunder.png" style="width:50rpx;height:60rpx;"></image>
+                    <view style="width:20rpx"></view>
+                    <view class="center center2" style="font-size: 52rpx;color: #FFFFFF;white-space: nowrap;">发起比赛</view>
+                    <button id="createRoom" openType="share" style="position:absolute;left:0px;top:0px;width:360rpx;height:100%;opacity:0;border-radius: 20rpx;">隐藏的分享按钮</button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style="position:absolute;left:0px;bottom:10rpx;height:37rpx;width:100%;font-size: 26rpx;color: #89D0FF;text-shadow: 0 1rpx 2rpx rgba(6,49,112,0.84);white-space: nowrap;text-align: center;" wx:if="{{false}}">所有比赛会在3小时后自动关闭</view>
+</view>

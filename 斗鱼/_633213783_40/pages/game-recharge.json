@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "游戏礼包兑换",
+    "usingComponents": {
+        "error": "/components/error/index",
+        "empty": "/components/empty/index",
+        "hiddenForm": "/components/hidden-form/index",
+        "fromappshare": "/components/from-app-share/index",
+        "goHome": "/components/go-home/index",
+        "popup": "/components/popup/index"
+    }
+}

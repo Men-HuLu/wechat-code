@@ -1,0 +1,48 @@
+<navigation my_class="navigation-bar_color" title="附近的服务">
+    <view class="navigation-bar__icon-opr" slot="left">
+        <image class="navigation-bar__icon-opr__image" src="/images/navigation_back.svg"></image>
+    </view>
+</navigation>
+<view class="page page-category" style="top: {{statusBarHeight+(platform==='android'?48:44)}}px;">
+    <scroll-view scrollWithAnimation scrollY class="side-list">
+        <view class="side-list__inner">
+            <view bindtap="changeTab" class="side-item {{item.selected?'selected':''}}" data-idx="{{idx}}" hoverClass="bg-highlight" wx:for="{{list}}" wx:for-index="idx" wx:key="name">{{item.name}}</view>
+        </view>
+    </scroll-view>
+    <scroll-view scrollWithAnimation scrollY class="main-content">
+        <view class="main-content__inner">
+            <view class="main-content__title__area default-box">
+                <view class="title-area__cover__wrp">
+                    <image class="title-area__cover" src="{{list[selected].cover}}"></image>
+                    <view class="title-area__mask"></view>
+                </view>
+                <view class="main-content__title font-size-34">{{list[selected].name}}</view>
+            </view>
+            <view class="main-content__list__area" wx:if="{{list[selected].name!='出行'}}">
+                <view class="main-content__list default-box">
+                    <navigator class="main-content__list__item" hoverClass="bg-highlight" url="/pages/list/list?category={{list[selected].name}}&subCategory={{item}}" wx:for="{{subCategory}}" wx:for-index="idx" wx:key="name">
+                        <view class="main-content__list__item__inner {{item.length>4?'font-size-24':''}}">{{item}}</view>
+                    </navigator>
+                </view>
+            </view>
+            <block wx:else>
+                <view class="main-content__list__area">
+                    <view class="main-content__list__title font-size-24 tips-color">汽车</view>
+                    <view class="main-content__list default-box">
+                        <navigator class="main-content__list__item" hoverClass="bg-highlight" url="/pages/list/list?category={{list[selected].name}}&subCategory={{item}}" wx:for="{{subCategory.top}}" wx:for-index="idx" wx:key="name">
+                            <view class="main-content__list__item__inner {{item.length>4?'font-size-24':''}}">{{item}}</view>
+                        </navigator>
+                    </view>
+                </view>
+                <view class="main-content__list__area">
+                    <view class="main-content__list__title font-size-24 tips-color">出行</view>
+                    <view class="main-content__list default-box">
+                        <navigator class="main-content__list__item" hoverClass="bg-highlight" url="/pages/list/list?category={{list[selected].name}}&subCategory={{item}}" wx:for="{{subCategory.down}}" wx:for-index="idx" wx:key="name">
+                            <view class="main-content__list__item__inner {{item.length>4?'font-size-24':''}}">{{item}}</view>
+                        </navigator>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+</view>

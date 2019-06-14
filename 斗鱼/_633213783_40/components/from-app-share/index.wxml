@@ -1,0 +1,9 @@
+<view class="from-app-share">
+    <button appParameter="{{appParam}}" binderror="launchAppError" class="openapp-btn" openType="launchApp" type="default">
+        <image class="openapp-btn-pic" src="../../assets/room/openAPPbtn.png"></image>
+    </button>
+    <view bindtap="gotoHome" class="homepage-btn">
+        <hiddenForm></hiddenForm>
+        <image class="homepage-btn-pic" src="../../assets/room/homepagebtn.png"></image>
+    </view>
+</view>

@@ -1,0 +1,68 @@
+{
+	"description": "跳一跳项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "game",
+	"libVersion": "game",
+	"appid": "wx7c8d593b2c3a7703",
+	"projectname": "%E8%B7%B3%E4%B8%80%E8%B7%B3nowebpack",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "回放",
+					"query": "room_id=702948400&mode=relay&router_id=8RGEwUkFl%2Fe8xZibHCqEPMsX8e5bAhfuzE4EUrs%2BcweEAVzHSEhAYd%2Bb4rTPEYPAMIB0mkK8lgQBcuCfFHbbNi4GbDJDavtgxx8DJq7DLO3nbxhbq%2B8fao0xb6cYRhuY&version=4",
+					"scene": "1008"
+				},
+				{
+					"id": 1,
+					"name": "礼物",
+					"query": "mode=getGiftPage&id=UDs49nXseUA3nVmIFXZ26ceSlaMhW0wgGTXmq2FrsmY",
+					"scene": "1008"
+				},
+				{
+					"id": 2,
+					"name": "围观",
+					"query": "gameId=21462987897820417&mode=observe&version=4&skin_id=&skin_sn=&bottle_skin_id=0&nickName=roylai测试号&headimg=/96",
+					"scene": "1008"
+				},
+				{
+					"id": -1,
+					"name": "挑战",
+					"query": "mode=battle&pkId=21463232653075691",
+					"scene": "1008"
+				},
+				{
+					"id": 4,
+					"name": "接龙",
+					"query": "room_id=747137400&mode=relay&router_id=h4%2FDee%2B1oWAcxTroXaazoawldKjowdENnoFVuu6ararYeBpgH%2FFJ7XPk9VSrq5idwWXWG%2BA17RDXMqdKIsYq4%2Fm4zMxa%2FlITwBYRrvf5YNr7EqhxT5MMu7D0p4qydWnY&version=4",
+					"scene": "1008"
+				}
+			]
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": []
+		}
+	}
+}

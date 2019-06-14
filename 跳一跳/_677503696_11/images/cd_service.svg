@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Charging_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Charging_icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M12,7 L12,5.40000001 C12,5.1790861 12.1790861,5 12.4,5 L15.6,5 C15.8209139,5 16,5.1790861 16,5.40000001 L16,7 L19,7 C19.5522847,7 20,7.44771525 20,8 L20,24 C20,24.5522847 19.5522847,25 19,25 L9,25 C8.44771525,25 8,24.5522847 8,24 L8,8 C8,7.44771525 8.44771525,7 9,7 L12,7 Z M10.5,9 C10.2238576,9 10,9.22385763 10,9.5 L10,15 L18,15 L18,9.5 C18,9.22385763 17.7761424,9 17.5,9 L10.5,9 Z" id="Combined-Shape" fill="#6367F0"></path>
+    </g>
+</svg>

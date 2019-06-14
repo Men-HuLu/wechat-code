@@ -1,0 +1,31 @@
+<import src="/template/model-usual.wxml"></import>
+<view class="login-wrap">
+    <view class="form">
+        <form bindsubmit="handleLogin">
+            <view class="section">
+                <view class="label">+86</view>
+                <input bindinput="handleInput" id="phone" maxlength="11" name="phone" placeholder="手机号码" placeholderClass="phcolor" type="number"></input>
+            </view>
+            <view class="section">
+                <input bindinput="handleInput" maxlength="30" name="password" placeholder="输入密码" placeholderClass="phcolor" type="password"></input>
+            </view>
+            <view class="btn-login">
+                <button disabled="{{!allowSubmit}}" formType="submit" type="primary">登录</button>
+            </view>
+        </form>
+        <view class="line">
+            <view class="line-border"></view>
+            <text class="line-or">or</text>
+            <view class="line-border"></view>
+        </view>
+        <view wx:if="{{canIUseNewLogin}}">
+            <button bindgetuserinfo="bindGetUserInfo" class="btn-login btn-wx" openType="getUserInfo" style="height: 92rpx; line-height: 92rpx; font-size: 26rpx;" type="success">
+                <image src="/image/ico-wechat.png"></image>
+                <text>微信登录</text>
+            </button>
+            <view class="info-hit">由于微信限制权限，暂不提供QQ、微博登录</view>
+        </view>
+        <view class="info-hit" wx:else>如果要微信登录，请升级微信版本</view>
+    </view>
+    <template is="copyright" data></template>
+</view>

@@ -1,0 +1,37 @@
+<view class="disscus-section" wx:if="{{normal}}">
+    <view class="single-discuss" wx:for="{{hotArray}}" wx:key="item">
+        <view class="avator">
+            <image src="{{item.member.avatar}}"></image>
+        </view>
+        <view class="box">
+            <text class="uname {{item.member.vip.vipType>=1?'isvip':''}}">{{item.member.uname}}</text>
+            <text class="content">{{item.content.message}}</text>
+            <view class="child-box" wx:for="{{item.replies}}" wx:for-item="child" wx:key="child">
+                <view class="box">
+                    <text class="uname">{{child.member.uname}}</text>
+                    <text class="content">{{child.content.message}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="single-discuss" wx:for="{{discussArray}}" wx:key="{{item}}">
+        <view class="avator">
+            <image src="{{item.member.avatar}}"></image>
+        </view>
+        <view class="box">
+            <text class="uname">{{item.member.uname}}</text>
+            <text class="content">{{item.content.message}}</text>
+            <view class="child-box" wx:for="{{item.replies}}" wx:for-item="child" wx:key="child">
+                <view class="box">
+                    <text class="uname">{{child.member.uname}}</text>
+                    <text class="content">{{child.content.message}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="read-more">更多评论请到bilibili客户端观看</view>
+</view>
+<view class="ban-section" wx:if="{{isBan}}">
+    <image class="ban-image" src="http://s1.hdslb.com/bfs/static/jinkela/long/images/ban_comment.20181211.png"></image>
+    <view class="ban-word">当前稿件的评论功能已关闭</view>
+</view>

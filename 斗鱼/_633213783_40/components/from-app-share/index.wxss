@@ -1,0 +1,49 @@
+.from-app-share {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 134rpx;
+    right: 36rpx;
+    z-index: 9;
+    width: 102rpx;
+    height: 224rpx;
+}
+
+.from-app-share .treasure-btn .treasure-btn-pic {
+    width: 100%;
+    height: 100%;
+}
+
+.from-app-share .openapp-btn {
+    padding: 0;
+    width: 102rpx;
+    height: 102rpx;
+    background: transparent;
+}
+
+.from-app-share .openapp-btn::after {
+    border: none;
+}
+
+.from-app-share .openapp-btn .openapp-btn-pic {
+    width: 100%;
+    height: 100%;
+}
+
+.from-app-share .homepage-btn {
+    padding: 0;
+    position: relative;
+    width: 102rpx;
+    height: 102rpx;
+}
+
+.from-app-share .homepage-btn::after {
+    border: none;
+}
+
+.from-app-share .homepage-btn .homepage-btn-pic {
+    width: 100%;
+    height: 100%;
+}

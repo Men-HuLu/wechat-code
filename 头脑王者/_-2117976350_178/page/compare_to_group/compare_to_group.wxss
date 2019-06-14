@@ -1,0 +1,12 @@
+@import "../../template/guildAvatar.wxss";
+
+@import "../../template/groupName.wxss";
+
+@import "../../template/shareBtn.wxss";
+
+@import "../../template/avatarBase.wxss";
+
+.text-outlight {
+    font-size: 32rpx;
+    text-shadow: 0 0 0.2em #006bfd,-0 -0 0.2em #006bfd;
+}

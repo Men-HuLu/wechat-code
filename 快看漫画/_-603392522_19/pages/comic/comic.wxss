@@ -1,0 +1,286 @@
+movable-area {
+    width: 100%;
+    z-index: 0;
+}
+
+.comic-wrap,movable-view {
+    width: 100%;
+    height: 100%;
+}
+
+.comic-wrap {
+    z-index: 0;
+    box-sizing: border-box;
+    transition: padding .3s;
+}
+
+.blank,.comic-wrap {
+    position: relative;
+    background: #fff;
+}
+
+.blank {
+    z-index: 3;
+    height: 4.652%;
+}
+
+button {
+    border-radius: 0;
+}
+
+.button-hover,button,button:active,button:hover {
+    background: #fff;
+}
+
+button:after {
+    border: 0;
+}
+
+.btn-bottom,.btn-top {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    transition: transform .3s;
+    transition: transform .3s,-webkit-transform .3s;
+}
+
+.btn-top {
+    box-sizing: border-box;
+    height: 98rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+    top: 0;
+}
+
+.btn-top>view {
+    text-align: center;
+    width: 100%;
+}
+
+.btn-top .btn {
+    display: inline-block;
+    line-height: 1.2;
+    text-align: center;
+    padding: 0 10rpx;
+}
+
+.btn-top image {
+    width: 42rpx;
+    height: 42rpx;
+    margin: 0 auto;
+}
+
+.btn-top text {
+    display: block;
+    font-size: 24rpx;
+    color: #555;
+    line-height: 30rpx;
+}
+
+.btn-top button {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.btn-top button image {
+    margin-top: 1rpx;
+}
+
+.btn-top button text {
+    line-height: 29rpx;
+}
+
+.btn-bottom {
+    height: 98rpx;
+    border-top: 1rpx solid #e6e6e6;
+}
+
+.btn-bottom .btn {
+    display: flex;
+    line-height: 98rpx;
+    padding: 0 40rpx;
+    font-size: 28rpx;
+    color: #555;
+}
+
+.btn-bottom button {
+    font-size: 28rpx;
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.btn-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22rpx;
+    height: 22rpx;
+    margin: 38rpx 13rpx 0 0;
+}
+
+.btn-hamburger text {
+    display: inline-block;
+    width: 100%;
+    height: 2rpx;
+    background: #555;
+}
+
+.btn-next,.btn-prev {
+    width: 26rpx;
+    height: 24rpx;
+    margin-top: 34rpx;
+}
+
+.btn-prev {
+    margin-right: 13rpx;
+}
+
+.btn-next {
+    margin-left: 13rpx;
+}
+
+.btn-next text,.btn-prev text {
+    display: block;
+    width: 18rpx;
+    height: 2rpx;
+    background: #555;
+}
+
+.btn-prev text:first-child {
+    transform: rotate(-45deg);
+    margin-top: 8rpx;
+}
+
+.btn-prev text:last-child {
+    transform: rotate(45deg);
+    margin-top: 11rpx;
+}
+
+.btn-next text:first-child {
+    transform: rotate(45deg);
+    margin-top: 8rpx;
+}
+
+.btn-next text:last-child {
+    transform: rotate(-45deg);
+    margin-top: 11rpx;
+}
+
+.guide {
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 600rpx;
+    height: 96rpx;
+    text-align: center;
+    left: 75rpx;
+    background: #fff;
+    border-radius: 8rpx;
+    font-size: 28rpx;
+    transition: all .5s;
+    box-shadow: 0 0 4rpx 2rpx rgba(0,0,0,.3);
+}
+
+.guide .txt {
+    width: 100%;
+    line-height: 96rpx;
+    color: #333;
+}
+
+.guide .btn {
+    width: 160rpx;
+    min-width: 160rpx;
+    line-height: 96rpx;
+    color: #fff;
+    background: #f9d410;
+    border-top-right-radius: 8rpx;
+    border-bottom-right-radius: 8rpx;
+}
+
+.pay-tip {
+    height: 40px;
+    line-height: 40px;
+    color: #81858a;
+    background: #f7f9fa;
+}
+
+.pay-tip,.top-tip {
+    width: 100%;
+    text-align: center;
+    font-size: 24rpx;
+}
+
+.top-tip {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    height: 60rpx;
+    line-height: 60rpx;
+    color: #fff;
+    background: #000;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.teach-comic {
+    display: flex;
+    flex-direction: column;
+    transition: opacity .3s;
+}
+
+.teach-comic view {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.teach-comic view:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .85;
+}
+
+.teach-comic view:first-child::before {
+    background: #000;
+}
+
+.teach-comic view:nth-child(2):before {
+    background: red;
+}
+
+.teach-comic view:nth-child(3):before {
+    background: #fde23d;
+}
+
+.teach-comic view text {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+    line-height: 60rpx;
+    font-size: 20px;
+    color: #fff;
+}
+
+.teach-comic view:nth-child(3) text {
+    color: #333;
+}

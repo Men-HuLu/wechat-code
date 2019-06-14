@@ -1,0 +1,4 @@
+<text>audio.wxml</text>
+<audio id="myAudio"></audio>
+<button bindtap="audioPlay" type="primary">播放</button>
+<button bindtap="audioPause" type="primary">暂停</button>

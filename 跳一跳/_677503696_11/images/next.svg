@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="11px" viewBox="0 0 6 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>next_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.300000012">
+        <g id="首页" transform="translate(-350.000000, -356.000000)">
+            <g id="Group" transform="translate(80.000000, 351.000000)">
+                <g id="next_icon" transform="translate(273.000000, 10.000000) rotate(-90.000000) translate(-273.000000, -10.000000) translate(265.000000, 2.000000)">
+                    <rect id="Rectangle" fill="#D8D8D8" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                    <path d="M7.47248715,6.41918387 L3.12390406,10.767767 L2.41679728,10.0606602 L6.65943797,5.81801948 C6.88168461,5.59577285 7.18251593,5.50000635 7.47248715,5.53072 C7.76245837,5.50000635 8.06328969,5.59577285 8.28553633,5.81801948 L12.528177,10.0606602 L11.8210702,10.767767 L7.47248715,6.41918387 Z" id="Combined-Shape" fill="#000000" fill-rule="nonzero" transform="translate(7.472487, 8.146447) scale(1, -1) translate(-7.472487, -8.146447) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

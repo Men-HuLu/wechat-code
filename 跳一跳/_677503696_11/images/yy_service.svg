@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>booking_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="booking_icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="queue_icon">
+            <g id="common_icons_discover-copy">
+                <path d="M14.4782609,25 C7.92486775,25 3,20.0751322 3,14.4782609 C3,7.92486775 7.92486775,3 14.4782609,3 C20.0751322,3 25,7.92486775 25,14.4782609 C25,20.0751322 20.0751322,25 14.4782609,25 Z" id="Combined-Shape" fill="#6367F0" fill-rule="nonzero"></path>
+                <rect id="Rectangle-2" fill="#FFFFFF" x="12.6" y="7.63636364" width="1.54000003" height="7.76363636"></rect>
+                <rect id="Rectangle-2-Copy" fill="#FFFFFF" transform="translate(15.547067, 16.146049) rotate(-240.000000) translate(-15.547067, -16.146049) " x="14.7770667" y="13.1876297" width="1.54000003" height="5.91683958"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

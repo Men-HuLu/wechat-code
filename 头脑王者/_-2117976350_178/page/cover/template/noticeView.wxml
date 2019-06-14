@@ -1,0 +1,91 @@
+<template name="notice-content-item">
+    <view data-id="{{item.id}}" style="width:100%;padding-bottom:20rpx;">
+        <view style="width:100%;color: #FF7063; font-size: 30rpx; text-align: left;">{{item.title}}</view>
+        <view style="width:100%;color: #4353A5; font-size: 24rpx;">
+            <text style="color: #4353A5; font-size: 24rpx;word-break:break-all;">{{item.content}}</text>
+        </view>
+    </view>
+</template>
+<template name="notice-time-item">
+    <view style="position:relative;width:620rpx;height:50rpx;">
+        <view style="font-size: 28rpx;color:{{'#8EBCFE'}};left:10rpx;position: absolute;">时间：12：00</view>
+        <view style="font-size: 28rpx;color: {{'#7AFBFF'}};left:220rpx;position: absolute;">奖金：￥100000</view>
+        <view style="font-size: 28rpx;color: {{'#FFA640'}};left:480rpx;position: absolute;">已结束</view>
+        <view style="background:#8976FF;width:590rpx;height:3rpx;left:0px;bottom:8rpx;position: absolute;"></view>
+    </view>
+</template>
+<template name="noticeView-backups">
+    <view style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:#4554a1;">
+        <view class="show-form center center2" style="position:relative; width:100%; height:100%; background: rgba(94,157,255,0.24);">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/img_bg_notice.png" style="width:750rpx;height:519rpx;position:absolute;left:calc((100% - 750rpx)/2);top:202rpx;"></image>
+            <view class="notice-container column" style="width:100%;top:66rpx;left:0px;bottom:230rpx;position:absolute;">
+                <view style="width:100%;position:relative;" wx:if="{{false}}">
+                    <view style="position:relative;height:48rpx;">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/cash/ranking/img_ranking_content_banner.png" style="position: absolute;width:650rpx;height:48rpx;top:0rpx;left:50rpx;position:absolute;"></image>
+                        <view style="position: absolute;width:252;height: 59rpx;white-space: nowrap;text-align: center;line-height: 59rpx;font-size:42rpx;color:#fff;top:-4rpx;left:calc(50% - 126rpx);">-{{'今日赛程'}}-</view>
+                    </view>
+                    <view class="column center2" style="width: 100%;position:relative;top:29rpx;">
+                        <template is="notice-time-item" data wx:for="{{[1,2,3,4,5,6,7,8,9]}}"></template>
+                    </view>
+                </view>
+                <view style="width: 198rpx;height: 30rpx;line-height: 30rpx;text-align: center;white-space: nowrap;font-size: 22rpx;color: #FFFFFF;left: 267rpx;padding-top:40rpx;" wx:if="{{false}}">今日赛程已全部结束</view>
+                <view class="column center2" style="position:relative;width:100%;height:100%;padding-top:{{true?20:40}}rpx;">
+                    <view style="position:relative;width:100%;height:48rpx;">
+                        <image src="https://question-resource-wscdn.hortorgames.com/image/cash/ranking/img_ranking_content_banner.png" style="position: absolute;width:650rpx;height:48rpx;top:0rpx;left:50rpx"></image>
+                        <view style="position: absolute;width:125;height: 45rpx;white-space: nowrap;text-align: center;line-height: 45rpx;font-size:32rpx;color:#fff;top:0rpx;left:313rpx;">- 公告 -</view>
+                    </view>
+                    <view class="column start center2" style="background: #FFFFFF;box-shadow: 0 0 8rpx 0 #453198;width: 630rpx;height:100%;position:relative;color: #4353A4;top:20rpx;">
+                        <view style="height:20rpx"></view>
+                        <image bindtap="on_notice_banner_clicked" src="{{notice_banner_url}}" style="width:580rpx;height:168rpx;" wx:if="{{!!noticeData.notice_banner_url}}"></image>
+                        <view style="height:20rpx"></view>
+                        <scroll-view scrollY="true" style=" width: 580rpx;">
+                            <block wx:for="{{noticeList}}" wx:key="index">
+                                <view class="column start center2" data-id="{{item.id}}" style="width:100%;">
+                                    <view class="row start" style="width:100%;text-align: left;font-size:28rpx;color:#fff;font-weight:bold;line-height:40rpx;height:40rpx;border-radius:100rpx;background-image:linear-gradient(82deg, #2191FF 2%, #fff 98%);">
+                                        <view style="width:30rpx;"></view> {{item.title}} </view>
+                                    <view style="height:12rpx"></view>
+                                    <text disabled="false" maxlength="1024" style="font-size: 24rpx;color: #4353A5;width: 520rpx;line-height: 30rpx;text-align: left;">{{item.content}}</text>
+                                </view>
+                                <view style="height:30rpx"></view>
+                            </block>
+                        </scroll-view>
+                    </view>
+                </view>
+            </view>
+            <view>
+                <image src="https://question-resource-wscdn.hortorgames.com/image/cash/ranking/img_ranking_mask.png" style="position: absolute;width:710rpx;height:90rpx;bottom:200rpx;left:20rpx;"></image>
+                <view bindtap="onTapNoticeViewBtn" style="position: absolute;width:300rpx;height: 90rpx;white-space: nowrap;text-align: center;line-height: 90rpx;font-size:48rpx;color:#fff;letter-spacing: 8rpx;background: #4BC0FF;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 100rpx;bottom:70rpx;left:calc(50% - 150rpx);">好的</view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="noticeView">
+    <view class="center center2" style="position:absolute;width:100%;height:100%;left:0px;top:0px;background-color:#4554a1;">
+        <view class="show-form center center2" style="position:relative; width:640rpx; height:928rpx; background: rgba(94,157,255,0.24);border-radius: 34rpx;">
+            <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/img_bg_notice.png" style="width:750rpx;height:519rpx;position:absolute;left:calc((100% - 750rpx)/2);top:202rpx;"></image>
+            <view class="column start center2" style="position:absolute;left:calc((100% - 600rpx)/2);top:calc((100% - 888rpx)/2);width:600rpx; height:888rpx;background: #fff;box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;">
+                <image src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/img_notice_title.png" style="width:600rpx;height:129rpx;"></image>
+                <image bindtap="on_notice_banner_clicked" src="{{notice_banner_url}}" style="width:580rpx;height:168rpx;" wx:if="{{!!noticeData.notice_banner_url}}"></image>
+                <view style="height:20rpx"></view>
+                <scroll-view scrollY="true" style=" width: 580rpx;height:{{!!noticeData.notice_banner_url?400:568}}rpx;">
+                    <block wx:for="{{noticeList}}" wx:key="index">
+                        <view class="column start center2" data-id="{{item.id}}" style="width:100%;">
+                            <view class="row start" style="width:100%;text-align: left;font-size:28rpx;color:#fff;font-weight:bold;line-height:40rpx;height:40rpx;border-radius:100rpx;background-image:linear-gradient(82deg, #2191FF 2%, #fff 98%);">
+                                <view style="width:30rpx"></view> {{item.title}}
+                            </view>
+                            <view style="height:12rpx"></view>
+                            <text class="noticeViewLabel" disabled="false" maxlength="1024">{{item.content}}</text>
+                        </view>
+                        <view style="height:30rpx"></view>
+                    </block>
+                </scroll-view>
+                <view bindtap="onTapNoticeViewBtn" class="center center2" style="position:absolute;left:calc((100% - 310rpx)/2);bottom:40rpx; background: #7ED321;box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.50);border-radius: 20rpx;font-size:64rpx;font-weight:bold;width:310rpx;height:100rpx;font-weight:bold">
+                    确定
+                </view>
+                <view bindtap="onTapNoticeViewBtn" class="center center2" style="position:absolute;right:-16rpx;top:-16rpx;width:100rpx;height:100rpx">
+                    <image hoverClass="brightness" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/popup/icon_close.png" style="width:30%;height:30%"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

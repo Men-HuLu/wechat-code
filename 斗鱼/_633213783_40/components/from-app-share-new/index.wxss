@@ -1,0 +1,33 @@
+.from-app-share {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 250rpx;
+    right: 36rpx;
+    z-index: 9;
+    width: 102rpx;
+    height: 102rpx;
+}
+
+.from-app-share .openapp-btn {
+    padding: 0;
+    width: 102rpx;
+    height: 102rpx;
+    position: absolute;
+    background: transparent;
+}
+
+.openapp-btn::after {
+    border: none;
+}
+
+.openapp-btn-pic {
+    width: 100%;
+    height: 100%;
+}
+
+.fit-iphonex .from-app-share {
+    bottom: 300rpx;
+}

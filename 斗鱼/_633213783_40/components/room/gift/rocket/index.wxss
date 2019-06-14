@@ -1,0 +1,14 @@
+.GiftContent-rocket {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 30%;
+    opacity: 0;
+    z-index: 9999;
+}
+
+.GiftContent-rocket .GiftContent-rocket-img {
+    width: 100%;
+}

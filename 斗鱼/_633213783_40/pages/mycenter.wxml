@@ -1,0 +1,84 @@
+<view class="mycenter-container">
+    <view class="my-center-info">
+        <view class="personal-details" wx:if="{{isLogin}}">
+            <view class="usericon-box">
+                <image class="usericon" src="{{userInfo.avatar||''}}"></image>
+            </view>
+            <view class="user-details">
+                <view class="user-name">{{userInfo.nickname||''}}</view>
+                <view class="info-num">
+                    <view class="level">
+                        <image class="level-icon" src="../assets/room/userLevel.png"></image>
+                        <view class="info-text">{{userInfo.level||1}}</view>
+                    </view>
+                    <view class="yuchi-wrap">
+                        <image class="yuchi-icon" src="../assets/room/userYuchi.png"></image>
+                        <view class="info-text">{{userInfo.gold||0}}</view>
+                    </view>
+                    <view class="yuwan-wrap">
+                        <image class="yuwan-icon" src="../assets/room/userYuwan.png"></image>
+                        <view class="info-text">{{userInfo.gold1||0}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="not-login" wx:else>
+            <view class="default-icon-box">
+                <image class="default-icon" src="https://cs-op.douyucdn.cn/dyfelocal/act/5acc7c96d51caa4669f8b2de/defaulticon.png?timestamp=1527749111"></image>
+            </view>
+            <view class="tip-text">登录使用全部功能</view>
+            <view bind:tap="clickLoginBtn" class="login-btn">登录/注册</view>
+        </view>
+        <view class="line-between"></view>
+        <view catch:tap="clickRechargeBtn" class="yuchi-recharge-box" wx:if="{{platform==='android'}}">
+            <view class="recharge-title">鱼翅充值</view>
+            <image class="arrow-icon" src="../assets/mycenter/arrowmore.png"></image>
+        </view>
+        <view catch:tap="clickGameGiftbag" class="game-giftbag-box" wx:if="{{false}}">
+            <view class="game-title">游戏礼包
+            <view class="red-dot"></view>
+            </view>
+            <view class="giftbag-intro">
+                <view class="giftbag-text">
+            腾讯游戏礼包
+          </view>
+                <image class="giftbag-icon" src="https://sta-op.douyucdn.cn/dyfelocal/act/5b4867e38d592a7dea394d93/box.png?timestamp=1536291755"></image>
+            </view>
+            <image class="arrow-icon" src="../assets/mycenter/arrowmore.png"></image>
+        </view>
+        <view class="watch-record-wrap">
+            <view bind:tap="openLoginItem" class="watch-record-title">
+                <view class="wr-title-name">我看过</view>
+                <view catch:tap="clearRecord" class="wr-control-btn">{{controlBtnText}}</view>
+            </view>
+            <scroll-view scrollX class="watch-record-content" wx:if="{{recordList.length}}">
+                <repeat wx:for="{{recordList}}" wx:key="{{item.roomId}}">
+                    <view bind:tap="clickSeeRecord" class="record-content-box" data-islive="{{item.isLive}}" data-roomid="{{item.roomId}}">
+                        <view class="content-main">
+                            <image class="zhanweitu" src="../assets/images/hengzhanweitu.png"></image>
+                            <image class="cover-pic" src="{{item.roomSrc}}"></image>
+                            <view class="content-type {{item.isLive==1?'':'videotype'}}">{{item.isLive==1?'直播':'视频'}}</view>
+                        </view>
+                        <view class="live-des-box" wx:if="{{item.isLive==1}}">
+                            <view class="live-title">{{item.title}}</view>
+                            <view class="username">{{item.nickname}}</view>
+                        </view>
+                        <view class="video-title" wx:else>{{item.title}}</view>
+                    </view>
+                </repeat>
+            </scroll-view>
+        </view>
+        <view bind:tap="clickDownloadApp" class="download-app">
+            <view class="download-title">下载APP</view>
+            <image class="arrow-icon" src="../assets/mycenter/arrowmore.png"></image>
+        </view>
+        <button class="contact-service" openType="contact" sessionFrom="weapp">
+            <view class="service-title">联系客服</view>
+            <image class="arrow-icon" src="../assets/mycenter/arrowmore.png"></image>
+        </button>
+        <view bind:tap="clickAccountManagement" class="account-management" wx:if="{{isLogin}}">
+            <view class="am-title">帐号管理</view>
+            <image class="arrow-icon" src="../assets/mycenter/arrowmore.png"></image>
+        </view>
+    </view>
+</view>

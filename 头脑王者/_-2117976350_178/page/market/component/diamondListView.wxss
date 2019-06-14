@@ -1,0 +1,28 @@
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.center2 {
+    display: flex;
+    align-items: center;
+}
+
+.start {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.brightness {
+    filter: brightness(1.2);
+}
+
+.row-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}

@@ -1,0 +1,29 @@
+.loading-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 98;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+}
+
+.loading-box .loading-icon {
+    margin-bottom: 60rpx;
+    width: 348rpx;
+    height: 348rpx;
+}
+
+.loading-box .loading-title {
+    width: 100%;
+    text-align: center;
+    line-height: 34rpx;
+    font-size: 30rpx;
+    color: #8f8f8f;
+}

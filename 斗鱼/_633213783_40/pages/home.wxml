@@ -1,0 +1,15 @@
+<view wx:if="{{!isLoading&&!isError}}">
+    <scroll-menu bind:chooseCallBack="goCatalogList" cate1Info="{{cate1Info}}" showActivity="{{showActivity}}" showRightBtn="{{showRightBtn}}" wx:if="{{showTopNav}}"></scroll-menu>
+    <view class="home-container">
+        <view class="home-container-content" style="{{showTopNav?'':'margin-top: 0;'}}">
+            <room-list rooms="{{$lyList$rItem}}" wx:for="{{lyList}}" wx:for-index="$lyList$index" wx:for-item="$lyList$rItem" wx:key="$lyList$index"></room-list>
+            <room-list isMix="mix" rooms="{{$roomList$rItem}}" wx:for="{{roomLists}}" wx:for-index="$roomList$index" wx:for-item="$roomList$rItem" wx:key="$roomList$index"></room-list>
+            <loading-footer isLoading="{{false}}"></loading-footer>
+        </view>
+    </view>
+</view>
+<loading wx:if="{{isLoading}}"></loading>
+<error bindcustomevent="reload" wx:if="{{isError}}"></error>
+<guidePopup wx:if="{{guideShow}}"></guidePopup>
+<popup from="home" lyList="{{lyList}}" wx:if="{{popupShow}}"></popup>
+<bottom-tip></bottom-tip>

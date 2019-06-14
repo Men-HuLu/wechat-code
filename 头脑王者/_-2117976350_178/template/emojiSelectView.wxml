@@ -1,0 +1,14 @@
+<template name="emojiSelectView">
+    <view bindtap="emojiSelectController_onTapClosedBtn" style="width: 100%; height: 100%; position: absolute;left:0px;top:0px;" wx:if="{{panelVisible}}"></view>
+    <view class="emojiSelectMainView" style="left:{{left}}rpx; top:{{top}}rpx;" wx:if="{{visible}}">
+        <view bindtap="emojiSelectController_onTapBtn" style="position: absolute;width: 120rpx; height: 120rpx; left:-100rpx; top:-70rpx;background-color: rgba(255,255,255,0);" wx:if="{{emotioVisible}}"></view>
+        <image animation="{{btnAni}}" bindtap="emojiSelectController_onTapBtn" class="emojiSelectBtn" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/icon_emotion_default.png" wx:if="{{emotioVisible}}"></image>
+        <view animation="{{panelVisibleAni}}" class="emojiSelectPanel">
+            <view class="emojiSelectPanelFrame"></view>
+            <image class="emojiSelectTriangle" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/battle/img_triangle.png"></image>
+            <view class="emojiSelectPanelContentView">
+                <image bindtap="emojiSelectController_onTapItem" data-face-id="{{item}}" hoverClass="emojiSelectViewItemHover" src="https://question-resource-wscdn.hortorgames.com/image/new_skin/icon/emotion/b{{item}}.png" style="width:90rpx;height:90rpx" wx:if="{{dataSource}}" wx:for="{{dataSource}}" wx:key="fid"></image>
+            </view>
+        </view>
+    </view>
+</template>

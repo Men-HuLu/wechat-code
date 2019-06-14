@@ -1,0 +1,19 @@
+<template name="avatarEmoji">
+    <view class="center center2 flex-none avatarViewSize" style="position:relative;">
+        <template is="avatarBase" data="{{uid:uid,avatarUrl:avatarUrl,nickName:nickName}}"></template>
+        <view style="position: absolute;left:110rpx;top:106rpx;" wx:if="{{emojiData}}">
+            <image class="item-shine" src="https://question-resource-wscdn.hortorgames.com/image/emoji/b.png" style="width:54rpx;height:54rpx;position:absolute;top:0px;left:0px" wx:if="{{emojiData.showIcon}}"></image>
+            <block wx:for="{{emojiData.itemList}}" wx:for-index="id" wx:key="id">
+                <view animation="{{item.ani}}" class="emojiItem left" wx:if="{{emojiData.inLeft}}">
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/emoji/qipao.png" style="position:absolute; width:170rpx;height:96rpx;top:0px;left:0px"></image>
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/emoji/b{{item.fid}}.png" style="position:absolute; width:90rpx;height:90rpx;top:4rpx;left:52rpx"></image>
+                </view>
+                <view animation="{{item.ani}}" class="emojiItem right" wx:else>
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/emoji/qipao.png" style="position:absolute; width:170rpx;height:96rpx;top:0px;left:0px"></image>
+                    <image src="https://question-resource-wscdn.hortorgames.com/image/emoji/b{{item.fid}}.png" style="position:absolute; width:90rpx;height:90rpx;top:4rpx;left:52rpx"></image>
+                </view>
+            </block>
+        </view>
+    </view>
+</template>
+<import src="avatarBase.wxml"></import>

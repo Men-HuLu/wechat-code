@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>yd</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="====slice===" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-2" transform="translate(-650.000000, -871.000000)">
+            <g id="Group-38-Copy" transform="translate(650.000000, 871.000000)">
+                <g id="Group-25-Copy" fill="#FFFFFF" opacity="0" stroke="#000000" stroke-opacity="0.1" stroke-width="0.583333333">
+                    <rect id="Rectangle-11" x="0.291666667" y="0.291666667" width="27.4166667" height="27.4166667"></rect>
+                </g>
+                <circle id="Oval-15" stroke="#1AAD19" stroke-width="2" cx="14" cy="14" r="11"></circle>
+                <rect id="Rectangle-58" fill="#000000" transform="translate(14.166667, 14.000000) rotate(-270.000000) translate(-14.166667, -14.000000) " x="13.1666667" y="6.16666667" width="2" height="16" rx="0.233333337"></rect>
+                <rect id="Rectangle-14" fill="#1AAD19" x="6" y="13" width="16" height="2"></rect>
+                <path d="M8.75,7.58333333 C10.2446251,9.34301272 10.9919376,11.4209003 10.9919376,13.8169961 C10.9919376,16.2130918 10.2446251,18.3373401 8.75,20.1897408" id="Path-14" stroke="#1AAD19" stroke-width="2"></path>
+                <path d="M16.9166667,7.58333333 C18.4112917,9.34301272 19.1586043,11.4209003 19.1586043,13.8169961 C19.1586043,16.2130918 18.4112917,18.3373401 16.9166667,20.1897408" id="Path-14-Copy" stroke="#1AAD19" stroke-width="2" transform="translate(18.037635, 13.886537) scale(-1, 1) translate(-18.037635, -13.886537) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

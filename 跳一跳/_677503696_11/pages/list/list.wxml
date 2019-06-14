@@ -1,0 +1,38 @@
+<import src="../template/list.wxml"></import>
+<navigation my_class="navigation-bar_color" title="{{title}}">
+    <view class="navigation-bar__icon-opr" hidden="{{showAllSubCategories}}" slot="left">
+        <image class="navigation-bar__icon-opr__image" src="/images/navigation_back.svg"></image>
+    </view>
+</navigation>
+<view bindtap="toggleCategories" class="tab-opr font-size-26 link-color" style="top: {{statusBarHeight+(platform==='android'?48:44)}}px;" wx:if="{{showSubCateArrow}}">
+    <image class="icon-arrow_down {{showAllSubCategories?'up':''}}" src="/images/arrow_down.svg"></image>
+</view>
+<view class="tab-list__wrp" style="top: {{statusBarHeight+(platform==='android'?48:44)}}px;" wx:if="{{subCategories.length!=0}}">
+    <scroll-view scrollX class="tab-list thin-border-bottom" scrollIntoView="c{{selectedCategory>0?selectedCategory-1:0}}" style="width: 100%">
+        <view class="tab-list__inner">
+            <view class="tab-item__wrp" data-idx="{{idx}}" id="c{{idx}}" wx:for="{{subCategories}}" wx:for-index="idx" wx:key="*this">
+                <view bindtap="changeCategory" class="tab-item {{selectedCategory==idx?'selected':''}}" data-idx="{{idx}}">{{item}}</view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<view class="tab-list__popup {{showAllSubCategories?'animation-start':''}}" style="top: {{statusBarHeight+(platform==='android'?48:44)}}px;">
+    <view bindtap="toggleCategories" class="tab-list__mask"></view>
+    <view class="tab-row-cover gray-opacity font-size-28">全部类目</view>
+    <view class="tab-list_fold">
+        <view class="tab-item__wrp" wx:for="{{subCategories}}" wx:for-index="idx" wx:key="*this">
+            <view bindtap="changeCategory" class="tab-item_fold {{selectedCategory==idx?'selected':''}}" data-idx="{{idx}}">{{item}}</view>
+        </view>
+    </view>
+</view>
+<view class="page" style="padding-top: {{subCategories.length?statusBarHeight+(platform==='android'?88:84):statusBarHeight+(platform==='android'?48:44)}}px;">
+    <view class="flow-tags__wrp fold thin-border-bottom" wx:if="{{services.length!=0}}">
+        <view class="radius-tag-list ">
+            <view bindtap="changeService" class="radius-tag {{selectedServices[idx]?'selected':''}}" data-idx="{{idx}}" hidden="{{!item||idx>=12&&showAllServices}}" wx:for="{{services}}" wx:for-index="idx" wx:key="*this">{{item}}</view>
+        </view>
+        <view bindtap="showAllServices" class="flow-tags__opr font-size-24 link-color" hidden="{{!showAllServices}}">
+            <image class="icon-arrow_down" src="/images/arrow_down_gray.svg"></image>
+        </view>
+    </view>
+    <template is="list" data="{{list:list}}"></template>
+</view>

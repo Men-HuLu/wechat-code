@@ -1,0 +1,23 @@
+{
+    "navigationBarTitleText": "斗鱼直播",
+    "enablePullDownRefresh": false,
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "dark",
+    "usingComponents": {
+        "videoplayer": "/components/room/live-video-player/index",
+        "chattabcontent": "/components/room/chat-tab-content/index",
+        "giftpanel": "/components/room/gift-pannel/index",
+        "gifteffect": "/components/room/gift-effect/index",
+        "anchortabcontent": "/components/room/anchor-tab-content/index",
+        "bindingphonenumber": "/components/room/binding-phone-number/index",
+        "chatverify": "/components/room/chat-verify/index",
+        "fromappshare": "/components/from-app-share-new/index",
+        "goHome": "/components/go-home/index",
+        "popup": "/components/room/room-popup/index",
+        "roomBanner": "/components/room/room-banner/index",
+        "chatPopup": "/components/room/chat-popup/index",
+        "chatroomcontent": "/components/room/chat-room-content/index",
+        "chatenterPopup": "/components/room/chat-enter-popup/index"
+    }
+}
