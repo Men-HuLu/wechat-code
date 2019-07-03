@@ -1,0 +1,78 @@
+<view class="container">
+    <form bindsubmit="formSubmit">
+        <view class="box">
+            <view class="head txt">关键设置</view>
+            <view class="left txt border">
+                <view class="title">访客审核</view>
+                <view style="font-size:30rpx;color:#999999;">开启后,访客访问店铺需要授权</view>
+                <view class="body-view iconcenter" style="margin-left:26rpx;">
+                    <switch bindchange="switchChange" checked="{{data.switch}}" color="#3ea2ef" name="switch"></switch>
+                </view>
+            </view>
+        </view>
+        <view class="box">
+            <view class="head txt">基本信息</view>
+            <view bindtap="addImge" class="float txt border" style="width:100%;box-sizing:border-box;">
+                <view class="title">LOGO
+        <text style="color:#e60012;">*</text>
+                </view>
+                <view class="iconcenter" style="position:relative;height:100%;width:80rpx;">
+                    <button style="width:80rpx;height:80rpx;background-color:none;border:none;padding:0;margin:0;opacity:0;position:absolute;top:50%;transform:translateY(-50%);left:0;right:0;botton:0;z-index:2;"></button>
+                    <image mode="aspectFill" src="{{data.userImg}}" style="width:80rpx;height:80rpx;border-radius:50%;position:absolute;top:50%;transform:translateY(-50%);left:0;right:0;botton:0;opacity:1;"></image>
+                </view>
+            </view>
+            <view class="left txt border">
+                <view class="title">展厅号
+          <text style="color:#e60012;">*</text>
+                </view>
+                <view class="head">{{data.shopId}}</view>
+            </view>
+            <view class="left txt border">
+                <view class="title">展厅名称
+          <text style="color:#e60012;">*</text>
+                </view>
+                <input class="head" maxlength="10" name="shopName" placeholder="请输入展厅名称" placeholderStyle="font-size:30rpx;color:#999999;" value="{{data.shopName}}"></input>
+            </view>
+            <view class="left txt border">
+                <view class="title">展厅热线
+          <text style="color:#e60012;">*</text>
+                </view>
+                <input class="head" name="shopCall" placeholder="请输入展厅热线" placeholderStyle="font-size:30rpx;color:#999999;" value="{{data.shopCall}}"></input>
+            </view>
+            <view class="left txt border">
+                <view class="title">联系地址
+          <text style="color:#e60012;">*</text>
+                </view>
+                <input class="head" name="shopPath" placeholder="请输入联系地址" placeholderStyle="font-size:30rpx;color:#999999;" value="{{data.shopPath}}"></input>
+            </view>
+            <view class="left txt border">
+                <view class="title">展厅简介
+          <text style="color:#e60012;">*</text>
+                </view>
+                <input class="head" name="shopBrief" placeholder="请输入展厅简介" placeholderStyle="font-size:30rpx;color:#999999;" value="{{data.shopBrief}}"></input>
+            </view>
+        </view>
+        <view class="box" style="border-bottom:1px solid #f4f4f4;">
+            <view class="head txt">辅助信息</view>
+            <view class="left txt border">
+                <view class="title">负责人</view>
+                <input class="head" name="name" placeholder="请输入负责人姓名" placeholderStyle="font-size:30rpx;color:#999999;" value="{{data.name}}"></input>
+            </view>
+            <view class="left txt border">
+                <view class="title">QQ</view>
+                <input class="head" name="qq" placeholder="请输入QQ号" placeholderStyle="font-size:30rpx;color:#999999;" value="{{data.qq}}"></input>
+            </view>
+            <view class="left txt border">
+                <view class="title">微信</view>
+                <input class="head" name="wechat" placeholder="请输入微信号" placeholderStyle="font-size:30rpx;color:#999999;" value="{{data.wechat}}"></input>
+            </view>
+            <view class="left txt border">
+                <view class="title">备注</view>
+                <input class="head" name="message" placeholder="请输入备注信息" placeholderStyle="font-size:30rpx;color:#999999;" value="{{data.message}}"></input>
+            </view>
+        </view>
+        <view class="button">
+            <button class="btn" formType="submit">保存</button>
+        </view>
+    </form>
+</view>

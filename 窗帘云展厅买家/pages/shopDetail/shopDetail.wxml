@@ -1,0 +1,54 @@
+<import src="../temp/shopdetail.wxml"></import>
+<nav></nav>
+<view class="tabbox left">
+    <view bindtap="tabShop" class="tab {{tab?'tab_active':''}}" data-name="shop">商品</view>
+    <view bindtap="tabComment" class="tab {{tab==false?'tab_active':''}}" data-name="comment">评论</view>
+</view>
+<view style="padding-bottom:100rpx;" wx:if="{{tab==true}}">
+    <template is="shopdetail" data="{{nowData:nowData}}"></template>
+    <view class="footer float" id="footer" style="padding:0 73rpx;">
+        <view bindtap="copy" class="foot_center">
+            <image src="../../img/ico_detail_foot_1.png" style="width:35rpx;height:40rpx;"></image>
+            <view>复制</view>
+        </view>
+        <view bindtap="edit" class="foot_center">
+            <image src="../../img/ico_detail_foot_2.png" style="width:35rpx;height:38rpx;"></image>
+            <view>编辑</view>
+        </view>
+        <view bindtap="comment" class="foot_center">
+            <image src="../../img/ico_detail_foot_3.png" style="width:34rpx;height:29rpx;margin-top:5rpx;"></image>
+            <view>评论</view>
+        </view>
+        <view bindtap="down" class="foot_center">
+            <image src="../../img/ico_detail_foot_4.png" style="width:35rpx;height:40rpx;"></image>
+            <view>{{nowData.shelves}}</view>
+        </view>
+        <view bindtap="del" class="foot_center">
+            <image src="../../img/ico_detail_foot_5.png" style="width:29rpx;height:35rpx;"></image>
+            <view>删除</view>
+        </view>
+    </view>
+</view>
+<view style="padding-bottom:100rpx;" wx:else>
+    <view class="comment" wx:if="{{hasUserComment==false?true:false}}">
+        <view class="comment_box" wx:for="{{userComment.data}}" wx:for-index="val" wx:for-item="comment">
+            <view class="comment_title float">
+                <view class="comment_user  left iconcenter">
+                    <image src="{{comment.userImg}}"></image>
+                    <text class="one_line" style="width:280rpx;">{{comment.userName}}</text>
+                </view>
+                <view class="comment_time iconcenter">{{comment.datetime}}</view>
+            </view>
+            <text class="comment_txt">{{comment.userComment}}</text>
+            <view class="comment_img left">
+                <view bindtap="previewImg" data-index="{{val}}" data-src="{{commentImg}}" style="width:224rpx;height:224rpx;overflow:hidden;" wx:for="{{comment.commentImg}}" wx:for-item="commentImg">
+                    <image mode="aspectFill" src="{{commentImg}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="comment_foot">
+            <button bindtap="comment">立即评价</button>
+        </view>
+    </view>
+    <view class="hasUserComment" wx:else>暂无数据</view>
+</view>

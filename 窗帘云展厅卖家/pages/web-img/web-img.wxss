@@ -1,0 +1,23 @@
+image {
+    width: 100%;
+}
+
+button,.navigation {
+    width: 300rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #42a4f0;
+    color: #fff;
+    display: block;
+    margin: 50rpx auto;
+}
+
+button::after {
+    border: none;
+}
+
+.navigation {
+    text-align: center;
+    border-radius: 10rpx;
+    margin-bottom: 0;
+}

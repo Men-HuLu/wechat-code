@@ -1,0 +1,71 @@
+<view class="left tabTitle">
+    <view bindtap="tabTitle" class="{{tabCli=='browse'?'tab_title_active':''}}" data-tab="browse">浏览</view>
+    <view bindtap="tabTitle" class="{{tabCli=='thumbs'?'tab_title_active':''}}" data-tab="thumbs">点赞</view>
+    <view bindtap="tabTitle" class="{{tabCli=='collection'?'tab_title_active':''}}" data-tab="collection">收藏</view>
+    <view bindtap="tabTitle" class="{{tabCli=='share'?'tab_title_active':''}}" data-tab="share">分享</view>
+    <view bindtap="tabTitle" class="{{tabCli=='figure'?'tab_title_active':''}}" data-tab="figure">图评</view>
+</view>
+<view class="allTime float">
+    <view>统计时间</view>
+    <picker bindchange="bindPickerChange" range="{{array}}" value="{{index}}">
+        <view class="picker left">
+      {{array[index]}}
+      <view class="iconcenter" style="margin-left:66rpx;">
+                <image src="../../img/ico_right.png" style="width:16rpx;height:28rpx;"></image>
+            </view>
+        </view>
+    </picker>
+</view>
+<scroll-view bindscrolltolower="pullUpLoad" class="content-wrap" scrollY="true" style="height:88vh;">
+    <view bindtap="navigation" class="left" data-id="{{item.id}}" style="padding:0 24rpx;margin-bottom:28rpx;" wx:for="{{data}}">
+        <image src="{{item.headImg}}" style="width:110rpx;height:110rpx;border-radius:50%;margin-right:14rpx;"></image>
+        <view>
+            <view class="title one_line" style="width:562rpx;font-size:26rpx;line-height:36rpx;margin-top:14rpx;">{{item.title}}</view>
+            <view class="left" style="margin-top:16rpx;">
+                <view class="left statis_ico" style="margin-right:24rpx;">
+                    <view class="iconcenter">
+                        <image src="../../img/ico_statis1.png" style="width:31rpx;height:22rpx;"></image>
+                    </view>
+                    <view class="iconcenter" style="margin-left:8rpx;">
+                        <view style="font-size:20rpx;color:#666666;">{{item.look}}</view>
+                    </view>
+                </view>
+                <view class="left statis_ico" style="margin-right:24rpx;">
+                    <view class="iconcenter">
+                        <image src="../../img/ico_statis2.png" style="width:23rpx;height:22rpx;"></image>
+                    </view>
+                    <view class="iconcenter" style="margin-left:8rpx;">
+                        <view style="font-size:20rpx;color:#666666;">{{item.fabulous}}</view>
+                    </view>
+                </view>
+                <view class="left statis_ico" style="margin-right:24rpx;">
+                    <view class="iconcenter">
+                        <image src="../../img/ico_statis3.png" style="width:22rpx;height:22rpx;"></image>
+                    </view>
+                    <view class="iconcenter" style="margin-left:8rpx;">
+                        <view style="font-size:20rpx;color:#666666;">{{item.collection}}</view>
+                    </view>
+                </view>
+                <view class="left statis_ico" style="margin-right:24rpx;">
+                    <view class="iconcenter">
+                        <image src="../../img/ico_statis4.png" style="width:22rpx;height:22rpx;"></image>
+                    </view>
+                    <view class="iconcenter" style="margin-left:8rpx;">
+                        <view style="font-size:20rpx;color:#666666;">{{item.share}}</view>
+                    </view>
+                </view>
+                <view class="left statis_ico" style="margin-right:24rpx;">
+                    <view class="iconcenter">
+                        <image src="../../img/ico_statis5.png" style="width:22rpx;height:22rpx;"></image>
+                    </view>
+                    <view class="iconcenter" style="margin-left:8rpx;">
+                        <view style="font-size:20rpx;color:#666666;">{{item.comment}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="iconcenter">
+            <image src="../../img/ico_right.png" style="width:14rpx;height:28rpx;"></image>
+        </view>
+    </view>
+</scroll-view>

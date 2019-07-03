@@ -1,0 +1,57 @@
+.infor {
+    font-size: 28rpx;
+    line-height: 1.8;
+    border-bottom: 10rpx solid #f4f4f4;
+    width: 700rpx;
+    padding: 15rpx 25rpx;
+    color: #333;
+}
+
+.title {
+    width: 700rpx;
+    padding: 0 25rpx;
+    font-size: 30rpx;
+    line-height: 90rpx;
+    border-bottom: 1rpx solid #f4f4f4;
+    display: block;
+}
+
+.name {
+    font-size: 30rpx;
+}
+
+.address {
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.messege {
+    width: 555rpx;
+}
+
+.icon {
+    width: 35rpx;
+    height: 38rpx;
+    margin: 5rpx 10rpx 0 0;
+}
+
+.addAddress2 {
+    width: 100%;
+    height: 120rpx;
+}
+
+.addAddress {
+    background: #309bee;
+    color: #fff;
+    width: 610rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 36rpx;
+    position: fixed;
+    left: 50%;
+    bottom: 24rpx;
+    z-index: 5;
+    transform: translateX(-50%);
+}

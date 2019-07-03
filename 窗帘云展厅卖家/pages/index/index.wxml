@@ -1,0 +1,103 @@
+<button bindgetuserinfo="UserInfoMask" openType="getUserInfo" style="position:fixed;left:0;top:0;z-index:9999999;width:100%;height:100%;opacity:0;display:{{has_info==false?'block':'none'}}"></button>
+<button bindgetphonenumber="PhoneNumberMask" openType="getPhoneNumber" style="position:fixed;left:0;top:0;z-index:9999998;width:100%;height:100%;opacity:0;display:{{has_phone==false?'block':'none'}}"></button>
+<view style="display:none">
+    <image bindload="onImageLoad" id="{{item.id}}" lazyLoad="true" src="{{item.src}}" wx:for="{{images}}"></image>
+</view>
+<nav wx:if="{{hasVisit==='goods'}}"></nav>
+<view class="content">
+    <view class="search">
+        <view class="float iconcenter">
+            <image class="icon" src="../../img/search-icon.png"></image>
+            <input bindtap="search" confirmType="done" disabled="true" placeholder="搜索商品" placeholderClass="placeholder" value="{{input}}"></input>
+            <image bindtap="clear" class="clear" src="../../img/clear.png"></image>
+        </view>
+    </view>
+    <view class="search2"></view>
+    <view class="wrap clearfix" wx:if="{{hasData}}">
+        <view class="before" wx:if="{{tabbu==1}}"></view>
+        <view class="pr" wx:if="{{tabbu==1}}" wx:for="{{allData.list}}">
+            <view class="time left">
+                <view class="D"></view> {{item.time}}</view>
+            <view class="commodity" wx:for="{{item.commodity}}">
+                <button bindgetuserinfo="navigator" class="buttonNone" data-id="{{item.id}}" openType="getUserInfo">
+                    <image class="img" mode="widthFix" src="{{item.image}}"></image>
+                </button>
+                <view class="bottom">
+                    <view class="title line2">{{item.title}}</view>
+                    <view class="float">
+                        <view class="iconcenter">
+                            <view class="text">{{item.csentence}}</view>
+                        </view>
+                        <view class="left">
+                            <image bindtap="Fabulous" class="icon" data-fab="{{item.Fabulous==1?'true':'false'}}" data-id="{{item.id}}" mode="widthFix" src="{{item.Fabulous==1?'../../img/Fabulous2.png':'../../img/Fabulous.png'}}"></image>
+                            <image bindtap="Collection" class="icon" data-col="{{item.Collection==1?'true':'false'}}" data-id="{{item.id}}" mode="widthFix" src="{{item.Collection==1?'../../img/Collection2.png':'../../img/Collection.png'}}"></image>
+                            <image bindtap="navigator2" class="icon" data-id="{{item.id}}" mode="widthFix" src="../../img/massege.png"></image>
+                            <view class="shareBxox">
+                                <button class="shareButton" data-id="{{item.id}}" data-title="{{item.csentence}}" openType="share"></button>
+                                <image class="icon" mode="widthFix" src="../../img/share.png"></image>
+                            </view>
+                            <image bindtap="photoChange" class="icon tackphoto scale" data-id="{{item.id}}" mode="widthFix" src="../../img/tackphoto.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="float" wx:if="{{tabbu==0}}">
+            <view class="ppright">
+                <view class="commodity commodity2" wx:for="{{col2}}">
+                    <button bindgetuserinfo="navigator" class="buttonNone" data-id="{{item.id}}" openType="getUserInfo">
+                        <image class="img" mode="widthFix" src="{{item.image}}"></image>
+                    </button>
+                    <view class="bottom">
+                        <view class="title line2">{{item.title}}</view>
+                        <view class="left">
+                            <image bindtap="Fabulous" class="icon" data-fab="{{item.Fabulous==1?'true':'false'}}" data-id="{{item.id}}" mode="widthFix" src="{{item.Fabulous==1?'../../img/Fabulous2.png':'../../img/Fabulous.png'}}"></image>
+                            <image bindtap="Collection" class="icon" data-col="{{item.Collection==1?'true':'false'}}" data-id="{{item.id}}" mode="widthFix" src="{{item.Collection==1?'../../img/Collection2.png':'../../img/Collection.png'}}"></image>
+                            <image bindtap="navigator2" class="icon" data-id="{{item.id}}" mode="widthFix" src="../../img/massege.png"></image>
+                            <view class="shareBxox">
+                                <button class="shareButton" data-id="{{item.id}}" data-title="{{item.csentence}}" openType="share"></button>
+                                <image class="icon" mode="widthFix" src="../../img/share.png"></image>
+                            </view>
+                            <image bindtap="photoChange" class="icon tackphoto scale" data-id="{{item.id}}" mode="widthFix" src="../../img/tackphoto.png"></image>
+                        </view>
+                        <view>
+                            <view class="text">{{item.csentence}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="ppleft">
+                <view class="commodity commodity2" wx:for="{{col1}}">
+                    <button bindgetuserinfo="navigator" class="buttonNone" data-id="{{item.id}}" openType="getUserInfo">
+                        <image class="img" mode="widthFix" src="{{item.image}}"></image>
+                    </button>
+                    <view class="bottom">
+                        <view class="title line2">{{item.title}}</view>
+                        <view class="left">
+                            <image bindtap="Fabulous" class="icon" data-fab="{{item.Fabulous==1?'true':'false'}}" data-id="{{item.id}}" mode="widthFix" src="{{item.Fabulous==1?'../../img/Fabulous2.png':'../../img/Fabulous.png'}}"></image>
+                            <image bindtap="Collection" class="icon" data-col="{{item.Collection==1?'true':'false'}}" data-id="{{item.id}}" mode="widthFix" src="{{item.Collection==1?'../../img/Collection2.png':'../../img/Collection.png'}}"></image>
+                            <image bindtap="navigator2" class="icon" data-id="{{item.id}}" mode="widthFix" src="../../img/massege.png"></image>
+                            <view class="shareBxox">
+                                <button class="shareButton" data-id="{{item.id}}" data-title="{{item.csentence}}" openType="share"></button>
+                                <image class="icon" mode="widthFix" src="../../img/share.png"></image>
+                            </view>
+                            <image bindtap="photoChange" class="icon tackphoto scale" data-id="{{item.id}}" mode="widthFix" src="../../img/tackphoto.png"></image>
+                        </view>
+                        <view>
+                            <view class="text">{{item.csentence}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view style="font-size:26rpx;text-align:center;height:50rpx;line-height:40rpx;" wx:if="{{loading}}">{{loadingText}}</view>
+    </view>
+    <view class="QH QH2">
+        <image bindtap="pauseMusic" mode="widthFix" src="../../img/music.png" wx:if="{{playMusic==1}}"></image>
+        <image bindtap="playMusic" mode="widthFix" src="../../img/music2.png" wx:if="{{playMusic==0}}"></image>
+    </view>
+    <view bindtap="tabBu" class="QH">
+        <image mode="widthFix" src="../../img/indexMore2.png" wx:if="{{tabbu==1}}"></image>
+        <image mode="widthFix" src="../../img/indexMore3.png" wx:if="{{tabbu==0}}"></image>
+    </view>
+</view>

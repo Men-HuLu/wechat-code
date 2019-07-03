@@ -1,0 +1,41 @@
+<view class="content">
+    <view>
+        <view class="left">
+            <image class="head big" src="{{data.head}}"></image>
+            <view>
+                <view class="name">{{data.name}}</view>
+                <view class="time">{{data.time}}</view>
+            </view>
+        </view>
+        <view class="Infor">
+            <view class="text">{{data.text}}</view>
+            <view class="imgs left">
+                <image bindtap="imgL" data-src="{{item}}" mode="scaleToFill" src="{{item}}" wx:for="{{data.img}}"></image>
+            </view>
+        </view>
+    </view>
+    <view bindtap="nameInput" class="item float" data-id="{{item.id}}" data-name="{{item.name}}" wx:for="{{data.reply}}">
+        <image class="head" mode="scaleToFill" src="{{item.head}}"></image>
+        <view class="infor">
+            <view class="float top">
+                <view class="name">{{item.name}}</view>
+                <view class="time">{{item.time}}</view>
+            </view>
+            <view class="text" style="padding-top:0">
+                <text wx:if="{{item.review}}">
+                    <text>回复</text>
+                    <text class="name">{{item.review.name}}</text>
+                    <text>：</text>
+                </text>
+                <text>{{item.text}}</text>
+            </view>
+        </view>
+    </view>
+    <view style="font-size:26rpx;text-align:center;height:50rpx;line-height:40rpx;" wx:if="{{loading}}">{{loadingText}}</view>
+</view>
+<view class="form2"></view>
+<form class="form">
+    <image class="head" mode="scaleToFill" src="{{userHeadImg}}">我的头像</image>
+    <input bindinput="idea" focus="{{focus}}" name="idea" placeholder="{{placeholder}}" value="{{idea}}"></input>
+    <view bindtap="submit" class="submit">提交</view>
+</form>

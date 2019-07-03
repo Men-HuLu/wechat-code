@@ -1,0 +1,10 @@
+<view class="nav_components">
+    <view class="nav_box">
+        <view bindtap="urlNav" class="nav_item" id="{{index}}" wx:for="{{selected}}" wx:key="nav_{{index}}">
+            <view class="nav_ico_box">
+                <image class="nav_ico" src="{{item.selected?item.icon_s:item.icon}}" style="height:{{height}}rpx;width:{{width}}rpx;"></image>
+            </view>
+            <view class="nav_name {{item.selected?'active':''}}">{{item.name}}</view>
+        </view>
+    </view>
+</view>

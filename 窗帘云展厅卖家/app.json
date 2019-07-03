@@ -1,0 +1,44 @@
+{
+    "pages": [
+        "pages/web-img/web-img",
+        "pages/my/my",
+        "pages/index/index",
+        "pages/web-view/web-view",
+        "pages/business/business",
+        "pages/CommodityDetails/CommodityDetails",
+        "pages/cs/cs",
+        "pages/addressManagement/addressManagement",
+        "pages/shop/shop",
+        "pages/search/search",
+        "pages/commentSubmit/commentSubmit",
+        "pages/temp/shopdetail",
+        "pages/myFootprint/myFootprint",
+        "pages/informationReview/informationReview",
+        "pages/message/message",
+        "pages/NewAddress/NewAddress",
+        "pages/comment/comment",
+        "pages/login/login",
+        "pages/myFollow/myFollow",
+        "pages/myFigure/myFigure",
+        "pages/myCollection/myCollection",
+        "pages/myExhibition/myExhibition",
+        "pages/personalInformation/personalInformation",
+        "pages/shopList/shopList",
+        "pages/figureDetail/figureDetail",
+        "pages/infor/infor",
+        "pages/contact/contact"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#42a4f0",
+        "navigationBarTitleText": "窗帘云展厅",
+        "navigationBarTextStyle": "white",
+        "onReachBottomDistance": 0,
+        "enablePullDownRefresh": false
+    },
+    "networkTimeout": {
+        "request": 100000,
+        "uploadFile": 100000
+    },
+    "debug": false
+}

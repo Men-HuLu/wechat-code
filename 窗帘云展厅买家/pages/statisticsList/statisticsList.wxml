@@ -1,0 +1,97 @@
+<view class="left tabTitle">
+    <view bindtap="tabTitle" class="{{tabCli=='browse'?'tab_title_active':''}}" data-tab="browse">浏览</view>
+    <view bindtap="tabTitle" class="{{tabCli=='thumbs'?'tab_title_active':''}}" data-tab="thumbs">点赞</view>
+    <view bindtap="tabTitle" class="{{tabCli=='collection'?'tab_title_active':''}}" data-tab="collection">收藏</view>
+    <view bindtap="tabTitle" class="{{tabCli=='share'?'tab_title_active':''}}" data-tab="share">分享</view>
+    <view bindtap="tabTitle" class="{{tabCli=='figure'?'tab_title_active':''}}" data-tab="figure">图评</view>
+</view>
+<view class="allTime float">
+    <view>统计时间</view>
+    <picker bindchange="bindPickerChange" range="{{array}}" value="{{index}}">
+        <view class="picker left">
+      {{array[index]}}
+      <view class="iconcenter" style="margin-left:66rpx;">
+                <image src="../../img/ico_right.png" style="width:16rpx;height:28rpx;"></image>
+            </view>
+        </view>
+    </picker>
+</view>
+<view class="tabbox left">
+    <navigator class="center" openType="navigate" style="width:50%;">
+        <view class="tab tab_active">
+            <view class="xcenter" style="height:100%;">
+                <view class="ccenter">
+                    <view class="iconcenter">
+                        <image src="../../img/ico_static_01.png" style="width:41rpx;height:38rpx;"></image>
+                    </view>
+                    <view class="tabTxt" style="margin-left:20rpx;">列表</view>
+                </view>
+            </view>
+        </view>
+    </navigator>
+    <navigator class="center" openType="navigate" style="width:50%;" url="../statisticsImg/statisticsImg">
+        <view class="tab  ">
+            <view class="xcenter" style="height:100%;">
+                <view class="ccenter">
+                    <view class="iconcenter">
+                        <image src="../../img/ico_static_02_active.png" style="width:41rpx;height:34rpx;"></image>
+                    </view>
+                    <view class="tabTxt" style="margin-left:20rpx;">图表形式</view>
+                </view>
+            </view>
+        </view>
+    </navigator>
+</view>
+<view class="detail">
+    <scroll-view bindscrolltolower="pullUpLoad" class="content-wrap" scrollY="true" style="height:76vh;">
+        <view class="float" style="padding:0 24rpx;margin-bottom:28rpx;" wx:for="{{data}}">
+            <image src="{{item.headImg}}" style="width:172rpx;height:172rpx;border-radius:10rpx;"></image>
+            <view>
+                <view class="title ellipsis" style="width:520rpx;height:72rpx;font-size:26rpx;line-height:36rpx;">{{item.title}}</view>
+                <view class="number" style="font-size:28rpx;color:#666666;line-height:1;margin-top:18rpx;">{{item.version}}</view>
+                <view class="left" style="margin-top:16rpx;">
+                    <view class="left statis_ico" style="margin-right:24rpx;">
+                        <view class="iconcenter">
+                            <image src="../../img/ico_statis1.png" style="width:31rpx;height:22rpx;"></image>
+                        </view>
+                        <view class="iconcenter" style="margin-left:8rpx;">
+                            <view style="font-size:20rpx;color:#666666;">{{item.look}}</view>
+                        </view>
+                    </view>
+                    <view class="left statis_ico" style="margin-right:24rpx;">
+                        <view class="iconcenter">
+                            <image src="../../img/ico_statis2.png" style="width:23rpx;height:22rpx;"></image>
+                        </view>
+                        <view class="iconcenter" style="margin-left:8rpx;">
+                            <view style="font-size:20rpx;color:#666666;">{{item.fabulous}}</view>
+                        </view>
+                    </view>
+                    <view class="left statis_ico" style="margin-right:24rpx;">
+                        <view class="iconcenter">
+                            <image src="../../img/ico_statis3.png" style="width:22rpx;height:22rpx;"></image>
+                        </view>
+                        <view class="iconcenter" style="margin-left:8rpx;">
+                            <view style="font-size:20rpx;color:#666666;">{{item.collection}}</view>
+                        </view>
+                    </view>
+                    <view class="left statis_ico" style="margin-right:24rpx;">
+                        <view class="iconcenter">
+                            <image src="../../img/ico_statis4.png" style="width:22rpx;height:22rpx;"></image>
+                        </view>
+                        <view class="iconcenter" style="margin-left:8rpx;">
+                            <view style="font-size:20rpx;color:#666666;">{{item.share}}</view>
+                        </view>
+                    </view>
+                    <view class="left statis_ico" style="margin-right:24rpx;">
+                        <view class="iconcenter">
+                            <image src="../../img/ico_statis5.png" style="width:22rpx;height:22rpx;"></image>
+                        </view>
+                        <view class="iconcenter" style="margin-left:8rpx;">
+                            <view style="font-size:20rpx;color:#666666;">{{item.comment}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,34 @@
+<nav></nav>
+<view class="clonePage">
+    <checkbox-group bindchange="checkboxChange">
+        <view class="cloneList" wx:for="{{data}}">
+            <view class="shopName">{{item.shop_name}}</view>
+            <view class="left item" wx:for="{{item.goods_list}}">
+                <label bindtap="changeD" class="checkbox iconcenter" data-id="{{item.id}}">
+                    <checkbox checked="{{item.checked}}" color="#3ca1ef" value="{{item.id}}"></checkbox>
+                    <image src="/img/ico_shopcheckbox_active.png" wx:if="{{item.checked==true}}"></image>
+                    <image src="/img/ico_shopcheckbox.png" wx:else></image>
+                </label>
+                <view class="float" data-id="{{item.id}}">
+                    <image mode="scaleToFill" src="{{item.img}}"></image>
+                    <view class="right">
+                        <view class="title ellipsis">{{item.title}}</view>
+                        <view class="type">{{item.version}}</view>
+                        <view class="price">¥{{item.price}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </checkbox-group>
+</view>
+<view class="bottom float">
+    <checkbox-group bindchange="change">
+        <label class="checkbox" style="padding-left:38rpx;">
+            <checkbox checked="{{all}}" color="#3ca1ef" style="display:none"></checkbox>
+            <image class="allcheckbox" src="/img/ico_shopcheckbox_active.png" wx:if="{{all==true}}"></image>
+            <image class="allcheckbox" src="/img/ico_shopcheckbox.png" wx:else></image>
+      全选
+    </label>
+    </checkbox-group>
+    <button bindtap="next">下一步</button>
+</view>

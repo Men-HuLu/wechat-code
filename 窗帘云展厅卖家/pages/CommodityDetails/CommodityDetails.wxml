@@ -1,0 +1,75 @@
+<view class="tabbox left">
+    <view bindtap="tabShop" class="tab {{tab?'tab_active':''}}" data-name="shop">商品</view>
+    <view bindtap="tabComment" class="tab {{tab==false?'tab_active':''}}" data-name="comment">评论</view>
+</view>
+<view wx:if="{{tab==true}}">
+    <view class="content">
+        <swiper autoplay="true" duration="{{duration}}" indicatorActiveColor="#309bee" indicatorColor="#f0f0f0" indicatorDots="{{indicatorDots}}" interval="{{interval}}" style="height:750rpx;">
+            <view wx:for="{{nowData.headImg}}">
+                <swiper-item>
+                    <image bindtap="previewImg2" class="slide-image" data-src="{{item}}" mode="aspectFit" src="{{item}}" style="width:100%;height:100%;background:#fff"></image>
+                </swiper-item>
+            </view>
+        </swiper>
+        <view class="float" style="padding:12rpx 24rpx 28rpx;border-bottom:10rpx solid #f4f4f4;">
+            <view class="" style="width:544rpx;">
+                <view class="title ellipsis">{{nowData.title}}</view>
+                <view class="left">
+                    <view class="shopId">{{nowData.version}}</view>
+                    <view class="stock" wx:if="{{nowData.stock}}">{{nowData.stock}}</view>
+                </view>
+                <view class="shopTitle float" wx:if="{{share==1}}">
+                    <view>{{nowData.shop}}</view>
+                    <view style="margin-right:-160rpx">旗舰店</view>
+                </view>
+            </view>
+            <view class="pr" wx:if="{{share==0}}">
+                <image class="shareimg" mode="widthFix" src="../../img/share.png"></image>
+                <button data-id="{{id}}" openType="share" style="position: absolute;left: 0;top: 0;bottom:0;right:0;z-index: 3;opacity: 0;"></button>
+                <view bindtap="photoChange" class="addButton" data-id="{{id}}">窗帘试装</view>
+            </view>
+            <view class="money" wx:if="{{share==1}}">{{nowData.money}}</view>
+        </view>
+        <view class="left common_key" style="border-bottom: 10rpx solid #f4f4f4;" wx:for="{{nowData.sb}}">{{item.name}}:
+    <view class="common_val" style="margin-left:14rpx;" wx:for="{{item.attr}}">{{item}}</view>
+        </view>
+        <view id="shopdetails" style="padding:30rpx 24rpx 0;">
+            <view class="shopdetails_title center">
+                <image src="../../img/ico_shopdetail_title.png" style="width:100%;height:12rpx;"></image>
+                <text>商品详情</text>
+            </view>
+            <text class="shopdetails_txt">{{nowData.detail}}</text>
+            <image class="detailImgs" mode="widthFix" src="{{item}}" style="width:100%;" wx:for="{{nowData.detailImgs}}"></image>
+        </view>
+        <view class="float bottomButton" wx:if="{{share==1}}">
+            <button bindtap="Collection" data-id="{{id}}" style="{{nowData.col==true?'background:#f4f4f4;color:#333':'background:#309bee'}}">{{nowData.col==true?'已收藏':'收藏'}}</button>
+            <button bindtap="Fabulous" data-id="{{id}}" style="{{nowData.thu==true?'background:#f4f4f4;color:#333':'background:#309bee'}}">{{nowData.thu==true?'已点赞':'点赞'}}</button>
+            <button data-id="{{id}}" openType="share">分享</button>
+            <button bindtap="photoChange" data-id="{{id}}">试装</button>
+        </view>
+        <view class="bottomButton2" wx:if="{{share==1}}"></view>
+    </view>
+</view>
+<view wx:else>
+    <view class="comment">
+        <view class="comment_box" wx:for="{{userComment.data}}" wx:for-index="val" wx:for-item="comment">
+            <view class="comment_title float">
+                <view class="comment_user  left iconcenter">
+                    <image src="{{comment.userImg}}"></image>
+                    <text class="one_line" style="width:280rpx;">{{comment.userName}}</text>
+                </view>
+                <view class="comment_time iconcenter">{{comment.datetime}}</view>
+            </view>
+            <text class="comment_txt">{{comment.userComment}}</text>
+            <view class="comment_img left">
+                <view bindtap="previewImg" data-index="{{val}}" data-src="{{commentImg}}" wx:for="{{comment.commentImg}}" wx:for-item="commentImg">
+                    <image mode="aspectFill" src="{{commentImg}}"></image>
+                </view>
+            </view>
+        </view>
+        <view style="font-size:26rpx;text-align:center;height:50rpx;line-height:40rpx;" wx:if="{{loading}}">{{loadingText}}</view>
+        <view class="comment_foot">
+            <button bindgetuserinfo="navComment" openType="getUserInfo">立即评价</button>
+        </view>
+    </view>
+</view>

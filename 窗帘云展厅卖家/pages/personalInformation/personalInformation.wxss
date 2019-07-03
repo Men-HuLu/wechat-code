@@ -1,0 +1,27 @@
+.item {
+    width: 700rpx;
+    padding: 0 25rpx;
+    height: 105rpx;
+    line-height: 105rpx;
+    font-size: 30rpx;
+    color: #666;
+    border-bottom: 1rpx solid #f4f4f4;
+}
+
+.bolder {
+    border-bottom: 10rpx solid #f4f4f4;
+    border-top: 10rpx solid #f4f4f4;
+    height: 95rpx;
+    line-height: 95rpx;
+}
+
+.item input {
+    width: 500rpx;
+    font-size: 30rpx;
+    color: #333;
+    text-align: right;
+}
+
+.allButton {
+    margin-top: 55rpx;
+}

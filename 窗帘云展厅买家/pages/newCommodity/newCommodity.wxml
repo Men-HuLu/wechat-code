@@ -1,0 +1,108 @@
+<nav></nav>
+<view class="content">
+    <view class="content_w">
+        <text class="title">第一步:基本信息</text>
+    </view>
+    <view class="inputbox">
+        <view class="content_w">
+            <text>商品标题</text>
+            <text style="color:red;">*</text>
+            <form style="display:inline-block;">
+                <input bindblur="one" confirmType="done" placeholder="请输入商品标题，比如拼接小花" placeholderStyle="color:#999999;font-size:30rpx;" type="text" value="{{oneVal}}"></input>
+            </form>
+        </view>
+    </view>
+    <view class="inputbox">
+        <view class="content_w">
+            <text>商品型号</text>
+            <text style="color:red;">*</text>
+            <form style="display:inline-block;">
+                <input bindblur="two" confirmType="done" placeholder="请输入商品型号，比如S2018-01" placeholderStyle="color:#999999;font-size:30rpx;" type="text" value="{{twoVal}}"></input>
+            </form>
+        </view>
+    </view>
+    <view class="inputbox">
+        <view class="content_w">
+            <view class="section">
+                <view class="section__title" style="display:inline-block;font-size:30rpx;color:#333333;">商品分类
+          <text style="color:red;">*</text>
+                </view>
+                <picker bindchange="bindPickerChange" range="{{classify}}" value="{{index}}">
+                    <view class="picker" style="display:inline-block;">
+            {{index==null?'请选择商品分类':classify[index]}}
+          </view>
+                </picker>
+            </view>
+        </view>
+    </view>
+    <view class="inputbox">
+        <view class="content_w">
+            <text>商品价格</text>
+            <text style="color:red;">*</text>
+            <form style="display:inline-block;">
+                <input bindblur="three" confirmType="done" placeholder="任意输入" placeholderStyle="color:#999999;font-size:30rpx;" type="text" value="{{threeVal}}"></input>
+            </form>
+        </view>
+    </view>
+    <view class="inputbox">
+        <view class="content_w">
+            <text>上架类型</text>
+            <text style="color:red;">*</text>
+            <checkbox-group bindchange="checkboxChangeType" style="display:inline-block;margin-left:56rpx;">
+                <label class="checkbox" wx:for="{{checkboxtype}}">
+                    <image src="{{item.checked?'../../img/ico_checkbox_active.png':'../../img/ico_checkbox.png'}}" style="width:30rpx;height:30rpx;position:absolute;left:0;top:50%;margin-top:-15rpx;"></image>
+                    <checkbox checked="{{item.checked}}" style="display:inline-block;visibility:hidden;width:30rpx;" value="{{item.name}}"></checkbox>
+                    <view style="display:inline-block;margin-left:14rpx;font-size:30rpx;color:#333333;">{{item.value}}</view>
+                </label>
+            </checkbox-group>
+        </view>
+    </view>
+    <view class="inputbox">
+        <view class="content_w">
+            <text>可见客户</text>
+            <text style="color:red;">*</text>
+            <checkbox-group bindchange="checkboxChangeCustomer" style="display:inline-block;margin-left:56rpx;">
+                <label class="checkbox" wx:for="{{checkboxCustomer}}">
+                    <image src="{{item.checked?'../../img/ico_checkbox_active.png':'../../img/ico_checkbox.png'}}" style="width:30rpx;height:30rpx;position:absolute;left:0;top:50%;margin-top:-15rpx;"></image>
+                    <checkbox checked="{{item.checked}}" style="display:inline-block;visibility:hidden;width:30rpx;" value="{{item.name}}"></checkbox>
+                    <view style="display:inline-block;margin-left:14rpx;font-size:30rpx;color:#333333;">{{item.value}}</view>
+                </label>
+            </checkbox-group>
+        </view>
+    </view>
+    <view class="inputbox">
+        <view class="content_w">
+            <text>库存状态</text>
+            <text style="color:red;">*</text>
+            <radio-group bindchange="radioChangeCustomer" style="display:inline-block;margin-left:56rpx;">
+                <label class="checkbox" wx:for="{{radioCustomer}}">
+                    <image src="{{item.checked?'../../img/ico_checkbox_active.png':'../../img/ico_checkbox.png'}}" style="width:30rpx;height:30rpx;position:absolute;left:0;top:50%;margin-top:-15rpx;"></image>
+                    <radio checked="{{item.checked}}" style="display:inline-block;visibility:hidden;width:30rpx;" value="{{item.name}}"></radio>
+                    <view style="display:inline-block;margin-left:14rpx;font-size:30rpx;color:#333333;">{{item.value}}</view>
+                </label>
+            </radio-group>
+        </view>
+    </view>
+    <view class="inputbox" style="border-width:11rpx;height:auto;">
+        <view class="content_w float" style="border-bottom:1px solid #f4f4f4;margin-bottom:30rpx;">
+            <view>
+                <text>商品图片</text>
+                <text style="color:red;">*</text>
+            </view>
+            <view style="font-size:24rpx;color:#999999;">{{imgLoadImg.length}}/10</view>
+        </view>
+        <view class="" style="display:flex;flex-wrap:wrap;width:100%;padding:0 24rpx;">
+            <view style="display:inline-block;border:1px solid black;margin-right:12rpx;margin-bottom:12rpx;" wx:if="{{list.length}}" wx:for="{{list}}" wx:key="index_{{index}}">
+                <image bindtap="previewImage" data-src="{{item}}" src="{{item}}" style="width:224rpx;height:224rpx"></image>
+            </view>
+            <view bindtap="addImge" class="upload" disabled="{{disabled}}" size="mini" style="display:block;margin:0;padding:0;font-size:0;position:static;width:224rpx;height:224rpx">
+                <image src="../../img/ico_imgsubmit.png" style="width:224rpx;height:224rpx"></image>
+            </view>
+            <view style="position:relative;width:224rpx;height:224rpx;overflow:hidden" wx:for="{{imgLoadImg}}">
+                <image bindlongtap="showIndex" bindtap="delImg" bindtouchend="bindTouchEnd" bindtouchstart="bindTouchStart" data-id="{{index}}" src="{{item}}" style="width:224rpx;height:224rpx"></image>
+                <text bindtap="drap" class="imgIndex {{colors==index?'colors':''}}" data-id="{{index}}" wx:if="{{drags==true}}">{{index+1}}</text>
+            </view>
+        </view>
+    </view>
+    <button bindtap="navigation" size="default" style="background:#46a6f0;color:#fff;font-size:36rpx;padding:0;width:606rpx;margin-top:30rpx;margin-bottom:30rpx;" type="default">下一步</button>
+</view>

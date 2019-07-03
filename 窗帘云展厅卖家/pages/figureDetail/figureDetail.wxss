@@ -1,0 +1,103 @@
+.top {
+    width: 700rpx;
+    height: 110rpx;
+    padding: 30rpx 25rpx;
+    background: #fff;
+    border-bottom: 10rpx solid #f4f4f4;
+}
+
+.top .info {
+    width: 520rpx;
+}
+
+.top .img {
+    width: 110rpx;
+    height: 110rpx;
+    margin-right: 20rpx;
+}
+
+.top .name {
+    font-size: 28rpx;
+    line-height: 30rpx;
+    margin-bottom: 10rpx;
+    color: #333;
+    height: 30rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.top .right {
+    width: 570rpx;
+}
+
+.top .text {
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.top .price {
+    vertical-align: bottom;
+    color: #e60012;
+    font-size: 24rpx;
+    height: 35rpx;
+    margin-top: 5rpx;
+}
+
+.top .price text {
+    font-size: 36rpx;
+}
+
+.icon {
+    width: 16rpx;
+}
+
+.item {
+    width: 700rpx;
+    padding: 25rpx 25rpx 15rpx;
+    border-bottom: 1rpx solid #f4f4f4;
+}
+
+.head {
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.head image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20rpx;
+    background: #999;
+}
+
+.head .name {
+    font-size: 26rpx;
+    color: #333;
+}
+
+.item .time {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.item .text {
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: #333;
+    padding: 10rpx 0;
+}
+
+.imgs image {
+    width: 223rpx;
+    height: 223rpx;
+    margin-right: 15rpx;
+    margin-bottom: 15rpx;
+    vertical-align: top;
+}
+
+.imgs image:nth-child(3n) {
+    margin-right: 0;
+}

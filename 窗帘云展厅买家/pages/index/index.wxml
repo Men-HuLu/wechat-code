@@ -1,0 +1,171 @@
+<nav></nav>
+<view class="content_box">
+    <view class="content" style="background:black;box-sizing:border-box;overflow:hidden;">
+        <view class="header">
+            <view class="header_title">
+                <text class="hall_num header_title_txt">展厅号:{{data.number}}</text>
+                <text class="authorize_time header_title_txt">授权至:{{data.time}}</text>
+            </view>
+            <view class="header_function ">
+                <button bindtap="shareIndex" class="head_function_btn left" data-share="share" openType="share">
+                    <view class="iconcenter">
+                        <image src="../../img/ico_share.png" style="width:35rpx;height:35rpx;"></image>
+                    </view>
+                    <text>分享</text>
+                </button>
+                <view class="head_function_btn left">
+                    <view class="iconcenter prompt">
+                        <view class="promptIco" wx:if="{{data.message}}"></view>
+                        <image src="../../img/ico_message.png" style="width:38rpx;height:32rpx;"></image>
+                    </view>
+                    <text>消息</text>
+                </view>
+                <view bindtap="out" class="head_function_btn left">
+                    <view class="iconcenter">
+                        <image src="../../img/ico_out.png" style="width:35rpx;height:37rpx;"></image>
+                    </view>
+                    <text>退出</text>
+                </view>
+            </view>
+            <image src="../../img/head.jpg" style="display:block;height:13rpx;width:100%;"></image>
+        </view>
+        <view class="list">
+            <view class="list_w left">
+                <view class="list_box">
+                    <navigator url="../shop/shop">
+                        <view class="iconcenter">
+                            <image src="../../img/index_ico_1.png"></image>
+                        </view>
+                        <text>商品列表</text>
+                    </navigator>
+                </view>
+                <view bindtap="newCommodity" class="list_box">
+                    <view class="iconcenter">
+                        <image src="../../img/index_ico_2.png"></image>
+                    </view>
+                    <text>新建商品</text>
+                </view>
+                <view class="list_box">
+                    <navigator url="../classManagement/classManagement">
+                        <view class="iconcenter">
+                            <image src="../../img/index_ico_3.png"></image>
+                        </view>
+                        <text>分类商品</text>
+                    </navigator>
+                </view>
+                <view class="list_box">
+                    <navigator url="../galleryManage/galleryManage">
+                        <view class="iconcenter">
+                            <image src="../../img/index_ico_4.png"></image>
+                        </view>
+                        <text>图库管理</text>
+                    </navigator>
+                </view>
+                <view class="list_box">
+                    <navigator url="../statisticsList/statisticsList">
+                        <view class="iconcenter">
+                            <image src="../../img/index_ico_5.png"></image>
+                        </view>
+                        <text>商品统计</text>
+                    </navigator>
+                </view>
+                <view class="list_box">
+                    <navigator url="../commentManage/commentManage">
+                        <view class="iconcenter prompt">
+                            <view class="promptIco" wx:if="{{data.img}}"></view>
+                            <image src="../../img/index_ico_6.png"></image>
+                        </view>
+                        <text>图评管理</text>
+                    </navigator>
+                </view>
+                <view class="list_box">
+                    <navigator url="../cloneList/cloneList">
+                        <view class="iconcenter">
+                            <image src="../../img/icon_clone.png"></image>
+                        </view>
+                        <text>克隆管理</text>
+                    </navigator>
+                </view>
+            </view>
+            <view class="list_w float"></view>
+        </view>
+        <view class="visitor">
+            <view class="visitor_w">
+                <view class="visitor_title">
+          访客管理
+        </view>
+                <view class="visitor_box float">
+                    <view class="prompt">
+                        <navigator url="../visitorList/visitorList">
+                            <view class="promptIco" wx:if="{{data.list}}"></view>
+                            <image class="visitor_list" src="../../img/visitor_list.png"></image>
+                        </navigator>
+                    </view>
+                    <view class="prompt">
+                        <navigator url="../visitorsAuthorize/visitorsAuthorize">
+                            <view class="promptIco" wx:if="{{data.authorize}}"></view>
+                            <image class="visitor_empower" src="../../img/visitor_empower.png"></image>
+                        </navigator>
+                    </view>
+                    <view class="prompt">
+                        <navigator url="../visitorStatistics/visitorStatistics">
+                            <image class="visitor_statistics" src="../../img/visitor_statistics.png"></image>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="room">
+            <view class="room_w">
+                <view class="room_title">
+          展厅管理
+        </view>
+                <swiper duration="1000" indicatorActiveColor="#309bee" indicatorColor="#999999" indicatorDots="{{indicatorDots}}">
+                    <swiper-item class="float">
+                        <navigator url="../exhibitionInfo/exhibitionInfo">
+                            <view class="swiper_content">
+                                <image src="../../img/room_ico_1.png" style="width:29rpx;height:42rpx;"></image>
+                                <view>展厅信息</view>
+                            </view>
+                        </navigator>
+                        <navigator url="../personAdmin/personAdmin">
+                            <view class="swiper_content">
+                                <image src="../../img/room_ico_2.png" style="width:34rpx;height:31rpx;"></image>
+                                <view>人员管理</view>
+                            </view>
+                        </navigator>
+                        <navigator url="../infoDiffusion/infoDiffusion">
+                            <view class="swiper_content prompt">
+                                <view class="promptIco" wx:if="{{data.new}}"></view>
+                                <image src="../../img/room_ico_3.png" style="width:41rpx;height:41rpx;"></image>
+                                <view>信息发布</view>
+                            </view>
+                        </navigator>
+                        <view bindtap="zhantinger" class="swiper_content">
+                            <image src="../../img/room_ico_5.png" style="width:41rpx;height:34rpx;"></image>
+                            <view>展厅二维码</view>
+                        </view>
+                        <navigator url="../personalCenter/personalCenter">
+                            <view class="swiper_content">
+                                <image src="../../img/room_ico_8.png" style="width:35rpx;height:41rpx;"></image>
+                                <view>个人中心</view>
+                            </view>
+                        </navigator>
+                    </swiper-item>
+                    <swiper-item class="left">
+                        <navigator url="../sharePoster/sharePoster">
+                            <view class="swiper_content">
+                                <image src="../../img/room_ico_7.png" style="width:41rpx;height:41rpx;"></image>
+                                <view>分享海报</view>
+                            </view>
+                        </navigator>
+                        <button class="swiper_content" openType="contact">
+                            <image src="../../img/room_ico_4.png" style="width:41rpx;height:39rpx;"></image>
+                            <view>留言反馈</view>
+                        </button>
+                    </swiper-item>
+                </swiper>
+            </view>
+        </view>
+    </view>
+</view>

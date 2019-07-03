@@ -1,0 +1,11 @@
+.open {
+    width: 100%;
+    text-align: center;
+    margin-top: 40rpx;
+}
+
+.join {
+    width: 100%;
+    text-align: center;
+    margin-top: 28rpx;
+}

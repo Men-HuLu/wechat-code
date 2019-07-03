@@ -1,0 +1,80 @@
+.container {
+    padding: 40rpx 0 100rpx;
+    background: #fff;
+}
+
+.container .selectbox {
+    height: 58rpx;
+    padding: 0 25rpx;
+}
+
+.container .selectbox .selectPadding {
+    background: #f6f6f6;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rpx;
+}
+
+.container .selectbox text {
+    width: 150rpx;
+    height: 100%;
+    line-height: 58rpx;
+    padding-left: 26rpx;
+    font-size: 26rpx;
+    color: #333333;
+}
+
+.container .selectbox .selectSon {
+    width: 544rpx;
+    height: 100%;
+    padding-right: 26rpx;
+}
+
+.container .selectbox .selectSon picker {
+    width: 454rpx;
+    height: 100%;
+    line-height: 58rpx;
+    font-size: 26rpx;
+    color: #333333;
+}
+
+.contentAllBox {
+    border-bottom: 10rpx solid #f6f6f6;
+    padding: 38rpx 25rpx 40rpx;
+}
+
+.contentAllBox .title {
+    font-size: 30rpx;
+    color: #333333;
+    padding-bottom: 18rpx;
+    border-bottom: 1px solid #f6f6f6;
+    margin-bottom: 16rpx;
+}
+
+.contentAllBox .team {
+    font-size: 24rpx;
+    line-height: 36rpx;
+    color: #666666;
+}
+
+.contentAllBox .team image {
+    margin-right: 8rpx;
+}
+
+.contentAllBox .name {
+    font-size: 24rpx;
+    line-height: 36rpx;
+    color: #666666;
+}
+
+.contentAllBox .name image {
+    margin-right: 8rpx;
+}
+
+.contentAllBox .successTxt {
+    font-size: 24rpx;
+    color: #666666;
+    line-height: 36rpx;
+    margin-bottom: 28rpx;
+    margin-top: 9rpx;
+}

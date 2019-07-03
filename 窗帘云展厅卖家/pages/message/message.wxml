@@ -1,0 +1,27 @@
+<nav></nav>
+<scroll-view bindscrolltolower="searchScrollLower" scrollY="true" style="height:100vh">
+    <view class="float nav">
+        <view bindtap="tab" class="{{tab==='news'?'active':' '}}" data-tab="news">新品上市</view>
+        <view bindtap="tab" class="{{tab==='actives'?'active':' '}}" data-tab="actives">促销活动</view>
+        <view bindtap="tab" class="{{tab==='notices'?'active':' '}}" data-tab="notices">通知消息</view>
+    </view>
+    <view class="comments">
+        <view bindtap="navigation" class="item" data-id="{{item.id}}" wx:for="{{data.comment}}">
+            <view class="float">
+                <view class="left">
+                    <image class="head" mode="scaleToFill" src="{{item.head}}"></image>
+                    <view>
+                        <view class="name">{{item.name}}</view>
+                        <view class="time">{{item.time}}</view>
+                    </view>
+                </view>
+                <image class="icon_massege {{item.new==true?'active':' '}}" src="../../img/massege.png"></image>
+            </view>
+            <view class="text">{{item.text}}</view>
+            <view class="left imgs">
+                <image mode="scaleToFill" src="{{item}}" wx:for="{{item.imgs}}"></image>
+            </view>
+        </view>
+        <view style="font-size:26rpx;text-align:center;height:50rpx;line-height:40rpx;" wx:if="{{loading}}">{{loadingText}}</view>
+    </view>
+</scroll-view>

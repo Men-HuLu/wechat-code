@@ -1,0 +1,42 @@
+.wrap {
+    width: 700rpx;
+    padding-top: 30rpx;
+}
+
+.follow {
+    width: 335rpx;
+    margin-bottom: 25rpx;
+}
+
+.follow:nth-child(2n) {
+    margin-left: 30rpx;
+}
+
+.follow image {
+    width: 335rpx;
+    height: 370rpx;
+    background: #f4f4f4;
+    border-radius: 10rpx;
+    vertical-align: top;
+}
+
+.follow .title {
+    font-size: 26rpx;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #333;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.follow .business {
+    font-size: 24rpx;
+    color: #666;
+}
+
+.bottom {
+    height: 125rpx;
+    overflow: hidden;
+}

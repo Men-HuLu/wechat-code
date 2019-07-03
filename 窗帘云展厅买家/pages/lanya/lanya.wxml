@@ -1,0 +1,2 @@
+<import src="../temp/shopdetail.wxml"></import>
+<template is="shopdetail" data="{{nowData:nowData}}"></template>

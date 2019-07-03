@@ -1,0 +1,20 @@
+<view class="sharHead">
+    <view class="share_w">
+        <view class="share_1 share_label">商品分享</view>
+        <view class="share_2 share_label">图评管理</view>
+        <view class="share_3 share_label">访客授权</view>
+        <view class="share_4 share_label">相册管理</view>
+        <view class="share_5 share_label">访客分析</view>
+        <view class="share_6 share_label">商品二维码</view>
+        <image class="shareUserHead" src="{{data.logo}}"></image>
+        <view class="shareTitle">{{data.shopName}}</view>
+        <view class="shareTxt">管理窗帘图片的小帮手</view>
+    </view>
+</view>
+<view class="shareContent">
+    <view class="shareContent_w">
+        <image bindtap="previewImage" data-src="{{data.qrcode}}" src="{{data.qrcode}}"></image>
+        <view class="title">邀请码 : {{data.code}}</view>
+        <view class="txt">截屏分享海报,邀请朋友开通云展厅</view>
+    </view>
+</view>

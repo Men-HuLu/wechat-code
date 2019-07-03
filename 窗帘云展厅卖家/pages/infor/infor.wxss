@@ -1,0 +1,10 @@
+@import "../../wxParse/wxParse.wxss";
+
+.wxParse-section {
+    width: 92%;
+    padding: 20rpx 4% 30rpx;
+}
+
+.wxParse-p image {
+    max-width: 100%;
+}

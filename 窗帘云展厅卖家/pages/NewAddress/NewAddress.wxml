@@ -1,0 +1,29 @@
+<view>
+    <form>
+        <view class="float item">
+            <text>收货人</text>
+            <input bindblur="name" bindinput="name" placeholder="请输入收货人" value="{{data.name}}"></input>
+        </view>
+        <view class="float item">
+            <text>联系方式</text>
+            <input bindblur="phonereg" bindinput="phone" maxlength="11" placeholder="请输入联系方式" type="number" value="{{data.phone}}"></input>
+        </view>
+        <view class="float item">
+            <text>省市区</text>
+            <picker bindchange="bindRegionChange" customItem="{{customItem}}" mode="region" value="{{region}}">
+                <view class="picker float">
+                    <view>{{region[0]}}{{region[1]}}{{region[2]}}</view>
+                    <view class="iconcenter">
+                        <image class="icon" src="../../img/right.png"></image>
+                    </view>
+                </view>
+            </picker>
+        </view>
+        <view class="float item">
+            <text>详细地址</text>
+            <input bindblur="detailAddress" bindinput="detailAddress" placeholder="请输入详细地址" value="{{data.detailAddress}}"></input>
+        </view>
+        <button bindtap="formSubmit" class="allButton">保存</button>
+        <button bindtap="removeAdress" class="allButton remove" wx:if="{{remove==='true'}}">删除地址</button>
+    </form>
+</view>

@@ -1,0 +1,22 @@
+.inputbox {
+    width: 640rpx;
+}
+
+.inputbox input {
+    display: block;
+    width: 90%;
+    box-sizing: border-box;
+    font-size: 26rpx;
+    color: #fffefe;
+    height: 60rpx;
+    padding-left: 64rpx;
+}
+
+.floatt {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box:nth-of-type(2n) {
+    margin-left: 30rpx;
+}

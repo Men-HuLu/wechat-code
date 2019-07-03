@@ -1,0 +1,133 @@
+.share_w {
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+    padding-top: 146rpx;
+    overflow: hidden;
+}
+
+.sharHead {
+    width: 100%;
+    height: 606rpx;
+    background: #359dee;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.shareUserHead {
+    display: block;
+    width: 196rpx;
+    height: 196rpx;
+    border-radius: 50%;
+    border: 20rpx solid #86c4f5;
+    background: pink;
+    margin: 0 auto;
+}
+
+.shareTitle {
+    width: 100%;
+    text-align: center;
+    font-size: 36rpx;
+    color: white;
+    line-height: 1;
+    margin-top: 26rpx;
+}
+
+.shareTxt {
+    width: 100%;
+    text-align: center;
+    font-size: 28rpx;
+    color: white;
+    line-height: 1;
+    margin-top: 8rpx;
+}
+
+.share_label {
+    width: 164rpx;
+    height: 54rpx;
+    font-size: 28rpx;
+    color: white;
+    line-height: 54rpx;
+    border-radius: 20rpx;
+    text-align: center;
+    background: #5db1f1;
+    position: absolute;
+}
+
+.share_1 {
+    top: 48rpx;
+    left: 60rpx;
+}
+
+.share_2 {
+    top: 160rpx;
+    left: 6rpx;
+}
+
+.share_3 {
+    top: 298rpx;
+    left: 40rpx;
+}
+
+.share_4 {
+    top: 74rpx;
+    right: 176rpx;
+}
+
+.share_5 {
+    right: 0;
+    top: 178rpx;
+}
+
+.share_6 {
+    right: 20rpx;
+    top: 334rpx;
+}
+
+.shareContent {
+    width: 100%;
+    height: 793rpx;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.shareContent_w {
+    width: 700rpx;
+    height: 100%;
+    background: #fff;
+    border-radius: 20rpx;
+    position: absolute;
+    top: -92rpx;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.shareContent_w image {
+    display: block;
+    width: 374rpx;
+    height: 374rpx;
+    background: pink;
+    margin: 0 auto;
+    margin-top: 138rpx;
+}
+
+.shareContent_w .title {
+    font-size: 30rpx;
+    line-height: 1;
+    color: #333333;
+    width: 100%;
+    text-align: center;
+    margin-top: 78rpx;
+}
+
+.shareContent_w .txt {
+    font-size: 24rpx;
+    color: #666666;
+    line-height: 1;
+    width: 100%;
+    text-align: center;
+    margin-top: 20rpx;
+}

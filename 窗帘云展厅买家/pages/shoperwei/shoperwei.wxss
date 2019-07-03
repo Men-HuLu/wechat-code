@@ -1,0 +1,44 @@
+.inputbox {
+    width: 100%;
+}
+
+.inputbox input {
+    display: block;
+    width: 92%;
+    box-sizing: border-box;
+    font-size: 26rpx;
+    color: #fffefe;
+    height: 60rpx;
+    padding-left: 64rpx;
+}
+
+radio-group label {
+    display: inline-block;
+    position: relative;
+    margin-right: 30rpx;
+}
+
+radio-group label:nth-last-of-type(1) {
+    margin-right: 0rpx;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    width: 100%;
+    padding: 30rpx 0;
+}
+
+.bottom button {
+    width: 606rpx;
+    height: 80rpx;
+    background: #46a6f0;
+    border-radius: 10rpx;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 80rpx;
+    color: #fff;
+}

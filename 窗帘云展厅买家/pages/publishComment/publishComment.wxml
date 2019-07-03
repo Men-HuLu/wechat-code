@@ -1,0 +1,15 @@
+<view style="padding:0 24rpx;">
+    <view style="position:relative;width:100%;margin-bottom:28rpx;">
+        <textarea bindinput="textareaVal" maxlength="1000" placeholder="评论内容" placeholderStyle="font-size:28rpx;color:#999999;" style="padding-top:26rpx;color:#333333;font-size:28rpx;"></textarea>
+        <view style="position:absolute;bottom:0;right:0;font-size:24rpx;color:#999999;">{{textareaVal}}/1000</view>
+    </view>
+    <view class="" style="display:flex;flex-wrap:wrap;width:100%;">
+        <view style="display:inline-block;margin-right:12rpx;margin-bottom:12rpx;" wx:if="{{list.length}}" wx:for="{{list}}" wx:key="index_{{index}}">
+            <image bindtap="previewImage" data-id="{{index}}" data-src="{{item}}" src="{{item}}" style="width:224rpx;height:224rpx"></image>
+        </view>
+        <view bindtap="addImge" class="upload" disabled="{{disabled}}" size="mini" style="display:block;margin:0;padding:0;font-size:0;position:static;width:224rpx;height:224rpx">
+            <image src="../../img/ico_imgsubmit.png" style="width:218rpx;height:224rpx"></image>
+        </view>
+    </view>
+</view>
+<button bindtap="btn" class="{{publistColor}}" disabled="{{pushNow}}" size="default" style="color:#fff;font-size:36rpx;padding:0;width:606rpx;position:fixed;bottom:22rpx;left:50%;transform:translateX(-50%);" type="default">立即发布</button>

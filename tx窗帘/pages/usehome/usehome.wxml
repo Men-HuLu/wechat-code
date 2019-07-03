@@ -1,0 +1,64 @@
+<view class="uselogos">
+    <image class="logobg" src="/images/header_02.jpg"></image>
+    <image class="usestore" src="{{userInfo.is_store==0?'/images/user.png':'/images/store.png'}}"></image>
+    <view class="usetitle">
+        <image class="uselogo" src="{{userInfo.head_pic}}"></image>
+        <view class="userinfo">
+            <view class="username userinfo-b">{{userInfo.nick_name}}</view>
+            <view class="userinfo-b">
+                <view class="user-grade">{{userInfo.gname}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view bindtap="bindOrderList" class="hdonglist" style="margin-top:0">我的订单
+  <text bindtap="bindAllOrderTap">全部订单</text>
+</view>
+<view class="usecd">
+    <view bindtap="bindWaitPayTap" class="usecdlist">
+        <view class="iconfont icon__wallet"></view>
+        <text>待审核</text>
+        <view class="order_num" wx:if="{{userInfo.waitPayCount!=0}}">
+            <text>{{userInfo.waitPayCount}}</text>
+        </view>
+    </view>
+    <view bindtap="bindWaitSendTap" class="usecdlist">
+        <view class="iconfont icon__package"></view>
+        <text>待发货</text>
+        <view class="order_num" wx:if="{{userInfo.waitSendCount!=0}}">
+            <text>{{userInfo.waitSendCount}}</text>
+        </view>
+    </view>
+    <view bindtap="bindWaitFinishTap" class="usecdlist">
+        <view class="iconfont icon__shipping"></view>
+        <text>待收货</text>
+        <view class="order_num" wx:if="{{userInfo.waitFinishCount!=0}}">
+            <text>{{userInfo.waitFinishCount}}</text>
+        </view>
+    </view>
+    <view bindtap="bindReviewTap" class="usecdlist">
+        <view class="iconfont icon__comment"></view>
+        <text>已完成</text>
+        <view class="order_num" wx:if="{{userInfo.waitReviewCount!=0}}">
+            <text>{{userInfo.waitReviewCount}}</text>
+        </view>
+    </view>
+    <view bindtap="bindApply" class="usecdlist">
+        <view class="iconfont icon__service-1 "></view>
+        <text>售后</text>
+        <view class="order_num" wx:if="{{userInfo.afterSalesCount!=0}}">
+            <text>{{userInfo.afterSalesCount}}</text>
+        </view>
+    </view>
+</view>
+<view class="producthd">
+    <view bindtap="bindMyAddressTap" class="hdonglist">我的收货地址</view>
+    <view bindtap="bindMyLikeTap" class="hdonglist">我的收藏</view>
+    <view bindtap="bindScan" class="hdonglist">扫一扫</view>
+    <view bindtap="bindTelPhone" class="hdonglist" data-tel="{{userInfo.ServicePhone}}">联系我们
+    <text>{{userInfo.ServicePhone}}</text>
+    </view>
+</view>
+<view bindtap="ExitLoginout" class="outlogin">
+  退出登录
+</view>

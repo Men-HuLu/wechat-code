@@ -1,0 +1,3 @@
+<view class="button">
+    <button bindgetuserinfo="onGotUserInfo" lang="zh_CN" openType="getUserInfo">登录</button>
+</view>

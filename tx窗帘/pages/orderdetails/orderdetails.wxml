@@ -1,0 +1,111 @@
+<view class="xuanzhed pb40" hidden="{{LogisticsData==''||LogisticsData==null}}">
+    <navigator url="../logistics/logistics?orderid={{OrderInfo.id}}">
+        <view class="hdonglist hdonglist1">
+            <text class="iconfont icon__delivery"></text>
+            <view class="classnames">
+                <text class="yhname" wx:if="{{LogisticsData.data[0].context!=null}}">{{LogisticsData.data[0].context}}</text>
+                <text class="yhname" wx:else>{{LogisticsData.ename}}: {{LogisticsData.express_no}}</text>
+                <text class="acceptTime" wx:if="{{LogisticsData.data[0].time!=null}}">{{LogisticsData.data[0].time}}</text>
+            </view>
+            <text class="iconfont arrow_right"></text>
+        </view>
+    </navigator>
+</view>
+<view class="address-info {{LogisticsData==''||LogisticsData==null?'':'mt24'}}">
+    <view class="addr-xuanbg" hidden="{{LogisticsData==''||LogisticsData==null}}">
+        <image src="/images/order_06.jpg"></image>
+    </view>
+    <view class="address-outer">
+        <text class="iconfont icon__locate"></text>
+        <view class="infos">
+            <text class="name">{{OrderInfo.accept_name}}{{OrderInfo.mobile?', ':''}} {{OrderInfo.mobile}}</text>
+            <text class="address"> {{OrderInfo.pname+' '+OrderInfo.cname+' '+OrderInfo.oname+' '+OrderInfo.addr}}</text>
+        </view>
+    </view>
+    <view class="addr-xuanbg">
+        <image src="/images/order_06.jpg"></image>
+    </view>
+</view>
+<view class="orderlist">
+    <view class="orderlisttile">
+        <view class="orderhao">订单清单</view>
+    </view>
+    <view class="orderlistcont {{i+1==OrderInfo.order_goods.length?'lastitem':''}}" wx:for="{{OrderInfo.order_goods}}" wx:for-index="i" wx:key="Id">
+        <image bindtap="goToProductDetail" data-productid="{{item.goods_id}}" src="{{RequestUrl+item.img}}"></image>
+        <view bindtap="goToProductDetail" class="orderlisc" data-productid="{{item.goods_id}}">
+            <view class="ordername">{{item.name}}</view>
+            <view class="ordersize">
+                <block wx:for="{{item.param_json}}" wx:for-item="param">
+          {{param.name}}:{{param.value+' '}}
+        </block>
+            </view>
+        </view>
+        <view class="orderlistright">
+            <text>￥{{item.sell_price}}</text>
+            <view>x {{item.goods_nums}}</view>
+            <view hidden="{{!(item.IsCanRefund&&item.EnabledRefundAmount>0&&OrderInfo.Status!=2)||OrderInfo.Status==4}}">
+                <navigator url="../ApplyReturns/ApplyReturns?orderid={{OrderInfo.OrderId}}&skuId={{item.SkuId}}&pro={{item.Name}}&num={{item.Amount}}&m={{item.Price}}">退货</navigator>
+            </view>
+        </view>
+    </view>
+    <view class="orderlistzong">小计 ￥{{OrderInfo.order_amount}}</view>
+</view>
+<view class="submfs submfs1">
+    <view class="yunfei">
+        <view class="yunfeil">商品金额</view>
+        <view class="yunfeir"> ￥{{OrderInfo.payable_amount}} </view>
+    </view>
+    <view class="yunfei">
+        <view class="yunfeil">运费<text wx:if="{{OrderInfo.FreightFreePromotionName}}">(满免)</text>
+        </view>
+        <view class="yunfeir">￥{{OrderInfo.payable_freight}}</view>
+    </view>
+    <view class="yunfei" wx:if="{{OrderInfo.discount_amount>0}}">
+        <view class="yunfeil">优惠金额</view>
+        <view class="yunfeir">-￥{{OrderInfo.discount_amount}}</view>
+    </view>
+    <view class="yunfei" wx:if="{{OrderInfo.CouponAmount>0}}">
+        <view class="yunfeil">优惠券</view>
+        <view class="yunfeir">-￥{{OrderInfo.CouponAmount}}</view>
+    </view>
+    <view class="yunfei" wx:if="{{OrderInfo.ReducedPromotionAmount>0}}">
+        <view class="yunfeil">满减</view>
+        <view class="yunfeir">-￥{{OrderInfo.ReducedPromotionAmount}}</view>
+    </view>
+    <view class="yunfei" wx:if="{{OrderInfo.DeductionMoney>0}}">
+        <view class="yunfeil">积分抵扣</view>
+        <view class="yunfeir">-￥{{OrderInfo.DeductionMoney}}</view>
+    </view>
+    <view class="yunfei">
+        <view class="yunfeil">合计</view>
+        <view class="yunfeir">￥{{OrderInfo.order_amount}}</view>
+    </view>
+</view>
+<view class="submfs submfs1 mb24">
+    <view class="yunfei">
+        <view class="yunfeil">订单号</view>
+        <view class="yunfeir">{{OrderInfo.order_no}} </view>
+    </view>
+    <view class="yunfei">
+        <view class="yunfeil">订单状态</view>
+        <view class="yunfeir">{{OrderInfo.status_text}} </view>
+    </view>
+    <view class="yunfei">
+        <view class="yunfeil">下单时间</view>
+        <view class="yunfeir">{{OrderInfo.create_time}} </view>
+    </view>
+    <view class="yunfei">
+        <view class="yunfeil">订单备注</view>
+        <view class="yunfeir">{{OrderInfo.user_remark==null?'':OrderInfo.user_remark}}</view>
+    </view>
+</view>
+<view class="jinge">
+    <view class="tuikuan" hidden="{{!(OrderInfo.Status==2&&OrderInfo.IsCanRefund)}}">
+        <navigator url="../ApplyRefund/ApplyRefund?orderid={{OrderInfo.id}}&&m={{OrderInfo.order_amount}}">申请退款</navigator>
+    </view>
+    <button bindtap="orderPay" data-orderid="{{OrderInfo.id}}" hidden="{{OrderInfo.status>3||OrderInfo.pay_status!=0}}">付款</button>
+    <button bindtap="orderFinish" data-orderid="{{OrderInfo.id}}" hidden="{{OrderInfo.status!=3||OrderInfo.pay_status!=1||OrderInfo.delivery_status!=1}}">确认收货</button>
+    <view class="classtext"> 
+  合计<text class="price"> ￥{{OrderInfo.order_amount}}</text>
+    </view>
+</view>

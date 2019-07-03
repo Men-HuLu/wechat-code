@@ -1,0 +1,14 @@
+<scroll-view bindscrolltolower="searchScrollLower" scrollY="true" style="height:100vh">
+    <view style="width:100%;padding:0 24rpx;box-sizing:border-box;">
+        <view class="left wrap" style="width:100%;">
+            <view bindtap="navigator" class="follow" data-id="{{item.id}}" wx:for="{{data.follow}}">
+                <image mode="scaleToFill" src="{{item.img}}"></image>
+                <view class="bottom">
+                    <view class="title">{{item.business}}</view>
+                    <view class="business line2">{{item.title}}</view>
+                </view>
+            </view>
+        </view>
+        <view style="font-size:26rpx;text-align:center;height:50rpx;line-height:40rpx;" wx:if="{{loading}}">{{loadingText}}</view>
+    </view>
+</scroll-view>

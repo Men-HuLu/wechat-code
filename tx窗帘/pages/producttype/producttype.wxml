@@ -1,0 +1,6 @@
+<view class="page">
+    <view bindtap="getType" class="types" data-id="{{item.id}}" data-name="{{item.name}}" wx:for="{{Types}}" wx:key="i">
+        <image src="{{RequestUrl+item.pic}}"></image>
+        <text>{{item.name}}</text>
+    </view>
+</view>

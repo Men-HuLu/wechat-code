@@ -1,0 +1,17 @@
+<view class="goodcont">
+    <view bindtap="goToProductDetail" class="goodlis" data-productid="{{item.id}}" wx:for="{{ProductList}}" wx:key="ProductId">
+        <view class="qglistpic">
+            <image mode="aspectFit" src="{{RequestUrl+item.img}}"></image>
+        </view>
+        <view class="name">{{item.name}}</view>
+        <view class="saleprice">
+        ￥
+        <text>{{item.sell_price}}</text>
+            <view class="xialiang">销量 {{item.sale_number}}</view>
+        </view>
+    </view>
+</view>
+<view class="kong" hidden="{{ProductList.length>0}}">
+    <image src="/images/xiaolian.jpg"></image>
+    <text>很抱歉，没有搜索到相关商品...</text>
+</view>

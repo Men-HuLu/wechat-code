@@ -1,0 +1,26 @@
+.inputbox {
+    width: 100%;
+    border-top: 1px solid #f4f4f4;
+    height: 104rpx;
+    line-height: 104rpx;
+    font-size: 30rpx;
+}
+
+.content_w {
+    width: 100%;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 104rpx;
+    line-height: 104rpx;
+    font-size: 30rpx;
+}
+
+.publishBtn {
+    background: #46a6f0!important;
+}
+
+.publishBtnLoad {
+    background: #cccccc!important;
+}

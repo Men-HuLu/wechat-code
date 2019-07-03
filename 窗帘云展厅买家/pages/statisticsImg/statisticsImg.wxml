@@ -1,0 +1,48 @@
+<view class="left tabTitle">
+    <view bindtap="tabTitle" class="{{tabCli=='browse'?'tab_title_active':''}}" data-tab="browse">浏览</view>
+    <view bindtap="tabTitle" class="{{tabCli=='thumbs'?'tab_title_active':''}}" data-tab="thumbs">点赞</view>
+    <view bindtap="tabTitle" class="{{tabCli=='collection'?'tab_title_active':''}}" data-tab="collection">收藏</view>
+    <view bindtap="tabTitle" class="{{tabCli=='share'?'tab_title_active':''}}" data-tab="share">分享</view>
+    <view bindtap="tabTitle" class="{{tabCli=='figure'?'tab_title_active':''}}" data-tab="figure">图评</view>
+</view>
+<view class="allTime float">
+    <view>统计时间</view>
+    <picker bindchange="bindPickerChange" range="{{array}}" value="{{index}}">
+        <view class="picker left">
+      {{array[index]}}
+      <view class="iconcenter" style="margin-left:66rpx;">
+                <image src="../../img/ico_right.png" style="width:16rpx;height:28rpx;"></image>
+            </view>
+        </view>
+    </picker>
+</view>
+<view class="eachrTitle">浏览排行</view>
+<view class="tabbox left">
+    <navigator class="center" openType="navigate" style="width:50%;" url="/pages/statisticsList/statisticsList">
+        <view class="tab">
+            <view class="xcenter" style="height:100%;">
+                <view class="ccenter">
+                    <view class="iconcenter">
+                        <image src="../../img/ico_static_01.png" style="width:41rpx;height:38rpx;"></image>
+                    </view>
+                    <view class="tabTxt" style="margin-left:20rpx;">列表</view>
+                </view>
+            </view>
+        </view>
+    </navigator>
+    <navigator class="center" openType="navigate" style="width:50%;">
+        <view class="tab  tab_active">
+            <view class="xcenter" style="height:100%;">
+                <view class="ccenter">
+                    <view class="iconcenter">
+                        <image src="../../img/ico_static_02_active.png" style="width:41rpx;height:34rpx;"></image>
+                    </view>
+                    <view class="tabTxt" style="margin-left:20rpx;">图标形式</view>
+                </view>
+            </view>
+        </view>
+    </navigator>
+</view>
+<view class="container">
+    <ec-canvas canvasId="mychart-bar" ec="{{ec}}" id="mychart-dom-bar"></ec-canvas>
+</view>

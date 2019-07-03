@@ -1,0 +1,86 @@
+<button bindgetuserinfo="UserInfoMask" openType="getUserInfo" style="position:fixed;left:0;top:0;z-index:9999999;width:100%;height:100%;opacity:0;display:{{has_info==false?'block':'none'}}"></button>
+<button bindgetphonenumber="PhoneNumberMask" openType="getPhoneNumber" style="position:fixed;left:0;top:0;z-index:9999998;width:100%;height:100%;opacity:0;display:{{has_phone==false?'block':'none'}}"></button>
+<view style="display:none">
+    <image bindload="onImageLoad" id="{{item.id}}" lazyLoad="true" src="{{item.src}}" wx:for="{{images}}"></image>
+</view>
+<view>
+    <view class="search">
+        <view class="float iconcenter">
+            <image class="icon" src="../../img/search-icon.png"></image>
+            <input bindtap="search" confirmType="done" disabled="true" placeholder="搜索商品" placeholderClass="placeholder" value="{{input}}"></input>
+            <image bindtap="clear" class="clear" src="../../img/clear.png"></image>
+        </view>
+    </view>
+    <view class="search2"></view>
+    <view class="float top">
+        <view class="infor">
+            <view>电话：{{data.infor.phone}}</view>
+            <view>简介：{{data.infor.text}}</view>
+        </view>
+        <view class="float icons">
+            <view class="rightIcon">
+                <view class="left pr" style="margin-right:20rpx;">
+                    <button bindtap="onShareAppMessage" class="shareButton" data-id="{{item.id}}" openType="share"></button>
+                    <view class="iconcenter">
+                        <image class="shar" src="../../img/share2.png"></image>
+                    </view>分享云展厅</view>
+                <view bindtap="load" class="left" data-download="{{data.erweima}}" style="margin-top:5rpx;">
+                    <view class="iconcenter">
+                        <image class="downLoad" src="../../img/downLoad2.png"></image>
+                    </view>下载二维码</view>
+            </view>
+        </view>
+    </view>
+    <view class="wrap">
+        <view class="before" wx:if="{{tabbu==0}}"></view>
+        <view class="pr" wx:if="{{tabbu==0}}" wx:for="{{data.list}}">
+            <view class="time left">
+                <view class="D"></view> {{item.time}}</view>
+            <view class="item" wx:for="{{item.commodity}}">
+                <image bindtap="navigator" data-id="{{item.id}}" mode="widthFix" src="{{item.image}}"></image>
+                <view class="float">
+                    <text class="line2">{{item.csentence}}</text>
+                    <view bindtap="photoChange" data-id="{{item.id}}">
+                        <image class="scale" src="/img/tackphoto.png"></image>
+                        <text>试装</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="float" wx:if="{{tabbu==1}}">
+            <view class="PPleft">
+                <view wx:for="{{col1}}">
+                    <view class="item item2">
+                        <image bindtap="navigator" data-id="{{item.id}}" mode="widthFix" src="{{item.image}}"></image>
+                        <view class="bottom">
+                            <text class="line2">{{item.csentence}}</text>
+                            <view bindtap="photoChange" class="fleft" data-id="{{item.id}}">
+                                <image class="scale" src="/img/tackphoto.png"></image>
+                                <text>试装</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="PPright">
+                <view wx:for="{{col2}}">
+                    <view class="item item2">
+                        <image bindtap="navigator" data-id="{{item.id}}" mode="widthFix" src="{{item.image}}"></image>
+                        <view class="bottom">
+                            <text class="line2">{{item.csentence}}</text>
+                            <view bindtap="photoChange" class="fleft" data-id="{{item.id}}">
+                                <image class="scale" src="/img/tackphoto.png"></image>
+                                <text>试装</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view style="font-size:26rpx;text-align:center;height:50rpx;line-height:40rpx;" wx:if="{{loading}}">{{loadingText}}</view>
+    </view>
+</view>
+<view bindtap="tabBu" class="QH">
+    <image mode="widthFix" src="../../img/indexMore2.png" wx:if="{{tabbu==0}}"></image>
+    <image mode="widthFix" src="../../img/indexMore3.png" wx:if="{{tabbu==1}}"></image>
+</view>

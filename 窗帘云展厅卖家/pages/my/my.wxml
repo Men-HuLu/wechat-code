@@ -1,0 +1,124 @@
+<nav></nav>
+<view class="top">
+    <image class="head" mode="scaleToFill" src="{{userHeadImg}}"></image>
+    <view class="name">{{nickName}}</view>
+</view>
+<view class="item">
+    <view class="float">
+        <view class="number">
+            <text>客户号：</text>{{data.number}}</view>
+        <view class="iconcenter">
+            <image bindtap="previewImage" class="erweima" data-src="{{data.erweima}}" mode="scaleToFill" src="../../img/erweima.png"></image>
+        </view>
+    </view>
+</view>
+<view class="list">
+    <view bindtap="navigator" class="float" data-src="personalInformation">
+        <view class="left">
+            <view class="iconcenter">
+                <image class="icon" mode="widthFix" src="../../img/personalInformation.png"></image>
+            </view>
+            <text>展厅信息</text>
+        </view>
+        <view>
+            <text></text>
+            <image class="detail" src="../../img/right.png"></image>
+        </view>
+    </view>
+    <view bindtap="navigator" class="float" data-src="myExhibition">
+        <view class="left">
+            <view class="iconcenter">
+                <image class="icon" mode="widthFix" src="../../img/myExhibition.png"></image>
+            </view>
+            <text>我的云展厅</text>
+        </view>
+        <view>
+            <text></text>
+            <image class="detail" src="../../img/right.png"></image>
+        </view>
+    </view>
+    <view class="float" data-src="myCollection" wx:if="{{data.collection==0}}">
+        <view class="left">
+            <view class="iconcenter">
+                <image class="icon" mode="widthFix" src="../../img/myCollection.png"></image>
+            </view>
+            <text>我的收藏</text>
+        </view>
+        <view>
+            <text>您暂未收藏商品</text>
+            <image class="detail" src="../../img/right.png"></image>
+        </view>
+    </view>
+    <view bindtap="navigator" class="float" data-src="myCollection" wx:else>
+        <view class="left">
+            <view class="iconcenter">
+                <image class="icon" mode="widthFix" src="../../img/myCollection.png"></image>
+            </view>
+            <text>我的收藏</text>
+        </view>
+        <view>
+            <text>{{data.collection}}个商品</text>
+            <image class="detail" src="../../img/right.png"></image>
+        </view>
+    </view>
+    <view bindtap="navigator" class="float" data-src="myFigure">
+        <view class="left">
+            <view class="iconcenter">
+                <image class="icon" mode="widthFix" src="../../img/myFigure.png"></image>
+            </view>
+            <text>我的图评</text>
+        </view>
+        <view>
+            <text>待审核、已通过、已拒绝三类</text>
+            <image class="detail" src="../../img/right.png"></image>
+        </view>
+    </view>
+    <view bindtap="navigator" class="float" data-src="myFootprint">
+        <view class="left">
+            <view class="iconcenter">
+                <image class="icon icon2" mode="widthFix" src="../../img/myFootprint.png"></image>
+            </view>
+            <text>我的足迹</text>
+        </view>
+        <view>
+            <text></text>
+            <image class="detail" src="../../img/right.png"></image>
+        </view>
+    </view>
+    <view bindtap="navigator" class="float" data-src="addressManagement">
+        <view class="left">
+            <view class="iconcenter">
+                <image class="icon" mode="widthFix" src="../../img/addressManagement.png"></image>
+            </view>
+            <text>地址管理</text>
+        </view>
+        <view>
+            <text></text>
+            <image class="detail" src="../../img/right.png"></image>
+        </view>
+    </view>
+    <view bindtap="navigator" class="float" data-src="myFollow">
+        <view class="left">
+            <view class="iconcenter">
+                <image class="icon" mode="widthFix" src="../../img/myFollow.png"></image>
+            </view>
+            <text>我的关注</text>
+        </view>
+        <view>
+            <text></text>
+            <image class="detail" src="../../img/right.png"></image>
+        </view>
+    </view>
+    <view bindtap="scanCode" class="float">
+        <view class="left">
+            <view class="iconcenter">
+                <image class="icon" mode="widthFix" src="../../img/erweima.png"></image>
+            </view>
+            <text>扫一扫</text>
+        </view>
+        <view>
+            <text></text>
+            <image class="detail" src="../../img/right.png"></image>
+        </view>
+    </view>
+</view>

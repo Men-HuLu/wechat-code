@@ -1,0 +1,121 @@
+<view class="page-section">
+    <view hidden="{{isEmpty}}">
+        <view class="shopcart-t bg-wihte">
+            <view class="mt0">
+                <icon bindtap="selectAll" class="fl mt20 line_height1" color="{{selectAllStatus?'#ff5722':''}}" type="{{selectAllStatus?'success':'circle'}}"></icon>
+                <view class="ml16 fl">全选</view>
+            </view>
+            <view bindtap="SwitchEdite" class="shopcart-edite">{{EditeText}}</view>
+        </view>
+        <view class="shopcart-m bg-wihte">
+            <view>
+                <view class="shopcart-m-item" wx:for="{{ShopCarts}}" wx:for-index="idx">
+                    <view class="shopcart-ck">
+                        <icon bindtap="selectList" color="{{item.selected?'#ff5722':''}}" data-idx="{{idx}}" data-skuid="{{item.id}}" type="{{item.selected?'success':'circle'}}"></icon>
+                    </view>
+                    <view bindtap="goToProductDetail" class="shopcart-item-pic " data-productid="{{item.goods_id}}">
+                        <image mode="aspectFill " src="{{RequestUrl+item.img}} "></image>
+                    </view>
+                    <view bindtap="goToProductDetail" class="shpcart-item-txt " data-productid="{{item.goods_id}}" hidden="{{isEdite}}">
+                        <view class="shopcart-txt-t ">
+                            <view class="shopcart-txt-name ">{{item.name}}</view>
+                            <view class="shopcart-txt-saleprice " hidden="{{isEdite}}">
+                                <text>¥ {{item.price}}</text>
+                                <view class="shopcart-item-num ">
+                                    <view class="txt ">
+                                        <text class="iconfont icon__close"></text>{{item.num}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="shopcart-txt-b ">
+                            <view class="shpcart-item-skuname">
+                                <view wx:for="{{item.paramJson}}" wx:for-item="param">{{param.name}}:{{' '+param.value}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class=" shpcart-item-txt shopcart-item-edite " hidden="{{!isEdite}}">
+                        <view class="shopcart-item-edite-l ">
+                            <view class="shpcart-item-edite-num ">
+                                <text bindtap="countNum" class="iconfont minus_regular fl" data-dotype="minus" data-idx="{{idx}}"></text>
+                                <input bindblur="bindblurNum" class="m" data-idx="{{idx}}" type="number" value="{{item.num}}"></input>
+                                <text bindtap="countNum" class="iconfont plus_regular fr" data-dotype="add" data-idx="{{idx}}"></text>
+                            </view>
+                            <view class="shpcart-item-skuname ">
+                                <view bindtap="clickSku" data-skuid="{{item.id}}" style="background: #ff5722;margin-left: 10px;border-radius: 10rpx; font-size: 24rpx; padding: 10rpx  20rpx;color: #fff;">编辑参数</view>
+                            </view>
+                        </view>
+                        <view bindtap="DelCarts" class="shopcart-item-edite-r " data-index="{{index}}" data-skuid="{{item.id}}">
+                            <text class="iconfont icon__trash"></text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="shopcart-b bg-wihte ">
+            <view class="shopcart-total ">
+                <view class="shopcart-total-txt ">总价: </view>
+                <view class="shopcart-total-p ">
+                    <text class="saleprice ">¥{{TotalPrice}} </text>
+                </view>
+        (不含运费)
+      </view>
+            <view bindtap="SettlementShopCart" class="shopcart-buy">
+                <text>{{SettlementText}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="shopcart-no" hidden="{{!isEmpty}}">
+        <view class="shopcart-no-item">
+            <view class="pic">
+                <image src="../../images/shopcart-empty.jpg"></image>
+            </view>
+            <view class="mt24 mb24 line_height48 font32">购物车空空如也~</view>
+            <view class="btn">
+                <navigator class="btn_go" openType="switchTab" url="../productcategory/productcategory">去逛逛</navigator>
+            </view>
+        </view>
+    </view>
+    <view bindtap="clickback" class="btmbg {{backShow}}"></view>
+    <view class="lqyhq skuchoose {{SkuShow}}">
+        <view class="positionre">
+            <view class="guige">
+                <image class="lqicon guigeimg" mode="aspectFit" src="{{RequestUrl+CurrentObj.img}}"></image>
+                <view class="guigecont">
+                    <view class="saleprice">￥
+            <text>{{CurrentObj.calc_price}}</text>
+                    </view>
+                    <view class="guigeyxhs">单价：￥{{CurrentObj.sell_price}}</view>
+                </view>
+                <view bindtap="clickback" class="guigecha">
+                    <view class="iconfont icon__close1 font40"></view>
+                </view>
+            </view>
+            <view class="nronggaodu">
+                <view class="nrongtip">计算规则：价格 = 单价
+          <block wx:for="{{CurrentObj.type.attr}}">
+            {{item.calc==1?' X '+item.name:''}}
+          </block>
+                </view>
+                <view class="nrongtip" wx:if="{{CurrentObj.type.rectify==1}}">不满1平方米，按1平方米计算</view>
+                <view class="nrongtip" wx:if="{{CurrentObj.type.height_float==1}}">高度低于{{CurrentObj.type.height_min_mi}}米的按照单价的{{CurrentObj.type.height_min_discount}}%计算，高于{{CurrentObj.type.height_max_mi}}米的每增加{{CurrentObj.type.height_mi_per}}米以内增加{{CurrentObj.type.height_max_discount}}%</view>
+                <view class="nrongtip" wx:if="{{CurrentObj.type.meter==1}}">米数</view>
+                <block wx:for="{{CurrentObj.type.attr}}" wx:for-index="i">
+                    <view class="goumaisl">
+                        <text>{{CurrentObj.type.attr[i].name}}</text>
+                        <input bindconfirm="changeAttrInput" bindinput="changeAttrInput" class="changkuan" data-id="{{CurrentObj.type.attr[i].id}}" placeholder="{{CurrentObj.type.attr[i].values[0].name}}" type="{{InputType[CurrentObj.type.attr[i].show_input_type]}}" value="{{CurrentObj.type.attr[i].Selected}}" wx:if="{{CurrentObj.type.attr[i].show_type==3}}"></input>
+                        <view class="sezhicont sezhicolor mt8" wx:elif="{{CurrentObj.type.attr[i].show_type==2}}">
+                            <text bindtap="onAttrClick" class="{{it.name==CurrentObj.type.attr[i].Selected?'SKUSelectValueClass':'skuvalueclass'}}" data-id="{{CurrentObj.type.attr[i].id}}" data-name="{{it.name}}" wx:for="{{CurrentObj.type.attr[i].values}}" wx:for-item="it"> {{it.name}} </text>
+                        </view>
+                    </view>
+                    <view class="sezhi_last_child"></view>
+                </block>
+                <view class="goumaisl">
+                    <text>备注</text>
+                    <input bindconfirm="changeRemarkInput" bindinput="changeRemarkInput" class="changkuan" placeholder="买家备注" value="{{CurrentObj.remark}}"></input>
+                </view>
+                <view class="sezhi_last_child"></view>
+            </view>
+            <button bindtap="changeParam" class="lijigoumai" data-skuid="{{CurrentObj.id}}">确定</button>
+        </view>
+    </view>
+</view>

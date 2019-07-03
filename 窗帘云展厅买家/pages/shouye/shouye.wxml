@@ -1,0 +1,27 @@
+<nav></nav>
+<view class="content" style="width:100%;">
+    <view wx:if="{{hasData}}">
+        <view bindtap="" class="left" data-id="{{item.id}}" style="padding:20rpx 24rpx;border-bottom:1px solid #f4f4f4;" wx:for="{{allData.data}}">
+            <image bindtap="navigator" data-id="{{item.id}}" src="{{item.img_url}}" style="width:238rpx;height:194rpx;"></image>
+            <view class="detail" style="padding-top:14rpx;width:430rpx;margin-left:22rpx;">
+                <view bindtap="navigator" class="ellipsis" data-id="{{item.id}}" style="height:76rpx;width:100%;font-size:28rpx;line-height:40rpx;color:#333333;">{{item.title}}</view>
+                <view class="left">
+                    <view style="width:150rpx;text-align:center;line-height:40rpx;font-size:24rpx;color:#333333;background:#f4f4f4;border-radius:20rpx;margin-top:20rpx;margin-right:18rpx;">{{item.shopId}}</view>
+                    <view style="width:150rpx;text-align:center;line-height:40rpx;font-size:24rpx;color:#333333;background:#f4f4f4;border-radius:20rpx;margin-top:20rpx;margin-right:18rpx;">{{item.stock}}</view>
+                </view>
+                <button id="share" openType="share" style="float:right;margin:0;padding:0;position:relative;width:35rpx;height:35rpx;background:transparent;margin-top:6rpx;">
+                    <image src="../../img/ico_share_1.png" style="position:absolute;top:0;left:0;width:35rpx;height:35rpx;"></image>
+                </button>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{showPropaganda}}">
+        <import src="../../wxParse/wxParse.wxml"></import>
+        <view>
+            <template is="wxParse" data="{{wxParseData:richtxt.nodes}}"></template>
+        </view>
+    </block>
+    <view style="background:#fff; padding:23rpx 0;position:fixed;bottom:0;left:0;width:100%;">
+        <button bindgetuserinfo="bindGetUserInfo" openType="getUserInfo" style="width:606rpx;height:80rpx;line-height:80rpx;color:#fff;font-size:36rpx;background:#46a6f0;margin:0 auto;">登录</button>
+    </view>
+</view>

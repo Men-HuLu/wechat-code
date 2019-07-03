@@ -1,0 +1,132 @@
+view {
+    box-sizing: border-box;
+}
+
+.item-box {
+    width: 700rpx;
+    margin: 0 auto;
+    padding: 0 0 40rpx;
+}
+
+.items {
+    width: 100%;
+}
+
+.item {
+    position: relative;
+    border-top: 2rpx solid#eee;
+    height: 167rpx;
+    line-height: 167rpx;
+    overflow: hidden;
+}
+
+.item:last-child {
+    border-bottom: 2rpx solid#eee;
+}
+
+.inner {
+    position: absolute;
+    top: 0;
+}
+
+text {
+    display: inline-block;
+}
+
+.name {
+    width: 468rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.inner.txt {
+    height: 100%;
+    background-color: #fff;
+    width: 100%;
+    z-index: 5;
+    padding: 0;
+    transition: left0.2s ease-in-out;
+    overflow: hidden;
+    font-size: 30rpx;
+    color: #333333;
+}
+
+.inner.del {
+    background-color: #e64340;
+    width: 180rpx;
+    text-align: center;
+    z-index: 4;
+    right: 0;
+    color: #fff;
+}
+
+.item-icon {
+    width: 106rpx;
+    height: 106rpx;
+    vertical-align: middle;
+    margin-right: 24rpx;
+    border-radius: 10rpx;
+}
+
+.container {
+    width: 100%;
+    padding: 30rpx 24rpx;
+    box-sizing: border-box;
+}
+
+.modal {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: .1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 99999;
+}
+
+.modalFrame {
+    width: 580rpx;
+    height: 350rpx;
+    border-radius: 10rpx;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 30rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -172rpx;
+    margin-left: -290rpx;
+    z-index: 99999;
+}
+
+.modalFrame .title {
+    font-size: 36rpx;
+    color: #333333;
+    line-height: 1;
+    margin-top: 8rpx;
+}
+
+.modalFrame .txt {
+    font-size: 28rpx;
+    margin-top: 32rpx;
+    color: #666666;
+    line-height: 1;
+    margin-bottom: 84rpx;
+}
+
+.modalFrame .btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 26rpx;
+}
+
+.modalFrame .btn button {
+    font-size: 30rpx;
+    line-height: 1;
+    margin: 0;
+    color: #369eef;
+}

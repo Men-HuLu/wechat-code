@@ -1,0 +1,62 @@
+<view class="homecont">
+    <view class="search-box">
+        <view class="search-l">
+            <image bindtap="bindScan" src="/images/scan.png"></image>
+        </view>
+        <view class="search">
+            <text bindtap="gotoKeyWordPage" class="text">搜索</text>
+            <view bindtap="bindSearchAction" class="iconfont icon__search iconsearch font40" size="16"></view>
+        </view>
+    </view>
+    <swiper autoplay="true" circular="true" duration="500" indicatorDots="true" interval="5000">
+        <swiper-item wx:for="{{imageList}}">
+            <image bindtap="ClickSwiper" class="slide-image" data-link="{{item.url}}" data-showtype="2" height="200" src="{{RequestUrl+item.path}}"></image>
+        </swiper-item>
+    </swiper>
+    <view class="flex-wrp nav">
+        <view bindtap="ClickSwiper" class="nav-item" data-link="{{item.url}}" data-showtype="2" data-title="{{item.title}}" wx:for="{{countDownList}}">
+            <image class="image nav-image" src="{{RequestUrl+item.path}}"></image>
+            <view class="nav-text">{{item.title}}</view>
+        </view>
+    </view>
+    <view class="home-title">
+        <text>窗帘精选</text>
+    </view>
+    <swiper circular="true" class="swiper" nextMargin="87.5rpx" previousMargin="87.5rpx">
+        <swiper-item class="back center" wx:for="{{swiperProducts}}">
+            <image bindtap="ClickSwiper" class="back" data-link="{{item.id}}" data-showtype="1" src="{{RequestUrl+item.img}}"></image>
+            <view class="swiper-info center">
+                <view class="swiper-desc">
+                    <text class="swiper-name">{{item.name}}</text>
+                    <text class="swiper-name swiper-sub">{{item.subtitle}}</text>
+                </view>
+                <view class="swiper-price">￥<text>{{item.sell_price}}</text>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="home-title h66">
+        <text>新品发布</text>
+    </view>
+    <view class="page-section merchandise">
+        <view class="prodcut-list">
+            <view class="prodcut-comm">
+                <view class="prodcut" wx:for="{{choiceProducts}}" wx:for-index="idx" wx:key="goodcont">
+                    <view class="product-info">
+                        <view catchtap="bindGoodsTap" class="product-pic" data-activeid="0" data-activetype="0" data-productid="{{item.id}}">
+                            <image class="image" mode="aspectFit" src="{{RequestUrl+item.img}}" style="width:224rpx;height:224rpx;"></image>
+                        </view>
+                        <view class="product-des">
+                            <view catchtap="bindGoodsTap" class="product-name" data-activeid="0" data-activetype="0" data-productid="{{item.id}}">{{item.name}}</view>
+                            <view class="product-into-home">
+                                <view class="product-price">￥
+                    <text>{{item.sell_price}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

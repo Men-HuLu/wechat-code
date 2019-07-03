@@ -1,0 +1,13 @@
+<view>
+    <view class="comment" wx:for="{{comment}}">
+        <view class="top">
+            <image class="head" mode="aspectFill" src="{{item.head}}"></image>
+            <view class="name">{{item.name}}</view>
+        </view>
+        <text class="text">{{item.text}}</text>
+        <view class="imgs">
+            <image mode="aspectFill" src="{{item}}" wx:for="{{item.imgs}}"></image>
+        </view>
+    </view>
+    <button bindtap="commentSubmit" data-id="{{id}}">立即评价</button>
+</view>

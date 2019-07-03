@@ -1,0 +1,32 @@
+<view>
+    <view bindtap="navigator" class="left top" data-id="{{data.figure.id}}">
+        <image class="img" mode="scaleToFill" src="{{data.figure.img}}"></image>
+        <view class="right float">
+            <view class="info">
+                <view class="name">{{data.figure.name}}</view>
+                <view class="text ellipsis">{{data.figure.text}}</view>
+                <view class="price">¥<text>{{data.figure.price[0]}}</text>.{{data.figure.price[1]}}</view>
+            </view>
+            <view class="iconcenter">
+                <image class="icon" mode="widthFix" src="../../img/right.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="item" wx:for="{{data.detail}}">
+        <view class="float">
+            <view class="head float">
+                <image mode="scaleToFill" src="{{item.head}}"></image>
+                <view class="iconcenter">
+                    <text class="name">{{item.name}}</text>
+                </view>
+            </view>
+            <view class="iconcenter">
+                <text class="time">{{item.time}}</text>
+            </view>
+        </view>
+        <view class="text">{{item.text}}</view>
+        <view class="imgs">
+            <image mode="scaleToFill" src="{{item}}" wx:for="{{item.imgs}}"></image>
+        </view>
+    </view>
+</view>

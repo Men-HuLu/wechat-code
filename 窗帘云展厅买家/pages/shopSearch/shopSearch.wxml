@@ -1,0 +1,23 @@
+<view class="floatt" style="width:100%;padding:30rpx 24rpx;background:#47a6f0;box-sizing:border-box;margin-bottom:0rpx;">
+    <view class="inputbox" style="position:relative;background:#66b5f2;border-radius:15rpx;">
+        <image class="input_search" src="../../img/ico_search.png" style="width:29rpx;height:28rpx;position:absolute;left:18rpx;top:50%;transform:translateY(-50%);z-index:2;"></image>
+        <input bindconfirm="confirm" bindinput="inputVal" confirmType="done" placeholder="搜索名称型号" placeholderStyle="font-size:26rpx;color:#aed5f7;" value="{{search}}"></input>
+        <image bindtap="clear" class="input_cli" src="../../img/ico_close_1.png" style="width:23rpx;height:23rpx;position:absolute;top:50%;right:16rpx;transform:translateY(-50%);z-index:2;"></image>
+    </view>
+    <view bindtap="add" class="iconcenter">
+        <image bindtap="add" src="../../img/ico_add.png" style="width:40rpx;height:40rpx;"></image>
+    </view>
+</view>
+<view class="left" style="width:100%;box-sizing:border-box;padding:0 24rpx;">
+    <view bindtap="navigation" class="box" data-id="{{item.id}}" style="width:336rpx;margin-top:30rpx;" wx:for="{{data.product}}">
+        <image src="{{item.img}}" style="width:336rpx;height:372rpx;border-radius:10rpx;"></image>
+        <view class="ellipsis" style="width:100%;height:74rpx;line-height:36rpx;font-size:26rpx;color:#333333;margin-top:16rpx;">{{item.title}}</view>
+        <view style="margin-top:10rpx;font-size:26rpx;line-height:1;color:#333333;">{{item.version}}</view>
+        <view class="left" style="margin-top:14rpx;">
+            <view style="margin-right:18rpx;font-size:20rpx;color:#47a6f0;line-height:1;" wx:if="{{item.recommend}}">推荐</view>
+            <view style="margin-right:18rpx;font-size:20rpx;color:#f2d515;line-height:1;" wx:if="{{item.new}}">新品</view>
+            <view style="margin-right:18rpx;font-size:20rpx;color:#3da2ef;line-height:1;" wx:if="{{item.sales}}">促销</view>
+            <view style="margin-right:18rpx;font-size:20rpx;color:#87c442;line-height:1;" wx:if="{{item.shelves}}">上架</view>
+        </view>
+    </view>
+</view>

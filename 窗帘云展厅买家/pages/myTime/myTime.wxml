@@ -1,0 +1,13 @@
+<view class="float box" wx:for="{{data}}">
+    <view class="lefttxt">
+        <view>{{item.type}} (展厅类型-{{item.package_id}})</view>
+        <view>+{{item.addTime}}天</view>
+    </view>
+    <view class="righttxt">
+        <view>{{item.time}}</view>
+        <view wx:if="{{item.money==''?false:true}}">¥{{item.money}}</view>
+    </view>
+</view>
+<view class="upgrade">
+    <view bindtap="upgrade" class="upgrade_btn">升级套餐</view>
+</view>

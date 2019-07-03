@@ -1,0 +1,208 @@
+.item {
+    width: 700rpx;
+    padding: 20rpx 25rpx 20rpx 38rpx;
+}
+
+.list checkbox {
+    width: 38rpx;
+}
+
+.list .img {
+    width: 208rpx;
+    height: 193rpx;
+    margin-right: 17rpx;
+    background: #f4f4f4;
+}
+
+.list .object {
+    width: 420rpx;
+}
+
+.list .object .title {
+    font-size: 28rpx;
+    color: #333;
+    line-height: 40rpx;
+    height: 40rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.list .object .title text {
+    border: 1rpx solid #ccc;
+}
+
+.list .object .text {
+    font-size: 24rpx;
+    color: #666;
+    line-height: 40rpx;
+    padding-bottom: 10rpx;
+}
+
+.list .object .price {
+    color: #e60012;
+    font-size: 24rpx;
+    line-height: 40rpx;
+    margin-top: 10rpx;
+}
+
+.list .object .price text {
+    font-size: 36rpx;
+}
+
+.checkboxes {
+    padding-bottom: 100rpx;
+}
+
+.buttons {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid #f5f5f5;
+    padding: 11rpx 0;
+    width: 100%;
+    background: #fff;
+}
+
+.buttons button {
+    background: #42a4f0;
+    color: #fff;
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 255rpx;
+}
+
+.buttons label {
+    padding-left: 38rpx;
+    width: 150rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    display: block;
+}
+
+.buttons button:after {
+    border: none;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.alert {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    width: 500rpx;
+    padding: 60rpx 40rpx 65rpx;
+    background: #fff;
+    border-radius: 10rpx;
+}
+
+.alert .zth {
+    height: 77rpx;
+    line-height: 77rpx;
+    font-size: 30rpx;
+    width: 385rpx;
+}
+
+.alert .yzm {
+    width: 230rpx;
+    height: 77rpx;
+    line-height: 77rpx;
+    font-size: 30rpx;
+}
+
+.alert .float text {
+    width: 120rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    background: #f4f4f4;
+    font-size: 24rpx;
+    padding: 0 15rpx;
+    display: block;
+    border-radius: 21rpx;
+    margin-top: 18rpx;
+}
+
+.alert .float label {
+    font-size: 30rpx;
+    width: 112rpx;
+    line-height: 77rpx;
+    display: block;
+}
+
+.alert .open {
+    position: absolute;
+    right: 25rpx;
+    top: 25rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.alert .open:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 5rpx;
+    background: #000;
+    transform: rotate(45deg);
+}
+
+.alert .open:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 5rpx;
+    background: #000;
+    transform: rotate(-45deg);
+}
+
+.allC,checkbox {
+    display: none;
+}
+
+.checkbox image,.allCimg {
+    width: 39rpx;
+    height: 39rpx;
+}
+
+.allCimg {
+    vertical-align: top;
+    margin-top: 20rpx;
+}
+
+.getClone {
+    width: 497rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #42a4f0;
+    color: #fff;
+}
+
+.getClone:after {
+    border: none;
+}
+
+.is_clone {
+    display: block;
+    width: 115rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    background: #f4f4f4;
+    color: #000;
+    font-size: 24rpx;
+    border-radius: 20rpx;
+    text-align: center;
+}

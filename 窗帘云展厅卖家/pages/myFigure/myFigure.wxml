@@ -1,0 +1,26 @@
+<view>
+    <scroll-view bindscrolltolower="searchScrollLower" scrollY="true" style="height:100vh">
+        <view class="float tab">
+            <view bindtap="tab" data-auditing="0">
+                <text class="{{auditing==0?'active':' '}}">待审核</text>
+            </view>
+            <view bindtap="tab" data-auditing="1">
+                <text class="{{auditing==1?'active':' '}}">已通过</text>
+            </view>
+            <view bindtap="tab" data-auditing="2">
+                <text class="{{auditing==2?'active':' '}}">已拒绝</text>
+            </view>
+        </view>
+        <view class="list">
+            <view bindtap="navigator" class="float item" data-id="{{item.id}}" wx:for="{{data.figure}}">
+                <image class="img" mode="scaleToFill" src="{{item.img}}"></image>
+                <view class="object">
+                    <view class="title">{{item.title}}</view>
+                    <view class="text">{{item.text}}</view>
+                    <view class="price">¥<text>{{item.price[0]}}</text>.{{item.price[1]}}</view>
+                </view>
+            </view>
+            <view style="font-size:26rpx;text-align:center;height:50rpx;line-height:40rpx;" wx:if="{{loading}}">{{loadingText}}</view>
+        </view>
+    </scroll-view>
+</view>

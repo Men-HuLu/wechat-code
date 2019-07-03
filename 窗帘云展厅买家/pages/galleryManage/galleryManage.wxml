@@ -1,0 +1,50 @@
+<view bindtap="newImg" class="container left">
+    <image src="../../img/ico_img_add.png" style="width:105rpx;height:105rpx;"></image>
+    <view class="" style=" display:flex;align-items:center;color:#333333;font-size:30rpx;margin-left:24rpx;width:548rpx;text-align:left;">新建相册</view>
+    <view class="iconcenter">
+        <image src="../../img/ico_right.png" style="width:16rpx;height:28rpx;"></image>
+    </view>
+</view>
+<view class="item-box">
+    <view class="items">
+        <view class="item" data-id="{{item.id}}" wx:for="{{list}}" wx:key="{{index}}">
+            <view bindtap="navigation" bindtouchend="touchE" bindtouchmove="touchM" bindtouchstart="touchS" class="left inner txt " data-id="{{item.id}}" data-index="{{index}}" style="{{item.txtStyle}}">
+                <view class="iconcenter">
+                    <image class="item-icon" src="{{item.img}}"></image>
+                </view>
+                <text class="name" data-index="{{index}}">{{item.txt}}</text>
+                <text style="color:#999999;font-size:30rpx;margin-right:16rpx;">{{item.number}}</text>
+                <view class="iconcenter">
+                    <image src="../../img/ico_right.png" style="width:16rpx;height:28rpx;"></image>
+                </view>
+            </view>
+            <view bindtap="delItem" class="inner del" data-id="{{item.id}}" data-index="{{index}}">修改</view>
+        </view>
+    </view>
+</view>
+<view class="modal" wx:if="{{visit}}"></view>
+<view class="modalFrame" wx:if="{{visit}}">
+    <view style="text-align:right;">
+        <image bindtap="close" src="../../img/ico_close.png" style="width:30rpx;height:30rpx;"></image>
+    </view>
+    <view class="title">新建相册</view>
+    <form bindsubmit="formSubmit">
+        <input name="name" placeholder="请输入新建相册名" placeholderStyle="font-size:28rpx;color:#666666;line-height:50rpx;" style="width:100%;line-height:50rpx;min-height:50rpx;height:50rpx;font-size:28rpx;margin-top:32rpx;color:#666666;border:1px solid #666666;padding-left:16rpx;"></input>
+        <view class="btn">
+            <button formType="submit" type="default">新建相册</button>
+        </view>
+    </form>
+</view>
+<view class="modal" wx:if="{{changeImgName}}"></view>
+<view class="modalFrame" wx:if="{{changeImgName}}">
+    <view style="text-align:right;">
+        <image bindtap="closeChange" src="../../img/ico_close.png" style="width:30rpx;height:30rpx;"></image>
+    </view>
+    <view class="title">修改相册名</view>
+    <form bindsubmit="changeImgName">
+        <input name="name" placeholder="请输入新的相册名" placeholderStyle="font-size:28rpx;color:#666666;line-height:50rpx;" style="width:100%;line-height:50rpx;min-height:50rpx;height:50rpx;font-size:28rpx;margin-top:32rpx;color:#666666;border:1px solid #666666;padding-left:16rpx;"></input>
+        <view class="btn">
+            <button formType="submit" type="default">修改相册</button>
+        </view>
+    </form>
+</view>

@@ -1,0 +1,55 @@
+.container {
+    width: 100%;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+}
+
+.box {
+    border-bottom: 10rpx solid #f4f4f4;
+}
+
+.box .head {
+    font-size: 30rpx;
+    color: #333333;
+    line-height: 90rpx;
+    font-weight: 600;
+}
+
+.box .txt {
+    height: 90rpx;
+}
+
+.border {
+    border-top: 1px solid #f4f4f4;
+    line-height: 90rpx;
+}
+
+.title {
+    width: 192rpx;
+    font-size: 30rpx;
+    color: #333333;
+}
+
+slider {
+    width: 400rpx;
+}
+
+.btn {
+    width: 606rpx;
+    height: 80rpx;
+    background: #46a6f0;
+    border-radius: 10rpx;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 80rpx;
+    color: #fff;
+}
+
+.button {
+    width: 100%;
+    padding: 30rpx 0;
+    position: fixed;
+    bottom: 20rpx;
+    left: 0;
+    right: 0;
+}

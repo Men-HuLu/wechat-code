@@ -1,0 +1,7 @@
+<view bindtap="bindArticleTap" class="art-lis" data-id="{{item.id}}" wx:for="{{List}}">
+    <view class="art-title">
+        <text class="art-name">{{item.title}}</text>
+        <text class="art-view">{{item.count}} 人浏览</text>
+    </view>
+    <image class="art-image" src="{{RequestUrl+item.pic}}"></image>
+</view>

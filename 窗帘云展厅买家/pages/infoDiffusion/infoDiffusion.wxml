@@ -1,0 +1,29 @@
+<view class="float nav">
+    <view bindtap="tab" class="{{tab==='news'?'active':' '}}" data-tab="news">新品上市</view>
+    <view bindtap="tab" class="{{tab==='actives'?'active':' '}}" data-tab="actives">促销活动</view>
+    <view bindtap="tab" class="{{tab==='notices'?'active':' '}}" data-tab="notices">通知消息</view>
+</view>
+<view class="comments">
+    <scroll-view bindscrolltolower="pullUpLoad" class="content-wrap" scrollY="true" style="height:90vh;">
+        <view bindtap="navigation" class="item" data-id="{{item.id}}" wx:for="{{data.comment}}">
+            <view class="float">
+                <view class="left">
+                    <image class="head" mode="scaleToFill" src="{{item.head}}"></image>
+                    <view>
+                        <view class="name">{{item.name}}</view>
+                        <view class="time">{{item.time}}</view>
+                    </view>
+                </view>
+                <image class="icon_massege {{item.new==true?'active':' '}}" src="../../img/massege.png"></image>
+            </view>
+            <view class="text">{{item.text}}</view>
+            <view class="left imgs">
+                <image mode="scaleToFill" src="{{itemName}}" wx:for="{{item.imgs}}" wx:for-item="itemName"></image>
+            </view>
+        </view>
+        <view class="noData" wx:if="{{hasData}}">暂无数据...</view>
+    </scroll-view>
+</view>
+<view class="bottomBtn">
+    <button bindtap="newNews">新建信息</button>
+</view>

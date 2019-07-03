@@ -1,0 +1,63 @@
+.tab view {
+    text-align: center;
+    width: 250rpx;
+    height: 97rpx;
+    line-height: 97rpx;
+    font-size: 28rpx;
+}
+
+.tab .active {
+    color: #309bee;
+    border-bottom: 4rpx solid #309bee;
+    display: block;
+}
+
+.tab {
+    border-bottom: 1rpx solid #f4f4f4;
+}
+
+.list {
+    margin-top: 15rpx;
+}
+
+.item {
+    width: 700rpx;
+    padding: 20rpx 25rpx;
+    border-bottom: 1rpx solid #f4f4f4;
+}
+
+.list .img {
+    width: 237rpx;
+    height: 193rpx;
+    margin-right: 17rpx;
+    background: #f4f4f4;
+}
+
+.list .object {
+    width: 447rpx;
+}
+
+.list .object .title {
+    font-size: 28rpx;
+    color: #333;
+    line-height: 40rpx;
+    height: 80rpx;
+    overflow: hidden;
+    padding-top: 10rpx;
+}
+
+.list .object .text {
+    font-size: 24rpx;
+    color: #666;
+    line-height: 60rpx;
+}
+
+.list .object .price {
+    color: #e60012;
+    font-size: 24rpx;
+    line-height: 40rpx;
+}
+
+.list .object .price text {
+    font-size: 36rpx;
+}

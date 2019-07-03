@@ -1,0 +1,42 @@
+<nav></nav>
+<view class="personalHead">
+    <image class="userHead" src="{{data.userImg}}"></image>
+    <view class="userTxt">{{data.userName}}</view>
+</view>
+<view class="personalContent">
+    <view class="term left">
+        <navigator class="left" url="../myTime/myTime">
+            <view class="title">店铺有效期</view>
+            <view class="txt">{{data.shopTime}}</view>
+            <view class="iconcenter" style="margin-left:280rpx;">
+                <image src="../../img/ico_right.png" style="width:16rpx;height:28rpx;"></image>
+            </view>
+        </navigator>
+    </view>
+    <view class="common float" style="margin-top:0;">
+        <view class="title">绑定手机</view>
+        <view class="txt">{{data.userPhone}}</view>
+    </view>
+    <view class="common float">
+        <view class="title">展厅号</view>
+        <view class="txt">{{data.shopId}}</view>
+    </view>
+    <view class="common float">
+        <view class="title">图片数量 (最多允许{{data.max_img_num}}张)</view>
+        <view class="txt">{{data.imgNum}}</view>
+    </view>
+    <view class="common float">
+        <view class="title">商品数量 (最多允许{{data.max_goods_num}}个)</view>
+        <view class="txt">{{data.shopNum}}</view>
+    </view>
+    <view class="common float" style="margin-bottom:96rpx;">
+        <view class="title">我的邀请码</view>
+        <view class="left">
+            <view class="txt" style="color:#999999;">{{data.code}}</view>
+            <view class="iconcenter" style="margin-left:14rpx;">
+                <image bindtap="notice" src="../../img/ico_request.png" style="width:28rpx;height:28rpx;"></image>
+            </view>
+        </view>
+    </view>
+    <view bindtap="out" style="width:606rpx;height:80rpx;background:#46a6f0;border-radius:20rpx;text-align:center;line-height:80rpx;color:#fff;font-size:36rpx;margin:0 auto;">退出登录</view>
+</view>

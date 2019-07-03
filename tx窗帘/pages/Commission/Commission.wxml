@@ -1,0 +1,40 @@
+<view class="header">
+    <view class="title">累计获得收益</view>
+    <view class="total">￥
+    <text>{{balance}}</text>
+    </view>
+</view>
+<view class="coupontitle bg-white">
+    <view bindtap="bingTabTap" class="coupontitlel {{CommType==1?'active':''}}" data-type="1">
+        <view>已获得(份)</view>
+        <text>{{hasCommission}}</text>
+    </view>
+    <view bindtap="bingTabTap" class="coupontitlel {{CommType==2?'active':''}}" data-type="2">
+        <view>在路上(份)</view>
+        <text>{{waitCommission}}</text>
+    </view>
+    <view bindtap="bingTabTap" class="coupontitlel {{CommType==3?'active':''}}" data-type="3">
+        <view>没拿到(份)</view>
+        <text>{{noCommission}}</text>
+    </view>
+</view>
+<view class="nrong" hidden="{{CommList.length==0}}">
+    <view class="list" wx:for="{{CommList}}">
+        <view class="lis">
+            <image src="{{RequestUrl+item.img}}"></image>
+            <view class="info">
+                <view class="name">{{item.name}}</view>
+                <view class="price">￥<text>{{item.amount}}</text>
+                </view>
+                <view class="time">
+                    <view class="create">{{item.time}}</view>
+                    <text>佣金：￥{{item.comm}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="order">
+            <text class="num">订单号：{{item.orderno}}</text>
+            <text>{{item.status}}</text>
+        </view>
+    </view>
+</view>

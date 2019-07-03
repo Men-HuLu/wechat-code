@@ -1,0 +1,42 @@
+<view class="header left">
+    <view class="txt">提示:</view>
+    <view class="iconcenter">
+        <image src="../../img/ico_admin_1.png" style="width:23rpx;height:30rpx;"></image>
+    </view>
+    <view class="txt">待审核</view>
+    <view class="iconcenter">
+        <image src="../../img/ico_admin_2.png" style="width:22rpx;height:29rpx;"></image>
+    </view>
+    <view class="txt">允许访问</view>
+    <view class="iconcenter">
+        <image src="../../img/ico_admin_3.png" style="width:23rpx;height:30rpx;"></image>
+    </view>
+    <view class="txt">拒绝访问</view>
+</view>
+<scroll-view bindscrolltolower="pullUpLoad" class="content-wrap" scrollY="true" style="height:88vh;">
+    <view class="content">
+        <view class="box left" wx:for="{{data}}">
+            <image bindtap="admin" class="userHead" data-id="{{item.id}}" src="{{item.userImg}}"></image>
+            <view class="one_line">
+                <view class="h2">{{item.userName}}</view>
+                <view bindtap="call" class="p" data-phone="{{item.userPhone}}">{{item.userPhone}}</view>
+            </view>
+            <view style="text-align:right; width:248rpx;">
+                <view class="time">{{item.time}}</view>
+                <image bindtap="admin" data-id="{{item.id}}" src="../../img/ico_admin_{{item.isAdmin}}.png" style="width:23rpx;height:30rpx;"></image>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="modal" wx:if="{{visit}}"></view>
+<view class="modalFrame" wx:if="{{visit}}">
+    <view style="text-align:right;">
+        <image bindtap="close" src="../../img/ico_close.png" style="width:30rpx;height:30rpx;"></image>
+    </view>
+    <view class="title">提示</view>
+    <view class="txt">是否允许该成员访问本展厅</view>
+    <view class="btn">
+        <view bindtap="isVisit" data-visit="0">拒绝访问</view>
+        <view bindtap="isVisit" data-visit="1">允许访问</view>
+    </view>
+</view>

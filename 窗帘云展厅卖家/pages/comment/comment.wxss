@@ -1,0 +1,30 @@
+.top {
+    height: 100rpx;
+    padding: 10rpx 0;
+}
+
+.head {
+    float: left;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
+
+.name {
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 28rpx;
+    margin-left: 10rpx;
+    float: left;
+}
+
+.text {
+    font-size: 26rpx;
+    margin-bottom: 10rpx;
+}
+
+.imgs image {
+    width: 170rpx;
+    height: 170rpx;
+    margin-right: 10rpx;
+}

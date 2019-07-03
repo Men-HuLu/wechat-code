@@ -1,0 +1,40 @@
+<view class="content">
+    <scroll-view bindscrolltolower="searchScrollLower" scrollY="true" style="height:100vh">
+        <view class="search">
+            <view class="float iconcenter">
+                <image class="icon" src="../../img/search-icon.png"></image>
+                <input bindtap="search" confirmType="done" disabled="true" placeholder="搜索商品" placeholderClass="placeholder"></input>
+                <image class="clear" src="../../img/clear.png"></image>
+            </view>
+        </view>
+        <view class="search2"></view>
+        <view class="wrap" wx:if="{{hasData}}">
+            <view class="before"></view>
+            <view class="pr" wx:for="{{allData.data}}">
+                <view class="time left">
+                    <view class="D"></view> {{item.time}}</view>
+                <view class="commodity" wx:for="{{item.commodity}}">
+                    <image bindtap="navigator" class="img" data-id="{{item.id}}" mode="widthFix" src="{{item.image}}"></image>
+                    <view class="bottom">
+                        <view class="title">{{item.csentence}}</view>
+                        <view class="float">
+                            <view class="iconcenter">
+                                <view class="text">{{item.number}}</view>
+                            </view>
+                            <view class="left">
+                                <image bindtap="Fabulous" class="icon" data-fab="{{item.Fabulous==1?'true':'false'}}" data-id="{{item.id}}" mode="widthFix" src="{{item.Fabulous==1?'../../img/Fabulous2.png':'../../img/Fabulous.png'}}"></image>
+                                <image bindtap="Collection" class="icon" data-col="{{item.Collection==1?'true':'false'}}" data-id="{{item.id}}" mode="widthFix" src="{{item.Collection==1?'../../img/Collection2.png':'../../img/Collection.png'}}"></image>
+                                <image bindtap="navigator2" class="icon" data-id="{{item.id}}" mode="widthFix" src="../../img/massege.png"></image>
+                                <view class="shareBxox">
+                                    <button class="shareButton" data-id="{{item.id}}" data-title="{{item.csentence}}" openType="share"></button>
+                                    <image class="icon" mode="widthFix" src="../../img/share.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view style="font-size:26rpx;text-align:center;height:50rpx;line-height:40rpx;" wx:if="{{loading}}">{{loadingText}}</view>
+        </view>
+    </scroll-view>
+</view>

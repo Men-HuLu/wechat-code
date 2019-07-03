@@ -1,0 +1,16 @@
+<image src="../../img/loginBackground.jpg" style="position: absolute;width:100%;height:100%;"></image>
+<view style="position:absolute;top:50%;left:50%;margin-left:-300rpx;transform:translateY(-80%);">
+    <view class="left inputbox " style="width:606rpx; height:64rpx;border-bottom:1px solid {{id==1?'#46a6f0':'#ccc'}};">
+        <view style="color:#fff;font-size:30rpx;line-height:64rpx;height:100%;">手机号</view>
+        <input bindblur="blur" bindfocus="focus" bindinput="input" confirmType="next" id="1" placeholder="请输入手机号" placeholderStyle="color:white;font-size:30rpx;" style="color:white;height:100%;width:450rpx;font-size:30rpx;margin-left:22rpx;" type="number" value="{{userPhone}}"></input>
+        <view class="iconcenter">
+            <image bindtap="clearPhone" src="../../img/ico_close_1.png" style="width:23rpx;height:23rpx;" wx:if="{{close}}"></image>
+        </view>
+    </view>
+    <view class="inputbox" style="width:606rpx; height:100rpx;border-bottom:1px solid {{id==3?'#46a6f0':'#ccc'}};">
+        <view style="color:#fff;font-size:30rpx;line-height:120rpx;height:100%;">验证码</view>
+        <input bindblur="blur" bindfocus="focus" bindinput="input" id="3" placeholder="请输入验证码" placeholderStyle="line-height:120rpx;color:white;font-size:30rpx;" style="padding-top:10rpx;color:white;height:100%;width:300rpx;font-size:30rpx;margin-left:22rpx;" type="number"></input>
+        <button bindtap="buttonGetPhoneNum" disabled="{{getPhoneDisabled}}" style="width:150rpx;height:42rpx;line-height:42rpx;color:#333333;font-size:24rpx;border-radius:20rpx;margin-top:40rpx;">{{getYzm}}</button>
+    </view>
+    <button bindtap="buttonForm" style="width:100%;background:#46a6f0;color:white;height:80rpx;margin-top:92rpx;line-height:80rpx;">登录或开通</button>
+</view>

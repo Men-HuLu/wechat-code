@@ -1,0 +1,18 @@
+<view class="imgList left">
+    <view bindtap="addImge" class="upload" disabled="{{disabled}}" size="mini" style="display:block;margin:0;padding:0;font-size:0;position:static;width:184rpx;height:184rpx">
+        <image bindtap="checkImg" src="../../img/ico_imgsubmit.png" style="width:100%;height:100%"></image>
+    </view>
+    <view class="imgposition" style="box-sizing:border-box;display:inline-block;margin-right:1px;margin-bottom:1px;width:184rpx;height:184rpx;" wx:for="{{data}}" wx:key="index_{{index}}">
+        <view bindtap="checkbox" class="selectbox" data-id="{{item.id}}" data-url="{{item.img}}">
+            <image src="{{item.checkbox?'../../img/ico_shopcheckbox_active.png':'../../img/ico_shopcheckbox.png'}}" style="width:46rpx;height:46rpx;"></image>
+        </view>
+        <image bindtap="previewImage" data-src="{{item.img}}" src="{{item.img}}" style="width:100%;height:100%"></image>
+    </view>
+</view>
+<view class="foot">
+    <view class="title">已选{{imgCheckList}}张图片</view>
+    <view class="footBtn float">
+        <view bindtap="upload" class="btn">上传</view>
+        <view bindtap="del" class="btn">删除</view>
+    </view>
+</view>

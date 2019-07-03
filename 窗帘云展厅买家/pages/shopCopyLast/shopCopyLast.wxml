@@ -1,0 +1,24 @@
+<nav></nav>
+<view style="width:100%;box-sizing:border-box;padding:0 24rpx;">
+    <view class="float" style="margin-top:28rpx;">
+        <view style="font-size:30rpx;color:#333333;line-height:1;">第三部:商品详情设置</view>
+        <view style="font-size:24rpx;color:#999999;line-height:1;">可为空</view>
+    </view>
+    <view style="position:relative;width:100%;margin-bottom:28rpx;">
+        <textarea bindinput="textareaVal" maxlength="1000" placeholder="请输入商品详情" placeholderStyle="font-size:28rpx;color:#999999;" style="display:block;width:100%;padding-top:56rpx;color:#333333;font-size:28rpx;" value="{{textarea}}"></textarea>
+        <view style="position:absolute;bottom:0;right:0;font-size:24rpx;color:#999999;">{{textareaVal}}/1000</view>
+    </view>
+    <view class="" style="display:flex;flex-wrap:wrap;width:100%;padding-bottom:300rpx">
+        <view class="showImg" style="display:inline-block;margin-right:12rpx;margin-bottom:12rpx;position:relative;width:210rpx;height:210rpx;overflow:hidden" wx:if="{{list.length}}" wx:for="{{list}}" wx:key="index_{{index}}">
+            <image bindtap="previewImage" data-id="{{item.id}}" data-src="{{item}}" src="{{item.path}}" style="width:210rpx;height:210rpx"></image>
+            <text bindtap="drap" class="imgIndex {{colors==index?'colors':''}}" data-id="{{index}}" wx:if="{{drags==false}}">{{index+1}}</text>
+        </view>
+        <view bindlongtap="yunImg" bindtap="addImge" class="upload" disabled="{{disabled}}" size="mini" style="display:block;margin:0;padding:0;font-size:0;position:static;width:210rpx;height:210rpx">
+            <image src="../../img/ico_imgsubmit.png" style="width:210rpx;height:210rpx"></image>
+        </view>
+    </view>
+</view>
+<view>
+    <button bindtap="back" size="default" style="position:fixed;bottom:142rpx;left:24rpx;background:#46a6f0;color:#fff;font-size:36rpx;padding:0;width:332rpx;margin-top:30rpx;margin-bottom:30rpx;" type="default">上一步</button>
+    <button bindtap="post" size="default" style="position:fixed;bottom:142rpx;right:24rpx;background:#46a6f0;color:#fff;font-size:36rpx;padding:0;width:332rpx;margin-top:30rpx;margin-bottom:30rpx;" type="default">保存</button>
+</view>

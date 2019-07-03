@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx;
+    box-sizing: content-box;
+}
+
+.inputbox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.icon {
+    width: 32rpx;
+    height: 32rpx;
+    vertical-align: middle;
+}
+
+.container .head {
+    width: 180rpx;
+    height: 180rpx;
+    margin-top: 40rpx;
+}
+
+.container .name {
+    margin-top: 20rpx;
+    color: skyblue;
+}
+
+#checkbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+#login {
+    display: flex;
+    justify-content: space-between;
+}

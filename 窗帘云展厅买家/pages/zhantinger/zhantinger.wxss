@@ -1,0 +1,161 @@
+.header {
+    width: 100%;
+    background: #3ca1ef;
+    padding-top: 20rpx;
+    padding-bottom: 0rpx;
+}
+
+.header .header_title {
+    width: 624rpx;
+    height: 50rpx;
+    border: 2px solid #5baff2;
+    margin: 0 auto;
+    border-radius: 10rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .header_title .header_title_txt {
+    color: #fff;
+    font-size: 20rpx;
+    line-height: 50rpx;
+}
+
+.header .header_title .header_title_txt:nth-of-type(1) {
+    padding-left: 88rpx;
+}
+
+.header .header_title .header_title_txt:nth-last-of-type(1) {
+    padding-right: 88rpx;
+}
+
+.header .header_function {
+    width: 510rpx;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 23rpx;
+}
+
+.header .header_function .head_function_btn {
+    color: #fff;
+    font-size: 24rpx;
+    height: 40rpx;
+    background: none;
+    border-color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+.prompt {
+    position: relative;
+}
+
+.header .header_function .head_function_btn .prompt .promptIco {
+    width: 21rpx;
+    height: 21rpx;
+    border-radius: 50%;
+    position: absolute;
+    background: red;
+    right: -10rpx;
+    top: -8rpx;
+}
+
+.header .header_function .head_function_btn text {
+    line-height: 40rpx;
+    margin-left: 14rpx;
+}
+
+.erweima {
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 68rpx;
+    padding-bottom: 42rpx;
+    text-align: center;
+}
+
+.erweima image {
+    width: 328rpx;
+    height: 328rpx;
+    background: pink;
+    margin-bottom: 60rpx;
+}
+
+checkbox-group label {
+    display: inline-block;
+    position: relative;
+}
+
+input {
+    display: inline-block;
+    height: 100%;
+    width: 500rpx;
+}
+
+checkbox-group label:nth-last-of-type(1) {
+    margin-right: 0rpx;
+}
+
+.bottom {
+    border-top: 10rpx solid #f4f4f4;
+    margin-top: 38rpx;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 36rpx 24rpx 0;
+}
+
+.bottom .title {
+    font-size: 30rpx;
+    color: #333;
+    line-height: 1;
+}
+
+.bottom .explan {
+    font-size: 30rpx;
+    color: #999;
+    line-height: 1;
+    margin-left: 72rpx;
+}
+
+.wx-switch-input {
+    width: 54rpx!important;
+    height: 36rpx!important;
+    margin-top: -30rpx;
+    margin-left: 22rpx;
+}
+
+.wx-switch-input::before {
+    width: 64rpx!important;
+    height: 36rpx!important;
+}
+
+.wx-switch-input::after {
+    width: 31rpx!important;
+    height: 31rpx!important;
+    margin-left: -14rpx!important;
+    margin-top: 0rpx!important;
+}
+
+.select {
+    text-align: left;
+}
+
+.button {
+    background-color: #3ca1ef!important;
+    color: #fff!important;
+    font-size: 38rpx;
+    padding: 0;
+    width: 668rpx;
+    position: fixed;
+    bottom: 10rpx;
+    left: 50%;
+    margin-left: -334rpx;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}

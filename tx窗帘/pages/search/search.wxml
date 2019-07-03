@@ -1,0 +1,22 @@
+<view class="searchk padding24">
+    <view class="searchl">
+        <view class="iconfont icon__search font40 search_btn"></view>
+        <input bindconfirm="onConfirmSearch" bindinput="onInputKeyword" class="ptb16" confirmType="search" focus="true" placeholder="搜索商品"></input>
+    </view>
+    <view bindtap="gotoHome" class="searchr pt24 pl24">取消</view>
+</view>
+<view class="searls padding24">
+    <view class="searlsl">搜索历史</view>
+</view>
+<view class="searchlslist ml24" hidden="{{KeyWordList==null||KeyWordList.length<=0}}">
+    <button bindtap="onHistoryKeyWordClick" data-keyword="{{item}}" wx:for="{{KeyWordList}}" wx:key="*this">{{item}}</button>
+</view>
+<view class="searls padding24">
+    <view class="searlsl">常用色系</view>
+</view>
+<view class="searchlslist ml24" hidden="{{ColorList==null||ColorList.length<=0}}">
+    <view bindtap="onSearchColorClick" class="coloritem" data-colorid="{{item.id}}" data-colorname="{{item.name}}" wx:for="{{ColorList}}" wx:key="*this">
+        <view class="colorblock" style="background-color:{{item.hex}}"></view>
+        <text>{{item.name}}</text>
+    </view>
+</view>

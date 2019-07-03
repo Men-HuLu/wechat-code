@@ -1,0 +1,144 @@
+.content {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.content .header {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.content .header .title {
+    padding: 0 24rpx;
+    width: 100%;
+    box-sizing: border-box;
+    height: 90rpx;
+    font-size: 30rpx;
+    color: #333333;
+    line-height: 90rpx;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.content .header .box {
+    padding: 28rpx 24rpx;
+    box-sizing: border-box;
+    border-bottom: 10rpx solid #f4f4f4;
+}
+
+.content .header .box .boxleft {
+    width: 280rpx;
+}
+
+checkbox-group label {
+    display: inline-block;
+    position: relative;
+}
+
+checkbox-group label:nth-last-of-type(1) {
+    margin-right: 0rpx;
+}
+
+.content .header .box .boxright {
+    width: 390rpx;
+    padding-top: 44rpx;
+    box-sizing: border-box;
+}
+
+.content .header .box .boxright .boxInput {
+    width: 380rpx;
+    height: 76rpx;
+    border: 1px solid #f4f4f4;
+    padding-left: 22rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.content .header .box .boxright .boxInput view {
+    line-height: 76rpx;
+    height: 100%;
+    font-size: 28rpx;
+    color: #666666;
+}
+
+.content .header .box .boxright .boxInput input {
+    width: 270rpx;
+    height: 100%;
+    line-height: 76rpx;
+    font-size: 28rpx;
+    color: #666666;
+    margin-left: 12rpx;
+}
+
+.content .header .box .boxright button {
+    width: 376rpx;
+    height: 80rpx;
+    background-color: #309bee!important;
+    line-height: 80rpx;
+    color: #fff;
+    font-size: 30rpx;
+    margin-top: 14rpx;
+}
+
+.box {
+    border-bottom: 10rpx solid #f4f4f4;
+}
+
+.box .head {
+    width: 500rpx;
+    font-size: 30rpx;
+    color: #333333;
+    line-height: 90rpx;
+    font-weight: 600;
+}
+
+.box .txt {
+    height: 90rpx;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+}
+
+.border {
+    border-top: 1px solid #f4f4f4;
+    line-height: 90rpx;
+}
+
+.title {
+    width: 192rpx;
+    font-size: 30rpx;
+    color: #333333;
+}
+
+.wx-switch-input {
+    width: 60rpx!important;
+    height: 34rpx!important;
+}
+
+.wx-switch-input::before {
+    width: 60rpx!important;
+    height: 34rpx!important;
+}
+
+.wx-switch-input::after {
+    width: 30rpx!important;
+    height: 30rpx!important;
+}
+
+.btn {
+    width: 606rpx;
+    height: 80rpx;
+    background: #46a6f0;
+    border-radius: 10rpx;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 80rpx;
+    color: #fff;
+}
+
+.button {
+    width: 100%;
+    padding: 30rpx 0;
+}
+
+.left {
+    align-items: center;
+}

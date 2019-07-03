@@ -1,0 +1,72 @@
+.container {
+    width: 100%;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+}
+
+.flybox {
+    position: relative;
+    margin-top: 30rpx;
+    width: 100%;
+    height: 280rpx;
+}
+
+.flybox image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10rpx;
+}
+
+.flybox .flyposition {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 45rpx 48rpx 0;
+    box-sizing: border-box;
+}
+
+.flyTitle {
+    color: #ffffff;
+    font-size: 36rpx;
+    line-height: 1;
+    margin-bottom: 54rpx;
+}
+
+.flyTxt {
+    font-size: 28rpx;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 15rpx;
+}
+
+.flyMoney {
+    font-size: 20rpx;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 54rpx;
+}
+
+.flyMoney text {
+    font-size: 36rpx;
+}
+
+.flyImgNum {
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.backBtn {
+    width: 100%;
+    height: 80rpx;
+    text-align: center;
+    line-height: 80rpx;
+    margin-top: 30rpx;
+    background: #3ca1ef;
+    color: #fff;
+    font-size: 32rpx;
+    border-radius: 20rpx;
+}

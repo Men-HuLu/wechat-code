@@ -1,0 +1,12 @@
+<view class="container">
+    <view class="open">
+        <navigator openType="navigate" url="../openFlyBox/openFly/openFly">
+            <image src="../../img/bgc_open.png" style="width:699rpx;height:335rpx;"></image>
+        </navigator>
+    </view>
+    <view class="join">
+        <navigator openType="navigate" url="../joinFly/joinFly">
+            <image src="../../img/bgc_join.png" style="width:699rpx;height:335rpx;"></image>
+        </navigator>
+    </view>
+</view>

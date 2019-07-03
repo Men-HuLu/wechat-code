@@ -1,0 +1,112 @@
+.title {
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: #333333;
+    width: 100%;
+    margin-bottom: 14rpx;
+}
+
+.shopId {
+    padding: 6rpx 20rpx;
+    border-radius: 20rpx;
+    background: #f4f4f4;
+    font-size: 24rpx;
+    line-height: 40rpx;
+    text-align: center;
+    color: #333333;
+    margin-right: 20rpx;
+}
+
+.stock {
+    padding: 6rpx 20rpx;
+    border-radius: 20rpx;
+    background: #f4f4f4;
+    font-size: 24rpx;
+    line-height: 40rpx;
+    text-align: center;
+    color: #333333;
+}
+
+.money {
+    color: #e60012;
+    font-size: 36rpx;
+    margin-top: 12rpx;
+}
+
+.common_key {
+    line-height: 44rpx;
+    color: #666666;
+    font-size: 26rpx;
+    margin-right: 12rpx;
+    padding: 20rpx 24rpx;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.common_val {
+    height: 100%;
+    line-height: 44rpx;
+    color: #333333;
+    font-size: 26rpx;
+}
+
+.shopdetails_title {
+    position: relative;
+    height: 30rpx;
+    width: 701rpx;
+}
+
+.shopdetails_title text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28rpx;
+    color: #333333;
+    line-height: 1;
+}
+
+.shopdetails_txt {
+    width: 100%;
+    display: block;
+    margin-top: 20rpx;
+    font-size: 26rpx;
+    line-height: 36rpx;
+    color: #666666;
+    margin-bottom: 18rpx;
+}
+
+.shareimg {
+    width: 38rpx;
+    height: 38rpx;
+}
+
+.shopTitle {
+    font-size: 24rpx;
+    line-height: 40rpx;
+    color: #666;
+    margin-top: 10rpx;
+}
+
+.bottomButton {
+    padding: 30rpx 25rpx;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 700rpx;
+}
+
+.bottomButton button {
+    width: 160rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 36rpx;
+    color: #fff;
+    background: #309bee;
+    border-radius: 10rpx;
+}
+
+.bottomButton2 {
+    height: 140rpx;
+    width: 750rpx;
+}

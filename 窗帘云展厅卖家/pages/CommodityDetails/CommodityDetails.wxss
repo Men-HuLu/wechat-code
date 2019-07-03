@@ -1,0 +1,124 @@
+@import "../temp/shopdetail.wxss";
+
+.tabbox {
+    height: 100rpx;
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+.tab {
+    width: 50%;
+    text-align: center;
+    height: 100%;
+    line-height: 100rpx;
+    color: #333333;
+    font-size: 28rpx;
+}
+
+.tab_active {
+    color: #46a6f0;
+    border-bottom: 2px solid #46a6f0;
+}
+
+.foot_center {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.foot_center view {
+    font-size: 20rpx;
+    color: #333333;
+}
+
+.comment {
+    padding: 0 24rpx;
+    padding-bottom: 124rpx;
+}
+
+.comment_box {
+    border-top: 1px solid #f4f4f4;
+    padding: 30rpx 0;
+}
+
+.comment_user {
+    font-size: 26rpx;
+    color: #333333;
+}
+
+.comment_user image {
+    border-radius: 50%;
+    width: 76rpx;
+    height: 76rpx;
+    background: pink;
+    margin-right: 16rpx;
+}
+
+.comment_time {
+    font-size: 24rpx;
+    color: #999999;
+}
+
+.comment_txt {
+    display: block;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: #333333;
+    margin-top: 16rpx;
+}
+
+.comment_img image {
+    margin-top: 14rpx;
+    width: 224rpx;
+    height: 224rpx;
+    margin-right: 10rpx;
+}
+
+.comment_img image:nth-of-type(3n) {
+    margin-right: 0;
+}
+
+.comment_foot {
+    padding: 22rpx 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    width: 100%;
+}
+
+.comment_foot button {
+    width: 606rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 36rpx;
+    color: #fff;
+    background: #46a6f0;
+    border-radius: 10rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addButton {
+    position: fixed;
+    right: 20rpx;
+    bottom: 100rpx;
+    width: 80rpx;
+    height: 80rpx;
+    padding: 10rpx;
+    border-radius: 50%;
+    font-size: 34rpx;
+    line-height: 40rpx;
+    text-align: center;
+    color: #fff;
+    background: #46a6f0;
+    border: 5rpx solid #fff;
+    box-shadow: 0 0 5rpx #46a6f0;
+    z-index: 999;
+}
+
+.detailImgs {
+    vertical-align: inherit;
+}

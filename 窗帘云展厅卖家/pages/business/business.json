@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "商家",
+    "usingComponents": {
+        "nav": "../../components/nav/nav"
+    }
+}

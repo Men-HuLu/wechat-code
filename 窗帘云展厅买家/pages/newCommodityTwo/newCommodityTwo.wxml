@@ -1,0 +1,29 @@
+<view style="height:88rpx;width:100%;box-sizing:border-box;padding:0 24rpx;border-bottom:1px solid #f4f4f4;">
+    <view style="line-height:88rpx;color:#333333;font-size:30rpx;">第二步 : 属性设置</view>
+</view>
+<view style="padding-bottom:260rpx;">
+    <form bindsubmit="formSubmit">
+        <view class="checkboxes form" wx:for="{{data.data}}">
+            <view class="float title">
+                <view class="name">{{item.name}}</view>
+                <view bindtap="select" class="more left" data-index="{{index}}">
+                    <view class="label" wx:for="{{item.label}}">{{item}}</view>{{item.select==true?'收起':'展开'}}<view class="iconcenter">
+                        <image class="{{item.select==true?'rotate':' '}}" src="../../img/ico_right.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="{{item.select==true?' ':'selectNo'}}">
+                <checkbox-group bindchange="change" class="left" data-index="{{index}}" name="{{item.checkbox}}">
+                    <label class="checkbox" style="background:{{item.select==true?'#46a6f0;color:#fff':'#f4f4f4'}}" wx:for="{{item.arr}}">
+                        <checkbox checked="{{item.select}}" data-id="{{item.id}}" data-select="{{item.select}}" value="{{item.name}}"></checkbox>{{item.name}}
+          </label>
+                </checkbox-group>
+            </view>
+        </view>
+        <view class="float button">
+            <button bindtap="lastbtn">上一步</button>
+            <button formType="submit">下一步</button>
+        </view>
+    </form>
+</view>
+<nav></nav>

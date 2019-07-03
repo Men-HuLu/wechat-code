@@ -1,0 +1,3 @@
+<view class="iconcenter" style="height:100vh">
+    <image bindlongtap="scan" mode="widthFix" src="{{data.img}}" style="width:100%"></image>
+</view>

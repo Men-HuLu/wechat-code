@@ -1,0 +1,36 @@
+<nav></nav>
+<button bindgetuserinfo="UserInfoMask" openType="getUserInfo" style="position:fixed;left:0;top:0;z-index:9999999;width:100%;height:100%;opacity:0;display:{{has_info==false?'block':'none'}}"></button>
+<button bindgetphonenumber="PhoneNumberMask" openType="getPhoneNumber" style="position:fixed;left:0;top:0;z-index:9999998;width:100%;height:100%;opacity:0;display:{{has_phone==false?'block':'none'}}"></button>
+<scroll-view bindscrolltolower="searchScrollLower" scrollY="true" style="height:100vh">
+    <view class="search">
+        <view class="float iconcenter">
+            <image class="icon" src="../../img/search-icon.png"></image>
+            <input bindblur="submit" bindconfirm="submit" confirmType="done" placeholder="搜索商家名称" placeholderClass="placeholder" value="{{search}}"></input>
+            <image bindtap="clear" class="clear" src="../../img/clear.png"></image>
+        </view>
+    </view>
+    <view class="search2"></view>
+    <view style="padding-bottom:100rpx;">
+        <view class="item" wx:for="{{data.business}}">
+            <button bindgetuserinfo="navigator" class="float infor buttonNone" data-id="{{item.id}}" openType="getUserInfo">
+                <image class="dataImg" mode="aspectFill" src="{{item.logo}}"></image>
+                <view class="right">
+                    <view class="tableCell">
+                        <view class="title line2">{{item.title}}</view>
+                        <view class="bus">{{item.bus}}</view>
+                    </view>
+                </view>
+            </button>
+            <view class="float user">
+                <view bindtap="follow" class="iconcenter" data-follow="{{item.follow}}" data-id="{{item.id}}">
+                    <image class="Follow" mode="widthFix" src="../../img/Follow.png"></image>{{item.follow==true?'已关注':'关注'}}</view>
+                <view bindtap="top" class="iconcenter" data-id="{{item.id}}" data-top="{{item.top}}">
+                    <image class="top" mode="widthFix" src="../../img/top.png"></image>{{item.top==true?'已置顶':'置顶'}}</view>
+                <view class="pr iconcenter">
+                    <image class="phone" mode="widthFix" src="../../img/phone_icon.png"></image>电话<button bindtap="callPhone" class="phoneButton" data-num="{{item.phone}}"></button>
+                </view>
+            </view>
+        </view>
+        <view style="font-size:26rpx;text-align:center;height:50rpx;line-height:40rpx;" wx:if="{{loading}}">{{loadingText}}</view>
+    </view>
+</scroll-view>

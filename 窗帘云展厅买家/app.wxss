@@ -1,0 +1,57 @@
+.iconcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.float {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.content {
+    padding-bottom: 100rpx;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button::after {
+    border: none;
+}
+
+.flexall {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.one_line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+pages {
+    overflow-x: hidden;
+}
+
+.wxParse-img {
+    width: 100%!important;
+}

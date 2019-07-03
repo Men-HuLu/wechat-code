@@ -1,0 +1,5 @@
+<view class="float">
+    <view bindtap="navigation" class="navigation" style="margin-bottom:0">重新试装</view>
+    <button bindtap="downLoad">下载</button>
+</view>
+<image mode="widthFix" src="{{img}}"></image>

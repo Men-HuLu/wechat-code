@@ -1,0 +1,43 @@
+<view class="float">
+    <view bindtap="tabNav" class="tab {{activeInde==1?'tab_active':''}}" data-tabnum="1">
+        <text>待审核授权</text>
+    </view>
+    <view bindtap="tabNav" class="tab {{activeInde==2?'tab_active':''}}" data-tabnum="2">
+        <text>允许访问授权</text>
+    </view>
+    <view bindtap="tabNav" class="tab {{activeInde==3?'tab_active':''}}" data-tabnum="3">
+        <text>拒绝访问列表</text>
+    </view>
+</view>
+<view class="visitorList" id="visitorList">
+    <scroll-view bindscrolltolower="pullUpLoad" class="content-wrap" scrollY="true" style="height:92vh;">
+        <view class="visitorListBox float" wx:for="{{data}}">
+            <view bindtap="showModal" class="left" data-id="{{item.id}}">
+                <image src="{{item.userImg}}" style="width:106rpx;height:106rpx;border-radius:50%;background:pink;"></image>
+                <view style="padding-top:16rpx;margin-left:14rpx;">
+                    <text class="visitorListUserName one_line">{{item.userName}}</text>
+                    <text class="visitorListUserNum">客户号:{{item.userId}}</text>
+                </view>
+            </view>
+            <view style="padding-top:16rpx;">
+                <text class="visitorListTime">{{item.time}}</text>
+                <view style="display: flex;justify-content: flex-end;margin-top:18rpx;">
+                    <image bindtap="callPhone" data-phone="{{item.userPhone}}" src="../../img/ico_call.png" style="width:26rpx;height:26rpx;"></image>
+                </view>
+            </view>
+        </view>
+        <view class="noData" wx:if="{{hasData}}">暂无更多数据...</view>
+    </scroll-view>
+</view>
+<view class="modal" wx:if="{{visit}}"></view>
+<view class="modalFrame" wx:if="{{visit}}">
+    <view style="text-align:right;">
+        <image bindtap="close" src="../../img/ico_close.png" style="width:30rpx;height:30rpx;"></image>
+    </view>
+    <view class="title">提示</view>
+    <view class="txt">是否允许该成员访问本展厅</view>
+    <view class="btn">
+        <view bindtap="isVisit" data-visit="0">拒绝访问</view>
+        <view bindtap="isVisit" data-visit="1">允许访问</view>
+    </view>
+</view>

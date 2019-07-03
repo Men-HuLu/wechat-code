@@ -1,0 +1,129 @@
+.search {
+    background: #46a6f0;
+    padding: 10rpx 40rpx 30rpx;
+    width: 670rpx;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+
+.search2 {
+    height: 110rpx;
+    width: 100%;
+}
+
+.search image {
+    width: 23rpx;
+    height: 23rpx;
+}
+
+.search .icon {
+    width: 29rpx;
+    height: 28rpx;
+    margin-left: 20rpx;
+}
+
+.search .clear {
+    margin-right: 20rpx;
+}
+
+.search input {
+    width: 550rpx;
+    color: #fff;
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+.search .float {
+    background: rgba(255,255,255,0.2);
+    border-radius: 5rpx;
+    height: 70rpx;
+    font-size: 26rpx;
+}
+
+.placeholder {
+    color: rgba(255,255,255,0.8);
+}
+
+.form {
+    width: 700rpx;
+    padding: 0 25rpx;
+    display: block;
+}
+
+.more image {
+    width: 16rpx;
+    height: 28rpx;
+    margin-left: 20rpx;
+}
+
+.name {
+    font-size: 30rpx;
+}
+
+.more {
+    font-size: 28rpx;
+    color: #666;
+}
+
+.more .label {
+    font-size: 26rpx;
+    color: #e60012;
+    margin-right: 20rpx;
+}
+
+.checkbox {
+    font-size: 24rpx;
+    color: #333;
+    width: 160rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    margin-right: 20rpx;
+    border-radius: 21rpx;
+    text-align: center;
+    margin-bottom: 20rpx;
+    background: #f4f4f4;
+}
+
+.checkbox:nth-child(4n) {
+    margin-right: 0;
+}
+
+.checkbox checkbox {
+    display: none;
+}
+
+.title {
+    padding: 30rpx 0;
+}
+
+button {
+    width: 330rpx;
+    height: 80rpx;
+    background: #309bee;
+    color: #fff;
+    font-size: 36rpx;
+    line-height: 80rpx;
+}
+
+.button {
+    padding: 30rpx 0;
+}
+
+.checkboxes {
+    border-top: 10rpx solid #f4f4f4;
+}
+
+.checkboxes:nth-child(1) {
+    border-top: 0;
+}
+
+.selectNo {
+    height: 62rpx;
+    overflow: hidden;
+}
+
+.rotate {
+    transform: rotate(90deg);
+}

@@ -1,0 +1,44 @@
+<nav></nav>
+<view class="header">
+    <view class="header_title">
+        <text class="hall_num header_title_txt">展厅号:{{data.shopId}}</text>
+        <text class="authorize_time header_title_txt">授权至:{{data.time}}</text>
+    </view>
+    <view class="header_function ">
+        <button bindtap="shareIndex" class="head_function_btn left" data-share="share" openType="share">
+            <view class="iconcenter">
+                <image src="../../img/ico_share.png" style="width:35rpx;height:35rpx;"></image>
+            </view>
+            <text>分享</text>
+        </button>
+        <view class="head_function_btn left">
+            <view class="iconcenter prompt">
+                <view class="promptIco" wx:if="{{data.message}}"></view>
+                <image src="../../img/ico_message.png" style="width:38rpx;height:32rpx;"></image>
+            </view>
+            <text>消息</text>
+        </view>
+        <view bindtap="out" class="head_function_btn left">
+            <view class="iconcenter">
+                <image src="../../img/ico_out.png" style="width:35rpx;height:37rpx;"></image>
+            </view>
+            <text>退出</text>
+        </view>
+    </view>
+</view>
+<view class="container">
+    <navigator url="../jiamier/jiamier">
+        <view class="erweima" style="background: #c3e1a1;">
+            <image src="../../img/erweima_1.png"></image>
+            <view class="title">展厅信息加密二维码</view>
+            <view class="txt">打印后张贴到样本</view>
+        </view>
+    </navigator>
+    <navigator url="../shoperwei/shoperwei">
+        <view class="erweima" style="background: #f8ea89;">
+            <image src="../../img/erweima_1.png"></image>
+            <view class="title">商品信息二维码</view>
+            <view class="txt">打印后张贴到样本</view>
+        </view>
+    </navigator>
+</view>

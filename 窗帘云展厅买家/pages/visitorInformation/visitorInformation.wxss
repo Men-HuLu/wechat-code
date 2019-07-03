@@ -1,0 +1,172 @@
+.tab {
+    width: 50%;
+    text-align: center;
+    padding: 20rpx 0;
+}
+
+.tab_active {
+    border-bottom: 4rpx solid #3fa2ef;
+}
+
+.tab text {
+    line-height: 1;
+    font-size: 28rpx;
+    color: #333333;
+}
+
+.tab_active text {
+    color: #3fa2ef!important;
+}
+
+.visitorContent {
+    width: 100%;
+    padding: 0 24rpx;
+    box-sizing: border-box;
+}
+
+.visitorContent .title {
+    font-size: 30rpx;
+    color: #333333;
+    width: 140rpx;
+    line-height: 40rpx;
+}
+
+.visitorContent .userContent {
+    width: 342rpx;
+    text-align: left;
+    font-size: 30rpx;
+    color: #333333;
+    margin-left: 50rpx;
+    line-height: 40rpx;
+}
+
+.visitorContent .noneBtn {
+    width: 148rpx;
+    height: 40rpx;
+    background: #45a5f0;
+    color: #fff;
+    line-height: 40rpx;
+    text-align: center;
+    border-radius: 8rpx;
+    font-size: 30rpx;
+}
+
+input {
+    width: 490rpx;
+    height: 40rpx;
+    display: block;
+    line-height: 40rpx;
+    min-height: 40rpx;
+    min-width: 490rpx;
+    margin-left: 50rpx;
+    color: #333333;
+    font-size: 30rpx;
+}
+
+.visitorContent .phone {
+    width: 260rpx;
+    text-align: left;
+    font-size: 30rpx;
+    color: #333333;
+    margin-left: 50rpx;
+    line-height: 40rpx;
+}
+
+.phoneCall {
+    font-size: 30rpx;
+    color: #333333;
+}
+
+.phoneCall view:nth-last-of-type(1) {
+    margin-left: 10rpx;
+}
+
+radio-group label {
+    display: inline-block;
+    position: relative;
+    margin-right: 30rpx;
+}
+
+radio-group label:nth-last-of-type(1) {
+    margin-right: 0rpx;
+}
+
+.record view {
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: #666666;
+}
+
+.record view:nth-of-type(1) {
+}
+
+.apply {
+    width: 170rpx;
+    font-size: 28rpx;
+    color: #666666;
+    line-height: 40rpx;
+}
+
+.hide {
+    display: none;
+}
+
+.tabbox {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 96rpx;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.tab {
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    color: #333333;
+    font-size: 28rpx;
+}
+
+.tabTxt {
+    display: inline-block;
+}
+
+.tabTitle {
+    height: 96rpx;
+    line-height: 96rpx;
+    z-index: 2;
+}
+
+.tabTitle view {
+    text-align: center;
+    width: 150rpx;
+    color: #333333;
+    font-size: 28rpx;
+}
+
+.tab_title_active {
+    color: #46a6f0!important;
+}
+
+.allTime {
+    padding: 0 24rpx;
+    box-sizing: border-box;
+    height: 86rpx;
+    line-height: 86rpx;
+}
+
+.allTime view:nth-of-type(1) {
+    font-size: 28rpx;
+    color: #333333;
+}
+
+.picker {
+    font-size: 28rpx;
+    color: #999999!important;
+}
+
+.statis_ico:nth-last-of-type(1) {
+    margin-right: 0;
+}

@@ -1,0 +1,58 @@
+<view class="search">
+    <view class="float iconcenter">
+        <image class="icon" src="../../img/search-icon.png"></image>
+        <input bindtap="navigationSearch" disabled="true" placeholder="搜索商品名称型号" placeholderClass="placeholder" value="{{input}}"></input>
+        <image bindtap="clear" class="clear" src="../../img/clear.png"></image>
+    </view>
+</view>
+<view class="search2" id="height1"></view>
+<view class="bannar">
+    <image id="height2" mode="scaleToFill" src="../../img/113.jpg"></image>
+</view>
+<view class="toptext float">
+    <view class="infor">
+        <view class="title">{{data.top.title}}</view>
+        <view class="text line2">{{data.top.text}}</view>
+        <view class="position">{{data.top.position}}</view>
+    </view>
+    <view class="callphone pr">
+        <image class="icon" mode="widthFix" src="../../img/callphone.png"></image>
+        <view>拨打电话</view>
+        <button bindtap="callPhone" data-phone="{{data.top.phone}}"></button>
+    </view>
+</view>
+<view class="shopTopNav" id="height3">
+    <view bindtap="tabNavigator" class="{{nav==item.id?'active':' '}}" data-type="{{item.id}}" wx:for="{{data.tab}}">{{item.number}}<text>{{item.name}}</text>
+    </view>
+</view>
+<view>
+    <view class="float content" style="display: flex;justify-content: flex-end;">
+        <view class="leftNav">
+            <view bindtap="leftNavigator" class="{{item.select==true?'active':' '}} ellipsis" data-left="{{item.id}}" wx:for="{{data.left.classification}}">{{item.name}}</view>
+        </view>
+        <scroll-view bindscrolltolower="searchScrollLower" class="rightDeatil" scrollY="true" style="height:{{scrollHeight}}px">
+            <view style="position:relative" wx:for="{{data.product}}">
+                <view bindtap="navigator" class="box" data-id="{{item.id}}">
+                    <image mode="scaleToFill" src="{{item.img}}"></image>
+                    <view class="right">
+                        <view class="name llipsis">{{item.name}}</view>
+                        <view class="text">{{item.version}}</view>
+                        <view class="price float">
+                            <view>￥{{item.price[0]}}.{{item.price[1]}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="photoChange" class="addShareImg tackphoto" data-id="{{item.id}}">
+                    <image class="scale" mode="widthFix" src="/img/tackphoto.png"></image>
+                    <text>试装</text>
+                </view>
+                <button class="addShareImg" data-id="{{item.id}}" openType="share">
+                    <image mode="widthFix" src="/img/share.png"></image>
+                    <text>分享</text>
+                </button>
+            </view>
+            <view style="font-size:26rpx;text-align:center;height:50rpx;line-height:40rpx;" wx:if="{{loading}}">{{loadingText}}</view>
+        </scroll-view>
+    </view>
+</view>
+<nav></nav>

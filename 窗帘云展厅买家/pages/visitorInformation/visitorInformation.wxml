@@ -1,0 +1,103 @@
+<view class="float">
+    <view bindtap="tabNav" class="tab {{activeInde==1?'tab_active':''}}" data-nav="1">
+        <text>基本信息</text>
+    </view>
+    <view bindtap="tabNav" class="tab {{activeInde==2?'tab_active':''}}" data-nav="2">
+        <text>商品访问信息</text>
+    </view>
+</view>
+<view class="{{activeInde==1?'':'hide'}} visitorContent">
+    <view class="" style="padding:36rpx 0;display: flex;flex-wrap: wrap;">
+        <view class="title">微信信息</view>
+        <view class="userContent one_line">{{data.wxName}}</view>
+        <view bindtap="isRefuse" class="noneBtn">{{isRefuse?'允许访问':'拒绝访问'}}</view>
+    </view>
+    <view class="" style="padding:36rpx 0;display: flex;flex-wrap: wrap;">
+        <view class="title">访客号</view>
+        <view class="userContent one_line">{{data.userNum}}</view>
+    </view>
+    <view class="" style="padding:36rpx 0;display: flex;flex-wrap: wrap;">
+        <view class="title">访客名称</view>
+        <input bindblur="userName" placeholder="访客名称" placeholderStyle="font-size:30rpx;color:#999999;line-height:40rpx;" value="{{data.userName}}"></input>
+    </view>
+    <view class="" style="padding:36rpx 0;display: flex;flex-wrap: wrap;">
+        <view class="title">手机号码</view>
+        <view class="phone">{{data.userCall}}</view>
+        <view class="phoneCall left">
+            <view class="iconcenter">
+                <image src="../../img/ico_copy.png" style="width:25rpx;height:28rpx;"></image>
+            </view>
+            <view bindtap="copy">复制</view>
+        </view>
+        <view class="phoneCall left" style="margin-left:34rpx;">
+            <view class="iconcenter">
+                <image src="../../img/ico_call.png" style="width:26rpx;height:26rpx;"></image>
+            </view>
+            <view bindtap="callPhone" data-phone="{{data.userCall}}">电话</view>
+        </view>
+    </view>
+    <view class="" style="padding:36rpx 0;display: flex;flex-wrap: wrap;">
+        <view class="title">联系地址</view>
+        <input bindblur="userLocation" placeholder="" placeholderStyle="font-size:30rpx;color:#999999;line-height:40rpx;" value="{{data.userLocation}}"></input>
+    </view>
+    <view class="" style="padding:36rpx 0;display: flex;flex-wrap: wrap;">
+        <view class="title">备注信息</view>
+        <input bindblur="remark" placeholder="" placeholderStyle="font-size:30rpx;color:#999999;line-height:40rpx;" value="{{data.remark}}"></input>
+    </view>
+    <view class="" style="padding:36rpx 0;display: flex;flex-wrap: wrap;">
+        <view class="title" style="line-height:60rpx;">访客登记</view>
+        <radio-group bindchange="radioChangeCustomer" style="display:inline-block;margin-left:56rpx;">
+            <label class="checkbox" wx:for="{{radioCustomer}}">
+                <image src="{{item.checked==true?'../../img/ico_checkbox_active.png':'../../img/ico_checkbox.png'}}" style="width:30rpx;height:30rpx;position:absolute;left:0;top:50%;margin-top:-15rpx;"></image>
+                <radio checked="{{item.checked}}" style="display:inline-block;visibility:hidden;width:30rpx;" value="{{item.name}}"></radio>
+                <view style="display:inline-block;margin-left:14rpx;font-size:30rpx;color:#333333;">{{item.value}}</view>
+            </label>
+        </radio-group>
+    </view>
+    <view class="left" style="padding:36rpx 0;">
+        <view class="title">访问记录</view>
+        <view style="margin-left:50rpx;">
+            <view class="record float" wx:for="{{data.record}}">
+                <view class="one_line">{{item.recordLocation}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="float" style="padding:8rpx 0;">
+        <view class="title" style="color:#666666;">申请访问</view>
+        <view style="font-size: 28rpx;line-height:40rpx;color: #666666;">{{data.apply}}</view>
+    </view>
+    <view class="float" style="padding:8rpx 0;">
+        <view class="left">
+            <view class="apply">通过访问申请</view>
+            <view style="font-size:28rpx;line-height:40rpx;color:#666666;margin-left:16rpx;">{{data.adopt.name}}</view>
+        </view>
+        <view style="font-size: 28rpx;line-height:40rpx;color: #666666;">{{data.adopt.time}}</view>
+    </view>
+    <view class="float" style="padding:8rpx 0;">
+        <view class="left">
+            <view class="apply">拒绝访问</view>
+            <view style="font-size:28rpx;line-height:40rpx;color:#666666;margin-left:16rpx;">{{data.refuse.name}}</view>
+        </view>
+        <view style="font-size: 28rpx;line-height:40rpx;color: #666666;">{{data.refuse.time}}</view>
+    </view>
+    <button bindtap="save" size="default" style="background:#46a6f0;color:#fff;font-size:36rpx;padding:0;width:606rpx;margin-top:30rpx;margin-bottom:30rpx;" type="default">保存</button>
+</view>
+<view class="{{activeInde==2?'':'hide'}}">
+    <view class="left tabTitle" style="margin-bottom:35rpx;">
+        <view bindtap="tabTitle" class="{{tabCli=='browse'?'tab_title_active':''}}" data-tab="browse">访问足迹</view>
+        <view bindtap="tabTitle" class="{{tabCli=='thumbs'?'tab_title_active':''}}" data-tab="thumbs">点赞商品</view>
+        <view bindtap="tabTitle" class="{{tabCli=='collection'?'tab_title_active':''}}" data-tab="collection">收藏商品</view>
+        <view bindtap="tabTitle" class="{{tabCli=='share'?'tab_title_active':''}}" data-tab="share">分享排行</view>
+        <view bindtap="tabTitle" class="{{tabCli=='figure'?'tab_title_active':''}}" data-tab="figure">图评商品</view>
+    </view>
+    <view class="float" style="padding:0 24rpx;margin-bottom:28rpx;" wx:for="{{tabSwitch}}">
+        <image src="{{item.shopImg[0]}}" style="width:172rpx;height:172rpx;border-radius:10rpx;"></image>
+        <view>
+            <view class="title ellipsis" style="width:520rpx;font-size:26rpx;line-height:36rpx;">{{item.title}}</view>
+            <view class="number" style="font-size:28rpx;color:#333333;line-height:1;margin-top:18rpx;">{{item.shopId}}</view>
+            <view class="left" style="font-size:24rpx;color:#999999;line-height:1;margin-top:16rpx;">
+      {{item.time}}
+    </view>
+        </view>
+    </view>
+</view>

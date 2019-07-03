@@ -1,0 +1,51 @@
+<view>
+    <view class="list">
+        <scroll-view bindscrolltolower="searchScrollLower" scrollY="true" style="height:100vh;">
+            <checkbox-group bindchange="checkboxChange" class="checkboxes">
+                <view class="float item" style="display:{{item.display}}" wx:for="{{data.collection}}">
+                    <view class="iconcenter checkbox">
+                        <label bindtap="itemChange" data-index="{{index}}">
+                            <checkbox checked="{{item.checked}}" color="#42a4f0" value="{{item.id}}"></checkbox>
+                            <image mode="widthFix" src="{{item.checked==true?'/img/checkboxed.png':'/img/checkbox.png'}}"></image>
+                        </label>
+                    </view>
+                    <image bindtap="navigator" class="img" data-id="{{item.id}}" mode="scaleToFill" src="{{item.img}}"></image>
+                    <view bindtap="navigator" class="object" data-id="{{item.id}}">
+                        <view class="title">{{item.text}}</view>
+                        <view class="text">{{item.title}}</view>
+                        <text class="is_clone" wx:if="{{item.is_clone==1}}">已克隆</text>
+                        <view class="price">¥<text>{{item.price[0]}}</text>.{{item.price[1]}}</view>
+                    </view>
+                </view>
+            </checkbox-group>
+        </scroll-view>
+    </view>
+    <view class="buttons left">
+        <checkbox-group bindchange="all">
+            <label>
+                <image class="allCimg" mode="widthFix" src="{{allC==true?'/img/checkboxed.png':'/img/checkbox.png'}}" wx:if="{allC == true}}"></image>
+                <checkbox checked="{{allC}}" class="allC" color="#42a4f0"></checkbox>
+        全选
+      </label>
+        </checkbox-group>
+        <button bindtap="hide">克隆</button>
+        <button bindtap="noclone">{{noclone==true?'隐藏':'显示'}}已克隆</button>
+    </view>
+    <view class="mask" wx:if="{{hide==false}}">
+        <view class="alert">
+            <view bindtap="open" class="open"></view>
+            <view class="float" style="margin-bottom:26rpx;margin-top:15rpx;border-bottom:1rpx solid #f4f4f4">
+                <label>展厅号</label>
+                <input bindinput="input" class="zth" placeholder="请输入展厅号" placeholderStyle="color:#999" value="{{hall_num}}"></input>
+            </view>
+            <view class="float" style="border-bottom:1rpx solid #f4f4f4">
+                <label>验证码</label>
+                <input bindinput="yzm" class="yzm" placeholder="请输入验证码" placeholderStyle="color:#999"></input>
+                <text bindtap="getYZM" style="text-align:center" wx:if="{{GET==false}}">{{time}}秒</text>
+                <text bindtap="getYZM" wx:else>获取验证码</text>
+            </view>
+            <view style="font-size:20rpx;color:#999;line-height:34rpx;margin-bottom:30rpx;">提示：验证码发送为开通卖家版的手机号，协管员暂不允许克隆</view>
+            <button bindtap="getClone" class="getClone">确定克隆</button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,113 @@
+.top {
+    border-bottom: 10rpx solid #f4f4f4;
+}
+
+.top image {
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 20rpx;
+    border-radius: 5rpx;
+}
+
+.infor {
+    width: 360rpx;
+    font-size: 30rpx;
+}
+
+.infor view {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.infor .type {
+    font-size: 26rpx;
+    color: #666;
+    margin-top: 5rpx;
+}
+
+.right {
+    width: 580rpx;
+}
+
+.more {
+    color: #e60012;
+}
+
+.more .price {
+    margin-right: 20rpx;
+}
+
+.small {
+    font-size: 26rpx;
+}
+
+.more image {
+    width: 16rpx;
+    height: 28rpx;
+    margin-top: 10rpx;
+}
+
+.form {
+    display: block;
+    width: 700rpx;
+    padding-bottom: 20rpx;
+    border-bottom: 1rpx solid #f4f4f4;
+}
+
+.form textarea {
+    height: 180rpx;
+    width: 100%;
+    font-size: 28rpx;
+}
+
+.textarea {
+    text-align: right;
+    font-size: 24rpx;
+    color: #999;
+    line-height: 50rpx;
+    margin-bottom: 20rpx;
+}
+
+.fll {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imgs,.upload {
+    width: 220rpx;
+    height: 220rpx;
+    background: #f4f4f4;
+    margin-bottom: 20rpx;
+}
+
+.imgs {
+    margin-right: 20rpx;
+}
+
+.imgs:nth-child(3n) {
+    margin-right: 0;
+}
+
+.upload image {
+    width: 103rpx;
+    height: 142rpx;
+}
+
+.submit {
+    position: fixed;
+    left: 50%;
+    bottom: 25rpx;
+    width: 605rpx;
+    height: 82rpx;
+    line-height: 82rpx;
+    background: #46a6f0;
+    color: #fff;
+    transform: translateX(-50%);
+}
+
+.helpP {
+    height: 150rpx;
+    width: 100%;
+}

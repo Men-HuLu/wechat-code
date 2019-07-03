@@ -1,0 +1,259 @@
+.search {
+    background: #46a6f0;
+    padding: 10rpx 40rpx 30rpx;
+    width: 670rpx;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+
+.search2 {
+    height: 110rpx;
+    width: 100%;
+}
+
+.search image {
+    width: 23rpx;
+    height: 23rpx;
+}
+
+.search .icon {
+    width: 29rpx;
+    height: 28rpx;
+    margin-left: 20rpx;
+}
+
+.search .clear {
+    padding-right: 20rpx;
+}
+
+.search input {
+    width: 550rpx;
+    color: #fff;
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+.search .float {
+    background: rgba(255,255,255,0.2);
+    border-radius: 5rpx;
+    height: 70rpx;
+    font-size: 26rpx;
+}
+
+.placeholder {
+    color: rgba(255,255,255,0.8);
+}
+
+.top {
+    width: 700rpx;
+    padding: 30rpx 25rpx;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    border-bottom: 10rpx solid #f4f4f4;
+}
+
+.infor {
+    width: 440rpx;
+    padding: 10rpx 0;
+    height: 80rpx;
+}
+
+.top .icons {
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.rightIcon {
+    line-height: 50rpx;
+    font-size: 24rpx;
+    margin-right: 20rpx;
+}
+
+.rightIcon view {
+    height: 50rpx;
+}
+
+.erweima {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.shar {
+    width: 38rpx;
+    height: 38rpx;
+    margin-right: 10rpx;
+}
+
+.downLoad {
+    width: 38rpx;
+    height: 38rpx;
+    margin-right: 10rpx;
+}
+
+.wrap {
+    width: 700rpx;
+    padding: 30rpx 25rpx;
+    position: relative;
+}
+
+.wrap .pr {
+    padding-top: 65rpx;
+}
+
+.wrap .before {
+    position: absolute;
+    left: 44rpx;
+    top: 0;
+    width: 1rpx;
+    height: 100%;
+    background: #f4f4f4;
+    z-index: 1;
+}
+
+.time {
+    background: #f2d515;
+    height: 45rpx;
+    line-height: 45rpx;
+    border-radius: 22.5rpx;
+    font-size: 26rpx;
+    width: 125rpx;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+}
+
+.time .D {
+    width: 17rpx;
+    height: 17rpx;
+    background: #fff;
+    position: relative;
+    border-radius: 50%;
+    margin: 13rpx 8rpx 13rpx 13rpx;
+}
+
+.time .D::before {
+    content: "";
+    position: absolute;
+    left: 4rpx;
+    top: 4rpx;
+    width: 9rpx;
+    height: 9rpx;
+    border-radius: 50%;
+    background: #f2d515;
+}
+
+.wrap .item {
+    margin-left: 40rpx;
+    width: 660rpx;
+    background: #f4f4f4;
+    font-size: 28rpx;
+    color: #333;
+    line-height: 40rpx;
+    margin-bottom: 30rpx;
+    border-radius: 5rpx;
+    overflow: hidden;
+}
+
+.wrap .item text {
+    display: block;
+    width: 510rpx;
+    display: block;
+}
+
+.wrap .item .float {
+    padding: 10rpx 25rpx 25rpx;
+}
+
+.wrap .item .float view {
+    width: 85rpx;
+}
+
+.wrap .item .float view text {
+    padding: 0;
+    width: auto;
+    color: #666;
+    font-size: 26rpx;
+    vertical-align: top;
+    line-height: 40rpx;
+}
+
+.wrap .item .float image {
+    width: 45rpx;
+    height: 37rpx;
+    margin-left: 5rpx;
+}
+
+.wrap .item image {
+    width: 100%;
+}
+
+.shareButton {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 3;
+}
+
+.wrap .item2 {
+    margin-left: 0;
+    width: 335rpx;
+}
+
+.QH {
+    position: fixed;
+    right: 20rpx;
+    bottom: 150rpx;
+    font-size: 24rpx;
+    border-radius: 12rpx;
+    border: 1rpx soli #666;
+    width: 45rpx;
+    height: 45rpx;
+    padding: 25rpx;
+    background: #46a6f0;
+    border-radius: 50%;
+}
+
+.QH2 {
+    background: #f2d515;
+    bottom: 250rpx;
+    padding: 20rpx 28rpx 30rpx 22rpx;
+}
+
+.QH image {
+    width: 100%;
+}
+
+.PPleft .bottom,.PPright .bottom {
+    padding: 15rpx;
+}
+
+.PPleft .bottom image,.PPright .bottom image {
+    width: 45rpx;
+    height: 39rpx;
+    margin-right: 15rpx;
+}
+
+.PPleft .bottom text,.PPright .bottom text {
+    width: auto;
+}
+
+.PPleft .bottom .line2,.PPright .bottom .line2 {
+    height: 100rpx;
+    font-size: 28rpx;
+}
+
+.PPleft .bottom .fleft text,.PPright .bottom .fleft text {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 26rpx;
+    color: #666;
+}

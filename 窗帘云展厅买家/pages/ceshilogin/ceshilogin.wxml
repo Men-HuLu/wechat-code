@@ -1,0 +1,65 @@
+<view class="container">
+    <nav></nav>
+    <view>user login /** name userhead*/</view>
+    <image class="head" src="{{userHeadImg}}" style=""></image>
+    <view class="name">{{nickName}}</view>
+    <view class="inputbox" style="border-bottom:1px solid {{id==1?'yellow':'#ccc'}};">
+        <view class="iconcenter">
+            <image class="icon" src="../../img/ico_1.png"></image>
+        </view>
+        <input bindblur="blur" bindfocus="focus" bindinput="input" confirmType="next" id="1" placeholder="手机号" placeholderStyle="color:black;" style="width:620rpx;" type="number" value="{{userPhone}}"></input>
+        <view class="iconcenter">
+            <image bindtap="clearPhone" src="../../img/close.png" style="width:34rpx;height:34rpx;" wx:if="{{close}}"></image>
+        </view>
+    </view>
+    <view class="inputbox" style="border-bottom:1px solid {{id==2?'yellow':'#ccc'}};">
+        <view class="iconcenter">
+            <image class="icon" src="../../img/ico_2.png"></image>
+        </view>
+        <view class="iconcenter">
+            <input bindblur="blur" bindfocus="focus" bindinput="input" id="2" placeholder="请输入右侧验证码" type="number"></input>
+        </view>
+        <view class="iconcenter">
+            <image bindtap="yzmClick" src="data:image/jpg;base64,{{yzmImg}}" style="width:100rpx;height:100rpx;border:1px solid black;"></image>
+        </view>
+    </view>
+    <view class="inputbox" style="border-bottom:1px solid {{id==3?'yellow':'#ccc'}};">
+        <view class="iconcenter">
+            <image class="icon" src="../../img/ico_2.png"></image>
+        </view>
+        <view class="iconcenter">
+            <input bindblur="blur" bindfocus="focus" bindinput="input" id="3" placeholder="请输入验证码" type="number"></input>
+        </view>
+        <button bindtap="buttonGetPhoneNum">获取验证码</button>
+    </view>
+    <view class="inputbox" style="border-bottom:1px solid {{id==4?'yellow':'#ccc'}};">
+        <view class="iconcenter">
+            <image class="icon" src="../../img/ico_1.png"></image>
+        </view>
+        <input bindblur="blur" bindfocus="focus" bindinput="input" confirmType="next" id="4" password="{{firstPassword}}" placeholder="请设置6-16位数密码" placeholderStyle="color:black;" style="width:620rpx;" type="text"></input>
+        <view class="iconcenter">
+            <image bindtap="firstPassword" src="{{firstPassword?'../../img/passwordShow.png':'../../img/passwordHide.png'}}" style="width:34rpx;height:34rpx;"></image>
+        </view>
+    </view>
+    <view class="inputbox" style="border-bottom:1px solid {{id==5?'yellow':'#ccc'}};">
+        <view class="iconcenter">
+            <image class="icon" src="../../img/ico_1.png"></image>
+        </view>
+        <input bindblur="blur" bindfocus="focus" bindinput="input" confirmType="next" id="5" password="{{lastPassword}}" placeholder="请再起确认密码" placeholderStyle="color:black;" style="width:620rpx;" type="text"></input>
+        <view class="iconcenter">
+            <image bindtap="lastPassword" src="{{lastPassword?'../../img/passwordShow.png':'../../img/passwordHide.png'}}" style="width:34rpx;height:34rpx;"></image>
+        </view>
+    </view>
+    <button bindtap="buttonForm" style="width:100%;background:yellow;">注册</button>
+    <checkbox-group bindchange="checkbox">
+        <label class="checkbox" id="checkbox" style="height:50rpx;">
+            <checkbox checked="{{checkbox}}" style="transform:scale(.5)" value="{{checkbox}}"></checkbox>
+            <text style="font-size:30rpx;line-height:50rpx">我已阅读并同意</text>
+            <navigator openType="navigate" style="font-size:30rpx;line-height:50rpx" url="../xujiaxin/xujiaxin">《麻爪云协作隐私条款》</navigator>
+        </label>
+    </checkbox-group>
+    <view class="login" id="login">
+        <text>已有账号,</text>
+        <navigator openType="reLaunch" style="color:yellow;" url="../xujiaxin/xujiaxin">登录</navigator>
+    </view>
+</view>

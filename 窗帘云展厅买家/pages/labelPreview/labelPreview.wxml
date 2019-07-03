@@ -1,0 +1,9 @@
+<text>打印测试</text>
+<view class="header">
+    <button bindtap="draw" class="button" type="primary">生成打印图片</button>
+    <button bindtap="openPrinter" class="button" type="primary">连接打印机</button>
+    <button bindtap="print" class="button" type="primary">打印</button>
+</view>
+<view class="show{{''}}">
+    <canvas canvasId="test" style="width:{{canvasWidth}}px; height:{{canvasHeight}}px;"></canvas>
+</view>

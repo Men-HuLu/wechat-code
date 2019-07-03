@@ -1,0 +1,89 @@
+{
+    "pages": [
+        "pages/home/home",
+        "pages/login/login",
+        "pages/usehome/usehome",
+        "pages/goods/goods",
+        "pages/countdowndetail/countdowndetail",
+        "pages/productdetail/productdetail",
+        "pages/coupon/coupon",
+        "pages/couponlist/couponlist",
+        "pages/address/address",
+        "pages/editaddress/editaddress",
+        "pages/submitorder/submitorder",
+        "pages/choiceaddress/choiceaddress",
+        "pages/orderlist/orderlist",
+        "pages/searchresult/searchresult",
+        "pages/logistics/logistics",
+        "pages/orderdetails/orderdetails",
+        "pages/search/search",
+        "pages/productlist/productlist",
+        "pages/productcategory/productcategory",
+        "pages/samesearch/samesearch",
+        "pages/shopcart/shopcart",
+        "pages/countdown/countdown",
+        "pages/ApplyRefund/ApplyRefund",
+        "pages/ApplyReturns/ApplyReturns",
+        "pages/coupondetail/coupondetail",
+        "pages/applylist/applylist",
+        "pages/productevaluate/productevaluate",
+        "pages/comment/comment",
+        "pages/commentlist/commentlist",
+        "pages/applysendgood/applysendgood",
+        "pages/refunddetail/refunddetail",
+        "pages/returndetail/returndetail",
+        "pages/attention/attention",
+        "pages/Commission/Commission",
+        "pages/article/article",
+        "pages/articlelist/articlelist",
+        "pages/producttype/producttype"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "其格严选",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "backgroundColor": "#fff",
+        "selectedColor": "#ad205c",
+        "color": "#333",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "主页",
+                "selectedColor": "#ad205c",
+                "iconPath": "images/home.png",
+                "selectedIconPath": "images/home_hover.png"
+            },
+            {
+                "pagePath": "pages/producttype/producttype",
+                "text": "分类",
+                "selectedColor": "#ad205c",
+                "iconPath": "images/category.png",
+                "selectedIconPath": "images/category_hover.png"
+            },
+            {
+                "pagePath": "pages/productcategory/productcategory",
+                "text": "色系",
+                "selectedColor": "#ad205c",
+                "iconPath": "images/color.png",
+                "selectedIconPath": "images/color_hover.png"
+            },
+            {
+                "pagePath": "pages/shopcart/shopcart",
+                "text": "购物车",
+                "selectedColor": "#ad205c",
+                "iconPath": "images/cart.png",
+                "selectedIconPath": "images/cart_hover.png"
+            },
+            {
+                "pagePath": "pages/usehome/usehome",
+                "text": "我的",
+                "selectedColor": "#ad205c",
+                "iconPath": "images/my.png",
+                "selectedIconPath": "images/my_hover.png"
+            }
+        ]
+    }
+}

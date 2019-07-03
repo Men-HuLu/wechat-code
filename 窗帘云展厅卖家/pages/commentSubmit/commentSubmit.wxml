@@ -1,0 +1,31 @@
+<view>
+    <view class="box top left">
+        <image mode="aspectFill" src="{{data.img}}"></image>
+        <view class="iconcenter float right">
+            <view class="infor">
+                <view>{{data.title}}</view>
+                <view class="type">{{data.type}}</view>
+            </view>
+            <view class="left more">
+                <view class="iconcenter">
+                    <image class="detail" src="../../img/right.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <form bindreset="formReset" bindsubmit="formSubmit" class="box form" reportSubmit="true">
+        <textarea bindinput="textareaInput" maxlength="1000" name="text" placeholder="评论内容"></textarea>
+        <view class="textarea">
+            <text>{{textarea}}</text>/1000</view>
+        <view class="fll">
+            <view bindtap="removeImage" class="imgs" data-index="{{index}}" wx:if="{{list.length}}" wx:for="{{list}}" wx:key="index_{{index}}">
+                <image data-src="{{item}}" src="{{item}}" style="width:220rpx;height:220rpx"></image>
+            </view>
+            <view bindtap="addImge" class="upload iconcenter" size="mini">
+                <image src="../../img/phone.png"></image>
+            </view>
+        </view>
+        <button class="submit" formType="submit">立即评价</button>
+    </form>
+    <view class="helpP"></view>
+</view>

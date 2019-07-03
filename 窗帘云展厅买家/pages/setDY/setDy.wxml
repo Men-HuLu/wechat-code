@@ -1,0 +1,28 @@
+<view class="container">
+    <view class="box">
+        <view class="head txt">打印机设置</view>
+    </view>
+    <view class="left txt border">
+        <view class="iconcenter">
+            <view class="title">打印浓度
+          <text style="color:#e60012;">*</text>
+            </view>
+        </view>
+        <view class="iconcenter">
+            <slider showValue activeColor="46a6f0" bindchange="concentration" max="16" min="0" value="0"></slider>
+        </view>
+    </view>
+    <view class="left txt border">
+        <view class="iconcenter">
+            <view class="title">打印速度
+          <text style="color:#e60012;">*</text>
+            </view>
+        </view>
+        <view class="iconcenter">
+            <slider showValue activeColor="46a6f0" bindchange="speed" max="5" min="0" value="0"></slider>
+        </view>
+    </view>
+    <view class="button">
+        <button bindtap="save" class="btn">保存</button>
+    </view>
+</view>

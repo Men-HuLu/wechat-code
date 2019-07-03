@@ -1,0 +1,26 @@
+<view class="left" id="type">
+    <view class="section__title">选择类型</view>
+    <picker bindchange="typePickerChange" range="{{data.type}}" value="0">
+        <view class="picker">
+       {{data.type[typeIndex]}}
+    </view>
+    </picker>
+</view>
+<view class="left" id="term">
+    <view class="text">有效期限</view>
+    <view class="money_txt">{{data.time}}</view>
+</view>
+<view class="left" id="money" style="border-bottom-width:10rpx;">
+    <view class="text">应付金额</view>
+    <view class="money_txt">¥{{data.money}}</view>
+</view>
+<view class="left" id="request" style="border-bottom-width:10rpx;" wx:if="{{isShow}}">
+    <view class="left">
+        <view class="text" style="margin:0;">邀请码</view>
+        <view class="iconcenter">
+            <image bindtap="toast" src="../../../img/ico_request.png" style="width:28rpx;height:28rpx;margin-left:12rpx;margin-right:60rpx;"></image>
+        </view>
+    </view>
+    <input bindinput="yqm" placeholder="请输入邀请码" value="{{yqm}}"></input>
+</view>
+<button bindtap="payment" style="width:602rpx;height:80rpx;color:#fff;background:#46a6f0;line-height:80rpx;margin-top:54rpx;">支付</button>

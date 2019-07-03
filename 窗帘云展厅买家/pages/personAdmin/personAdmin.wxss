@@ -1,0 +1,125 @@
+.header {
+    height: 100rpx;
+    background: #f4f4f4;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 24rpx;
+}
+
+.header .txt {
+    font-size: 24rpx;
+    color: #666666;
+    margin-right: 30rpx;
+    line-height: 104rpx;
+}
+
+.header .iconcenter {
+    margin-right: 8rpx;
+}
+
+.content {
+    padding: 0 24rpx;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.content .box {
+    width: 100%;
+    padding: 18rpx 0;
+    border-bottom: 1px solid #f4f4f4;
+    box-sizing: border-box;
+}
+
+.content .box .userHead {
+    width: 106rpx;
+    height: 106rpx;
+    border-radius: 50%;
+    border: none;
+}
+
+.content .box .h2 {
+    font-size: 28rpx;
+    color: #333333;
+    margin-top: 18rpx;
+    line-height: 1;
+}
+
+.content .box .p {
+    font-size: 28rpx;
+    color: #333333;
+    line-height: 1;
+    margin-top: 18rpx;
+}
+
+.content .box .one_line {
+    margin-left: 14rpx;
+    width: 326rpx;
+}
+
+.content .box .time {
+    font-size: 24rpx;
+    color: #999999;
+    margin-top: 18rpx;
+}
+
+.modal {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: .1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.modalFrame {
+    width: 580rpx;
+    height: 350rpx;
+    border-radius: 10rpx;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 30rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -172rpx;
+    margin-left: -290rpx;
+    z-index: 99;
+}
+
+.modalFrame .title {
+    font-size: 36rpx;
+    color: #333333;
+    line-height: 1;
+    margin-top: 8rpx;
+}
+
+.modalFrame .txt {
+    font-size: 28rpx;
+    margin-top: 32rpx;
+    color: #666666;
+    line-height: 1;
+    margin-bottom: 84rpx;
+}
+
+.modalFrame .btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modalFrame .btn view {
+    font-size: 30rpx;
+    line-height: 1;
+}
+
+.modalFrame .btn view:nth-of-type(1) {
+    margin-right: 52rpx;
+    color: #333333;
+}
+
+.modalFrame .btn view:nth-last-of-type(1) {
+    color: #369eef;
+}

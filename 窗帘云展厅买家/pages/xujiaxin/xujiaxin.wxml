@@ -1,0 +1,39 @@
+<view class="container">
+    <nav></nav>
+    <view class="float selectbox">
+        <view class="float selectPadding">
+            <text>当前团队:</text>
+            <view class="float selectSon">
+                <picker bindchange="bindPickerChange" range="{{array}}" value="{{index}}">
+                    <view class="picker">{{array[index]}}</view>
+                </picker>
+                <view class="iconcenter" style="width:34rpx;">
+                    <image src="../../img/down.png" style="width:34rpx;height:34rpx;"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <scroll-view bindscrolltolower="loadMore" indscrolltoupper="refresh" scrollY="true" style="height:84vh">
+        <view class="contentAllBox" wx:for="{{teamContent}}">
+            <view class="title">{{item.groupName}}</view>
+            <view class="left">
+                <view class="team left iconcenter" style="margin-right:30rpx;">
+                    <image src="../../img/ico_team.jpg" style="width:31rpx;height:22rpx;"></image>
+        {{item.summary}}</view>
+                <view class="name left iconcenter">
+                    <image src="../../img/ico_user.jpg" style="width:20rpx;height:22rpx;"></image>
+      {{item.roleName}}
+      </view>
+            </view>
+            <view class="left successTxt">完成度
+      <view>{{item.archivedCount}}</view>/
+      <view>{{item.projectCount}}</view>
+            </view>
+            <view class="progress left">
+                <progress activeColor="#1afa29" class="success" percent="100" strokeWidth="4" style="width:{{item.successProgress}}%;"></progress>
+                <progress activeColor="#d81e06" class="fail" percent="100" strokeWidth="4" style="width:{{item.fileProgress}}%;"></progress>
+                <progress activeColor="#ccc" class="fail" percent="100" strokeWidth="4" style="width:{{item.unfinished}}%;"></progress>
+            </view>
+        </view>
+    </scroll-view>
+</view>

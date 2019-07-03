@@ -1,0 +1,35 @@
+<nav></nav>
+<view class="left">
+    <view class="section__title">商品分类</view>
+    <picker bindchange="bindPickerChange" range="{{class}}" value="{{index}}">
+        <view wx:if="{{index==''}}">请选择</view>
+        <view wx:else>{{class[index]}}</view>
+        <image mode="widthFix" src="/img/ico_right.png"></image>
+    </picker>
+</view>
+<view class="left">
+    <view class="section__title">价格管理</view>
+    <picker bindchange="bindPickerChange2" range="{{number}}" value="{{index2}}">
+        <view wx:if="{{index2==''}}">请选择</view>
+        <view wx:else>{{number[index2]}}</view>
+        <image mode="widthFix" src="/img/ico_right.png"></image>
+    </picker>
+</view>
+<view class="left" style="border-bottom:10rpx solid #f4f4f4;margin-bottom:55rpx;">
+    <view class="section__title">是否上架</view>
+    <radio-group bindchange="change" name="Is_shelves">
+        <label>
+            <radio checked="{{Is_shelves==1?true:false}}" color="#309bee" value="1"></radio>
+            <image class="allcheckbox" mode="widthFix" src="/img/ico_shopcheckbox_active.png" wx:if="{{Is_shelves==1}}"></image>
+            <image class="allcheckbox" mode="widthFix" src="/img/ico_shopcheckbox.png" wx:else></image>
+        上架
+      </label>
+        <label>
+            <radio color="#309bee" value="0"></radio>
+            <image class="allcheckbox" mode="widthFix" src="/img/ico_shopcheckbox_active.png" wx:if="{{Is_shelves==0}}"></image>
+            <image class="allcheckbox" mode="widthFix" src="/img/ico_shopcheckbox.png" wx:else></image>
+        不上架
+      </label>
+    </radio-group>
+</view>
+<button bindtap="submit" class="submit">完成</button>

@@ -1,0 +1,20 @@
+<view>
+    <text class="title">收货地址</text>
+    <view class="float infor" wx:for="{{data.address}}">
+        <view class="messege">
+            <view class="float">
+                <view class="name">{{item.name}}</view>
+                <view class="phone">{{item.phone}}</view>
+            </view>
+            <view class="address">{{item.address}}</view>
+        </view>
+        <view class="iconcenter">
+            <view bindtap="navigator" class="float" data-id="{{item.addId}}">
+                <image class="icon" src="../../img/text.png"></image>
+                <view class="iconcenter">编辑</view>
+            </view>
+        </view>
+    </view>
+    <view class="addAddress2"></view>
+    <button bindtap="navigatoradd" class="addAddress">新增地址</button>
+</view>

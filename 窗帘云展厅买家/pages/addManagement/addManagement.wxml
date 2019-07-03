@@ -1,0 +1,10 @@
+<view class="left" style="width:100%;box-sizing:border-box;padding:36rpx 24rpx;">
+    <view class="iconcenter">
+        <view style="color:#666666;font-size:30rpx;line-height:1;margin-right:58rpx;">分类名称</view>
+    </view>
+    <input bindblur="input" placeholder="请输入分类名称" placeholderStyle="font-size:30rpx;color:#999999;" style="display:block;width:510rpx;font-size:30rpx;color:#333333;" value="{{inputValData}}"></input>
+</view>
+<view>
+    <button bindtap="remove" size="default" style="position:fixed;bottom:26rpx;left:24rpx;background:#46a6f0;color:#fff;font-size:36rpx;padding:0;width:332rpx;margin-top:30rpx;margin-bottom:30rpx;" type="default">删除</button>
+    <button bindtap="save" size="default" style="position:fixed;bottom:26rpx;right:24rpx;background:#46a6f0;color:#fff;font-size:36rpx;padding:0;width:332rpx;margin-top:30rpx;margin-bottom:30rpx;" type="default">保存</button>
+</view>

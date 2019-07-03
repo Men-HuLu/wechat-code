@@ -1,0 +1,57 @@
+#type {
+    height: 104rpx;
+    padding: 0 24rpx;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.section__title {
+    line-height: 104rpx;
+    font-size: 30rpx;
+    color: #666666;
+    margin-right: 70rpx;
+}
+
+.text {
+    line-height: 104rpx;
+    font-size: 30rpx;
+    color: #666666;
+    margin-right: 70rpx;
+}
+
+.money_txt {
+    line-height: 104rpx;
+    font-size: 30rpx;
+    color: #666666;
+}
+
+input {
+    width: 360rpx;
+    height: 100%;
+    color: #999999;
+    font-size: 30rpx;
+}
+
+picker {
+    width: 458rpx;
+    line-height: 104rpx;
+    color: #333333;
+    font-size: 30rpx;
+}
+
+#term {
+    height: 104rpx;
+    padding: 0 24rpx;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+#money {
+    height: 104rpx;
+    padding: 0 24rpx;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+#request {
+    height: 104rpx;
+    padding: 0 24rpx;
+    border-bottom: 1px solid #f4f4f4;
+}

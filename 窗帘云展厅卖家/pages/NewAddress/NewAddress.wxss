@@ -1,0 +1,47 @@
+.blcok {
+    display: block;
+}
+
+.none {
+    display: none;
+}
+
+.item {
+    height: 105rpx;
+    font-size: 30rpx;
+    color: #666;
+    width: 700rpx;
+    padding: 0 25rpx;
+    line-height: 105rpx;
+    border-bottom: 1rpx solid #f4f4f4;
+}
+
+.item:last-of-type {
+    border-bottom: 10rpx solid #f4f4f4;
+    margin-bottom: 65rpx;
+}
+
+.item text {
+    display: block;
+    width: 190rpx;
+}
+
+.item input,.item picker {
+    width: 510rpx;
+    height: 105rpx;
+    line-height: 105rpx;
+}
+
+button {
+    margin-bottom: 20rpx;
+}
+
+.icon {
+    width: 16rpx;
+    height: 28rpx;
+}
+
+.remove {
+    background: #f4f4f4;
+    color: #666;
+}

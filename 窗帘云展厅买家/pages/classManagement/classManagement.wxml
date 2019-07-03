@@ -1,0 +1,12 @@
+<navigator url="../addManagement/addManagement?id={{item.id}}" wx:for="{{classify}}">
+    <view class="float" style="width:100%;box-sizing:border-box;padding:38rpx 24rpx;line-height:1;font-size:30rpx;color:#333333;">
+        <view>{{item.name}}</view>
+        <view class="iconcenter">
+            <image src="../../img/ico_right.png" style="width:16rpx;height:28rpx;"></image>
+        </view>
+    </view>
+</navigator>
+<navigator url="../addManagement/addManagement">
+    <button size="default" style="position:fixed;bottom:108rpx;left:50%;transform:translateX(-50%);background:#46a6f0;color:#fff;font-size:36rpx;padding:0;width:606rpx;margin-top:30rpx;margin-bottom:30rpx;" type="default">添加分类</button>
+</navigator>
+<nav></nav>

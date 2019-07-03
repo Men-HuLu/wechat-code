@@ -1,0 +1,159 @@
+.container {
+    width: 100%;
+}
+
+.adoptList {
+    padding: 0 24rpx 30rpx;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fcfcfc;
+}
+
+.container .adopt {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container .adopt .head {
+    padding-top: 28rpx;
+    padding-bottom: 12rpx;
+}
+
+.container .adopt .head .headLeft image {
+    width: 72rpx;
+    height: 72rpx;
+    border-radius: 50%;
+    margin-right: 18rpx;
+}
+
+.container .adopt .head .headLeft .name {
+    font-size: 26rpx;
+    color: #333333;
+    line-height: 1;
+}
+
+.container .adopt .head .headRight {
+    font-size: 24rpx;
+    color: #999999;
+    line-height: 1;
+}
+
+.container .adopt .txt {
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: #333333;
+}
+
+.container .adopt .imgList {
+    width: 100%;
+}
+
+.container .adopt .imgList image {
+    width: 224rpx;
+    height: 224rpx;
+    margin-top: 16rpx;
+    margin-right: 14rpx;
+}
+
+.container .adopt .imgList image:nth-of-type(3n) {
+    margin-right: 0;
+}
+
+.container .adopt .foot {
+    margin-top: 28rpx;
+    width: 100%;
+}
+
+.container .adopt .foot .message {
+    font-size: 24rpx;
+    color: #999999;
+    line-height: 1;
+    margin-right: 12rpx;
+}
+
+.container .adopt .foot .del {
+    font-size: 24rpx;
+    color: #309bee;
+    margin-left: 28rpx;
+    line-height: 1;
+}
+
+.waitList {
+    padding: 0 24rpx 30rpx;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fcfcfc;
+}
+
+.container .wait {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container .wait .head {
+    padding-top: 28rpx;
+    padding-bottom: 12rpx;
+}
+
+.container .wait .head .headLeft image {
+    width: 72rpx;
+    height: 72rpx;
+    border-radius: 50%;
+    margin-right: 18rpx;
+}
+
+.container .wait .head .headLeft .name {
+    font-size: 26rpx;
+    color: #333333;
+    line-height: 1;
+}
+
+.container .wait .head .headRight {
+    font-size: 24rpx;
+    color: #999999;
+    line-height: 1;
+}
+
+.container .wait .txt {
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: #333333;
+}
+
+.imgposition {
+    position: relative;
+}
+
+.selectbox {
+    position: absolute;
+    top: 0rpx;
+    right: 18rpx;
+    width: 30rpx;
+    height: 30rpx;
+}
+
+checkbox {
+    visibility: hidden;
+}
+
+checkbox-group {
+    position: absolute;
+    right: 10rpx;
+    top: 10rpx;
+    z-index: 9999;
+}
+
+.waitList .imgposition:nth-of-type(3) {
+    margin-right: 0!important;
+}
+
+.btn {
+    width: 332rpx;
+    height: 80rpx;
+    background: #309bee;
+    color: #fff;
+    border-radius: 10rpx;
+    font-size: 36rpx;
+    line-height: 80rpx;
+    text-align: center;
+}

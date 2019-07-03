@@ -1,0 +1,32 @@
+<view style="width:100%;padding:30rpx 24rpx;background:#47a6f0;box-sizing:border-box;">
+    <view class="inputbox" style="width:100%;margin:0 auto;position:relative;background:#66b5f2;border-radius:15rpx;">
+        <image class="input_search" src="../../img/ico_search.png" style="width:29rpx;height:28rpx;position:absolute;left:18rpx;top:50%;transform:translateY(-50%);z-index:2;"></image>
+        <input bindconfirm="confirm" bindinput="input" placeholder="请输入关键字" placeholderStyle="font-size:26rpx;color:#aed5f7;" value="{{search}}"></input>
+        <image bindtap="clear" class="input_cli" src="../../img/ico_close_1.png" style="width:23rpx;height:23rpx;position:absolute;top:50%;right:16rpx;transform:translateY(-50%);z-index:2;"></image>
+    </view>
+</view>
+<view class="content" style="width:100%;box-sizing:border-box;padding:0 24rpx;padding-top:10rpx;">
+    <scroll-view bindscrolltolower="pullUpLoad" class="content-wrap" scrollY="true" style="height:80vh;">
+        <view class="shopbox left" style="padding-top:20rpx;padding-bottom:15rpx;border:1px solid #fcfcfc;" wx:for="{{data}}">
+            <view class="iconcenter">
+                <radio-group bindchange="radioChangeCustomer" data-index="{{index}}" style="display:inline-block;">
+                    <label class="checkbox">
+                        <image src="{{item.checked==true?'../../img/ico_shopcheckbox_active.png':'../../img/ico_shopcheckbox.png'}}" style="width:46rpx;height:46rpx;position:absolute;left:0;top:50%;margin-top:-15rpx;"></image>
+                        <radio checked="{{item.checked}}" style="display:inline-block;visibility:hidden;width:44rpx;" value="{{index}}"></radio>
+                    </label>
+                </radio-group>
+            </view>
+            <image src="{{item.img}}" style="width:238rpx;height:192rpx;border-radius:14rpx;margin-left:22rpx;"></image>
+            <view style="margin-left:14rpx;padding-top:24rpx;">
+                <view class="ellipsis" style="height:86rpx;width:376rpx;font-size:28rpx;color:#333333;line-height:40rpx;">{{item.goodsName}}</view>
+                <view style="font-size:24rpx;color:#333333;width:148rpx;height:40rpx;border-radius:30rpx;background:#f4f4f4;text-align:center;line-height:40rpx;margin-top:10rpx;">{{item.version}}</view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<view class="bottom">
+    <button bindtap="openPrinter" type="default">下载商品加密二维码</button>
+</view>
+<view class="show{{''}}" style="position:fixed;left:-1000rpx;height:-500rpx;">
+    <canvas canvasId="test" style="width:{{canvasWidth}}px; height:{{canvasHeight}}px;"></canvas>
+</view>

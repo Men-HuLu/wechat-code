@@ -1,0 +1,59 @@
+<view class="content" wx:if="{{show==true}}">
+    <form bindsubmit="formSubmit">
+        <view class="box">
+            <view class="head txt">基本信息</view>
+            <view class="left txt border">
+                <view class="title">展厅名称</view>
+                <view class="iconcenter">
+                    <view class="head">{{data.shop_name}}</view>
+                </view>
+            </view>
+            <view class="left txt border">
+                <view class="title">展厅热线</view>
+                <view class="iconcenter">
+                    <view class="head">{{data.phone}}</view>
+                </view>
+            </view>
+            <view class="left txt border">
+                <view class="title">联系地址</view>
+                <view class="iconcenter">
+                    <view class="head">{{data.address}}</view>
+                </view>
+            </view>
+            <view class="left txt border">
+                <view class="title">展厅简介</view>
+                <view class="iconcenter">
+                    <view class="head">{{data.desc}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="box" style="border-bottom:1px solid #f4f4f4;">
+            <view class="head txt">辅助信息</view>
+            <view class="left txt border">
+                <view class="title">负责人</view>
+                <view class="iconcenter">
+                    <view class="head">{{datacharge_name}}</view>
+                </view>
+            </view>
+            <view class="left txt border">
+                <view class="title">QQ</view>
+                <view class="iconcenter">
+                    <view class="head">{{data.charge_qq}}</view>
+                </view>
+            </view>
+            <view class="left txt border">
+                <view class="title">微信</view>
+                <view class="iconcenter">
+                    <view class="head">{{data.charge_wx}}</view>
+                </view>
+            </view>
+            <view class="left txt border">
+                <view class="title">备注</view>
+                <view class="iconcenter">
+                    <view class="head">{{data.mark}}</view>
+                </view>
+            </view>
+        </view>
+    </form>
+    <button bindtap="navgation" class="goIndex">返回首页</button>
+</view>

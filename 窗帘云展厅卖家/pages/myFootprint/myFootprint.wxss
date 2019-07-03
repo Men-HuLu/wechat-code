@@ -1,0 +1,162 @@
+.search {
+    background: #46a6f0;
+    padding: 10rpx 40rpx 30rpx;
+    width: 670rpx;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+
+.search2 {
+    height: 98rpx;
+    width: 100%;
+}
+
+.search image {
+    width: 23rpx;
+    height: 23rpx;
+}
+
+.search .icon {
+    width: 29rpx;
+    height: 28rpx;
+    margin-left: 20rpx;
+}
+
+.search .clear {
+    margin-right: 20rpx;
+}
+
+.search input {
+    width: 550rpx;
+    color: #fff;
+}
+
+.search .float {
+    background: rgba(255,255,255,0.2);
+    border-radius: 5rpx;
+    height: 58rpx;
+    font-size: 26rpx;
+}
+
+.placeholder {
+    color: rgba(255,255,255,0.8);
+}
+
+.wrap {
+    width: 700rpx;
+    padding: 30rpx 25rpx;
+    position: relative;
+}
+
+.wrap .pr {
+    padding-top: 65rpx;
+}
+
+.wrap .before {
+    position: absolute;
+    left: 44rpx;
+    top: 0;
+    width: 1rpx;
+    height: 100%;
+    background: #f4f4f4;
+    z-index: 1;
+}
+
+.commodity {
+    margin-left: 40rpx;
+    margin-bottom: 30rpx;
+    background: #f4f4f4;
+    padding-bottom: 30rpx;
+}
+
+.commodity .icon {
+    width: 40rpx;
+    margin-right: 45rpx;
+}
+
+.commodity .icon:last-child {
+    margin-right: 0;
+}
+
+.time {
+    background: #f2d515;
+    height: 45rpx;
+    line-height: 45rpx;
+    border-radius: 22.5rpx;
+    font-size: 26rpx;
+    width: 125rpx;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+}
+
+.time .D {
+    width: 17rpx;
+    height: 17rpx;
+    background: #fff;
+    position: relative;
+    border-radius: 50%;
+    margin: 13rpx 8rpx 13rpx 13rpx;
+}
+
+.time .D::before {
+    content: "";
+    position: absolute;
+    left: 4rpx;
+    top: 4rpx;
+    width: 9rpx;
+    height: 9rpx;
+    border-radius: 50%;
+    background: #f2d515;
+}
+
+.commodity .img {
+    width: 100%;
+}
+
+.commodity .bottom {
+    padding: 0 25rpx;
+}
+
+.commodity .bottom .title {
+    font-size: 28rpx;
+    line-height: 40rpx;
+    padding: 5rpx 0 20rpx;
+}
+
+.commodity .bottom .text {
+    font-size: 24rpx;
+    color: #666;
+}
+
+.shareButton {
+    background: none;
+    padding: 0;
+    line-height: 1;
+    overflow: initial;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.shareBxox {
+    position: relative;
+}
+
+.pr {
+    position: relative;
+}
+
+.content {
+    padding-bottom: 0;
+}

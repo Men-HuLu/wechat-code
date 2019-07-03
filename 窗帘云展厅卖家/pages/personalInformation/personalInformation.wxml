@@ -1,0 +1,27 @@
+<form>
+    <view class="float item">
+        <text>客户号</text>
+        <view class="iconcenter">
+            <input disabled="true" value="{{number}}"></input>
+        </view>
+    </view>
+    <view class="float item">
+        <text>手机号</text>
+        <view class="iconcenter">
+            <input bindinput="phone" maxlength="11" placeholder="请输入电话号码" type="number" value="{{phone}}"></input>
+        </view>
+    </view>
+    <view class="float item">
+        <text>云展厅名称</text>
+        <view class="iconcenter">
+            <input bindinput="name" placeholder="请输入云展厅名称" value="{{name}}"></input>
+        </view>
+    </view>
+    <view class="float item bolder">
+        <text>展厅描述</text>
+        <view class="iconcenter">
+            <input bindinput="describe" maxlength="12" placeholder="请输入展厅描述" value="{{describe}}"></input>
+        </view>
+    </view>
+    <button bindtap="submit" class="allButton">保存</button>
+</form>

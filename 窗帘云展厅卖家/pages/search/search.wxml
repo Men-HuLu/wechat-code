@@ -1,0 +1,34 @@
+<view class="search">
+    <view class="float iconcenter">
+        <image class="icon" src="../../img/search-icon.png"></image>
+        <input bindblur="submit" bindconfirm="submit" confirmType="done" placeholder="搜索商品" placeholderClass="placeholder" value="{{input}}"></input>
+        <image bindtap="clear" class="clear" src="../../img/clear.png"></image>
+    </view>
+</view>
+<view class="search2"></view>
+<view>
+    <form bindreset="formReset" bindsubmit="formSubmit">
+        <view class="checkboxes form" wx:for="{{data.data}}">
+            <view class="float title">
+                <view class="name">{{item.name}}</view>
+                <view bindtap="select" class="more left" data-index="{{index}}">
+                    <view class="label" wx:for="{{item.label}}">{{item}}</view>{{item.select==true?'收起':'展开'}}<view class="iconcenter">
+                        <image class="{{item.select==true?'rotate':' '}}" src="../../img/right.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="{{item.select==true?' ':'selectNo'}}">
+                <checkbox-group bindchange="change" class="left" data-index="{{index}}" name="{{item.checkbox}}">
+                    <label class="checkbox" style="background:{{item.select==true?'#46a6f0;color:#fff':'#f4f4f4'}}" wx:for="{{item.arr}}">
+                        <checkbox checked="{{item.select}}" data-id="{{item.id}}" data-select="{{item.select}}" value="{{item.name}}"></checkbox>{{item.name}}
+          </label>
+                </checkbox-group>
+            </view>
+        </view>
+        <view class="float button" style="left:0;bottom:-1rpx;z-index:9;position:fixed;background:#fff;width:100%;">
+            <button formType="reset">重置</button>
+            <button formType="submit">确定</button>
+        </view>
+        <view class="button" style="height:80rpx;"></view>
+    </form>
+</view>

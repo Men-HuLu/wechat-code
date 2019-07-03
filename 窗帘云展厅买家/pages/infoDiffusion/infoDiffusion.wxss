@@ -1,0 +1,115 @@
+.nav {
+    border-bottom: 1rpx solid #f4f4f4;
+}
+
+.nav view {
+    width: 250rpx;
+    height: 100rpx;
+    text-align: center;
+    line-height: 100rpx;
+    font-size: 28rpx;
+}
+
+.nav .active {
+    color: #42a4f0;
+    border-bottom: 2rpx solid #42a4f0;
+}
+
+.icon_massege {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 5rpx;
+    position: relative;
+    margin-top: 10rpx;
+}
+
+.icon_massege.active:after {
+    content: "";
+    position: absolute;
+    right: -5rpx;
+    top: -6rpx;
+    border-radius: 50%;
+    width: 14rpx;
+    height: 14rpx;
+    background: #e60012;
+    z-index: 3;
+}
+
+.head {
+    height: 76rpx;
+    width: 76rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.imgs image {
+    width: 223rpx;
+    height: 223rpx;
+    margin-right: 15rpx;
+    margin-bottom: 15rpx;
+    vertical-align: top;
+}
+
+.imgs image:nth-child(3n) {
+    margin-right: 0;
+}
+
+.item {
+    width: 700rpx;
+    padding: 30rpx 25rpx 15rpx;
+    border-bottom: 1rpx solid #f4f4f4;
+}
+
+.comments {
+    padding-bottom: 100rpx;
+}
+
+.name {
+    font-size: 26rpx;
+    color: #333;
+    line-height: 45rpx;
+    height: 45rpx;
+}
+
+.time {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.text {
+    font-size: 28rpx;
+    line-height: 40rpx;
+    padding: 14rpx 0;
+}
+
+.bottomBtn {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 22rpx 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+}
+
+.bottomBtn button {
+    width: 606rpx;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #46a6f0;
+    text-align: center;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #fff;
+    font-size: 36rpx;
+}
+
+.noData {
+    width: 100%;
+    text-align: center;
+    margin-top: 100rpx;
+    font-size: 32rpx;
+    color: #333333;
+    line-height: 1;
+}

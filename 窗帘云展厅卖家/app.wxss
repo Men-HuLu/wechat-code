@@ -1,0 +1,99 @@
+.iconcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.float {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.content {
+    padding-bottom: 100rpx;
+}
+
+.box {
+    padding: 25rpx;
+}
+
+.dn {
+    display: none;
+}
+
+.allButton {
+    background: #309bee;
+    color: #fff;
+    width: 610rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 36rpx;
+}
+
+.pr {
+    position: relative;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.line2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.buttonNone {
+    padding: 0;
+    margin: 0;
+    background: none;
+    border-radius: 0;
+    line-height: 1;
+}
+
+.buttonNone:after {
+    border: none;
+}
+
+.scale {
+    animation: scale 1s infinite;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.6);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes scale {
+    0% {
+        -webkit-transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(0.6);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+    }
+}

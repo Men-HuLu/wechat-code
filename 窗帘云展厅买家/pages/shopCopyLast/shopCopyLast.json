@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "nav": "../../components/nav/nav"
+    },
+    "navigationBarTitleText": "商品编辑"
+}

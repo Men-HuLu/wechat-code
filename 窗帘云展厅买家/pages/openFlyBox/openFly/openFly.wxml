@@ -1,0 +1,18 @@
+<view class="container">
+    <view bindtap="sureOpen" class="flybox" data-flyid="{{item.flyId}}" wx:for="{{data}}">
+        <image src="{{item.background}}"></image>
+        <view class="float flyposition">
+            <view class="flyIntroduce">
+                <view class="flyTitle">展厅类型{{item.flyId}}</view>
+                <view class="flyTxt">有效期限 : {{item.time}}</view>
+                <view class="flyTxt">商品数量 : {{item.shopNum}}</view>
+            </view>
+            <view>
+                <view class="flyMoney">¥ <text>{{item.money}}</text>
+                </view>
+                <view class="flyImgNum">图片数量 : {{item.imgNum}}</view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="backBtn" class="backBtn">返回</view>
+</view>
